@@ -235,8 +235,9 @@ def interactive_slice_viewer(data_folder="../data"):
 #url = '/Volumes/LaCie/Noyaux/Chouxfleurs/raw_202502_Nice_orga0_31.tif'
 #volume = load_file_and_visualize_3d_planes(url)
 
-url = "../data"
-volume = load_and_visualize_3d_planes(url)
+url = "../data/copia_2024.06.26_PARIS_Noyau_Org_12_cauliflower_J7_40X_8bit.tif"
+#volume = load_and_visualize_3d_planes(url)
+volume = load_file_and_visualize_3d_planes(url)
 
 viewer = napari.Viewer()
 viewer.add_image(volume, name="3D Volume", scale=[2, 1, 1])  # z, y, x scaling
