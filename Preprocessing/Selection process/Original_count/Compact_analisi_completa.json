@@ -1,0 +1,703 @@
+{
+  "keyword_counts": {
+    "Nice": 0,
+    "Paris": 1,
+    "Noyau": 43
+  },
+  "total_files": 43,
+  "files_analyzed": [
+    {
+      "filename": "20230804_Noyau_org1.tif",
+      "relative_path": "20230804_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20230804_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org2.tif",
+      "relative_path": "20230804_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20230804_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org3.tif",
+      "relative_path": "20230804_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20230804_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org1.tif",
+      "relative_path": "20231004_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231004_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org2.tif",
+      "relative_path": "20231004_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231004_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org3.tif",
+      "relative_path": "20231004_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231004_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org4.tif",
+      "relative_path": "20231005_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231005_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org5.tif",
+      "relative_path": "20231005_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231005_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org6.tif",
+      "relative_path": "20231005_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231005_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org7.tif",
+      "relative_path": "20231005_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231005_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org1.tif",
+      "relative_path": "20231006_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231006_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231010_Noyau_org2.tif",
+      "relative_path": "20231010_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231010_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231010_Noyau_org3.tif",
+      "relative_path": "20231010_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231010_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231010_Noyau_org4.tif",
+      "relative_path": "20231010_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231010_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org10.tif",
+      "relative_path": "20231114_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org11.tif",
+      "relative_path": "20231114_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org5.tif",
+      "relative_path": "20231114_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org6.tif",
+      "relative_path": "20231114_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org7.tif",
+      "relative_path": "20231114_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org8.tif",
+      "relative_path": "20231114_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org9.tif",
+      "relative_path": "20231114_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org1.tif",
+      "relative_path": "20231120_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org2.tif",
+      "relative_path": "20231120_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org3.tif",
+      "relative_path": "20231120_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org4.tif",
+      "relative_path": "20231120_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org5.tif",
+      "relative_path": "20231120_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org6.tif",
+      "relative_path": "20231120_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org7.tif",
+      "relative_path": "20231120_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org10.tif",
+      "relative_path": "20231207_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org11.tif",
+      "relative_path": "20231207_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org12.tif",
+      "relative_path": "20231207_Noyau_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org12.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org13.tif",
+      "relative_path": "20231207_Noyau_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org13.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org8.tif",
+      "relative_path": "20231207_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org9.tif",
+      "relative_path": "20231207_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org14.tif",
+      "relative_path": "20231212_Noyau_org14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org14.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org15.tif",
+      "relative_path": "20231212_Noyau_org15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org15.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org16.tif",
+      "relative_path": "20231212_Noyau_org16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org16.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org17.tif",
+      "relative_path": "20231212_Noyau_org17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org17.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org18.tif",
+      "relative_path": "20231212_Noyau_org18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org18.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org19.tif",
+      "relative_path": "20231212_Noyau_org19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org19.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org20.tif",
+      "relative_path": "20231212_Noyau_org20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org20.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org21.tif",
+      "relative_path": "20231212_Noyau_org21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org21.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_11_compact_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_11_compact_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/2024.07.18_PARIS_Noyau_Org_11_compact_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    }
+  ],
+  "files_with_keywords": [
+    {
+      "filename": "20230804_Noyau_org1.tif",
+      "relative_path": "20230804_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20230804_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org2.tif",
+      "relative_path": "20230804_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20230804_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org3.tif",
+      "relative_path": "20230804_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20230804_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org1.tif",
+      "relative_path": "20231004_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231004_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org2.tif",
+      "relative_path": "20231004_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231004_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org3.tif",
+      "relative_path": "20231004_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231004_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org4.tif",
+      "relative_path": "20231005_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231005_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org5.tif",
+      "relative_path": "20231005_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231005_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org6.tif",
+      "relative_path": "20231005_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231005_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org7.tif",
+      "relative_path": "20231005_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231005_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org1.tif",
+      "relative_path": "20231006_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231006_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231010_Noyau_org2.tif",
+      "relative_path": "20231010_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231010_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231010_Noyau_org3.tif",
+      "relative_path": "20231010_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231010_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231010_Noyau_org4.tif",
+      "relative_path": "20231010_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231010_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org10.tif",
+      "relative_path": "20231114_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org11.tif",
+      "relative_path": "20231114_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org5.tif",
+      "relative_path": "20231114_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org6.tif",
+      "relative_path": "20231114_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org7.tif",
+      "relative_path": "20231114_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org8.tif",
+      "relative_path": "20231114_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org9.tif",
+      "relative_path": "20231114_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231114_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org1.tif",
+      "relative_path": "20231120_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org2.tif",
+      "relative_path": "20231120_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org3.tif",
+      "relative_path": "20231120_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org4.tif",
+      "relative_path": "20231120_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org5.tif",
+      "relative_path": "20231120_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org6.tif",
+      "relative_path": "20231120_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231120_Noyau_org7.tif",
+      "relative_path": "20231120_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231120_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org10.tif",
+      "relative_path": "20231207_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org11.tif",
+      "relative_path": "20231207_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org12.tif",
+      "relative_path": "20231207_Noyau_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org12.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org13.tif",
+      "relative_path": "20231207_Noyau_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org13.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org8.tif",
+      "relative_path": "20231207_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org9.tif",
+      "relative_path": "20231207_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231207_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org14.tif",
+      "relative_path": "20231212_Noyau_org14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org14.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org15.tif",
+      "relative_path": "20231212_Noyau_org15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org15.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org16.tif",
+      "relative_path": "20231212_Noyau_org16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org16.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org17.tif",
+      "relative_path": "20231212_Noyau_org17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org17.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org18.tif",
+      "relative_path": "20231212_Noyau_org18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org18.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org19.tif",
+      "relative_path": "20231212_Noyau_org19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org19.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org20.tif",
+      "relative_path": "20231212_Noyau_org20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org20.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231212_Noyau_org21.tif",
+      "relative_path": "20231212_Noyau_org21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/20231212_Noyau_org21.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_11_compact_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_11_compact_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Noyaux/Compact/2024.07.18_PARIS_Noyau_Org_11_compact_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    }
+  ],
+  "analysis_date": "2025-09-17 10:44:42"
+}

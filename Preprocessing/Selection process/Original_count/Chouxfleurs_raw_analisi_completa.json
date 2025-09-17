@@ -1,0 +1,5645 @@
+{
+  "keyword_counts": {
+    "Nice": 352,
+    "Paris": 0,
+    "Noyau": 0
+  },
+  "total_files": 352,
+  "files_analyzed": [
+    {
+      "filename": "raw_202502_Nice_orga0_0.tif",
+      "relative_path": "raw_202502_Nice_orga0_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._raw_202502_Nice_orga0_0.tif",
+      "relative_path": "._raw_202502_Nice_orga0_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/._raw_202502_Nice_orga0_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_1.tif",
+      "relative_path": "raw_202502_Nice_orga0_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_2.tif",
+      "relative_path": "raw_202502_Nice_orga0_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_3.tif",
+      "relative_path": "raw_202502_Nice_orga0_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_4.tif",
+      "relative_path": "raw_202502_Nice_orga0_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_5.tif",
+      "relative_path": "raw_202502_Nice_orga0_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_6.tif",
+      "relative_path": "raw_202502_Nice_orga0_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_7.tif",
+      "relative_path": "raw_202502_Nice_orga0_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_8.tif",
+      "relative_path": "raw_202502_Nice_orga0_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_9.tif",
+      "relative_path": "raw_202502_Nice_orga0_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_10.tif",
+      "relative_path": "raw_202502_Nice_orga0_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_11.tif",
+      "relative_path": "raw_202502_Nice_orga0_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_12.tif",
+      "relative_path": "raw_202502_Nice_orga0_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_13.tif",
+      "relative_path": "raw_202502_Nice_orga0_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_14.tif",
+      "relative_path": "raw_202502_Nice_orga0_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_15.tif",
+      "relative_path": "raw_202502_Nice_orga0_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_16.tif",
+      "relative_path": "raw_202502_Nice_orga0_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_17.tif",
+      "relative_path": "raw_202502_Nice_orga0_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_18.tif",
+      "relative_path": "raw_202502_Nice_orga0_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_19.tif",
+      "relative_path": "raw_202502_Nice_orga0_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_20.tif",
+      "relative_path": "raw_202502_Nice_orga0_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_21.tif",
+      "relative_path": "raw_202502_Nice_orga0_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_22.tif",
+      "relative_path": "raw_202502_Nice_orga0_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_23.tif",
+      "relative_path": "raw_202502_Nice_orga0_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_24.tif",
+      "relative_path": "raw_202502_Nice_orga0_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_25.tif",
+      "relative_path": "raw_202502_Nice_orga0_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_26.tif",
+      "relative_path": "raw_202502_Nice_orga0_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_27.tif",
+      "relative_path": "raw_202502_Nice_orga0_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_28.tif",
+      "relative_path": "raw_202502_Nice_orga0_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_29.tif",
+      "relative_path": "raw_202502_Nice_orga0_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_30.tif",
+      "relative_path": "raw_202502_Nice_orga0_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_31.tif",
+      "relative_path": "raw_202502_Nice_orga0_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._raw_202502_Nice_orga0_31.tif",
+      "relative_path": "._raw_202502_Nice_orga0_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/._raw_202502_Nice_orga0_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_32.tif",
+      "relative_path": "raw_202502_Nice_orga0_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_33.tif",
+      "relative_path": "raw_202502_Nice_orga0_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_34.tif",
+      "relative_path": "raw_202502_Nice_orga0_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_35.tif",
+      "relative_path": "raw_202502_Nice_orga0_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_36.tif",
+      "relative_path": "raw_202502_Nice_orga0_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_37.tif",
+      "relative_path": "raw_202502_Nice_orga0_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_38.tif",
+      "relative_path": "raw_202502_Nice_orga0_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_39.tif",
+      "relative_path": "raw_202502_Nice_orga0_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_40.tif",
+      "relative_path": "raw_202502_Nice_orga0_40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_41.tif",
+      "relative_path": "raw_202502_Nice_orga0_41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_42.tif",
+      "relative_path": "raw_202502_Nice_orga0_42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_0.tif",
+      "relative_path": "raw_202502_Nice_orga1_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_1.tif",
+      "relative_path": "raw_202502_Nice_orga1_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_2.tif",
+      "relative_path": "raw_202502_Nice_orga1_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_3.tif",
+      "relative_path": "raw_202502_Nice_orga1_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_4.tif",
+      "relative_path": "raw_202502_Nice_orga1_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_5.tif",
+      "relative_path": "raw_202502_Nice_orga1_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_6.tif",
+      "relative_path": "raw_202502_Nice_orga1_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_7.tif",
+      "relative_path": "raw_202502_Nice_orga1_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_8.tif",
+      "relative_path": "raw_202502_Nice_orga1_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_9.tif",
+      "relative_path": "raw_202502_Nice_orga1_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_10.tif",
+      "relative_path": "raw_202502_Nice_orga1_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_11.tif",
+      "relative_path": "raw_202502_Nice_orga1_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_12.tif",
+      "relative_path": "raw_202502_Nice_orga1_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_13.tif",
+      "relative_path": "raw_202502_Nice_orga1_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_14.tif",
+      "relative_path": "raw_202502_Nice_orga1_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_15.tif",
+      "relative_path": "raw_202502_Nice_orga1_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_16.tif",
+      "relative_path": "raw_202502_Nice_orga1_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_17.tif",
+      "relative_path": "raw_202502_Nice_orga1_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_18.tif",
+      "relative_path": "raw_202502_Nice_orga1_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_19.tif",
+      "relative_path": "raw_202502_Nice_orga1_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_20.tif",
+      "relative_path": "raw_202502_Nice_orga1_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_21.tif",
+      "relative_path": "raw_202502_Nice_orga1_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_22.tif",
+      "relative_path": "raw_202502_Nice_orga1_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_23.tif",
+      "relative_path": "raw_202502_Nice_orga1_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_24.tif",
+      "relative_path": "raw_202502_Nice_orga1_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_25.tif",
+      "relative_path": "raw_202502_Nice_orga1_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_26.tif",
+      "relative_path": "raw_202502_Nice_orga1_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_27.tif",
+      "relative_path": "raw_202502_Nice_orga1_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_28.tif",
+      "relative_path": "raw_202502_Nice_orga1_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_29.tif",
+      "relative_path": "raw_202502_Nice_orga1_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_30.tif",
+      "relative_path": "raw_202502_Nice_orga1_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_31.tif",
+      "relative_path": "raw_202502_Nice_orga1_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_32.tif",
+      "relative_path": "raw_202502_Nice_orga1_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_33.tif",
+      "relative_path": "raw_202502_Nice_orga1_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_34.tif",
+      "relative_path": "raw_202502_Nice_orga1_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_35.tif",
+      "relative_path": "raw_202502_Nice_orga1_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_36.tif",
+      "relative_path": "raw_202502_Nice_orga1_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_37.tif",
+      "relative_path": "raw_202502_Nice_orga1_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_38.tif",
+      "relative_path": "raw_202502_Nice_orga1_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_39.tif",
+      "relative_path": "raw_202502_Nice_orga1_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_40.tif",
+      "relative_path": "raw_202502_Nice_orga1_40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_41.tif",
+      "relative_path": "raw_202502_Nice_orga1_41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_42.tif",
+      "relative_path": "raw_202502_Nice_orga1_42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_43.tif",
+      "relative_path": "raw_202502_Nice_orga1_43.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_43.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_44.tif",
+      "relative_path": "raw_202502_Nice_orga1_44.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_44.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_45.tif",
+      "relative_path": "raw_202502_Nice_orga1_45.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_45.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_46.tif",
+      "relative_path": "raw_202502_Nice_orga1_46.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_46.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_47.tif",
+      "relative_path": "raw_202502_Nice_orga1_47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_48.tif",
+      "relative_path": "raw_202502_Nice_orga1_48.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_48.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_49.tif",
+      "relative_path": "raw_202502_Nice_orga1_49.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_49.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_50.tif",
+      "relative_path": "raw_202502_Nice_orga1_50.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_50.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_51.tif",
+      "relative_path": "raw_202502_Nice_orga1_51.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_51.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_52.tif",
+      "relative_path": "raw_202502_Nice_orga1_52.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_52.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_53.tif",
+      "relative_path": "raw_202502_Nice_orga1_53.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_53.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_54.tif",
+      "relative_path": "raw_202502_Nice_orga1_54.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_54.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_55.tif",
+      "relative_path": "raw_202502_Nice_orga1_55.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_55.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_56.tif",
+      "relative_path": "raw_202502_Nice_orga1_56.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_56.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_57.tif",
+      "relative_path": "raw_202502_Nice_orga1_57.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_57.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_58.tif",
+      "relative_path": "raw_202502_Nice_orga1_58.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_58.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_59.tif",
+      "relative_path": "raw_202502_Nice_orga1_59.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_59.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_60.tif",
+      "relative_path": "raw_202502_Nice_orga1_60.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_60.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_61.tif",
+      "relative_path": "raw_202502_Nice_orga1_61.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_61.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_62.tif",
+      "relative_path": "raw_202502_Nice_orga1_62.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_62.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_63.tif",
+      "relative_path": "raw_202502_Nice_orga1_63.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_63.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_64.tif",
+      "relative_path": "raw_202502_Nice_orga1_64.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_64.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_65.tif",
+      "relative_path": "raw_202502_Nice_orga1_65.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_65.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_66.tif",
+      "relative_path": "raw_202502_Nice_orga1_66.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_66.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_0.tif",
+      "relative_path": "raw_202502_Nice_orga2_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_1.tif",
+      "relative_path": "raw_202502_Nice_orga2_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_2.tif",
+      "relative_path": "raw_202502_Nice_orga2_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_3.tif",
+      "relative_path": "raw_202502_Nice_orga2_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_4.tif",
+      "relative_path": "raw_202502_Nice_orga2_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_5.tif",
+      "relative_path": "raw_202502_Nice_orga2_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_6.tif",
+      "relative_path": "raw_202502_Nice_orga2_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_7.tif",
+      "relative_path": "raw_202502_Nice_orga2_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_8.tif",
+      "relative_path": "raw_202502_Nice_orga2_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_9.tif",
+      "relative_path": "raw_202502_Nice_orga2_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_10.tif",
+      "relative_path": "raw_202502_Nice_orga2_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_11.tif",
+      "relative_path": "raw_202502_Nice_orga2_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_12.tif",
+      "relative_path": "raw_202502_Nice_orga2_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_13.tif",
+      "relative_path": "raw_202502_Nice_orga2_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_14.tif",
+      "relative_path": "raw_202502_Nice_orga2_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_15.tif",
+      "relative_path": "raw_202502_Nice_orga2_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_16.tif",
+      "relative_path": "raw_202502_Nice_orga2_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_17.tif",
+      "relative_path": "raw_202502_Nice_orga2_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_18.tif",
+      "relative_path": "raw_202502_Nice_orga2_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_19.tif",
+      "relative_path": "raw_202502_Nice_orga2_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_20.tif",
+      "relative_path": "raw_202502_Nice_orga2_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_21.tif",
+      "relative_path": "raw_202502_Nice_orga2_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_22.tif",
+      "relative_path": "raw_202502_Nice_orga2_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_23.tif",
+      "relative_path": "raw_202502_Nice_orga2_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_24.tif",
+      "relative_path": "raw_202502_Nice_orga2_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_25.tif",
+      "relative_path": "raw_202502_Nice_orga2_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_26.tif",
+      "relative_path": "raw_202502_Nice_orga2_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_27.tif",
+      "relative_path": "raw_202502_Nice_orga2_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_28.tif",
+      "relative_path": "raw_202502_Nice_orga2_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_29.tif",
+      "relative_path": "raw_202502_Nice_orga2_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_30.tif",
+      "relative_path": "raw_202502_Nice_orga2_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_31.tif",
+      "relative_path": "raw_202502_Nice_orga2_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_32.tif",
+      "relative_path": "raw_202502_Nice_orga2_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_33.tif",
+      "relative_path": "raw_202502_Nice_orga2_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_34.tif",
+      "relative_path": "raw_202502_Nice_orga2_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_35.tif",
+      "relative_path": "raw_202502_Nice_orga2_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_36.tif",
+      "relative_path": "raw_202502_Nice_orga2_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_37.tif",
+      "relative_path": "raw_202502_Nice_orga2_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_38.tif",
+      "relative_path": "raw_202502_Nice_orga2_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_39.tif",
+      "relative_path": "raw_202502_Nice_orga2_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_40.tif",
+      "relative_path": "raw_202502_Nice_orga2_40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_41.tif",
+      "relative_path": "raw_202502_Nice_orga2_41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_42.tif",
+      "relative_path": "raw_202502_Nice_orga2_42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_43.tif",
+      "relative_path": "raw_202502_Nice_orga2_43.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_43.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_44.tif",
+      "relative_path": "raw_202502_Nice_orga2_44.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_44.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_45.tif",
+      "relative_path": "raw_202502_Nice_orga2_45.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_45.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_46.tif",
+      "relative_path": "raw_202502_Nice_orga2_46.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_46.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_47.tif",
+      "relative_path": "raw_202502_Nice_orga2_47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_48.tif",
+      "relative_path": "raw_202502_Nice_orga2_48.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_48.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_49.tif",
+      "relative_path": "raw_202502_Nice_orga2_49.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_49.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_50.tif",
+      "relative_path": "raw_202502_Nice_orga2_50.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_50.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_51.tif",
+      "relative_path": "raw_202502_Nice_orga2_51.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_51.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_52.tif",
+      "relative_path": "raw_202502_Nice_orga2_52.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_52.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_53.tif",
+      "relative_path": "raw_202502_Nice_orga2_53.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_53.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_54.tif",
+      "relative_path": "raw_202502_Nice_orga2_54.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_54.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_55.tif",
+      "relative_path": "raw_202502_Nice_orga2_55.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_55.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_56.tif",
+      "relative_path": "raw_202502_Nice_orga2_56.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_56.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_57.tif",
+      "relative_path": "raw_202502_Nice_orga2_57.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_57.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_58.tif",
+      "relative_path": "raw_202502_Nice_orga2_58.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_58.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_59.tif",
+      "relative_path": "raw_202502_Nice_orga2_59.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_59.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_60.tif",
+      "relative_path": "raw_202502_Nice_orga2_60.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_60.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_0.tif",
+      "relative_path": "raw_202503_Nice_orga0_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_1.tif",
+      "relative_path": "raw_202503_Nice_orga0_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_2.tif",
+      "relative_path": "raw_202503_Nice_orga0_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_3.tif",
+      "relative_path": "raw_202503_Nice_orga0_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_4.tif",
+      "relative_path": "raw_202503_Nice_orga0_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_5.tif",
+      "relative_path": "raw_202503_Nice_orga0_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_6.tif",
+      "relative_path": "raw_202503_Nice_orga0_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_7.tif",
+      "relative_path": "raw_202503_Nice_orga0_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_8.tif",
+      "relative_path": "raw_202503_Nice_orga0_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_9.tif",
+      "relative_path": "raw_202503_Nice_orga0_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_10.tif",
+      "relative_path": "raw_202503_Nice_orga0_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_11.tif",
+      "relative_path": "raw_202503_Nice_orga0_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_12.tif",
+      "relative_path": "raw_202503_Nice_orga0_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_13.tif",
+      "relative_path": "raw_202503_Nice_orga0_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_14.tif",
+      "relative_path": "raw_202503_Nice_orga0_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_15.tif",
+      "relative_path": "raw_202503_Nice_orga0_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_16.tif",
+      "relative_path": "raw_202503_Nice_orga0_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_17.tif",
+      "relative_path": "raw_202503_Nice_orga0_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_18.tif",
+      "relative_path": "raw_202503_Nice_orga0_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_19.tif",
+      "relative_path": "raw_202503_Nice_orga0_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_20.tif",
+      "relative_path": "raw_202503_Nice_orga0_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_21.tif",
+      "relative_path": "raw_202503_Nice_orga0_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_22.tif",
+      "relative_path": "raw_202503_Nice_orga0_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_23.tif",
+      "relative_path": "raw_202503_Nice_orga0_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_24.tif",
+      "relative_path": "raw_202503_Nice_orga0_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_25.tif",
+      "relative_path": "raw_202503_Nice_orga0_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_26.tif",
+      "relative_path": "raw_202503_Nice_orga0_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_27.tif",
+      "relative_path": "raw_202503_Nice_orga0_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_28.tif",
+      "relative_path": "raw_202503_Nice_orga0_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_29.tif",
+      "relative_path": "raw_202503_Nice_orga0_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_30.tif",
+      "relative_path": "raw_202503_Nice_orga0_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_31.tif",
+      "relative_path": "raw_202503_Nice_orga0_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_32.tif",
+      "relative_path": "raw_202503_Nice_orga0_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_33.tif",
+      "relative_path": "raw_202503_Nice_orga0_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_34.tif",
+      "relative_path": "raw_202503_Nice_orga0_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_35.tif",
+      "relative_path": "raw_202503_Nice_orga0_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_36.tif",
+      "relative_path": "raw_202503_Nice_orga0_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_37.tif",
+      "relative_path": "raw_202503_Nice_orga0_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_38.tif",
+      "relative_path": "raw_202503_Nice_orga0_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_39.tif",
+      "relative_path": "raw_202503_Nice_orga0_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_40.tif",
+      "relative_path": "raw_202503_Nice_orga0_40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_41.tif",
+      "relative_path": "raw_202503_Nice_orga0_41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_42.tif",
+      "relative_path": "raw_202503_Nice_orga0_42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_43.tif",
+      "relative_path": "raw_202503_Nice_orga0_43.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_43.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_44.tif",
+      "relative_path": "raw_202503_Nice_orga0_44.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_44.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_45.tif",
+      "relative_path": "raw_202503_Nice_orga0_45.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_45.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_46.tif",
+      "relative_path": "raw_202503_Nice_orga0_46.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_46.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_47.tif",
+      "relative_path": "raw_202503_Nice_orga0_47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._raw_202503_Nice_orga0_47.tif",
+      "relative_path": "._raw_202503_Nice_orga0_47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/._raw_202503_Nice_orga0_47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_48.tif",
+      "relative_path": "raw_202503_Nice_orga0_48.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_48.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_49.tif",
+      "relative_path": "raw_202503_Nice_orga0_49.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_49.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_50.tif",
+      "relative_path": "raw_202503_Nice_orga0_50.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_50.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_51.tif",
+      "relative_path": "raw_202503_Nice_orga0_51.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_51.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_52.tif",
+      "relative_path": "raw_202503_Nice_orga0_52.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_52.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_53.tif",
+      "relative_path": "raw_202503_Nice_orga0_53.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_53.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_54.tif",
+      "relative_path": "raw_202503_Nice_orga0_54.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_54.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_55.tif",
+      "relative_path": "raw_202503_Nice_orga0_55.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_55.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_56.tif",
+      "relative_path": "raw_202503_Nice_orga0_56.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_56.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_57.tif",
+      "relative_path": "raw_202503_Nice_orga0_57.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_57.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_58.tif",
+      "relative_path": "raw_202503_Nice_orga0_58.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_58.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_59.tif",
+      "relative_path": "raw_202503_Nice_orga0_59.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_59.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_60.tif",
+      "relative_path": "raw_202503_Nice_orga0_60.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_60.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_61.tif",
+      "relative_path": "raw_202503_Nice_orga0_61.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_61.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_62.tif",
+      "relative_path": "raw_202503_Nice_orga0_62.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_62.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_63.tif",
+      "relative_path": "raw_202503_Nice_orga0_63.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_63.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_64.tif",
+      "relative_path": "raw_202503_Nice_orga0_64.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_64.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_65.tif",
+      "relative_path": "raw_202503_Nice_orga0_65.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_65.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_66.tif",
+      "relative_path": "raw_202503_Nice_orga0_66.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_66.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_67.tif",
+      "relative_path": "raw_202503_Nice_orga0_67.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_67.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_68.tif",
+      "relative_path": "raw_202503_Nice_orga0_68.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_68.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_69.tif",
+      "relative_path": "raw_202503_Nice_orga0_69.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_69.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_70.tif",
+      "relative_path": "raw_202503_Nice_orga0_70.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_70.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_71.tif",
+      "relative_path": "raw_202503_Nice_orga0_71.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_71.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_72.tif",
+      "relative_path": "raw_202503_Nice_orga0_72.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_72.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_73.tif",
+      "relative_path": "raw_202503_Nice_orga0_73.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_73.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_74.tif",
+      "relative_path": "raw_202503_Nice_orga0_74.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_74.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_75.tif",
+      "relative_path": "raw_202503_Nice_orga0_75.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_75.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_76.tif",
+      "relative_path": "raw_202503_Nice_orga0_76.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_76.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_77.tif",
+      "relative_path": "raw_202503_Nice_orga0_77.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_77.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_78.tif",
+      "relative_path": "raw_202503_Nice_orga0_78.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_78.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_79.tif",
+      "relative_path": "raw_202503_Nice_orga0_79.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_79.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_80.tif",
+      "relative_path": "raw_202503_Nice_orga0_80.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_80.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_81.tif",
+      "relative_path": "raw_202503_Nice_orga0_81.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_81.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_82.tif",
+      "relative_path": "raw_202503_Nice_orga0_82.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_82.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_83.tif",
+      "relative_path": "raw_202503_Nice_orga0_83.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_83.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_84.tif",
+      "relative_path": "raw_202503_Nice_orga0_84.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_84.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_85.tif",
+      "relative_path": "raw_202503_Nice_orga0_85.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_85.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_86.tif",
+      "relative_path": "raw_202503_Nice_orga0_86.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_86.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_87.tif",
+      "relative_path": "raw_202503_Nice_orga0_87.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_87.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_88.tif",
+      "relative_path": "raw_202503_Nice_orga0_88.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_88.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_89.tif",
+      "relative_path": "raw_202503_Nice_orga0_89.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_89.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_90.tif",
+      "relative_path": "raw_202503_Nice_orga0_90.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_90.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_91.tif",
+      "relative_path": "raw_202503_Nice_orga0_91.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_91.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_92.tif",
+      "relative_path": "raw_202503_Nice_orga0_92.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_92.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_93.tif",
+      "relative_path": "raw_202503_Nice_orga0_93.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_93.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_94.tif",
+      "relative_path": "raw_202503_Nice_orga0_94.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_94.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_95.tif",
+      "relative_path": "raw_202503_Nice_orga0_95.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_95.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_96.tif",
+      "relative_path": "raw_202503_Nice_orga0_96.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_96.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_97.tif",
+      "relative_path": "raw_202503_Nice_orga0_97.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_97.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_98.tif",
+      "relative_path": "raw_202503_Nice_orga0_98.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_98.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_99.tif",
+      "relative_path": "raw_202503_Nice_orga0_99.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_99.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_100.tif",
+      "relative_path": "raw_202503_Nice_orga0_100.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_100.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_101.tif",
+      "relative_path": "raw_202503_Nice_orga0_101.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_101.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_102.tif",
+      "relative_path": "raw_202503_Nice_orga0_102.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_102.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_103.tif",
+      "relative_path": "raw_202503_Nice_orga0_103.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_103.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_104.tif",
+      "relative_path": "raw_202503_Nice_orga0_104.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_104.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_105.tif",
+      "relative_path": "raw_202503_Nice_orga0_105.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_105.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_106.tif",
+      "relative_path": "raw_202503_Nice_orga0_106.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_106.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_107.tif",
+      "relative_path": "raw_202503_Nice_orga0_107.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_107.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_108.tif",
+      "relative_path": "raw_202503_Nice_orga0_108.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_108.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_109.tif",
+      "relative_path": "raw_202503_Nice_orga0_109.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_109.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_110.tif",
+      "relative_path": "raw_202503_Nice_orga0_110.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_110.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_111.tif",
+      "relative_path": "raw_202503_Nice_orga0_111.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_111.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_112.tif",
+      "relative_path": "raw_202503_Nice_orga0_112.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_112.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_113.tif",
+      "relative_path": "raw_202503_Nice_orga0_113.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_113.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_114.tif",
+      "relative_path": "raw_202503_Nice_orga0_114.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_114.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_115.tif",
+      "relative_path": "raw_202503_Nice_orga0_115.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_115.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_116.tif",
+      "relative_path": "raw_202503_Nice_orga0_116.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_116.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_117.tif",
+      "relative_path": "raw_202503_Nice_orga0_117.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_117.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_118.tif",
+      "relative_path": "raw_202503_Nice_orga0_118.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_118.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_119.tif",
+      "relative_path": "raw_202503_Nice_orga0_119.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_119.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_120.tif",
+      "relative_path": "raw_202503_Nice_orga0_120.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_120.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_121.tif",
+      "relative_path": "raw_202503_Nice_orga0_121.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_121.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_122.tif",
+      "relative_path": "raw_202503_Nice_orga0_122.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_122.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_123.tif",
+      "relative_path": "raw_202503_Nice_orga0_123.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_123.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_124.tif",
+      "relative_path": "raw_202503_Nice_orga0_124.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_124.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_125.tif",
+      "relative_path": "raw_202503_Nice_orga0_125.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_125.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_126.tif",
+      "relative_path": "raw_202503_Nice_orga0_126.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_126.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_127.tif",
+      "relative_path": "raw_202503_Nice_orga0_127.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_127.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_128.tif",
+      "relative_path": "raw_202503_Nice_orga0_128.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_128.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_129.tif",
+      "relative_path": "raw_202503_Nice_orga0_129.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_129.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_130.tif",
+      "relative_path": "raw_202503_Nice_orga0_130.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_130.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_131.tif",
+      "relative_path": "raw_202503_Nice_orga0_131.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_131.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_132.tif",
+      "relative_path": "raw_202503_Nice_orga0_132.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_132.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_133.tif",
+      "relative_path": "raw_202503_Nice_orga0_133.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_133.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_134.tif",
+      "relative_path": "raw_202503_Nice_orga0_134.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_134.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_135.tif",
+      "relative_path": "raw_202503_Nice_orga0_135.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_135.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_136.tif",
+      "relative_path": "raw_202503_Nice_orga0_136.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_136.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_0.tif",
+      "relative_path": "raw_202503_Nice_orga1_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_1.tif",
+      "relative_path": "raw_202503_Nice_orga1_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_2.tif",
+      "relative_path": "raw_202503_Nice_orga1_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_3.tif",
+      "relative_path": "raw_202503_Nice_orga1_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_4.tif",
+      "relative_path": "raw_202503_Nice_orga1_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_5.tif",
+      "relative_path": "raw_202503_Nice_orga1_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_6.tif",
+      "relative_path": "raw_202503_Nice_orga1_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_7.tif",
+      "relative_path": "raw_202503_Nice_orga1_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_8.tif",
+      "relative_path": "raw_202503_Nice_orga1_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_9.tif",
+      "relative_path": "raw_202503_Nice_orga1_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_10.tif",
+      "relative_path": "raw_202503_Nice_orga1_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_11.tif",
+      "relative_path": "raw_202503_Nice_orga1_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_12.tif",
+      "relative_path": "raw_202503_Nice_orga1_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_13.tif",
+      "relative_path": "raw_202503_Nice_orga1_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._raw_202503_Nice_orga1_13.tif",
+      "relative_path": "._raw_202503_Nice_orga1_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/._raw_202503_Nice_orga1_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_14.tif",
+      "relative_path": "raw_202503_Nice_orga1_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_15.tif",
+      "relative_path": "raw_202503_Nice_orga1_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_16.tif",
+      "relative_path": "raw_202503_Nice_orga1_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_17.tif",
+      "relative_path": "raw_202503_Nice_orga1_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_18.tif",
+      "relative_path": "raw_202503_Nice_orga1_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_19.tif",
+      "relative_path": "raw_202503_Nice_orga1_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_20.tif",
+      "relative_path": "raw_202503_Nice_orga1_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_21.tif",
+      "relative_path": "raw_202503_Nice_orga1_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_22.tif",
+      "relative_path": "raw_202503_Nice_orga1_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_23.tif",
+      "relative_path": "raw_202503_Nice_orga1_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_24.tif",
+      "relative_path": "raw_202503_Nice_orga1_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_25.tif",
+      "relative_path": "raw_202503_Nice_orga1_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_26.tif",
+      "relative_path": "raw_202503_Nice_orga1_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_27.tif",
+      "relative_path": "raw_202503_Nice_orga1_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_28.tif",
+      "relative_path": "raw_202503_Nice_orga1_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_29.tif",
+      "relative_path": "raw_202503_Nice_orga1_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_30.tif",
+      "relative_path": "raw_202503_Nice_orga1_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_31.tif",
+      "relative_path": "raw_202503_Nice_orga1_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_32.tif",
+      "relative_path": "raw_202503_Nice_orga1_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_33.tif",
+      "relative_path": "raw_202503_Nice_orga1_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_34.tif",
+      "relative_path": "raw_202503_Nice_orga1_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_35.tif",
+      "relative_path": "raw_202503_Nice_orga1_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_36.tif",
+      "relative_path": "raw_202503_Nice_orga1_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_37.tif",
+      "relative_path": "raw_202503_Nice_orga1_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_38.tif",
+      "relative_path": "raw_202503_Nice_orga1_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_39.tif",
+      "relative_path": "raw_202503_Nice_orga1_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    }
+  ],
+  "files_with_keywords": [
+    {
+      "filename": "raw_202502_Nice_orga0_0.tif",
+      "relative_path": "raw_202502_Nice_orga0_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._raw_202502_Nice_orga0_0.tif",
+      "relative_path": "._raw_202502_Nice_orga0_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/._raw_202502_Nice_orga0_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_1.tif",
+      "relative_path": "raw_202502_Nice_orga0_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_2.tif",
+      "relative_path": "raw_202502_Nice_orga0_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_3.tif",
+      "relative_path": "raw_202502_Nice_orga0_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_4.tif",
+      "relative_path": "raw_202502_Nice_orga0_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_5.tif",
+      "relative_path": "raw_202502_Nice_orga0_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_6.tif",
+      "relative_path": "raw_202502_Nice_orga0_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_7.tif",
+      "relative_path": "raw_202502_Nice_orga0_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_8.tif",
+      "relative_path": "raw_202502_Nice_orga0_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_9.tif",
+      "relative_path": "raw_202502_Nice_orga0_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_10.tif",
+      "relative_path": "raw_202502_Nice_orga0_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_11.tif",
+      "relative_path": "raw_202502_Nice_orga0_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_12.tif",
+      "relative_path": "raw_202502_Nice_orga0_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_13.tif",
+      "relative_path": "raw_202502_Nice_orga0_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_14.tif",
+      "relative_path": "raw_202502_Nice_orga0_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_15.tif",
+      "relative_path": "raw_202502_Nice_orga0_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_16.tif",
+      "relative_path": "raw_202502_Nice_orga0_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_17.tif",
+      "relative_path": "raw_202502_Nice_orga0_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_18.tif",
+      "relative_path": "raw_202502_Nice_orga0_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_19.tif",
+      "relative_path": "raw_202502_Nice_orga0_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_20.tif",
+      "relative_path": "raw_202502_Nice_orga0_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_21.tif",
+      "relative_path": "raw_202502_Nice_orga0_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_22.tif",
+      "relative_path": "raw_202502_Nice_orga0_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_23.tif",
+      "relative_path": "raw_202502_Nice_orga0_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_24.tif",
+      "relative_path": "raw_202502_Nice_orga0_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_25.tif",
+      "relative_path": "raw_202502_Nice_orga0_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_26.tif",
+      "relative_path": "raw_202502_Nice_orga0_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_27.tif",
+      "relative_path": "raw_202502_Nice_orga0_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_28.tif",
+      "relative_path": "raw_202502_Nice_orga0_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_29.tif",
+      "relative_path": "raw_202502_Nice_orga0_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_30.tif",
+      "relative_path": "raw_202502_Nice_orga0_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_31.tif",
+      "relative_path": "raw_202502_Nice_orga0_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._raw_202502_Nice_orga0_31.tif",
+      "relative_path": "._raw_202502_Nice_orga0_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/._raw_202502_Nice_orga0_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_32.tif",
+      "relative_path": "raw_202502_Nice_orga0_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_33.tif",
+      "relative_path": "raw_202502_Nice_orga0_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_34.tif",
+      "relative_path": "raw_202502_Nice_orga0_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_35.tif",
+      "relative_path": "raw_202502_Nice_orga0_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_36.tif",
+      "relative_path": "raw_202502_Nice_orga0_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_37.tif",
+      "relative_path": "raw_202502_Nice_orga0_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_38.tif",
+      "relative_path": "raw_202502_Nice_orga0_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_39.tif",
+      "relative_path": "raw_202502_Nice_orga0_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_40.tif",
+      "relative_path": "raw_202502_Nice_orga0_40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_41.tif",
+      "relative_path": "raw_202502_Nice_orga0_41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga0_42.tif",
+      "relative_path": "raw_202502_Nice_orga0_42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga0_42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_0.tif",
+      "relative_path": "raw_202502_Nice_orga1_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_1.tif",
+      "relative_path": "raw_202502_Nice_orga1_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_2.tif",
+      "relative_path": "raw_202502_Nice_orga1_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_3.tif",
+      "relative_path": "raw_202502_Nice_orga1_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_4.tif",
+      "relative_path": "raw_202502_Nice_orga1_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_5.tif",
+      "relative_path": "raw_202502_Nice_orga1_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_6.tif",
+      "relative_path": "raw_202502_Nice_orga1_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_7.tif",
+      "relative_path": "raw_202502_Nice_orga1_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_8.tif",
+      "relative_path": "raw_202502_Nice_orga1_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_9.tif",
+      "relative_path": "raw_202502_Nice_orga1_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_10.tif",
+      "relative_path": "raw_202502_Nice_orga1_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_11.tif",
+      "relative_path": "raw_202502_Nice_orga1_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_12.tif",
+      "relative_path": "raw_202502_Nice_orga1_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_13.tif",
+      "relative_path": "raw_202502_Nice_orga1_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_14.tif",
+      "relative_path": "raw_202502_Nice_orga1_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_15.tif",
+      "relative_path": "raw_202502_Nice_orga1_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_16.tif",
+      "relative_path": "raw_202502_Nice_orga1_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_17.tif",
+      "relative_path": "raw_202502_Nice_orga1_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_18.tif",
+      "relative_path": "raw_202502_Nice_orga1_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_19.tif",
+      "relative_path": "raw_202502_Nice_orga1_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_20.tif",
+      "relative_path": "raw_202502_Nice_orga1_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_21.tif",
+      "relative_path": "raw_202502_Nice_orga1_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_22.tif",
+      "relative_path": "raw_202502_Nice_orga1_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_23.tif",
+      "relative_path": "raw_202502_Nice_orga1_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_24.tif",
+      "relative_path": "raw_202502_Nice_orga1_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_25.tif",
+      "relative_path": "raw_202502_Nice_orga1_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_26.tif",
+      "relative_path": "raw_202502_Nice_orga1_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_27.tif",
+      "relative_path": "raw_202502_Nice_orga1_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_28.tif",
+      "relative_path": "raw_202502_Nice_orga1_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_29.tif",
+      "relative_path": "raw_202502_Nice_orga1_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_30.tif",
+      "relative_path": "raw_202502_Nice_orga1_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_31.tif",
+      "relative_path": "raw_202502_Nice_orga1_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_32.tif",
+      "relative_path": "raw_202502_Nice_orga1_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_33.tif",
+      "relative_path": "raw_202502_Nice_orga1_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_34.tif",
+      "relative_path": "raw_202502_Nice_orga1_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_35.tif",
+      "relative_path": "raw_202502_Nice_orga1_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_36.tif",
+      "relative_path": "raw_202502_Nice_orga1_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_37.tif",
+      "relative_path": "raw_202502_Nice_orga1_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_38.tif",
+      "relative_path": "raw_202502_Nice_orga1_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_39.tif",
+      "relative_path": "raw_202502_Nice_orga1_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_40.tif",
+      "relative_path": "raw_202502_Nice_orga1_40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_41.tif",
+      "relative_path": "raw_202502_Nice_orga1_41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_42.tif",
+      "relative_path": "raw_202502_Nice_orga1_42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_43.tif",
+      "relative_path": "raw_202502_Nice_orga1_43.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_43.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_44.tif",
+      "relative_path": "raw_202502_Nice_orga1_44.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_44.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_45.tif",
+      "relative_path": "raw_202502_Nice_orga1_45.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_45.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_46.tif",
+      "relative_path": "raw_202502_Nice_orga1_46.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_46.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_47.tif",
+      "relative_path": "raw_202502_Nice_orga1_47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_48.tif",
+      "relative_path": "raw_202502_Nice_orga1_48.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_48.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_49.tif",
+      "relative_path": "raw_202502_Nice_orga1_49.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_49.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_50.tif",
+      "relative_path": "raw_202502_Nice_orga1_50.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_50.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_51.tif",
+      "relative_path": "raw_202502_Nice_orga1_51.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_51.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_52.tif",
+      "relative_path": "raw_202502_Nice_orga1_52.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_52.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_53.tif",
+      "relative_path": "raw_202502_Nice_orga1_53.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_53.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_54.tif",
+      "relative_path": "raw_202502_Nice_orga1_54.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_54.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_55.tif",
+      "relative_path": "raw_202502_Nice_orga1_55.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_55.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_56.tif",
+      "relative_path": "raw_202502_Nice_orga1_56.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_56.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_57.tif",
+      "relative_path": "raw_202502_Nice_orga1_57.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_57.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_58.tif",
+      "relative_path": "raw_202502_Nice_orga1_58.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_58.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_59.tif",
+      "relative_path": "raw_202502_Nice_orga1_59.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_59.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_60.tif",
+      "relative_path": "raw_202502_Nice_orga1_60.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_60.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_61.tif",
+      "relative_path": "raw_202502_Nice_orga1_61.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_61.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_62.tif",
+      "relative_path": "raw_202502_Nice_orga1_62.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_62.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_63.tif",
+      "relative_path": "raw_202502_Nice_orga1_63.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_63.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_64.tif",
+      "relative_path": "raw_202502_Nice_orga1_64.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_64.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_65.tif",
+      "relative_path": "raw_202502_Nice_orga1_65.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_65.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga1_66.tif",
+      "relative_path": "raw_202502_Nice_orga1_66.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga1_66.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_0.tif",
+      "relative_path": "raw_202502_Nice_orga2_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_1.tif",
+      "relative_path": "raw_202502_Nice_orga2_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_2.tif",
+      "relative_path": "raw_202502_Nice_orga2_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_3.tif",
+      "relative_path": "raw_202502_Nice_orga2_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_4.tif",
+      "relative_path": "raw_202502_Nice_orga2_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_5.tif",
+      "relative_path": "raw_202502_Nice_orga2_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_6.tif",
+      "relative_path": "raw_202502_Nice_orga2_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_7.tif",
+      "relative_path": "raw_202502_Nice_orga2_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_8.tif",
+      "relative_path": "raw_202502_Nice_orga2_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_9.tif",
+      "relative_path": "raw_202502_Nice_orga2_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_10.tif",
+      "relative_path": "raw_202502_Nice_orga2_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_11.tif",
+      "relative_path": "raw_202502_Nice_orga2_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_12.tif",
+      "relative_path": "raw_202502_Nice_orga2_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_13.tif",
+      "relative_path": "raw_202502_Nice_orga2_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_14.tif",
+      "relative_path": "raw_202502_Nice_orga2_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_15.tif",
+      "relative_path": "raw_202502_Nice_orga2_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_16.tif",
+      "relative_path": "raw_202502_Nice_orga2_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_17.tif",
+      "relative_path": "raw_202502_Nice_orga2_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_18.tif",
+      "relative_path": "raw_202502_Nice_orga2_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_19.tif",
+      "relative_path": "raw_202502_Nice_orga2_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_20.tif",
+      "relative_path": "raw_202502_Nice_orga2_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_21.tif",
+      "relative_path": "raw_202502_Nice_orga2_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_22.tif",
+      "relative_path": "raw_202502_Nice_orga2_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_23.tif",
+      "relative_path": "raw_202502_Nice_orga2_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_24.tif",
+      "relative_path": "raw_202502_Nice_orga2_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_25.tif",
+      "relative_path": "raw_202502_Nice_orga2_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_26.tif",
+      "relative_path": "raw_202502_Nice_orga2_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_27.tif",
+      "relative_path": "raw_202502_Nice_orga2_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_28.tif",
+      "relative_path": "raw_202502_Nice_orga2_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_29.tif",
+      "relative_path": "raw_202502_Nice_orga2_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_30.tif",
+      "relative_path": "raw_202502_Nice_orga2_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_31.tif",
+      "relative_path": "raw_202502_Nice_orga2_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_32.tif",
+      "relative_path": "raw_202502_Nice_orga2_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_33.tif",
+      "relative_path": "raw_202502_Nice_orga2_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_34.tif",
+      "relative_path": "raw_202502_Nice_orga2_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_35.tif",
+      "relative_path": "raw_202502_Nice_orga2_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_36.tif",
+      "relative_path": "raw_202502_Nice_orga2_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_37.tif",
+      "relative_path": "raw_202502_Nice_orga2_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_38.tif",
+      "relative_path": "raw_202502_Nice_orga2_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_39.tif",
+      "relative_path": "raw_202502_Nice_orga2_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_40.tif",
+      "relative_path": "raw_202502_Nice_orga2_40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_41.tif",
+      "relative_path": "raw_202502_Nice_orga2_41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_42.tif",
+      "relative_path": "raw_202502_Nice_orga2_42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_43.tif",
+      "relative_path": "raw_202502_Nice_orga2_43.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_43.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_44.tif",
+      "relative_path": "raw_202502_Nice_orga2_44.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_44.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_45.tif",
+      "relative_path": "raw_202502_Nice_orga2_45.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_45.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_46.tif",
+      "relative_path": "raw_202502_Nice_orga2_46.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_46.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_47.tif",
+      "relative_path": "raw_202502_Nice_orga2_47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_48.tif",
+      "relative_path": "raw_202502_Nice_orga2_48.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_48.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_49.tif",
+      "relative_path": "raw_202502_Nice_orga2_49.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_49.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_50.tif",
+      "relative_path": "raw_202502_Nice_orga2_50.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_50.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_51.tif",
+      "relative_path": "raw_202502_Nice_orga2_51.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_51.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_52.tif",
+      "relative_path": "raw_202502_Nice_orga2_52.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_52.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_53.tif",
+      "relative_path": "raw_202502_Nice_orga2_53.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_53.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_54.tif",
+      "relative_path": "raw_202502_Nice_orga2_54.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_54.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_55.tif",
+      "relative_path": "raw_202502_Nice_orga2_55.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_55.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_56.tif",
+      "relative_path": "raw_202502_Nice_orga2_56.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_56.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_57.tif",
+      "relative_path": "raw_202502_Nice_orga2_57.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_57.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_58.tif",
+      "relative_path": "raw_202502_Nice_orga2_58.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_58.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_59.tif",
+      "relative_path": "raw_202502_Nice_orga2_59.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_59.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202502_Nice_orga2_60.tif",
+      "relative_path": "raw_202502_Nice_orga2_60.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202502_Nice_orga2_60.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_0.tif",
+      "relative_path": "raw_202503_Nice_orga0_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_1.tif",
+      "relative_path": "raw_202503_Nice_orga0_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_2.tif",
+      "relative_path": "raw_202503_Nice_orga0_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_3.tif",
+      "relative_path": "raw_202503_Nice_orga0_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_4.tif",
+      "relative_path": "raw_202503_Nice_orga0_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_5.tif",
+      "relative_path": "raw_202503_Nice_orga0_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_6.tif",
+      "relative_path": "raw_202503_Nice_orga0_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_7.tif",
+      "relative_path": "raw_202503_Nice_orga0_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_8.tif",
+      "relative_path": "raw_202503_Nice_orga0_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_9.tif",
+      "relative_path": "raw_202503_Nice_orga0_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_10.tif",
+      "relative_path": "raw_202503_Nice_orga0_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_11.tif",
+      "relative_path": "raw_202503_Nice_orga0_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_12.tif",
+      "relative_path": "raw_202503_Nice_orga0_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_13.tif",
+      "relative_path": "raw_202503_Nice_orga0_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_14.tif",
+      "relative_path": "raw_202503_Nice_orga0_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_15.tif",
+      "relative_path": "raw_202503_Nice_orga0_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_16.tif",
+      "relative_path": "raw_202503_Nice_orga0_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_17.tif",
+      "relative_path": "raw_202503_Nice_orga0_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_18.tif",
+      "relative_path": "raw_202503_Nice_orga0_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_19.tif",
+      "relative_path": "raw_202503_Nice_orga0_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_20.tif",
+      "relative_path": "raw_202503_Nice_orga0_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_21.tif",
+      "relative_path": "raw_202503_Nice_orga0_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_22.tif",
+      "relative_path": "raw_202503_Nice_orga0_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_23.tif",
+      "relative_path": "raw_202503_Nice_orga0_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_24.tif",
+      "relative_path": "raw_202503_Nice_orga0_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_25.tif",
+      "relative_path": "raw_202503_Nice_orga0_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_26.tif",
+      "relative_path": "raw_202503_Nice_orga0_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_27.tif",
+      "relative_path": "raw_202503_Nice_orga0_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_28.tif",
+      "relative_path": "raw_202503_Nice_orga0_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_29.tif",
+      "relative_path": "raw_202503_Nice_orga0_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_30.tif",
+      "relative_path": "raw_202503_Nice_orga0_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_31.tif",
+      "relative_path": "raw_202503_Nice_orga0_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_32.tif",
+      "relative_path": "raw_202503_Nice_orga0_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_33.tif",
+      "relative_path": "raw_202503_Nice_orga0_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_34.tif",
+      "relative_path": "raw_202503_Nice_orga0_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_35.tif",
+      "relative_path": "raw_202503_Nice_orga0_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_36.tif",
+      "relative_path": "raw_202503_Nice_orga0_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_37.tif",
+      "relative_path": "raw_202503_Nice_orga0_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_38.tif",
+      "relative_path": "raw_202503_Nice_orga0_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_39.tif",
+      "relative_path": "raw_202503_Nice_orga0_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_40.tif",
+      "relative_path": "raw_202503_Nice_orga0_40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_41.tif",
+      "relative_path": "raw_202503_Nice_orga0_41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_42.tif",
+      "relative_path": "raw_202503_Nice_orga0_42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_43.tif",
+      "relative_path": "raw_202503_Nice_orga0_43.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_43.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_44.tif",
+      "relative_path": "raw_202503_Nice_orga0_44.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_44.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_45.tif",
+      "relative_path": "raw_202503_Nice_orga0_45.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_45.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_46.tif",
+      "relative_path": "raw_202503_Nice_orga0_46.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_46.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_47.tif",
+      "relative_path": "raw_202503_Nice_orga0_47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._raw_202503_Nice_orga0_47.tif",
+      "relative_path": "._raw_202503_Nice_orga0_47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/._raw_202503_Nice_orga0_47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_48.tif",
+      "relative_path": "raw_202503_Nice_orga0_48.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_48.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_49.tif",
+      "relative_path": "raw_202503_Nice_orga0_49.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_49.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_50.tif",
+      "relative_path": "raw_202503_Nice_orga0_50.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_50.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_51.tif",
+      "relative_path": "raw_202503_Nice_orga0_51.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_51.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_52.tif",
+      "relative_path": "raw_202503_Nice_orga0_52.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_52.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_53.tif",
+      "relative_path": "raw_202503_Nice_orga0_53.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_53.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_54.tif",
+      "relative_path": "raw_202503_Nice_orga0_54.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_54.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_55.tif",
+      "relative_path": "raw_202503_Nice_orga0_55.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_55.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_56.tif",
+      "relative_path": "raw_202503_Nice_orga0_56.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_56.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_57.tif",
+      "relative_path": "raw_202503_Nice_orga0_57.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_57.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_58.tif",
+      "relative_path": "raw_202503_Nice_orga0_58.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_58.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_59.tif",
+      "relative_path": "raw_202503_Nice_orga0_59.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_59.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_60.tif",
+      "relative_path": "raw_202503_Nice_orga0_60.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_60.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_61.tif",
+      "relative_path": "raw_202503_Nice_orga0_61.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_61.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_62.tif",
+      "relative_path": "raw_202503_Nice_orga0_62.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_62.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_63.tif",
+      "relative_path": "raw_202503_Nice_orga0_63.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_63.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_64.tif",
+      "relative_path": "raw_202503_Nice_orga0_64.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_64.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_65.tif",
+      "relative_path": "raw_202503_Nice_orga0_65.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_65.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_66.tif",
+      "relative_path": "raw_202503_Nice_orga0_66.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_66.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_67.tif",
+      "relative_path": "raw_202503_Nice_orga0_67.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_67.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_68.tif",
+      "relative_path": "raw_202503_Nice_orga0_68.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_68.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_69.tif",
+      "relative_path": "raw_202503_Nice_orga0_69.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_69.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_70.tif",
+      "relative_path": "raw_202503_Nice_orga0_70.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_70.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_71.tif",
+      "relative_path": "raw_202503_Nice_orga0_71.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_71.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_72.tif",
+      "relative_path": "raw_202503_Nice_orga0_72.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_72.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_73.tif",
+      "relative_path": "raw_202503_Nice_orga0_73.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_73.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_74.tif",
+      "relative_path": "raw_202503_Nice_orga0_74.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_74.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_75.tif",
+      "relative_path": "raw_202503_Nice_orga0_75.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_75.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_76.tif",
+      "relative_path": "raw_202503_Nice_orga0_76.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_76.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_77.tif",
+      "relative_path": "raw_202503_Nice_orga0_77.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_77.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_78.tif",
+      "relative_path": "raw_202503_Nice_orga0_78.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_78.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_79.tif",
+      "relative_path": "raw_202503_Nice_orga0_79.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_79.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_80.tif",
+      "relative_path": "raw_202503_Nice_orga0_80.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_80.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_81.tif",
+      "relative_path": "raw_202503_Nice_orga0_81.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_81.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_82.tif",
+      "relative_path": "raw_202503_Nice_orga0_82.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_82.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_83.tif",
+      "relative_path": "raw_202503_Nice_orga0_83.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_83.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_84.tif",
+      "relative_path": "raw_202503_Nice_orga0_84.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_84.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_85.tif",
+      "relative_path": "raw_202503_Nice_orga0_85.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_85.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_86.tif",
+      "relative_path": "raw_202503_Nice_orga0_86.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_86.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_87.tif",
+      "relative_path": "raw_202503_Nice_orga0_87.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_87.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_88.tif",
+      "relative_path": "raw_202503_Nice_orga0_88.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_88.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_89.tif",
+      "relative_path": "raw_202503_Nice_orga0_89.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_89.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_90.tif",
+      "relative_path": "raw_202503_Nice_orga0_90.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_90.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_91.tif",
+      "relative_path": "raw_202503_Nice_orga0_91.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_91.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_92.tif",
+      "relative_path": "raw_202503_Nice_orga0_92.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_92.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_93.tif",
+      "relative_path": "raw_202503_Nice_orga0_93.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_93.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_94.tif",
+      "relative_path": "raw_202503_Nice_orga0_94.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_94.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_95.tif",
+      "relative_path": "raw_202503_Nice_orga0_95.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_95.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_96.tif",
+      "relative_path": "raw_202503_Nice_orga0_96.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_96.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_97.tif",
+      "relative_path": "raw_202503_Nice_orga0_97.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_97.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_98.tif",
+      "relative_path": "raw_202503_Nice_orga0_98.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_98.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_99.tif",
+      "relative_path": "raw_202503_Nice_orga0_99.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_99.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_100.tif",
+      "relative_path": "raw_202503_Nice_orga0_100.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_100.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_101.tif",
+      "relative_path": "raw_202503_Nice_orga0_101.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_101.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_102.tif",
+      "relative_path": "raw_202503_Nice_orga0_102.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_102.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_103.tif",
+      "relative_path": "raw_202503_Nice_orga0_103.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_103.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_104.tif",
+      "relative_path": "raw_202503_Nice_orga0_104.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_104.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_105.tif",
+      "relative_path": "raw_202503_Nice_orga0_105.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_105.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_106.tif",
+      "relative_path": "raw_202503_Nice_orga0_106.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_106.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_107.tif",
+      "relative_path": "raw_202503_Nice_orga0_107.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_107.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_108.tif",
+      "relative_path": "raw_202503_Nice_orga0_108.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_108.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_109.tif",
+      "relative_path": "raw_202503_Nice_orga0_109.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_109.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_110.tif",
+      "relative_path": "raw_202503_Nice_orga0_110.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_110.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_111.tif",
+      "relative_path": "raw_202503_Nice_orga0_111.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_111.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_112.tif",
+      "relative_path": "raw_202503_Nice_orga0_112.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_112.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_113.tif",
+      "relative_path": "raw_202503_Nice_orga0_113.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_113.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_114.tif",
+      "relative_path": "raw_202503_Nice_orga0_114.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_114.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_115.tif",
+      "relative_path": "raw_202503_Nice_orga0_115.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_115.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_116.tif",
+      "relative_path": "raw_202503_Nice_orga0_116.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_116.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_117.tif",
+      "relative_path": "raw_202503_Nice_orga0_117.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_117.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_118.tif",
+      "relative_path": "raw_202503_Nice_orga0_118.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_118.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_119.tif",
+      "relative_path": "raw_202503_Nice_orga0_119.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_119.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_120.tif",
+      "relative_path": "raw_202503_Nice_orga0_120.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_120.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_121.tif",
+      "relative_path": "raw_202503_Nice_orga0_121.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_121.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_122.tif",
+      "relative_path": "raw_202503_Nice_orga0_122.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_122.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_123.tif",
+      "relative_path": "raw_202503_Nice_orga0_123.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_123.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_124.tif",
+      "relative_path": "raw_202503_Nice_orga0_124.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_124.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_125.tif",
+      "relative_path": "raw_202503_Nice_orga0_125.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_125.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_126.tif",
+      "relative_path": "raw_202503_Nice_orga0_126.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_126.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_127.tif",
+      "relative_path": "raw_202503_Nice_orga0_127.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_127.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_128.tif",
+      "relative_path": "raw_202503_Nice_orga0_128.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_128.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_129.tif",
+      "relative_path": "raw_202503_Nice_orga0_129.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_129.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_130.tif",
+      "relative_path": "raw_202503_Nice_orga0_130.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_130.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_131.tif",
+      "relative_path": "raw_202503_Nice_orga0_131.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_131.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_132.tif",
+      "relative_path": "raw_202503_Nice_orga0_132.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_132.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_133.tif",
+      "relative_path": "raw_202503_Nice_orga0_133.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_133.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_134.tif",
+      "relative_path": "raw_202503_Nice_orga0_134.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_134.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_135.tif",
+      "relative_path": "raw_202503_Nice_orga0_135.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_135.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga0_136.tif",
+      "relative_path": "raw_202503_Nice_orga0_136.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga0_136.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_0.tif",
+      "relative_path": "raw_202503_Nice_orga1_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_1.tif",
+      "relative_path": "raw_202503_Nice_orga1_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_2.tif",
+      "relative_path": "raw_202503_Nice_orga1_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_3.tif",
+      "relative_path": "raw_202503_Nice_orga1_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_4.tif",
+      "relative_path": "raw_202503_Nice_orga1_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_5.tif",
+      "relative_path": "raw_202503_Nice_orga1_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_6.tif",
+      "relative_path": "raw_202503_Nice_orga1_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_7.tif",
+      "relative_path": "raw_202503_Nice_orga1_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_8.tif",
+      "relative_path": "raw_202503_Nice_orga1_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_9.tif",
+      "relative_path": "raw_202503_Nice_orga1_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_10.tif",
+      "relative_path": "raw_202503_Nice_orga1_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_11.tif",
+      "relative_path": "raw_202503_Nice_orga1_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_12.tif",
+      "relative_path": "raw_202503_Nice_orga1_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_13.tif",
+      "relative_path": "raw_202503_Nice_orga1_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._raw_202503_Nice_orga1_13.tif",
+      "relative_path": "._raw_202503_Nice_orga1_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/._raw_202503_Nice_orga1_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_14.tif",
+      "relative_path": "raw_202503_Nice_orga1_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_15.tif",
+      "relative_path": "raw_202503_Nice_orga1_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_16.tif",
+      "relative_path": "raw_202503_Nice_orga1_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_17.tif",
+      "relative_path": "raw_202503_Nice_orga1_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_18.tif",
+      "relative_path": "raw_202503_Nice_orga1_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_19.tif",
+      "relative_path": "raw_202503_Nice_orga1_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_20.tif",
+      "relative_path": "raw_202503_Nice_orga1_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_21.tif",
+      "relative_path": "raw_202503_Nice_orga1_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_22.tif",
+      "relative_path": "raw_202503_Nice_orga1_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_23.tif",
+      "relative_path": "raw_202503_Nice_orga1_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_24.tif",
+      "relative_path": "raw_202503_Nice_orga1_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_25.tif",
+      "relative_path": "raw_202503_Nice_orga1_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_26.tif",
+      "relative_path": "raw_202503_Nice_orga1_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_27.tif",
+      "relative_path": "raw_202503_Nice_orga1_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_28.tif",
+      "relative_path": "raw_202503_Nice_orga1_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_29.tif",
+      "relative_path": "raw_202503_Nice_orga1_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_30.tif",
+      "relative_path": "raw_202503_Nice_orga1_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_31.tif",
+      "relative_path": "raw_202503_Nice_orga1_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_32.tif",
+      "relative_path": "raw_202503_Nice_orga1_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_33.tif",
+      "relative_path": "raw_202503_Nice_orga1_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_34.tif",
+      "relative_path": "raw_202503_Nice_orga1_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_35.tif",
+      "relative_path": "raw_202503_Nice_orga1_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_36.tif",
+      "relative_path": "raw_202503_Nice_orga1_36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_37.tif",
+      "relative_path": "raw_202503_Nice_orga1_37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_38.tif",
+      "relative_path": "raw_202503_Nice_orga1_38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "raw_202503_Nice_orga1_39.tif",
+      "relative_path": "raw_202503_Nice_orga1_39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Chouxfleurs_raw/raw_202503_Nice_orga1_39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    }
+  ],
+  "analysis_date": "2025-09-17 10:46:10"
+}

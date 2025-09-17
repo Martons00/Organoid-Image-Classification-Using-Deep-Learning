@@ -1,0 +1,3413 @@
+{
+  "keyword_counts": {
+    "Nice": 184,
+    "Paris": 20,
+    "Noyau": 26
+  },
+  "total_files": 210,
+  "files_analyzed": [
+    {
+      "filename": "20231004_Noyau_org4.tif",
+      "relative_path": "20231004_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20231004_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org6.tif",
+      "relative_path": "20231004_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20231004_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_10_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_10_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_10_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_11_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_11_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_11_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_2_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_2_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_2_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_6_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_6_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_6_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_7_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_7_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_7_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_8_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_8_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_8_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_9_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_9_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_9_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_11_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_11_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.06.26_PARIS_Noyau_Org_11_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.06.26_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.07.18_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.07.18_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.24_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.24_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.07.24_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.24_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.24_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.07.24_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.03_PARIS_Noyau_Org_13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.03_PARIS_Noyau_Org_15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.03_PARIS_Noyau_Org_19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.31_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _15_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _15_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.31_PARIS_Noyau_Org _15_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.31_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.31_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240319_Noyau_org1.tif",
+      "relative_path": "20240319_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20240319_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org3.tif",
+      "relative_path": "20240409_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20240409_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org4.tif",
+      "relative_path": "20240409_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20240409_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org9.tif",
+      "relative_path": "20240409_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20240409_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0.tif",
+      "relative_path": "202407_Nice_orga0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_0.tif",
+      "relative_path": "202407_Nice_orga0_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_10.tif",
+      "relative_path": "202407_Nice_orga0_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_12.tif",
+      "relative_path": "202407_Nice_orga0_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_13.tif",
+      "relative_path": "202407_Nice_orga0_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_15.tif",
+      "relative_path": "202407_Nice_orga0_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_16.tif",
+      "relative_path": "202407_Nice_orga0_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_17.tif",
+      "relative_path": "202407_Nice_orga0_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_18.tif",
+      "relative_path": "202407_Nice_orga0_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_21.tif",
+      "relative_path": "202407_Nice_orga0_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_23.tif",
+      "relative_path": "202407_Nice_orga0_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_24.tif",
+      "relative_path": "202407_Nice_orga0_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_25.tif",
+      "relative_path": "202407_Nice_orga0_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_26.tif",
+      "relative_path": "202407_Nice_orga0_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_27.tif",
+      "relative_path": "202407_Nice_orga0_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_28.tif",
+      "relative_path": "202407_Nice_orga0_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_29.tif",
+      "relative_path": "202407_Nice_orga0_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_3.tif",
+      "relative_path": "202407_Nice_orga0_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_31.tif",
+      "relative_path": "202407_Nice_orga0_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_32.tif",
+      "relative_path": "202407_Nice_orga0_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_33.tif",
+      "relative_path": "202407_Nice_orga0_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_35.tif",
+      "relative_path": "202407_Nice_orga0_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_4.tif",
+      "relative_path": "202407_Nice_orga0_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_5.tif",
+      "relative_path": "202407_Nice_orga0_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_6.tif",
+      "relative_path": "202407_Nice_orga0_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_7.tif",
+      "relative_path": "202407_Nice_orga0_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_8.tif",
+      "relative_path": "202407_Nice_orga0_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_9.tif",
+      "relative_path": "202407_Nice_orga0_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga1.tif",
+      "relative_path": "202407_Nice_orga1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_4.tif",
+      "relative_path": "202407_Nice_orga2_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga2_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_5.tif",
+      "relative_path": "202407_Nice_orga2_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga2_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_1.tif",
+      "relative_path": "202407_Nice_orga3_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_15.tif",
+      "relative_path": "202407_Nice_orga3_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_16.tif",
+      "relative_path": "202407_Nice_orga3_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_17.tif",
+      "relative_path": "202407_Nice_orga3_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_2.tif",
+      "relative_path": "202407_Nice_orga3_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_5.tif",
+      "relative_path": "202407_Nice_orga3_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_8.tif",
+      "relative_path": "202407_Nice_orga3_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_9.tif",
+      "relative_path": "202407_Nice_orga3_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_0.tif",
+      "relative_path": "202407_Nice_orga4_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_1.tif",
+      "relative_path": "202407_Nice_orga4_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_10.tif",
+      "relative_path": "202407_Nice_orga4_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_11.tif",
+      "relative_path": "202407_Nice_orga4_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_13.tif",
+      "relative_path": "202407_Nice_orga4_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_14.tif",
+      "relative_path": "202407_Nice_orga4_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_2.tif",
+      "relative_path": "202407_Nice_orga4_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_3.tif",
+      "relative_path": "202407_Nice_orga4_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_4.tif",
+      "relative_path": "202407_Nice_orga4_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_5.tif",
+      "relative_path": "202407_Nice_orga4_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_6.tif",
+      "relative_path": "202407_Nice_orga4_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_7.tif",
+      "relative_path": "202407_Nice_orga4_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_8.tif",
+      "relative_path": "202407_Nice_orga4_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_9.tif",
+      "relative_path": "202407_Nice_orga4_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_0.tif",
+      "relative_path": "202407_Nice_orga5_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org114.tif",
+      "relative_path": "202409_Nice_org114.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org114.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_0.tif",
+      "relative_path": "202407_Nice_orga3_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_19.tif",
+      "relative_path": "202407_Nice_orga3_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_1.tif",
+      "relative_path": "202407_Nice_orga5_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_2.tif",
+      "relative_path": "202407_Nice_orga5_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_3.tif",
+      "relative_path": "202407_Nice_orga5_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_4.tif",
+      "relative_path": "202407_Nice_orga5_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_5.tif",
+      "relative_path": "202407_Nice_orga5_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_6.tif",
+      "relative_path": "202407_Nice_orga5_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_7.tif",
+      "relative_path": "202407_Nice_orga5_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_8.tif",
+      "relative_path": "202407_Nice_orga5_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_9.tif",
+      "relative_path": "202407_Nice_orga5_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_10.tif",
+      "relative_path": "202407_Nice_orga5_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_11.tif",
+      "relative_path": "202407_Nice_orga5_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_12.tif",
+      "relative_path": "202407_Nice_orga5_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_13.tif",
+      "relative_path": "202407_Nice_orga5_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org1.tif",
+      "relative_path": "202409_Nice_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org2.tif",
+      "relative_path": "202409_Nice_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org3.tif",
+      "relative_path": "202409_Nice_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org4.tif",
+      "relative_path": "202409_Nice_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org5.tif",
+      "relative_path": "202409_Nice_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org6.tif",
+      "relative_path": "202409_Nice_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org7.tif",
+      "relative_path": "202409_Nice_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org8.tif",
+      "relative_path": "202409_Nice_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org9.tif",
+      "relative_path": "202409_Nice_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org10.tif",
+      "relative_path": "202409_Nice_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org11.tif",
+      "relative_path": "202409_Nice_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org12.tif",
+      "relative_path": "202409_Nice_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org13.tif",
+      "relative_path": "202409_Nice_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org14.tif",
+      "relative_path": "202409_Nice_org14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org15.tif",
+      "relative_path": "202409_Nice_org15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org16.tif",
+      "relative_path": "202409_Nice_org16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org17.tif",
+      "relative_path": "202409_Nice_org17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org18.tif",
+      "relative_path": "202409_Nice_org18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org19.tif",
+      "relative_path": "202409_Nice_org19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org20.tif",
+      "relative_path": "202409_Nice_org20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org21.tif",
+      "relative_path": "202409_Nice_org21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org22.tif",
+      "relative_path": "202409_Nice_org22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org23.tif",
+      "relative_path": "202409_Nice_org23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org24.tif",
+      "relative_path": "202409_Nice_org24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org25.tif",
+      "relative_path": "202409_Nice_org25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org26.tif",
+      "relative_path": "202409_Nice_org26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org27.tif",
+      "relative_path": "202409_Nice_org27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org28.tif",
+      "relative_path": "202409_Nice_org28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org29.tif",
+      "relative_path": "202409_Nice_org29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org30.tif",
+      "relative_path": "202409_Nice_org30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org31.tif",
+      "relative_path": "202409_Nice_org31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org32.tif",
+      "relative_path": "202409_Nice_org32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org33.tif",
+      "relative_path": "202409_Nice_org33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org34.tif",
+      "relative_path": "202409_Nice_org34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org35.tif",
+      "relative_path": "202409_Nice_org35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org36.tif",
+      "relative_path": "202409_Nice_org36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org37.tif",
+      "relative_path": "202409_Nice_org37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org38.tif",
+      "relative_path": "202409_Nice_org38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org39.tif",
+      "relative_path": "202409_Nice_org39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org40.tif",
+      "relative_path": "202409_Nice_org40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org41.tif",
+      "relative_path": "202409_Nice_org41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org42.tif",
+      "relative_path": "202409_Nice_org42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org43.tif",
+      "relative_path": "202409_Nice_org43.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org43.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org44.tif",
+      "relative_path": "202409_Nice_org44.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org44.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org45.tif",
+      "relative_path": "202409_Nice_org45.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org45.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org46.tif",
+      "relative_path": "202409_Nice_org46.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org46.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org47.tif",
+      "relative_path": "202409_Nice_org47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org48.tif",
+      "relative_path": "202409_Nice_org48.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org48.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org49.tif",
+      "relative_path": "202409_Nice_org49.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org49.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org50.tif",
+      "relative_path": "202409_Nice_org50.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org50.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org51.tif",
+      "relative_path": "202409_Nice_org51.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org51.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org52.tif",
+      "relative_path": "202409_Nice_org52.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org52.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org53.tif",
+      "relative_path": "202409_Nice_org53.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org53.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org54.tif",
+      "relative_path": "202409_Nice_org54.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org54.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org55.tif",
+      "relative_path": "202409_Nice_org55.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org55.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org56.tif",
+      "relative_path": "202409_Nice_org56.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org56.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org57.tif",
+      "relative_path": "202409_Nice_org57.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org57.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org58.tif",
+      "relative_path": "202409_Nice_org58.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org58.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org59.tif",
+      "relative_path": "202409_Nice_org59.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org59.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org60.tif",
+      "relative_path": "202409_Nice_org60.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org60.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org61.tif",
+      "relative_path": "202409_Nice_org61.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org61.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org62.tif",
+      "relative_path": "202409_Nice_org62.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org62.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org63.tif",
+      "relative_path": "202409_Nice_org63.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org63.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org64.tif",
+      "relative_path": "202409_Nice_org64.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org64.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org65.tif",
+      "relative_path": "202409_Nice_org65.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org65.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org66.tif",
+      "relative_path": "202409_Nice_org66.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org66.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org67.tif",
+      "relative_path": "202409_Nice_org67.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org67.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org68.tif",
+      "relative_path": "202409_Nice_org68.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org68.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org69.tif",
+      "relative_path": "202409_Nice_org69.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org69.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org70.tif",
+      "relative_path": "202409_Nice_org70.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org70.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org71.tif",
+      "relative_path": "202409_Nice_org71.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org71.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org72.tif",
+      "relative_path": "202409_Nice_org72.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org72.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org73.tif",
+      "relative_path": "202409_Nice_org73.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org73.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org74.tif",
+      "relative_path": "202409_Nice_org74.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org74.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org75.tif",
+      "relative_path": "202409_Nice_org75.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org75.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org76.tif",
+      "relative_path": "202409_Nice_org76.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org76.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org77.tif",
+      "relative_path": "202409_Nice_org77.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org77.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org78.tif",
+      "relative_path": "202409_Nice_org78.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org78.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org79.tif",
+      "relative_path": "202409_Nice_org79.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org79.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org80.tif",
+      "relative_path": "202409_Nice_org80.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org80.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org81.tif",
+      "relative_path": "202409_Nice_org81.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org81.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org82.tif",
+      "relative_path": "202409_Nice_org82.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org82.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org83.tif",
+      "relative_path": "202409_Nice_org83.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org83.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org84.tif",
+      "relative_path": "202409_Nice_org84.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org84.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org85.tif",
+      "relative_path": "202409_Nice_org85.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org85.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org86.tif",
+      "relative_path": "202409_Nice_org86.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org86.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org87.tif",
+      "relative_path": "202409_Nice_org87.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org87.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org88.tif",
+      "relative_path": "202409_Nice_org88.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org88.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org89.tif",
+      "relative_path": "202409_Nice_org89.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org89.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org90.tif",
+      "relative_path": "202409_Nice_org90.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org90.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org91.tif",
+      "relative_path": "202409_Nice_org91.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org91.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org92.tif",
+      "relative_path": "202409_Nice_org92.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org92.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org93.tif",
+      "relative_path": "202409_Nice_org93.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org93.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org94.tif",
+      "relative_path": "202409_Nice_org94.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org94.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org95.tif",
+      "relative_path": "202409_Nice_org95.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org95.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org96.tif",
+      "relative_path": "202409_Nice_org96.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org96.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org97.tif",
+      "relative_path": "202409_Nice_org97.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org97.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org98.tif",
+      "relative_path": "202409_Nice_org98.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org98.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org99.tif",
+      "relative_path": "202409_Nice_org99.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org99.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org100.tif",
+      "relative_path": "202409_Nice_org100.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org100.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org101.tif",
+      "relative_path": "202409_Nice_org101.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org101.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org102.tif",
+      "relative_path": "202409_Nice_org102.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org102.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org103.tif",
+      "relative_path": "202409_Nice_org103.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org103.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org104.tif",
+      "relative_path": "202409_Nice_org104.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org104.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org105.tif",
+      "relative_path": "202409_Nice_org105.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org105.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org106.tif",
+      "relative_path": "202409_Nice_org106.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org106.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org107.tif",
+      "relative_path": "202409_Nice_org107.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org107.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org108.tif",
+      "relative_path": "202409_Nice_org108.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org108.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org109.tif",
+      "relative_path": "202409_Nice_org109.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org109.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org110.tif",
+      "relative_path": "202409_Nice_org110.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org110.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org111.tif",
+      "relative_path": "202409_Nice_org111.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org111.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org112.tif",
+      "relative_path": "202409_Nice_org112.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org112.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org113.tif",
+      "relative_path": "202409_Nice_org113.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org113.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._202407_Nice_orga0.tif",
+      "relative_path": "._202407_Nice_orga0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/._202407_Nice_orga0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    }
+  ],
+  "files_with_keywords": [
+    {
+      "filename": "20231004_Noyau_org4.tif",
+      "relative_path": "20231004_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20231004_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org6.tif",
+      "relative_path": "20231004_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20231004_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_10_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_10_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_10_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_11_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_11_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_11_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_2_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_2_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_2_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_6_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_6_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_6_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_7_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_7_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_7_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_8_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_8_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_8_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_9_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_9_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.03.12_PARIS_Noyau_org_9_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_11_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_11_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.06.26_PARIS_Noyau_Org_11_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.06.26_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.07.18_PARIS_Noyau_Org_2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.07.18_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.24_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.24_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.07.24_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.24_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.24_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.07.24_PARIS_Noyau_Org_3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.03_PARIS_Noyau_Org_13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.03_PARIS_Noyau_Org_15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.03_PARIS_Noyau_Org_19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.31_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _15_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _15_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.31_PARIS_Noyau_Org _15_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.31_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/2024.10.31_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240319_Noyau_org1.tif",
+      "relative_path": "20240319_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20240319_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org3.tif",
+      "relative_path": "20240409_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20240409_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org4.tif",
+      "relative_path": "20240409_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20240409_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org9.tif",
+      "relative_path": "20240409_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/20240409_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0.tif",
+      "relative_path": "202407_Nice_orga0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_0.tif",
+      "relative_path": "202407_Nice_orga0_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_10.tif",
+      "relative_path": "202407_Nice_orga0_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_12.tif",
+      "relative_path": "202407_Nice_orga0_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_13.tif",
+      "relative_path": "202407_Nice_orga0_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_15.tif",
+      "relative_path": "202407_Nice_orga0_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_16.tif",
+      "relative_path": "202407_Nice_orga0_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_17.tif",
+      "relative_path": "202407_Nice_orga0_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_18.tif",
+      "relative_path": "202407_Nice_orga0_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_21.tif",
+      "relative_path": "202407_Nice_orga0_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_23.tif",
+      "relative_path": "202407_Nice_orga0_23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_24.tif",
+      "relative_path": "202407_Nice_orga0_24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_25.tif",
+      "relative_path": "202407_Nice_orga0_25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_26.tif",
+      "relative_path": "202407_Nice_orga0_26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_27.tif",
+      "relative_path": "202407_Nice_orga0_27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_28.tif",
+      "relative_path": "202407_Nice_orga0_28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_29.tif",
+      "relative_path": "202407_Nice_orga0_29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_3.tif",
+      "relative_path": "202407_Nice_orga0_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_31.tif",
+      "relative_path": "202407_Nice_orga0_31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_32.tif",
+      "relative_path": "202407_Nice_orga0_32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_33.tif",
+      "relative_path": "202407_Nice_orga0_33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_35.tif",
+      "relative_path": "202407_Nice_orga0_35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_4.tif",
+      "relative_path": "202407_Nice_orga0_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_5.tif",
+      "relative_path": "202407_Nice_orga0_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_6.tif",
+      "relative_path": "202407_Nice_orga0_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_7.tif",
+      "relative_path": "202407_Nice_orga0_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_8.tif",
+      "relative_path": "202407_Nice_orga0_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_9.tif",
+      "relative_path": "202407_Nice_orga0_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga0_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga1.tif",
+      "relative_path": "202407_Nice_orga1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_4.tif",
+      "relative_path": "202407_Nice_orga2_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga2_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_5.tif",
+      "relative_path": "202407_Nice_orga2_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga2_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_1.tif",
+      "relative_path": "202407_Nice_orga3_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_15.tif",
+      "relative_path": "202407_Nice_orga3_15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_16.tif",
+      "relative_path": "202407_Nice_orga3_16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_17.tif",
+      "relative_path": "202407_Nice_orga3_17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_2.tif",
+      "relative_path": "202407_Nice_orga3_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_5.tif",
+      "relative_path": "202407_Nice_orga3_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_8.tif",
+      "relative_path": "202407_Nice_orga3_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_9.tif",
+      "relative_path": "202407_Nice_orga3_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_0.tif",
+      "relative_path": "202407_Nice_orga4_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_1.tif",
+      "relative_path": "202407_Nice_orga4_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_10.tif",
+      "relative_path": "202407_Nice_orga4_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_11.tif",
+      "relative_path": "202407_Nice_orga4_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_13.tif",
+      "relative_path": "202407_Nice_orga4_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_14.tif",
+      "relative_path": "202407_Nice_orga4_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_2.tif",
+      "relative_path": "202407_Nice_orga4_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_3.tif",
+      "relative_path": "202407_Nice_orga4_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_4.tif",
+      "relative_path": "202407_Nice_orga4_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_5.tif",
+      "relative_path": "202407_Nice_orga4_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_6.tif",
+      "relative_path": "202407_Nice_orga4_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_7.tif",
+      "relative_path": "202407_Nice_orga4_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_8.tif",
+      "relative_path": "202407_Nice_orga4_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_9.tif",
+      "relative_path": "202407_Nice_orga4_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga4_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_0.tif",
+      "relative_path": "202407_Nice_orga5_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org114.tif",
+      "relative_path": "202409_Nice_org114.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org114.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_0.tif",
+      "relative_path": "202407_Nice_orga3_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_19.tif",
+      "relative_path": "202407_Nice_orga3_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga3_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_1.tif",
+      "relative_path": "202407_Nice_orga5_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_2.tif",
+      "relative_path": "202407_Nice_orga5_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_3.tif",
+      "relative_path": "202407_Nice_orga5_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_4.tif",
+      "relative_path": "202407_Nice_orga5_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_5.tif",
+      "relative_path": "202407_Nice_orga5_5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_6.tif",
+      "relative_path": "202407_Nice_orga5_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_7.tif",
+      "relative_path": "202407_Nice_orga5_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_8.tif",
+      "relative_path": "202407_Nice_orga5_8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_9.tif",
+      "relative_path": "202407_Nice_orga5_9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_10.tif",
+      "relative_path": "202407_Nice_orga5_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_11.tif",
+      "relative_path": "202407_Nice_orga5_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_12.tif",
+      "relative_path": "202407_Nice_orga5_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga5_13.tif",
+      "relative_path": "202407_Nice_orga5_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202407_Nice_orga5_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org1.tif",
+      "relative_path": "202409_Nice_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org2.tif",
+      "relative_path": "202409_Nice_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org3.tif",
+      "relative_path": "202409_Nice_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org4.tif",
+      "relative_path": "202409_Nice_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org5.tif",
+      "relative_path": "202409_Nice_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org5.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org6.tif",
+      "relative_path": "202409_Nice_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org7.tif",
+      "relative_path": "202409_Nice_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org8.tif",
+      "relative_path": "202409_Nice_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org8.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org9.tif",
+      "relative_path": "202409_Nice_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org9.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org10.tif",
+      "relative_path": "202409_Nice_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org11.tif",
+      "relative_path": "202409_Nice_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org12.tif",
+      "relative_path": "202409_Nice_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org13.tif",
+      "relative_path": "202409_Nice_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org14.tif",
+      "relative_path": "202409_Nice_org14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org15.tif",
+      "relative_path": "202409_Nice_org15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org15.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org16.tif",
+      "relative_path": "202409_Nice_org16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org16.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org17.tif",
+      "relative_path": "202409_Nice_org17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org17.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org18.tif",
+      "relative_path": "202409_Nice_org18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org19.tif",
+      "relative_path": "202409_Nice_org19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org20.tif",
+      "relative_path": "202409_Nice_org20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org21.tif",
+      "relative_path": "202409_Nice_org21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org22.tif",
+      "relative_path": "202409_Nice_org22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org23.tif",
+      "relative_path": "202409_Nice_org23.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org23.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org24.tif",
+      "relative_path": "202409_Nice_org24.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org24.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org25.tif",
+      "relative_path": "202409_Nice_org25.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org25.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org26.tif",
+      "relative_path": "202409_Nice_org26.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org26.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org27.tif",
+      "relative_path": "202409_Nice_org27.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org27.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org28.tif",
+      "relative_path": "202409_Nice_org28.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org28.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org29.tif",
+      "relative_path": "202409_Nice_org29.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org29.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org30.tif",
+      "relative_path": "202409_Nice_org30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org31.tif",
+      "relative_path": "202409_Nice_org31.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org31.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org32.tif",
+      "relative_path": "202409_Nice_org32.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org32.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org33.tif",
+      "relative_path": "202409_Nice_org33.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org33.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org34.tif",
+      "relative_path": "202409_Nice_org34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org35.tif",
+      "relative_path": "202409_Nice_org35.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org35.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org36.tif",
+      "relative_path": "202409_Nice_org36.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org36.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org37.tif",
+      "relative_path": "202409_Nice_org37.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org37.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org38.tif",
+      "relative_path": "202409_Nice_org38.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org38.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org39.tif",
+      "relative_path": "202409_Nice_org39.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org39.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org40.tif",
+      "relative_path": "202409_Nice_org40.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org40.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org41.tif",
+      "relative_path": "202409_Nice_org41.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org41.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org42.tif",
+      "relative_path": "202409_Nice_org42.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org42.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org43.tif",
+      "relative_path": "202409_Nice_org43.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org43.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org44.tif",
+      "relative_path": "202409_Nice_org44.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org44.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org45.tif",
+      "relative_path": "202409_Nice_org45.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org45.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org46.tif",
+      "relative_path": "202409_Nice_org46.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org46.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org47.tif",
+      "relative_path": "202409_Nice_org47.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org47.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org48.tif",
+      "relative_path": "202409_Nice_org48.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org48.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org49.tif",
+      "relative_path": "202409_Nice_org49.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org49.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org50.tif",
+      "relative_path": "202409_Nice_org50.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org50.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org51.tif",
+      "relative_path": "202409_Nice_org51.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org51.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org52.tif",
+      "relative_path": "202409_Nice_org52.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org52.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org53.tif",
+      "relative_path": "202409_Nice_org53.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org53.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org54.tif",
+      "relative_path": "202409_Nice_org54.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org54.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org55.tif",
+      "relative_path": "202409_Nice_org55.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org55.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org56.tif",
+      "relative_path": "202409_Nice_org56.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org56.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org57.tif",
+      "relative_path": "202409_Nice_org57.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org57.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org58.tif",
+      "relative_path": "202409_Nice_org58.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org58.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org59.tif",
+      "relative_path": "202409_Nice_org59.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org59.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org60.tif",
+      "relative_path": "202409_Nice_org60.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org60.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org61.tif",
+      "relative_path": "202409_Nice_org61.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org61.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org62.tif",
+      "relative_path": "202409_Nice_org62.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org62.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org63.tif",
+      "relative_path": "202409_Nice_org63.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org63.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org64.tif",
+      "relative_path": "202409_Nice_org64.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org64.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org65.tif",
+      "relative_path": "202409_Nice_org65.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org65.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org66.tif",
+      "relative_path": "202409_Nice_org66.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org66.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org67.tif",
+      "relative_path": "202409_Nice_org67.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org67.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org68.tif",
+      "relative_path": "202409_Nice_org68.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org68.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org69.tif",
+      "relative_path": "202409_Nice_org69.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org69.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org70.tif",
+      "relative_path": "202409_Nice_org70.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org70.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org71.tif",
+      "relative_path": "202409_Nice_org71.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org71.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org72.tif",
+      "relative_path": "202409_Nice_org72.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org72.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org73.tif",
+      "relative_path": "202409_Nice_org73.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org73.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org74.tif",
+      "relative_path": "202409_Nice_org74.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org74.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org75.tif",
+      "relative_path": "202409_Nice_org75.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org75.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org76.tif",
+      "relative_path": "202409_Nice_org76.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org76.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org77.tif",
+      "relative_path": "202409_Nice_org77.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org77.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org78.tif",
+      "relative_path": "202409_Nice_org78.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org78.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org79.tif",
+      "relative_path": "202409_Nice_org79.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org79.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org80.tif",
+      "relative_path": "202409_Nice_org80.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org80.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org81.tif",
+      "relative_path": "202409_Nice_org81.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org81.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org82.tif",
+      "relative_path": "202409_Nice_org82.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org82.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org83.tif",
+      "relative_path": "202409_Nice_org83.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org83.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org84.tif",
+      "relative_path": "202409_Nice_org84.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org84.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org85.tif",
+      "relative_path": "202409_Nice_org85.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org85.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org86.tif",
+      "relative_path": "202409_Nice_org86.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org86.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org87.tif",
+      "relative_path": "202409_Nice_org87.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org87.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org88.tif",
+      "relative_path": "202409_Nice_org88.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org88.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org89.tif",
+      "relative_path": "202409_Nice_org89.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org89.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org90.tif",
+      "relative_path": "202409_Nice_org90.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org90.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org91.tif",
+      "relative_path": "202409_Nice_org91.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org91.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org92.tif",
+      "relative_path": "202409_Nice_org92.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org92.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org93.tif",
+      "relative_path": "202409_Nice_org93.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org93.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org94.tif",
+      "relative_path": "202409_Nice_org94.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org94.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org95.tif",
+      "relative_path": "202409_Nice_org95.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org95.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org96.tif",
+      "relative_path": "202409_Nice_org96.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org96.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org97.tif",
+      "relative_path": "202409_Nice_org97.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org97.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org98.tif",
+      "relative_path": "202409_Nice_org98.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org98.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org99.tif",
+      "relative_path": "202409_Nice_org99.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org99.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org100.tif",
+      "relative_path": "202409_Nice_org100.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org100.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org101.tif",
+      "relative_path": "202409_Nice_org101.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org101.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org102.tif",
+      "relative_path": "202409_Nice_org102.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org102.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org103.tif",
+      "relative_path": "202409_Nice_org103.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org103.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org104.tif",
+      "relative_path": "202409_Nice_org104.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org104.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org105.tif",
+      "relative_path": "202409_Nice_org105.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org105.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org106.tif",
+      "relative_path": "202409_Nice_org106.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org106.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org107.tif",
+      "relative_path": "202409_Nice_org107.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org107.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org108.tif",
+      "relative_path": "202409_Nice_org108.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org108.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org109.tif",
+      "relative_path": "202409_Nice_org109.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org109.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org110.tif",
+      "relative_path": "202409_Nice_org110.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org110.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org111.tif",
+      "relative_path": "202409_Nice_org111.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org111.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org112.tif",
+      "relative_path": "202409_Nice_org112.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org112.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202409_Nice_org113.tif",
+      "relative_path": "202409_Nice_org113.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/202409_Nice_org113.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "._202407_Nice_orga0.tif",
+      "relative_path": "._202407_Nice_orga0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/black/._202407_Nice_orga0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    }
+  ],
+  "analysis_date": "2025-09-17 10:40:27"
+}

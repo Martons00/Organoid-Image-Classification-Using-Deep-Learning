@@ -1,0 +1,3847 @@
+{
+  "keyword_counts": {
+    "Nice": 26,
+    "Paris": 133,
+    "Noyau": 197
+  },
+  "total_files": 223,
+  "files_analyzed": [
+    {
+      "filename": "20230731_Noyau_org1.tif",
+      "relative_path": "20230731_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org10.tif",
+      "relative_path": "20230731_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org11.tif",
+      "relative_path": "20230731_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org2.tif",
+      "relative_path": "20230731_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org3.tif",
+      "relative_path": "20230731_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org4.tif",
+      "relative_path": "20230731_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org5.tif",
+      "relative_path": "20230731_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org6.tif",
+      "relative_path": "20230731_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org7.tif",
+      "relative_path": "20230731_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org8.tif",
+      "relative_path": "20230731_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org9.tif",
+      "relative_path": "20230731_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org12.tif",
+      "relative_path": "20230804_Noyau_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230804_Noyau_org12.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org13.tif",
+      "relative_path": "20230804_Noyau_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230804_Noyau_org13.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org14.tif",
+      "relative_path": "20230804_Noyau_org14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230804_Noyau_org14.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org15.tif",
+      "relative_path": "20230804_Noyau_org15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230804_Noyau_org15.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org1.tif",
+      "relative_path": "20231004_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org2.tif",
+      "relative_path": "20231004_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org3.tif",
+      "relative_path": "20231004_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org5.tif",
+      "relative_path": "20231004_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org7.tif",
+      "relative_path": "20231004_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org8.tif",
+      "relative_path": "20231004_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org10.tif",
+      "relative_path": "20231005_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231005_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org9.tif",
+      "relative_path": "20231005_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231005_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org1.tif",
+      "relative_path": "20231006_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231006_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org2.tif",
+      "relative_path": "20231006_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231006_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org3.tif",
+      "relative_path": "20231006_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231006_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org4.tif",
+      "relative_path": "20231006_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231006_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org10.tif",
+      "relative_path": "20231114_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org11.tif",
+      "relative_path": "20231114_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org12.tif",
+      "relative_path": "20231114_Noyau_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org12.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org13.tif",
+      "relative_path": "20231114_Noyau_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org13.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org14.tif",
+      "relative_path": "20231114_Noyau_org14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org14.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org15.tif",
+      "relative_path": "20231114_Noyau_org15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org15.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org16.tif",
+      "relative_path": "20231114_Noyau_org16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org16.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org17.tif",
+      "relative_path": "20231114_Noyau_org17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org17.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org18.tif",
+      "relative_path": "20231114_Noyau_org18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org18.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org19.tif",
+      "relative_path": "20231114_Noyau_org19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org19.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org5.tif",
+      "relative_path": "20231114_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org6.tif",
+      "relative_path": "20231114_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org7.tif",
+      "relative_path": "20231114_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org8.tif",
+      "relative_path": "20231114_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org9.tif",
+      "relative_path": "20231114_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org1.tif",
+      "relative_path": "20231207_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231207_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org2.tif",
+      "relative_path": "20231207_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231207_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org3.tif",
+      "relative_path": "20231207_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231207_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_3_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_3_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.03.12_PARIS_Noyau_org_3_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_4_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_4_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.03.12_PARIS_Noyau_org_4_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_5_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_5_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.03.12_PARIS_Noyau_org_5_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_10_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_10_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.06.26_PARIS_Noyau_Org_10_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.06.26_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.06.26_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_9_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_9_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.06.26_PARIS_Noyau_Org_9_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.07.18_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.07.18_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.03_PARIS_Noyau_Org_12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.03_PARIS_Noyau_Org_14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.03_PARIS_Noyau_Org_16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.03_PARIS_Noyau_Org_18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240319_Noyau_org2.tif",
+      "relative_path": "20240319_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240319_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240319_Noyau_org3.tif",
+      "relative_path": "20240319_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240319_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240319_Noyau_org4.tif",
+      "relative_path": "20240319_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240319_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org10.tif",
+      "relative_path": "20240402_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org5.tif",
+      "relative_path": "20240402_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org6.tif",
+      "relative_path": "20240402_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org7.tif",
+      "relative_path": "20240402_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org8.tif",
+      "relative_path": "20240402_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org9.tif",
+      "relative_path": "20240402_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240404_Noyau_org1.tif",
+      "relative_path": "20240404_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240404_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240404_Noyau_org2.tif",
+      "relative_path": "20240404_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240404_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org5.tif",
+      "relative_path": "20240409_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240409_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org6.tif",
+      "relative_path": "20240409_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240409_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org7.tif",
+      "relative_path": "20240409_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240409_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org8.tif",
+      "relative_path": "20240409_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240409_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240423_Noyau_org10.tif",
+      "relative_path": "20240423_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240423_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240423_Noyau_org11.tif",
+      "relative_path": "20240423_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240423_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240423_Noyau_org12.tif",
+      "relative_path": "20240423_Noyau_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240423_Noyau_org12.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240423_Noyau_org13.tif",
+      "relative_path": "20240423_Noyau_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240423_Noyau_org13.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_1.tif",
+      "relative_path": "202407_Nice_orga0_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_11.tif",
+      "relative_path": "202407_Nice_orga0_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_14.tif",
+      "relative_path": "202407_Nice_orga0_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_19.tif",
+      "relative_path": "202407_Nice_orga0_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_2.tif",
+      "relative_path": "202407_Nice_orga0_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_20.tif",
+      "relative_path": "202407_Nice_orga0_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_22.tif",
+      "relative_path": "202407_Nice_orga0_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_30.tif",
+      "relative_path": "202407_Nice_orga0_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_34.tif",
+      "relative_path": "202407_Nice_orga0_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_0.tif",
+      "relative_path": "202407_Nice_orga2_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga2_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_1.tif",
+      "relative_path": "202407_Nice_orga2_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga2_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_2.tif",
+      "relative_path": "202407_Nice_orga2_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga2_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_3.tif",
+      "relative_path": "202407_Nice_orga2_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga2_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_10.tif",
+      "relative_path": "202407_Nice_orga3_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_11.tif",
+      "relative_path": "202407_Nice_orga3_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_12.tif",
+      "relative_path": "202407_Nice_orga3_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_13.tif",
+      "relative_path": "202407_Nice_orga3_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_14.tif",
+      "relative_path": "202407_Nice_orga3_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_18.tif",
+      "relative_path": "202407_Nice_orga3_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_20.tif",
+      "relative_path": "202407_Nice_orga3_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_21.tif",
+      "relative_path": "202407_Nice_orga3_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_3.tif",
+      "relative_path": "202407_Nice_orga3_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_4.tif",
+      "relative_path": "202407_Nice_orga3_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_6.tif",
+      "relative_path": "202407_Nice_orga3_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_7.tif",
+      "relative_path": "202407_Nice_orga3_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_12.tif",
+      "relative_path": "202407_Nice_orga4_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga4_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _12_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _12_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _12_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    }
+  ],
+  "files_with_keywords": [
+    {
+      "filename": "20230731_Noyau_org1.tif",
+      "relative_path": "20230731_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org10.tif",
+      "relative_path": "20230731_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org11.tif",
+      "relative_path": "20230731_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org2.tif",
+      "relative_path": "20230731_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org3.tif",
+      "relative_path": "20230731_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org4.tif",
+      "relative_path": "20230731_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org5.tif",
+      "relative_path": "20230731_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org6.tif",
+      "relative_path": "20230731_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org7.tif",
+      "relative_path": "20230731_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org8.tif",
+      "relative_path": "20230731_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230731_Noyau_org9.tif",
+      "relative_path": "20230731_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230731_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org12.tif",
+      "relative_path": "20230804_Noyau_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230804_Noyau_org12.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org13.tif",
+      "relative_path": "20230804_Noyau_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230804_Noyau_org13.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org14.tif",
+      "relative_path": "20230804_Noyau_org14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230804_Noyau_org14.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20230804_Noyau_org15.tif",
+      "relative_path": "20230804_Noyau_org15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20230804_Noyau_org15.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org1.tif",
+      "relative_path": "20231004_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org2.tif",
+      "relative_path": "20231004_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org3.tif",
+      "relative_path": "20231004_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org5.tif",
+      "relative_path": "20231004_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org7.tif",
+      "relative_path": "20231004_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231004_Noyau_org8.tif",
+      "relative_path": "20231004_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231004_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org10.tif",
+      "relative_path": "20231005_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231005_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231005_Noyau_org9.tif",
+      "relative_path": "20231005_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231005_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org1.tif",
+      "relative_path": "20231006_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231006_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org2.tif",
+      "relative_path": "20231006_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231006_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org3.tif",
+      "relative_path": "20231006_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231006_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231006_Noyau_org4.tif",
+      "relative_path": "20231006_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231006_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org10.tif",
+      "relative_path": "20231114_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org11.tif",
+      "relative_path": "20231114_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org12.tif",
+      "relative_path": "20231114_Noyau_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org12.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org13.tif",
+      "relative_path": "20231114_Noyau_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org13.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org14.tif",
+      "relative_path": "20231114_Noyau_org14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org14.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org15.tif",
+      "relative_path": "20231114_Noyau_org15.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org15.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org16.tif",
+      "relative_path": "20231114_Noyau_org16.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org16.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org17.tif",
+      "relative_path": "20231114_Noyau_org17.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org17.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org18.tif",
+      "relative_path": "20231114_Noyau_org18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org18.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org19.tif",
+      "relative_path": "20231114_Noyau_org19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org19.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org5.tif",
+      "relative_path": "20231114_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org6.tif",
+      "relative_path": "20231114_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org7.tif",
+      "relative_path": "20231114_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org8.tif",
+      "relative_path": "20231114_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231114_Noyau_org9.tif",
+      "relative_path": "20231114_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231114_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org1.tif",
+      "relative_path": "20231207_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231207_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org2.tif",
+      "relative_path": "20231207_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231207_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20231207_Noyau_org3.tif",
+      "relative_path": "20231207_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20231207_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_3_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_3_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.03.12_PARIS_Noyau_org_3_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_4_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_4_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.03.12_PARIS_Noyau_org_4_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.03.12_PARIS_Noyau_org_5_(8-bits).tif",
+      "relative_path": "2024.03.12_PARIS_Noyau_org_5_(8-bits).tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.03.12_PARIS_Noyau_org_5_(8-bits).tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_10_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_10_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.06.26_PARIS_Noyau_Org_10_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.06.26_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.06.26_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.06.26_PARIS_Noyau_Org_9_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.06.26_PARIS_Noyau_Org_9_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.06.26_PARIS_Noyau_Org_9_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.07.18_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.07.18_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.07.18_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.07.18_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.03_PARIS_Noyau_Org_12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.03_PARIS_Noyau_Org_14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.03_PARIS_Noyau_Org_16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.03_PARIS_Noyau_Org_18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.03_PARIS_Noyau_Org_18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.03_PARIS_Noyau_Org_18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240319_Noyau_org2.tif",
+      "relative_path": "20240319_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240319_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240319_Noyau_org3.tif",
+      "relative_path": "20240319_Noyau_org3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240319_Noyau_org3.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240319_Noyau_org4.tif",
+      "relative_path": "20240319_Noyau_org4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240319_Noyau_org4.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org10.tif",
+      "relative_path": "20240402_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org5.tif",
+      "relative_path": "20240402_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org6.tif",
+      "relative_path": "20240402_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org7.tif",
+      "relative_path": "20240402_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org8.tif",
+      "relative_path": "20240402_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240402_Noyau_org9.tif",
+      "relative_path": "20240402_Noyau_org9.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240402_Noyau_org9.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240404_Noyau_org1.tif",
+      "relative_path": "20240404_Noyau_org1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240404_Noyau_org1.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240404_Noyau_org2.tif",
+      "relative_path": "20240404_Noyau_org2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240404_Noyau_org2.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org5.tif",
+      "relative_path": "20240409_Noyau_org5.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240409_Noyau_org5.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org6.tif",
+      "relative_path": "20240409_Noyau_org6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240409_Noyau_org6.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org7.tif",
+      "relative_path": "20240409_Noyau_org7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240409_Noyau_org7.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240409_Noyau_org8.tif",
+      "relative_path": "20240409_Noyau_org8.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240409_Noyau_org8.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240423_Noyau_org10.tif",
+      "relative_path": "20240423_Noyau_org10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240423_Noyau_org10.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240423_Noyau_org11.tif",
+      "relative_path": "20240423_Noyau_org11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240423_Noyau_org11.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240423_Noyau_org12.tif",
+      "relative_path": "20240423_Noyau_org12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240423_Noyau_org12.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "20240423_Noyau_org13.tif",
+      "relative_path": "20240423_Noyau_org13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/20240423_Noyau_org13.tif",
+      "keywords_found": [
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_1.tif",
+      "relative_path": "202407_Nice_orga0_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_11.tif",
+      "relative_path": "202407_Nice_orga0_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_14.tif",
+      "relative_path": "202407_Nice_orga0_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_19.tif",
+      "relative_path": "202407_Nice_orga0_19.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_19.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_2.tif",
+      "relative_path": "202407_Nice_orga0_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_20.tif",
+      "relative_path": "202407_Nice_orga0_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_22.tif",
+      "relative_path": "202407_Nice_orga0_22.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_22.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_30.tif",
+      "relative_path": "202407_Nice_orga0_30.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_30.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga0_34.tif",
+      "relative_path": "202407_Nice_orga0_34.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga0_34.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_0.tif",
+      "relative_path": "202407_Nice_orga2_0.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga2_0.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_1.tif",
+      "relative_path": "202407_Nice_orga2_1.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga2_1.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_2.tif",
+      "relative_path": "202407_Nice_orga2_2.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga2_2.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga2_3.tif",
+      "relative_path": "202407_Nice_orga2_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga2_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_10.tif",
+      "relative_path": "202407_Nice_orga3_10.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_10.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_11.tif",
+      "relative_path": "202407_Nice_orga3_11.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_11.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_12.tif",
+      "relative_path": "202407_Nice_orga3_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_13.tif",
+      "relative_path": "202407_Nice_orga3_13.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_13.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_14.tif",
+      "relative_path": "202407_Nice_orga3_14.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_14.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_18.tif",
+      "relative_path": "202407_Nice_orga3_18.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_18.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_20.tif",
+      "relative_path": "202407_Nice_orga3_20.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_20.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_21.tif",
+      "relative_path": "202407_Nice_orga3_21.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_21.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_3.tif",
+      "relative_path": "202407_Nice_orga3_3.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_3.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_4.tif",
+      "relative_path": "202407_Nice_orga3_4.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_4.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_6.tif",
+      "relative_path": "202407_Nice_orga3_6.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_6.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga3_7.tif",
+      "relative_path": "202407_Nice_orga3_7.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga3_7.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "202407_Nice_orga4_12.tif",
+      "relative_path": "202407_Nice_orga4_12.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/202407_Nice_orga4_12.tif",
+      "keywords_found": [
+        "Nice"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.01.28_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.01.28_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.01.28_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.05_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.05_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.05_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_03_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_19_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _1_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _2_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _5_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _7_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _10_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _11_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _12_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _14_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _15_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _16_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _17_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _18_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _19_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _20_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _21_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _22_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _23_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _24_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _25_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _26_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _27_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _28_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2024.10.31_PARIS_Noyau_Org _12_cystic_J7_20X_8bit.tif",
+      "relative_path": "2024.10.31_PARIS_Noyau_Org _12_cystic_J7_20X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2024.10.31_PARIS_Noyau_Org _12_cystic_J7_20X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _8_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    },
+    {
+      "filename": "2025.02.14_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "relative_path": "2025.02.14_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "full_path": "/Volumes/LaCie/Organoids/Organoids_Dataset/Cystiques/check/2025.02.14_PARIS_Noyau_Org _9_cystic_J7_40X_8bit.tif",
+      "keywords_found": [
+        "Paris",
+        "Noyau"
+      ]
+    }
+  ],
+  "analysis_date": "2025-09-17 10:40:06"
+}
