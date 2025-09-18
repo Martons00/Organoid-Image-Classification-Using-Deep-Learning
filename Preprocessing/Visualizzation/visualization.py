@@ -243,3 +243,28 @@ viewer = napari.Viewer()
 viewer.add_image(volume, name="3D Volume", scale=[2, 1, 1])  # z, y, x scaling
 # Avvia l'interfaccia interattiva
 napari.run()
+
+import tifffile as tiff
+from skimage.transform import resize
+import numpy as np
+
+input_path = '../data/2024.06.26_PARIS_Noyau_Org_12_cauliflower_J7_40X_8bit.tif'        # Il tuo file sorgente (1024x1024 per slice)
+output_path = '../data/copia_2024.06.26_PARIS_Noyau_Org_12_cauliflower_J7_40X_8bit.tif'  # Nome file di destinazione
+
+# Carica il file .tif come array 3D
+volume = tiff.imread(input_path)      # shape tipica (N, 1024, 1024)
+print('Original shape:', volume.shape)
+
+# Ridimensiona ogni slice (funziona anche su 3D e 4D)
+resized_volume = resize(volume, (volume.shape[0], 512, 512), order=1, preserve_range=True, anti_aliasing=True).astype(volume.dtype)
+print('Resized shape:', resized_volume.shape)
+
+# Salva il nuovo stack TIFF
+tiff.imwrite(output_path, resized_volume)
+print(f'Salvato: {output_path}')
+sizeOfInput = os.path.getsize(input_path)
+print(f'Size of input file: {sizeOfInput} bytes')
+sizeOfOutput = os.path.getsize(output_path)
+print(f'Size of output file: {sizeOfOutput} bytes')
+reduction = (1 - sizeOfOutput / sizeOfInput) * 100
+print(f'Reduction in file size: {reduction:.2f}%')

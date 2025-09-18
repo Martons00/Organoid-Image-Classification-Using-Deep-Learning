@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.use('Agg')  # Backend non interattivo per salvare solo i grafici
 from skimage import io
 from skimage.transform import resize
 import tifffile as tiff
@@ -9,6 +8,18 @@ import os
 import glob
 import pandas as pd
 from pathlib import Path  # AGGIUNTO
+
+
+def normalize_uint16_to_uint8(volume):
+    non_zero = volume[volume > 0]
+    if len(non_zero) == 0:
+        return np.zeros_like(volume, dtype=np.uint8)
+    min_v, max_v = non_zero.min(), non_zero.max()
+    norm = np.zeros_like(volume, dtype=np.float32)
+    mask = (volume > 0)
+    norm[mask] = (volume[mask] - min_v) / (max_v - min_v)
+    norm[mask] = (norm[mask] * 255)
+    return norm.astype(np.uint8)
 
 
 def analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(512, 512), preserve_structure=True):
@@ -63,6 +74,10 @@ def analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(5
             
             # Carica volume
             volume = io.imread(tif_path)
+            volume = normalize_uint16_to_uint8(volume)
+
+            #CROPPING PHASE
+            volume = volume[:,300:750,300:750]
             
             if len(volume.shape) < 3:
                 print(f"SKIP: {relative_path} - Non è un volume 3D")
@@ -310,7 +325,8 @@ def _print_summary_statistics(df_stats, processing_errors, input_folder, output_
 
 if __name__ == "__main__":
     # Esempio di utilizzo
-    input_folder = "../data"
-    output_folder = "../resized_volumes"
+    
+    input_folder = 'F:\\Organoids\\Noyaux\\Cystiques\\Nice'
+    output_folder = 'F:\\Organoids\\Cystiques_Nice_Reduce'
     # MODIFICATO: Aggiunto parametro preserve_structure
-    analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(512, 512), preserve_structure=True)
+    analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(512, 512), preserve_structure=False)
