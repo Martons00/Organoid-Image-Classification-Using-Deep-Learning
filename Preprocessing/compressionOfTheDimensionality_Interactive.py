@@ -27,6 +27,8 @@ def normalize_uint16_to_uint8(volume):
     norm[mask] = (norm[mask] * 255)
     return norm.astype(np.uint8)
 
+
+
 def visualizza_tiff_3d_per_crop(image_path, filename):
     """
     Visualizza il file TIFF con viste ortogonali per facilitare la selezione del crop

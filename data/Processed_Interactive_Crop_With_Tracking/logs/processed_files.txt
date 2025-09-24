@@ -1,0 +1,5 @@
+# LOG FILE PROCESSING INTERATTIVO
+# Formato: relative_path | status | timestamp | details
+# Creato: 2025-09-18 16:02:19
+
+202407_Nice_orga0_7.tif | SUCCESS | 2025-09-18 16:03:02 | Crop Z:100-200_Y:200-350_X:200-350 | Dest: black
