@@ -330,3 +330,4 @@ if __name__ == "__main__":
     output_folder = 'F:\\Organoids\\Cystiques_Nice_Reduce'
     # MODIFICATO: Aggiunto parametro preserve_structure
     analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(512, 512), preserve_structure=False)
+

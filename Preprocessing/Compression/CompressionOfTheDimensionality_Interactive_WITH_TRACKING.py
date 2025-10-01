@@ -17,6 +17,7 @@ from matplotlib.ticker import MultipleLocator
 def add_grid(ax,step_x,step_y,color='r',a=0.35,lw=0.6) :
     ax.xaxis.set_major_locator(MultipleLocator(step_x))
     ax.yaxis.set_major_locator(MultipleLocator(step_y))
+    
     ax.grid(True,which='major',color=color,alpha=a,linewidth=lw)
     ax.tick_params(axis='x',rotation=90)
 
