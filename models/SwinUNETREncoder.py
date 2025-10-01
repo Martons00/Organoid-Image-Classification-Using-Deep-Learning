@@ -93,11 +93,26 @@ class SwinUNETREncoder(nn.Module):
 
 
 if __name__ == "__main__":
+    # Esempio di utilizzo
     from monai.networks.nets import SwinUNETR
-    from ml_decoder.ml_decoder import add_ml_decoder_head
+    model = SwinUNETR(4, 3)  # Modello originale
+    print(model)
+    new_model = SwinUNETREncoder(model)  # Modello con solo l'encoder
+    print(new_model)
+    new_model.fc = nn.Identity()  # Rimuoviamo la testa di classificazione
+    new_model.num_features = 768  # Aggiungiamo l'attributo num_features
+
+    new_model = add_ml_decoder_head(new_model, num_classes=3)
+    print(new_model)
+
+if __name__ == "__main__":
+    from monai.networks.nets import SwinUNETR
+    from ML_Decoder_main.src_files.ml_decoder.ml_decoder import add_ml_decoder_head
     
     # Crea il modello originale
     original_model = SwinUNETR(4, 3)
+    print("Modello originale:")
+    print(original_model)
     
     # Crea l'encoder con attributi già compatibili
     encoder_model = SwinUNETREncoder(
@@ -105,6 +120,9 @@ if __name__ == "__main__":
         num_classes=3, 
         num_features=768
     )
+    print("\nModello encoder:")
+    print(encoder_model)
+
     
     print("Modello prima di ML-Decoder:")
     print(f"Ha global_pool: {hasattr(encoder_model, 'global_pool')}")
@@ -113,12 +131,11 @@ if __name__ == "__main__":
     print(f"num_classes: {encoder_model.num_classes}")
     
     # Applica ML-Decoder (sostituirà automaticamente fc con MLDecoder)
-    encoder_model = add_ml_decoder_head(encoder_model, num_classes=3)
-    
+    model_ML = add_ml_decoder_head(encoder_model, num_classes=3)
+
     print("\nModello dopo ML-Decoder:")
-    print(f"Tipo di fc: {type(encoder_model.fc)}")
+    print(model_ML)
+
+    print("\nModello dopo ML-Decoder:")
+    print(f"Tipo di fc: {type(model_ML.fc)}")
     
-    # Test forward
-    test_input = torch.randn(1, 4, 96, 96, 96)  # Esempio input 3D
-    output = encoder_model(test_input)
-    print(f"Output shape: {output.shape}")
