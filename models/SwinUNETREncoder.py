@@ -46,6 +46,6 @@ if __name__ == "__main__":
     print(model)
     new_model = SwinUNETREncoder(model)  # Modello con solo l'encoder
     print(new_model)
-    from ML_Decoder_main.src_files.ml_decoder.ml_decoder import add_ml_decoder_head
+    from ML_Decoder-main.src_files.ml_decoder.ml_decoder import add_ml_decoder_head
     new_model = add_ml_decoder_head(new_model, num_classes=3, initial_num_features=768, num_of_groups=-1, decoder_embedding=768, zsl=0)
     print(new_model)
