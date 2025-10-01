@@ -101,8 +101,7 @@ if __name__ == "__main__":
     )
     
     print("Modello originale SwinUNETR:")
-    print(f"Input size: {original_model.img_size}")
-    print(f"Input channels: {original_model.in_chans}")
+    print(original_model)
     
     # Crea l'encoder adattato
     encoder_model = SwinUNETREncoder(
@@ -117,6 +116,7 @@ if __name__ == "__main__":
     print(f"Ha fc: {hasattr(encoder_model, 'fc')}")
     print(f"num_features: {encoder_model.num_features}")
     print(f"num_classes: {encoder_model.num_classes}")
+    print(encoder_model)
     
     # Test con input volumetrico
     test_input = torch.randn(2, 4, 96, 96, 96)  # [B, C, D, H, W]
@@ -140,6 +140,7 @@ if __name__ == "__main__":
         # Applica ML-Decoder 
         model_ML = add_ml_decoder_head(encoder_model, num_classes=3)
         print(f"\n✓ ML-Decoder applicato con successo!")
+        print(model_ML)
         print(f"Tipo della nuova fc: {type(model_ML.fc)}")
         
         # Test forward con ML-Decoder
