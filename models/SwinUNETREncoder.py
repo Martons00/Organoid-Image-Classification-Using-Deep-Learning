@@ -37,3 +37,12 @@ class SwinUNETREncoder(nn.Module):
             'enc_hidden': enc_hidden,  # Features finali dal layer 4
             'hidden_states': hidden_states_out
         }
+
+
+if __name__ == "__main__":
+    # Esempio di utilizzo
+    from monai.networks.nets import SwinUNETR
+    model = SwinUNETR(4, 3)  # Modello originale
+    print(model)
+    new_model = SwinUNETREncoder(model)  # Modello con solo l'encoder
+    print(new_model)
