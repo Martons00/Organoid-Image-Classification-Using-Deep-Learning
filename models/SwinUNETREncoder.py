@@ -46,6 +46,7 @@ if __name__ == "__main__":
     print(model)
     new_model = SwinUNETREncoder(model)  # Modello con solo l'encoder
     print(new_model)
+    new_model.fc = nn.Identity()  # Rimuoviamo la testa di classificazione
     new_model.num_features = 768  # Aggiungiamo l'attributo num_features
     from ML_Decoder_main.src_files.ml_decoder.ml_decoder import add_ml_decoder_head
 
