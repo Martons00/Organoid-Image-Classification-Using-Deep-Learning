@@ -93,19 +93,6 @@ class SwinUNETREncoder(nn.Module):
 
 
 if __name__ == "__main__":
-    # Esempio di utilizzo
-    from monai.networks.nets import SwinUNETR
-    model = SwinUNETR(4, 3)  # Modello originale
-    print(model)
-    new_model = SwinUNETREncoder(model)  # Modello con solo l'encoder
-    print(new_model)
-    new_model.fc = nn.Identity()  # Rimuoviamo la testa di classificazione
-    new_model.num_features = 768  # Aggiungiamo l'attributo num_features
-
-    new_model = add_ml_decoder_head(new_model, num_classes=3)
-    print(new_model)
-
-if __name__ == "__main__":
     from monai.networks.nets import SwinUNETR
     from ML_Decoder_main.src_files.ml_decoder.ml_decoder import add_ml_decoder_head
     
@@ -137,5 +124,5 @@ if __name__ == "__main__":
     print(model_ML)
 
     print("\nModello dopo ML-Decoder:")
-    print(f"Tipo di fc: {type(model_ML.fc)}")
+    print(f"Tipo di fc: {type(encoder_model.fc)}")
     
