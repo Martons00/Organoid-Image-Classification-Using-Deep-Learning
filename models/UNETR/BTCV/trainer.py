@@ -19,7 +19,7 @@ import torch.nn.parallel
 import torch.utils.data.distributed
 from tensorboardX import SummaryWriter
 from torch.cuda.amp import GradScaler, autocast
-from utils.utils import distributed_all_gather
+from utils.utils_old import distributed_all_gather
 
 from monai.data import decollate_batch
 

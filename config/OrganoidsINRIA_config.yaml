@@ -1,0 +1,80 @@
+
+# BRATS Swin UNETR Segmentation Configuration
+SYSTEM:
+  seed: 304
+  distributed: false
+  world_size: 1
+  rank: 0
+  dist_url: "tcp://127.0.0.1:23456"
+  dist_backend: "nccl"
+  workers: 8
+  output_dir: "outputs/"
+  logs_dir: "logs/"
+
+MODEL:
+  name: "swinunetr"
+  pretrained_model_name: "model.pt"
+  pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
+  checkpoint: null
+  resume_ckpt: false
+  feature_size: 48
+  in_channels: 4
+  out_channels: 3
+  spatial_dims: 3
+  norm_name: "instance"
+  dropout_rate: 0.0
+  dropout_path_rate: 0.0
+  use_checkpoint: false
+
+DATASET:
+  name: "OrganoidsINRIA"
+  data_dir: "/dataset/brats2021/"
+  json_list: "./jsons/brats21_folds.json"
+  fold: 0
+  cache_dataset: false
+  # Intensity scaling parameters
+  a_min: -175.0
+  a_max: 250.0
+  b_min: 0.0
+  b_max: 1.0
+  # Spacing parameters
+  space_x: 1.5
+  space_y: 1.5
+  space_z: 2.0
+  # ROI size
+  roi_x: 96
+  roi_y: 96
+  roi_z: 96
+
+AUGMENTATION:
+  RandFlipd_prob: 0.2
+  RandRotate90d_prob: 0.2
+  RandScaleIntensityd_prob: 0.1
+  RandShiftIntensityd_prob: 0.1
+
+TRAINING:
+  max_epochs: 300
+  batch_size: 1
+  sw_batch_size: 4
+  val_every: 100
+  save_checkpoint: false
+  noamp: false
+  # Optimizer parameters
+  optim_lr: 0.0001
+  optim_name: "adamw"
+  reg_weight: 0.00001
+  momentum: 0.99
+  # Learning rate scheduler
+  lrschedule: "warmup_cosine"
+  warmup_epochs: 50
+
+LOSS:
+  smooth_dr: 0.000001
+  smooth_nr: 0.0
+  squared_dice: false
+
+INFERENCE:
+  infer_overlap: 0.5
+
+LOGGING:
+  logdir: "test"

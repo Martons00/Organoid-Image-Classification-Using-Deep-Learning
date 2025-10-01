@@ -1,0 +1,25 @@
+
+# Esperimento personalizzato - configs/experiment1.yaml
+SYSTEM:
+  seed: 42
+  workers: 16
+
+MODEL:
+  feature_size: 64
+  dropout_rate: 0.1
+
+DATASET:
+  data_dir: "/my_custom_dataset/"
+  fold: 1
+  roi_x: 128
+  roi_y: 128
+  roi_z: 128
+
+TRAINING:
+  max_epochs: 500
+  batch_size: 2
+  optim_lr: 2e-4
+  val_every: 50
+
+LOGGING:
+  logdir: "experiments/exp1"

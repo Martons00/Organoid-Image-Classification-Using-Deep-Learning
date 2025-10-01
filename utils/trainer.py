@@ -9,6 +9,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import logging
 import os
 import pdb
 import shutil
@@ -20,7 +21,7 @@ import torch.nn.parallel
 import torch.utils.data.distributed
 from tensorboardX import SummaryWriter
 from torch.cuda.amp import GradScaler, autocast
-from utils.utils_old import AverageMeter, distributed_all_gather
+from utils.utils import AverageMeter, distributed_all_gather
 
 from monai.data import decollate_batch
 
@@ -138,21 +139,27 @@ def run_training(
     post_sigmoid=None,
     post_pred=None,
     semantic_classes=None,
+    writer_dict=None,
 ):
-    writer = None
-    if args.logdir is not None and args.rank == 0:
-        writer = SummaryWriter(log_dir=args.logdir)
-        if args.rank == 0:
-            print("Writing Tensorboard logs to ", args.logdir)
+    writer = writer_dict["writer"] if writer_dict is not None else None
+    if writer is None:
+        if args.logdir is not None and args.rank == 0:
+            writer = SummaryWriter(log_dir=args.logdir)
+            if args.rank == 0:
+                print("Writing Tensorboard logs to ", args.logdir)
+                logging.info("Writing Tensorboard logs to ", args.logdir)
+
     scaler = None
     if args.amp:
         scaler = GradScaler()
+
     val_acc_max = 0.0
     for epoch in range(start_epoch, args.max_epochs):
         if args.distributed:
             train_loader.sampler.set_epoch(epoch)
             torch.distributed.barrier()
         print(args.rank, time.ctime(), "Epoch:", epoch)
+        logging.info(f"{args.rank} {time.ctime()} Epoch: {epoch}")
         epoch_time = time.time()
         train_loss = train_epoch(
             model, train_loader, optimizer, scaler=scaler, epoch=epoch, loss_func=loss_func, args=args
@@ -162,6 +169,11 @@ def run_training(
                 "Final training  {}/{}".format(epoch, args.max_epochs - 1),
                 "loss: {:.4f}".format(train_loss),
                 "time {:.2f}s".format(time.time() - epoch_time),
+            )
+            logging.info(
+                "Final training  {}/{}".format(epoch, args.max_epochs - 1)
+                + "loss: {:.4f}".format(train_loss)
+                + "time {:.2f}s".format(time.time() - epoch_time)
             )
         if args.rank == 0 and writer is not None:
             writer.add_scalar("train_loss", train_loss, epoch)
@@ -195,6 +207,16 @@ def run_training(
                     Dice_ET,
                     ", time {:.2f}s".format(time.time() - epoch_time),
                 )
+                logging.info(
+                    "Final validation stats {}/{}".format(epoch, args.max_epochs - 1)
+                    + ", Dice_TC:"
+                    + str(Dice_TC)
+                    + ", Dice_WT:"
+                    + str(Dice_WT)
+                    + ", Dice_ET:"
+                    + str(Dice_ET)
+                    + ", time {:.2f}s".format(time.time() - epoch_time)
+                )
 
                 if writer is not None:
                     writer.add_scalar("Mean_Val_Dice", np.mean(val_acc), epoch)
@@ -205,6 +227,7 @@ def run_training(
                 val_avg_acc = np.mean(val_acc)
                 if val_avg_acc > val_acc_max:
                     print("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
+                    logging.info("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
                     val_acc_max = val_avg_acc
                     b_new_best = True
                     if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
@@ -215,11 +238,13 @@ def run_training(
                 save_checkpoint(model, epoch, args, best_acc=val_acc_max, filename="model_final.pt")
                 if b_new_best:
                     print("Copying to model.pt new best model!!!!")
+                    logging.info("Copying to model.pt new best model!!!!")
                     shutil.copyfile(os.path.join(args.logdir, "model_final.pt"), os.path.join(args.logdir, "model.pt"))
 
         if scheduler is not None:
             scheduler.step()
 
     print("Training Finished !, Best Accuracy: ", val_acc_max)
+    logging.info(f"Training Finished !, Best Accuracy: {val_acc_max}")
 
     return val_acc_max
