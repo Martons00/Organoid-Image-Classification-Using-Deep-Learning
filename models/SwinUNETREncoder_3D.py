@@ -118,21 +118,6 @@ if __name__ == "__main__":
     print(f"num_classes: {encoder_model.num_classes}")
     print(encoder_model)
     
-    # Test con input volumetrico
-    test_input = torch.randn(2, 4, 96, 96, 96)  # [B, C, D, H, W]
-    print(f"\nTest input shape: {test_input.shape}")
-    
-    # Verifica dimensioni delle feature
-    encoder_model.get_feature_dimensions(test_input.shape)
-    
-    # Test forward completo
-    try:
-        output = encoder_model(test_input)
-        print(f"Output finale shape: {output.shape}")
-        print("✓ Forward pass completato con successo!")
-    except Exception as e:
-        print(f"✗ Errore nel forward: {e}")
-    
     # Test compatibilità con ML-Decoder (se disponibile)
     try:
         from ML_Decoder_main.src_files.ml_decoder.ml_decoder import add_ml_decoder_head
@@ -143,9 +128,6 @@ if __name__ == "__main__":
         print(model_ML)
         print(f"Tipo della nuova fc: {type(model_ML.fc)}")
         
-        # Test forward con ML-Decoder
-        ml_output = model_ML(test_input)
-        print(f"Output ML-Decoder shape: {ml_output.shape}")
         
     except ImportError:
         print("\n! ML-Decoder non disponibile, ma il modello è compatibile")
