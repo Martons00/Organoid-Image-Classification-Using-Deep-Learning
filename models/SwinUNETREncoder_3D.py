@@ -96,11 +96,8 @@ if __name__ == "__main__":
     
     # Crea il modello originale per volumi 3D
     original_model = SwinUNETR(
-        img_size=(96, 96, 96),  # Dimensioni del volume
         in_channels=4,          # Canali input (es. modalità MRI)
         out_channels=3,         # Classi output
-        feature_size=48,        # Feature size interno
-        use_checkpoint=True
     )
     
     print("Modello originale SwinUNETR:")
