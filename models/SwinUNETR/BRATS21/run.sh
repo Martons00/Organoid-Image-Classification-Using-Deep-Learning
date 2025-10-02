@@ -24,8 +24,7 @@ else
     echo "requirements.txt non trovato. Installazione dipendenze base..."
     pip install torch torchvision 
     pip install monai
-    pip install nibabel
-    pip install numpy
+    pip install "numpy<2.0" "nibabel>=3.2.0,<5.0"
     pip install matplotlib
     pip install scipy
     pip install tensorboard
