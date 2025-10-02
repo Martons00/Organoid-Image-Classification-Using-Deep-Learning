@@ -17,7 +17,6 @@ from monai.transforms import (
 )
 from monai.data import DataLoader, Dataset, decollate_batch
 from monai.inferers import sliding_window_inference
-import nibabel as nib
 import argparse
 import os
 
@@ -157,8 +156,7 @@ def run_inference(image_path, model_path, output_dir="output"):
                 output_filename = os.path.join(output_dir, f"segmented_{base_name}.nii.gz")
 
                 # Salva come file NIfTI
-                img = nib.Nifti1Image(outputs, np.eye(4))
-                nib.save(img, output_filename)
+                print(outputs.shape)
 
                 print(f"Segmentazione salvata in: {output_filename}")
 
@@ -194,10 +192,7 @@ def run_inference(image_path, model_path, output_dir="output"):
             if is_tif:
                 import tifffile
                 img_array = tifffile.imread(image_path)
-            else:
-                import nibabel as nib
-                img_obj = nib.load(image_path)
-                img_array = img_obj.get_fdata()
+                
 
             print(f"Immagine caricata con dimensioni: {img_array.shape}")
 
