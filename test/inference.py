@@ -72,6 +72,7 @@ if __name__ == "__main__":
             print("Esecuzione inferenza...")
             output = model(inputs)
             print(f"Output shape dal modello: {output.shape}")
+            print
             pred = output.argmax(dim=1)     # [1, 128, 512, 512]
             pred = pred.squeeze(0)          # [128, 512, 512]
 
