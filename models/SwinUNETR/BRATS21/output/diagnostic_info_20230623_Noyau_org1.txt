@@ -1,0 +1,14 @@
+File input: /home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs/20230623_Noyau_org1.tif
+Formato: .tif
+Dimensioni: (165, 512, 512)
+Tipo dati: uint8
+Min value: 0
+Max value: 249
+
+ERRORE DURANTE ELABORAZIONE:
+applying transform <monai.transforms.io.dictionary.LoadImaged object at 0x7f6728e309a0>
+
+RECOMANDAZIONI:
+- Convertire il file in formato NIfTI (.nii.gz)
+- Verificare che sia un'immagine 3D medica
+- Assicurarsi che abbia 4 modalità (T1, T1ce, T2, FLAIR)

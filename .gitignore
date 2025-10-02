@@ -1,3 +1,9 @@
 assets/Screen Recording 2025-09-04 at 15.29.57.mov
 *.tif
 preprocessing/exporting/tokenZenodo.txt
+models/ML_Decoder_main/src_files/ml_decoder/__pycache__/
+models/SwinUNETR/BRATS21/pretrained_models/fold1_f48_ep300_4gpu_dice0_9059.zip
+models/SwinUNETR/BRATS21/pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/
+models/SwinUNETR/BRATS21/swin_unetr_env/
+models/__pycache__/
+tools/__pycache__/

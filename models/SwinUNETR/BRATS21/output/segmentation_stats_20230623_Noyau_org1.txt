@@ -1,0 +1,13 @@
+File input: /home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs/20230623_Noyau_org1.tif
+Formato file: .tif
+Dimensioni output: (128, 128, 128)
+Classi uniche trovate: [0 1 2]
+Numero voxel per classe:
+  Classe 0: 14137 voxel (0.67%)
+  Classe 1: 2081574 voxel (99.26%)
+  Classe 2: 1441 voxel (0.07%)
+
+AVVISO: File .tif processato con workaround
+- Canali duplicati da 1 a 4 per compatibilità
+- Metadati spaziali potrebbero essere inaccurati
+- Risultati da validare attentamente
