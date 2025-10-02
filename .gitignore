@@ -7,3 +7,4 @@ models/SwinUNETR/BRATS21/pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/
 models/SwinUNETR/BRATS21/swin_unetr_env/
 models/__pycache__/
 tools/__pycache__/
+*.pt
