@@ -10,6 +10,8 @@ from monai.inferers import sliding_window_inference
 import argparse
 import os
 import sys
+from SwinUNETREncoder_3D import SwinUNETREncoder
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Inferenza Swin UNETR senza funzioni (main-only)")
@@ -37,6 +39,21 @@ if __name__ == "__main__":
     weight = torch.load(model_pth, weights_only=True, map_location=device if torch.cuda.is_available() else "cpu")
     model.load_from(weights=weight)
     print("Using pretrained self-supervied Swin UNETR backbone weights !")
+        # Crea l'encoder adattato
+    encoder_model = SwinUNETREncoder(
+        model, 
+        num_classes=3, 
+        num_features=768  # Verifica che questo corrisponda all'output dell'encoder10
+    )
+    
+    print("\nModello encoder adattato:")
+    print(f"Ha global_pool (3D): {hasattr(encoder_model, 'global_pool')}")
+    print(f"Tipo global_pool: {type(encoder_model.global_pool)}")
+    print(f"Ha fc: {hasattr(encoder_model, 'fc')}")
+    print(f"num_features: {encoder_model.num_features}")
+    print(f"num_classes: {encoder_model.num_classes}")
+    print(encoder_model)
+    model = encoder_model.to(device)
 
     import tifffile
     data = tifffile.imread(image_pth)
@@ -71,8 +88,12 @@ if __name__ == "__main__":
 
             print("Esecuzione inferenza...")
             output = model(inputs)
+            #output = model.forward_features(inputs)
             print(f"Output shape dal modello: {output.shape}")
-            print
+            print(f"Output dtype: {output.dtype}")
+            print(f"Output min/max: {output.min().item()}/{output.max().item()}")
+
+            '''
             pred = output.argmax(dim=1)     # [1, 128, 512, 512]
             pred = pred.squeeze(0)          # [128, 512, 512]
 
@@ -86,6 +107,7 @@ if __name__ == "__main__":
             print(f"Segmentazione salvata in: {output_dir}")
 
             tifffile.imwrite(str(output_dir+"text.tif"), pred_np)
+            '''
 
             success = True
             break
