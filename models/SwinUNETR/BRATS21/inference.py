@@ -227,10 +227,24 @@ if __name__ == "__main__":
     parser.add_argument("--output_dir", default="output", help="Directory di output")
 
     args = parser.parse_args()
+    image_pth = args.image_path
+    model_pth = args.model_path
+    output_directory = args.output_dir
 
-    success = run_inference(args.image_path, args.model_path, args.output_dir)
 
-    if success:
-        print("\n✅ Inferenza completata con successo!")
-    else:
-        print("\n❌ Inferenza fallita - controllare i file diagnostici per dettagli")
+    """Esegue l'inferenza su una singola immagine con gestione intelligente del formato"""
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Usando device: {device}")
+
+    # Crea directory di output
+    os.makedirs(output_directory, exist_ok=True)
+
+    # Carica il modello
+    model = load_model(model_pth, device)
+
+    # Prepara i dati
+    data_dict = {"image": image_pth}
+
+    # Determina il tipo di trasformazioni in base all'estensione del file
+    file_ext = os.path.splitext(image_pth.lower())[1]
+    is_tif = file_ext in ['.tif', '.tiff']
