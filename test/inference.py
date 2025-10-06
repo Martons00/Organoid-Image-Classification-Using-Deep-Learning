@@ -34,7 +34,7 @@ if __name__ == "__main__":
     os.makedirs(output_dir, exist_ok=True)
 
     # Modello
-    model = SwinUNETR(img_size=(128,512,512) , in_channels=1, out_channels=1, feature_size=48,use_checkpoint=True)
+    model = SwinUNETR(img_size=(128,128,128) , in_channels=1, out_channels=1, feature_size=48,use_checkpoint=True)
     model.eval()
     weight = torch.load(model_pth, weights_only=True, map_location=device if torch.cuda.is_available() else "cpu")
     model.load_from(weights=weight)
@@ -53,12 +53,45 @@ if __name__ == "__main__":
     print(f"num_features: {encoder_model.num_features}")
     print(f"num_classes: {encoder_model.num_classes}")
     print(encoder_model)
-    model = encoder_model.to(device)
+    num_classes = 3
+    num_features = 768
+    num_of_groups = 1
+    decoder_embedding = 768
+    zsl = 0
+
+    model = encoder_model
+
+    # Test compatibilità con ML-Decoder (se disponibile)
+    try:
+        print("\nVerifica compatibilità con ML-Decoder...")
+        # test/inference.py
+        import os, sys
+
+        THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+        ROOT = os.path.abspath(os.path.join(THIS_DIR, '..'))                  # progetto
+        SRC = os.path.join(ROOT, 'models', 'ML_Decoder_main', 'src_files')    # .../src_files
+        if SRC not in sys.path:
+            sys.path.insert(0, SRC)
+
+        from ml_decoder.ml_decoder import MLDecoder  # import pulito
+
+        print("\nML-Decoder importato con successo.")
+        # Applica ML-Decoder 
+        head = MLDecoder(num_classes=num_classes, initial_num_features=num_features, num_of_groups=num_of_groups, decoder_embedding=decoder_embedding, zsl=zsl)
+        model.global_pool = torch.nn.Identity()
+        model.fc = head
+        model_ML = model.to(device)
+        print(f"Modello con ML-Decoder:\n{model_ML}")
+        
+    except ImportError:
+        print("\n! ML-Decoder non disponibile, ma il modello è compatibile")
+    except Exception as e:
+        print(f"✗ Errore con ML-Decoder: {e}")
 
     import tifffile
     data = tifffile.imread(image_pth)
     print(f"Input image shape: {data.shape}, dtype: {data.dtype}")
-    data = data[:128,:512,:512]  # Crop to fit model input size
+    data = data[:128,:128,:128]  # Crop to fit model input size
     data = np.expand_dims(data, axis=0)  # da (D, H, W) a (1, D, H, W)
 
     print(f"Cropped image shape: {data.shape}, dtype: {data.dtype}")
@@ -87,11 +120,18 @@ if __name__ == "__main__":
             print(f"Input shape al modello: {inputs.shape}")
 
             print("Esecuzione inferenza...")
-            output = model(inputs)
+            output_features = model.forward_features(inputs)
+            print(f"Output features shape: {output_features.shape}, dtype: {output_features.dtype}")
+            print(f"Output features min/max: {output_features.min().item()}/{output_features.max().item()}")
+            #output = model(inputs)
+            output_ml = model_ML(inputs)
+            print(f"Output ML-Decoder shape: {output_ml.shape}")
+            print(f"Output ML-Decoder dtype: {output_ml.dtype}")
+            print(f"Output ML-Decoder: {output_ml}")
             #output = model.forward_features(inputs)
-            print(f"Output shape dal modello: {output.shape}")
-            print(f"Output dtype: {output.dtype}")
-            print(f"Output min/max: {output.min().item()}/{output.max().item()}")
+            #print(f"Output shape dal modello: {output.shape}")
+            #print(f"Output dtype: {output.dtype}")
+            #print(f"Output min/max: {output.min().item()}/{output.max().item()}")
 
             '''
             pred = output.argmax(dim=1)     # [1, 128, 512, 512]

@@ -60,6 +60,7 @@ class SwinUNETREncoder(nn.Module):
         """Forward standard per classificazione compatibile con dati 3D"""
         # Estrai le feature: [B, C, D, H, W]
         features = self.forward_features(x)
+        print(f"Features shape: {features.shape}")
         
         # Applica global pooling 3D se presente
         if hasattr(self, 'global_pool') and self.global_pool is not None:
@@ -70,6 +71,7 @@ class SwinUNETREncoder(nn.Module):
             features = features.flatten(1)
         
         # Applica la testa di classificazione
+        print(f"Features shape before classifier: {features.shape}")
         if hasattr(self, 'fc'):
             return self.fc(features)  # [B, 384] -> [B, num_classes]
         elif hasattr(self, 'head'):
