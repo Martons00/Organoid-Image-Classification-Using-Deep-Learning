@@ -1,0 +1,77 @@
+2025-10-07 14:21:06,958 Batch size is: 1, epochs: 300
+2025-10-07 14:21:07,482 Total parameters count: 62186659
+2025-10-07 14:21:16,170 Batch size is: 1, epochs: 300
+2025-10-07 14:21:16,610 Total parameters count: 62186659
+2025-10-07 14:21:35,860 Namespace(seed=304, distributed=False, world_size=1, rank=0, dist_url='tcp://127.0.0.1:23456', dist_backend='nccl', workers=8, output_dir='outputs/', logs_dir='logs/', model_name='swinunetr', pretrained_model_name='model_swinvit.pt', pretrained_dir='./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/', checkpoint=None, resume_ckpt=False, feature_size=48, in_channels=4, out_channels=3, spatial_dims=3, norm_name='instance', dropout_rate=0.0, dropout_path_rate=0.0, use_checkpoint=False, dataset_name='OrganoidsINRIA', data_dir='/home/mraffael/martone_project/Organoids_Dataset/', json_list='./jsons/brats21_folds.json', exact_class=True, fold=0, cache_dataset=False, a_min=-175.0, a_max=250.0, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=128, roi_y=128, roi_z=128, RandFlipd_prob=0.2, RandRotate90d_prob=0.2, RandScaleIntensityd_prob=0.1, RandShiftIntensityd_prob=0.1, max_epochs=300, batch_size=1, sw_batch_size=1, val_every=100, save_checkpoint=False, noamp=False, optim_lr=0.0001, optim_name='adamw', reg_weight=1e-05, momentum=0.99, lrschedule='', warmup_epochs=50, smooth_dr=1e-06, smooth_nr=0.0, squared_dice=False, infer_overlap=0.5, logdir='./runs/test', amp=True, gpu=0, test_mode=False)
+2025-10-07 14:21:35,899 Batch size is: 1, epochs: 300
+2025-10-07 14:21:36,189 Total parameters count: 62186659
+2025-10-07 14:21:52,410 Namespace(seed=304, distributed=False, world_size=1, rank=0, dist_url='tcp://127.0.0.1:23456', dist_backend='nccl', workers=8, output_dir='outputs/', logs_dir='logs/', model_name='swinunetr', pretrained_model_name='model_swinvit.pt', pretrained_dir='./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/', checkpoint=None, resume_ckpt=False, feature_size=48, in_channels=4, out_channels=3, spatial_dims=3, norm_name='instance', dropout_rate=0.0, dropout_path_rate=0.0, use_checkpoint=False, dataset_name='OrganoidsINRIA', data_dir='/home/mraffael/martone_project/Organoids_Dataset/', json_list='./jsons/brats21_folds.json', exact_class=True, fold=0, cache_dataset=False, a_min=-175.0, a_max=250.0, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=128, roi_y=128, roi_z=128, RandFlipd_prob=0.2, RandRotate90d_prob=0.2, RandScaleIntensityd_prob=0.1, RandShiftIntensityd_prob=0.1, max_epochs=300, batch_size=1, sw_batch_size=1, val_every=100, save_checkpoint=False, noamp=False, optim_lr=0.0001, optim_name='adamw', reg_weight=1e-05, momentum=0.99, lrschedule='', warmup_epochs=50, smooth_dr=1e-06, smooth_nr=0.0, squared_dice=False, infer_overlap=0.5, logdir='./runs/test', amp=True, gpu=0, test_mode=False)
+2025-10-07 14:21:52,410 AUGMENTATION:
+  RandFlipd_prob: 0.2
+  RandRotate90d_prob: 0.2
+  RandScaleIntensityd_prob: 0.1
+  RandShiftIntensityd_prob: 0.1
+DATASET:
+  a_max: 250.0
+  a_min: -175.0
+  b_max: 1.0
+  b_min: 0.0
+  cache_dataset: False
+  data_dir: /home/mraffael/martone_project/Organoids_Dataset/
+  exact_class: False
+  fold: 0
+  json_list: ./jsons/OrganoidsINRIA_folds.json
+  name: OrganoidsINRIA
+  roi_x: 128
+  roi_y: 128
+  roi_z: 128
+  space_x: 1.5
+  space_y: 1.5
+  space_z: 2.0
+INFERENCE:
+  infer_overlap: 0.5
+LOGGING:
+  logdir: test
+LOSS:
+  smooth_dr: 1e-06
+  smooth_nr: 0.0
+  squared_dice: False
+MODEL:
+  checkpoint: 
+  dropout_path_rate: 0.0
+  dropout_rate: 0.0
+  feature_size: 48
+  in_channels: 4
+  name: swinunetr
+  norm_name: instance
+  out_channels: 3
+  pretrained_dir: ./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/
+  pretrained_model_name: model_swinvit.pt
+  resume_ckpt: False
+  spatial_dims: 3
+  use_checkpoint: False
+SYSTEM:
+  dist_backend: nccl
+  dist_url: tcp://127.0.0.1:23456
+  distributed: False
+  logs_dir: ./logs
+  output_dir: ./outputs
+  rank: 0
+  seed: 304
+  workers: 8
+  world_size: 1
+TRAINING:
+  batch_size: 1
+  lrschedule: 
+  max_epochs: 300
+  momentum: 0.99
+  noamp: False
+  optim_lr: 0.0001
+  optim_name: adamw
+  reg_weight: 1e-05
+  save_checkpoint: False
+  sw_batch_size: 1
+  val_every: 100
+  warmup_epochs: 50
+2025-10-07 14:21:52,437 Batch size is: 1, epochs: 300
+2025-10-07 14:21:52,715 Total parameters count: 62186659

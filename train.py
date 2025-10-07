@@ -49,11 +49,36 @@ from monai.utils.enums import MetricReduction
 from test import  SwinUNETREncoder
 from dataset import OrganoidsINRIA3D
 
+from typing import Tuple, Union
+import torch
+from torch.utils.data import Dataset, random_split
+
+def split_dataset_random(
+    dataset: Dataset,
+    val_size: Union[int, float] = 0.2,
+    seed: int = 42
+) -> Tuple[Dataset, Dataset]:
+    """
+    Divide un Dataset PyTorch in train/val in modo casuale.
+    val_size: frazione (0<val<=1) oppure numero intero di campioni.
+    Restituisce (train_subset, val_subset).
+    """
+    n = len(dataset)
+    if isinstance(val_size, float):
+        val_len = int(round(val_size * n))
+    else:
+        val_len = int(val_size)
+    val_len = max(1, min(n - 1, val_len))
+    train_len = n - val_len
+
+    g = torch.Generator().manual_seed(seed)
+    train_subset, val_subset = random_split(dataset, [train_len, val_len], generator=g)
+    return train_subset, val_subset
+
 
 def main():
-    args = parse_args()
-    args = config_to_args(config)
-    args.amp = not args.noamp
+    args = parse_args()  # Aggiorna automaticamente la variabile globale config
+
     
     args.logdir = "./runs/" + args.logdir
     if args.distributed:
@@ -74,13 +99,14 @@ def main_worker(gpu, args):
         dist.init_process_group(
             backend=args.dist_backend, init_method=args.dist_url, world_size=args.world_size, rank=args.rank
         )
-    #torch.cuda.set_device(args.gpu)
-    #torch.backends.cudnn.benchmark = True
+    torch.cuda.set_device(args.gpu)
+    torch.backends.cudnn.benchmark = True
     args.test_mode = False
 
 
     logger, final_output_dir, tb_log_dir = create_logger(
         args, args.logdir, 'train')
+    
     
     writer_dict = {
         'writer': SummaryWriter(tb_log_dir),
@@ -94,7 +120,26 @@ def main_worker(gpu, args):
     # Here we prepare the data loader
     dataset = OrganoidsINRIA3D(args.data_dir, default_other=3, exact_class_dir=args.exact_class)
     print("Dataset length is:", len(dataset))
-    #loader = get_loader(args)
+    train_set, val_set = split_dataset_random(dataset, val_size=0.2, seed=args.seed)
+    print("Training set length:", len(train_set))
+    print("Validation set length:", len(val_set))
+
+    traiin_loader = torch.utils.data.DataLoader(
+        train_set,
+        batch_size=args.batch_size,
+        num_workers=args.workers,
+        pin_memory=True,
+        drop_last=True,
+    )
+    validation_loader = torch.utils.data.DataLoader(
+        val_set,
+        batch_size=1,
+        shuffle=False,
+        pin_memory=True,
+        drop_last=False,
+    )
+        
+
 
 
     print(args.rank, " gpu", args.gpu)
@@ -128,6 +173,7 @@ def main_worker(gpu, args):
         )
     else:
         dice_loss = DiceLoss(to_onehot_y=False, sigmoid=True)
+
     post_sigmoid = Activations(sigmoid=True)
     post_pred = AsDiscrete(argmax=False, logit_thresh=0.5)
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN_BATCH, get_not_nans=True)
@@ -168,7 +214,7 @@ def main_worker(gpu, args):
 
     # Here we add the classification head
 
-    #model.cuda(args.gpu)
+    model.cuda(args.gpu)
 
     if args.distributed:
         torch.cuda.set_device(args.gpu)
@@ -210,12 +256,12 @@ def main_worker(gpu, args):
     start = timeit.default_timer()
     end_epoch = args.max_epochs
     num_iters = args.max_epochs * epoch_iters
-    accuracy = 0
-    '''
+
+
     accuracy = run_training(
         model=model,
-        train_loader=loader[0],
-        val_loader=loader[1],
+        train_loader=train_,
+        val_loader=validation_loader,
         optimizer=optimizer,
         loss_func=dice_loss,
         acc_func=dice_acc,
@@ -229,7 +275,9 @@ def main_worker(gpu, args):
         writer_dict=writer_dict,
 
     )
-    '''
+
+    end = timeit.default_timer()
+
     return accuracy
 
 

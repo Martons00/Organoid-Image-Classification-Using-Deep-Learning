@@ -22,11 +22,113 @@ import torch.utils.data.distributed
 from tensorboardX import SummaryWriter
 from torch.cuda.amp import GradScaler, autocast
 from .utils import AverageMeter, distributed_all_gather
+from .test import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches
 
 from monai.data import decollate_batch
 
+def freeze_backbone_and_select_head(model):
+    # Congela tutti i parametri
+    for p in model.parameters():
+        p.requires_grad = False
+    # Scongela solo i layer di testa
+    for p in model.global_pool.parameters():
+        p.requires_grad = True
+    for p in model.fc.parameters():
+        p.requires_grad = True
+    return model
 
 def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
+    """
+    Training che usa la pipeline di inferenza a patch con forward_features,
+    fine-tunando solo global_pool e fc (backbone congelato).
+    """
+    model.train()
+    freeze_backbone_and_select_head(model)
+    device = torch.device("cuda", args.rank) if torch.cuda.is_available() else torch.device("cpu")
+    start_time = time.time()
+    run_loss = AverageMeter()
+
+    for idx, batch_data in enumerate(loader):
+        # Estrai data/target come nel codice esistente
+        if isinstance(batch_data, list):
+            data, target = batch_data
+        else:
+            data, target = batch_data["vol"], batch_data["label"]
+        data = data.to(device, non_blocking=True)
+        target = target.to(device, non_blocking=True)
+
+        # Azzera gradienti solo dei layer sbloccati
+        for p in model.parameters():
+            if p.requires_grad and p.grad is not None:
+                p.grad = None
+
+        with autocast(enabled=args.amp):
+            # Costruisci logits per l'intero batch iterando i volumi
+            batch_logits = []
+            B = data.shape[0]
+            for b in range(B):
+                vol = data[b:b+1]                  # [1,C,D,H,W] o [1,D,H,W]
+                vol = ensure_single_channel(vol, mode="first")  # -> [1,1,D,H,W]
+                patches, coords = extract_patches_5d_torch(
+                    vol, patch_size=(args.roi_z,args.roi_y,args.roi_x), step=(args.roi_z,args.roi_y,args.roi_x), pad_value=0
+                )  # patches: [N,1,128,128,128]
+
+                # Inferenza per patch con forward_features
+                feat_list = []
+                for i in range(patches.shape[0]):
+                    patch = patches[i:i+1].to(device).to(torch.float32)  # [1,1,128,128,128]
+                    feats = model.forward_features(patch)                # es. [1,Cf] o [1,Cf,1,1,N]
+                    feat_list.append(feats)
+
+                feats_cat = torch.cat(feat_list, dim=0)                  # [N,Cf,...]
+                feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # ricostruzione feature per volume
+
+                # Testa di classificazione: global_pool → flatten → fc
+                pooled = model.global_pool(feats_tiled)                  # [1,C]
+                pooled = pooled.flatten(1)                               # [1,C]
+                logits_b = model.fc(pooled)                              # [1,num_classes]
+                batch_logits.append(logits_b)
+
+            logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
+            loss = loss_func(logits, target)
+
+        # Backward/step solo sui parametri sbloccati
+        if args.amp:
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
+        else:
+            loss.backward()
+            optimizer.step()
+
+        # Aggiorna metriche come nel codice originale
+        if args.distributed:
+            loss_list = distributed_all_gather(
+                [loss], out_numpy=True, is_valid=idx < loader.sampler.valid_length
+            )
+            run_loss.update(
+                np.mean(np.mean(np.stack(loss_list, axis=0), axis=0), axis=0),
+                n=args.batch_size * args.world_size
+            )
+        else:
+            run_loss.update(loss.item(), n=args.batch_size)
+
+        if args.rank == 0:
+            print(
+                "Epoch {}/{} {}/{}".format(epoch, args.max_epochs, idx, len(loader)),
+                "loss: {:.4f}".format(run_loss.avg),
+                "time {:.2f}s".format(time.time() - start_time),
+            )
+        start_time = time.time()
+
+    # Pulisci eventuali gradienti residui
+    for p in model.parameters():
+        if p.grad is not None:
+            p.grad = None
+    return run_loss.avg
+
+
+def train_epoch_old(model, loader, optimizer, scaler, epoch, loss_func, args):
     model.train()
     start_time = time.time()
     run_loss = AverageMeter()
@@ -34,7 +136,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         if isinstance(batch_data, list):
             data, target = batch_data
         else:
-            data, target = batch_data["image"], batch_data["label"]
+            data, target = batch_data["vol"], batch_data["label"]
         data, target = data.cuda(args.rank), target.cuda(args.rank)
         for param in model.parameters():
             param.grad = None
@@ -66,15 +168,103 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         param.grad = None
     return run_loss.avg
 
+def val_epoch(
+    model,
+    loader,
+    epoch,
+    acc_func,          # opzionale: se None, useremo accuracy semplice
+    args,
+    post_sigmoid=None, # opzionale: se forniti, li usiamo per compatibilità
+    post_pred=None     # opzionale
+):
+    model.eval()
+    device = torch.device("cuda", args.rank) if torch.cuda.is_available() else torch.device("cpu")
+    start_time = time.time()
+    run_acc = AverageMeter()
 
-def val_epoch(model, loader, epoch, acc_func, args, model_inferer=None, post_sigmoid=None, post_pred=None):
+    with torch.no_grad():
+        for idx, batch_data in enumerate(loader):
+            # Estrai data/target come nel codice esistente
+            if isinstance(batch_data, list):
+                data, target = batch_data
+            else:
+                data, target = batch_data["vol"], batch_data["label"]
+            data = data.to(device, non_blocking=True)
+            target = target.to(device, non_blocking=True)  # atteso [B] o [B,1]
+
+            with autocast(enabled=args.amp):
+                batch_logits = []
+                B = data.shape[0]
+                for b in range(B):
+                    vol = data[b:b+1]                                   # [1,C,D,H,W] o [1,D,H,W]
+                    vol = ensure_single_channel(vol, mode="first")       # -> [1,1,D,H,W]
+                    patches, coords = extract_patches_5d_torch(
+                        vol, patch_size=(128,128,128), step=(128,128,128), pad_value=0
+                    )  # [N,1,128,128,128]
+
+                    feat_list = []
+                    for i in range(patches.shape[0]):
+                        patch = patches[i:i+1].to(device).to(torch.float32)   # [1,1,128,128,128]
+                        feats = model.forward_features(patch)                  # feature per patch
+                        feat_list.append(feats)
+
+                    feats_cat = torch.cat(feat_list, dim=0)                    # [N,Cf,...]
+                    feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # ricostruzione feature
+                    pooled = model.global_pool(feats_tiled)                    # [1,C]
+                    pooled = pooled.flatten(1)                                 # [1,C]
+                    logits_b = model.fc(pooled)                                # [1,num_classes]
+                    batch_logits.append(logits_b)
+
+                logits = torch.cat(batch_logits, dim=0)                        # [B,num_classes]
+
+                # Calcolo metrica di accuratezza per classificazione
+                # Se sono passati post_* (MONAI), usiamo softmax+argmax come default
+                probs = torch.softmax(logits, dim=1)
+                preds = probs.argmax(dim=1)                                    # [B]
+                if target.ndim > 1 and target.size(-1) == 1:
+                    target_eval = target.view(-1)
+                else:
+                    target_eval = target
+
+                correct = (preds == target_eval).sum().item()
+                not_nans = target_eval.numel()
+                acc = correct / max(1, not_nans)
+
+            # Aggregazione distribuita come nel codice originale
+            if args.distributed:
+                acc_tensor = torch.tensor(acc, device=device, dtype=torch.float32)
+                n_tensor = torch.tensor(not_nans, device=device, dtype=torch.float32)
+                acc_list, not_nans_list = distributed_all_gather(
+                    [acc_tensor, n_tensor],
+                    out_numpy=True,
+                    is_valid=idx < loader.sampler.valid_length
+                )
+                # media pesata per numero di esempi
+                for al, nl in zip(acc_list, not_nans_list):
+                    run_acc.update(al, n=nl)
+            else:
+                run_acc.update(acc, n=not_nans)
+
+            if args.rank == 0:
+                print(
+                    "Val {}/{} {}/{}".format(epoch, args.max_epochs, idx, len(loader)),
+                    ", Acc:",
+                    run_acc.avg,
+                    ", time {:.2f}s".format(time.time() - start_time),
+                )
+            start_time = time.time()
+
+    return run_acc.avg
+
+
+def val_epoch_old(model, loader, epoch, acc_func, args, model_inferer=None, post_sigmoid=None, post_pred=None):
     model.eval()
     start_time = time.time()
     run_acc = AverageMeter()
 
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
-            data, target = batch_data["image"], batch_data["label"]
+            data, target = batch_data["vol"], batch_data["label"]
             data, target = data.cuda(args.rank), target.cuda(args.rank)
             with autocast(enabled=args.amp):
                 logits = model_inferer(data)
