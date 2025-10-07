@@ -123,6 +123,7 @@ def main_worker(gpu, args):
     # Here we prepare the data loader
     dataset = OrganoidsINRIA3D(args.data_dir, default_other=args.ignore_label, exact_class_dir=args.exact_class)
     print("Dataset length is:", len(dataset))
+    logger.info(f"Dataset length is: {len(dataset)}")
     dataset_loader = torch.utils.data.DataLoader(
         dataset,
         batch_size=1,
@@ -134,7 +135,9 @@ def main_worker(gpu, args):
 
     train_set, val_set = split_dataset_random(dataset, val_size=0.2, seed=args.seed)
     print("Training set length:", len(train_set))
+    logger.info(f"Training set length: {len(train_set)}")
     print("Validation set length:", len(val_set))
+    logger.info(f"Validation set length: {len(val_set)}")
 
     train_loader = torch.utils.data.DataLoader(
         train_set,
@@ -163,12 +166,15 @@ def main_worker(gpu, args):
     print("Class distribution in the entire dataset:")
     for c, n in enumerate(dataset_counts):
         print(f"Class {c}: {n}")
+        logger.info(f"Class {c}: {n}")
     print("Class distribution in the training set:")
     for c, n in enumerate(train_counts):
         print(f"Train class {c}: {n}")
+        logger.info(f"Train class {c}: {n}")
     print("Class distribution in the validation set:")
     for c, n in enumerate(val_counts):
         print(f"Val class {c}: {n}")
+        logger.info(f"Val class {c}: {n}")
 
 
     print(args.rank, " gpu", args.gpu)
@@ -196,6 +202,8 @@ def main_worker(gpu, args):
         print("Using pretrained weights")
 
     weights = torch.tensor(1.0 / (dataset_counts + 1e-9), dtype=torch.float)
+    print("Class weights:", weights.numpy())
+    logger.info("Class weights: " + str(weights.numpy()))
     criterion = torch.nn.CrossEntropyLoss(weight=weights)
 
     loss_func = nn.CrossEntropyLoss(ignore_index=args.ignore_label)  # per classificazione
