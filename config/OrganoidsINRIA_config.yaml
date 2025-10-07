@@ -30,7 +30,8 @@ DATASET:
   name: "OrganoidsINRIA"
   data_dir: "/home/mraffael/martone_project/Organoids_Dataset/"
   json_list: "./jsons/brats21_folds.json"
-  exact_class: false
+  exact_class: true
+  ignore_label: 3
   fold: 0
   cache_dataset: false
   # Intensity scaling parameters

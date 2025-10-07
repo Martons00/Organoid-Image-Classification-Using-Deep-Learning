@@ -21,27 +21,14 @@ def label_from_substring(p: str, default_other: int = 1) -> int:
 def label_from_exact_parent_dir(p: str, default_other: int = 1) -> int:
     parent = Path(p).parent.name.lower()  # nome cartella immediata
     return CLASSES.get(parent, default_other)
-
 class OrganoidsINRIA3D(Dataset):
-    """
-    Se exact_class_dir=True, tiene solo i .tif la cui cartella immediata è
-    esattamente una delle classi (chouxfleurs/compact/cystiques) e assegna
-    la label in base al nome cartella. Altrimenti usa il matching per sottostringa.
-    """
     def __init__(self, root: str, default_other: int = 1, exact_class_dir: bool = False):
         self.root = Path(root)
-        # raccoglie .tif e .tiff
         paths = sorted({*(str(p) for p in self.root.rglob("*.tif")),
                         *(str(p) for p in self.root.rglob("*.tiff"))})
 
         if exact_class_dir:
-            # filtra: tiene solo quelli con parent.name in CLASSES
-            keep = []
-            for p in paths:
-                parent = Path(p).parent.name.lower()
-                if parent in CLASSES:
-                    keep.append(p)
-            self.paths = keep
+            self.paths = [p for p in paths if Path(p).parent.name.lower() in CLASSES]
         else:
             self.paths = paths
 
@@ -51,12 +38,24 @@ class OrganoidsINRIA3D(Dataset):
         self.default_other = default_other
         self.exact_class_dir = exact_class_dir
 
+        # Precompute labels dai percorsi (solo string matching, nessun I/O immagini)
+        if self.exact_class_dir:
+            self.labels = np.fromiter(
+                (label_from_exact_parent_dir(p, self.default_other) for p in self.paths),
+                dtype=np.int64, count=len(self.paths)
+            )
+        else:
+            self.labels = np.fromiter(
+                (label_from_substring(p, self.default_other) for p in self.paths),
+                dtype=np.int64, count=len(self.paths)
+            )
+
     def __len__(self):
         return len(self.paths)
 
     def __getitem__(self, idx: int):
         p = self.paths[idx]
-        vol_np = tiff.imread(p)
+        vol_np = tiff.imread(p)  # caricamento solo quando serve davvero
         if vol_np.ndim == 2:
             vol_np = vol_np[None, ...]
         size = np.array(vol_np.shape, dtype=np.int64)
@@ -69,14 +68,11 @@ class OrganoidsINRIA3D(Dataset):
         vol_np = np.expand_dims(vol_np, axis=0)  # [1,D,H,W]
         vol = torch.from_numpy(vol_np)
 
-        if self.exact_class_dir:
-            y = label_from_exact_parent_dir(p, self.default_other)
-        else:
-            y = label_from_substring(p, self.default_other)
-
+        y = int(self.labels[idx])
         label = torch.tensor(y, dtype=torch.long)
         name = os.path.splitext(os.path.basename(p))[0]
         return {"vol": vol, "label": label, "name": name, "size": size, "path": p}
+
 
 if __name__ == "__main__":
     # Matching per sottostringa (comportamento attuale):

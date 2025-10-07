@@ -22,7 +22,7 @@ import torch.utils.data.distributed
 from tensorboardX import SummaryWriter
 from torch.cuda.amp import GradScaler, autocast
 from .utils import AverageMeter, distributed_all_gather
-from .test import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches
+from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches
 
 from monai.data import decollate_batch
 
@@ -90,6 +90,8 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
                 batch_logits.append(logits_b)
 
             logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
+            predictions = torch.softmax(logits, dim=1).argmax(dim=1)  # [B]
+            print(f"Prediction: {predictions[0]} - Target: {target[0]}")  # DEBUG
             loss = loss_func(logits, target)
 
         # Backward/step solo sui parametri sbloccati
@@ -115,7 +117,7 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
 
         if args.rank == 0:
             print(
-                "Epoch {}/{} {}/{}".format(epoch, args.max_epochs, idx, len(loader)),
+                "Epoch: {}/{} Iter: {}/{}".format(epoch, args.max_epochs, idx, len(loader)),
                 "loss: {:.4f}".format(run_loss.avg),
                 "time {:.2f}s".format(time.time() - start_time),
             )

@@ -17,6 +17,7 @@ import torch.nn as nn
 import torch.backends.cudnn as cudnn
 import torch.optim
 from tensorboardX import SummaryWriter
+from torchmetrics.classification import MulticlassAccuracy
 
 from config import config
 from config import update_config
@@ -78,6 +79,8 @@ def split_dataset_random(
 
 def main():
     args = parse_args()  # Aggiorna automaticamente la variabile globale config
+    args.amp = not args.noamp
+
 
     
     args.logdir = "./runs/" + args.logdir
@@ -118,16 +121,26 @@ def main_worker(gpu, args):
     logger.info(config)
 
     # Here we prepare the data loader
-    dataset = OrganoidsINRIA3D(args.data_dir, default_other=3, exact_class_dir=args.exact_class)
+    dataset = OrganoidsINRIA3D(args.data_dir, default_other=args.ignore_label, exact_class_dir=args.exact_class)
     print("Dataset length is:", len(dataset))
+    dataset_loader = torch.utils.data.DataLoader(
+        dataset,
+        batch_size=1,
+        shuffle=False,
+        num_workers=1,
+        pin_memory=True,
+        drop_last=False,
+    )
+
     train_set, val_set = split_dataset_random(dataset, val_size=0.2, seed=args.seed)
     print("Training set length:", len(train_set))
     print("Validation set length:", len(val_set))
 
-    traiin_loader = torch.utils.data.DataLoader(
+    train_loader = torch.utils.data.DataLoader(
         train_set,
         batch_size=args.batch_size,
         num_workers=args.workers,
+        shuffle=True,
         pin_memory=True,
         drop_last=True,
     )
@@ -138,8 +151,24 @@ def main_worker(gpu, args):
         pin_memory=True,
         drop_last=False,
     )
-        
 
+    
+    num_classes = 4  # 0,1,2 + "other"=3
+    labels = dataset.labels  # np.ndarray
+
+    dataset_counts = np.bincount(labels, minlength=num_classes)
+    train_counts = np.bincount(labels[train_set.indices], minlength=num_classes)
+    val_counts   = np.bincount(labels[val_set.indices],   minlength=num_classes)
+
+    print("Class distribution in the entire dataset:")
+    for c, n in enumerate(dataset_counts):
+        print(f"Class {c}: {n}")
+    print("Class distribution in the training set:")
+    for c, n in enumerate(train_counts):
+        print(f"Train class {c}: {n}")
+    print("Class distribution in the validation set:")
+    for c, n in enumerate(val_counts):
+        print(f"Val class {c}: {n}")
 
 
     print(args.rank, " gpu", args.gpu)
@@ -165,6 +194,13 @@ def main_worker(gpu, args):
         model_dict = torch.load(pretrained_pth)["state_dict"]
         model.load_state_dict(model_dict)
         print("Using pretrained weights")
+
+    weights = torch.tensor(1.0 / (dataset_counts + 1e-9), dtype=torch.float)
+    criterion = torch.nn.CrossEntropyLoss(weight=weights)
+
+    loss_func = nn.CrossEntropyLoss(ignore_index=args.ignore_label)  # per classificazione
+    acc_metric = MulticlassAccuracy(num_classes=args.out_channels, average='macro').cuda(args.gpu)
+
 
 
     if args.squared_dice:
@@ -210,7 +246,11 @@ def main_worker(gpu, args):
     # Here we have to extract the encoder part from the pretrained model and load it
     # into our model
 
-    model = SwinUNETREncoder(model)
+    model = SwinUNETREncoder(
+        model, 
+        num_classes=3, 
+        num_features=768
+    )
 
     # Here we add the classification head
 
@@ -260,11 +300,11 @@ def main_worker(gpu, args):
 
     accuracy = run_training(
         model=model,
-        train_loader=train_,
+        train_loader=train_loader,
         val_loader=validation_loader,
         optimizer=optimizer,
-        loss_func=dice_loss,
-        acc_func=dice_acc,
+        loss_func=loss_func,
+        acc_func=acc_metric,
         args=args,
         model_inferer=model_inferer,
         scheduler=scheduler,

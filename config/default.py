@@ -70,6 +70,8 @@ _C.DATASET.json_list = "./jsons/OrganoidsINRIA_folds.json"
 
 _C.DATASET.exact_class = False
 
+_C.DATASET.ignore_label = 3
+
 _C.DATASET.fold = 0
 
 _C.DATASET.cache_dataset = False
@@ -241,6 +243,7 @@ def config_to_args(cfg):
     args.data_dir = cfg.DATASET.data_dir
     args.json_list = cfg.DATASET.json_list
     args.exact_class = cfg.DATASET.exact_class
+    args.ignore_label = cfg.DATASET.ignore_label
     args.fold = cfg.DATASET.fold
     args.cache_dataset = cfg.DATASET.cache_dataset
     args.a_min = cfg.DATASET.a_min

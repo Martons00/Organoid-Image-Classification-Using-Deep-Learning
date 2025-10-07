@@ -319,3 +319,173 @@ def distributed_all_gather(
                 gather_list = [t.cpu().numpy() for t in gather_list]
             tensor_list_out.append(gather_list)
     return tensor_list_out
+
+
+# feats: [N, 768, fD, fH, fW] in ordine (z major -> y -> x) come nell’estrazione
+def tile_feature_patches(feats: torch.Tensor, coords) -> torch.Tensor:
+    # feats: [N, C, fD, fH, fW] dove N = nZ*nY*nX patch in ordine z->y->x
+        # Calcola la griglia dalle coordinate
+    unique_coords = {}
+    for i, (b, z, y, x) in enumerate(coords):
+        if b not in unique_coords:
+            unique_coords[b] = {'z': set(), 'y': set(), 'x': set()}
+        unique_coords[b]['z'].add(z)
+        unique_coords[b]['y'].add(y)  
+        unique_coords[b]['x'].add(x)
+    
+    # Assumendo batch=0
+    nZ = len(unique_coords[0]['z'])
+    nY = len(unique_coords[0]['y']) 
+    nX = len(unique_coords[0]['x'])
+    print(f"Griglia ricomposta: nZ={nZ}, nY={nY}, nX={nX}")
+
+    N, C, fD, fH, fW = feats.shape
+    assert C == 768, f"Attesi 768 canali, trovato {C}"
+    assert N == nZ * nY * nX, f"N non combacia con griglia: N={N} vs {nZ*nY*nX}"
+    
+    # [N, C, fD, fH, fW] -> [nZ, nY, nX, C, fD, fH, fW]
+    g = feats.reshape(nZ, nY, nX, C, fD, fH, fW)
+    
+    # Riordina: [nZ, nY, nX, C, fD, fH, fW] -> [C, nZ, fD, nY, fH, nX, fW]  
+    g = g.permute(3, 0, 4, 1, 5, 2, 6).contiguous()
+    
+    # Ricomponi le dimensioni spaziali: [C, nZ*fD, nY*fH, nX*fW]
+    vol = g.reshape(C, nZ*fD, nY*fH, nX*fW)
+    
+    # Aggiungi dimensione batch: [1, C, nZ*fD, nY*fH, nX*fW]
+    return vol.unsqueeze(0)
+
+
+def ensure_single_channel(x, mode="first"):
+    # x: [B,C,D,H,W] oppure [B,D,H,W]
+    if x.dim() == 4:
+        x = x.unsqueeze(1)  # -> [B,1,D,H,W]
+    if x.shape[1] != 1:
+        if mode == "first":
+            x = x[:, :1]  # usa il primo canale/slice
+        elif mode == "mean":
+            x = x.mean(dim=1, keepdim=True)  # media sui canali
+        else:
+            raise ValueError("mode deve essere 'first' o 'mean'")
+    return x
+
+def _starts(size, patch, step):
+    if size <= patch:
+        return [0]
+    s = list(range(0, size - patch + 1, step))
+    if s[-1] != size - patch:
+        s.append(size - patch)
+    return s
+
+def extract_patches_5d_torch(x, patch_size=(128,256,256), step=(128,256,256), pad_value=0):
+    # x: [B,1,D,H,W], ritorna patches: [N,1,pd,ph,pw] e coords: [(b,z,y,x0), ...]
+    B, C, D, H, W = x.shape
+    pd, ph, pw = patch_size
+    sd, sh, sw = step
+    zs, ys, xs = _starts(D, pd, sd), _starts(H, ph, sh), _starts(W, pw, sw)
+
+    patches = []
+    coords  = []
+    for b in range(B):
+        for z in zs:
+            for y in ys:
+                for x0 in xs:
+                    patch = x[b:b+1, :, z:z+pd, y:y+ph, x0:x0+pw]  # [1,1,d',h',w']
+                    dd, hh, ww = patch.shape[-3:]
+                    if (dd, hh, ww) != (pd, ph, pw):
+                        # pad solo a destra su D,H,W: (wL,wR,hL,hR,dL,dR)
+                        pad_d = pd - dd
+                        pad_h = ph - hh
+                        pad_w = pw - ww
+                        patch = F.pad(patch, (0, pad_w, 0, pad_h, 0, pad_d), value=pad_value)
+                    patches.append(patch)   # [1,1,pd,ph,pw]
+                    coords.append((b, z, y, x0))
+    if not patches:
+        return torch.empty(0, 1, *patch_size), []
+    patches = torch.cat(patches, dim=0)  # [N,1,pd,ph,pw]
+    return patches, coords
+
+
+# feats: [N, 768, fD, fH, fW] in ordine (z major -> y -> x) come nell’estrazione
+def tile_feature_patches(feats: torch.Tensor, coords) -> torch.Tensor:
+    # feats: [N, C, fD, fH, fW] dove N = nZ*nY*nX patch in ordine z->y->x
+        # Calcola la griglia dalle coordinate
+    unique_coords = {}
+    for i, (b, z, y, x) in enumerate(coords):
+        if b not in unique_coords:
+            unique_coords[b] = {'z': set(), 'y': set(), 'x': set()}
+        unique_coords[b]['z'].add(z)
+        unique_coords[b]['y'].add(y)  
+        unique_coords[b]['x'].add(x)
+    
+    # Assumendo batch=0
+    nZ = len(unique_coords[0]['z'])
+    nY = len(unique_coords[0]['y']) 
+    nX = len(unique_coords[0]['x'])
+
+    N, C, fD, fH, fW = feats.shape
+    assert C == 768, f"Attesi 768 canali, trovato {C}"
+    assert N == nZ * nY * nX, f"N non combacia con griglia: N={N} vs {nZ*nY*nX}"
+    
+    # [N, C, fD, fH, fW] -> [nZ, nY, nX, C, fD, fH, fW]
+    g = feats.reshape(nZ, nY, nX, C, fD, fH, fW)
+    
+    # Riordina: [nZ, nY, nX, C, fD, fH, fW] -> [C, nZ, fD, nY, fH, nX, fW]  
+    g = g.permute(3, 0, 4, 1, 5, 2, 6).contiguous()
+    
+    # Ricomponi le dimensioni spaziali: [C, nZ*fD, nY*fH, nX*fW]
+    vol = g.reshape(C, nZ*fD, nY*fH, nX*fW)
+    
+    # Aggiungi dimensione batch: [1, C, nZ*fD, nY*fH, nX*fW]
+    return vol.unsqueeze(0)
+
+
+def ensure_single_channel(x, mode="first"):
+    # x: [B,C,D,H,W] oppure [B,D,H,W]
+    if x.dim() == 4:
+        x = x.unsqueeze(1)  # -> [B,1,D,H,W]
+    if x.shape[1] != 1:
+        if mode == "first":
+            x = x[:, :1]  # usa il primo canale/slice
+        elif mode == "mean":
+            x = x.mean(dim=1, keepdim=True)  # media sui canali
+        else:
+            raise ValueError("mode deve essere 'first' o 'mean'")
+    return x
+
+def _starts(size, patch, step):
+    if size <= patch:
+        return [0]
+    s = list(range(0, size - patch + 1, step))
+    if s[-1] != size - patch:
+        s.append(size - patch)
+    return s
+
+def extract_patches_5d_torch(x, patch_size=(128,256,256), step=(128,256,256), pad_value=0):
+    # x: [B,1,D,H,W], ritorna patches: [N,1,pd,ph,pw] e coords: [(b,z,y,x0), ...]
+    B, C, D, H, W = x.shape
+    pd, ph, pw = patch_size
+    sd, sh, sw = step
+    zs, ys, xs = _starts(D, pd, sd), _starts(H, ph, sh), _starts(W, pw, sw)
+
+    patches = []
+    coords  = []
+    for b in range(B):
+        for z in zs:
+            for y in ys:
+                for x0 in xs:
+                    patch = x[b:b+1, :, z:z+pd, y:y+ph, x0:x0+pw]  # [1,1,d',h',w']
+                    dd, hh, ww = patch.shape[-3:]
+                    if (dd, hh, ww) != (pd, ph, pw):
+                        # pad solo a destra su D,H,W: (wL,wR,hL,hR,dL,dR)
+                        pad_d = pd - dd
+                        pad_h = ph - hh
+                        pad_w = pw - ww
+                        patch = F.pad(patch, (0, pad_w, 0, pad_h, 0, pad_d), value=pad_value)
+                    patches.append(patch)   # [1,1,pd,ph,pw]
+                    coords.append((b, z, y, x0))
+    if not patches:
+        return torch.empty(0, 1, *patch_size), []
+    patches = torch.cat(patches, dim=0)  # [N,1,pd,ph,pw]
+    return patches, coords
+
