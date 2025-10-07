@@ -8,7 +8,7 @@ import pprint
 
 import logging
 import timeit
-from utils.trainer import run_training 
+#from utils.trainer import run_training 
 
 import numpy as np
 
@@ -17,19 +17,14 @@ import torch.nn as nn
 import torch.backends.cudnn as cudnn
 import torch.optim
 from tensorboardX import SummaryWriter
-import torch.optim as optim
-from thop import profile
 
-import _init_paths
-import models
-import datasets
-from configs import config
-from configs import update_config
+from config import config
+from config import update_config
 from utils.criterion import CrossEntropy, DiceLoss, OhemCrossEntropy, BondaryLoss, FocalLoss
 from utils.function import train, validate
 from utils.utils_old import create_logger, FullModel,suppress_stdout
-from datasets.base_dataset import AugmentedDataset
-from configs.default import parse_args, config_to_args
+#from datasets.base_dataset import AugmentedDataset
+from config import parse_args, config_to_args
 
 import argparse
 import os
@@ -41,8 +36,8 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 import torch.nn.parallel
 import torch.utils.data.distributed
-from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
-from trainer import run_training
+#from models import LinearWarmupCosineAnnealingLR
+from utils.trainer import run_training
 from utils.data_utils import get_loader
 
 from monai.inferers import sliding_window_inference
@@ -51,14 +46,15 @@ from monai.metrics import DiceMetric
 from monai.networks.nets import SwinUNETR
 from monai.transforms import Activations, AsDiscrete, Compose
 from monai.utils.enums import MetricReduction
-from test.SwinUNETREncoder_3D import SwinUNETREncoder_only, SwinUNETREncoder
-from dataset.organoidINRIA import OrganoidsINRIA3D
+from test import  SwinUNETREncoder
+from dataset import OrganoidsINRIA3D
 
 
 def main():
     args = parse_args()
     args = config_to_args(config)
     args.amp = not args.noamp
+    
     args.logdir = "./runs/" + args.logdir
     if args.distributed:
         args.ngpus_per_node = torch.cuda.device_count()
@@ -69,7 +65,6 @@ def main():
         main_worker(gpu=0, args=args)
 
 def main_worker(gpu, args):
-    print(f"Arguments: {args}")
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
     np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
@@ -79,13 +74,13 @@ def main_worker(gpu, args):
         dist.init_process_group(
             backend=args.dist_backend, init_method=args.dist_url, world_size=args.world_size, rank=args.rank
         )
-    torch.cuda.set_device(args.gpu)
-    torch.backends.cudnn.benchmark = True
+    #torch.cuda.set_device(args.gpu)
+    #torch.backends.cudnn.benchmark = True
     args.test_mode = False
 
 
     logger, final_output_dir, tb_log_dir = create_logger(
-        config, args.cfg, 'train')
+        args, args.logdir, 'train')
     
     writer_dict = {
         'writer': SummaryWriter(tb_log_dir),
@@ -97,8 +92,9 @@ def main_worker(gpu, args):
     logger.info(config)
 
     # Here we prepare the data loader
-    dataset = OrganoidsINRIA3D(args.data_dir, default_other=3, exact_class_dir=True)
-    loader = get_loader(args)
+    dataset = OrganoidsINRIA3D(args.data_dir, default_other=3, exact_class_dir=args.exact_class)
+    print("Dataset length is:", len(dataset))
+    #loader = get_loader(args)
 
 
     print(args.rank, " gpu", args.gpu)
@@ -113,10 +109,11 @@ def main_worker(gpu, args):
     pretrained_pth = os.path.join(pretrained_dir, model_name)
 
     model = SwinUNETR(
-        in_channels=args.in_channels,
-        out_channels=args.out_channels,
-        feature_size=args.feature_size,
-        use_checkpoint=args.use_checkpoint,
+        img_size=(args.roi_x, args.roi_y, args.roi_z), 
+        in_channels=1, 
+        out_channels=1, 
+        feature_size=48,    
+        use_checkpoint=True
     )
 
     if args.resume_ckpt:
@@ -171,7 +168,7 @@ def main_worker(gpu, args):
 
     # Here we add the classification head
 
-    model.cuda(args.gpu)
+    #model.cuda(args.gpu)
 
     if args.distributed:
         torch.cuda.set_device(args.gpu)
@@ -191,11 +188,11 @@ def main_worker(gpu, args):
         logger.error("Unsupported Optimization Procedure: " + str(args.optim_name))
         raise ValueError("Unsupported Optimization Procedure: " + str(args.optim_name))
 
-
     if args.lrschedule == "warmup_cosine":
-        scheduler = LinearWarmupCosineAnnealingLR(
-            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
-        )
+        scheduler = None
+        #scheduler = LinearWarmupCosineAnnealingLR(
+        #    optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
+        #)
     elif args.lrschedule == "cosine_anneal":
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
         if args.checkpoint is not None:
@@ -206,12 +203,13 @@ def main_worker(gpu, args):
     semantic_classes = ["Dice_Val_TC", "Dice_Val_WT", "Dice_Val_ET"]
 
 
-    epoch_iters = int(loader[0].__len__() + loader[1].__len__() / config.batch_size / 1)
+    #epoch_iters = int(loader[0].__len__() + loader[1].__len__() / config.batch_size / 1)
+    epoch_iters = 100
 
 
     start = timeit.default_timer()
-    end_epoch = config.max_epochs
-    num_iters = config.max_epochs * epoch_iters
+    end_epoch = args.max_epochs
+    num_iters = args.max_epochs * epoch_iters
     accuracy = 0
     '''
     accuracy = run_training(

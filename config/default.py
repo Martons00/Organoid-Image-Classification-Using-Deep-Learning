@@ -1,5 +1,4 @@
 import argparse
-import yaml
 from yacs.config import CfgNode as CN
 
 # Configurazione di default
@@ -14,11 +13,12 @@ _C.SYSTEM.rank = 0
 _C.SYSTEM.dist_url = "tcp://127.0.0.1:23456"
 _C.SYSTEM.dist_backend = "nccl"
 _C.SYSTEM.workers = 8
+_C.SYSTEM.logs_dir = "./logs"
 _C.SYSTEM.output_dir = "./outputs"
 
 # Model settings
 _C.MODEL = CN()
-_C.MODEL.pretrained_model_name = "model.pt"
+_C.MODEL.pretrained_model_name = "model_swinvit.pt"
 _C.MODEL.name = "swinunetr"
 _C.MODEL.pretrained_dir = "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
 _C.MODEL.checkpoint = ""
@@ -35,8 +35,9 @@ _C.MODEL.use_checkpoint = False
 # Dataset settings
 _C.DATASET = CN()
 _C.DATASET.name = "OrganoidsINRIA"
-_C.DATASET.data_dir = "/dataset/OrganoidsINRIA/"
+_C.DATASET.data_dir = "/home/mraffael/martone_project/Organoids_Dataset/"
 _C.DATASET.json_list = "./jsons/OrganoidsINRIA_folds.json"
+_C.DATASET.exact_class = False
 _C.DATASET.fold = 0
 _C.DATASET.cache_dataset = False
 _C.DATASET.a_min = -175.0
@@ -46,9 +47,9 @@ _C.DATASET.b_max = 1.0
 _C.DATASET.space_x = 1.5
 _C.DATASET.space_y = 1.5
 _C.DATASET.space_z = 2.0
-_C.DATASET.roi_x = 96
-_C.DATASET.roi_y = 96
-_C.DATASET.roi_z = 96
+_C.DATASET.roi_x = 128
+_C.DATASET.roi_y = 128
+_C.DATASET.roi_z = 128
 
 # Augmentation settings
 _C.AUGMENTATION = CN()
@@ -61,7 +62,7 @@ _C.AUGMENTATION.RandShiftIntensityd_prob = 0.1
 _C.TRAINING = CN()
 _C.TRAINING.max_epochs = 300
 _C.TRAINING.batch_size = 1
-_C.TRAINING.sw_batch_size = 4
+_C.TRAINING.sw_batch_size = 1
 _C.TRAINING.val_every = 100
 _C.TRAINING.save_checkpoint = False
 _C.TRAINING.noamp = False
@@ -69,7 +70,7 @@ _C.TRAINING.optim_lr = 1e-4
 _C.TRAINING.optim_name = "adamw"
 _C.TRAINING.reg_weight = 1e-5
 _C.TRAINING.momentum = 0.99
-_C.TRAINING.lrschedule = "warmup_cosine"
+_C.TRAINING.lrschedule = ""
 _C.TRAINING.warmup_epochs = 50
 
 # Loss settings
@@ -91,6 +92,7 @@ def update_config(cfg, args):
     cfg.defrost()
 
     if args.cfg:
+        print(f"Loading configuration file from {args.cfg}")
         cfg.merge_from_file(args.cfg)
 
     if args.opts:
@@ -108,7 +110,7 @@ def parse_args():
 
     parser.add_argument('--cfg',
                         help='experiment configure file name',
-                        default="configs/OrganoidsINRIA_config.yaml",
+                        default="./config/OrganoidsINRIA_config.yaml",
                         type=str)
     parser.add_argument('--seed', type=int, default=304)    
     parser.add_argument('opts',
@@ -117,6 +119,7 @@ def parse_args():
                         nargs=argparse.REMAINDER)
 
     args = parser.parse_args()
+    print(f"Command line arguments: {args.cfg}")
 
     # Get config
     config = get_config()
@@ -159,6 +162,7 @@ def config_to_args(config):
     args.dataset_name = config.DATASET.name
     args.data_dir = config.DATASET.data_dir
     args.json_list = config.DATASET.json_list
+    args.exact_class = config.DATASET.exact_class
     args.fold = config.DATASET.fold
     args.cache_dataset = config.DATASET.cache_dataset
     args.a_min = config.DATASET.a_min

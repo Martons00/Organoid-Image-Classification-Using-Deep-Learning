@@ -108,6 +108,7 @@ class AverageMeter(object):
         return self.avg
 
 def create_logger(cfg, cfg_name, phase='train'):
+    print(f"=> create output directory '{cfg.output_dir}'")
     root_output_dir = Path(cfg.output_dir)
     # set up logger
     if not root_output_dir.exists():
