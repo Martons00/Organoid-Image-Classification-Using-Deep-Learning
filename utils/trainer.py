@@ -130,46 +130,6 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
     return run_loss.avg
 
 
-def train_epoch_old(model, loader, optimizer, scaler, epoch, loss_func, args):
-    model.train()
-    start_time = time.time()
-    run_loss = AverageMeter()
-    for idx, batch_data in enumerate(loader):
-        if isinstance(batch_data, list):
-            data, target = batch_data
-        else:
-            data, target = batch_data["vol"], batch_data["label"]
-        data, target = data.cuda(args.rank), target.cuda(args.rank)
-        for param in model.parameters():
-            param.grad = None
-        with autocast(enabled=args.amp):
-            logits = model(data)
-            loss = loss_func(logits, target)
-        if args.amp:
-            scaler.scale(loss).backward()
-            scaler.step(optimizer)
-            scaler.update()
-        else:
-            loss.backward()
-            optimizer.step()
-        if args.distributed:
-            loss_list = distributed_all_gather([loss], out_numpy=True, is_valid=idx < loader.sampler.valid_length)
-            run_loss.update(
-                np.mean(np.mean(np.stack(loss_list, axis=0), axis=0), axis=0), n=args.batch_size * args.world_size
-            )
-        else:
-            run_loss.update(loss.item(), n=args.batch_size)
-        if args.rank == 0:
-            print(
-                "Epoch {}/{} {}/{}".format(epoch, args.max_epochs, idx, len(loader)),
-                "loss: {:.4f}".format(run_loss.avg),
-                "time {:.2f}s".format(time.time() - start_time),
-            )
-        start_time = time.time()
-    for param in model.parameters():
-        param.grad = None
-    return run_loss.avg
-
 def val_epoch(
     model,
     loader,
@@ -201,8 +161,8 @@ def val_epoch(
                     vol = data[b:b+1]                                   # [1,C,D,H,W] o [1,D,H,W]
                     vol = ensure_single_channel(vol, mode="first")       # -> [1,1,D,H,W]
                     patches, coords = extract_patches_5d_torch(
-                        vol, patch_size=(128,128,128), step=(128,128,128), pad_value=0
-                    )  # [N,1,128,128,128]
+                    vol, patch_size=(args.roi_z,args.roi_y,args.roi_x), step=(args.roi_z,args.roi_y,args.roi_x), pad_value=0
+                    )
 
                     feat_list = []
                     for i in range(patches.shape[0]):
@@ -252,52 +212,6 @@ def val_epoch(
                     "Val {}/{} {}/{}".format(epoch, args.max_epochs, idx, len(loader)),
                     ", Acc:",
                     run_acc.avg,
-                    ", time {:.2f}s".format(time.time() - start_time),
-                )
-            start_time = time.time()
-
-    return run_acc.avg
-
-
-def val_epoch_old(model, loader, epoch, acc_func, args, model_inferer=None, post_sigmoid=None, post_pred=None):
-    model.eval()
-    start_time = time.time()
-    run_acc = AverageMeter()
-
-    with torch.no_grad():
-        for idx, batch_data in enumerate(loader):
-            data, target = batch_data["vol"], batch_data["label"]
-            data, target = data.cuda(args.rank), target.cuda(args.rank)
-            with autocast(enabled=args.amp):
-                logits = model_inferer(data)
-            val_labels_list = decollate_batch(target)
-            val_outputs_list = decollate_batch(logits)
-            val_output_convert = [post_pred(post_sigmoid(val_pred_tensor)) for val_pred_tensor in val_outputs_list]
-            acc_func.reset()
-            acc_func(y_pred=val_output_convert, y=val_labels_list)
-            acc, not_nans = acc_func.aggregate()
-            acc = acc.cuda(args.rank)
-            if args.distributed:
-                acc_list, not_nans_list = distributed_all_gather(
-                    [acc, not_nans], out_numpy=True, is_valid=idx < loader.sampler.valid_length
-                )
-                for al, nl in zip(acc_list, not_nans_list):
-                    run_acc.update(al, n=nl)
-            else:
-                run_acc.update(acc.cpu().numpy(), n=not_nans.cpu().numpy())
-
-            if args.rank == 0:
-                Dice_TC = run_acc.avg[0]
-                Dice_WT = run_acc.avg[1]
-                Dice_ET = run_acc.avg[2]
-                print(
-                    "Val {}/{} {}/{}".format(epoch, args.max_epochs, idx, len(loader)),
-                    ", Dice_TC:",
-                    Dice_TC,
-                    ", Dice_WT:",
-                    Dice_WT,
-                    ", Dice_ET:",
-                    Dice_ET,
                     ", time {:.2f}s".format(time.time() - start_time),
                 )
             start_time = time.time()
@@ -379,13 +293,13 @@ def run_training(
                 val_loader,
                 epoch=epoch,
                 acc_func=acc_func,
-                model_inferer=model_inferer,
                 args=args,
                 post_sigmoid=post_sigmoid,
                 post_pred=post_pred,
             )
-
+            print("Validation metric:", val_acc.shape)
             if args.rank == 0:
+                val_acc 
                 Dice_TC = val_acc[0]
                 Dice_WT = val_acc[1]
                 Dice_ET = val_acc[2]
@@ -411,7 +325,7 @@ def run_training(
                 )
 
                 if writer is not None:
-                    writer.add_scalar("Mean_Val_Dice", np.mean(val_acc), epoch)
+                    writer.add_scalar("Mean_Val", np.mean(val_acc), epoch)
                     if semantic_classes is not None:
                         for val_channel_ind in range(len(semantic_classes)):
                             if val_channel_ind < val_acc.size:

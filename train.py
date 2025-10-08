@@ -138,16 +138,37 @@ def main_worker(gpu, args):
     logger.info(f"Training set length: {len(train_set)}")
     print("Validation set length:", len(val_set))
     logger.info(f"Validation set length: {len(val_set)}")
+    from torch.utils.data import DataLoader, Subset
 
-    train_loader = torch.utils.data.DataLoader(
+    # Impostazioni debug
+    DEBUG_TRAIN_SAMPLES = 10
+    DEBUG_VAL_SAMPLES = 5
+    USE_DEBUG = True  # oppure args.debug se già esiste
+
+    # Eventuale sottoinsieme per il debug prima di creare i DataLoader
+    if USE_DEBUG:
+        n_train = min(DEBUG_TRAIN_SAMPLES, len(train_set))
+        n_val = min(DEBUG_VAL_SAMPLES, len(val_set))
+
+        # Indici casuali per il train, deterministici per la val (puoi cambiarli a piacere)
+        train_idx = torch.randperm(len(train_set))[:n_train]
+        val_idx = torch.arange(n_val)
+
+        train_set = Subset(train_set, train_idx.tolist())
+        val_set = Subset(val_set, val_idx.tolist())
+
+        print(f"DEBUG: using only {n_train} samples for training")
+        print(f"DEBUG: using only {n_val} samples for validation")
+
+    train_loader = DataLoader(
         train_set,
         batch_size=args.batch_size,
         num_workers=args.workers,
         shuffle=True,
         pin_memory=True,
-        drop_last=True,
+        drop_last=True,  # attenzione: con pochi campioni potresti avere 0 batch
     )
-    validation_loader = torch.utils.data.DataLoader(
+    validation_loader = DataLoader(
         val_set,
         batch_size=1,
         shuffle=False,
@@ -155,7 +176,10 @@ def main_worker(gpu, args):
         drop_last=False,
     )
 
-    
+    print(f"DEBUG: training loader length is {len(train_loader)} batches")
+    print(f"DEBUG: validation loader length is {len(validation_loader)} batches")
+
+
     num_classes = 4  # 0,1,2 + "other"=3
     labels = dataset.labels  # np.ndarray
 

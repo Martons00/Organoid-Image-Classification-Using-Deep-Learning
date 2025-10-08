@@ -55,10 +55,10 @@ AUGMENTATION:
   RandShiftIntensityd_prob: 0.1
 
 TRAINING:
-  max_epochs: 300
+  max_epochs: 2
   batch_size: 1
   sw_batch_size: 1
-  val_every: 100
+  val_every: 1
   save_checkpoint: false
   noamp: false
   # Optimizer parameters
