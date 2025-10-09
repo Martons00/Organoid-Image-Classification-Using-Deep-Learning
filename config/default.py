@@ -120,6 +120,14 @@ _C.TRAINING.sw_batch_size = 1
 
 _C.TRAINING.val_every = 100
 
+_C.TRAINING.debug = False
+
+_C.TRAINING.debug_train_samples = 40
+
+_C.TRAINING.debug_val_samples = 10
+
+_C.TRAINING.split_method = "stratified"  # "random" or "stratified"
+
 _C.TRAINING.save_checkpoint = False
 
 _C.TRAINING.noamp = False
@@ -268,6 +276,10 @@ def config_to_args(cfg):
     args.batch_size = cfg.TRAINING.batch_size
     args.sw_batch_size = cfg.TRAINING.sw_batch_size
     args.val_every = cfg.TRAINING.val_every
+    args.debug = cfg.TRAINING.debug
+    args.debug_train_samples = cfg.TRAINING.get("debug_train_samples", 40)
+    args.debug_val_samples = cfg.TRAINING.get("debug_val_samples", 10)
+    args.split_method = cfg.TRAINING.split_method
     args.save_checkpoint = cfg.TRAINING.save_checkpoint
     args.noamp = cfg.TRAINING.noamp
     args.optim_lr = cfg.TRAINING.optim_lr
