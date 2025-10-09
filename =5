@@ -1,30 +1,0 @@
-# Setting queue to: p2
-# Tie job resource request for GPU to resources with GPU
-# Set walltime to default (3600 s).
-OAR_JOB_ID=2061512
-# Interactive mode: waiting...
-# Starting...
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ y^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ oarsub -p esterel39 -l gpu=1 -q abaca -Iexit[Koarsub -p esterel39 -l gpu=1 -q abaca -I[Koarsub -p esterel39 -l gpu=1 -q abaca -Iexit[K[2PEXoarsub -C 2060287EX[Kexit^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ ^C[?2004l[?2004h[?2004l
-[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ 
-[?2004l[?2004hmraffael@esterel27-1:~/martone_project/Organoid-Image-Classification-Using-Deep-Learning$ Disconnected from OAR job 2061512.

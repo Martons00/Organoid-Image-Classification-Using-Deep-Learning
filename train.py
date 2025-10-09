@@ -310,8 +310,9 @@ def main_worker(gpu, args):
 
 
     start = timeit.default_timer()
-    end_epoch = args.max_epochs
     num_iters = args.max_epochs * epoch_iters
+    print("Total iters to run:", num_iters)
+    print("Starting training...")
 
 
     accuracy = run_training(
@@ -329,6 +330,11 @@ def main_worker(gpu, args):
     )
 
     end = timeit.default_timer()
+    print("Total time spent:", end - start)
+    logger.info("Total time spent: %d", end - start)
+    writer_dict['writer'].close()
+    torch.cuda.empty_cache()
+
 
     return accuracy
 

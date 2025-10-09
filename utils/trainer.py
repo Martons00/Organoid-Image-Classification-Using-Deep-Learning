@@ -22,7 +22,7 @@ import torch.utils.data.distributed
 from tensorboardX import SummaryWriter
 from torch.cuda.amp import GradScaler, autocast
 from .utils import AverageMeter, distributed_all_gather
-from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches
+from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches, plot_training_curve
 
 from monai.data import decollate_batch
 
@@ -242,6 +242,8 @@ def run_training(
     writer_dict=None,
 ):
     writer = writer_dict["writer"] if writer_dict is not None else None
+    training_losses = []
+    validation_accuracies = []
     if writer is None:
         if args.logdir is not None and args.rank == 0:
             writer = SummaryWriter(log_dir=args.logdir)
@@ -264,6 +266,7 @@ def run_training(
         train_loss = train_epoch(
             model, train_loader, optimizer, scaler=scaler, epoch=epoch, loss_func=loss_func, args=args
         )
+        training_losses.append(train_loss)
         if args.rank == 0:
             print(
                 "Final training  {}/{}".format(epoch, args.max_epochs - 1),
@@ -289,6 +292,7 @@ def run_training(
                 acc_func=acc_func,
                 args=args,
             )
+            validation_accuracies.append(val_acc)
             print("Validation :", val_acc)
             if args.rank == 0:
                 print(
@@ -330,4 +334,7 @@ def run_training(
     print("Training Finished !, Best Accuracy: ", val_acc_max)
     logging.info(f"Training Finished !, Best Accuracy: {val_acc_max}")
 
+    plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(args.logdir, "training_loss_curve.png"))
+    plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(args.logdir, "validation_accuracy_curve.png"))
+                
     return val_acc_max

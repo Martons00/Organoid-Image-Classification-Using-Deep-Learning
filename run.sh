@@ -9,7 +9,5 @@ hostname
 nvidia-smi
 
 # make use of a python torch environment
-module load conda
-conda activate pytorch_env
-python3 tools/train.py --cfg configs/SwinUNETR+ML_Decoder/train.yaml GPUS "[0]";
-python3 tools/train.py --cfg configs/SwinUNETR+NOAH/train.yaml GPUS "[0]";
+source ./models/SwinUNETR/BRATS21/swin_env/bin/activate
+python train.py

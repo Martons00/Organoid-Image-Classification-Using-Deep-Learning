@@ -489,3 +489,45 @@ def extract_patches_5d_torch(x, patch_size=(128,256,256), step=(128,256,256), pa
     patches = torch.cat(patches, dim=0)  # [N,1,pd,ph,pw]
     return patches, coords
 
+import matplotlib.pyplot as plt
+from typing import Sequence
+
+def plot_training_curve(
+    values: Sequence[float],
+    metric_name: str = "Loss",
+    epochs: Sequence[int] = None,
+    title: str = None,
+    figsize: tuple = (8, 5),
+    save_path: str = None
+) -> None:
+    """
+    Plotta la curva di training di loss o accuracy in funzione delle epoche.
+
+    Args:
+        values: lista o array di valori (loss o accuracy) per ogni epoca.
+        metric_name: nome del metrica mostrata sull’asse y ("Loss" o "Accuracy").
+        epochs: lista o array di numeri di epoca; se None, usa range(len(values)).
+        title: titolo del grafico; se None, usa f"{metric_name} vs Epoch".
+        figsize: dimensione della figura (width, height).
+        save_path: percorso file per salvare il grafico; se None, mostra a schermo.
+    """
+    if epochs is None:
+        epochs = list(range(1, len(values) + 1))
+    if title is None:
+        title = f"{metric_name} vs Epoche"
+
+    plt.figure(figsize=figsize)
+    plt.plot(epochs, values, marker='o', linestyle='-', color='C0')
+    plt.xlabel("Epoca")
+    plt.ylabel(metric_name)
+    plt.title(title)
+    plt.grid(True)
+    plt.xticks(epochs)
+    plt.tight_layout()
+
+    if save_path:
+        plt.savefig(save_path, dpi=300)
+        plt.close()
+    else:
+        plt.show()
+
