@@ -1,0 +1,25 @@
+2025-10-09 16:01:13,900 Namespace(seed=304, distributed=False, world_size=1, rank=0, dist_url='tcp://127.0.0.1:23456', dist_backend='nccl', workers=1, output_dir='outputs/', logs_dir='logs/', model_name='swinunetr', pretrained_model_name='model.pt', pretrained_dir='./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/', checkpoint=None, resume_ckpt=False, feature_size=48, in_channels=4, out_channels=3, spatial_dims=3, norm_name='instance', dropout_rate=0.0, dropout_path_rate=0.0, use_checkpoint=False, dataset_name='OrganoidsINRIA', data_dir='F:/Organoids/Organoids_Dataset', json_list='./jsons/brats21_folds.json', exact_class=True, ignore_label=3, fold=0, cache_dataset=False, a_min=-175.0, a_max=250.0, b_min=0.0, b_max=1.0, space_x=1.5, space_y=1.5, space_z=2.0, roi_x=64, roi_y=64, roi_z=64, RandFlipd_prob=0.2, RandRotate90d_prob=0.2, RandScaleIntensityd_prob=0.1, RandShiftIntensityd_prob=0.1, max_epochs=3, batch_size=1, sw_batch_size=1, val_every=1, debug=True, debug_train_samples=6, debug_val_samples=6, split_method='balanced', save_checkpoint=False, noamp=False, optim_lr=0.0001, optim_name='adamw', reg_weight=1e-05, momentum=0.99, lrschedule='', warmup_epochs=50, smooth_dr=1e-06, smooth_nr=0.0, squared_dice=False, infer_overlap=0.5, logdir='./runs/test', amp=True, gpu=0, test_mode=False)
+2025-10-09 16:01:13,915 Dataset length is: 423
+2025-10-09 16:01:13,915 Class 0: 137
+2025-10-09 16:01:13,916 Class 1: 43
+2025-10-09 16:01:13,916 Class 2: 243
+2025-10-09 16:01:13,921 Train class 0: 2 (33.3%)
+2025-10-09 16:01:13,921 Train class 1: 2 (33.3%)
+2025-10-09 16:01:13,922 Train class 2: 2 (33.3%)
+2025-10-09 16:01:13,922 Val class 0: 2 (33.3%)
+2025-10-09 16:01:13,923 Val class 1: 2 (33.3%)
+2025-10-09 16:01:13,923 Val class 2: 2 (33.3%)
+2025-10-09 16:01:13,923 Batch size is: 1, epochs: 3
+2025-10-09 16:01:14,238 Class weights: [ 1.000  1.000  1.000]
+2025-10-09 16:01:14,357 Total parameters count: 62186659
+2025-10-09 16:01:14,469 0 Thu Oct  9 16:01:14 2025 Epoch: 0
+2025-10-09 16:01:57,962 Final training  0/2loss: 1.1886time 43.49s
+2025-10-09 16:02:31,835 Final validation stats 0/2, Val_acc: 0.333333, time 33.87s
+2025-10-09 16:02:31,836 new best (0.000000 --> 0.333333). 
+2025-10-09 16:02:31,837 0 Thu Oct  9 16:02:31 2025 Epoch: 1
+2025-10-09 16:03:16,889 Final training  1/2loss: 1.1750time 45.05s
+2025-10-09 16:03:52,074 Final validation stats 1/2, Val_acc: 0.333333, time 35.19s
+2025-10-09 16:03:52,075 0 Thu Oct  9 16:03:52 2025 Epoch: 2
+2025-10-09 16:04:38,031 Final training  2/2loss: 1.1561time 45.96s
+2025-10-09 16:05:13,394 Final validation stats 2/2, Val_acc: 0.333333, time 35.36s
+2025-10-09 16:05:13,395 Training Finished !, Best Accuracy: 0.3333333333333333

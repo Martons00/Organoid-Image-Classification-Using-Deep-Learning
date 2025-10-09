@@ -90,6 +90,7 @@ def main_worker(gpu, args):
     }
 
     logger.info(args)
+    
 
     # Here we prepare the data loader
     dataset = OrganoidsINRIA3D(args.data_dir, exact_class_dir=args.exact_class)

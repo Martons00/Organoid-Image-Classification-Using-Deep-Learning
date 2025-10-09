@@ -333,8 +333,9 @@ def run_training(
 
     print("Training Finished !, Best Accuracy: ", val_acc_max)
     logging.info(f"Training Finished !, Best Accuracy: {val_acc_max}")
+    logging.info
 
-    plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(args.logdir, "training_loss_curve.png"))
-    plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(args.logdir, "validation_accuracy_curve.png"))
+    plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(args.output_dir, "training_loss_curve.png"))
+    plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(args.output_dir, "validation_accuracy_curve.png"))
                 
     return val_acc_max
