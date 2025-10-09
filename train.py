@@ -55,6 +55,7 @@ from dataset import OrganoidsINRIA3D
 from typing import Tuple, Union
 import torch
 from torch.utils.data import Dataset, random_split
+from sklearn.utils.class_weight import compute_class_weight
 
 def split_dataset_random(
     dataset: Dataset,
@@ -337,12 +338,13 @@ def main_worker(gpu, args):
         model.load_state_dict(model_dict)
         print("Using pretrained weights")
 
-    weights = torch.tensor(1.0 / (dataset_counts + 1e-9), dtype=torch.float)
+    class_weights = compute_class_weight(class_weight='balanced',classes=np.unique(labels),y=labels)
+    weights = torch.tensor(class_weights, dtype=torch.float)
     print("Class weights:", weights.numpy())
     logger.info("Class weights: " + str(weights.numpy()))
-    criterion = torch.nn.CrossEntropyLoss(weight=weights)
+    loss_func = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
 
-    loss_func = nn.CrossEntropyLoss()  # per classificazione
+    #loss_func = nn.CrossEntropyLoss()  # per classificazione
     acc_metric = MulticlassAccuracy(num_classes=args.out_channels, average='macro').cuda(args.gpu)
 
 

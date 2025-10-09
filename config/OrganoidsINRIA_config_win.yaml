@@ -59,7 +59,7 @@ TRAINING:
   batch_size: 1
   sw_batch_size: 1
   val_every: 1
-  debug: false
+  debug: true
   debug_train_samples: 40
   debug_val_samples: 10
   split_method: "stratified"  # "random" or "stratified
