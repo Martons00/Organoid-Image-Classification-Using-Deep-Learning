@@ -141,8 +141,8 @@ def main_worker(gpu, args):
     from torch.utils.data import DataLoader, Subset
 
     # Impostazioni debug
-    DEBUG_TRAIN_SAMPLES = 3
-    DEBUG_VAL_SAMPLES = 2
+    DEBUG_TRAIN_SAMPLES = 40
+    DEBUG_VAL_SAMPLES = 10
     USE_DEBUG = True  # oppure args.debug se già esiste
 
     # Eventuale sottoinsieme per il debug prima di creare i DataLoader
@@ -180,7 +180,7 @@ def main_worker(gpu, args):
     print(f"DEBUG: validation loader length is {len(validation_loader)} batches")
 
 
-    num_classes = 4  # 0,1,2 + "other"=3
+    num_classes = 3  # 0,1,2 + "other"=3
     labels = dataset.labels  # np.ndarray
 
     dataset_counts = np.bincount(labels, minlength=num_classes)

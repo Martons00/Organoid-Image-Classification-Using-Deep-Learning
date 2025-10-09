@@ -13,7 +13,7 @@ SYSTEM:
 
 MODEL:
   name: "swinunetr"
-  pretrained_model_name: "model_swinvit.pt"
+  pretrained_model_name: "model.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
   checkpoint: null
   resume_ckpt: false
@@ -55,7 +55,7 @@ AUGMENTATION:
   RandShiftIntensityd_prob: 0.1
 
 TRAINING:
-  max_epochs: 2
+  max_epochs: 20
   batch_size: 1
   sw_batch_size: 1
   val_every: 1
