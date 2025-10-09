@@ -121,7 +121,7 @@ def main_worker(gpu, args):
     logger.info(config)
 
     # Here we prepare the data loader
-    dataset = OrganoidsINRIA3D(args.data_dir, default_other=args.ignore_label, exact_class_dir=args.exact_class)
+    dataset = OrganoidsINRIA3D(args.data_dir, exact_class_dir=args.exact_class)
     print("Dataset length is:", len(dataset))
     logger.info(f"Dataset length is: {len(dataset)}")
     dataset_loader = torch.utils.data.DataLoader(
@@ -230,7 +230,7 @@ def main_worker(gpu, args):
     logger.info("Class weights: " + str(weights.numpy()))
     criterion = torch.nn.CrossEntropyLoss(weight=weights)
 
-    loss_func = nn.CrossEntropyLoss(ignore_index=args.ignore_label)  # per classificazione
+    loss_func = nn.CrossEntropyLoss()  # per classificazione
     acc_metric = MulticlassAccuracy(num_classes=args.out_channels, average='macro').cuda(args.gpu)
 
 
