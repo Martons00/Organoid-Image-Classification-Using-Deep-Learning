@@ -278,6 +278,8 @@ def run_training(
                 + "loss: {:.4f}".format(train_loss)
                 + "time {:.2f}s".format(time.time() - epoch_time)
             )
+            logging.info("" + "-" * 10)
+            logging.info("")
         if args.rank == 0 and writer is not None:
             writer.add_scalar("train_loss", train_loss, epoch)
         b_new_best = False
@@ -336,5 +338,5 @@ def run_training(
 
     plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(args.logdir, "training_loss_curve.png"))
     plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(args.logdir, "validation_accuracy_curve.png"))
-                
+
     return val_acc_max

@@ -89,7 +89,8 @@ def main_worker(gpu, args):
         'valid_global_steps': 0,
     }
 
-    logger.info(args)
+    logger.info(pprint.pformat(vars(args)))
+    logger.info("")
 
     # Here we prepare the data loader
     dataset = OrganoidsINRIA3D(args.data_dir, exact_class_dir=args.exact_class)
@@ -203,6 +204,7 @@ def main_worker(gpu, args):
         percentage = (n / len(val_set)) * 100 if len(val_set) > 0 else 0
         print(f"Val class {c}: {n} ({percentage:.1f}%)")
         logger.info(f"Val class {c}: {n} ({percentage:.1f}%)")
+    logger.info("" + "*" * 50)
 
 
 
@@ -313,6 +315,7 @@ def main_worker(gpu, args):
     num_iters = args.max_epochs * epoch_iters
     print("Total iters to run:", num_iters)
     print("Starting training...")
+    logger.info("Starting training...")
 
 
     accuracy = run_training(
