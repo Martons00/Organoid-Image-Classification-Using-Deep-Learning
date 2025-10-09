@@ -240,16 +240,11 @@ def run_training(
     scheduler=None,
     start_epoch=0,
     writer_dict=None,
+    final_output_dir=None,
 ):
     writer = writer_dict["writer"] if writer_dict is not None else None
     training_losses = []
     validation_accuracies = []
-    if writer is None:
-        if args.logdir is not None and args.rank == 0:
-            writer = SummaryWriter(log_dir=args.logdir)
-            if args.rank == 0:
-                print("Writing Tensorboard logs to ", args.logdir)
-                logging.info("Writing Tensorboard logs to ", args.logdir)
 
     scaler = None
     if args.amp:
@@ -336,14 +331,11 @@ def run_training(
     print("Training Finished !, Best Accuracy: ", val_acc_max)
     logging.info(f"Training Finished !, Best Accuracy: {val_acc_max}")
     logging.info
-
-<<<<<<< HEAD
-    plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(args.output_dir, "training_loss_curve.png"))
-    plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(args.output_dir, "validation_accuracy_curve.png"))
-                
-=======
-    plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(args.logdir, "training_loss_curve.png"))
-    plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(args.logdir, "validation_accuracy_curve.png"))
-
->>>>>>> 367d44a2c17ab7593a4a60d291c9f9c378822f17
+    if final_output_dir == None:
+        plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(args.output_dir , "training_loss_curve.png"))
+        plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(args.output_dir, "validation_accuracy_curve.png"))
+    else:
+        plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(final_output_dir , "training_loss_curve.png"))
+        plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(final_output_dir, "validation_accuracy_curve.png"))
+              
     return val_acc_max

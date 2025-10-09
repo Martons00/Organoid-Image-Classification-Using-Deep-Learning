@@ -1,0 +1,186 @@
+2025-10-09 16:33:04,123 {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'a_max': 250.0,
+ 'a_min': -175.0,
+ 'amp': True,
+ 'b_max': 1.0,
+ 'b_min': 0.0,
+ 'batch_size': 1,
+ 'cache_dataset': False,
+ 'checkpoint': None,
+ 'data_dir': 'F:/Organoids/Organoids_Dataset',
+ 'dataset_name': 'OrganoidsINRIA',
+ 'debug': True,
+ 'debug_train_samples': 6,
+ 'debug_val_samples': 6,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'exact_class': True,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 4,
+ 'infer_overlap': 0.5,
+ 'json_list': './jsons/brats21_folds.json',
+ 'logdir': './runs/test',
+ 'logs_dir': 'logs/',
+ 'lrschedule': '',
+ 'max_epochs': 3,
+ 'model_name': 'swinunetr',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'optim_lr': 0.0001,
+ 'optim_name': 'adamw',
+ 'out_channels': 3,
+ 'output_dir': 'outputs/',
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model.pt',
+ 'rank': 0,
+ 'reg_weight': 1e-05,
+ 'resume_ckpt': False,
+ 'roi_x': 64,
+ 'roi_y': 64,
+ 'roi_z': 64,
+ 'save_checkpoint': False,
+ 'seed': 304,
+ 'smooth_dr': 1e-06,
+ 'smooth_nr': 0.0,
+ 'space_x': 1.5,
+ 'space_y': 1.5,
+ 'space_z': 2.0,
+ 'spatial_dims': 3,
+ 'split_method': 'balanced',
+ 'squared_dice': False,
+ 'sw_batch_size': 1,
+ 'test_mode': False,
+ 'use_checkpoint': False,
+ 'val_every': 1,
+ 'warmup_epochs': 50,
+ 'workers': 1,
+ 'world_size': 1}
+2025-10-09 16:33:04,124 
+2025-10-09 16:33:04,145 Dataset length is: 423
+2025-10-09 16:33:04,146 Class 0: 137
+2025-10-09 16:33:04,146 Class 1: 43
+2025-10-09 16:33:04,146 Class 2: 243
+2025-10-09 16:33:04,150 Train class 0: 2 (33.3%)
+2025-10-09 16:33:04,150 Train class 1: 2 (33.3%)
+2025-10-09 16:33:04,151 Train class 2: 2 (33.3%)
+2025-10-09 16:33:04,151 Val class 0: 2 (33.3%)
+2025-10-09 16:33:04,151 Val class 1: 2 (33.3%)
+2025-10-09 16:33:04,151 Val class 2: 2 (33.3%)
+2025-10-09 16:33:04,151 **************************************************
+2025-10-09 16:33:04,152 
+2025-10-09 16:33:04,152 Batch size is: 1, epochs: 3
+2025-10-09 16:33:04,386 Class weights: [ 1.000  1.000  1.000]
+2025-10-09 16:33:04,506 Total parameters count: 62186659
+2025-10-09 16:33:04,595 Starting training...
+2025-10-09 16:33:36,050 {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'a_max': 250.0,
+ 'a_min': -175.0,
+ 'amp': True,
+ 'b_max': 1.0,
+ 'b_min': 0.0,
+ 'batch_size': 1,
+ 'cache_dataset': False,
+ 'checkpoint': None,
+ 'data_dir': 'F:/Organoids/Organoids_Dataset',
+ 'dataset_name': 'OrganoidsINRIA',
+ 'debug': True,
+ 'debug_train_samples': 6,
+ 'debug_val_samples': 6,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'exact_class': True,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 4,
+ 'infer_overlap': 0.5,
+ 'json_list': './jsons/brats21_folds.json',
+ 'logdir': './runs/test',
+ 'logs_dir': 'logs/',
+ 'lrschedule': '',
+ 'max_epochs': 3,
+ 'model_name': 'swinunetr',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'optim_lr': 0.0001,
+ 'optim_name': 'adamw',
+ 'out_channels': 3,
+ 'output_dir': 'outputs/',
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model.pt',
+ 'rank': 0,
+ 'reg_weight': 1e-05,
+ 'resume_ckpt': False,
+ 'roi_x': 64,
+ 'roi_y': 64,
+ 'roi_z': 64,
+ 'save_checkpoint': False,
+ 'seed': 304,
+ 'smooth_dr': 1e-06,
+ 'smooth_nr': 0.0,
+ 'space_x': 1.5,
+ 'space_y': 1.5,
+ 'space_z': 2.0,
+ 'spatial_dims': 3,
+ 'split_method': 'balanced',
+ 'squared_dice': False,
+ 'sw_batch_size': 1,
+ 'test_mode': False,
+ 'use_checkpoint': False,
+ 'val_every': 1,
+ 'warmup_epochs': 50,
+ 'workers': 1,
+ 'world_size': 1}
+2025-10-09 16:33:36,050 
+2025-10-09 16:33:36,064 Dataset length is: 423
+2025-10-09 16:33:36,065 Class 0: 137
+2025-10-09 16:33:36,065 Class 1: 43
+2025-10-09 16:33:36,066 Class 2: 243
+2025-10-09 16:33:36,073 Train class 0: 2 (33.3%)
+2025-10-09 16:33:36,073 Train class 1: 2 (33.3%)
+2025-10-09 16:33:36,074 Train class 2: 2 (33.3%)
+2025-10-09 16:33:36,074 Val class 0: 2 (33.3%)
+2025-10-09 16:33:36,074 Val class 1: 2 (33.3%)
+2025-10-09 16:33:36,075 Val class 2: 2 (33.3%)
+2025-10-09 16:33:36,075 **************************************************
+2025-10-09 16:33:36,076 
+2025-10-09 16:33:36,076 Batch size is: 1, epochs: 3
+2025-10-09 16:33:36,332 Class weights: [ 1.000  1.000  1.000]
+2025-10-09 16:33:36,437 Total parameters count: 62186659
+2025-10-09 16:33:36,522 Starting training...
+2025-10-09 16:33:36,523 0 Thu Oct  9 16:33:36 2025 Epoch: 0
+2025-10-09 16:34:19,520 Final training  0/2loss: 1.1476time 43.00s
+2025-10-09 16:34:19,520 ----------
+2025-10-09 16:34:19,521 
+2025-10-09 16:34:53,270 Final validation stats 0/2, Val_acc: 0.333333, time 33.75s
+2025-10-09 16:34:53,271 new best (0.000000 --> 0.333333). 
+2025-10-09 16:34:53,272 0 Thu Oct  9 16:34:53 2025 Epoch: 1
+2025-10-09 16:35:38,185 Final training  1/2loss: 1.1273time 44.91s
+2025-10-09 16:35:38,185 ----------
+2025-10-09 16:35:38,185 
+2025-10-09 16:36:13,301 Final validation stats 1/2, Val_acc: 0.333333, time 35.12s
+2025-10-09 16:36:13,302 0 Thu Oct  9 16:36:13 2025 Epoch: 2
+2025-10-09 16:36:58,785 Final training  2/2loss: 1.1098time 45.48s
+2025-10-09 16:36:58,786 ----------
+2025-10-09 16:36:58,786 
+2025-10-09 16:37:33,707 Final validation stats 2/2, Val_acc: 0.333333, time 34.92s
+2025-10-09 16:37:33,708 Training Finished !, Best Accuracy: 0.3333333333333333
+2025-10-09 16:37:34,076 Total time spent: 237

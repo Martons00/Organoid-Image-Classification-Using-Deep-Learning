@@ -330,7 +330,7 @@ def main_worker(gpu, args):
         scheduler=scheduler,
         start_epoch=start_epoch,
         writer_dict=writer_dict,
-
+        final_output_dir = final_output_dir,
     )
 
     end = timeit.default_timer()
