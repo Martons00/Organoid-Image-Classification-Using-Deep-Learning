@@ -278,6 +278,8 @@ def run_training(
                 + "loss: {:.4f}".format(train_loss)
                 + "time {:.2f}s".format(time.time() - epoch_time)
             )
+            logging.info("" + "-" * 10)
+            logging.info("")
         if args.rank == 0 and writer is not None:
             writer.add_scalar("train_loss", train_loss, epoch)
         b_new_best = False
@@ -335,7 +337,13 @@ def run_training(
     logging.info(f"Training Finished !, Best Accuracy: {val_acc_max}")
     logging.info
 
+<<<<<<< HEAD
     plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(args.output_dir, "training_loss_curve.png"))
     plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(args.output_dir, "validation_accuracy_curve.png"))
                 
+=======
+    plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(args.logdir, "training_loss_curve.png"))
+    plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(args.logdir, "validation_accuracy_curve.png"))
+
+>>>>>>> 367d44a2c17ab7593a4a60d291c9f9c378822f17
     return val_acc_max
