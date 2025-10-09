@@ -57,6 +57,131 @@ import torch
 from torch.utils.data import Dataset, random_split
 from sklearn.utils.class_weight import compute_class_weight
 
+from typing import Tuple, Union, Optional
+import numpy as np
+import torch
+from torch.utils.data import Dataset, Subset
+from sklearn.model_selection import train_test_split
+
+def split_dataset_balanced(
+    dataset: Dataset,
+    val_size: Union[int, float] = 0.2,
+    seed: int = 42
+) -> Tuple[Subset, Subset]:
+    """
+    Divide un Dataset PyTorch in train/val con lo stesso numero di campioni per classe.
+    val_size: frazione (0<val<=1) oppure numero intero di campioni PER CLASSE nel validation.
+    Restituisce (train_subset, val_subset) perfettamente bilanciati.
+    """
+    labels = dataset.labels  # Assume che il dataset abbia un attributo .labels (np.array)
+    unique_classes, class_counts = np.unique(labels, return_counts=True)
+    n_classes = len(unique_classes)
+    
+    # Trova la classe con meno campioni per determinare il limite
+    min_class_samples = np.min(class_counts)
+    
+    if isinstance(val_size, float):
+        val_samples_per_class = int(round(val_size * min_class_samples))
+    else:
+        val_samples_per_class = int(val_size)
+    
+    # Assicurati che rimangano abbastanza campioni per il training
+    val_samples_per_class = max(1, min(val_samples_per_class, min_class_samples - 1))
+    train_samples_per_class = min_class_samples - val_samples_per_class
+    
+    train_indices = []
+    val_indices = []
+    
+    np.random.seed(seed)
+    
+    for cls in unique_classes:
+        # Trova tutti gli indici per questa classe
+        cls_indices = np.where(labels == cls)[0]
+        
+        # Prendi solo i primi min_class_samples per bilanciare
+        cls_indices = cls_indices[:min_class_samples]
+        
+        # Shuffle gli indici per questa classe
+        np.random.shuffle(cls_indices)
+        
+        # Split train/val per questa classe
+        train_indices.extend(cls_indices[:train_samples_per_class])
+        val_indices.extend(cls_indices[train_samples_per_class:train_samples_per_class + val_samples_per_class])
+    
+    # Converti in liste e shuffle finale
+    train_indices = np.array(train_indices)
+    val_indices = np.array(val_indices)
+    
+    np.random.shuffle(train_indices)
+    np.random.shuffle(val_indices)
+    
+    train_subset = Subset(dataset, train_indices.tolist())
+    val_subset = Subset(dataset, val_indices.tolist())
+    
+    print(f"Balanced split: {train_samples_per_class} train samples per class, {val_samples_per_class} val samples per class")
+    print(f"Total: {len(train_subset)} train, {len(val_subset)} val")
+    
+    return train_subset, val_subset
+
+def create_balanced_debug_subset(
+    dataset_subset: Subset, 
+    original_labels: np.ndarray,
+    samples_per_class: int, 
+    seed: int = 42
+) -> Subset:
+    """
+    Crea un subset bilanciato per il debug con lo stesso numero di campioni per classe.
+    samples_per_class: numero di campioni da prendere per ogni classe.
+    """
+    # Ottieni le label corrispondenti agli indici del subset
+    subset_labels = original_labels[dataset_subset.indices]
+    unique_classes, class_counts = np.unique(subset_labels, return_counts=True)
+    
+    # Verifica che ogni classe abbia abbastanza campioni
+    min_available = np.min(class_counts)
+    samples_per_class = min(samples_per_class, min_available)
+    
+    if samples_per_class <= 0:
+        print(f"Warning: Not enough samples per class. Using {min_available} samples per class.")
+        samples_per_class = min_available
+    
+    debug_indices = []
+    
+    np.random.seed(seed)
+    
+    for cls in unique_classes:
+        # Trova gli indici nel subset per questa classe
+        cls_mask = subset_labels == cls
+        cls_subset_indices = np.where(cls_mask)[0]
+        
+        # Seleziona samples_per_class campioni casuali
+        np.random.shuffle(cls_subset_indices)
+        selected_indices = cls_subset_indices[:samples_per_class]
+        debug_indices.extend(selected_indices)
+    
+    # Shuffle finale
+    debug_indices = np.array(debug_indices)
+    np.random.shuffle(debug_indices)
+    
+    # Mappa gli indici del subset agli indici originali del dataset
+    original_indices = [dataset_subset.indices[i] for i in debug_indices]
+    
+    print(f"Debug subset: {samples_per_class} samples per class, {len(debug_indices)} total samples")
+    
+    return Subset(dataset_subset.dataset, original_indices)
+
+def verify_balance(subset: Subset, original_labels: np.ndarray) -> None:
+    """
+    Verifica e stampa la distribuzione delle classi in un subset.
+    """
+    subset_labels = original_labels[subset.indices]
+    unique_classes, class_counts = np.unique(subset_labels, return_counts=True)
+    
+    print("Class distribution:")
+    for cls, count in zip(unique_classes, class_counts):
+        print(f"  Class {cls}: {count} samples")
+
+
 def split_dataset_random(
     dataset: Dataset,
     val_size: Union[int, float] = 0.2,
@@ -255,6 +380,15 @@ def main_worker(gpu, args):
         logger.info(f"Training set length: {len(train_set)}")
         print("Validation set length:", len(val_set))
         logger.info(f"Validation set length: {len(val_set)}")
+    elif args.split_method == "balanced":
+        # Split bilanciato - stesso numero di campioni per classe
+        train_set, val_set = split_dataset_balanced(dataset, val_size=0.2, seed=42)
+        print("\nTrain set balance:")
+        verify_balance(train_set, dataset.labels)
+        print("\nVal set balance:")
+        verify_balance(val_set, dataset.labels)
+
+
     else:
         raise ValueError(f"Unsupported split method: {args.split_method}")
         
@@ -264,12 +398,23 @@ def main_worker(gpu, args):
         # Impostazioni debug
         DEBUG_TRAIN_SAMPLES = args.debug_train_samples if args.debug_train_samples > 0 else 20
         DEBUG_VAL_SAMPLES = args.debug_val_samples if args.debug_val_samples > 0 else 10
-        train_set = create_stratified_debug_subset(
-            train_set, labels, DEBUG_TRAIN_SAMPLES, seed=args.seed
-        )
-        val_set = create_stratified_debug_subset(
-            val_set, labels, DEBUG_VAL_SAMPLES, seed=args.seed + 1
-        )
+        if args.split_method == "balanced":
+            # Debug subset bilanciato - es. 10 campioni per classe per train, 3 per val
+            train_set = create_balanced_debug_subset(train_set, dataset.labels, samples_per_class=int(DEBUG_TRAIN_SAMPLES/3), seed=42)
+            val_set = create_balanced_debug_subset(val_set, dataset.labels, samples_per_class=int(DEBUG_VAL_SAMPLES/3), seed=43)
+            
+            print("\nDebug train balance:")
+            verify_balance(train_set, dataset.labels)
+            
+            print("\nDebug val balance:")
+            verify_balance(val_set, dataset.labels)
+        else:   
+            train_set = create_stratified_debug_subset(
+                train_set, labels, DEBUG_TRAIN_SAMPLES, seed=args.seed
+            )
+            val_set = create_stratified_debug_subset(
+                val_set, labels, DEBUG_VAL_SAMPLES, seed=args.seed + 1
+            )
         
         print(f"DEBUG: using {len(train_set)} samples for training (stratified)")
         print(f"DEBUG: using {len(val_set)} samples for validation (stratified)")
