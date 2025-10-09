@@ -205,6 +205,7 @@ def main_worker(gpu, args):
         print(f"Val class {c}: {n} ({percentage:.1f}%)")
         logger.info(f"Val class {c}: {n} ({percentage:.1f}%)")
     logger.info("" + "*" * 50)
+    logger.info("")
 
 
 
