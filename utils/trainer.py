@@ -135,9 +135,7 @@ def val_epoch(
     loader,
     epoch,
     acc_func,          # opzionale: se None, useremo accuracy semplice
-    args,
-    post_sigmoid=None, # opzionale: se forniti, li usiamo per compatibilità
-    post_pred=None     # opzionale
+    args,    # opzionale
 ):
     model.eval()
     device = torch.device("cuda", args.rank) if torch.cuda.is_available() else torch.device("cpu")
@@ -239,12 +237,8 @@ def run_training(
     loss_func,
     acc_func,
     args,
-    model_inferer=None,
     scheduler=None,
     start_epoch=0,
-    post_sigmoid=None,
-    post_pred=None,
-    semantic_classes=None,
     writer_dict=None,
 ):
     writer = writer_dict["writer"] if writer_dict is not None else None
@@ -294,8 +288,6 @@ def run_training(
                 epoch=epoch,
                 acc_func=acc_func,
                 args=args,
-                post_sigmoid=post_sigmoid,
-                post_pred=post_pred,
             )
             print("Validation :", val_acc)
             if args.rank == 0:
@@ -313,13 +305,6 @@ def run_training(
 
                 if writer is not None:
                     writer.add_scalar("Mean_Val", val_acc, epoch)  # Val_acc is already a float, no need to use np.mean
-
-                    # Questa parte ha senso solo se `val_acc` fosse un array per canali
-                    # Quindi la rimuoviamo o la commentiamo
-                    # if semantic_classes is not None:
-                    #     for val_channel_ind in range(len(semantic_classes)):
-                    #         if val_channel_ind < val_acc.size:
-                    #             writer.add_scalar(semantic_classes[val_channel_ind], val_acc[val_channel_ind], epoch)
 
                 val_avg_acc = val_acc  # val_acc è già il valore medio
                 if val_avg_acc > val_acc_max:

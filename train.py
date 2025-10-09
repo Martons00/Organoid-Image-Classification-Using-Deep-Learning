@@ -2,304 +2,52 @@
 # Modified based on https://github.com/HRNet/HRNet-Semantic-Segmentation
 # ------------------------------------------------------------------------------
 
-import argparse
+# ========== Standard Library ==========
 import os
+import timeit
 import pprint
 
-import logging
-import timeit
-#from utils.trainer import run_training 
-
+# ========== Third-party Libraries ==========
 import numpy as np
+from sklearn.utils.class_weight import compute_class_weight
+from tensorboardX import SummaryWriter
 
-from torch.utils.data import DataLoader, Subset
-
+# ========== PyTorch Core ==========
 import torch
 import torch.nn as nn
-import torch.backends.cudnn as cudnn
 import torch.optim
-from tensorboardX import SummaryWriter
-from torchmetrics.classification import MulticlassAccuracy
-
-from config import config
-from config import update_config
-from utils.criterion import CrossEntropy, DiceLoss, OhemCrossEntropy, BondaryLoss, FocalLoss
-from utils.function import train, validate
-from utils.utils_old import create_logger, FullModel,suppress_stdout
-#from datasets.base_dataset import AugmentedDataset
-from config import parse_args, config_to_args
-
-import argparse
-import os
-from functools import partial
-
-import numpy as np
-import torch
-import torch.distributed as dist
-import torch.multiprocessing as mp
+import torch.backends.cudnn as cudnn
 import torch.nn.parallel
 import torch.utils.data.distributed
-#from models import LinearWarmupCosineAnnealingLR
-from utils.trainer import run_training
-from utils.data_utils import get_loader
+import torch.distributed as dist
+import torch.multiprocessing as mp
+from torch.utils.data import DataLoader
 
-from monai.inferers import sliding_window_inference
-from monai.losses import DiceLoss
-from monai.metrics import DiceMetric
+# ========== Metrics ==========
+from torchmetrics.classification import MulticlassAccuracy
+
+# ========== MONAI ==========
 from monai.networks.nets import SwinUNETR
-from monai.transforms import Activations, AsDiscrete, Compose
-from monai.utils.enums import MetricReduction
-from test import  SwinUNETREncoder
+
+# ========== Project-Specific ==========
+from config import config, parse_args
+from utils.utils_old import create_logger
+from utils.trainer import run_training
+from utils.data_utils import (
+    get_loader,
+    split_dataset_balanced,
+    split_dataset_random,
+    split_dataset_stratified,
+    create_stratified_debug_subset,
+    create_balanced_debug_subset,
+    train_test_split,
+    verify_balance
+)
+
 from dataset import OrganoidsINRIA3D
-
-from typing import Tuple, Union
-import torch
-from torch.utils.data import Dataset, random_split
-from sklearn.utils.class_weight import compute_class_weight
-
-from typing import Tuple, Union, Optional
-import numpy as np
-import torch
-from torch.utils.data import Dataset, Subset
-from sklearn.model_selection import train_test_split
-
-def split_dataset_balanced(
-    dataset: Dataset,
-    val_size: Union[int, float] = 0.2,
-    seed: int = 42
-) -> Tuple[Subset, Subset]:
-    """
-    Divide un Dataset PyTorch in train/val con lo stesso numero di campioni per classe.
-    val_size: frazione (0<val<=1) oppure numero intero di campioni PER CLASSE nel validation.
-    Restituisce (train_subset, val_subset) perfettamente bilanciati.
-    """
-    labels = dataset.labels  # Assume che il dataset abbia un attributo .labels (np.array)
-    unique_classes, class_counts = np.unique(labels, return_counts=True)
-    n_classes = len(unique_classes)
-    
-    # Trova la classe con meno campioni per determinare il limite
-    min_class_samples = np.min(class_counts)
-    
-    if isinstance(val_size, float):
-        val_samples_per_class = int(round(val_size * min_class_samples))
-    else:
-        val_samples_per_class = int(val_size)
-    
-    # Assicurati che rimangano abbastanza campioni per il training
-    val_samples_per_class = max(1, min(val_samples_per_class, min_class_samples - 1))
-    train_samples_per_class = min_class_samples - val_samples_per_class
-    
-    train_indices = []
-    val_indices = []
-    
-    np.random.seed(seed)
-    
-    for cls in unique_classes:
-        # Trova tutti gli indici per questa classe
-        cls_indices = np.where(labels == cls)[0]
-        
-        # Prendi solo i primi min_class_samples per bilanciare
-        cls_indices = cls_indices[:min_class_samples]
-        
-        # Shuffle gli indici per questa classe
-        np.random.shuffle(cls_indices)
-        
-        # Split train/val per questa classe
-        train_indices.extend(cls_indices[:train_samples_per_class])
-        val_indices.extend(cls_indices[train_samples_per_class:train_samples_per_class + val_samples_per_class])
-    
-    # Converti in liste e shuffle finale
-    train_indices = np.array(train_indices)
-    val_indices = np.array(val_indices)
-    
-    np.random.shuffle(train_indices)
-    np.random.shuffle(val_indices)
-    
-    train_subset = Subset(dataset, train_indices.tolist())
-    val_subset = Subset(dataset, val_indices.tolist())
-    
-    print(f"Balanced split: {train_samples_per_class} train samples per class, {val_samples_per_class} val samples per class")
-    print(f"Total: {len(train_subset)} train, {len(val_subset)} val")
-    
-    return train_subset, val_subset
-
-def create_balanced_debug_subset(
-    dataset_subset: Subset, 
-    original_labels: np.ndarray,
-    samples_per_class: int, 
-    seed: int = 42
-) -> Subset:
-    """
-    Crea un subset bilanciato per il debug con lo stesso numero di campioni per classe.
-    samples_per_class: numero di campioni da prendere per ogni classe.
-    """
-    # Ottieni le label corrispondenti agli indici del subset
-    subset_labels = original_labels[dataset_subset.indices]
-    unique_classes, class_counts = np.unique(subset_labels, return_counts=True)
-    
-    # Verifica che ogni classe abbia abbastanza campioni
-    min_available = np.min(class_counts)
-    samples_per_class = min(samples_per_class, min_available)
-    
-    if samples_per_class <= 0:
-        print(f"Warning: Not enough samples per class. Using {min_available} samples per class.")
-        samples_per_class = min_available
-    
-    debug_indices = []
-    
-    np.random.seed(seed)
-    
-    for cls in unique_classes:
-        # Trova gli indici nel subset per questa classe
-        cls_mask = subset_labels == cls
-        cls_subset_indices = np.where(cls_mask)[0]
-        
-        # Seleziona samples_per_class campioni casuali
-        np.random.shuffle(cls_subset_indices)
-        selected_indices = cls_subset_indices[:samples_per_class]
-        debug_indices.extend(selected_indices)
-    
-    # Shuffle finale
-    debug_indices = np.array(debug_indices)
-    np.random.shuffle(debug_indices)
-    
-    # Mappa gli indici del subset agli indici originali del dataset
-    original_indices = [dataset_subset.indices[i] for i in debug_indices]
-    
-    print(f"Debug subset: {samples_per_class} samples per class, {len(debug_indices)} total samples")
-    
-    return Subset(dataset_subset.dataset, original_indices)
-
-def verify_balance(subset: Subset, original_labels: np.ndarray) -> None:
-    """
-    Verifica e stampa la distribuzione delle classi in un subset.
-    """
-    subset_labels = original_labels[subset.indices]
-    unique_classes, class_counts = np.unique(subset_labels, return_counts=True)
-    
-    print("Class distribution:")
-    for cls, count in zip(unique_classes, class_counts):
-        print(f"  Class {cls}: {count} samples")
-
-
-def split_dataset_random(
-    dataset: Dataset,
-    val_size: Union[int, float] = 0.2,
-    seed: int = 42
-) -> Tuple[Dataset, Dataset]:
-    """
-    Divide un Dataset PyTorch in train/val in modo casuale.
-    val_size: frazione (0<val<=1) oppure numero intero di campioni.
-    Restituisce (train_subset, val_subset).
-    """
-    n = len(dataset)
-    if isinstance(val_size, float):
-        val_len = int(round(val_size * n))
-    else:
-        val_len = int(val_size)
-    val_len = max(1, min(n - 1, val_len))
-    train_len = n - val_len
-
-    g = torch.Generator().manual_seed(seed)
-    train_subset, val_subset = random_split(dataset, [train_len, val_len], generator=g)
-    return train_subset, val_subset
-
-from typing import Tuple, Union, Optional, List
-import numpy as np
-import torch
-from torch.utils.data import Dataset, Subset, DataLoader
-from sklearn.model_selection import train_test_split
-
-def split_dataset_stratified(
-    dataset: Dataset,
-    val_size: Union[int, float] = 0.2,
-    seed: int = 42
-) -> Tuple[Subset, Subset]:
-    """
-    Divide un Dataset PyTorch in train/val mantenendo la distribuzione delle classi.
-    val_size: frazione (0<val<=1) oppure numero intero di campioni.
-    Restituisce (train_subset, val_subset).
-    """
-    n = len(dataset)
-    labels = dataset.labels  # Assume che il dataset abbia un attributo .labels (np.array)
-    
-    if isinstance(val_size, float):
-        val_len = int(round(val_size * n))
-    else:
-        val_len = int(val_size)
-    val_len = max(1, min(n - 1, val_len))
-    
-    # Split stratificato usando sklearn
-    indices = np.arange(n)
-    train_idx, val_idx = train_test_split(
-        indices, 
-        test_size=val_len, 
-        stratify=labels, 
-        random_state=seed
-    )
-    
-    train_subset = Subset(dataset, train_idx.tolist())
-    val_subset = Subset(dataset, val_idx.tolist())
-    
-    return train_subset, val_subset
-
-def create_stratified_debug_subset(
-    dataset_subset: Subset, 
-    original_labels: np.ndarray,
-    n_samples: int, 
-    seed: int = 42
-) -> Subset:
-    """
-    Crea un subset stratificato per il debug da un Subset esistente.
-    """
-    if len(dataset_subset) <= n_samples:
-        return dataset_subset
-    
-    # Ottieni le label corrispondenti agli indici del subset
-    subset_labels = original_labels[dataset_subset.indices]
-    
-    # Verifica che ci siano abbastanza campioni per classe
-    unique_classes, class_counts = np.unique(subset_labels, return_counts=True)
-    min_samples_per_class = max(1, n_samples // len(unique_classes))
-    
-    # Se qualche classe ha troppo pochi campioni, usa un approccio diverso
-    if np.any(class_counts < min_samples_per_class):
-        # Prendi almeno 1 campione per classe, poi riempi casualmente
-        debug_indices = []
-        remaining_slots = n_samples
-        
-        for cls in unique_classes:
-            cls_indices = np.where(subset_labels == cls)[0]
-            n_take = min(len(cls_indices), max(1, remaining_slots // len(unique_classes)))
-            np.random.seed(seed + cls)  # Seed diverso per ogni classe per riproducibilità
-            selected = np.random.choice(cls_indices, size=n_take, replace=False)
-            debug_indices.extend(selected)
-            remaining_slots -= n_take
-        
-        # Riempi gli slot rimanenti casualmente
-        if remaining_slots > 0:
-            all_indices = np.arange(len(dataset_subset))
-            available = np.setdiff1d(all_indices, debug_indices)
-            if len(available) > 0:
-                np.random.seed(seed)
-                extra = np.random.choice(available, size=min(remaining_slots, len(available)), replace=False)
-                debug_indices.extend(extra)
-        
-        debug_indices = np.array(debug_indices)
-    else:
-        # Split stratificato normale
-        subset_indices = np.arange(len(dataset_subset))
-        debug_indices, _ = train_test_split(
-            subset_indices,
-            train_size=n_samples,
-            stratify=subset_labels,
-            random_state=seed
-        )
-    
-    # Mappa gli indici del subset agli indici originali del dataset
-    original_indices = [dataset_subset.indices[i] for i in debug_indices]
-    return Subset(dataset_subset.dataset, original_indices)
-
+from test import SwinUNETREncoder
+# from datasets.base_dataset import AugmentedDataset
+from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR  # Uncomment if used
 
 def main():
     args = parse_args()  # Aggiorna automaticamente la variabile globale config
@@ -341,8 +89,7 @@ def main_worker(gpu, args):
         'valid_global_steps': 0,
     }
 
-    logger.info(pprint.pformat(args))
-    logger.info(config)
+    logger.info(args)
 
     # Here we prepare the data loader
     dataset = OrganoidsINRIA3D(args.data_dir, exact_class_dir=args.exact_class)
@@ -483,34 +230,15 @@ def main_worker(gpu, args):
         model.load_state_dict(model_dict)
         print("Using pretrained weights")
 
-    class_weights = compute_class_weight(class_weight='balanced',classes=np.unique(labels),y=labels)
+    class_weights = compute_class_weight(class_weight='balanced',classes=np.unique(labels),y=labels[train_indices])
     weights = torch.tensor(class_weights, dtype=torch.float)
     print("Class weights:", weights.numpy())
     logger.info("Class weights: " + str(weights.numpy()))
     loss_func = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
 
-    #loss_func = nn.CrossEntropyLoss()  # per classificazione
     acc_metric = MulticlassAccuracy(num_classes=args.out_channels, average='macro').cuda(args.gpu)
 
 
-
-    if args.squared_dice:
-        dice_loss = DiceLoss(
-            to_onehot_y=False, sigmoid=True, squared_pred=True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr
-        )
-    else:
-        dice_loss = DiceLoss(to_onehot_y=False, sigmoid=True)
-
-    post_sigmoid = Activations(sigmoid=True)
-    post_pred = AsDiscrete(argmax=False, logit_thresh=0.5)
-    dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN_BATCH, get_not_nans=True)
-    model_inferer = partial(
-        sliding_window_inference,
-        roi_size=inf_size,
-        sw_batch_size=args.sw_batch_size,
-        predictor=model,
-        overlap=args.infer_overlap,
-    )
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print("Total parameters count", pytorch_total_params)
     logger.info("Total parameters count: %d", pytorch_total_params)
@@ -566,10 +294,9 @@ def main_worker(gpu, args):
         raise ValueError("Unsupported Optimization Procedure: " + str(args.optim_name))
 
     if args.lrschedule == "warmup_cosine":
-        scheduler = None
-        #scheduler = LinearWarmupCosineAnnealingLR(
-        #    optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
-        #)
+        scheduler = LinearWarmupCosineAnnealingLR(
+            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
+        )
     elif args.lrschedule == "cosine_anneal":
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
         if args.checkpoint is not None:
@@ -577,11 +304,9 @@ def main_worker(gpu, args):
     else:
         scheduler = None
 
-    semantic_classes = ["Dice_Val_TC", "Dice_Val_WT", "Dice_Val_ET"]
 
 
-    #epoch_iters = int(loader[0].__len__() + loader[1].__len__() / config.batch_size / 1)
-    epoch_iters = 100
+    epoch_iters = int(train_loader.__len__() + validation_loader.__len__() / args.batch_size / 1)
 
 
     start = timeit.default_timer()
@@ -597,12 +322,8 @@ def main_worker(gpu, args):
         loss_func=loss_func,
         acc_func=acc_metric,
         args=args,
-        model_inferer=model_inferer,
         scheduler=scheduler,
         start_epoch=start_epoch,
-        post_sigmoid=post_sigmoid,
-        post_pred=post_pred,
-        semantic_classes=semantic_classes,
         writer_dict=writer_dict,
 
     )
