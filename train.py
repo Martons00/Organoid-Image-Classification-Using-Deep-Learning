@@ -89,13 +89,8 @@ def main_worker(gpu, args):
         'valid_global_steps': 0,
     }
 
-<<<<<<< HEAD
-    logger.info(args)
-    
-=======
     logger.info(pprint.pformat(vars(args)))
     logger.info("")
->>>>>>> 367d44a2c17ab7593a4a60d291c9f9c378822f17
 
     # Here we prepare the data loader
     dataset = OrganoidsINRIA3D(args.data_dir, exact_class_dir=args.exact_class)
