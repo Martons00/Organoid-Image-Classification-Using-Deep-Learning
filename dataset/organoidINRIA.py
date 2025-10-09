@@ -21,6 +21,7 @@ def label_from_substring(p: str, default_other: int = 1) -> int:
 def label_from_exact_parent_dir(p: str, default_other: int = 1) -> int:
     parent = Path(p).parent.name.lower()  # nome cartella immediata
     return CLASSES.get(parent, default_other)
+
 class OrganoidsINRIA3D(Dataset):
     def __init__(self, root: str, default_other: int = 1, exact_class_dir: bool = False):
         self.root = Path(root)

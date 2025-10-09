@@ -187,7 +187,7 @@ def parse_args():
     
     parser.add_argument('--cfg',
                         help='experiment configure file name',
-                        default="/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/config/OrganoidsINRIA_config.yaml",
+                        default="./config/OrganoidsINRIA_config.yaml",
                         type=str)
     
     parser.add_argument('--seed', type=int, default=304)

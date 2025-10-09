@@ -297,45 +297,37 @@ def run_training(
                 post_sigmoid=post_sigmoid,
                 post_pred=post_pred,
             )
-            print("Validation metric:", val_acc.shape)
+            print("Validation :", val_acc)
             if args.rank == 0:
-                val_acc 
-                Dice_TC = val_acc[0]
-                Dice_WT = val_acc[1]
-                Dice_ET = val_acc[2]
                 print(
                     "Final validation stats {}/{}".format(epoch, args.max_epochs - 1),
-                    ", Dice_TC:",
-                    Dice_TC,
-                    ", Dice_WT:",
-                    Dice_WT,
-                    ", Dice_ET:",
-                    Dice_ET,
+                    ", Val_acc:",
+                    val_acc,
                     ", time {:.2f}s".format(time.time() - epoch_time),
                 )
                 logging.info(
-                    "Final validation stats {}/{}".format(epoch, args.max_epochs - 1)
-                    + ", Dice_TC:"
-                    + str(Dice_TC)
-                    + ", Dice_WT:"
-                    + str(Dice_WT)
-                    + ", Dice_ET:"
-                    + str(Dice_ET)
-                    + ", time {:.2f}s".format(time.time() - epoch_time)
+                    "Final validation stats {}/{}".format(epoch, args.max_epochs - 1) +
+                    ", Val_acc: {:.6f}".format(val_acc) +
+                    ", time {:.2f}s".format(time.time() - epoch_time)
                 )
 
                 if writer is not None:
-                    writer.add_scalar("Mean_Val", np.mean(val_acc), epoch)
-                    if semantic_classes is not None:
-                        for val_channel_ind in range(len(semantic_classes)):
-                            if val_channel_ind < val_acc.size:
-                                writer.add_scalar(semantic_classes[val_channel_ind], val_acc[val_channel_ind], epoch)
-                val_avg_acc = np.mean(val_acc)
+                    writer.add_scalar("Mean_Val", val_acc, epoch)  # Val_acc is already a float, no need to use np.mean
+
+                    # Questa parte ha senso solo se `val_acc` fosse un array per canali
+                    # Quindi la rimuoviamo o la commentiamo
+                    # if semantic_classes is not None:
+                    #     for val_channel_ind in range(len(semantic_classes)):
+                    #         if val_channel_ind < val_acc.size:
+                    #             writer.add_scalar(semantic_classes[val_channel_ind], val_acc[val_channel_ind], epoch)
+
+                val_avg_acc = val_acc  # val_acc è già il valore medio
                 if val_avg_acc > val_acc_max:
                     print("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
                     logging.info("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
                     val_acc_max = val_avg_acc
                     b_new_best = True
+
                     if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
                         save_checkpoint(
                             model, epoch, args, best_acc=val_acc_max, optimizer=optimizer, scheduler=scheduler

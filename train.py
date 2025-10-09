@@ -141,8 +141,8 @@ def main_worker(gpu, args):
     from torch.utils.data import DataLoader, Subset
 
     # Impostazioni debug
-    DEBUG_TRAIN_SAMPLES = 10
-    DEBUG_VAL_SAMPLES = 5
+    DEBUG_TRAIN_SAMPLES = 3
+    DEBUG_VAL_SAMPLES = 2
     USE_DEBUG = True  # oppure args.debug se già esiste
 
     # Eventuale sottoinsieme per il debug prima di creare i DataLoader
