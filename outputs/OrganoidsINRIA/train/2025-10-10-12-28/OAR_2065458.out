@@ -10317,3 +10317,1474 @@ Prediction: 1 - Target: 2
 Epoch: 48/100 Iter: 101/102 loss: 1.1298 time 1.86s
 Final training  48/99 loss: 1.1298 time 253.84s
 0 Fri Oct 10 16:00:25 2025 Epoch: 49
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 0/102 loss: 0.7029 time 2.10s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 1/102 loss: 0.6394 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 2/102 loss: 0.6576 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 3/102 loss: 0.6815 time 1.87s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 4/102 loss: 0.6738 time 3.73s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 5/102 loss: 0.6583 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 49/100 Iter: 6/102 loss: 0.7644 time 5.59s
+Prediction: 0 - Target: 2
+Epoch: 49/100 Iter: 7/102 loss: 0.8514 time 1.87s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 8/102 loss: 0.8199 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 49/100 Iter: 9/102 loss: 0.8810 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 10/102 loss: 0.8498 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 49/100 Iter: 11/102 loss: 0.8815 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 49/100 Iter: 12/102 loss: 0.8969 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 49/100 Iter: 13/102 loss: 0.9296 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 49/100 Iter: 14/102 loss: 0.9548 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 15/102 loss: 0.9455 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 49/100 Iter: 16/102 loss: 0.9855 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 49/100 Iter: 17/102 loss: 1.0018 time 1.87s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 18/102 loss: 0.9944 time 1.87s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 19/102 loss: 0.9923 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 20/102 loss: 0.9956 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 21/102 loss: 0.9982 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 22/102 loss: 0.9837 time 3.73s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 23/102 loss: 0.9882 time 5.59s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 24/102 loss: 0.9728 time 3.73s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 25/102 loss: 0.9729 time 1.87s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 26/102 loss: 0.9849 time 1.87s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 27/102 loss: 0.9780 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 28/102 loss: 0.9781 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 29/102 loss: 0.9755 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 30/102 loss: 0.9950 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 49/100 Iter: 31/102 loss: 1.0051 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 32/102 loss: 1.0183 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 33/102 loss: 1.0169 time 3.73s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 34/102 loss: 1.0087 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 35/102 loss: 1.0079 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 49/100 Iter: 36/102 loss: 1.0133 time 1.87s
+Prediction: 0 - Target: 2
+Epoch: 49/100 Iter: 37/102 loss: 1.0136 time 3.72s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 38/102 loss: 1.0182 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 39/102 loss: 1.0255 time 3.73s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 40/102 loss: 1.0214 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 41/102 loss: 1.0226 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 42/102 loss: 1.0141 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 49/100 Iter: 43/102 loss: 1.0192 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 44/102 loss: 1.0119 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 45/102 loss: 1.0103 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 46/102 loss: 1.0053 time 1.87s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 47/102 loss: 1.0092 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 48/102 loss: 1.0030 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 49/102 loss: 1.0004 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 50/102 loss: 1.0107 time 3.73s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 51/102 loss: 1.0059 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 52/102 loss: 1.0083 time 3.73s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 53/102 loss: 0.9995 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 54/102 loss: 1.0009 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 49/100 Iter: 55/102 loss: 1.0037 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 56/102 loss: 1.0129 time 1.87s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 57/102 loss: 1.0035 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 58/102 loss: 1.0061 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 59/102 loss: 1.0090 time 5.59s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 60/102 loss: 1.0161 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 61/102 loss: 1.0146 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 62/102 loss: 1.0083 time 1.87s
+Prediction: 0 - Target: 1
+Epoch: 49/100 Iter: 63/102 loss: 1.0143 time 1.87s
+Prediction: 0 - Target: 2
+Epoch: 49/100 Iter: 64/102 loss: 1.0139 time 1.87s
+Prediction: 0 - Target: 1
+Epoch: 49/100 Iter: 65/102 loss: 1.0171 time 1.87s
+Prediction: 0 - Target: 1
+Epoch: 49/100 Iter: 66/102 loss: 1.0246 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 67/102 loss: 1.0281 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 49/100 Iter: 68/102 loss: 1.0287 time 1.87s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 69/102 loss: 1.0238 time 3.73s
+Prediction: 0 - Target: 2
+Epoch: 49/100 Iter: 70/102 loss: 1.0270 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 71/102 loss: 1.0270 time 7.46s
+Prediction: 1 - Target: 2
+Epoch: 49/100 Iter: 72/102 loss: 1.0290 time 1.87s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 73/102 loss: 1.0219 time 3.72s
+Prediction: 0 - Target: 1
+Epoch: 49/100 Iter: 74/102 loss: 1.0262 time 5.59s
+Prediction: 1 - Target: 2
+Epoch: 49/100 Iter: 75/102 loss: 1.0270 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 76/102 loss: 1.0325 time 5.59s
+Prediction: 1 - Target: 0
+Epoch: 49/100 Iter: 77/102 loss: 1.0331 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 78/102 loss: 1.0312 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 79/102 loss: 1.0299 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 80/102 loss: 1.0296 time 1.87s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 81/102 loss: 1.0271 time 1.87s
+Prediction: 1 - Target: 2
+Epoch: 49/100 Iter: 82/102 loss: 1.0292 time 1.87s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 83/102 loss: 1.0266 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 84/102 loss: 1.0258 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 85/102 loss: 1.0229 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 49/100 Iter: 86/102 loss: 1.0297 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 87/102 loss: 1.0272 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 88/102 loss: 1.0277 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 49/100 Iter: 89/102 loss: 1.0357 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 90/102 loss: 1.0404 time 5.59s
+Prediction: 2 - Target: 2
+Epoch: 49/100 Iter: 91/102 loss: 1.0383 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 92/102 loss: 1.0416 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 49/100 Iter: 93/102 loss: 1.0463 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 94/102 loss: 1.0508 time 5.59s
+Prediction: 2 - Target: 0
+Epoch: 49/100 Iter: 95/102 loss: 1.0535 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 96/102 loss: 1.0449 time 3.73s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 97/102 loss: 1.0425 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 98/102 loss: 1.0402 time 3.72s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 99/102 loss: 1.0395 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 49/100 Iter: 100/102 loss: 1.0367 time 3.72s
+Prediction: 1 - Target: 1
+Epoch: 49/100 Iter: 101/102 loss: 1.0335 time 1.86s
+Final training  49/99 loss: 1.0335 time 253.72s
+Val 49/100 0/27 , Acc: 1.0 , time 1.89s
+Val 49/100 1/27 , Acc: 0.5 , time 1.90s
+Val 49/100 2/27 , Acc: 0.6666666666666666 , time 1.90s
+Val 49/100 3/27 , Acc: 0.5 , time 1.91s
+Val 49/100 4/27 , Acc: 0.6 , time 1.88s
+Val 49/100 5/27 , Acc: 0.6666666666666666 , time 1.93s
+Val 49/100 6/27 , Acc: 0.7142857142857143 , time 1.89s
+Val 49/100 7/27 , Acc: 0.75 , time 1.90s
+Val 49/100 8/27 , Acc: 0.6666666666666666 , time 1.89s
+Val 49/100 9/27 , Acc: 0.6 , time 1.90s
+Val 49/100 10/27 , Acc: 0.5454545454545454 , time 1.92s
+Val 49/100 11/27 , Acc: 0.5833333333333334 , time 1.90s
+Val 49/100 12/27 , Acc: 0.6153846153846154 , time 1.91s
+Val 49/100 13/27 , Acc: 0.5714285714285714 , time 1.92s
+Val 49/100 14/27 , Acc: 0.6 , time 1.91s
+Val 49/100 15/27 , Acc: 0.625 , time 1.93s
+Val 49/100 16/27 , Acc: 0.5882352941176471 , time 3.80s
+Val 49/100 17/27 , Acc: 0.5555555555555556 , time 1.92s
+Val 49/100 18/27 , Acc: 0.5789473684210527 , time 5.76s
+Val 49/100 19/27 , Acc: 0.6 , time 3.84s
+Val 49/100 20/27 , Acc: 0.5714285714285714 , time 1.91s
+Val 49/100 21/27 , Acc: 0.5909090909090909 , time 1.91s
+Val 49/100 22/27 , Acc: 0.5652173913043478 , time 1.90s
+Val 49/100 23/27 , Acc: 0.5416666666666666 , time 1.89s
+Val 49/100 24/27 , Acc: 0.56 , time 1.91s
+Val 49/100 25/27 , Acc: 0.5384615384615384 , time 1.90s
+Val 49/100 26/27 , Acc: 0.5185185185185185 , time 1.88s
+Validation : 0.5185185185185185
+Final validation stats 49/99 , Val_acc: 0.5185185185185185 , time 59.13s
+0 Fri Oct 10 16:05:39 2025 Epoch: 50
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 0/102 loss: 0.5332 time 4.40s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 1/102 loss: 0.9443 time 3.72s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 2/102 loss: 0.9508 time 5.58s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 3/102 loss: 0.9357 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 4/102 loss: 0.8141 time 3.72s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 5/102 loss: 0.8139 time 1.87s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 6/102 loss: 0.9917 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 7/102 loss: 1.0691 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 8/102 loss: 1.1477 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 9/102 loss: 1.1080 time 5.58s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 10/102 loss: 1.0711 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 11/102 loss: 1.1504 time 1.87s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 12/102 loss: 1.1245 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 13/102 loss: 1.1045 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 50/100 Iter: 14/102 loss: 1.1278 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 15/102 loss: 1.0893 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 16/102 loss: 1.1068 time 3.72s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 17/102 loss: 1.0973 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 50/100 Iter: 18/102 loss: 1.0928 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 19/102 loss: 1.1070 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 20/102 loss: 1.0979 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 21/102 loss: 1.0867 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 22/102 loss: 1.0803 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 50/100 Iter: 23/102 loss: 1.0919 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 24/102 loss: 1.0742 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 25/102 loss: 1.0584 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 26/102 loss: 1.0437 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 27/102 loss: 1.0230 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 50/100 Iter: 28/102 loss: 1.0465 time 3.72s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 29/102 loss: 1.0527 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 30/102 loss: 1.0371 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 31/102 loss: 1.0677 time 1.87s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 32/102 loss: 1.0499 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 33/102 loss: 1.0608 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 34/102 loss: 1.0602 time 1.87s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 35/102 loss: 1.0472 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 36/102 loss: 1.0500 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 37/102 loss: 1.0345 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 38/102 loss: 1.0388 time 5.59s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 39/102 loss: 1.0277 time 1.87s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 40/102 loss: 1.0151 time 1.87s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 41/102 loss: 1.0029 time 1.87s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 42/102 loss: 0.9896 time 1.87s
+Prediction: 2 - Target: 0
+Epoch: 50/100 Iter: 43/102 loss: 1.0171 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 44/102 loss: 1.0125 time 1.87s
+Prediction: 2 - Target: 2
+Epoch: 50/100 Iter: 45/102 loss: 1.0023 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 46/102 loss: 1.0101 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 47/102 loss: 1.0047 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 48/102 loss: 1.0021 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 50/100 Iter: 49/102 loss: 1.0352 time 5.60s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 50/102 loss: 1.0258 time 1.87s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 51/102 loss: 1.0592 time 1.87s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 52/102 loss: 1.0443 time 1.87s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 53/102 loss: 1.0357 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 54/102 loss: 1.0272 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 50/100 Iter: 55/102 loss: 1.0326 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 50/100 Iter: 56/102 loss: 1.0321 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 57/102 loss: 1.0211 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 58/102 loss: 1.0099 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 59/102 loss: 1.0274 time 3.73s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 60/102 loss: 1.0197 time 3.73s
+Prediction: 1 - Target: 2
+Epoch: 50/100 Iter: 61/102 loss: 1.0329 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 62/102 loss: 1.0508 time 5.59s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 63/102 loss: 1.0604 time 7.45s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 64/102 loss: 1.0677 time 5.59s
+Prediction: 1 - Target: 2
+Epoch: 50/100 Iter: 65/102 loss: 1.0725 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 66/102 loss: 1.0730 time 3.73s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 67/102 loss: 1.0762 time 1.87s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 68/102 loss: 1.0749 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 69/102 loss: 1.0683 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 70/102 loss: 1.0590 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 71/102 loss: 1.0728 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 72/102 loss: 1.0837 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 73/102 loss: 1.0876 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 74/102 loss: 1.0769 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 75/102 loss: 1.0840 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 76/102 loss: 1.0727 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 77/102 loss: 1.0611 time 1.87s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 78/102 loss: 1.0741 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 79/102 loss: 1.0637 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 80/102 loss: 1.0526 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 81/102 loss: 1.0433 time 5.59s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 82/102 loss: 1.0542 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 83/102 loss: 1.0660 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 84/102 loss: 1.0756 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 85/102 loss: 1.0668 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 86/102 loss: 1.0599 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 87/102 loss: 1.0511 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 88/102 loss: 1.0547 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 89/102 loss: 1.0638 time 1.87s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 90/102 loss: 1.0729 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 50/100 Iter: 91/102 loss: 1.0743 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 92/102 loss: 1.0685 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 93/102 loss: 1.0724 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 94/102 loss: 1.0746 time 1.87s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 95/102 loss: 1.0816 time 1.87s
+Prediction: 0 - Target: 1
+Epoch: 50/100 Iter: 96/102 loss: 1.0834 time 1.87s
+Prediction: 0 - Target: 0
+Epoch: 50/100 Iter: 97/102 loss: 1.0767 time 3.72s
+Prediction: 2 - Target: 1
+Epoch: 50/100 Iter: 98/102 loss: 1.0774 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 50/100 Iter: 99/102 loss: 1.0759 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 50/100 Iter: 100/102 loss: 1.0727 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 50/100 Iter: 101/102 loss: 1.0759 time 1.86s
+Final training  50/99 loss: 1.0759 time 254.11s
+0 Fri Oct 10 16:09:58 2025 Epoch: 51
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 0/102 loss: 0.5737 time 9.23s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 1/102 loss: 0.9493 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 2/102 loss: 0.8151 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 3/102 loss: 0.9188 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 4/102 loss: 0.9435 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 5/102 loss: 1.1045 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 6/102 loss: 1.0115 time 3.72s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 7/102 loss: 1.1525 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 8/102 loss: 1.1279 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 9/102 loss: 1.1448 time 3.72s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 10/102 loss: 1.1491 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 11/102 loss: 1.1091 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 12/102 loss: 1.0741 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 13/102 loss: 1.0991 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 14/102 loss: 1.0998 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 15/102 loss: 1.0789 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 16/102 loss: 1.0473 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 17/102 loss: 1.0258 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 18/102 loss: 1.0339 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 19/102 loss: 1.0430 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 20/102 loss: 1.0580 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 51/100 Iter: 21/102 loss: 1.0780 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 22/102 loss: 1.0645 time 3.72s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 23/102 loss: 1.0670 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 24/102 loss: 1.0757 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 25/102 loss: 1.0615 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 26/102 loss: 1.0441 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 27/102 loss: 1.0337 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 28/102 loss: 1.0466 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 29/102 loss: 1.0537 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 51/100 Iter: 30/102 loss: 1.0558 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 31/102 loss: 1.0575 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 51/100 Iter: 32/102 loss: 1.0640 time 7.44s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 33/102 loss: 1.0622 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 51/100 Iter: 34/102 loss: 1.0682 time 5.59s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 35/102 loss: 1.0645 time 1.87s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 36/102 loss: 1.0698 time 1.87s
+Prediction: 2 - Target: 0
+Epoch: 51/100 Iter: 37/102 loss: 1.0777 time 5.59s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 38/102 loss: 1.0706 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 39/102 loss: 1.0632 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 40/102 loss: 1.0594 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 41/102 loss: 1.0500 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 51/100 Iter: 42/102 loss: 1.0542 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 43/102 loss: 1.0499 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 44/102 loss: 1.0481 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 51/100 Iter: 45/102 loss: 1.0445 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 51/100 Iter: 46/102 loss: 1.0465 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 47/102 loss: 1.0386 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 48/102 loss: 1.0288 time 3.72s
+Prediction: 0 - Target: 1
+Epoch: 51/100 Iter: 49/102 loss: 1.0320 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 50/102 loss: 1.0372 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 51/102 loss: 1.0291 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 51/100 Iter: 52/102 loss: 1.0342 time 5.59s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 53/102 loss: 1.0349 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 54/102 loss: 1.0286 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 51/100 Iter: 55/102 loss: 1.0310 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 56/102 loss: 1.0332 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 51/100 Iter: 57/102 loss: 1.0336 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 58/102 loss: 1.0303 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 59/102 loss: 1.0327 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 60/102 loss: 1.0297 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 61/102 loss: 1.0280 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 62/102 loss: 1.0285 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 63/102 loss: 1.0249 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 51/100 Iter: 64/102 loss: 1.0320 time 3.73s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 65/102 loss: 1.0452 time 5.58s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 66/102 loss: 1.0417 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 67/102 loss: 1.0528 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 68/102 loss: 1.0489 time 3.72s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 69/102 loss: 1.0464 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 70/102 loss: 1.0473 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 71/102 loss: 1.0517 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 72/102 loss: 1.0550 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 73/102 loss: 1.0545 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 74/102 loss: 1.0499 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 75/102 loss: 1.0479 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 76/102 loss: 1.0437 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 51/100 Iter: 77/102 loss: 1.0422 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 51/100 Iter: 78/102 loss: 1.0442 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 79/102 loss: 1.0449 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 80/102 loss: 1.0435 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 81/102 loss: 1.0393 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 51/100 Iter: 82/102 loss: 1.0382 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 51/100 Iter: 83/102 loss: 1.0429 time 3.73s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 84/102 loss: 1.0456 time 5.60s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 85/102 loss: 1.0455 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 86/102 loss: 1.0472 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 87/102 loss: 1.0456 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 88/102 loss: 1.0464 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 89/102 loss: 1.0481 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 51/100 Iter: 90/102 loss: 1.0471 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 91/102 loss: 1.0420 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 92/102 loss: 1.0394 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 51/100 Iter: 93/102 loss: 1.0409 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 94/102 loss: 1.0363 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 51/100 Iter: 95/102 loss: 1.0396 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 96/102 loss: 1.0334 time 3.73s
+Prediction: 1 - Target: 1
+Epoch: 51/100 Iter: 97/102 loss: 1.0336 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 51/100 Iter: 98/102 loss: 1.0399 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 99/102 loss: 1.0362 time 5.59s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 100/102 loss: 1.0335 time 5.59s
+Prediction: 0 - Target: 0
+Epoch: 51/100 Iter: 101/102 loss: 1.0317 time 1.86s
+Final training  51/99 loss: 1.0317 time 260.60s
+0 Fri Oct 10 16:14:18 2025 Epoch: 52
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 0/102 loss: 0.5622 time 8.27s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 1/102 loss: 1.1582 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 2/102 loss: 1.2536 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 3/102 loss: 1.0346 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 4/102 loss: 0.9156 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 5/102 loss: 0.9639 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 6/102 loss: 0.9733 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 7/102 loss: 0.9040 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 52/100 Iter: 8/102 loss: 1.0029 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 9/102 loss: 1.0539 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 10/102 loss: 1.0527 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 52/100 Iter: 11/102 loss: 1.1628 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 52/100 Iter: 12/102 loss: 1.2022 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 13/102 loss: 1.1722 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 14/102 loss: 1.2126 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 15/102 loss: 1.2793 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 16/102 loss: 1.2222 time 3.72s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 17/102 loss: 1.2441 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 18/102 loss: 1.2354 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 19/102 loss: 1.2091 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 20/102 loss: 1.1918 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 52/100 Iter: 21/102 loss: 1.1811 time 1.87s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 22/102 loss: 1.1863 time 5.59s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 23/102 loss: 1.1782 time 3.73s
+Prediction: 1 - Target: 0
+Epoch: 52/100 Iter: 24/102 loss: 1.1832 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 25/102 loss: 1.1659 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 26/102 loss: 1.1596 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 27/102 loss: 1.1403 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 28/102 loss: 1.1168 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 29/102 loss: 1.1087 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 30/102 loss: 1.1147 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 31/102 loss: 1.1260 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 32/102 loss: 1.1302 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 33/102 loss: 1.1335 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 34/102 loss: 1.1285 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 35/102 loss: 1.1376 time 3.73s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 36/102 loss: 1.1378 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 37/102 loss: 1.1294 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 38/102 loss: 1.1358 time 3.72s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 39/102 loss: 1.1325 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 40/102 loss: 1.1298 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 41/102 loss: 1.1266 time 1.87s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 42/102 loss: 1.1245 time 3.72s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 43/102 loss: 1.1252 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 44/102 loss: 1.1209 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 52/100 Iter: 45/102 loss: 1.1198 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 46/102 loss: 1.1208 time 5.59s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 47/102 loss: 1.1148 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 48/102 loss: 1.1138 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 49/102 loss: 1.1079 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 50/102 loss: 1.1112 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 51/102 loss: 1.1023 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 52/102 loss: 1.0934 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 53/102 loss: 1.0932 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 54/102 loss: 1.0903 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 55/102 loss: 1.0943 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 56/102 loss: 1.0907 time 1.87s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 57/102 loss: 1.0903 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 58/102 loss: 1.0898 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 59/102 loss: 1.0967 time 3.73s
+Prediction: 1 - Target: 0
+Epoch: 52/100 Iter: 60/102 loss: 1.1107 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 61/102 loss: 1.1213 time 5.60s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 62/102 loss: 1.1194 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 52/100 Iter: 63/102 loss: 1.1145 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 64/102 loss: 1.1151 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 52/100 Iter: 65/102 loss: 1.1225 time 5.58s
+Prediction: 1 - Target: 0
+Epoch: 52/100 Iter: 66/102 loss: 1.1284 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 52/100 Iter: 67/102 loss: 1.1322 time 5.59s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 68/102 loss: 1.1267 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 52/100 Iter: 69/102 loss: 1.1269 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 70/102 loss: 1.1333 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 52/100 Iter: 71/102 loss: 1.1325 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 52/100 Iter: 72/102 loss: 1.1305 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 73/102 loss: 1.1374 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 52/100 Iter: 74/102 loss: 1.1422 time 5.59s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 75/102 loss: 1.1351 time 3.72s
+Prediction: 1 - Target: 0
+Epoch: 52/100 Iter: 76/102 loss: 1.1326 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 77/102 loss: 1.1367 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 78/102 loss: 1.1317 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 52/100 Iter: 79/102 loss: 1.1321 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 80/102 loss: 1.1346 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 52/100 Iter: 81/102 loss: 1.1345 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 82/102 loss: 1.1318 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 83/102 loss: 1.1282 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 52/100 Iter: 84/102 loss: 1.1256 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 85/102 loss: 1.1198 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 86/102 loss: 1.1158 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 87/102 loss: 1.1153 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 88/102 loss: 1.1118 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 89/102 loss: 1.1078 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 90/102 loss: 1.1045 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 91/102 loss: 1.0945 time 3.73s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 92/102 loss: 1.0910 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 52/100 Iter: 93/102 loss: 1.0880 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 52/100 Iter: 94/102 loss: 1.0832 time 3.72s
+Prediction: 1 - Target: 0
+Epoch: 52/100 Iter: 95/102 loss: 1.0854 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 96/102 loss: 1.0905 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 52/100 Iter: 97/102 loss: 1.0921 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 52/100 Iter: 98/102 loss: 1.0926 time 5.58s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 99/102 loss: 1.0969 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 100/102 loss: 1.0977 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 52/100 Iter: 101/102 loss: 1.0995 time 1.86s
+Final training  52/99 loss: 1.0995 time 254.16s
+0 Fri Oct 10 16:18:33 2025 Epoch: 53
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 0/102 loss: 0.6870 time 2.15s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 1/102 loss: 0.9733 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 2/102 loss: 0.9469 time 1.87s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 3/102 loss: 0.8911 time 3.73s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 4/102 loss: 0.9060 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 5/102 loss: 0.9121 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 6/102 loss: 0.9117 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 7/102 loss: 0.9103 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 8/102 loss: 0.9181 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 53/100 Iter: 9/102 loss: 0.9422 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 53/100 Iter: 10/102 loss: 0.9830 time 5.59s
+Prediction: 1 - Target: 2
+Epoch: 53/100 Iter: 11/102 loss: 0.9842 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 12/102 loss: 0.9628 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 53/100 Iter: 13/102 loss: 0.9871 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 14/102 loss: 0.9778 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 53/100 Iter: 15/102 loss: 0.9727 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 16/102 loss: 0.9609 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 17/102 loss: 1.0060 time 5.58s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 18/102 loss: 1.0289 time 3.73s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 19/102 loss: 1.0330 time 3.73s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 20/102 loss: 1.0543 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 21/102 loss: 1.0348 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 22/102 loss: 1.0236 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 23/102 loss: 1.0203 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 24/102 loss: 1.0348 time 3.73s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 25/102 loss: 1.0387 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 26/102 loss: 1.0449 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 27/102 loss: 1.0339 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 28/102 loss: 1.0226 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 29/102 loss: 1.0159 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 30/102 loss: 1.0052 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 31/102 loss: 1.0029 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 32/102 loss: 0.9938 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 33/102 loss: 0.9999 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 34/102 loss: 0.9921 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 35/102 loss: 0.9935 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 36/102 loss: 1.0070 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 37/102 loss: 1.0221 time 3.73s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 38/102 loss: 1.0110 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 39/102 loss: 0.9972 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 40/102 loss: 1.0039 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 41/102 loss: 1.0002 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 42/102 loss: 1.0083 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 43/102 loss: 1.0037 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 44/102 loss: 1.0087 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 45/102 loss: 1.0009 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 46/102 loss: 1.0057 time 3.72s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 47/102 loss: 1.0071 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 48/102 loss: 1.0083 time 3.72s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 49/102 loss: 1.0024 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 50/102 loss: 1.0018 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 51/102 loss: 1.0011 time 3.72s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 52/102 loss: 1.0098 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 53/102 loss: 1.0158 time 7.45s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 54/102 loss: 1.0184 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 53/100 Iter: 55/102 loss: 1.0287 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 56/102 loss: 1.0228 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 53/100 Iter: 57/102 loss: 1.0290 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 58/102 loss: 1.0396 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 53/100 Iter: 59/102 loss: 1.0455 time 1.87s
+Prediction: 1 - Target: 0
+Epoch: 53/100 Iter: 60/102 loss: 1.0504 time 1.87s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 61/102 loss: 1.0474 time 5.58s
+Prediction: 1 - Target: 0
+Epoch: 53/100 Iter: 62/102 loss: 1.0441 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 53/100 Iter: 63/102 loss: 1.0404 time 1.87s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 64/102 loss: 1.0560 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 53/100 Iter: 65/102 loss: 1.0526 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 66/102 loss: 1.0453 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 67/102 loss: 1.0560 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 68/102 loss: 1.0484 time 5.58s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 69/102 loss: 1.0608 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 70/102 loss: 1.0495 time 1.87s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 71/102 loss: 1.0433 time 5.59s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 72/102 loss: 1.0488 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 73/102 loss: 1.0375 time 3.72s
+Prediction: 0 - Target: 1
+Epoch: 53/100 Iter: 74/102 loss: 1.0414 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 53/100 Iter: 75/102 loss: 1.0478 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 53/100 Iter: 76/102 loss: 1.0530 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 77/102 loss: 1.0592 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 53/100 Iter: 78/102 loss: 1.0614 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 79/102 loss: 1.0555 time 5.59s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 80/102 loss: 1.0516 time 5.59s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 81/102 loss: 1.0531 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 53/100 Iter: 82/102 loss: 1.0554 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 53/100 Iter: 83/102 loss: 1.0558 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 84/102 loss: 1.0481 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 85/102 loss: 1.0471 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 86/102 loss: 1.0501 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 87/102 loss: 1.0483 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 88/102 loss: 1.0493 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 89/102 loss: 1.0472 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 90/102 loss: 1.0456 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 91/102 loss: 1.0365 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 53/100 Iter: 92/102 loss: 1.0331 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 53/100 Iter: 93/102 loss: 1.0321 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 94/102 loss: 1.0318 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 95/102 loss: 1.0303 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 53/100 Iter: 96/102 loss: 1.0316 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 53/100 Iter: 97/102 loss: 1.0323 time 1.87s
+Prediction: 1 - Target: 1
+Epoch: 53/100 Iter: 98/102 loss: 1.0292 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 53/100 Iter: 99/102 loss: 1.0315 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 53/100 Iter: 100/102 loss: 1.0336 time 1.87s
+Prediction: 2 - Target: 0
+Epoch: 53/100 Iter: 101/102 loss: 1.0352 time 3.72s
+Final training  53/99 loss: 1.0352 time 253.61s
+0 Fri Oct 10 16:22:47 2025 Epoch: 54
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 0/102 loss: 0.8761 time 10.07s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 1/102 loss: 0.8777 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 2/102 loss: 0.9049 time 3.72s
+Prediction: 1 - Target: 0
+Epoch: 54/100 Iter: 3/102 loss: 1.0526 time 5.58s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 4/102 loss: 1.0174 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 5/102 loss: 1.0691 time 3.72s
+Prediction: 1 - Target: 0
+Epoch: 54/100 Iter: 6/102 loss: 1.1325 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 7/102 loss: 1.1683 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 8/102 loss: 1.1156 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 9/102 loss: 1.0707 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 10/102 loss: 1.0518 time 3.72s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 11/102 loss: 1.0888 time 5.58s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 12/102 loss: 1.1054 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 13/102 loss: 1.0880 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 14/102 loss: 1.1044 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 15/102 loss: 1.1257 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 16/102 loss: 1.1019 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 17/102 loss: 1.1120 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 18/102 loss: 1.0771 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 19/102 loss: 1.0777 time 3.72s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 20/102 loss: 1.0709 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 21/102 loss: 1.0793 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 22/102 loss: 1.0840 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 23/102 loss: 1.0806 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 24/102 loss: 1.0863 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 25/102 loss: 1.0917 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 26/102 loss: 1.0942 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 27/102 loss: 1.1076 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 28/102 loss: 1.1172 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 29/102 loss: 1.1099 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 30/102 loss: 1.0947 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 31/102 loss: 1.1119 time 1.87s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 32/102 loss: 1.0996 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 33/102 loss: 1.1010 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 34/102 loss: 1.1081 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 54/100 Iter: 35/102 loss: 1.0995 time 3.72s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 36/102 loss: 1.0844 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 37/102 loss: 1.0951 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 38/102 loss: 1.0982 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 39/102 loss: 1.0980 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 40/102 loss: 1.0941 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 41/102 loss: 1.0908 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 42/102 loss: 1.0834 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 43/102 loss: 1.0785 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 44/102 loss: 1.0750 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 45/102 loss: 1.1027 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 46/102 loss: 1.0872 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 47/102 loss: 1.0775 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 48/102 loss: 1.0767 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 49/102 loss: 1.1099 time 5.58s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 50/102 loss: 1.1388 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 51/102 loss: 1.1374 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 52/102 loss: 1.1591 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 53/102 loss: 1.1439 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 54/102 loss: 1.1687 time 5.58s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 55/102 loss: 1.1711 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 56/102 loss: 1.1583 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 57/102 loss: 1.1743 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 58/102 loss: 1.1734 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 59/102 loss: 1.1762 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 60/102 loss: 1.1723 time 3.72s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 61/102 loss: 1.1691 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 62/102 loss: 1.1610 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 63/102 loss: 1.1584 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 54/100 Iter: 64/102 loss: 1.1554 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 54/100 Iter: 65/102 loss: 1.1498 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 66/102 loss: 1.1417 time 3.73s
+Prediction: 2 - Target: 1
+Epoch: 54/100 Iter: 67/102 loss: 1.1447 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 68/102 loss: 1.1449 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 69/102 loss: 1.1436 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 70/102 loss: 1.1332 time 3.72s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 71/102 loss: 1.1380 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 72/102 loss: 1.1375 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 73/102 loss: 1.1303 time 7.44s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 74/102 loss: 1.1394 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 75/102 loss: 1.1419 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 76/102 loss: 1.1430 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 77/102 loss: 1.1354 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 78/102 loss: 1.1359 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 79/102 loss: 1.1309 time 3.73s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 80/102 loss: 1.1301 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 81/102 loss: 1.1380 time 5.59s
+Prediction: 1 - Target: 0
+Epoch: 54/100 Iter: 82/102 loss: 1.1365 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 83/102 loss: 1.1246 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 84/102 loss: 1.1212 time 5.59s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 85/102 loss: 1.1205 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 86/102 loss: 1.1125 time 3.72s
+Prediction: 0 - Target: 1
+Epoch: 54/100 Iter: 87/102 loss: 1.1164 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 88/102 loss: 1.1105 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 89/102 loss: 1.1075 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 90/102 loss: 1.1050 time 5.59s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 91/102 loss: 1.1091 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 92/102 loss: 1.1059 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 54/100 Iter: 93/102 loss: 1.0999 time 3.72s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 94/102 loss: 1.0970 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 54/100 Iter: 95/102 loss: 1.1051 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 54/100 Iter: 96/102 loss: 1.1124 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 97/102 loss: 1.1078 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 98/102 loss: 1.1038 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 99/102 loss: 1.1002 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 100/102 loss: 1.0958 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 54/100 Iter: 101/102 loss: 1.0904 time 1.86s
+Final training  54/99 loss: 1.0904 time 261.31s
+0 Fri Oct 10 16:27:08 2025 Epoch: 55
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 0/102 loss: 1.1162 time 6.35s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 1/102 loss: 0.8732 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 2/102 loss: 1.1348 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 3/102 loss: 1.2662 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 4/102 loss: 1.1494 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 5/102 loss: 1.1954 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 6/102 loss: 1.0975 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 7/102 loss: 1.0816 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 8/102 loss: 1.0978 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 9/102 loss: 1.1014 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 10/102 loss: 1.1569 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 55/100 Iter: 11/102 loss: 1.1328 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 12/102 loss: 1.1428 time 5.58s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 13/102 loss: 1.1152 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 14/102 loss: 1.0869 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 55/100 Iter: 15/102 loss: 1.0629 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 55/100 Iter: 16/102 loss: 1.0577 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 55/100 Iter: 17/102 loss: 1.0479 time 3.72s
+Prediction: 2 - Target: 2
+Epoch: 55/100 Iter: 18/102 loss: 1.0414 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 19/102 loss: 1.0295 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 20/102 loss: 1.0429 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 55/100 Iter: 21/102 loss: 1.0293 time 3.72s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 22/102 loss: 1.0562 time 5.58s
+Prediction: 2 - Target: 2
+Epoch: 55/100 Iter: 23/102 loss: 1.0356 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 24/102 loss: 1.0581 time 3.72s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 25/102 loss: 1.0582 time 3.72s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 26/102 loss: 1.0763 time 5.58s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 27/102 loss: 1.0875 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 55/100 Iter: 28/102 loss: 1.0934 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 55/100 Iter: 29/102 loss: 1.0783 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 30/102 loss: 1.0773 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 55/100 Iter: 31/102 loss: 1.0752 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 32/102 loss: 1.0554 time 3.72s
+Prediction: 0 - Target: 2
+Epoch: 55/100 Iter: 33/102 loss: 1.0633 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 34/102 loss: 1.0450 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 35/102 loss: 1.0304 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 55/100 Iter: 36/102 loss: 1.0422 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 37/102 loss: 1.0357 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 38/102 loss: 1.0219 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 55/100 Iter: 39/102 loss: 1.0362 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 40/102 loss: 1.0227 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 55/100 Iter: 41/102 loss: 1.0363 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 55/100 Iter: 42/102 loss: 1.0461 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 55/100 Iter: 43/102 loss: 1.0600 time 1.87s
+Prediction: 0 - Target: 2
+Epoch: 55/100 Iter: 44/102 loss: 1.0646 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 45/102 loss: 1.0503 time 3.72s
+Prediction: 0 - Target: 1
+Epoch: 55/100 Iter: 46/102 loss: 1.0601 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 55/100 Iter: 47/102 loss: 1.0616 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 55/100 Iter: 48/102 loss: 1.0691 time 1.86s
+Prediction: 0 - Target: 1
+Epoch: 55/100 Iter: 49/102 loss: 1.0703 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 55/100 Iter: 50/102 loss: 1.0713 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 51/102 loss: 1.0671 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 52/102 loss: 1.0613 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 53/102 loss: 1.0654 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 54/102 loss: 1.0609 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 55/102 loss: 1.0633 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 56/102 loss: 1.0545 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 57/102 loss: 1.0681 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 58/102 loss: 1.0618 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 59/102 loss: 1.0614 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 60/102 loss: 1.0742 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 61/102 loss: 1.0728 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 62/102 loss: 1.0836 time 5.59s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 63/102 loss: 1.0787 time 5.59s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 64/102 loss: 1.0875 time 3.73s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 65/102 loss: 1.0977 time 3.72s
+Prediction: 2 - Target: 1
+Epoch: 55/100 Iter: 66/102 loss: 1.0950 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 67/102 loss: 1.0886 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 68/102 loss: 1.0883 time 1.86s
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 69/102 loss: 1.0953 time 1.86s
+Prediction: 2 - Target: 0
+Epoch: 55/100 Iter: 70/102 loss: 1.0956 time 3.72s
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 71/102 loss: 1.0993 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 72/102 loss: 1.0927 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 73/102 loss: 1.0953 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 74/102 loss: 1.0917 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 75/102 loss: 1.0863 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 76/102 loss: 1.0812 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 77/102 loss: 1.0761 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 55/100 Iter: 78/102 loss: 1.0864 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 79/102 loss: 1.0812 time 3.73s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 80/102 loss: 1.0756 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 81/102 loss: 1.0683 time 3.72s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 82/102 loss: 1.0725 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 83/102 loss: 1.0686 time 3.72s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 84/102 loss: 1.0651 time 1.86s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 85/102 loss: 1.0624 time 7.45s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 86/102 loss: 1.0574 time 1.86s
+Prediction: 1 - Target: 1
+Epoch: 55/100 Iter: 87/102 loss: 1.0527 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 88/102 loss: 1.0642 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 89/102 loss: 1.0716 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 90/102 loss: 1.0798 time 1.86s
+Prediction: 0 - Target: 2
+Epoch: 55/100 Iter: 91/102 loss: 1.0823 time 3.72s
+Prediction: 0 - Target: 0
+Epoch: 55/100 Iter: 92/102 loss: 1.0724 time 3.73s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 93/102 loss: 1.0744 time 1.87s
+Prediction: 1 - Target: 0
+Epoch: 55/100 Iter: 94/102 loss: 1.0768 time 5.59s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 95/102 loss: 1.0770 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 55/100 Iter: 96/102 loss: 1.0755 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 97/102 loss: 1.0760 time 1.86s
+Prediction: 1 - Target: 2
+Epoch: 55/100 Iter: 98/102 loss: 1.0755 time 1.86s
+Prediction: 2 - Target: 2
+Epoch: 55/100 Iter: 99/102 loss: 1.0708 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 55/100 Iter: 100/102 loss: 1.0777 time 1.86s
+Prediction: 2 - Target: 1
+Epoch: 55/100 Iter: 101/102 loss: 1.0832 time 1.86s
+Final training  55/99 loss: 1.0832 time 254.01s
+0 Fri Oct 10 16:31:22 2025 Epoch: 56

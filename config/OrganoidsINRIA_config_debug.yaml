@@ -47,10 +47,10 @@ AUGMENTATION:
   RandShiftIntensityd_prob: 0.1
 
 TRAINING:
-  max_epochs: 100
+  max_epochs: 60
   batch_size: 1
   sw_batch_size: 1
-  val_every: 10
+  val_every: 5
   folds: false
   k_folds: 5
   early_stopping: true

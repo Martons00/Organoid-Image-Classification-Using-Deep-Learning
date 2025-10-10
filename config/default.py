@@ -269,6 +269,11 @@ def config_to_args(cfg):
     args.batch_size = cfg.TRAINING.batch_size
     args.sw_batch_size = cfg.TRAINING.sw_batch_size
     args.val_every = cfg.TRAINING.val_every
+    args.early_stopping = cfg.TRAINING.early_stopping
+    args.patience_val = cfg.TRAINING.patience_val
+    args.min_delta_val = cfg.TRAINING.min_delta_val
+    args.patience_loss = cfg.TRAINING.patience_loss
+    args.min_delta_loss = cfg.TRAINING.min_delta_loss
     args.folds = cfg.TRAINING.folds 
     args.k_folds = cfg.TRAINING.k_folds
     args.debug = cfg.TRAINING.debug

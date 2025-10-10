@@ -33,7 +33,7 @@ from monai.networks.nets import SwinUNETR
 # ========== Project-Specific ==========
 from config import config, parse_args
 from utils.utils_old import create_logger
-from utils.trainer import run_training, run_training_k_folds
+from utils.trainer import run_training
 from utils.data_utils import (
     get_loader,
     split_dataset_balanced,
@@ -79,6 +79,7 @@ def main():
         raise e  # Re-raise the exception for further handling if needed
 
 def main_worker(gpu, args):
+
     if args.distributed:
         torch.multiprocessing.set_start_method("fork", force=True)
     np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
@@ -106,6 +107,10 @@ def main_worker(gpu, args):
     logger.info(pprint.pformat(vars(args)))
     logger.info("")
 
+
+    if args.telegram_log:
+        message = build_training_message(args)
+        asyncio.run(send_alert(message, token_file=args.token))
 
 
 
@@ -316,7 +321,7 @@ def main_worker(gpu, args):
     logger.info("Class weights: " + str(weights.numpy()))
     loss_func = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
 
-    acc_metric = MulticlassAccuracy(num_classes=args.out_channels, average='macro').cuda(args.gpu)
+    acc_metric = MulticlassAccuracy(num_classes=3, average='macro').cuda(args.gpu)
 
     epoch_iters = int(train_loader.__len__() + validation_loader.__len__() / args.batch_size / 1)
 
@@ -326,9 +331,6 @@ def main_worker(gpu, args):
     print("Total iters to run:", num_iters)
     print("Starting training...")
     logger.info("Starting training...")
-    if args.telegram_log:
-        message = build_training_message(args)
-        asyncio.run(send_alert(message, token_file=args.token))
 
 
     accuracy = run_training(
