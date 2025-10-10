@@ -441,7 +441,7 @@ def build_training_message(args):
 
     # Riepilogo compatto dei parametri principali
     desc = (
-        f"Model: *{args.model_name}* \nDataset: *{args.dataset_name}*\n"
+        f"Model: *{args.model_name}* \nDataset: *{args.dataset_name}*\nSplit Method: *{args.split_method}* \n"
         f"Epochs: *{args.max_epochs}* \nBatch: *{args.batch_size}* \nLR: *{args.optim_lr}*\n"
         + (f"DEBUG TRN: *{args.debug_train_samples} training samples*\n" if args.debug else "")
         + (f"DEBUG VAL: *{args.debug_val_samples} val samples*\n" if args.debug else "")

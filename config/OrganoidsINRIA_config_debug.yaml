@@ -51,8 +51,8 @@ TRAINING:
   batch_size: 1
   sw_batch_size: 1
   val_every: 10
-  debug: true
-  debug_train_samples: 3
+  debug: false
+  debug_train_samples: 
   debug_val_samples: 3
   split_method: "balanced"  # "random" or "stratified
   save_checkpoint: false

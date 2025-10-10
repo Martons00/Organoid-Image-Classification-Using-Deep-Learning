@@ -17,31 +17,35 @@ from tracemalloc import start
 
 import numpy as np
 import torch
-from tensorboardX import SummaryWriter
-from torch.cuda.amp import GradScaler, autocast
 from .utils import AverageMeter, distributed_all_gather
 from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches, plot_training_curve
 from .data_utils import send_alert
 
-def freeze_backbone_and_select_head(model):
-    # Congela tutti i parametri
-    for p in model.parameters():
-        p.requires_grad = False
-    # Scongela solo i layer di testa
-    for p in model.global_pool.parameters():
-        p.requires_grad = True
-    for p in model.fc.parameters():
-        p.requires_grad = True
+def freeze_backbone_and_select_head_fixed(model):
+    """Freezing corretto - chiama SOLO UNA VOLTA all'inizio del training"""
+    frozen_params = 0
+    trainable_params = 0
+    
+    for name, param in model.named_parameters():
+        if 'global_pool' in name or 'fc' in name or 'head' in name:
+            param.requires_grad = True
+            trainable_params += param.numel()
+            print(f"✓ Unfrozen: {name} ({param.numel()} params)")
+        else:
+            param.requires_grad = False
+            frozen_params += param.numel()
+    
+    #print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
     return model
 
-def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
+def train_epoch(model, loader, optimizer, epoch, loss_func, args):
     """
     Training che usa la pipeline di inferenza a patch con forward_features,
     fine-tunando solo global_pool e fc (backbone congelato).
     """
     model.train()
     losses = []
-    freeze_backbone_and_select_head(model)
+
     device = torch.device("cuda", args.rank) if torch.cuda.is_available() else torch.device("cpu")
     start_time = time.time()
     run_loss = AverageMeter()
@@ -55,51 +59,58 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
 
-        # Azzera gradienti solo dei layer sbloccati
-        for p in model.parameters():
-            if p.requires_grad and p.grad is not None:
-                p.grad = None
+        # Costruisci logits per l'intero batch iterando i volumi
+        batch_logits = []
+        B = data.shape[0]
+        for b in range(B):
+            vol = data[b:b+1]                  # [1,C,D,H,W] o [1,D,H,W]
+            vol = ensure_single_channel(vol, mode="first")  # -> [1,1,D,H,W]
+            patches, coords = extract_patches_5d_torch(
+                vol, patch_size=(args.roi_z,args.roi_y,args.roi_x), step=(args.roi_z,args.roi_y,args.roi_x), pad_value=0
+            )  # patches: [N,1,128,128,128]
 
-        with autocast(enabled=args.amp):
-            # Costruisci logits per l'intero batch iterando i volumi
-            batch_logits = []
-            B = data.shape[0]
-            for b in range(B):
-                vol = data[b:b+1]                  # [1,C,D,H,W] o [1,D,H,W]
-                vol = ensure_single_channel(vol, mode="first")  # -> [1,1,D,H,W]
-                patches, coords = extract_patches_5d_torch(
-                    vol, patch_size=(args.roi_z,args.roi_y,args.roi_x), step=(args.roi_z,args.roi_y,args.roi_x), pad_value=0
-                )  # patches: [N,1,128,128,128]
+            # Inferenza per patch con forward_features
+            feat_list = []
+            optimizer.zero_grad()
+            for i in range(patches.shape[0]):
+                patch = patches[i:i+1].to(device).to(torch.float32)  # [1,1,128,128,128]
+                feats = model.forward_features(patch)                # es. [1,Cf] o [1,Cf,1,1,N]
+                feat_list.append(feats)
 
-                # Inferenza per patch con forward_features
-                feat_list = []
-                for i in range(patches.shape[0]):
-                    patch = patches[i:i+1].to(device).to(torch.float32)  # [1,1,128,128,128]
-                    feats = model.forward_features(patch)                # es. [1,Cf] o [1,Cf,1,1,N]
-                    feat_list.append(feats)
+            feats_cat = torch.cat(feat_list, dim=0)                  # [N,Cf,...]
+            feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # ricostruzione feature per volume
 
-                feats_cat = torch.cat(feat_list, dim=0)                  # [N,Cf,...]
-                feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # ricostruzione feature per volume
+            # Testa di classificazione: global_pool → flatten → fc
+            pooled = model.global_pool(feats_tiled)                  # [1,C]
+            pooled = pooled.flatten(1)                               # [1,C]
+            logits_b = model.fc(pooled)                              # [1,num_classes]
+            batch_logits.append(logits_b)
 
-                # Testa di classificazione: global_pool → flatten → fc
-                pooled = model.global_pool(feats_tiled)                  # [1,C]
-                pooled = pooled.flatten(1)                               # [1,C]
-                logits_b = model.fc(pooled)                              # [1,num_classes]
-                batch_logits.append(logits_b)
+        logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
+        predictions = torch.softmax(logits, dim=1).argmax(dim=1)  # [B]
+        print(f"Prediction: {predictions[0]} - Target: {target[0]}")  # DEBUG
+        loss = loss_func(logits, target)
 
-            logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
-            predictions = torch.softmax(logits, dim=1).argmax(dim=1)  # [B]
-            print(f"Prediction: {predictions[0]} - Target: {target[0]}")  # DEBUG
-            loss = loss_func(logits, target)
 
-        # Backward/step solo sui parametri sbloccati
-        if args.amp:
-            scaler.scale(loss).backward()
-            scaler.step(optimizer)
-            scaler.update()
-        else:
-            loss.backward()
-            optimizer.step()
+
+        loss.backward()
+
+        '''
+
+        # Verifica che ci siano parametri con requires_grad=True
+        trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+        print(f"Trainable parameters: {trainable_params}")
+
+        # Debug gradienti
+        grad_norm = 0
+        for name, param in model.named_parameters():
+            if param.requires_grad and param.grad is not None:
+                grad_norm += param.grad.data.norm(2).item() ** 2
+        grad_norm = grad_norm ** 0.5
+        print(f"Gradient norm: {grad_norm}")
+        '''
+
+        optimizer.step()
 
         # Aggiorna metriche come nel codice originale
         if args.distributed:
@@ -150,43 +161,42 @@ def val_epoch(
             data = data.to(device, non_blocking=True)
             target = target.to(device, non_blocking=True)  # atteso [B] o [B,1]
 
-            with autocast(enabled=args.amp):
-                batch_logits = []
-                B = data.shape[0]
-                for b in range(B):
-                    vol = data[b:b+1]                                   # [1,C,D,H,W] o [1,D,H,W]
-                    vol = ensure_single_channel(vol, mode="first")       # -> [1,1,D,H,W]
-                    patches, coords = extract_patches_5d_torch(
-                    vol, patch_size=(args.roi_z,args.roi_y,args.roi_x), step=(args.roi_z,args.roi_y,args.roi_x), pad_value=0
-                    )
+            batch_logits = []
+            B = data.shape[0]
+            for b in range(B):
+                vol = data[b:b+1]                                   # [1,C,D,H,W] o [1,D,H,W]
+                vol = ensure_single_channel(vol, mode="first")       # -> [1,1,D,H,W]
+                patches, coords = extract_patches_5d_torch(
+                vol, patch_size=(args.roi_z,args.roi_y,args.roi_x), step=(args.roi_z,args.roi_y,args.roi_x), pad_value=0
+                )
 
-                    feat_list = []
-                    for i in range(patches.shape[0]):
-                        patch = patches[i:i+1].to(device).to(torch.float32)   # [1,1,128,128,128]
-                        feats = model.forward_features(patch)                  # feature per patch
-                        feat_list.append(feats)
+                feat_list = []
+                for i in range(patches.shape[0]):
+                    patch = patches[i:i+1].to(device).to(torch.float32)   # [1,1,128,128,128]
+                    feats = model.forward_features(patch)                  # feature per patch
+                    feat_list.append(feats)
 
-                    feats_cat = torch.cat(feat_list, dim=0)                    # [N,Cf,...]
-                    feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # ricostruzione feature
-                    pooled = model.global_pool(feats_tiled)                    # [1,C]
-                    pooled = pooled.flatten(1)                                 # [1,C]
-                    logits_b = model.fc(pooled)                                # [1,num_classes]
-                    batch_logits.append(logits_b)
+                feats_cat = torch.cat(feat_list, dim=0)                    # [N,Cf,...]
+                feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # ricostruzione feature
+                pooled = model.global_pool(feats_tiled)                    # [1,C]
+                pooled = pooled.flatten(1)                                 # [1,C]
+                logits_b = model.fc(pooled)                                # [1,num_classes]
+                batch_logits.append(logits_b)
 
-                logits = torch.cat(batch_logits, dim=0)                        # [B,num_classes]
+            logits = torch.cat(batch_logits, dim=0)                        # [B,num_classes]
 
-                # Calcolo metrica di accuratezza per classificazione
-                # Se sono passati post_* (MONAI), usiamo softmax+argmax come default
-                probs = torch.softmax(logits, dim=1)
-                preds = probs.argmax(dim=1)                                    # [B]
-                if target.ndim > 1 and target.size(-1) == 1:
-                    target_eval = target.view(-1)
-                else:
-                    target_eval = target
+            # Calcolo metrica di accuratezza per classificazione
+            # Se sono passati post_* (MONAI), usiamo softmax+argmax come default
+            probs = torch.softmax(logits, dim=1)
+            preds = probs.argmax(dim=1)                                    # [B]
+            if target.ndim > 1 and target.size(-1) == 1:
+                target_eval = target.view(-1)
+            else:
+                target_eval = target
 
-                correct = (preds == target_eval).sum().item()
-                not_nans = target_eval.numel()
-                acc = correct / max(1, not_nans)
+            correct = (preds == target_eval).sum().item()
+            not_nans = target_eval.numel()
+            acc = correct / max(1, not_nans)
 
             # Aggregazione distribuita come nel codice originale
             if args.distributed:
@@ -247,11 +257,12 @@ def run_training(
     training_losses = []
     validation_accuracies = []
 
-    scaler = None
-    if args.amp:
-        scaler = GradScaler()
 
     val_acc_max = 0.0
+
+    # Chiama SOLO una volta prima del training loop
+    model = freeze_backbone_and_select_head_fixed(model)
+
     for epoch in range(start_epoch, args.max_epochs):
         if args.distributed:
             train_loader.sampler.set_epoch(epoch)
@@ -260,7 +271,7 @@ def run_training(
         logging.info(f"{args.rank} {time.ctime()} Epoch: {epoch}")
         epoch_time = time.time()
         train_loss = train_epoch(
-            model, train_loader, optimizer, scaler=scaler, epoch=epoch, loss_func=loss_func, args=args
+            model, train_loader, optimizer, epoch=epoch, loss_func=loss_func, args=args
         )
         training_losses.append(train_loss)
         if args.rank == 0:
@@ -341,7 +352,8 @@ def run_training(
     print("Training Finished !, Best Accuracy: ", val_acc_max)
     logging.info(f"Training Finished !, Best Accuracy: {val_acc_max}")
     if args.telegram_log:
-        message = f"*Training Finished!* \nBest Validation Accuracy: {val_acc_max:.4f}"
+        time_str = time.strftime('%Y/%m/%d %H-%M')
+        message = f"*Training Finished!*\n{time_str}\nBest Validation Accuracy: {val_acc_max:.4f}"
         asyncio.run(send_alert(message,token_file=args.token))
     logging.info("" + "=" * 100)
 
