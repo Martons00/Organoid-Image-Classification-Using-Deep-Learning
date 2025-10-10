@@ -1,13 +1,16 @@
-bash#!/bin/bash
+#!/bin/bash
 
-#OAR -q production 
-#OAR -l host=1/gpu=1,walltime=3:00:00
-#OAR -p gpu-16GB AND gpu_compute_capability_major>=5
+#OAR -l gpu=1,walltime=3:00:00
+#OAR -p esterel39
 #OAR -O OAR_%jobid%.out
-#OAR -E OAR_%jobid%.err 
-hostname
-nvidia-smi
+#OAR -E OAR_%jobid%.err
 
-# make use of a python torch environment
-source ./models/SwinUNETR/BRATS21/swin_env/bin/activate
-python train.py
+set -euo pipefail
+lscpu
+nvidia-smi
+pwd
+# Attiva l'ambiente Python
+source models/SwinUNETR/BRATS21/swin_unetr_env/bin/activate
+
+# Avvia il training
+python train.py --cfg config/OrganoidsINRIA_config_debug.yaml

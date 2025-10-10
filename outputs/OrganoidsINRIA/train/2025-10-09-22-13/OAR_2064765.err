@@ -1,0 +1,99 @@
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+2025-10-09 22:13:54,529 INFO Log directory: outputs/OrganoidsINRIA/train/2025-10-09-22-13
+2025-10-09 22:13:54,531 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'a_max': 250.0,
+ 'a_min': -175.0,
+ 'amp': True,
+ 'b_max': 1.0,
+ 'b_min': 0.0,
+ 'batch_size': 1,
+ 'cache_dataset': False,
+ 'checkpoint': None,
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset/',
+ 'dataset_name': 'OrganoidsINRIA',
+ 'debug': True,
+ 'debug_train_samples': 60,
+ 'debug_val_samples': 30,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'exact_class': True,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 4,
+ 'infer_overlap': 0.5,
+ 'json_list': './jsons/brats21_folds.json',
+ 'logdir': 'training',
+ 'logs_dir': 'logs/',
+ 'lrschedule': '',
+ 'max_epochs': 100,
+ 'model_name': 'swinunetr',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'optim_lr': 0.0001,
+ 'optim_name': 'adamw',
+ 'out_channels': 3,
+ 'output_dir': 'outputs/',
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model_swinvit.pt',
+ 'rank': 0,
+ 'reg_weight': 1e-05,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': False,
+ 'seed': 304,
+ 'smooth_dr': 1e-06,
+ 'smooth_nr': 0.0,
+ 'space_x': 1.5,
+ 'space_y': 1.5,
+ 'space_z': 2.0,
+ 'spatial_dims': 3,
+ 'split_method': 'balanced',
+ 'squared_dice': False,
+ 'sw_batch_size': 1,
+ 'test_mode': False,
+ 'use_checkpoint': False,
+ 'val_every': 10,
+ 'warmup_epochs': 50,
+ 'workers': 8,
+ 'world_size': 1}
+2025-10-09 22:13:54,531 INFO 
+2025-10-09 22:13:54,561 INFO Dataset length is: 423
+2025-10-09 22:13:54,561 INFO Class 0: 137
+2025-10-09 22:13:54,561 INFO Class 1: 43
+2025-10-09 22:13:54,561 INFO Class 2: 243
+2025-10-09 22:13:54,568 INFO Train class 0: 20 (33.3%)
+2025-10-09 22:13:54,568 INFO Train class 1: 20 (33.3%)
+2025-10-09 22:13:54,568 INFO Train class 2: 20 (33.3%)
+2025-10-09 22:13:54,568 INFO Val class 0: 9 (33.3%)
+2025-10-09 22:13:54,568 INFO Val class 1: 9 (33.3%)
+2025-10-09 22:13:54,568 INFO Val class 2: 9 (33.3%)
+2025-10-09 22:13:54,568 INFO **************************************************
+2025-10-09 22:13:54,568 INFO 
+2025-10-09 22:13:54,568 INFO Batch size is: 1, epochs: 100
+2025-10-09 22:13:54,990 INFO Class weights: [ 1.000  1.000  1.000]
+2025-10-09 22:13:54,997 INFO Total parameters count: 62186659
+2025-10-09 22:13:55,020 INFO Starting training...
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/utils/trainer.py:251: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/utils/trainer.py:65: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp):
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/utils/trainer.py:155: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=args.amp):
+2025-10-10 01:48:28,866 INFO Total time spent: 12873
+INFO:OrganoidsINRIA.train:Total time spent: 12873

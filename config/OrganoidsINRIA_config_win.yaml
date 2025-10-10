@@ -10,6 +10,7 @@ SYSTEM:
   workers: 1
   output_dir: "outputs/"
   logs_dir: "logs/"
+  telegram_log: false
 
 MODEL:
   name: "swinunetr"
@@ -29,20 +30,10 @@ MODEL:
 DATASET:
   name: "OrganoidsINRIA"
   data_dir: "F:/Organoids/Organoids_Dataset"
-  json_list: "./jsons/brats21_folds.json"
   exact_class: true
   ignore_label: 3
   fold: 0
   cache_dataset: false
-  # Intensity scaling parameters
-  a_min: -175.0
-  a_max: 250.0
-  b_min: 0.0
-  b_max: 1.0
-  # Spacing parameters
-  space_x: 1.5
-  space_y: 1.5
-  space_z: 2.0
   # ROI size
   roi_x: 64
   roi_y: 64
@@ -75,9 +66,7 @@ TRAINING:
   warmup_epochs: 50
 
 LOSS:
-  smooth_dr: 0.000001
-  smooth_nr: 0.0
-  squared_dice: false
+  weight: 0.5
 
 INFERENCE:
   infer_overlap: 0.5

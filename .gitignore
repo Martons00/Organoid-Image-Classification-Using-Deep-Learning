@@ -9,3 +9,4 @@ models/__pycache__/
 tools/__pycache__/
 swin_venv/
 *.pt
+/token/tlg_token.txt

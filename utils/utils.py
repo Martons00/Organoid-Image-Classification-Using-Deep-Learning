@@ -38,10 +38,9 @@ import sys
 import os
 from contextlib import contextmanager
 
-
+from typing import Sequence
 import matplotlib.pyplot as plt
 import numpy as np
-from torchvision.utils import make_grid
 
 class FullModel(nn.Module):
 
@@ -489,8 +488,7 @@ def extract_patches_5d_torch(x, patch_size=(128,256,256), step=(128,256,256), pa
     patches = torch.cat(patches, dim=0)  # [N,1,pd,ph,pw]
     return patches, coords
 
-import matplotlib.pyplot as plt
-from typing import Sequence
+
 
 def plot_training_curve(
     values: Sequence[float],
@@ -498,18 +496,20 @@ def plot_training_curve(
     epochs: Sequence[int] = None,
     title: str = None,
     figsize: tuple = (8, 5),
-    save_path: str = None
+    save_path: str = None,
+    max_xticks: int = 20
 ) -> None:
     """
     Plotta la curva di training di loss o accuracy in funzione delle epoche.
 
     Args:
         values: lista o array di valori (loss o accuracy) per ogni epoca.
-        metric_name: nome del metrica mostrata sull’asse y ("Loss" o "Accuracy").
+        metric_name: nome del metrica mostrata sull'asse y ("Loss" o "Accuracy").
         epochs: lista o array di numeri di epoca; se None, usa range(len(values)).
         title: titolo del grafico; se None, usa f"{metric_name} vs Epoch".
         figsize: dimensione della figura (width, height).
         save_path: percorso file per salvare il grafico; se None, mostra a schermo.
+        max_xticks: numero massimo di tick sull'asse x (default: 10).
     """
     if epochs is None:
         epochs = list(range(1, len(values) + 1))
@@ -522,7 +522,19 @@ def plot_training_curve(
     plt.ylabel(metric_name)
     plt.title(title)
     plt.grid(True)
-    plt.xticks(epochs)
+    
+    # Gestione intelligente degli xticks
+    if len(epochs) <= max_xticks:
+        plt.xticks(epochs)
+    else:
+        # Calcola step per avere circa max_xticks tick
+        step = max(1, len(epochs) // max_xticks)
+        tick_positions = epochs[::step]
+        # Assicurati di includere sempre l'ultima epoca
+        if epochs[-1] not in tick_positions:
+            tick_positions.append(epochs[-1])
+        plt.xticks(tick_positions)
+    
     plt.tight_layout()
 
     if save_path:
@@ -530,4 +542,5 @@ def plot_training_curve(
         plt.close()
     else:
         plt.show()
+
 

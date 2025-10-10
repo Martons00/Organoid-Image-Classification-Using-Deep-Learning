@@ -4,6 +4,7 @@
 
 # ========== Standard Library ==========
 import os
+import time
 import timeit
 import pprint
 
@@ -41,8 +42,13 @@ from utils.data_utils import (
     create_stratified_debug_subset,
     create_balanced_debug_subset,
     train_test_split,
-    verify_balance
+    verify_balance,
+    send_alert,
+    build_training_message,
 )
+
+import asyncio
+
 
 from dataset import OrganoidsINRIA3D
 from test import SwinUNETREncoder
@@ -55,7 +61,6 @@ def main():
 
 
     
-    args.logdir = "./runs/" + args.logdir
     if args.distributed:
         args.ngpus_per_node = torch.cuda.device_count()
         print("Found total gpus", args.ngpus_per_node)
@@ -153,7 +158,6 @@ def main_worker(gpu, args):
             
             print("\nDebug train balance:")
             verify_balance(train_set, dataset.labels)
-            
             print("\nDebug val balance:")
             verify_balance(val_set, dataset.labels)
         else:   
@@ -163,9 +167,9 @@ def main_worker(gpu, args):
             val_set = create_stratified_debug_subset(
                 val_set, labels, DEBUG_VAL_SAMPLES, seed=args.seed + 1
             )
+            print(f"DEBUG: using {len(train_set)} samples for training (stratified)")
+            print(f"DEBUG: using {len(val_set)} samples for validation (stratified)")
         
-        print(f"DEBUG: using {len(train_set)} samples for training (stratified)")
-        print(f"DEBUG: using {len(val_set)} samples for validation (stratified)")
     
     train_loader = DataLoader(
         train_set,
@@ -317,6 +321,9 @@ def main_worker(gpu, args):
     print("Total iters to run:", num_iters)
     print("Starting training...")
     logger.info("Starting training...")
+    if args.telegram_log:
+        message = build_training_message(args)
+        asyncio.run(send_alert(message, token_file=args.token))
 
 
     accuracy = run_training(
@@ -331,6 +338,7 @@ def main_worker(gpu, args):
         start_epoch=start_epoch,
         writer_dict=writer_dict,
         final_output_dir = final_output_dir,
+        logger=logger,
     )
 
     end = timeit.default_timer()

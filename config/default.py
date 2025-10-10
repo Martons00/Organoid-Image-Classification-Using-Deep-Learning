@@ -28,6 +28,10 @@ _C.SYSTEM.logs_dir = "./logs"
 
 _C.SYSTEM.output_dir = "./outputs"
 
+_C.SYSTEM.telegram_log = False
+
+_C.SYSTEM.telegram_token = "./token/tlg_token.txt"
+
 # Model settings
 
 _C.MODEL = CN()
@@ -66,8 +70,6 @@ _C.DATASET.name = "OrganoidsINRIA"
 
 _C.DATASET.data_dir = "/home/mraffael/martone_project/Organoids_Dataset/"
 
-_C.DATASET.json_list = "./jsons/OrganoidsINRIA_folds.json"
-
 _C.DATASET.exact_class = False
 
 _C.DATASET.ignore_label = 3
@@ -75,20 +77,6 @@ _C.DATASET.ignore_label = 3
 _C.DATASET.fold = 0
 
 _C.DATASET.cache_dataset = False
-
-_C.DATASET.a_min = -175.0
-
-_C.DATASET.a_max = 250.0
-
-_C.DATASET.b_min = 0.0
-
-_C.DATASET.b_max = 1.0
-
-_C.DATASET.space_x = 1.5
-
-_C.DATASET.space_y = 1.5
-
-_C.DATASET.space_z = 2.0
 
 _C.DATASET.roi_x = 128
 
@@ -147,12 +135,7 @@ _C.TRAINING.warmup_epochs = 50
 # Loss settings
 
 _C.LOSS = CN()
-
-_C.LOSS.smooth_dr = 1e-6
-
-_C.LOSS.smooth_nr = 0.0
-
-_C.LOSS.squared_dice = False
+_C.LOSS.weight = 0.5
 
 # Inference settings
 
@@ -230,7 +213,11 @@ def config_to_args(cfg):
     args.workers = cfg.SYSTEM.workers
     args.output_dir = cfg.SYSTEM.output_dir
     args.logs_dir = cfg.SYSTEM.logs_dir
-    
+    args.telegram_log = cfg.SYSTEM.telegram_log
+    args.token = None
+    if cfg.SYSTEM.telegram_log:
+        args.token = cfg.SYSTEM.telegram_token
+
     # Model
     args.model_name = cfg.MODEL.name
     args.pretrained_model_name = cfg.MODEL.pretrained_model_name
@@ -249,18 +236,10 @@ def config_to_args(cfg):
     # Dataset
     args.dataset_name = cfg.DATASET.name
     args.data_dir = cfg.DATASET.data_dir
-    args.json_list = cfg.DATASET.json_list
     args.exact_class = cfg.DATASET.exact_class
     args.ignore_label = cfg.DATASET.ignore_label
     args.fold = cfg.DATASET.fold
     args.cache_dataset = cfg.DATASET.cache_dataset
-    args.a_min = cfg.DATASET.a_min
-    args.a_max = cfg.DATASET.a_max
-    args.b_min = cfg.DATASET.b_min
-    args.b_max = cfg.DATASET.b_max
-    args.space_x = cfg.DATASET.space_x
-    args.space_y = cfg.DATASET.space_y
-    args.space_z = cfg.DATASET.space_z
     args.roi_x = cfg.DATASET.roi_x
     args.roi_y = cfg.DATASET.roi_y
     args.roi_z = cfg.DATASET.roi_z
@@ -277,8 +256,8 @@ def config_to_args(cfg):
     args.sw_batch_size = cfg.TRAINING.sw_batch_size
     args.val_every = cfg.TRAINING.val_every
     args.debug = cfg.TRAINING.debug
-    args.debug_train_samples = cfg.TRAINING.get("debug_train_samples", 40)
-    args.debug_val_samples = cfg.TRAINING.get("debug_val_samples", 10)
+    args.debug_train_samples = cfg.TRAINING.debug_train_samples
+    args.debug_val_samples = cfg.TRAINING.debug_val_samples
     args.split_method = cfg.TRAINING.split_method
     args.save_checkpoint = cfg.TRAINING.save_checkpoint
     args.noamp = cfg.TRAINING.noamp
@@ -290,10 +269,7 @@ def config_to_args(cfg):
     args.warmup_epochs = cfg.TRAINING.warmup_epochs
     
     # Loss
-    args.smooth_dr = cfg.LOSS.smooth_dr
-    args.smooth_nr = cfg.LOSS.smooth_nr
-    args.squared_dice = cfg.LOSS.squared_dice
-    
+    args.loss_weight = cfg.LOSS.weight
     # Inference
     args.infer_overlap = cfg.INFERENCE.infer_overlap
     

@@ -400,3 +400,58 @@ def create_stratified_debug_subset(
     # Mappa gli indici del subset agli indici originali del dataset
     original_indices = [dataset_subset.indices[i] for i in debug_indices]
     return Subset(dataset_subset.dataset, original_indices)
+
+
+
+from telegram.ext import ApplicationBuilder
+from telegram import InputFile
+from telegram.constants import ParseMode
+
+async def send_alert(message: str, token_file: str, image_path: Optional[str] = None):
+    """
+    Invia un messaggio di testo e un file PNG su Telegram.
+
+    Args:
+        message: testo da inviare.
+        token_file: percorso del file contenente prima il token e poi la chat_id su due righe.
+        image_path: percorso del file .png da inviare (opzionale).
+    """
+    # Leggi token e chat_id dal file
+    with open(token_file, "r") as f:
+        token = f.readline().strip()
+        chat_id = f.readline().strip()
+
+    # Crea l'applicazione del bot
+    application = ApplicationBuilder().token(token).build()
+
+    # Invia il messaggio testuale
+    await application.bot.send_message(chat_id=chat_id, text=message, parse_mode=ParseMode.MARKDOWN)
+
+
+    # Invia l'immagine PNG se fornita e il file esiste
+    if image_path is not None and os.path.isfile(image_path):
+        with open(image_path, "rb") as img:
+            png_file = InputFile(img, filename=os.path.basename(image_path))
+            await application.bot.send_photo(chat_id=chat_id, photo=png_file)
+
+from datetime import datetime
+
+def build_training_message(args):
+    time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Riepilogo compatto dei parametri principali
+    desc = (
+        f"Model: *{args.model_name}* \nDataset: *{args.dataset_name}*\n"
+        f"Epochs: *{args.max_epochs}* \nBatch: *{args.batch_size}* \nLR: *{args.optim_lr}*\n"
+        + (f"DEBUG TRN: *{args.debug_train_samples} training samples*\n" if args.debug else "")
+        + (f"DEBUG VAL: *{args.debug_val_samples} val samples*\n" if args.debug else "")
+        + f"ROI: *{args.roi_x}x{args.roi_y}x{args.roi_z}*\n"
+        + f"Optim: *{args.optim_name}* \nSched: *{args.lrschedule}*"
+    )
+
+    header = "🔔 *TRAINING START*"
+    footer = f"⏱️ Start: *{time_str}* \nGPU: *{args.gpu}* | Workers: *{args.workers}*"
+    bar = "─" * 10
+
+    message = f"{header}\n{footer}\n{bar}\n{desc}\n{bar}"
+    return message
