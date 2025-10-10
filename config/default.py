@@ -108,6 +108,20 @@ _C.TRAINING.sw_batch_size = 1
 
 _C.TRAINING.val_every = 100
 
+_C.TRAINING.early_stopping = True
+
+_C.TRAINING.patience_val = 3
+
+_C.TRAINING.min_delta_val = 0.001
+
+_C.TRAINING.patience_loss = 20
+
+_C.TRAINING.min_delta_loss = 0.001
+
+_C.TRAINING.folds = False
+
+_C.TRAINING.k_folds = 5
+
 _C.TRAINING.debug = False
 
 _C.TRAINING.debug_train_samples = 40
@@ -255,6 +269,8 @@ def config_to_args(cfg):
     args.batch_size = cfg.TRAINING.batch_size
     args.sw_batch_size = cfg.TRAINING.sw_batch_size
     args.val_every = cfg.TRAINING.val_every
+    args.folds = cfg.TRAINING.folds 
+    args.k_folds = cfg.TRAINING.k_folds
     args.debug = cfg.TRAINING.debug
     args.debug_train_samples = cfg.TRAINING.debug_train_samples
     args.debug_val_samples = cfg.TRAINING.debug_val_samples

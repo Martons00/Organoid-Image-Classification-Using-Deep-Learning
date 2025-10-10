@@ -59,24 +59,18 @@ from test import SwinUNETREncoder
 from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR  # Uncomment if used
 
 def main():
-    try:
-        args = parse_args()  # Aggiorna automaticamente la variabile globale config
-        args.amp = not args.noamp
-        
-        if args.distributed:
-            args.ngpus_per_node = torch.cuda.device_count()
-            print("Found total gpus", args.ngpus_per_node)
-            args.world_size = args.ngpus_per_node * args.world_size
-            mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
-        else:
-            main_worker(gpu=0, args=args)
-    except Exception as e:
-        print("An exception occurred during training:")
-        print(str(e))
-        if args.telegram_log:
-            message = f"An exception occurred during training:\n{str(e)}"
-            asyncio.run(send_alert(message, token_file=args.token))
-        raise e  # Re-raise the exception for further handling if needed
+    args = parse_args()  # Aggiorna automaticamente la variabile globale config
+    args.amp = not args.noamp
+
+
+    
+    if args.distributed:
+        args.ngpus_per_node = torch.cuda.device_count()
+        print("Found total gpus", args.ngpus_per_node)
+        args.world_size = args.ngpus_per_node * args.world_size
+        mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
+    else:
+        main_worker(gpu=0, args=args)
 
 def main_worker(gpu, args):
     if args.distributed:
@@ -222,129 +216,148 @@ def main_worker(gpu, args):
         print(f"Class {c}: {n}")
         logger.info(f"Class {c}: {n}")
 
+        
+    if args.folds:
 
-    # Eventuale sottoinsieme per il debug con split stratificato
-    if args.split_method == "random":
-        train_set, val_set = split_dataset_random(dataset, val_size=0.2, seed=args.seed)
-        print("Training set length:", len(train_set))
-        logger.info(f"Training set length: {len(train_set)}")
-        print("Validation set length:", len(val_set))
-        logger.info(f"Validation set length: {len(val_set)}")
-    elif args.split_method == "stratified":
-        train_set, val_set = split_dataset_stratified(dataset, val_size=0.2, seed=args.seed)
-        print("Training set length:", len(train_set))
-        logger.info(f"Training set length: {len(train_set)}")
-        print("Validation set length:", len(val_set))
-        logger.info(f"Validation set length: {len(val_set)}")
-    elif args.split_method == "balanced":
-        # Split bilanciato - stesso numero di campioni per classe
-        train_set, val_set = split_dataset_balanced(dataset, val_size=0.2, seed=42)
-        print("\nTrain set balance:")
-        verify_balance(train_set, dataset.labels)
-        print("\nVal set balance:")
-        verify_balance(val_set, dataset.labels)
+        # ... model
+
+        print(f"Using k-folds cross-validation with k={args.k_folds}")
+        logger.info(f"Using k-folds cross-validation with k={args.k_folds}")
+        if args.split_method == "stratified":
+            folds = create_kfold_splits_stratified(dataset, n_splits=args.k_folds, random_state=args.seed, shuffle=True)
+        elif args.split_method == "random":
+            raise NotImplementedError("Random k-fold splits not implemented yet")
+        elif args.split_method == "balanced":
+            folds = create_kfold_splits_balanced(dataset, n_splits=args.k_folds, seed=args.seed)
+        else:
+            raise ValueError(f"Unsupported split method: {args.split_method}")
+        
+        ### ... 
+
+
     else:
-        raise ValueError(f"Unsupported split method: {args.split_method}")
-    
-    if args.debug:
-        # Impostazioni debug
-        DEBUG_TRAIN_SAMPLES = args.debug_train_samples if args.debug_train_samples > 0 else 20
-        DEBUG_VAL_SAMPLES = args.debug_val_samples if args.debug_val_samples > 0 else 10
-        if args.split_method == "balanced":
-            # Debug subset bilanciato - es. 10 campioni per classe per train, 3 per val
-            train_set = create_balanced_debug_subset(train_set, dataset.labels, samples_per_class=int(DEBUG_TRAIN_SAMPLES/3), seed=42)
-            val_set = create_balanced_debug_subset(val_set, dataset.labels, samples_per_class=int(DEBUG_VAL_SAMPLES/3), seed=43)
-            
-            print("\nDebug train balance:")
+        # Eventuale sottoinsieme per il debug con split stratificato
+        if args.split_method == "random":
+            train_set, val_set = split_dataset_random(dataset, val_size=0.2, seed=args.seed)
+            print("Training set length:", len(train_set))
+            logger.info(f"Training set length: {len(train_set)}")
+            print("Validation set length:", len(val_set))
+            logger.info(f"Validation set length: {len(val_set)}")
+        elif args.split_method == "stratified":
+            train_set, val_set = split_dataset_stratified(dataset, val_size=0.2, seed=args.seed)
+            print("Training set length:", len(train_set))
+            logger.info(f"Training set length: {len(train_set)}")
+            print("Validation set length:", len(val_set))
+            logger.info(f"Validation set length: {len(val_set)}")
+        elif args.split_method == "balanced":
+            # Split bilanciato - stesso numero di campioni per classe
+            train_set, val_set = split_dataset_balanced(dataset, val_size=0.2, seed=42)
+            print("\nTrain set balance:")
             verify_balance(train_set, dataset.labels)
-            print("\nDebug val balance:")
+            print("\nVal set balance:")
             verify_balance(val_set, dataset.labels)
-        else:   
-            train_set = create_stratified_debug_subset(
-                train_set, labels, DEBUG_TRAIN_SAMPLES, seed=args.seed
-            )
-            val_set = create_stratified_debug_subset(
-                val_set, labels, DEBUG_VAL_SAMPLES, seed=args.seed + 1
-            )
-            print(f"DEBUG: using {len(train_set)} samples for training (stratified)")
-            print(f"DEBUG: using {len(val_set)} samples for validation (stratified)")
+        else:
+            raise ValueError(f"Unsupported split method: {args.split_method}")
         
-    
-    train_loader = DataLoader(
-        train_set,
-        batch_size=args.batch_size,
-        num_workers=args.workers,
-        shuffle=True,
-        pin_memory=True,
-        drop_last=True,
-    )
-    validation_loader = DataLoader(
-        val_set,
-        batch_size=1,
-        shuffle=False,
-        pin_memory=True,
-        drop_last=False,
-    )
-    
-    print(f"Training loader length is {len(train_loader)} batches")
-    print(f"Validation loader length is {len(validation_loader)} batches")
-    
-    # Calcola le distribuzioni finali
-    train_indices = train_set.indices if hasattr(train_set, 'indices') else list(range(len(train_set)))
-    val_indices = val_set.indices if hasattr(val_set, 'indices') else list(range(len(val_set)))
-    
-    train_counts = np.bincount(labels[train_indices], minlength=num_classes)
-    val_counts = np.bincount(labels[val_indices], minlength=num_classes)
-    
-    print("Class distribution in the training set:")
-    for c, n in enumerate(train_counts):
-        percentage = (n / len(train_set)) * 100 if len(train_set) > 0 else 0
-        print(f"Train class {c}: {n} ({percentage:.1f}%)")
-        logger.info(f"Train class {c}: {n} ({percentage:.1f}%)")
+        if args.debug:
+            # Impostazioni debug
+            DEBUG_TRAIN_SAMPLES = args.debug_train_samples if args.debug_train_samples > 0 else 20
+            DEBUG_VAL_SAMPLES = args.debug_val_samples if args.debug_val_samples > 0 else 10
+            if args.split_method == "balanced":
+                # Debug subset bilanciato - es. 10 campioni per classe per train, 3 per val
+                train_set = create_balanced_debug_subset(train_set, dataset.labels, samples_per_class=int(DEBUG_TRAIN_SAMPLES/3), seed=42)
+                val_set = create_balanced_debug_subset(val_set, dataset.labels, samples_per_class=int(DEBUG_VAL_SAMPLES/3), seed=43)
+                
+                print("\nDebug train balance:")
+                verify_balance(train_set, dataset.labels)
+                print("\nDebug val balance:")
+                verify_balance(val_set, dataset.labels)
+            else:   
+                train_set = create_stratified_debug_subset(
+                    train_set, labels, DEBUG_TRAIN_SAMPLES, seed=args.seed
+                )
+                val_set = create_stratified_debug_subset(
+                    val_set, labels, DEBUG_VAL_SAMPLES, seed=args.seed + 1
+                )
+                print(f"DEBUG: using {len(train_set)} samples for training (stratified)")
+                print(f"DEBUG: using {len(val_set)} samples for validation (stratified)")
+            
         
-    print("Class distribution in the validation set:")
-    for c, n in enumerate(val_counts):
-        percentage = (n / len(val_set)) * 100 if len(val_set) > 0 else 0
-        print(f"Val class {c}: {n} ({percentage:.1f}%)")
-        logger.info(f"Val class {c}: {n} ({percentage:.1f}%)")
-    logger.info("" + "*" * 50)
-    logger.info("")
+        train_loader = DataLoader(
+            train_set,
+            batch_size=args.batch_size,
+            num_workers=args.workers,
+            shuffle=True,
+            pin_memory=True,
+            drop_last=True,
+        )
+        validation_loader = DataLoader(
+            val_set,
+            batch_size=1,
+            shuffle=False,
+            pin_memory=True,
+            drop_last=False,
+        )
+        
+        print(f"Training loader length is {len(train_loader)} batches")
+        print(f"Validation loader length is {len(validation_loader)} batches")
+        
+        # Calcola le distribuzioni finali
+        train_indices = train_set.indices if hasattr(train_set, 'indices') else list(range(len(train_set)))
+        val_indices = val_set.indices if hasattr(val_set, 'indices') else list(range(len(val_set)))
+        
+        train_counts = np.bincount(labels[train_indices], minlength=num_classes)
+        val_counts = np.bincount(labels[val_indices], minlength=num_classes)
+        
+        print("Class distribution in the training set:")
+        for c, n in enumerate(train_counts):
+            percentage = (n / len(train_set)) * 100 if len(train_set) > 0 else 0
+            print(f"Train class {c}: {n} ({percentage:.1f}%)")
+            logger.info(f"Train class {c}: {n} ({percentage:.1f}%)")
+            
+        print("Class distribution in the validation set:")
+        for c, n in enumerate(val_counts):
+            percentage = (n / len(val_set)) * 100 if len(val_set) > 0 else 0
+            print(f"Val class {c}: {n} ({percentage:.1f}%)")
+            logger.info(f"Val class {c}: {n} ({percentage:.1f}%)")
+        logger.info("" + "*" * 50)
+        logger.info("")
 
-    class_weights = compute_class_weight(class_weight='balanced',classes=np.unique(labels),y=labels[train_indices])
-    weights = torch.tensor(class_weights, dtype=torch.float)
-    print("Class weights:", weights.numpy())
-    logger.info("Class weights: " + str(weights.numpy()))
-    loss_func = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
+        class_weights = compute_class_weight(class_weight='balanced',classes=np.unique(labels),y=labels[train_indices])
+        weights = torch.tensor(class_weights, dtype=torch.float)
+        print("Class weights:", weights.numpy())
+        logger.info("Class weights: " + str(weights.numpy()))
+        loss_func = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
 
-    acc_metric = MulticlassAccuracy(num_classes=args.out_channels, average='macro').cuda(args.gpu)
+        acc_metric = MulticlassAccuracy(num_classes=args.out_channels, average='macro').cuda(args.gpu)
 
-    epoch_iters = int(train_loader.__len__() + validation_loader.__len__() / args.batch_size / 1)
-
-
-    start = timeit.default_timer()
-    num_iters = args.max_epochs * epoch_iters
-    print("Total iters to run:", num_iters)
-    print("Starting training...")
-    logger.info("Starting training...")
-    if args.telegram_log:
-        message = build_training_message(args)
-        asyncio.run(send_alert(message, token_file=args.token))
+        epoch_iters = int(train_loader.__len__() + validation_loader.__len__() / args.batch_size / 1)
 
 
-    accuracy = run_training(
-        model=model,
-        train_loader=train_loader,
-        val_loader=validation_loader,
-        optimizer=optimizer,
-        loss_func=loss_func,
-        acc_func=acc_metric,
-        args=args,
-        scheduler=scheduler,
-        start_epoch=start_epoch,
-        writer_dict=writer_dict,
-        final_output_dir = final_output_dir,
-        logger=logger,
-    )
+        start = timeit.default_timer()
+        num_iters = args.max_epochs * epoch_iters
+        print("Total iters to run:", num_iters)
+        print("Starting training...")
+        logger.info("Starting training...")
+        if args.telegram_log:
+            message = build_training_message(args)
+            asyncio.run(send_alert(message, token_file=args.token))
+
+
+        accuracy = run_training(
+            model=model,
+            train_loader=train_loader,
+            val_loader=validation_loader,
+            optimizer=optimizer,
+            loss_func=loss_func,
+            acc_func=acc_metric,
+            args=args,
+            scheduler=scheduler,
+            start_epoch=start_epoch,
+            writer_dict=writer_dict,
+            final_output_dir = final_output_dir,
+            logger=logger,
+        )
 
     end = timeit.default_timer()
     print("Total time spent:", end - start)

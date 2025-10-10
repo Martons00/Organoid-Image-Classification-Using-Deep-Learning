@@ -51,6 +51,13 @@ TRAINING:
   batch_size: 1
   sw_batch_size: 1
   val_every: 1
+  early_stopping: true
+  patience_val: 3
+  min_delta_val: 0.1
+  patience_loss: 20
+  min_delta_loss: 0.1
+  folds: false
+  k_folds: 5
   debug: false
   debug_train_samples: 40
   debug_val_samples: 10

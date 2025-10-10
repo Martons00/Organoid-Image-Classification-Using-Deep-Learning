@@ -20,6 +20,8 @@ import torch
 from .utils import AverageMeter, distributed_all_gather
 from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches, plot_training_curve
 from .data_utils import send_alert
+from optimizers.early_stop import EarlyStopping  # Uncomment if used
+
 
 def freeze_backbone_and_select_head_fixed(model):
     """Freezing corretto - chiama SOLO UNA VOLTA all'inizio del training"""
@@ -263,6 +265,10 @@ def run_training(
     # Chiama SOLO una volta prima del training loop
     model = freeze_backbone_and_select_head_fixed(model)
 
+    if args.early_stopping:
+        early_stopping_val = EarlyStopping(mode='max', patience=args.patience_val, min_delta=args.min_delta_val, restore_best=False, verbose=True)
+        early_stopping_loss = EarlyStopping(mode='min', patience=args.patience_loss, min_delta=args.min_delta_loss, restore_best=False, verbose=True)
+
     for epoch in range(start_epoch, args.max_epochs):
         if args.distributed:
             train_loader.sampler.set_epoch(epoch)
@@ -279,15 +285,26 @@ def run_training(
                 "Final training  {}/{}".format(epoch, args.max_epochs - 1),
                 "loss: {:.4f}".format(train_loss),
                 "time {:.2f}s".format(time.time() - epoch_time),
+                "lr: {:.6f}".format(optimizer.param_groups[0]["lr"]),
             )
             logging.info(
                 "Final training  {}/{}".format(epoch, args.max_epochs - 1)
                 + "loss: {:.4f}".format(train_loss)
                 + "time {:.2f}s".format(time.time() - epoch_time)
+                + "lr: {:.6f}".format(optimizer.param_groups[0]["lr"])
             )
+            if args.early_stopping:
+                # Early Stopping step
+                if early_stopping_loss.step(train_loss, model):
+                    print("[EarlyStopping] stopping training for loss")
+                    logging.info("[EarlyStopping] stopping training for loss")
+                    if args.telegram_log:
+                        message = f"*🛑 Early Stopping (Loss) Triggered at Epoch {epoch}*\n"
+                        asyncio.run(send_alert(message,token_file=args.token))
+                    break
             if epoch%10 == 0:
                 if args.telegram_log:
-                    message = f"*Final Training - Epoch {epoch}/{args.max_epochs - 1}*\nTrain Loss: {train_loss:.4f}\nBest Val Acc: {val_acc_max:.4f}"
+                    message = f"*🏋 Final Training - Epoch {epoch}/{args.max_epochs - 1}*\nTrain Loss: {train_loss:.4f}\nBest Val Acc: {val_acc_max:.4f}\nLR: {optimizer.param_groups[0]['lr']:.6f}"
                     asyncio.run(send_alert(message,token_file=args.token))
             logging.info("" + "-" * 10)
             logging.info("")
@@ -320,7 +337,7 @@ def run_training(
                     ", time {:.2f}s".format(time.time() - epoch_time)
                 )
                 if args.telegram_log:
-                    message = f"*Final Validation - Epoch {epoch}/{args.max_epochs - 1}*\nValidation Accuracy: {val_acc:.4f}\nBest Val Acc: {val_acc_max:.4f}"
+                    message = f"*✅ Final Validation - Epoch {epoch}/{args.max_epochs - 1}*\nValidation Accuracy: {val_acc:.4f}\nBest Val Acc: {val_acc_max:.4f}"
                     asyncio.run(send_alert(message,token_file=args.token))
 
 
@@ -346,6 +363,16 @@ def run_training(
                     logging.info("Copying to model.pt new best model!!!!")
                     shutil.copyfile(os.path.join(args.logdir, "model_final.pt"), os.path.join(args.logdir, "model.pt"))
 
+            if args.early_stopping:
+                # Early Stopping step
+                if early_stopping_val.step(val_acc, model):
+                    print("[EarlyStopping] stopping training for validation accuracy")
+                    logging.info("[EarlyStopping] stopping training for validation accuracy")
+                    if args.telegram_log:
+                        message = f"*🛑 Early Stopping (Validation) Triggered at Epoch {epoch}*\n"
+                        asyncio.run(send_alert(message,token_file=args.token))
+                    break
+
         if scheduler is not None:
             scheduler.step()
 
@@ -353,7 +380,7 @@ def run_training(
     logging.info(f"Training Finished !, Best Accuracy: {val_acc_max}")
     if args.telegram_log:
         time_str = time.strftime('%Y/%m/%d %H-%M')
-        message = f"*Training Finished!*\n{time_str}\nBest Validation Accuracy: {val_acc_max:.4f}"
+        message = f"*🏆 Training Finished!*\n{time_str}\nBest Validation Accuracy: {val_acc_max:.4f}"
         asyncio.run(send_alert(message,token_file=args.token))
     logging.info("" + "=" * 100)
 
@@ -364,7 +391,7 @@ def run_training(
         plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(final_log_file, "training_loss_curve.png"))
         plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(final_log_file, "validation_accuracy_curve.png"))
         if args.telegram_log:
-            message = f"*Training curves saved*\n{final_log_file}"
+            message = f"*📈 Training curves saved*\n{final_log_file}"
             asyncio.run(send_alert(message,token_file=args.token))
             message = f"*Loss Curve*"
             asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_log_file, "training_loss_curve.png")))
@@ -375,7 +402,7 @@ def run_training(
         plot_training_curve(training_losses, metric_name="Loss", title="Curva di Training - Loss", save_path=os.path.join(final_output_dir, "training_loss_curve.png"))
         plot_training_curve(validation_accuracies, metric_name="Accuracy", title="Curva di Training - Accuracy", save_path=os.path.join(final_output_dir, "validation_accuracy_curve.png"))
         if args.telegram_log:
-            message = f"*Training curves saved*\n{final_output_dir}"
+            message = f"*📈 Training curves saved*\n{final_output_dir}"
             asyncio.run(send_alert(message,token_file=args.token))
             message = f"*Loss Curve*"
             asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_output_dir, "training_loss_curve.png")))
@@ -383,3 +410,4 @@ def run_training(
             asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_output_dir, "validation_accuracy_curve.png")))
 
     return val_acc_max
+

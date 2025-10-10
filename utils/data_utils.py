@@ -443,6 +443,7 @@ def build_training_message(args):
     desc = (
         f"Model: *{args.model_name}* \nDataset: *{args.dataset_name}*\nSplit Method: *{args.split_method}* \n"
         f"Epochs: *{args.max_epochs}* \nBatch: *{args.batch_size}* \nLR: *{args.optim_lr}*\n"
+        + (f"Folds: *{args.folds}* | K: *{args.k_folds}*\n" if args.folds else "")
         + (f"DEBUG TRN: *{args.debug_train_samples} training samples*\n" if args.debug else "")
         + (f"DEBUG VAL: *{args.debug_val_samples} val samples*\n" if args.debug else "")
         + f"ROI: *{args.roi_x}x{args.roi_y}x{args.roi_z}*\n"
@@ -455,3 +456,198 @@ def build_training_message(args):
 
     message = f"{header}\n{footer}\n{bar}\n{desc}\n{bar}"
     return message
+
+
+from sklearn.model_selection import StratifiedKFold
+from collections import Counter
+
+def create_kfold_splits_stratified(dataset, n_splits=5, random_state=42, shuffle=True):
+    """
+    Crea splits K-Fold stratificati per il dataset
+    
+    Args:
+        dataset: Il dataset OrganoidsINRIA3D
+        n_splits: Numero di fold (default: 5)
+        random_state: Seed per riproducibilità
+        shuffle: Se fare shuffle dei dati prima di dividere
+    
+    Returns:
+        List[Tuple]: Lista di tuple (train_indices, val_indices) per ogni fold
+    """
+    # Ottieni le labels dal dataset
+    labels = np.array(dataset.labels)  # Assumendo che dataset.labels sia disponibile
+    
+    # Verifica la distribuzione delle classi
+    print("Distribuzione classi originale:")
+    class_counts = Counter(labels)
+    for class_id, count in sorted(class_counts.items()):
+        print(f"  Classe {class_id}: {count} campioni ({count/len(labels)*100:.1f}%)")
+    
+    # Crea il StratifiedKFold
+    skf = StratifiedKFold(
+        n_splits=n_splits,
+        shuffle=shuffle,
+        random_state=random_state
+    )
+    
+    # Genera i fold
+    folds = []
+    for fold_idx, (train_idx, val_idx) in enumerate(skf.split(np.arange(len(labels)), labels)):
+        # Verifica la distribuzione in ogni fold
+        train_labels = labels[train_idx]
+        val_labels = labels[val_idx]
+        
+        print(f"\nFold {fold_idx + 1}:")
+        print(f"  Training: {len(train_idx)} campioni")
+        train_dist = Counter(train_labels)
+        for class_id in sorted(train_dist.keys()):
+            print(f"    Classe {class_id}: {train_dist[class_id]} ({train_dist[class_id]/len(train_idx)*100:.1f}%)")
+        
+        print(f"  Validation: {len(val_idx)} campioni")
+        val_dist = Counter(val_labels)
+        for class_id in sorted(val_dist.keys()):
+            print(f"    Classe {class_id}: {val_dist[class_id]} ({val_dist[class_id]/len(val_idx)*100:.1f}%)")
+        
+        folds.append((train_idx, val_idx))
+    
+    return folds
+
+
+def create_kfold_splits_balanced(
+    dataset: Dataset,
+    n_splits: int = 5,
+    seed: int = 42,
+    shuffle: bool = True
+) -> List[Tuple[Subset, Subset]]:
+    """
+    Crea K fold bilanciati: ogni fold ha lo STESSO numero di campioni per classe,
+    limitando tutti alla classe minoritaria. Ogni fold è random (seed/ shuffle).
+    
+    Ritorna lista di (train_subset, val_subset) per ciascun fold.
+    """
+    labels = np.array(dataset.labels)
+    classes, counts = np.unique(labels, return_counts=True)
+    min_per_class = counts.min()
+
+    # Limita per bilanciamento: seleziona min_per_class indici per ogni classe
+    rng = np.random.default_rng(seed)
+    balanced_indices = []
+    balanced_labels = []
+    for c in classes:
+        idx_c = np.where(labels == c)[0]
+        # Shuffle e prendi min_per_class
+        idx_sel = rng.choice(idx_c, size=min_per_class, replace=False)
+        balanced_indices.append(idx_sel)
+        balanced_labels.append(np.full(min_per_class, c, dtype=labels.dtype))
+    balanced_indices = np.concatenate(balanced_indices)
+    balanced_labels = np.concatenate(balanced_labels)
+
+    # Shuffle globale dei bilanciati (per non avere blocchi di classe)
+    perm = rng.permutation(len(balanced_indices))
+    balanced_indices = balanced_indices[perm]
+    balanced_labels = balanced_labels[perm]
+
+    # StratifiedKFold su set perfettamente bilanciato
+    skf = StratifiedKFold(n_splits=n_splits, shuffle=shuffle, random_state=seed)
+
+    folds = []
+    for train_idx_rel, val_idx_rel in skf.split(np.arange(len(balanced_labels)), balanced_labels):
+        # Mappa agli indici originali del dataset
+        train_idx = balanced_indices[train_idx_rel]
+        val_idx = balanced_indices[val_idx_rel]
+
+        train_subset = Subset(dataset, train_idx.tolist())
+        val_subset = Subset(dataset, val_idx.tolist())
+        folds.append((train_subset, val_subset))
+
+    # Info utili
+    per_fold = (min_per_class * len(classes)) // n_splits
+    print(f"[Balanced KFold] classi={len(classes)}, min_per_class={min_per_class}, "
+          f"n_splits={n_splits}, ~val_per_fold={per_fold // n_splits if n_splits>0 else 0} per class")
+
+    return folds
+
+def create_fold_dataloaders(dataset, train_idx, val_idx, batch_size=1, num_workers=1):
+    """
+    Crea i DataLoader per training e validation per un fold specifico
+    
+    Args:
+        dataset: Il dataset completo
+        train_idx: Indici per il training set
+        val_idx: Indici per il validation set
+        batch_size: Batch size
+        num_workers: Numero di worker per il DataLoader
+    
+    Returns:
+        Tuple: (train_loader, val_loader)
+    """
+    # Crea i subset
+    train_subset = Subset(dataset, train_idx)
+    val_subset = Subset(dataset, val_idx)
+    
+    # Crea i DataLoader
+    train_loader = DataLoader(
+        train_subset,
+        batch_size=batch_size,
+        shuffle=True,  # Shuffle per training
+        num_workers=num_workers,
+        pin_memory=True,
+        drop_last=False,
+    )
+    
+    val_loader = DataLoader(
+        val_subset,
+        batch_size=1,  # Spesso batch_size=1 per validation
+        shuffle=False,  # No shuffle per validation
+        num_workers=num_workers,
+        pin_memory=True,
+        drop_last=False,
+    )
+    
+    return train_loader, val_loader
+
+
+def create_kfold_splits_random(
+    dataset: Dataset,
+    n_splits: int = 5,
+    seed: int = 42
+) -> List[Tuple[Subset, Subset]]:
+    """
+    Crea K fold con divisioni casuali (non stratificate).
+    Ogni fold usa una porzione diversa del dataset come validation e il resto come training.
+    
+    Args:
+        dataset: Dataset PyTorch
+        n_splits: numero di fold
+        seed: seed per riproducibilità
+    
+    Returns:
+        List[Tuple[Subset, Subset]]: lista di (train_subset, val_subset) per ogni fold
+    """
+    n = len(dataset)
+    if n_splits < 2:
+        raise ValueError("n_splits deve essere >= 2")
+    if n_splits > n:
+        raise ValueError("n_splits non può superare il numero di campioni del dataset")
+
+    rng = np.random.default_rng(seed)
+    indices = np.arange(n)
+    rng.shuffle(indices)  # permutazione casuale degli indici
+
+    # Suddividi gli indici in n_splits blocchi il più possibile uguali
+    fold_sizes = [n // n_splits] * n_splits
+    for i in range(n % n_splits):
+        fold_sizes[i] += 1
+
+    folds = []
+    current = 0
+    for k in range(n_splits):
+        val_idx = indices[current: current + fold_sizes[k]]
+        current += fold_sizes[k]
+        train_idx = np.setdiff1d(indices, val_idx, assume_unique=False)
+
+        train_subset = Subset(dataset, train_idx.tolist())
+        val_subset = Subset(dataset, val_idx.tolist())
+        folds.append((train_subset, val_subset))
+
+    return folds
