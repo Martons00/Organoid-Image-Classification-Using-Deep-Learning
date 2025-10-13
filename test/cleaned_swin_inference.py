@@ -312,7 +312,7 @@ def run_inference_new(model, data, device):
 def main():
     parser = argparse.ArgumentParser(description="Inferenza Swin UNETR con encoder personalizzato")
     parser.add_argument("image_path", help="Percorso al file immagine")
-    parser.add_argument("--model_path", default="./model_swinvit.pt", help="Percorso al modello")
+    parser.add_argument("--model_path", default="model_swinvit.pt", help="Percorso al modello")
     parser.add_argument("--output_dir", default="output", help="Directory di output")
     parser.add_argument("--no_ml_decoder", action="store_true", help="Disabilita ML-Decoder")
     args = parser.parse_args()

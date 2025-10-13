@@ -13,4 +13,6 @@ pwd
 source models/SwinUNETR/BRATS21/swin_unetr_env/bin/activate
 
 # Avvia il training
-python train.py --cfg config/OrganoidsINRIA_config_debug.yaml
+#python train.py --cfg config/OrganoidsINRIA_config_debug.yaml --oar_id $OAR_JOB_ID
+#python train.py --cfg config/SwinUNETR+ML_Decoder/training.yaml --oar_id $OAR_JOB_ID
+python train.py --cfg config/SwinUNETR/training.yaml --oar_id $OAR_JOB_ID

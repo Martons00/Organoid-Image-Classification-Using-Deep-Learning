@@ -17,6 +17,7 @@ from tracemalloc import start
 
 import numpy as np
 import torch
+import torch.nn as nn
 from .utils import AverageMeter, distributed_all_gather
 from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches, plot_training_curve,plot_multi_class_training_curve,plot_loss_lr
 from .data_utils import send_alert
@@ -85,7 +86,12 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
 
             # Testa di classificazione: global_pool → flatten → fc
             pooled = model.global_pool(feats_tiled)                  # [1,C]
-            pooled = pooled.flatten(1)                               # [1,C]
+            if args.model_name == "swinunetr+ml_decoder":
+                pooled = pooled.flatten(2)
+                #pool = nn.AdaptiveAvgPool1d(1024)   # output sempre L=1024
+                #pooled = pool(pooled)                               # [1,C]
+            else:
+                pooled = pooled.flatten(1)                               # [1,C,1]
             logits_b = model.fc(pooled)                              # [1,num_classes]
             batch_logits.append(logits_b)
 
@@ -199,7 +205,10 @@ def val_epoch(
                 feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # [1,Cf,D,H,W]
 
                 pooled = model.global_pool(feats_tiled)  # [1,Cf,1,1,1]
-                pooled = pooled.flatten(1)               # [1,Cf]
+                if args.model_name == "swinunetr+ml_decoder":
+                    pooled = pooled.flatten(2)                             # [1,C]
+                else:
+                    pooled = pooled.flatten(1)                               # [1,C,1]
                 logits_b = model.fc(pooled)              # [1,num_classes]
                 batch_logits.append(logits_b)
 
@@ -364,12 +373,12 @@ def run_training(
                     logging.info("[EarlyStopping] stopping training for loss")
                     if args.telegram_log:
                         message = f"*🛑 Early Stopping (Loss) Triggered at Epoch {epoch}*\n"
-                        asyncio.run(send_alert(message,token_file=args.token))
+                        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
                     break
             if epoch%10 == 0:
                 if args.telegram_log:
                     message = f"*🏋 Final Training - Epoch {epoch}/{args.max_epochs - 1}*\nTrain Loss: {train_loss:.4f}\nBest Val Acc: {val_acc_max:.4f}\nLR: {optimizer.param_groups[0]['lr']:.6f}"
-                    asyncio.run(send_alert(message,token_file=args.token))
+                    asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
             logging.info("" + "-" * 50)
             logging.info("")
         if args.rank == 0 and writer is not None:
@@ -402,7 +411,7 @@ def run_training(
                 )
                 if args.telegram_log:
                     message = f"*✅ Final Validation - Epoch {epoch}/{args.max_epochs - 1}*\nValidation Accuracy: {val_acc:.4f}\nBest Val Acc: {val_acc_max:.4f}"
-                    asyncio.run(send_alert(message,token_file=args.token))
+                    asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
 
 
 
@@ -434,7 +443,7 @@ def run_training(
                     logging.info("[EarlyStopping] stopping training for validation accuracy")
                     if args.telegram_log:
                         message = f"*🛑 Early Stopping (Validation) Triggered at Epoch {epoch}*\n"
-                        asyncio.run(send_alert(message,token_file=args.token))
+                        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
                     break
             logging.info("" + "-" * 50)
             logging.info("")
@@ -448,7 +457,7 @@ def run_training(
     if args.telegram_log:
         time_str = time.strftime('%Y/%m/%d %H-%M')
         message = f"*🏆 Training Finished!*\n{time_str}\nBest Validation Accuracy: {val_acc_max:.4f}"
-        asyncio.run(send_alert(message,token_file=args.token))
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
     logging.info("" + "=" * 100)
 
     time_str = time.strftime('%Y-%m-%d-%H-%M')
@@ -461,15 +470,15 @@ def run_training(
         plot_multi_class_training_curve(validation_accuracies, validation_per_class_accuracies, title="Training Curve - Accuracy", save_path=os.path.join(final_log_file, "validation_accuracy_curve.png"))
         if args.telegram_log:
             message = f"*📈 Training curves saved*\n{final_log_file}"
-            asyncio.run(send_alert(message,token_file=args.token))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
             message = f"*Loss Curve*"
-            asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_log_file, "training_loss_curve.png")))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_log_file, "training_loss_curve.png")))
             message = f"*Accuracy Curve*"
-            asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_log_file, "validation_accuracy_curve.png")))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_log_file, "validation_accuracy_curve.png")))
             message = f"*Learning Rate Curve*"
-            asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_log_file, "learning_rate_curve.png")))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_log_file, "learning_rate_curve.png")))
             message = f"*Loss vs Learning Rate Curve*"
-            asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_log_file, "loss_vs_lr_curve.png")))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_log_file, "loss_vs_lr_curve.png")))
 
     else:
         plot_training_curve(training_losses, metric_name="Loss", title="Training Curve - Loss", save_path=os.path.join(final_output_dir, "training_loss_curve.png"))
@@ -478,15 +487,15 @@ def run_training(
         plot_multi_class_training_curve(validation_accuracies, validation_per_class_accuracies, title="Training Curve - Accuracy", save_path=os.path.join(final_output_dir, "validation_accuracy_curve.png"))
         if args.telegram_log:
             message = f"*📈 Training curves saved*\n{final_output_dir}"
-            asyncio.run(send_alert(message,token_file=args.token))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
             message = f"*Loss Curve*"
-            asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_output_dir, "training_loss_curve.png")))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "training_loss_curve.png")))
             message = f"*Accuracy Curve*"
-            asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_output_dir, "validation_accuracy_curve.png")))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "validation_accuracy_curve.png")))
             message = f"*Learning Rate Curve*"
-            asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_output_dir, "learning_rate_curve.png")))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "learning_rate_curve.png")))
             message = f"*Loss vs Learning Rate Curve*"
-            asyncio.run(send_alert(message,token_file=args.token,image_path=os.path.join(final_output_dir, "loss_vs_lr_curve.png")))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "loss_vs_lr_curve.png")))
 
     return val_acc_max
 

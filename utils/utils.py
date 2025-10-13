@@ -460,7 +460,7 @@ def _starts(size, patch, step):
         s.append(size - patch)
     return s
 
-def extract_patches_5d_torch(x, patch_size=(128,256,256), step=(128,256,256), pad_value=0):
+def extract_patches_5d_torch_old(x, patch_size=(128,256,256), step=(128,256,256), pad_value=0):
     # x: [B,1,D,H,W], ritorna patches: [N,1,pd,ph,pw] e coords: [(b,z,y,x0), ...]
     B, C, D, H, W = x.shape
     pd, ph, pw = patch_size
@@ -487,6 +487,94 @@ def extract_patches_5d_torch(x, patch_size=(128,256,256), step=(128,256,256), pa
         return torch.empty(0, 1, *patch_size), []
     patches = torch.cat(patches, dim=0)  # [N,1,pd,ph,pw]
     return patches, coords
+import math
+import torch
+import torch.nn.functional as F
+
+def extract_patches_5d_torch(
+    x,
+    patch_size=(128, 256, 256),
+    step=(128, 256, 256),
+    pad_value=0,
+    max_D=128,
+    D_mode="uniform"  # "uniform" | "center" | "first" | "interpolate"
+):
+    """
+    x: [B, C, D, H, W] -> patches: [N, C, pd, ph, pw], coords: [(b, z, y, x0), ...]
+    """
+    assert x.dim() == 5, "atteso tensor 5D [B,C,D,H,W]"
+    B, C, D, H, W = x.shape
+    pd, ph, pw = patch_size
+    sd, sh, sw = step
+
+    # 1) Riduzione/espansione D a esattamente max_D prima del patching
+    if D != max_D:
+        if D_mode == "uniform":
+            if D > max_D:
+                # Selezione equispaziata di esattamente max_D indici
+                idx = torch.linspace(10, D - 1, steps=max_D, device=x.device).round().to(torch.long)
+                idx = torch.clamp(idx, 10, D - 1)
+                x = x.index_select(2, idx)  # [B,C,max_D,H,W]
+            else:
+                # D < max_D: padding a destra per raggiungere max_D
+                pad_d = max_D - D
+                x = F.pad(x, (0, 0, 0, 0, 0, pad_d), value=pad_value)  # [B,C,max_D,H,W]
+                
+        elif D_mode == "center":
+            if D > max_D:
+                start = max(0, (D - max_D) // 2)
+                end = start + max_D
+                x = x[:, :, start:end]
+            else:
+                # D < max_D: padding simmetrico per centrare
+                pad_total = max_D - D
+                pad_left = pad_total // 2
+                pad_right = pad_total - pad_left
+                x = F.pad(x, (0, 0, 0, 0, pad_left, pad_right), value=pad_value)
+                
+        elif D_mode == "first":
+            if D > max_D:
+                x = x[:, :, :max_D]
+            else:
+                # D < max_D: padding a destra
+                pad_d = max_D - D
+                x = F.pad(x, (0, 0, 0, 0, 0, pad_d), value=pad_value)
+                
+        elif D_mode == "interpolate":
+            # Interpolazione a esattamente max_D (funziona sia per up che down)
+            x = F.interpolate(x, size=(max_D, H, W), mode="trilinear", align_corners=False)
+        else:
+            raise ValueError("D_mode deve essere uno tra {'uniform','center','first','interpolate'}")
+        
+        D = max_D  # Ora D è esattamente max_D
+
+    # 2) Generazione degli indici di start (si assume esista _starts)
+    zs = _starts(D, pd, sd)
+    ys = _starts(H, ph, sh)
+    xs = _starts(W, pw, sw)
+
+    patches = []
+    coords = []
+    for b in range(B):
+        for z in zs:
+            for y in ys:
+                for x0 in xs:
+                    patch = x[b:b+1, :, z:z+pd, y:y+ph, x0:x0+pw]  # [1,C,d',h',w']
+                    dd, hh, ww = patch.shape[-3:]
+                    if (dd, hh, ww) != (pd, ph, pw):
+                        # pad solo a destra su D,H,W: (wL,wR, hL,hR, dL,dR)
+                        pad_d = pd - dd
+                        pad_h = ph - hh
+                        pad_w = pw - ww
+                        patch = F.pad(patch, (0, pad_w, 0, pad_h, 0, pad_d), value=pad_value)
+                    patches.append(patch)  # [1,C,pd,ph,pw]
+                    coords.append((b, z, y, x0))
+
+    if not patches:
+        return torch.empty(0, C, *patch_size, device=x.device, dtype=x.dtype), []
+    patches = torch.cat(patches, dim=0)  # [N,C,pd,ph,pw]
+    return patches, coords
+
 
 
 

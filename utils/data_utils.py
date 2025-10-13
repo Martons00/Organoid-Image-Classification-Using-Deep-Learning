@@ -407,7 +407,7 @@ from telegram.ext import ApplicationBuilder
 from telegram import InputFile
 from telegram.constants import ParseMode
 
-async def send_alert(message: str, token_file: str, image_path: Optional[str] = None):
+async def send_alert(oar_id: int, message: str, token_file: str, image_path: Optional[str] = None):
     """
     Invia un messaggio di testo e un file PNG su Telegram.
 
@@ -425,6 +425,7 @@ async def send_alert(message: str, token_file: str, image_path: Optional[str] = 
     application = ApplicationBuilder().token(token).build()
 
     # Invia il messaggio testuale
+    message = f"🆔 *OAR ID:* {oar_id}\n{message}"
     await application.bot.send_message(chat_id=chat_id, text=message, parse_mode=ParseMode.MARKDOWN)
 
 

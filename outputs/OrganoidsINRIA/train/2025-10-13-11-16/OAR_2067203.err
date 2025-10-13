@@ -1,3 +1,5 @@
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
 2025-10-13 11:16:32,903 INFO Log directory: outputs/OrganoidsINRIA/train/2025-10-13-11-16
 2025-10-13 11:16:32,905 INFO {'RandFlipd_prob': 0.2,
  'RandRotate90d_prob': 0.2,
@@ -85,6 +87,10 @@
 2025-10-13 11:16:33,928 INFO 
 2025-10-13 11:16:33,928 INFO Starting training...
 2025-10-13 11:16:33,928 INFO 0 Mon Oct 13 11:16:33 2025 Epoch: 0
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
 2025-10-13 11:20:55,584 INFO Final training  0/99loss: 1.1190time 261.66slr: 0.000000
 2025-10-13 11:20:56,060 INFO --------------------------------------------------
 2025-10-13 11:20:56,060 INFO 
@@ -288,3 +294,4 @@
 2025-10-13 14:33:22,301 INFO --------------------------------------------------
 2025-10-13 14:33:22,301 INFO 
 2025-10-13 14:33:22,301 INFO 0 Mon Oct 13 14:33:22 2025 Epoch: 44
+## OAR [2025-10-13 14:33:56] Job 2067203 KILLED ##

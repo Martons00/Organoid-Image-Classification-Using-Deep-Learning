@@ -32,6 +32,8 @@ _C.SYSTEM.telegram_log = False
 
 _C.SYSTEM.telegram_token = "./token/tlg_token.txt"
 
+_C.SYSTEM.oar_id = 0
+
 # Model settings
 
 _C.MODEL = CN()
@@ -192,10 +194,12 @@ def parse_args():
     
     parser.add_argument('--cfg',
                         help='experiment configure file name',
-                        default="./config/OrganoidsINRIA_config.yaml",
+                        default="./config/OrganoidsINRIA_config_debug.yaml",
                         type=str)
     
     parser.add_argument('--seed', type=int, default=304)
+
+    parser.add_argument('--oar_id', type=int, default=0)
     
     parser.add_argument('opts',
                         help="Modify config options using the command-line",
@@ -203,12 +207,15 @@ def parse_args():
                         nargs=argparse.REMAINDER)
     
     args = parser.parse_args()
+
+    oar_id = args.oar_id
     
     # Aggiorna la config globale
     config = get_config()
     config_to_args(config)
     update_config(config, args)
     args = config_to_args(config)  # Ora usa la config AGGIORNATA dal YAML
+    args.oar_id = oar_id  # Sovrascrivi con il valore passato da linea di comando
     
     return args
 
@@ -231,6 +238,7 @@ def config_to_args(cfg):
     args.token = None
     if cfg.SYSTEM.telegram_log:
         args.token = cfg.SYSTEM.telegram_token
+    args.oar_id = cfg.SYSTEM.oar_id 
 
     # Model
     args.model_name = cfg.MODEL.name

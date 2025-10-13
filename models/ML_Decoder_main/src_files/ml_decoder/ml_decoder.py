@@ -27,10 +27,33 @@ def add_ml_decoder_head(model, num_classes=-1, num_of_groups=-1, decoder_embeddi
     return model
 
 
-class TransformerDecoderLayerOptimal(nn.Module):
-    def __init__(self, d_model, nhead=8, dim_feedforward=2048, dropout=0.1, activation="relu",
-                 layer_norm_eps=1e-5) -> None:
-        super(TransformerDecoderLayerOptimal, self).__init__()
+class TransformerDecoderLayerOptimal(nn.TransformerDecoderLayer):
+    def __init__(
+        self,
+        d_model: int,
+        nhead: int = 8,
+        dim_feedforward: int = 1024,
+        dropout: float = 0.1,
+        activation: str = "relu",
+        layer_norm_eps: float = 1e-5,
+        batch_first: bool = False,
+        norm_first: bool = False,
+        device=None,
+        dtype=None,
+    ) -> None:
+        # Inoltra i parametri alla superclasse (firma PyTorch)
+        super().__init__(
+            d_model=d_model,
+            nhead=nhead,
+            dim_feedforward=dim_feedforward,
+            dropout=dropout,
+            activation=activation,
+            layer_norm_eps=layer_norm_eps,
+            batch_first=batch_first,
+            norm_first=norm_first,
+            device=device,
+            dtype=dtype,
+        )
         self.norm1 = nn.LayerNorm(d_model, eps=layer_norm_eps)
         self.dropout = nn.Dropout(dropout)
         self.dropout1 = nn.Dropout(dropout)
@@ -53,10 +76,17 @@ class TransformerDecoderLayerOptimal(nn.Module):
             state['activation'] = torch.nn.functional.relu
         super(TransformerDecoderLayerOptimal, self).__setstate__(state)
 
-    def forward(self, tgt: Tensor, memory: Tensor, tgt_mask: Optional[Tensor] = None,
-                memory_mask: Optional[Tensor] = None,
-                tgt_key_padding_mask: Optional[Tensor] = None,
-                memory_key_padding_mask: Optional[Tensor] = None) -> Tensor:
+    def forward(
+        self,
+        tgt: Tensor,
+        memory: Tensor,
+        tgt_mask: Optional[Tensor] = None,
+        memory_mask: Optional[Tensor] = None,
+        tgt_key_padding_mask: Optional[Tensor] = None,
+        memory_key_padding_mask: Optional[Tensor] = None,
+        tgt_is_causal: bool = False,
+        memory_is_causal: bool = False,
+    ):
         tgt = tgt + self.dropout1(tgt)
         tgt = self.norm1(tgt)
         tgt2 = self.multihead_attn(tgt, memory, memory)[0]

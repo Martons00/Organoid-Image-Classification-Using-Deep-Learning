@@ -51,8 +51,7 @@ from utils.data_utils import (
 )
 
 import asyncio
-
-
+from models.ML_Decoder_main.src_files.ml_decoder.ml_decoder import MLDecoder
 from dataset import OrganoidsINRIA3D
 from test import SwinUNETREncoder
 # from datasets.base_dataset import AugmentedDataset
@@ -75,7 +74,7 @@ def main():
         print(str(e))
         if args.telegram_log:
             message = f"🚨 *ERROR*\nAn exception occurred during training:\n{str(e)}"
-            asyncio.run(send_alert(message, token_file=args.token))
+            asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
         raise e  # Re-raise the exception for further handling if needed
 
 def main_worker(gpu, args):
@@ -110,7 +109,7 @@ def main_worker(gpu, args):
 
     if args.telegram_log:
         message = build_training_message(args)
-        asyncio.run(send_alert(message, token_file=args.token))
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
 
 
 
@@ -168,7 +167,25 @@ def main_worker(gpu, args):
         num_features=768
     )
 
-    # Here we add the classification head
+    if args.model_name == "swinunetr+ml_decoder":
+        # Here we add the classification head
+        if MLDecoder:
+            head = MLDecoder(
+                num_classes=3, 
+                initial_num_features=1024, 
+                num_of_groups=1, 
+                decoder_embedding=768, 
+                zsl=0
+            )
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            print("ML-Decoder applicato con successo")
+        print("Using SwinUNETR with Multi-Layer Classification Head")
+        logger.info("Using SwinUNETR with Multi-Layer Classification Head")
+    else:
+        print("Using SwinUNETR with Single Linear Classification Head")
+        logger.info("Using SwinUNETR with Single Linear Classification Head")
+        # The classification head is already added in the SwinUNETREncoder class
 
     model.cuda(args.gpu)
 
