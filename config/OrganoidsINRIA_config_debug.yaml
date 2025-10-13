@@ -47,31 +47,31 @@ AUGMENTATION:
   RandShiftIntensityd_prob: 0.1
 
 TRAINING:
-  max_epochs: 60
+  max_epochs: 100
   batch_size: 1
   sw_batch_size: 1
   val_every: 5
   folds: false
   k_folds: 5
   early_stopping: true
-  patience_val: 3
-  min_delta_val: 0.1
-  patience_loss: 20
-  min_delta_loss: 0.1
+  patience_val: 10
+  min_delta_val: 0.02
+  patience_loss: 30
+  min_delta_loss: 0.01
   debug: false
-  debug_train_samples: 
+  debug_train_samples: 3
   debug_val_samples: 3
   split_method: "balanced"  # "random" , "stratified" or "balanced"
   save_checkpoint: false
   noamp: false
   # Optimizer parameters
-  optim_lr: 0.001
+  optim_lr: 4e-4
   optim_name: "adamw" # "adam", "adamw" or "sgd"
-  reg_weight: 0.00001
+  reg_weight: 5e-5
   momentum: 0.99
   # Learning rate scheduler
   lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
-  warmup_epochs: 5
+  warmup_epochs: 3
 
 LOSS:
   weight: 0.5

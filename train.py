@@ -74,7 +74,7 @@ def main():
         print("An exception occurred during training:")
         print(str(e))
         if args.telegram_log:
-            message = f"An exception occurred during training:\n{str(e)}"
+            message = f"🚨 *ERROR*\nAn exception occurred during training:\n{str(e)}"
             asyncio.run(send_alert(message, token_file=args.token))
         raise e  # Re-raise the exception for further handling if needed
 
@@ -115,9 +115,6 @@ def main_worker(gpu, args):
 
 
     print(args.rank, " gpu", args.gpu)
-    if args.rank == 0:
-        print("Batch size is:", args.batch_size, "epochs", args.max_epochs)
-        logger.info("Batch size is: %d, epochs: %d", args.batch_size, args.max_epochs)
 
     inf_size = [args.roi_x, args.roi_y, args.roi_z]
 
@@ -207,6 +204,10 @@ def main_worker(gpu, args):
     
     # Here we prepare the data loader
     dataset = OrganoidsINRIA3D(args.data_dir, exact_class_dir=args.exact_class)
+    print("")
+    logger.info("")
+    print("Dataset INFO:")
+    logger.info("Dataset INFO:")
     print("Dataset length is:", len(dataset))
     logger.info(f"Dataset length is: {len(dataset)}")
     dataset_loader = torch.utils.data.DataLoader(
@@ -323,12 +324,10 @@ def main_worker(gpu, args):
 
     acc_metric = MulticlassAccuracy(num_classes=3, average='macro').cuda(args.gpu)
 
-    epoch_iters = int(train_loader.__len__() + validation_loader.__len__() / args.batch_size / 1)
-
 
     start = timeit.default_timer()
-    num_iters = args.max_epochs * epoch_iters
-    print("Total iters to run:", num_iters)
+    print("")
+    logger.info("")
     print("Starting training...")
     logger.info("Starting training...")
 

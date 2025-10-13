@@ -1,7 +1,7 @@
 /var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
 /var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
-2025-10-10 16:48:09,048 INFO Log directory: outputs/OrganoidsINRIA/train/2025-10-10-16-48
-2025-10-10 16:48:09,050 INFO {'RandFlipd_prob': 0.2,
+2025-10-13 11:16:32,903 INFO Log directory: outputs/OrganoidsINRIA/train/2025-10-13-11-16
+2025-10-13 11:16:32,905 INFO {'RandFlipd_prob': 0.2,
  'RandRotate90d_prob': 0.2,
  'RandScaleIntensityd_prob': 0.1,
  'RandShiftIntensityd_prob': 0.1,
@@ -12,7 +12,7 @@
  'data_dir': '/home/mraffael/martone_project/Organoids_Dataset/',
  'dataset_name': 'OrganoidsINRIA',
  'debug': False,
- 'debug_train_samples': None,
+ 'debug_train_samples': 3,
  'debug_val_samples': 3,
  'dist_backend': 'nccl',
  'dist_url': 'tcp://127.0.0.1:23456',
@@ -33,23 +33,23 @@
  'logs_dir': 'logs/',
  'loss_weight': 0.5,
  'lrschedule': 'warmup_cosine',
- 'max_epochs': 60,
- 'min_delta_loss': 0.1,
- 'min_delta_val': 0.1,
+ 'max_epochs': 100,
+ 'min_delta_loss': 0.01,
+ 'min_delta_val': 0.02,
  'model_name': 'swinunetr',
  'momentum': 0.99,
  'noamp': False,
  'norm_name': 'instance',
- 'optim_lr': 0.001,
+ 'optim_lr': 0.0004,
  'optim_name': 'adamw',
  'out_channels': 1,
  'output_dir': 'outputs/',
- 'patience_loss': 20,
- 'patience_val': 3,
+ 'patience_loss': 30,
+ 'patience_val': 10,
  'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
  'pretrained_model_name': 'model_swinvit.pt',
  'rank': 0,
- 'reg_weight': 1e-05,
+ 'reg_weight': 5e-05,
  'resume_ckpt': False,
  'roi_x': 128,
  'roi_y': 128,
@@ -64,32 +64,30 @@
  'token': './token/tlg_token.txt',
  'use_checkpoint': False,
  'val_every': 5,
- 'warmup_epochs': 5,
+ 'warmup_epochs': 3,
  'workers': 8,
  'world_size': 1}
-2025-10-10 16:48:09,050 INFO 
-2025-10-10 16:48:09,516 INFO Batch size is: 1, epochs: 60
-2025-10-10 16:48:09,876 INFO Total parameters count: 62186659
-2025-10-10 16:48:09,960 INFO Dataset length is: 423
-2025-10-10 16:48:09,960 INFO Class 0: 137
-2025-10-10 16:48:09,960 INFO Class 1: 43
-2025-10-10 16:48:09,960 INFO Class 2: 243
-2025-10-10 16:48:09,964 INFO Train class 0: 34 (33.3%)
-2025-10-10 16:48:09,965 INFO Train class 1: 34 (33.3%)
-2025-10-10 16:48:09,965 INFO Train class 2: 34 (33.3%)
-2025-10-10 16:48:09,965 INFO Val class 0: 9 (33.3%)
-2025-10-10 16:48:09,965 INFO Val class 1: 9 (33.3%)
-2025-10-10 16:48:09,965 INFO Val class 2: 9 (33.3%)
-2025-10-10 16:48:09,965 INFO **************************************************
-2025-10-10 16:48:09,965 INFO 
-2025-10-10 16:48:09,970 INFO Class weights: [ 1.000  1.000  1.000]
-2025-10-10 16:48:09,974 INFO Starting training...
-2025-10-10 16:48:09,974 INFO 0 Fri Oct 10 16:48:09 2025 Epoch: 0
+2025-10-13 11:16:32,905 INFO 
+2025-10-13 11:16:33,828 INFO Total parameters count: 62186659
+2025-10-13 11:16:33,914 INFO 
+2025-10-13 11:16:33,914 INFO Dataset INFO:
+2025-10-13 11:16:33,914 INFO Dataset length is: 423
+2025-10-13 11:16:33,914 INFO Class 0: 137
+2025-10-13 11:16:33,914 INFO Class 1: 43
+2025-10-13 11:16:33,914 INFO Class 2: 243
+2025-10-13 11:16:33,919 INFO Train class 0: 34 (33.3%)
+2025-10-13 11:16:33,919 INFO Train class 1: 34 (33.3%)
+2025-10-13 11:16:33,919 INFO Train class 2: 34 (33.3%)
+2025-10-13 11:16:33,919 INFO Val class 0: 9 (33.3%)
+2025-10-13 11:16:33,919 INFO Val class 1: 9 (33.3%)
+2025-10-13 11:16:33,919 INFO Val class 2: 9 (33.3%)
+2025-10-13 11:16:33,919 INFO **************************************************
+2025-10-13 11:16:33,919 INFO 
+2025-10-13 11:16:33,925 INFO Class weights: [ 1.000  1.000  1.000]
+2025-10-13 11:16:33,928 INFO 
+2025-10-13 11:16:33,928 INFO Starting training...
+2025-10-13 11:16:33,928 INFO 0 Mon Oct 13 11:16:33 2025 Epoch: 0
 /home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
   return fn(*args, **kwargs)
 /home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   warnings.warn(
-2025-10-10 16:52:30,832 INFO Final training  0/59loss: 1.1440time 260.86slr: 0.000000
-2025-10-10 16:52:31,311 INFO ----------
-2025-10-10 16:52:31,311 INFO 
-2025-10-10 16:52:31,312 INFO 0 Fri Oct 10 16:52:31 2025 Epoch: 1
