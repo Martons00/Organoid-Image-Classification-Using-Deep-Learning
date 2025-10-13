@@ -53,6 +53,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
     start_time = time.time()
     run_loss = AverageMeter()
     total_losses = []
+    optimizer.zero_grad()
 
     for idx, batch_data in enumerate(loader):
         # Estrai data/target come nel codice esistente
@@ -75,7 +76,6 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
 
             # Inferenza per patch con forward_features
             feat_list = []
-            optimizer.zero_grad()
             for i in range(patches.shape[0]):
                 patch = patches[i:i+1].to(device).to(torch.float32)  # [1,1,128,128,128]
                 feats = model.forward_features(patch)                # es. [1,Cf] o [1,Cf,1,1,N]
@@ -97,16 +97,11 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
 
         logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
         predictions = torch.softmax(logits, dim=1).argmax(dim=1)  # [B]
-        #print(f"Prediction: {predictions[0]} - Target: {target[0]}")  # DEBUG
-        loss = loss_func(logits, target)
+        loss = loss_func(logits, target) 
+        loss.backward()
         total_losses.append(loss.item())
 
-
-
-        loss.backward()
-
         '''
-
         # Verifica che ci siano parametri con requires_grad=True
         trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
         print(f"Trainable parameters: {trainable_params}")
@@ -119,8 +114,9 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
         grad_norm = grad_norm ** 0.5
         print(f"Gradient norm: {grad_norm}")
         '''
-
         optimizer.step()
+        optimizer.zero_grad()
+
 
         # Aggiorna metriche come nel codice originale
         if args.distributed:

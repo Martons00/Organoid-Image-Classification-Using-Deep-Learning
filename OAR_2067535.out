@@ -1,0 +1,3132 @@
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Byte Order:                           Little Endian
+Address sizes:                        48 bits physical, 48 bits virtual
+CPU(s):                               64
+On-line CPU(s) list:                  0-63
+Thread(s) per core:                   2
+Core(s) per socket:                   16
+Socket(s):                            2
+NUMA node(s):                         8
+Vendor ID:                            AuthenticAMD
+CPU family:                           25
+Model:                                1
+Model name:                           AMD EPYC 7313 16-Core Processor
+Stepping:                             1
+Frequency boost:                      enabled
+CPU MHz:                              2448.595
+CPU max MHz:                          3000.0000
+CPU min MHz:                          1500.0000
+BogoMIPS:                             5989.10
+Virtualization:                       AMD-V
+L1d cache:                            1 MiB
+L1i cache:                            1 MiB
+L2 cache:                             16 MiB
+L3 cache:                             256 MiB
+NUMA node0 CPU(s):                    0-3,32-35
+NUMA node1 CPU(s):                    4-7,36-39
+NUMA node2 CPU(s):                    8-11,40-43
+NUMA node3 CPU(s):                    12-15,44-47
+NUMA node4 CPU(s):                    16-19,48-51
+NUMA node5 CPU(s):                    20-23,52-55
+NUMA node6 CPU(s):                    24-27,56-59
+NUMA node7 CPU(s):                    28-31,60-63
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Not affected
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Mitigation; safe RET
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Retpolines, IBPB conditional, IBRS_FW, STIBP always-on, RSB filling, PBRSB-eIBRS Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 invpcid_single hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local clzero irperf xsaveerptr rdpru wbnoinvd amd_ppin arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm
+Mon Oct 13 15:21:49 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.183.06             Driver Version: 535.183.06   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A40                     On  | 00000000:A3:00.0 Off |                    0 |
+|  0%   28C    P8              29W / 300W |      0MiB / 46068MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning
+0  gpu 0
+Total parameters count 62186659
+Using SwinUNETR with Single Linear Classification Head
+
+Dataset INFO:
+Dataset length is: 423
+Class distribution in the entire dataset:
+Class 0: 137
+Class 1: 43
+Class 2: 243
+Balanced split: 34 train samples per class, 9 val samples per class
+Total: 102 train, 27 val
+
+Train set balance:
+Class distribution:
+  Class 0: 34 samples
+  Class 1: 34 samples
+  Class 2: 34 samples
+
+Val set balance:
+Class distribution:
+  Class 0: 9 samples
+  Class 1: 9 samples
+  Class 2: 9 samples
+Training loader length is 102 batches
+Validation loader length is 27 batches
+Class distribution in the training set:
+Train class 0: 34 (33.3%)
+Train class 1: 34 (33.3%)
+Train class 2: 34 (33.3%)
+Class distribution in the validation set:
+Val class 0: 9 (33.3%)
+Val class 1: 9 (33.3%)
+Val class 2: 9 (33.3%)
+Class weights: [ 1.000  1.000  1.000]
+
+Starting training...
+✓ Unfrozen: fc.weight (2304 params)
+✓ Unfrozen: fc.bias (3 params)
+0 Mon Oct 13 15:21:55 2025 Epoch: 0
+Epoch: 0/60 Iter: 0/102 loss: 1.1738 time 4.05s
+Epoch: 0/60 Iter: 1/102 loss: 1.1640 time 1.88s
+Epoch: 0/60 Iter: 2/102 loss: 1.0926 time 1.87s
+Epoch: 0/60 Iter: 3/102 loss: 1.1238 time 1.88s
+Epoch: 0/60 Iter: 4/102 loss: 1.1437 time 1.88s
+Epoch: 0/60 Iter: 5/102 loss: 1.1085 time 1.88s
+Epoch: 0/60 Iter: 6/102 loss: 1.1180 time 1.88s
+Epoch: 0/60 Iter: 7/102 loss: 1.1310 time 1.88s
+Epoch: 0/60 Iter: 8/102 loss: 1.1413 time 1.88s
+Epoch: 0/60 Iter: 9/102 loss: 1.1428 time 1.88s
+Epoch: 0/60 Iter: 10/102 loss: 1.1498 time 1.88s
+Epoch: 0/60 Iter: 11/102 loss: 1.1501 time 1.88s
+Epoch: 0/60 Iter: 12/102 loss: 1.1557 time 1.88s
+Epoch: 0/60 Iter: 13/102 loss: 1.1409 time 1.88s
+Epoch: 0/60 Iter: 14/102 loss: 1.1432 time 1.88s
+Epoch: 0/60 Iter: 15/102 loss: 1.1441 time 1.88s
+Epoch: 0/60 Iter: 16/102 loss: 1.1326 time 1.88s
+Epoch: 0/60 Iter: 17/102 loss: 1.1215 time 1.88s
+Epoch: 0/60 Iter: 18/102 loss: 1.1097 time 1.88s
+Epoch: 0/60 Iter: 19/102 loss: 1.1151 time 1.89s
+Epoch: 0/60 Iter: 20/102 loss: 1.1201 time 1.89s
+Epoch: 0/60 Iter: 21/102 loss: 1.1219 time 1.88s
+Epoch: 0/60 Iter: 22/102 loss: 1.1243 time 1.88s
+Epoch: 0/60 Iter: 23/102 loss: 1.1167 time 1.88s
+Epoch: 0/60 Iter: 24/102 loss: 1.1211 time 1.88s
+Epoch: 0/60 Iter: 25/102 loss: 1.1140 time 1.88s
+Epoch: 0/60 Iter: 26/102 loss: 1.1071 time 1.88s
+Epoch: 0/60 Iter: 27/102 loss: 1.1113 time 1.88s
+Epoch: 0/60 Iter: 28/102 loss: 1.1129 time 1.88s
+Epoch: 0/60 Iter: 29/102 loss: 1.1164 time 1.88s
+Epoch: 0/60 Iter: 30/102 loss: 1.1198 time 1.88s
+Epoch: 0/60 Iter: 31/102 loss: 1.1230 time 1.88s
+Epoch: 0/60 Iter: 32/102 loss: 1.1259 time 1.89s
+Epoch: 0/60 Iter: 33/102 loss: 1.1287 time 1.89s
+Epoch: 0/60 Iter: 34/102 loss: 1.1314 time 1.88s
+Epoch: 0/60 Iter: 35/102 loss: 1.1329 time 1.88s
+Epoch: 0/60 Iter: 36/102 loss: 1.1337 time 1.88s
+Epoch: 0/60 Iter: 37/102 loss: 1.1344 time 1.88s
+Epoch: 0/60 Iter: 38/102 loss: 1.1289 time 1.88s
+Epoch: 0/60 Iter: 39/102 loss: 1.1296 time 1.88s
+Epoch: 0/60 Iter: 40/102 loss: 1.1247 time 1.88s
+Epoch: 0/60 Iter: 41/102 loss: 1.1202 time 1.88s
+Epoch: 0/60 Iter: 42/102 loss: 1.1162 time 1.88s
+Epoch: 0/60 Iter: 43/102 loss: 1.1121 time 1.88s
+Epoch: 0/60 Iter: 44/102 loss: 1.1132 time 1.88s
+Epoch: 0/60 Iter: 45/102 loss: 1.1091 time 1.88s
+Epoch: 0/60 Iter: 46/102 loss: 1.1054 time 1.88s
+Epoch: 0/60 Iter: 47/102 loss: 1.1077 time 1.89s
+Epoch: 0/60 Iter: 48/102 loss: 1.1089 time 1.88s
+Epoch: 0/60 Iter: 49/102 loss: 1.1053 time 1.88s
+Epoch: 0/60 Iter: 50/102 loss: 1.1076 time 1.89s
+Epoch: 0/60 Iter: 51/102 loss: 1.1099 time 1.90s
+Epoch: 0/60 Iter: 52/102 loss: 1.1108 time 1.88s
+Epoch: 0/60 Iter: 53/102 loss: 1.1077 time 1.88s
+Epoch: 0/60 Iter: 54/102 loss: 1.1044 time 1.88s
+Epoch: 0/60 Iter: 55/102 loss: 1.1056 time 1.88s
+Epoch: 0/60 Iter: 56/102 loss: 1.1066 time 1.88s
+Epoch: 0/60 Iter: 57/102 loss: 1.1077 time 1.88s
+Epoch: 0/60 Iter: 58/102 loss: 1.1051 time 1.88s
+Epoch: 0/60 Iter: 59/102 loss: 1.1070 time 1.88s
+Epoch: 0/60 Iter: 60/102 loss: 1.1077 time 1.88s
+Epoch: 0/60 Iter: 61/102 loss: 1.1051 time 1.89s
+Epoch: 0/60 Iter: 62/102 loss: 1.1070 time 1.89s
+Epoch: 0/60 Iter: 63/102 loss: 1.1087 time 1.89s
+Epoch: 0/60 Iter: 64/102 loss: 1.1061 time 1.88s
+Epoch: 0/60 Iter: 65/102 loss: 1.1069 time 1.89s
+Epoch: 0/60 Iter: 66/102 loss: 1.1089 time 1.89s
+Epoch: 0/60 Iter: 67/102 loss: 1.1106 time 1.89s
+Epoch: 0/60 Iter: 68/102 loss: 1.1077 time 1.88s
+Epoch: 0/60 Iter: 69/102 loss: 1.1086 time 1.89s
+Epoch: 0/60 Iter: 70/102 loss: 1.1102 time 1.89s
+Epoch: 0/60 Iter: 71/102 loss: 1.1078 time 1.89s
+Epoch: 0/60 Iter: 72/102 loss: 1.1055 time 1.88s
+Epoch: 0/60 Iter: 73/102 loss: 1.1071 time 1.89s
+Epoch: 0/60 Iter: 74/102 loss: 1.1086 time 1.89s
+Epoch: 0/60 Iter: 75/102 loss: 1.1065 time 1.89s
+Epoch: 0/60 Iter: 76/102 loss: 1.1042 time 1.88s
+Epoch: 0/60 Iter: 77/102 loss: 1.1051 time 1.89s
+Epoch: 0/60 Iter: 78/102 loss: 1.1026 time 1.90s
+Epoch: 0/60 Iter: 79/102 loss: 1.1034 time 1.89s
+Epoch: 0/60 Iter: 80/102 loss: 1.1040 time 1.88s
+Epoch: 0/60 Iter: 81/102 loss: 1.1055 time 1.89s
+Epoch: 0/60 Iter: 82/102 loss: 1.1069 time 1.89s
+Epoch: 0/60 Iter: 83/102 loss: 1.1077 time 1.89s
+Epoch: 0/60 Iter: 84/102 loss: 1.1090 time 1.90s
+Epoch: 0/60 Iter: 85/102 loss: 1.1096 time 1.89s
+Epoch: 0/60 Iter: 86/102 loss: 1.1102 time 1.88s
+Epoch: 0/60 Iter: 87/102 loss: 1.1107 time 1.88s
+Epoch: 0/60 Iter: 88/102 loss: 1.1089 time 1.88s
+Epoch: 0/60 Iter: 89/102 loss: 1.1071 time 1.88s
+Epoch: 0/60 Iter: 90/102 loss: 1.1077 time 1.89s
+Epoch: 0/60 Iter: 91/102 loss: 1.1084 time 1.89s
+Epoch: 0/60 Iter: 92/102 loss: 1.1067 time 1.88s
+Epoch: 0/60 Iter: 93/102 loss: 1.1049 time 1.89s
+Epoch: 0/60 Iter: 94/102 loss: 1.1054 time 1.89s
+Epoch: 0/60 Iter: 95/102 loss: 1.1059 time 1.89s
+Epoch: 0/60 Iter: 96/102 loss: 1.1071 time 1.89s
+Epoch: 0/60 Iter: 97/102 loss: 1.1083 time 1.89s
+Epoch: 0/60 Iter: 98/102 loss: 1.1064 time 1.89s
+Epoch: 0/60 Iter: 99/102 loss: 1.1047 time 1.89s
+Epoch: 0/60 Iter: 100/102 loss: 1.1058 time 1.89s
+Epoch: 0/60 Iter: 101/102 loss: 1.1069 time 1.89s
+Final training  0/59 loss: 1.1069 time 194.36s lr: 0.000000
+[EarlyStopping] init best=1.106923
+0 Mon Oct 13 15:25:09 2025 Epoch: 1
+Epoch: 1/60 Iter: 0/102 loss: 1.2246 time 2.28s
+Epoch: 1/60 Iter: 1/102 loss: 1.0789 time 1.89s
+Epoch: 1/60 Iter: 2/102 loss: 1.1051 time 1.89s
+Epoch: 1/60 Iter: 3/102 loss: 1.0663 time 1.89s
+Epoch: 1/60 Iter: 4/102 loss: 1.0978 time 1.89s
+Epoch: 1/60 Iter: 5/102 loss: 1.1078 time 1.88s
+Epoch: 1/60 Iter: 6/102 loss: 1.0778 time 1.89s
+Epoch: 1/60 Iter: 7/102 loss: 1.0617 time 1.89s
+Epoch: 1/60 Iter: 8/102 loss: 1.0478 time 1.88s
+Epoch: 1/60 Iter: 9/102 loss: 1.0361 time 1.89s
+Epoch: 1/60 Iter: 10/102 loss: 1.0485 time 1.89s
+Epoch: 1/60 Iter: 11/102 loss: 1.0395 time 1.89s
+Epoch: 1/60 Iter: 12/102 loss: 1.0536 time 1.89s
+Epoch: 1/60 Iter: 13/102 loss: 1.0654 time 1.90s
+Epoch: 1/60 Iter: 14/102 loss: 1.0757 time 1.90s
+Epoch: 1/60 Iter: 15/102 loss: 1.0661 time 1.89s
+Epoch: 1/60 Iter: 16/102 loss: 1.0752 time 1.89s
+Epoch: 1/60 Iter: 17/102 loss: 1.0830 time 1.89s
+Epoch: 1/60 Iter: 18/102 loss: 1.0882 time 1.89s
+Epoch: 1/60 Iter: 19/102 loss: 1.0805 time 1.89s
+Epoch: 1/60 Iter: 20/102 loss: 1.0869 time 1.89s
+Epoch: 1/60 Iter: 21/102 loss: 1.0804 time 1.89s
+Epoch: 1/60 Iter: 22/102 loss: 1.0862 time 1.89s
+Epoch: 1/60 Iter: 23/102 loss: 1.0916 time 1.89s
+Epoch: 1/60 Iter: 24/102 loss: 1.0963 time 1.89s
+Epoch: 1/60 Iter: 25/102 loss: 1.0898 time 1.89s
+Epoch: 1/60 Iter: 26/102 loss: 1.0944 time 1.89s
+Epoch: 1/60 Iter: 27/102 loss: 1.0968 time 1.89s
+Epoch: 1/60 Iter: 28/102 loss: 1.0911 time 1.89s
+Epoch: 1/60 Iter: 29/102 loss: 1.0859 time 1.89s
+Epoch: 1/60 Iter: 30/102 loss: 1.0805 time 1.89s
+Epoch: 1/60 Iter: 31/102 loss: 1.0835 time 1.89s
+Epoch: 1/60 Iter: 32/102 loss: 1.0862 time 1.89s
+Epoch: 1/60 Iter: 33/102 loss: 1.0822 time 1.88s
+Epoch: 1/60 Iter: 34/102 loss: 1.0856 time 1.89s
+Epoch: 1/60 Iter: 35/102 loss: 1.0889 time 1.88s
+Epoch: 1/60 Iter: 36/102 loss: 1.0912 time 1.89s
+Epoch: 1/60 Iter: 37/102 loss: 1.0872 time 1.89s
+Epoch: 1/60 Iter: 38/102 loss: 1.0896 time 1.89s
+Epoch: 1/60 Iter: 39/102 loss: 1.0855 time 1.89s
+Epoch: 1/60 Iter: 40/102 loss: 1.0882 time 1.89s
+Epoch: 1/60 Iter: 41/102 loss: 1.0904 time 1.89s
+Epoch: 1/60 Iter: 42/102 loss: 1.0870 time 1.89s
+Epoch: 1/60 Iter: 43/102 loss: 1.0890 time 1.89s
+Epoch: 1/60 Iter: 44/102 loss: 1.0911 time 1.89s
+Epoch: 1/60 Iter: 45/102 loss: 1.0937 time 1.89s
+Epoch: 1/60 Iter: 46/102 loss: 1.0953 time 1.89s
+Epoch: 1/60 Iter: 47/102 loss: 1.0919 time 1.89s
+Epoch: 1/60 Iter: 48/102 loss: 1.0944 time 1.89s
+Epoch: 1/60 Iter: 49/102 loss: 1.0914 time 1.89s
+Epoch: 1/60 Iter: 50/102 loss: 1.0937 time 1.89s
+Epoch: 1/60 Iter: 51/102 loss: 1.0953 time 1.89s
+Epoch: 1/60 Iter: 52/102 loss: 1.0976 time 1.89s
+Epoch: 1/60 Iter: 53/102 loss: 1.0988 time 1.89s
+Epoch: 1/60 Iter: 54/102 loss: 1.1009 time 1.89s
+Epoch: 1/60 Iter: 55/102 loss: 1.1030 time 1.89s
+Epoch: 1/60 Iter: 56/102 loss: 1.1003 time 1.89s
+Epoch: 1/60 Iter: 57/102 loss: 1.1022 time 1.89s
+Epoch: 1/60 Iter: 58/102 loss: 1.0993 time 1.89s
+Epoch: 1/60 Iter: 59/102 loss: 1.1004 time 1.89s
+Epoch: 1/60 Iter: 60/102 loss: 1.1014 time 1.89s
+Epoch: 1/60 Iter: 61/102 loss: 1.1032 time 1.89s
+Epoch: 1/60 Iter: 62/102 loss: 1.1049 time 1.89s
+Epoch: 1/60 Iter: 63/102 loss: 1.1065 time 1.89s
+Epoch: 1/60 Iter: 64/102 loss: 1.1081 time 1.89s
+Epoch: 1/60 Iter: 65/102 loss: 1.1097 time 1.90s
+Epoch: 1/60 Iter: 66/102 loss: 1.1107 time 1.89s
+Epoch: 1/60 Iter: 67/102 loss: 1.1085 time 1.89s
+Epoch: 1/60 Iter: 68/102 loss: 1.1064 time 1.89s
+Epoch: 1/60 Iter: 69/102 loss: 1.1080 time 1.89s
+Epoch: 1/60 Iter: 70/102 loss: 1.1057 time 1.89s
+Epoch: 1/60 Iter: 71/102 loss: 1.1064 time 1.89s
+Epoch: 1/60 Iter: 72/102 loss: 1.1077 time 1.90s
+Epoch: 1/60 Iter: 73/102 loss: 1.1055 time 1.89s
+Epoch: 1/60 Iter: 74/102 loss: 1.1034 time 1.89s
+Epoch: 1/60 Iter: 75/102 loss: 1.1041 time 1.89s
+Epoch: 1/60 Iter: 76/102 loss: 1.1050 time 1.89s
+Epoch: 1/60 Iter: 77/102 loss: 1.1058 time 1.89s
+Epoch: 1/60 Iter: 78/102 loss: 1.1070 time 1.90s
+Epoch: 1/60 Iter: 79/102 loss: 1.1076 time 1.89s
+Epoch: 1/60 Iter: 80/102 loss: 1.1054 time 1.89s
+Epoch: 1/60 Iter: 81/102 loss: 1.1065 time 1.90s
+Epoch: 1/60 Iter: 82/102 loss: 1.1076 time 1.90s
+Epoch: 1/60 Iter: 83/102 loss: 1.1087 time 1.90s
+Epoch: 1/60 Iter: 84/102 loss: 1.1093 time 1.89s
+Epoch: 1/60 Iter: 85/102 loss: 1.1100 time 1.89s
+Epoch: 1/60 Iter: 86/102 loss: 1.1081 time 1.89s
+Epoch: 1/60 Iter: 87/102 loss: 1.1060 time 1.90s
+Epoch: 1/60 Iter: 88/102 loss: 1.1066 time 1.89s
+Epoch: 1/60 Iter: 89/102 loss: 1.1076 time 1.89s
+Epoch: 1/60 Iter: 90/102 loss: 1.1081 time 1.89s
+Epoch: 1/60 Iter: 91/102 loss: 1.1066 time 1.89s
+Epoch: 1/60 Iter: 92/102 loss: 1.1075 time 1.89s
+Epoch: 1/60 Iter: 93/102 loss: 1.1082 time 1.89s
+Epoch: 1/60 Iter: 94/102 loss: 1.1089 time 1.89s
+Epoch: 1/60 Iter: 95/102 loss: 1.1098 time 1.90s
+Epoch: 1/60 Iter: 96/102 loss: 1.1083 time 1.89s
+Epoch: 1/60 Iter: 97/102 loss: 1.1088 time 1.89s
+Epoch: 1/60 Iter: 98/102 loss: 1.1095 time 1.89s
+Epoch: 1/60 Iter: 99/102 loss: 1.1080 time 1.89s
+Epoch: 1/60 Iter: 100/102 loss: 1.1066 time 1.89s
+Epoch: 1/60 Iter: 101/102 loss: 1.1071 time 1.89s
+Final training  1/59 loss: 1.1071 time 193.15s lr: 0.000005
+[EarlyStopping] no improve (1/30)
+0 Mon Oct 13 15:28:23 2025 Epoch: 2
+Epoch: 2/60 Iter: 0/102 loss: 1.1696 time 2.25s
+Epoch: 2/60 Iter: 1/102 loss: 1.1811 time 1.89s
+Epoch: 2/60 Iter: 2/102 loss: 1.1869 time 1.89s
+Epoch: 2/60 Iter: 3/102 loss: 1.1897 time 1.90s
+Epoch: 2/60 Iter: 4/102 loss: 1.1911 time 1.89s
+Epoch: 2/60 Iter: 5/102 loss: 1.1832 time 1.89s
+Epoch: 2/60 Iter: 6/102 loss: 1.1848 time 1.89s
+Epoch: 2/60 Iter: 7/102 loss: 1.1857 time 1.89s
+Epoch: 2/60 Iter: 8/102 loss: 1.1858 time 1.90s
+Epoch: 2/60 Iter: 9/102 loss: 1.1858 time 1.89s
+Epoch: 2/60 Iter: 10/102 loss: 1.1670 time 1.89s
+Epoch: 2/60 Iter: 11/102 loss: 1.1681 time 1.90s
+Epoch: 2/60 Iter: 12/102 loss: 1.1530 time 1.89s
+Epoch: 2/60 Iter: 13/102 loss: 1.1404 time 1.89s
+Epoch: 2/60 Iter: 14/102 loss: 1.1426 time 1.90s
+Epoch: 2/60 Iter: 15/102 loss: 1.1446 time 1.90s
+Epoch: 2/60 Iter: 16/102 loss: 1.1450 time 1.89s
+Epoch: 2/60 Iter: 17/102 loss: 1.1464 time 1.89s
+Epoch: 2/60 Iter: 18/102 loss: 1.1464 time 1.89s
+Epoch: 2/60 Iter: 19/102 loss: 1.1392 time 1.89s
+Epoch: 2/60 Iter: 20/102 loss: 1.1319 time 1.89s
+Epoch: 2/60 Iter: 21/102 loss: 1.1337 time 1.89s
+Epoch: 2/60 Iter: 22/102 loss: 1.1344 time 1.89s
+Epoch: 2/60 Iter: 23/102 loss: 1.1355 time 1.89s
+Epoch: 2/60 Iter: 24/102 loss: 1.1299 time 1.89s
+Epoch: 2/60 Iter: 25/102 loss: 1.1312 time 1.89s
+Epoch: 2/60 Iter: 26/102 loss: 1.1256 time 1.89s
+Epoch: 2/60 Iter: 27/102 loss: 1.1265 time 1.89s
+Epoch: 2/60 Iter: 28/102 loss: 1.1218 time 1.89s
+Epoch: 2/60 Iter: 29/102 loss: 1.1173 time 1.89s
+Epoch: 2/60 Iter: 30/102 loss: 1.1130 time 1.89s
+Epoch: 2/60 Iter: 31/102 loss: 1.1140 time 1.89s
+Epoch: 2/60 Iter: 32/102 loss: 1.1106 time 1.89s
+Epoch: 2/60 Iter: 33/102 loss: 1.1072 time 1.89s
+Epoch: 2/60 Iter: 34/102 loss: 1.1083 time 1.89s
+Epoch: 2/60 Iter: 35/102 loss: 1.1049 time 1.89s
+Epoch: 2/60 Iter: 36/102 loss: 1.1020 time 1.89s
+Epoch: 2/60 Iter: 37/102 loss: 1.1040 time 1.89s
+Epoch: 2/60 Iter: 38/102 loss: 1.0998 time 1.89s
+Epoch: 2/60 Iter: 39/102 loss: 1.0967 time 1.89s
+Epoch: 2/60 Iter: 40/102 loss: 1.0934 time 1.89s
+Epoch: 2/60 Iter: 41/102 loss: 1.0904 time 1.89s
+Epoch: 2/60 Iter: 42/102 loss: 1.0926 time 1.89s
+Epoch: 2/60 Iter: 43/102 loss: 1.0939 time 1.89s
+Epoch: 2/60 Iter: 44/102 loss: 1.0951 time 1.89s
+Epoch: 2/60 Iter: 45/102 loss: 1.0973 time 1.89s
+Epoch: 2/60 Iter: 46/102 loss: 1.0984 time 1.89s
+Epoch: 2/60 Iter: 47/102 loss: 1.1004 time 1.89s
+Epoch: 2/60 Iter: 48/102 loss: 1.1022 time 1.90s
+Epoch: 2/60 Iter: 49/102 loss: 1.1041 time 1.90s
+Epoch: 2/60 Iter: 50/102 loss: 1.1057 time 1.89s
+Epoch: 2/60 Iter: 51/102 loss: 1.1073 time 1.89s
+Epoch: 2/60 Iter: 52/102 loss: 1.1042 time 1.89s
+Epoch: 2/60 Iter: 53/102 loss: 1.1057 time 1.89s
+Epoch: 2/60 Iter: 54/102 loss: 1.1066 time 1.89s
+Epoch: 2/60 Iter: 55/102 loss: 1.1077 time 1.89s
+Epoch: 2/60 Iter: 56/102 loss: 1.1088 time 1.89s
+Epoch: 2/60 Iter: 57/102 loss: 1.1100 time 1.89s
+Epoch: 2/60 Iter: 58/102 loss: 1.1111 time 1.89s
+Epoch: 2/60 Iter: 59/102 loss: 1.1123 time 1.89s
+Epoch: 2/60 Iter: 60/102 loss: 1.1102 time 1.89s
+Epoch: 2/60 Iter: 61/102 loss: 1.1082 time 1.89s
+Epoch: 2/60 Iter: 62/102 loss: 1.1064 time 1.89s
+Epoch: 2/60 Iter: 63/102 loss: 1.1070 time 1.89s
+Epoch: 2/60 Iter: 64/102 loss: 1.1079 time 1.89s
+Epoch: 2/60 Iter: 65/102 loss: 1.1060 time 1.89s
+Epoch: 2/60 Iter: 66/102 loss: 1.1041 time 1.89s
+Epoch: 2/60 Iter: 67/102 loss: 1.1024 time 1.89s
+Epoch: 2/60 Iter: 68/102 loss: 1.1002 time 1.90s
+Epoch: 2/60 Iter: 69/102 loss: 1.1009 time 1.89s
+Epoch: 2/60 Iter: 70/102 loss: 1.0993 time 1.89s
+Epoch: 2/60 Iter: 71/102 loss: 1.1002 time 1.89s
+Epoch: 2/60 Iter: 72/102 loss: 1.0984 time 1.89s
+Epoch: 2/60 Iter: 73/102 loss: 1.0992 time 1.89s
+Epoch: 2/60 Iter: 74/102 loss: 1.0976 time 1.89s
+Epoch: 2/60 Iter: 75/102 loss: 1.0983 time 1.89s
+Epoch: 2/60 Iter: 76/102 loss: 1.0991 time 1.89s
+Epoch: 2/60 Iter: 77/102 loss: 1.0974 time 1.89s
+Epoch: 2/60 Iter: 78/102 loss: 1.0987 time 1.89s
+Epoch: 2/60 Iter: 79/102 loss: 1.0999 time 1.90s
+Epoch: 2/60 Iter: 80/102 loss: 1.1006 time 1.89s
+Epoch: 2/60 Iter: 81/102 loss: 1.1011 time 1.89s
+Epoch: 2/60 Iter: 82/102 loss: 1.1024 time 1.90s
+Epoch: 2/60 Iter: 83/102 loss: 1.1010 time 1.89s
+Epoch: 2/60 Iter: 84/102 loss: 1.1021 time 1.90s
+Epoch: 2/60 Iter: 85/102 loss: 1.1025 time 1.89s
+Epoch: 2/60 Iter: 86/102 loss: 1.1011 time 1.89s
+Epoch: 2/60 Iter: 87/102 loss: 1.1023 time 1.91s
+Epoch: 2/60 Iter: 88/102 loss: 1.1026 time 1.89s
+Epoch: 2/60 Iter: 89/102 loss: 1.1029 time 1.89s
+Epoch: 2/60 Iter: 90/102 loss: 1.1040 time 1.89s
+Epoch: 2/60 Iter: 91/102 loss: 1.1050 time 1.89s
+Epoch: 2/60 Iter: 92/102 loss: 1.1060 time 1.89s
+Epoch: 2/60 Iter: 93/102 loss: 1.1069 time 1.89s
+Epoch: 2/60 Iter: 94/102 loss: 1.1071 time 1.89s
+Epoch: 2/60 Iter: 95/102 loss: 1.1057 time 1.89s
+Epoch: 2/60 Iter: 96/102 loss: 1.1060 time 1.89s
+Epoch: 2/60 Iter: 97/102 loss: 1.1064 time 1.89s
+Epoch: 2/60 Iter: 98/102 loss: 1.1073 time 1.89s
+Epoch: 2/60 Iter: 99/102 loss: 1.1061 time 1.89s
+Epoch: 2/60 Iter: 100/102 loss: 1.1069 time 1.89s
+Epoch: 2/60 Iter: 101/102 loss: 1.1071 time 1.89s
+Final training  2/59 loss: 1.1071 time 193.23s lr: 0.000010
+[EarlyStopping] no improve (2/30)
+0 Mon Oct 13 15:31:36 2025 Epoch: 3
+Epoch: 3/60 Iter: 0/102 loss: 1.1847 time 2.32s
+Epoch: 3/60 Iter: 1/102 loss: 1.0864 time 1.89s
+Epoch: 3/60 Iter: 2/102 loss: 1.0551 time 1.89s
+Epoch: 3/60 Iter: 3/102 loss: 1.0863 time 1.89s
+Epoch: 3/60 Iter: 4/102 loss: 1.0675 time 1.89s
+Epoch: 3/60 Iter: 5/102 loss: 1.0866 time 1.90s
+Epoch: 3/60 Iter: 6/102 loss: 1.0996 time 1.89s
+Epoch: 3/60 Iter: 7/102 loss: 1.1112 time 1.90s
+Epoch: 3/60 Iter: 8/102 loss: 1.1185 time 1.89s
+Epoch: 3/60 Iter: 9/102 loss: 1.1239 time 1.89s
+Epoch: 3/60 Iter: 10/102 loss: 1.1129 time 1.89s
+Epoch: 3/60 Iter: 11/102 loss: 1.1153 time 1.89s
+Epoch: 3/60 Iter: 12/102 loss: 1.1169 time 1.89s
+Epoch: 3/60 Iter: 13/102 loss: 1.1200 time 1.90s
+Epoch: 3/60 Iter: 14/102 loss: 1.1228 time 1.89s
+Epoch: 3/60 Iter: 15/102 loss: 1.1148 time 1.89s
+Epoch: 3/60 Iter: 16/102 loss: 1.1079 time 1.89s
+Epoch: 3/60 Iter: 17/102 loss: 1.1104 time 1.89s
+Epoch: 3/60 Iter: 18/102 loss: 1.1043 time 1.89s
+Epoch: 3/60 Iter: 19/102 loss: 1.1060 time 1.89s
+Epoch: 3/60 Iter: 20/102 loss: 1.1072 time 1.89s
+Epoch: 3/60 Iter: 21/102 loss: 1.1088 time 1.89s
+Epoch: 3/60 Iter: 22/102 loss: 1.1107 time 1.90s
+Epoch: 3/60 Iter: 23/102 loss: 1.1119 time 1.89s
+Epoch: 3/60 Iter: 24/102 loss: 1.1136 time 1.89s
+Epoch: 3/60 Iter: 25/102 loss: 1.1151 time 1.89s
+Epoch: 3/60 Iter: 26/102 loss: 1.1118 time 1.89s
+Epoch: 3/60 Iter: 27/102 loss: 1.1088 time 1.89s
+Epoch: 3/60 Iter: 28/102 loss: 1.1100 time 1.89s
+Epoch: 3/60 Iter: 29/102 loss: 1.1068 time 1.89s
+Epoch: 3/60 Iter: 30/102 loss: 1.1033 time 1.89s
+Epoch: 3/60 Iter: 31/102 loss: 1.1048 time 1.89s
+Epoch: 3/60 Iter: 32/102 loss: 1.1062 time 1.90s
+Epoch: 3/60 Iter: 33/102 loss: 1.1034 time 1.89s
+Epoch: 3/60 Iter: 34/102 loss: 1.1044 time 1.89s
+Epoch: 3/60 Iter: 35/102 loss: 1.1017 time 1.89s
+Epoch: 3/60 Iter: 36/102 loss: 1.0995 time 1.89s
+Epoch: 3/60 Iter: 37/102 loss: 1.0971 time 1.89s
+Epoch: 3/60 Iter: 38/102 loss: 1.0947 time 1.89s
+Epoch: 3/60 Iter: 39/102 loss: 1.0963 time 1.89s
+Epoch: 3/60 Iter: 40/102 loss: 1.0977 time 1.89s
+Epoch: 3/60 Iter: 41/102 loss: 1.0987 time 1.89s
+Epoch: 3/60 Iter: 42/102 loss: 1.1001 time 1.89s
+Epoch: 3/60 Iter: 43/102 loss: 1.1013 time 1.89s
+Epoch: 3/60 Iter: 44/102 loss: 1.1021 time 1.89s
+Epoch: 3/60 Iter: 45/102 loss: 1.1033 time 1.89s
+Epoch: 3/60 Iter: 46/102 loss: 1.1011 time 1.89s
+Epoch: 3/60 Iter: 47/102 loss: 1.0993 time 1.89s
+Epoch: 3/60 Iter: 48/102 loss: 1.1005 time 1.89s
+Epoch: 3/60 Iter: 49/102 loss: 1.0988 time 1.89s
+Epoch: 3/60 Iter: 50/102 loss: 1.0995 time 1.89s
+Epoch: 3/60 Iter: 51/102 loss: 1.1007 time 1.90s
+Epoch: 3/60 Iter: 52/102 loss: 1.1018 time 1.89s
+Epoch: 3/60 Iter: 53/102 loss: 1.1028 time 1.89s
+Epoch: 3/60 Iter: 54/102 loss: 1.1037 time 1.89s
+Epoch: 3/60 Iter: 55/102 loss: 1.1020 time 1.89s
+Epoch: 3/60 Iter: 56/102 loss: 1.1028 time 1.89s
+Epoch: 3/60 Iter: 57/102 loss: 1.1033 time 1.89s
+Epoch: 3/60 Iter: 58/102 loss: 1.1037 time 1.89s
+Epoch: 3/60 Iter: 59/102 loss: 1.1024 time 1.89s
+Epoch: 3/60 Iter: 60/102 loss: 1.1027 time 1.89s
+Epoch: 3/60 Iter: 61/102 loss: 1.1014 time 1.89s
+Epoch: 3/60 Iter: 62/102 loss: 1.0995 time 1.90s
+Epoch: 3/60 Iter: 63/102 loss: 1.1005 time 1.89s
+Epoch: 3/60 Iter: 64/102 loss: 1.1016 time 1.89s
+Epoch: 3/60 Iter: 65/102 loss: 1.1022 time 1.89s
+Epoch: 3/60 Iter: 66/102 loss: 1.1033 time 1.89s
+Epoch: 3/60 Iter: 67/102 loss: 1.1042 time 1.89s
+Epoch: 3/60 Iter: 68/102 loss: 1.1023 time 1.89s
+Epoch: 3/60 Iter: 69/102 loss: 1.1026 time 1.89s
+Epoch: 3/60 Iter: 70/102 loss: 1.1036 time 1.89s
+Epoch: 3/60 Iter: 71/102 loss: 1.1024 time 1.89s
+Epoch: 3/60 Iter: 72/102 loss: 1.1033 time 1.90s
+Epoch: 3/60 Iter: 73/102 loss: 1.1022 time 1.89s
+Epoch: 3/60 Iter: 74/102 loss: 1.1011 time 1.89s
+Epoch: 3/60 Iter: 75/102 loss: 1.0999 time 1.89s
+Epoch: 3/60 Iter: 76/102 loss: 1.1008 time 1.90s
+Epoch: 3/60 Iter: 77/102 loss: 1.1011 time 1.89s
+Epoch: 3/60 Iter: 78/102 loss: 1.1001 time 1.89s
+Epoch: 3/60 Iter: 79/102 loss: 1.0989 time 1.89s
+Epoch: 3/60 Iter: 80/102 loss: 1.0997 time 1.90s
+Epoch: 3/60 Iter: 81/102 loss: 1.1005 time 1.90s
+Epoch: 3/60 Iter: 82/102 loss: 1.1009 time 1.89s
+Epoch: 3/60 Iter: 83/102 loss: 1.1016 time 1.89s
+Epoch: 3/60 Iter: 84/102 loss: 1.1019 time 1.89s
+Epoch: 3/60 Iter: 85/102 loss: 1.1026 time 1.89s
+Epoch: 3/60 Iter: 86/102 loss: 1.1012 time 1.89s
+Epoch: 3/60 Iter: 87/102 loss: 1.1019 time 1.89s
+Epoch: 3/60 Iter: 88/102 loss: 1.1022 time 1.89s
+Epoch: 3/60 Iter: 89/102 loss: 1.1029 time 1.89s
+Epoch: 3/60 Iter: 90/102 loss: 1.1020 time 1.89s
+Epoch: 3/60 Iter: 91/102 loss: 1.1022 time 1.89s
+Epoch: 3/60 Iter: 92/102 loss: 1.1026 time 1.89s
+Epoch: 3/60 Iter: 93/102 loss: 1.1032 time 1.89s
+Epoch: 3/60 Iter: 94/102 loss: 1.1035 time 1.89s
+Epoch: 3/60 Iter: 95/102 loss: 1.1026 time 1.89s
+Epoch: 3/60 Iter: 96/102 loss: 1.1031 time 1.89s
+Epoch: 3/60 Iter: 97/102 loss: 1.1035 time 1.89s
+Epoch: 3/60 Iter: 98/102 loss: 1.1040 time 1.89s
+Epoch: 3/60 Iter: 99/102 loss: 1.1041 time 1.89s
+Epoch: 3/60 Iter: 100/102 loss: 1.1032 time 1.89s
+Epoch: 3/60 Iter: 101/102 loss: 1.1033 time 1.89s
+Final training  3/59 loss: 1.1033 time 193.25s lr: 0.000010
+[EarlyStopping] no improve (3/30)
+Val 3/60 0/27, Acc: 1.0000, time 1.94s
+Val 3/60 1/27, Acc: 0.5000, time 1.93s
+Val 3/60 2/27, Acc: 0.3333, time 1.93s
+Val 3/60 3/27, Acc: 0.2500, time 1.93s
+Val 3/60 4/27, Acc: 0.4000, time 1.91s
+Val 3/60 5/27, Acc: 0.3333, time 1.94s
+Val 3/60 6/27, Acc: 0.4286, time 1.92s
+Val 3/60 7/27, Acc: 0.5000, time 1.92s
+Val 3/60 8/27, Acc: 0.5556, time 1.92s
+Val 3/60 9/27, Acc: 0.6000, time 1.93s
+Val 3/60 10/27, Acc: 0.5455, time 1.94s
+Val 3/60 11/27, Acc: 0.5833, time 1.92s
+Val 3/60 12/27, Acc: 0.6154, time 1.92s
+Val 3/60 13/27, Acc: 0.5714, time 1.93s
+Val 3/60 14/27, Acc: 0.6000, time 1.93s
+Val 3/60 15/27, Acc: 0.5625, time 1.95s
+Val 3/60 16/27, Acc: 0.5294, time 1.96s
+Val 3/60 17/27, Acc: 0.5000, time 1.92s
+Val 3/60 18/27, Acc: 0.4737, time 2.06s
+Val 3/60 19/27, Acc: 0.4500, time 2.01s
+Val 3/60 20/27, Acc: 0.4286, time 1.93s
+Val 3/60 21/27, Acc: 0.4091, time 1.93s
+Val 3/60 22/27, Acc: 0.3913, time 1.93s
+Val 3/60 23/27, Acc: 0.3750, time 1.91s
+Val 3/60 24/27, Acc: 0.3600, time 1.93s
+Val 3/60 25/27, Acc: 0.3462, time 1.91s
+Val 3/60 26/27, Acc: 0.3333, time 1.91s
+[Val epoch 3] avg_acc=0.3333 | per-class [c0: 0.000, c1: 1.000, c2: 0.000]
+Final validation stats 3/59 , Val_acc: 0.3333333333333333 , time 52.25s
+new best (0.000000 --> 0.333333). 
+[EarlyStopping] init best=0.333333
+
+0 Mon Oct 13 15:35:42 2025 Epoch: 4
+Epoch: 4/60 Iter: 0/102 loss: 0.9915 time 2.72s
+Epoch: 4/60 Iter: 1/102 loss: 1.0037 time 1.89s
+Epoch: 4/60 Iter: 2/102 loss: 1.0087 time 1.89s
+Epoch: 4/60 Iter: 3/102 loss: 1.0117 time 1.88s
+Epoch: 4/60 Iter: 4/102 loss: 1.0130 time 1.89s
+Epoch: 4/60 Iter: 5/102 loss: 1.0149 time 1.89s
+Epoch: 4/60 Iter: 6/102 loss: 1.0155 time 1.88s
+Epoch: 4/60 Iter: 7/102 loss: 1.0287 time 1.89s
+Epoch: 4/60 Iter: 8/102 loss: 1.0269 time 1.89s
+Epoch: 4/60 Iter: 9/102 loss: 1.0247 time 1.89s
+Epoch: 4/60 Iter: 10/102 loss: 1.0230 time 1.89s
+Epoch: 4/60 Iter: 11/102 loss: 1.0353 time 1.90s
+Epoch: 4/60 Iter: 12/102 loss: 1.0461 time 1.89s
+Epoch: 4/60 Iter: 13/102 loss: 1.0526 time 1.89s
+Epoch: 4/60 Iter: 14/102 loss: 1.0605 time 1.89s
+Epoch: 4/60 Iter: 15/102 loss: 1.0564 time 1.89s
+Epoch: 4/60 Iter: 16/102 loss: 1.0529 time 1.89s
+Epoch: 4/60 Iter: 17/102 loss: 1.0574 time 1.89s
+Epoch: 4/60 Iter: 18/102 loss: 1.0637 time 1.89s
+Epoch: 4/60 Iter: 19/102 loss: 1.0678 time 1.89s
+Epoch: 4/60 Iter: 20/102 loss: 1.0730 time 1.89s
+Epoch: 4/60 Iter: 21/102 loss: 1.0688 time 1.89s
+Epoch: 4/60 Iter: 22/102 loss: 1.0714 time 1.89s
+Epoch: 4/60 Iter: 23/102 loss: 1.0687 time 1.89s
+Epoch: 4/60 Iter: 24/102 loss: 1.0663 time 1.89s
+Epoch: 4/60 Iter: 25/102 loss: 1.0706 time 1.89s
+Epoch: 4/60 Iter: 26/102 loss: 1.0682 time 1.89s
+Epoch: 4/60 Iter: 27/102 loss: 1.0707 time 1.89s
+Epoch: 4/60 Iter: 28/102 loss: 1.0744 time 1.89s
+Epoch: 4/60 Iter: 29/102 loss: 1.0779 time 1.90s
+Epoch: 4/60 Iter: 30/102 loss: 1.0811 time 1.89s
+Epoch: 4/60 Iter: 31/102 loss: 1.0786 time 1.89s
+Epoch: 4/60 Iter: 32/102 loss: 1.0816 time 1.90s
+Epoch: 4/60 Iter: 33/102 loss: 1.0832 time 1.89s
+Epoch: 4/60 Iter: 34/102 loss: 1.0848 time 1.89s
+Epoch: 4/60 Iter: 35/102 loss: 1.0825 time 1.89s
+Epoch: 4/60 Iter: 36/102 loss: 1.0842 time 1.89s
+Epoch: 4/60 Iter: 37/102 loss: 1.0819 time 1.89s
+Epoch: 4/60 Iter: 38/102 loss: 1.0797 time 1.89s
+Epoch: 4/60 Iter: 39/102 loss: 1.0821 time 1.89s
+Epoch: 4/60 Iter: 40/102 loss: 1.0839 time 1.89s
+Epoch: 4/60 Iter: 41/102 loss: 1.0856 time 1.89s
+Epoch: 4/60 Iter: 42/102 loss: 1.0877 time 1.90s
+Epoch: 4/60 Iter: 43/102 loss: 1.0897 time 1.89s
+Epoch: 4/60 Iter: 44/102 loss: 1.0916 time 1.89s
+Epoch: 4/60 Iter: 45/102 loss: 1.0889 time 1.89s
+Epoch: 4/60 Iter: 46/102 loss: 1.0869 time 1.89s
+Epoch: 4/60 Iter: 47/102 loss: 1.0880 time 1.89s
+Epoch: 4/60 Iter: 48/102 loss: 1.0897 time 1.90s
+Epoch: 4/60 Iter: 49/102 loss: 1.0914 time 1.89s
+Epoch: 4/60 Iter: 50/102 loss: 1.0928 time 1.90s
+Epoch: 4/60 Iter: 51/102 loss: 1.0910 time 1.89s
+Epoch: 4/60 Iter: 52/102 loss: 1.0919 time 1.89s
+Epoch: 4/60 Iter: 53/102 loss: 1.0928 time 1.89s
+Epoch: 4/60 Iter: 54/102 loss: 1.0937 time 1.89s
+Epoch: 4/60 Iter: 55/102 loss: 1.0945 time 1.89s
+Epoch: 4/60 Iter: 56/102 loss: 1.0957 time 1.89s
+Epoch: 4/60 Iter: 57/102 loss: 1.0939 time 1.89s
+Epoch: 4/60 Iter: 58/102 loss: 1.0949 time 1.89s
+Epoch: 4/60 Iter: 59/102 loss: 1.0955 time 1.89s
+Epoch: 4/60 Iter: 60/102 loss: 1.0962 time 1.89s
+Epoch: 4/60 Iter: 61/102 loss: 1.0969 time 1.89s
+Epoch: 4/60 Iter: 62/102 loss: 1.0954 time 1.89s
+Epoch: 4/60 Iter: 63/102 loss: 1.0959 time 1.89s
+Epoch: 4/60 Iter: 64/102 loss: 1.0971 time 1.90s
+Epoch: 4/60 Iter: 65/102 loss: 1.0981 time 1.89s
+Epoch: 4/60 Iter: 66/102 loss: 1.0992 time 1.89s
+Epoch: 4/60 Iter: 67/102 loss: 1.0995 time 1.89s
+Epoch: 4/60 Iter: 68/102 loss: 1.1003 time 1.90s
+Epoch: 4/60 Iter: 69/102 loss: 1.1006 time 1.89s
+Epoch: 4/60 Iter: 70/102 loss: 1.1009 time 1.89s
+Epoch: 4/60 Iter: 71/102 loss: 1.1018 time 1.90s
+Epoch: 4/60 Iter: 72/102 loss: 1.1026 time 1.89s
+Epoch: 4/60 Iter: 73/102 loss: 1.1028 time 1.89s
+Epoch: 4/60 Iter: 74/102 loss: 1.1031 time 1.89s
+Epoch: 4/60 Iter: 75/102 loss: 1.1038 time 1.89s
+Epoch: 4/60 Iter: 76/102 loss: 1.1030 time 1.89s
+Epoch: 4/60 Iter: 77/102 loss: 1.1037 time 1.89s
+Epoch: 4/60 Iter: 78/102 loss: 1.1028 time 1.89s
+Epoch: 4/60 Iter: 79/102 loss: 1.1034 time 1.91s
+Epoch: 4/60 Iter: 80/102 loss: 1.1038 time 1.89s
+Epoch: 4/60 Iter: 81/102 loss: 1.1029 time 1.89s
+Epoch: 4/60 Iter: 82/102 loss: 1.1034 time 1.89s
+Epoch: 4/60 Iter: 83/102 loss: 1.1033 time 1.89s
+Epoch: 4/60 Iter: 84/102 loss: 1.1025 time 1.89s
+Epoch: 4/60 Iter: 85/102 loss: 1.1030 time 1.89s
+Epoch: 4/60 Iter: 86/102 loss: 1.1025 time 1.89s
+Epoch: 4/60 Iter: 87/102 loss: 1.1020 time 1.89s
+Epoch: 4/60 Iter: 88/102 loss: 1.1025 time 1.89s
+Epoch: 4/60 Iter: 89/102 loss: 1.1029 time 1.89s
+Epoch: 4/60 Iter: 90/102 loss: 1.1025 time 1.89s
+Epoch: 4/60 Iter: 91/102 loss: 1.1027 time 1.89s
+Epoch: 4/60 Iter: 92/102 loss: 1.1030 time 1.89s
+Epoch: 4/60 Iter: 93/102 loss: 1.1033 time 1.89s
+Epoch: 4/60 Iter: 94/102 loss: 1.1037 time 1.89s
+Epoch: 4/60 Iter: 95/102 loss: 1.1041 time 1.89s
+Epoch: 4/60 Iter: 96/102 loss: 1.1040 time 1.89s
+Epoch: 4/60 Iter: 97/102 loss: 1.1036 time 1.89s
+Epoch: 4/60 Iter: 98/102 loss: 1.1038 time 1.89s
+Epoch: 4/60 Iter: 99/102 loss: 1.1029 time 1.89s
+Epoch: 4/60 Iter: 100/102 loss: 1.1029 time 1.89s
+Epoch: 4/60 Iter: 101/102 loss: 1.1029 time 1.89s
+Final training  4/59 loss: 1.1029 time 193.60s lr: 0.000010
+[EarlyStopping] no improve (4/30)
+0 Mon Oct 13 15:38:55 2025 Epoch: 5
+Epoch: 5/60 Iter: 0/102 loss: 1.1302 time 2.15s
+Epoch: 5/60 Iter: 1/102 loss: 1.1277 time 1.89s
+Epoch: 5/60 Iter: 2/102 loss: 1.1286 time 1.90s
+Epoch: 5/60 Iter: 3/102 loss: 1.1306 time 1.89s
+Epoch: 5/60 Iter: 4/102 loss: 1.1312 time 1.89s
+Epoch: 5/60 Iter: 5/102 loss: 1.1312 time 1.89s
+Epoch: 5/60 Iter: 6/102 loss: 1.1310 time 1.89s
+Epoch: 5/60 Iter: 7/102 loss: 1.1281 time 1.89s
+Epoch: 5/60 Iter: 8/102 loss: 1.1250 time 1.89s
+Epoch: 5/60 Iter: 9/102 loss: 1.1200 time 1.89s
+Epoch: 5/60 Iter: 10/102 loss: 1.1154 time 1.89s
+Epoch: 5/60 Iter: 11/102 loss: 1.1159 time 1.89s
+Epoch: 5/60 Iter: 12/102 loss: 1.1157 time 1.89s
+Epoch: 5/60 Iter: 13/102 loss: 1.1158 time 1.89s
+Epoch: 5/60 Iter: 14/102 loss: 1.1158 time 1.89s
+Epoch: 5/60 Iter: 15/102 loss: 1.1160 time 1.89s
+Epoch: 5/60 Iter: 16/102 loss: 1.1152 time 1.89s
+Epoch: 5/60 Iter: 17/102 loss: 1.1153 time 1.89s
+Epoch: 5/60 Iter: 18/102 loss: 1.1129 time 1.89s
+Epoch: 5/60 Iter: 19/102 loss: 1.1121 time 1.89s
+Epoch: 5/60 Iter: 20/102 loss: 1.1103 time 1.89s
+Epoch: 5/60 Iter: 21/102 loss: 1.1110 time 1.90s
+Epoch: 5/60 Iter: 22/102 loss: 1.1110 time 1.89s
+Epoch: 5/60 Iter: 23/102 loss: 1.1107 time 1.89s
+Epoch: 5/60 Iter: 24/102 loss: 1.1111 time 1.89s
+Epoch: 5/60 Iter: 25/102 loss: 1.1113 time 1.90s
+Epoch: 5/60 Iter: 26/102 loss: 1.1114 time 1.89s
+Epoch: 5/60 Iter: 27/102 loss: 1.1105 time 1.89s
+Epoch: 5/60 Iter: 28/102 loss: 1.1103 time 1.89s
+Epoch: 5/60 Iter: 29/102 loss: 1.1103 time 1.89s
+Epoch: 5/60 Iter: 30/102 loss: 1.1097 time 1.89s
+Epoch: 5/60 Iter: 31/102 loss: 1.1092 time 1.89s
+Epoch: 5/60 Iter: 32/102 loss: 1.1094 time 1.91s
+Epoch: 5/60 Iter: 33/102 loss: 1.1094 time 1.89s
+Epoch: 5/60 Iter: 34/102 loss: 1.1087 time 1.89s
+Epoch: 5/60 Iter: 35/102 loss: 1.1082 time 1.89s
+Epoch: 5/60 Iter: 36/102 loss: 1.1076 time 1.89s
+Epoch: 5/60 Iter: 37/102 loss: 1.1079 time 1.89s
+Epoch: 5/60 Iter: 38/102 loss: 1.1075 time 1.89s
+Epoch: 5/60 Iter: 39/102 loss: 1.1067 time 1.89s
+Epoch: 5/60 Iter: 40/102 loss: 1.1070 time 1.89s
+Epoch: 5/60 Iter: 41/102 loss: 1.1065 time 1.89s
+Epoch: 5/60 Iter: 42/102 loss: 1.1062 time 1.89s
+Epoch: 5/60 Iter: 43/102 loss: 1.1066 time 1.89s
+Epoch: 5/60 Iter: 44/102 loss: 1.1069 time 1.90s
+Epoch: 5/60 Iter: 45/102 loss: 1.1066 time 1.89s
+Epoch: 5/60 Iter: 46/102 loss: 1.1060 time 1.89s
+Epoch: 5/60 Iter: 47/102 loss: 1.1063 time 1.90s
+Epoch: 5/60 Iter: 48/102 loss: 1.1062 time 1.89s
+Epoch: 5/60 Iter: 49/102 loss: 1.1065 time 1.89s
+Epoch: 5/60 Iter: 50/102 loss: 1.1065 time 1.89s
+Epoch: 5/60 Iter: 51/102 loss: 1.1066 time 1.89s
+Epoch: 5/60 Iter: 52/102 loss: 1.1068 time 1.90s
+Epoch: 5/60 Iter: 53/102 loss: 1.1069 time 1.89s
+Epoch: 5/60 Iter: 54/102 loss: 1.1071 time 1.89s
+Epoch: 5/60 Iter: 55/102 loss: 1.1067 time 1.89s
+Epoch: 5/60 Iter: 56/102 loss: 1.1067 time 1.89s
+Epoch: 5/60 Iter: 57/102 loss: 1.1069 time 1.89s
+Epoch: 5/60 Iter: 58/102 loss: 1.1065 time 1.89s
+Epoch: 5/60 Iter: 59/102 loss: 1.1065 time 1.89s
+Epoch: 5/60 Iter: 60/102 loss: 1.1063 time 1.89s
+Epoch: 5/60 Iter: 61/102 loss: 1.1062 time 1.89s
+Epoch: 5/60 Iter: 62/102 loss: 1.1063 time 1.89s
+Epoch: 5/60 Iter: 63/102 loss: 1.1063 time 1.89s
+Epoch: 5/60 Iter: 64/102 loss: 1.1065 time 1.90s
+Epoch: 5/60 Iter: 65/102 loss: 1.1060 time 1.89s
+Epoch: 5/60 Iter: 66/102 loss: 1.1058 time 1.89s
+Epoch: 5/60 Iter: 67/102 loss: 1.1060 time 1.89s
+Epoch: 5/60 Iter: 68/102 loss: 1.1056 time 1.89s
+Epoch: 5/60 Iter: 69/102 loss: 1.1052 time 1.89s
+Epoch: 5/60 Iter: 70/102 loss: 1.1045 time 1.89s
+Epoch: 5/60 Iter: 71/102 loss: 1.1037 time 1.90s
+Epoch: 5/60 Iter: 72/102 loss: 1.1033 time 1.89s
+Epoch: 5/60 Iter: 73/102 loss: 1.1031 time 1.89s
+Epoch: 5/60 Iter: 74/102 loss: 1.1034 time 1.89s
+Epoch: 5/60 Iter: 75/102 loss: 1.1030 time 1.89s
+Epoch: 5/60 Iter: 76/102 loss: 1.1030 time 1.89s
+Epoch: 5/60 Iter: 77/102 loss: 1.1030 time 1.89s
+Epoch: 5/60 Iter: 78/102 loss: 1.1033 time 1.90s
+Epoch: 5/60 Iter: 79/102 loss: 1.1034 time 1.89s
+Epoch: 5/60 Iter: 80/102 loss: 1.1034 time 1.89s
+Epoch: 5/60 Iter: 81/102 loss: 1.1028 time 1.89s
+Epoch: 5/60 Iter: 82/102 loss: 1.1031 time 1.89s
+Epoch: 5/60 Iter: 83/102 loss: 1.1033 time 1.89s
+Epoch: 5/60 Iter: 84/102 loss: 1.1030 time 1.89s
+Epoch: 5/60 Iter: 85/102 loss: 1.1026 time 1.89s
+Epoch: 5/60 Iter: 86/102 loss: 1.1017 time 1.89s
+Epoch: 5/60 Iter: 87/102 loss: 1.1013 time 1.89s
+Epoch: 5/60 Iter: 88/102 loss: 1.1013 time 1.89s
+Epoch: 5/60 Iter: 89/102 loss: 1.1017 time 1.89s
+Epoch: 5/60 Iter: 90/102 loss: 1.1017 time 1.89s
+Epoch: 5/60 Iter: 91/102 loss: 1.1020 time 1.89s
+Epoch: 5/60 Iter: 92/102 loss: 1.1024 time 1.89s
+Epoch: 5/60 Iter: 93/102 loss: 1.1024 time 1.89s
+Epoch: 5/60 Iter: 94/102 loss: 1.1024 time 1.89s
+Epoch: 5/60 Iter: 95/102 loss: 1.1019 time 1.89s
+Epoch: 5/60 Iter: 96/102 loss: 1.1022 time 1.90s
+Epoch: 5/60 Iter: 97/102 loss: 1.1022 time 1.89s
+Epoch: 5/60 Iter: 98/102 loss: 1.1021 time 1.89s
+Epoch: 5/60 Iter: 99/102 loss: 1.1017 time 1.89s
+Epoch: 5/60 Iter: 100/102 loss: 1.1020 time 1.89s
+Epoch: 5/60 Iter: 101/102 loss: 1.1023 time 1.89s
+Final training  5/59 loss: 1.1023 time 193.07s lr: 0.000010
+[EarlyStopping] no improve (5/30)
+0 Mon Oct 13 15:42:08 2025 Epoch: 6
+Epoch: 6/60 Iter: 0/102 loss: 1.0513 time 2.27s
+Epoch: 6/60 Iter: 1/102 loss: 1.0542 time 1.89s
+Epoch: 6/60 Iter: 2/102 loss: 1.0725 time 1.89s
+Epoch: 6/60 Iter: 3/102 loss: 1.0682 time 1.89s
+Epoch: 6/60 Iter: 4/102 loss: 1.0775 time 1.89s
+Epoch: 6/60 Iter: 5/102 loss: 1.0870 time 1.89s
+Epoch: 6/60 Iter: 6/102 loss: 1.0884 time 1.89s
+Epoch: 6/60 Iter: 7/102 loss: 1.0853 time 1.89s
+Epoch: 6/60 Iter: 8/102 loss: 1.0824 time 1.89s
+Epoch: 6/60 Iter: 9/102 loss: 1.0884 time 1.89s
+Epoch: 6/60 Iter: 10/102 loss: 1.0843 time 1.89s
+Epoch: 6/60 Iter: 11/102 loss: 1.0887 time 1.89s
+Epoch: 6/60 Iter: 12/102 loss: 1.0869 time 1.89s
+Epoch: 6/60 Iter: 13/102 loss: 1.0880 time 1.89s
+Epoch: 6/60 Iter: 14/102 loss: 1.0888 time 1.89s
+Epoch: 6/60 Iter: 15/102 loss: 1.0891 time 1.89s
+Epoch: 6/60 Iter: 16/102 loss: 1.0878 time 1.89s
+Epoch: 6/60 Iter: 17/102 loss: 1.0884 time 1.89s
+Epoch: 6/60 Iter: 18/102 loss: 1.0862 time 1.89s
+Epoch: 6/60 Iter: 19/102 loss: 1.0829 time 1.90s
+Epoch: 6/60 Iter: 20/102 loss: 1.0835 time 1.89s
+Epoch: 6/60 Iter: 21/102 loss: 1.0864 time 1.89s
+Epoch: 6/60 Iter: 22/102 loss: 1.0891 time 1.90s
+Epoch: 6/60 Iter: 23/102 loss: 1.0916 time 1.89s
+Epoch: 6/60 Iter: 24/102 loss: 1.0902 time 1.89s
+Epoch: 6/60 Iter: 25/102 loss: 1.0888 time 1.89s
+Epoch: 6/60 Iter: 26/102 loss: 1.0912 time 1.89s
+Epoch: 6/60 Iter: 27/102 loss: 1.0900 time 1.89s
+Epoch: 6/60 Iter: 28/102 loss: 1.0912 time 1.89s
+Epoch: 6/60 Iter: 29/102 loss: 1.0933 time 1.90s
+Epoch: 6/60 Iter: 30/102 loss: 1.0951 time 1.91s
+Epoch: 6/60 Iter: 31/102 loss: 1.0957 time 1.89s
+Epoch: 6/60 Iter: 32/102 loss: 1.0959 time 1.89s
+Epoch: 6/60 Iter: 33/102 loss: 1.0974 time 1.89s
+Epoch: 6/60 Iter: 34/102 loss: 1.0975 time 1.89s
+Epoch: 6/60 Iter: 35/102 loss: 1.0988 time 1.89s
+Epoch: 6/60 Iter: 36/102 loss: 1.0988 time 1.89s
+Epoch: 6/60 Iter: 37/102 loss: 1.0987 time 1.89s
+Epoch: 6/60 Iter: 38/102 loss: 1.0999 time 1.89s
+Epoch: 6/60 Iter: 39/102 loss: 1.0997 time 1.89s
+Epoch: 6/60 Iter: 40/102 loss: 1.0999 time 1.89s
+Epoch: 6/60 Iter: 41/102 loss: 1.1001 time 1.89s
+Epoch: 6/60 Iter: 42/102 loss: 1.0986 time 1.89s
+Epoch: 6/60 Iter: 43/102 loss: 1.0982 time 1.89s
+Epoch: 6/60 Iter: 44/102 loss: 1.0983 time 1.89s
+Epoch: 6/60 Iter: 45/102 loss: 1.0979 time 1.89s
+Epoch: 6/60 Iter: 46/102 loss: 1.0975 time 1.89s
+Epoch: 6/60 Iter: 47/102 loss: 1.0974 time 1.89s
+Epoch: 6/60 Iter: 48/102 loss: 1.0984 time 1.89s
+Epoch: 6/60 Iter: 49/102 loss: 1.0983 time 1.89s
+Epoch: 6/60 Iter: 50/102 loss: 1.0993 time 1.89s
+Epoch: 6/60 Iter: 51/102 loss: 1.0990 time 1.89s
+Epoch: 6/60 Iter: 52/102 loss: 1.0985 time 1.89s
+Epoch: 6/60 Iter: 53/102 loss: 1.0995 time 1.89s
+Epoch: 6/60 Iter: 54/102 loss: 1.1005 time 1.91s
+Epoch: 6/60 Iter: 55/102 loss: 1.1014 time 1.89s
+Epoch: 6/60 Iter: 56/102 loss: 1.1022 time 1.89s
+Epoch: 6/60 Iter: 57/102 loss: 1.1029 time 1.89s
+Epoch: 6/60 Iter: 58/102 loss: 1.1023 time 1.89s
+Epoch: 6/60 Iter: 59/102 loss: 1.1019 time 1.89s
+Epoch: 6/60 Iter: 60/102 loss: 1.1012 time 1.89s
+Epoch: 6/60 Iter: 61/102 loss: 1.1019 time 1.89s
+Epoch: 6/60 Iter: 62/102 loss: 1.1014 time 1.89s
+Epoch: 6/60 Iter: 63/102 loss: 1.1011 time 1.89s
+Epoch: 6/60 Iter: 64/102 loss: 1.1017 time 1.90s
+Epoch: 6/60 Iter: 65/102 loss: 1.1022 time 1.89s
+Epoch: 6/60 Iter: 66/102 loss: 1.1020 time 1.89s
+Epoch: 6/60 Iter: 67/102 loss: 1.1018 time 1.89s
+Epoch: 6/60 Iter: 68/102 loss: 1.1022 time 1.89s
+Epoch: 6/60 Iter: 69/102 loss: 1.1019 time 1.89s
+Epoch: 6/60 Iter: 70/102 loss: 1.1013 time 1.89s
+Epoch: 6/60 Iter: 71/102 loss: 1.1014 time 1.89s
+Epoch: 6/60 Iter: 72/102 loss: 1.1011 time 1.89s
+Epoch: 6/60 Iter: 73/102 loss: 1.1010 time 1.89s
+Epoch: 6/60 Iter: 74/102 loss: 1.1014 time 1.89s
+Epoch: 6/60 Iter: 75/102 loss: 1.1018 time 1.90s
+Epoch: 6/60 Iter: 76/102 loss: 1.1019 time 1.89s
+Epoch: 6/60 Iter: 77/102 loss: 1.1022 time 1.90s
+Epoch: 6/60 Iter: 78/102 loss: 1.1026 time 1.89s
+Epoch: 6/60 Iter: 79/102 loss: 1.1026 time 1.89s
+Epoch: 6/60 Iter: 80/102 loss: 1.1029 time 1.90s
+Epoch: 6/60 Iter: 81/102 loss: 1.1029 time 1.89s
+Epoch: 6/60 Iter: 82/102 loss: 1.1026 time 1.89s
+Epoch: 6/60 Iter: 83/102 loss: 1.1023 time 1.89s
+Epoch: 6/60 Iter: 84/102 loss: 1.1022 time 1.89s
+Epoch: 6/60 Iter: 85/102 loss: 1.1020 time 1.89s
+Epoch: 6/60 Iter: 86/102 loss: 1.1022 time 1.89s
+Epoch: 6/60 Iter: 87/102 loss: 1.1022 time 1.89s
+Epoch: 6/60 Iter: 88/102 loss: 1.1025 time 1.89s
+Epoch: 6/60 Iter: 89/102 loss: 1.1022 time 1.89s
+Epoch: 6/60 Iter: 90/102 loss: 1.1020 time 1.89s
+Epoch: 6/60 Iter: 91/102 loss: 1.1020 time 1.89s
+Epoch: 6/60 Iter: 92/102 loss: 1.1014 time 1.89s
+Epoch: 6/60 Iter: 93/102 loss: 1.1017 time 1.90s
+Epoch: 6/60 Iter: 94/102 loss: 1.1015 time 1.89s
+Epoch: 6/60 Iter: 95/102 loss: 1.1018 time 1.90s
+Epoch: 6/60 Iter: 96/102 loss: 1.1020 time 1.89s
+Epoch: 6/60 Iter: 97/102 loss: 1.1018 time 1.89s
+Epoch: 6/60 Iter: 98/102 loss: 1.1016 time 1.89s
+Epoch: 6/60 Iter: 99/102 loss: 1.1018 time 1.90s
+Epoch: 6/60 Iter: 100/102 loss: 1.1017 time 1.89s
+Epoch: 6/60 Iter: 101/102 loss: 1.1015 time 1.89s
+Final training  6/59 loss: 1.1015 time 193.31s lr: 0.000010
+[EarlyStopping] no improve (6/30)
+0 Mon Oct 13 15:45:22 2025 Epoch: 7
+Epoch: 7/60 Iter: 0/102 loss: 1.0967 time 2.17s
+Epoch: 7/60 Iter: 1/102 loss: 1.1084 time 1.89s
+Epoch: 7/60 Iter: 2/102 loss: 1.1014 time 1.89s
+Epoch: 7/60 Iter: 3/102 loss: 1.0979 time 1.89s
+Epoch: 7/60 Iter: 4/102 loss: 1.0964 time 1.89s
+Epoch: 7/60 Iter: 5/102 loss: 1.1006 time 1.90s
+Epoch: 7/60 Iter: 6/102 loss: 1.0973 time 1.89s
+Epoch: 7/60 Iter: 7/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 8/102 loss: 1.0992 time 1.89s
+Epoch: 7/60 Iter: 9/102 loss: 1.0965 time 1.89s
+Epoch: 7/60 Iter: 10/102 loss: 1.0975 time 1.89s
+Epoch: 7/60 Iter: 11/102 loss: 1.1004 time 1.89s
+Epoch: 7/60 Iter: 12/102 loss: 1.0994 time 1.89s
+Epoch: 7/60 Iter: 13/102 loss: 1.0989 time 1.89s
+Epoch: 7/60 Iter: 14/102 loss: 1.0987 time 1.89s
+Epoch: 7/60 Iter: 15/102 loss: 1.1001 time 1.89s
+Epoch: 7/60 Iter: 16/102 loss: 1.1012 time 1.89s
+Epoch: 7/60 Iter: 17/102 loss: 1.1005 time 1.89s
+Epoch: 7/60 Iter: 18/102 loss: 1.1014 time 1.90s
+Epoch: 7/60 Iter: 19/102 loss: 1.1001 time 1.89s
+Epoch: 7/60 Iter: 20/102 loss: 1.0999 time 1.89s
+Epoch: 7/60 Iter: 21/102 loss: 1.0994 time 1.89s
+Epoch: 7/60 Iter: 22/102 loss: 1.1001 time 1.89s
+Epoch: 7/60 Iter: 23/102 loss: 1.1010 time 1.89s
+Epoch: 7/60 Iter: 24/102 loss: 1.0998 time 1.89s
+Epoch: 7/60 Iter: 25/102 loss: 1.1005 time 1.89s
+Epoch: 7/60 Iter: 26/102 loss: 1.1006 time 1.89s
+Epoch: 7/60 Iter: 27/102 loss: 1.0985 time 1.89s
+Epoch: 7/60 Iter: 28/102 loss: 1.0990 time 1.89s
+Epoch: 7/60 Iter: 29/102 loss: 1.0989 time 1.89s
+Epoch: 7/60 Iter: 30/102 loss: 1.0983 time 1.89s
+Epoch: 7/60 Iter: 31/102 loss: 1.0987 time 1.89s
+Epoch: 7/60 Iter: 32/102 loss: 1.0996 time 1.89s
+Epoch: 7/60 Iter: 33/102 loss: 1.0996 time 1.89s
+Epoch: 7/60 Iter: 34/102 loss: 1.0994 time 1.89s
+Epoch: 7/60 Iter: 35/102 loss: 1.0997 time 1.89s
+Epoch: 7/60 Iter: 36/102 loss: 1.0996 time 1.89s
+Epoch: 7/60 Iter: 37/102 loss: 1.0999 time 1.90s
+Epoch: 7/60 Iter: 38/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 39/102 loss: 1.0997 time 1.89s
+Epoch: 7/60 Iter: 40/102 loss: 1.0997 time 1.89s
+Epoch: 7/60 Iter: 41/102 loss: 1.1000 time 1.89s
+Epoch: 7/60 Iter: 42/102 loss: 1.1003 time 1.90s
+Epoch: 7/60 Iter: 43/102 loss: 1.1006 time 1.90s
+Epoch: 7/60 Iter: 44/102 loss: 1.1009 time 1.89s
+Epoch: 7/60 Iter: 45/102 loss: 1.1012 time 1.89s
+Epoch: 7/60 Iter: 46/102 loss: 1.1012 time 1.89s
+Epoch: 7/60 Iter: 47/102 loss: 1.1013 time 1.89s
+Epoch: 7/60 Iter: 48/102 loss: 1.1009 time 1.89s
+Epoch: 7/60 Iter: 49/102 loss: 1.1011 time 1.89s
+Epoch: 7/60 Iter: 50/102 loss: 1.1012 time 1.89s
+Epoch: 7/60 Iter: 51/102 loss: 1.1014 time 1.89s
+Epoch: 7/60 Iter: 52/102 loss: 1.1013 time 1.89s
+Epoch: 7/60 Iter: 53/102 loss: 1.1013 time 1.89s
+Epoch: 7/60 Iter: 54/102 loss: 1.1005 time 1.90s
+Epoch: 7/60 Iter: 55/102 loss: 1.1000 time 1.89s
+Epoch: 7/60 Iter: 56/102 loss: 1.0999 time 1.89s
+Epoch: 7/60 Iter: 57/102 loss: 1.1001 time 1.89s
+Epoch: 7/60 Iter: 58/102 loss: 1.1001 time 1.89s
+Epoch: 7/60 Iter: 59/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 60/102 loss: 1.1001 time 1.89s
+Epoch: 7/60 Iter: 61/102 loss: 1.1000 time 1.89s
+Epoch: 7/60 Iter: 62/102 loss: 1.1001 time 1.89s
+Epoch: 7/60 Iter: 63/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 64/102 loss: 1.1001 time 1.89s
+Epoch: 7/60 Iter: 65/102 loss: 1.1001 time 1.89s
+Epoch: 7/60 Iter: 66/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 67/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 68/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 69/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 70/102 loss: 1.1003 time 1.90s
+Epoch: 7/60 Iter: 71/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 72/102 loss: 1.1002 time 1.90s
+Epoch: 7/60 Iter: 73/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 74/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 75/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 76/102 loss: 1.1000 time 1.89s
+Epoch: 7/60 Iter: 77/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 78/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 79/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 80/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 81/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 82/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 83/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 84/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 85/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 86/102 loss: 1.1003 time 1.90s
+Epoch: 7/60 Iter: 87/102 loss: 1.1004 time 1.89s
+Epoch: 7/60 Iter: 88/102 loss: 1.1005 time 1.90s
+Epoch: 7/60 Iter: 89/102 loss: 1.1006 time 1.89s
+Epoch: 7/60 Iter: 90/102 loss: 1.1005 time 1.89s
+Epoch: 7/60 Iter: 91/102 loss: 1.1006 time 1.89s
+Epoch: 7/60 Iter: 92/102 loss: 1.1006 time 1.89s
+Epoch: 7/60 Iter: 93/102 loss: 1.1005 time 1.89s
+Epoch: 7/60 Iter: 94/102 loss: 1.1004 time 1.89s
+Epoch: 7/60 Iter: 95/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 96/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 97/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 98/102 loss: 1.1003 time 1.89s
+Epoch: 7/60 Iter: 99/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 100/102 loss: 1.1002 time 1.89s
+Epoch: 7/60 Iter: 101/102 loss: 1.1002 time 1.89s
+Final training  7/59 loss: 1.1002 time 193.07s lr: 0.000010
+[EarlyStopping] no improve (7/30)
+Val 7/60 0/27, Acc: 1.0000, time 1.92s
+Val 7/60 1/27, Acc: 0.5000, time 1.92s
+Val 7/60 2/27, Acc: 0.3333, time 1.93s
+Val 7/60 3/27, Acc: 0.5000, time 1.93s
+Val 7/60 4/27, Acc: 0.4000, time 1.91s
+Val 7/60 5/27, Acc: 0.3333, time 1.94s
+Val 7/60 6/27, Acc: 0.4286, time 1.92s
+Val 7/60 7/27, Acc: 0.5000, time 1.92s
+Val 7/60 8/27, Acc: 0.5556, time 1.92s
+Val 7/60 9/27, Acc: 0.5000, time 1.93s
+Val 7/60 10/27, Acc: 0.4545, time 1.94s
+Val 7/60 11/27, Acc: 0.4167, time 1.92s
+Val 7/60 12/27, Acc: 0.4615, time 1.92s
+Val 7/60 13/27, Acc: 0.5000, time 1.93s
+Val 7/60 14/27, Acc: 0.4667, time 1.92s
+Val 7/60 15/27, Acc: 0.4375, time 1.95s
+Val 7/60 16/27, Acc: 0.4118, time 1.96s
+Val 7/60 17/27, Acc: 0.3889, time 1.92s
+Val 7/60 18/27, Acc: 0.3684, time 2.06s
+Val 7/60 19/27, Acc: 0.3500, time 2.00s
+Val 7/60 20/27, Acc: 0.3810, time 1.93s
+Val 7/60 21/27, Acc: 0.3636, time 1.93s
+Val 7/60 22/27, Acc: 0.3913, time 1.92s
+Val 7/60 23/27, Acc: 0.4167, time 1.91s
+Val 7/60 24/27, Acc: 0.4000, time 1.94s
+Val 7/60 25/27, Acc: 0.4231, time 1.91s
+Val 7/60 26/27, Acc: 0.4444, time 1.91s
+[Val epoch 7] avg_acc=0.4444 | per-class [c0: 0.000, c1: 0.556, c2: 0.778]
+Final validation stats 7/59 , Val_acc: 0.4444444444444444 , time 52.22s
+new best (0.333333 --> 0.444444). 
+[EarlyStopping] improved to 0.444444
+
+0 Mon Oct 13 15:49:27 2025 Epoch: 8
+Epoch: 8/60 Iter: 0/102 loss: 1.1066 time 2.53s
+Epoch: 8/60 Iter: 1/102 loss: 1.1060 time 1.89s
+Epoch: 8/60 Iter: 2/102 loss: 1.1060 time 1.89s
+Epoch: 8/60 Iter: 3/102 loss: 1.1065 time 1.90s
+Epoch: 8/60 Iter: 4/102 loss: 1.1040 time 1.89s
+Epoch: 8/60 Iter: 5/102 loss: 1.1045 time 1.89s
+Epoch: 8/60 Iter: 6/102 loss: 1.1020 time 1.89s
+Epoch: 8/60 Iter: 7/102 loss: 1.1011 time 1.89s
+Epoch: 8/60 Iter: 8/102 loss: 1.1008 time 1.89s
+Epoch: 8/60 Iter: 9/102 loss: 1.0993 time 1.89s
+Epoch: 8/60 Iter: 10/102 loss: 1.1012 time 1.89s
+Epoch: 8/60 Iter: 11/102 loss: 1.1009 time 1.89s
+Epoch: 8/60 Iter: 12/102 loss: 1.1015 time 1.89s
+Epoch: 8/60 Iter: 13/102 loss: 1.1020 time 1.89s
+Epoch: 8/60 Iter: 14/102 loss: 1.1027 time 1.89s
+Epoch: 8/60 Iter: 15/102 loss: 1.1033 time 1.89s
+Epoch: 8/60 Iter: 16/102 loss: 1.1039 time 1.89s
+Epoch: 8/60 Iter: 17/102 loss: 1.1030 time 1.89s
+Epoch: 8/60 Iter: 18/102 loss: 1.1035 time 1.89s
+Epoch: 8/60 Iter: 19/102 loss: 1.1011 time 1.90s
+Epoch: 8/60 Iter: 20/102 loss: 1.1007 time 1.89s
+Epoch: 8/60 Iter: 21/102 loss: 1.1005 time 1.89s
+Epoch: 8/60 Iter: 22/102 loss: 1.1005 time 1.89s
+Epoch: 8/60 Iter: 23/102 loss: 1.1006 time 1.89s
+Epoch: 8/60 Iter: 24/102 loss: 1.1015 time 1.89s
+Epoch: 8/60 Iter: 25/102 loss: 1.1021 time 1.89s
+Epoch: 8/60 Iter: 26/102 loss: 1.1017 time 1.89s
+Epoch: 8/60 Iter: 27/102 loss: 1.1005 time 1.89s
+Epoch: 8/60 Iter: 28/102 loss: 1.1002 time 1.89s
+Epoch: 8/60 Iter: 29/102 loss: 1.1000 time 1.89s
+Epoch: 8/60 Iter: 30/102 loss: 1.0990 time 1.89s
+Epoch: 8/60 Iter: 31/102 loss: 1.0997 time 1.89s
+Epoch: 8/60 Iter: 32/102 loss: 1.1005 time 1.89s
+Epoch: 8/60 Iter: 33/102 loss: 1.1011 time 1.90s
+Epoch: 8/60 Iter: 34/102 loss: 1.1002 time 1.89s
+Epoch: 8/60 Iter: 35/102 loss: 1.1007 time 1.89s
+Epoch: 8/60 Iter: 36/102 loss: 1.1013 time 1.89s
+Epoch: 8/60 Iter: 37/102 loss: 1.1009 time 1.89s
+Epoch: 8/60 Iter: 38/102 loss: 1.1012 time 1.89s
+Epoch: 8/60 Iter: 39/102 loss: 1.1015 time 1.89s
+Epoch: 8/60 Iter: 40/102 loss: 1.1009 time 1.89s
+Epoch: 8/60 Iter: 41/102 loss: 1.1013 time 1.89s
+Epoch: 8/60 Iter: 42/102 loss: 1.1011 time 1.89s
+Epoch: 8/60 Iter: 43/102 loss: 1.1014 time 1.89s
+Epoch: 8/60 Iter: 44/102 loss: 1.1017 time 1.89s
+Epoch: 8/60 Iter: 45/102 loss: 1.1013 time 1.89s
+Epoch: 8/60 Iter: 46/102 loss: 1.1012 time 1.89s
+Epoch: 8/60 Iter: 47/102 loss: 1.1013 time 1.89s
+Epoch: 8/60 Iter: 48/102 loss: 1.1012 time 1.89s
+Epoch: 8/60 Iter: 49/102 loss: 1.1011 time 1.89s
+Epoch: 8/60 Iter: 50/102 loss: 1.1012 time 1.89s
+Epoch: 8/60 Iter: 51/102 loss: 1.1014 time 1.89s
+Epoch: 8/60 Iter: 52/102 loss: 1.1015 time 1.89s
+Epoch: 8/60 Iter: 53/102 loss: 1.1012 time 1.89s
+Epoch: 8/60 Iter: 54/102 loss: 1.1013 time 1.89s
+Epoch: 8/60 Iter: 55/102 loss: 1.1010 time 1.89s
+Epoch: 8/60 Iter: 56/102 loss: 1.1013 time 1.90s
+Epoch: 8/60 Iter: 57/102 loss: 1.1013 time 1.89s
+Epoch: 8/60 Iter: 58/102 loss: 1.1010 time 1.89s
+Epoch: 8/60 Iter: 59/102 loss: 1.1006 time 1.89s
+Epoch: 8/60 Iter: 60/102 loss: 1.1004 time 1.89s
+Epoch: 8/60 Iter: 61/102 loss: 1.1004 time 1.89s
+Epoch: 8/60 Iter: 62/102 loss: 1.1001 time 1.89s
+Epoch: 8/60 Iter: 63/102 loss: 1.1004 time 1.89s
+Epoch: 8/60 Iter: 64/102 loss: 1.1004 time 1.89s
+Epoch: 8/60 Iter: 65/102 loss: 1.1008 time 1.89s
+Epoch: 8/60 Iter: 66/102 loss: 1.1011 time 1.89s
+Epoch: 8/60 Iter: 67/102 loss: 1.1015 time 1.89s
+Epoch: 8/60 Iter: 68/102 loss: 1.1018 time 1.89s
+Epoch: 8/60 Iter: 69/102 loss: 1.1022 time 1.89s
+Epoch: 8/60 Iter: 70/102 loss: 1.1019 time 1.89s
+Epoch: 8/60 Iter: 71/102 loss: 1.1017 time 1.89s
+Epoch: 8/60 Iter: 72/102 loss: 1.1014 time 1.89s
+Epoch: 8/60 Iter: 73/102 loss: 1.1016 time 1.90s
+Epoch: 8/60 Iter: 74/102 loss: 1.1016 time 1.89s
+Epoch: 8/60 Iter: 75/102 loss: 1.1013 time 1.89s
+Epoch: 8/60 Iter: 76/102 loss: 1.1016 time 1.89s
+Epoch: 8/60 Iter: 77/102 loss: 1.1015 time 1.89s
+Epoch: 8/60 Iter: 78/102 loss: 1.1012 time 1.89s
+Epoch: 8/60 Iter: 79/102 loss: 1.1011 time 1.89s
+Epoch: 8/60 Iter: 80/102 loss: 1.1010 time 1.89s
+Epoch: 8/60 Iter: 81/102 loss: 1.1002 time 1.89s
+Epoch: 8/60 Iter: 82/102 loss: 1.1001 time 1.89s
+Epoch: 8/60 Iter: 83/102 loss: 1.1004 time 1.90s
+Epoch: 8/60 Iter: 84/102 loss: 1.1006 time 1.89s
+Epoch: 8/60 Iter: 85/102 loss: 1.1007 time 1.90s
+Epoch: 8/60 Iter: 86/102 loss: 1.1008 time 1.89s
+Epoch: 8/60 Iter: 87/102 loss: 1.1008 time 1.89s
+Epoch: 8/60 Iter: 88/102 loss: 1.1010 time 1.90s
+Epoch: 8/60 Iter: 89/102 loss: 1.1010 time 1.89s
+Epoch: 8/60 Iter: 90/102 loss: 1.1010 time 1.89s
+Epoch: 8/60 Iter: 91/102 loss: 1.1009 time 1.89s
+Epoch: 8/60 Iter: 92/102 loss: 1.1011 time 1.89s
+Epoch: 8/60 Iter: 93/102 loss: 1.1011 time 1.89s
+Epoch: 8/60 Iter: 94/102 loss: 1.1010 time 1.89s
+Epoch: 8/60 Iter: 95/102 loss: 1.1009 time 1.89s
+Epoch: 8/60 Iter: 96/102 loss: 1.1011 time 1.90s
+Epoch: 8/60 Iter: 97/102 loss: 1.1010 time 1.89s
+Epoch: 8/60 Iter: 98/102 loss: 1.1011 time 1.89s
+Epoch: 8/60 Iter: 99/102 loss: 1.1007 time 1.89s
+Epoch: 8/60 Iter: 100/102 loss: 1.1006 time 1.89s
+Epoch: 8/60 Iter: 101/102 loss: 1.1008 time 1.89s
+Final training  8/59 loss: 1.1008 time 193.40s lr: 0.000010
+[EarlyStopping] no improve (8/30)
+0 Mon Oct 13 15:52:41 2025 Epoch: 9
+Epoch: 9/60 Iter: 0/102 loss: 1.1011 time 2.20s
+Epoch: 9/60 Iter: 1/102 loss: 1.0952 time 1.89s
+Epoch: 9/60 Iter: 2/102 loss: 1.1013 time 1.89s
+Epoch: 9/60 Iter: 3/102 loss: 1.1045 time 1.89s
+Epoch: 9/60 Iter: 4/102 loss: 1.1030 time 1.89s
+Epoch: 9/60 Iter: 5/102 loss: 1.1039 time 1.89s
+Epoch: 9/60 Iter: 6/102 loss: 1.1003 time 1.89s
+Epoch: 9/60 Iter: 7/102 loss: 1.1014 time 1.89s
+Epoch: 9/60 Iter: 8/102 loss: 1.1025 time 1.89s
+Epoch: 9/60 Iter: 9/102 loss: 1.1029 time 1.89s
+Epoch: 9/60 Iter: 10/102 loss: 1.1007 time 1.89s
+Epoch: 9/60 Iter: 11/102 loss: 1.0969 time 1.89s
+Epoch: 9/60 Iter: 12/102 loss: 1.0987 time 1.89s
+Epoch: 9/60 Iter: 13/102 loss: 1.0992 time 1.89s
+Epoch: 9/60 Iter: 14/102 loss: 1.0993 time 1.89s
+Epoch: 9/60 Iter: 15/102 loss: 1.0999 time 1.89s
+Epoch: 9/60 Iter: 16/102 loss: 1.0980 time 1.89s
+Epoch: 9/60 Iter: 17/102 loss: 1.0961 time 1.89s
+Epoch: 9/60 Iter: 18/102 loss: 1.0968 time 1.89s
+Epoch: 9/60 Iter: 19/102 loss: 1.0962 time 1.89s
+Epoch: 9/60 Iter: 20/102 loss: 1.0932 time 1.89s
+Epoch: 9/60 Iter: 21/102 loss: 1.0938 time 1.89s
+Epoch: 9/60 Iter: 22/102 loss: 1.0944 time 1.89s
+Epoch: 9/60 Iter: 23/102 loss: 1.0949 time 1.89s
+Epoch: 9/60 Iter: 24/102 loss: 1.0958 time 1.90s
+Epoch: 9/60 Iter: 25/102 loss: 1.0967 time 1.89s
+Epoch: 9/60 Iter: 26/102 loss: 1.0974 time 1.90s
+Epoch: 9/60 Iter: 27/102 loss: 1.0965 time 1.89s
+Epoch: 9/60 Iter: 28/102 loss: 1.0973 time 1.89s
+Epoch: 9/60 Iter: 29/102 loss: 1.0963 time 1.89s
+Epoch: 9/60 Iter: 30/102 loss: 1.0969 time 1.89s
+Epoch: 9/60 Iter: 31/102 loss: 1.0975 time 1.89s
+Epoch: 9/60 Iter: 32/102 loss: 1.0981 time 1.89s
+Epoch: 9/60 Iter: 33/102 loss: 1.0972 time 1.89s
+Epoch: 9/60 Iter: 34/102 loss: 1.0977 time 1.89s
+Epoch: 9/60 Iter: 35/102 loss: 1.0978 time 1.89s
+Epoch: 9/60 Iter: 36/102 loss: 1.0973 time 1.89s
+Epoch: 9/60 Iter: 37/102 loss: 1.0973 time 1.89s
+Epoch: 9/60 Iter: 38/102 loss: 1.0978 time 1.89s
+Epoch: 9/60 Iter: 39/102 loss: 1.0983 time 1.89s
+Epoch: 9/60 Iter: 40/102 loss: 1.0984 time 1.89s
+Epoch: 9/60 Iter: 41/102 loss: 1.0978 time 1.89s
+Epoch: 9/60 Iter: 42/102 loss: 1.0986 time 1.89s
+Epoch: 9/60 Iter: 43/102 loss: 1.0985 time 1.89s
+Epoch: 9/60 Iter: 44/102 loss: 1.0984 time 1.89s
+Epoch: 9/60 Iter: 45/102 loss: 1.0984 time 1.89s
+Epoch: 9/60 Iter: 46/102 loss: 1.0987 time 1.90s
+Epoch: 9/60 Iter: 47/102 loss: 1.0985 time 1.89s
+Epoch: 9/60 Iter: 48/102 loss: 1.0984 time 1.89s
+Epoch: 9/60 Iter: 49/102 loss: 1.0984 time 1.89s
+Epoch: 9/60 Iter: 50/102 loss: 1.0983 time 1.89s
+Epoch: 9/60 Iter: 51/102 loss: 1.0987 time 1.89s
+Epoch: 9/60 Iter: 52/102 loss: 1.0985 time 1.89s
+Epoch: 9/60 Iter: 53/102 loss: 1.0987 time 1.89s
+Epoch: 9/60 Iter: 54/102 loss: 1.0989 time 1.89s
+Epoch: 9/60 Iter: 55/102 loss: 1.0987 time 1.89s
+Epoch: 9/60 Iter: 56/102 loss: 1.0982 time 1.89s
+Epoch: 9/60 Iter: 57/102 loss: 1.0980 time 1.89s
+Epoch: 9/60 Iter: 58/102 loss: 1.0984 time 1.89s
+Epoch: 9/60 Iter: 59/102 loss: 1.0980 time 1.89s
+Epoch: 9/60 Iter: 60/102 loss: 1.0986 time 1.90s
+Epoch: 9/60 Iter: 61/102 loss: 1.0991 time 1.90s
+Epoch: 9/60 Iter: 62/102 loss: 1.0987 time 1.89s
+Epoch: 9/60 Iter: 63/102 loss: 1.0986 time 1.89s
+Epoch: 9/60 Iter: 64/102 loss: 1.0984 time 1.89s
+Epoch: 9/60 Iter: 65/102 loss: 1.0981 time 1.89s
+Epoch: 9/60 Iter: 66/102 loss: 1.0978 time 1.89s
+Epoch: 9/60 Iter: 67/102 loss: 1.0977 time 1.89s
+Epoch: 9/60 Iter: 68/102 loss: 1.0976 time 1.89s
+Epoch: 9/60 Iter: 69/102 loss: 1.0981 time 1.89s
+Epoch: 9/60 Iter: 70/102 loss: 1.0987 time 1.91s
+Epoch: 9/60 Iter: 71/102 loss: 1.0980 time 1.90s
+Epoch: 9/60 Iter: 72/102 loss: 1.0987 time 1.89s
+Epoch: 9/60 Iter: 73/102 loss: 1.0992 time 1.89s
+Epoch: 9/60 Iter: 74/102 loss: 1.0998 time 1.90s
+Epoch: 9/60 Iter: 75/102 loss: 1.1002 time 1.89s
+Epoch: 9/60 Iter: 76/102 loss: 1.1001 time 1.89s
+Epoch: 9/60 Iter: 77/102 loss: 1.0997 time 1.89s
+Epoch: 9/60 Iter: 78/102 loss: 1.0994 time 1.89s
+Epoch: 9/60 Iter: 79/102 loss: 1.0992 time 1.89s
+Epoch: 9/60 Iter: 80/102 loss: 1.0996 time 1.90s
+Epoch: 9/60 Iter: 81/102 loss: 1.0999 time 1.90s
+Epoch: 9/60 Iter: 82/102 loss: 1.0999 time 1.89s
+Epoch: 9/60 Iter: 83/102 loss: 1.0999 time 1.89s
+Epoch: 9/60 Iter: 84/102 loss: 1.0996 time 1.89s
+Epoch: 9/60 Iter: 85/102 loss: 1.1000 time 1.89s
+Epoch: 9/60 Iter: 86/102 loss: 1.1003 time 1.89s
+Epoch: 9/60 Iter: 87/102 loss: 1.1004 time 1.89s
+Epoch: 9/60 Iter: 88/102 loss: 1.1005 time 1.89s
+Epoch: 9/60 Iter: 89/102 loss: 1.1002 time 1.89s
+Epoch: 9/60 Iter: 90/102 loss: 1.1002 time 1.89s
+Epoch: 9/60 Iter: 91/102 loss: 1.1000 time 1.89s
+Epoch: 9/60 Iter: 92/102 loss: 1.0998 time 1.89s
+Epoch: 9/60 Iter: 93/102 loss: 1.1001 time 1.89s
+Epoch: 9/60 Iter: 94/102 loss: 1.1003 time 1.90s
+Epoch: 9/60 Iter: 95/102 loss: 1.1006 time 1.89s
+Epoch: 9/60 Iter: 96/102 loss: 1.1008 time 1.89s
+Epoch: 9/60 Iter: 97/102 loss: 1.1010 time 1.89s
+Epoch: 9/60 Iter: 98/102 loss: 1.1010 time 1.88s
+Epoch: 9/60 Iter: 99/102 loss: 1.1012 time 1.89s
+Epoch: 9/60 Iter: 100/102 loss: 1.1011 time 1.89s
+Epoch: 9/60 Iter: 101/102 loss: 1.1012 time 1.89s
+Final training  9/59 loss: 1.1012 time 193.10s lr: 0.000010
+[EarlyStopping] no improve (9/30)
+0 Mon Oct 13 15:55:54 2025 Epoch: 10
+Epoch: 10/60 Iter: 0/102 loss: 1.0777 time 2.22s
+Epoch: 10/60 Iter: 1/102 loss: 1.0947 time 1.90s
+Epoch: 10/60 Iter: 2/102 loss: 1.0993 time 1.89s
+Epoch: 10/60 Iter: 3/102 loss: 1.1016 time 1.89s
+Epoch: 10/60 Iter: 4/102 loss: 1.1000 time 1.89s
+Epoch: 10/60 Iter: 5/102 loss: 1.1005 time 1.90s
+Epoch: 10/60 Iter: 6/102 loss: 1.1002 time 1.89s
+Epoch: 10/60 Iter: 7/102 loss: 1.1022 time 1.89s
+Epoch: 10/60 Iter: 8/102 loss: 1.1042 time 1.89s
+Epoch: 10/60 Iter: 9/102 loss: 1.1040 time 1.90s
+Epoch: 10/60 Iter: 10/102 loss: 1.1023 time 1.89s
+Epoch: 10/60 Iter: 11/102 loss: 1.1022 time 1.89s
+Epoch: 10/60 Iter: 12/102 loss: 1.1011 time 1.89s
+Epoch: 10/60 Iter: 13/102 loss: 1.1005 time 1.89s
+Epoch: 10/60 Iter: 14/102 loss: 1.1005 time 1.89s
+Epoch: 10/60 Iter: 15/102 loss: 1.1004 time 1.89s
+Epoch: 10/60 Iter: 16/102 loss: 1.1004 time 1.89s
+Epoch: 10/60 Iter: 17/102 loss: 1.1002 time 1.89s
+Epoch: 10/60 Iter: 18/102 loss: 1.1002 time 1.89s
+Epoch: 10/60 Iter: 19/102 loss: 1.1009 time 1.89s
+Epoch: 10/60 Iter: 20/102 loss: 1.1013 time 1.89s
+Epoch: 10/60 Iter: 21/102 loss: 1.1013 time 1.89s
+Epoch: 10/60 Iter: 22/102 loss: 1.1016 time 1.89s
+Epoch: 10/60 Iter: 23/102 loss: 1.1012 time 1.89s
+Epoch: 10/60 Iter: 24/102 loss: 1.1010 time 1.89s
+Epoch: 10/60 Iter: 25/102 loss: 1.1008 time 1.89s
+Epoch: 10/60 Iter: 26/102 loss: 1.1005 time 1.89s
+Epoch: 10/60 Iter: 27/102 loss: 1.1002 time 1.89s
+Epoch: 10/60 Iter: 28/102 loss: 1.1007 time 1.89s
+Epoch: 10/60 Iter: 29/102 loss: 1.1003 time 1.89s
+Epoch: 10/60 Iter: 30/102 loss: 1.1003 time 1.89s
+Epoch: 10/60 Iter: 31/102 loss: 1.1001 time 1.89s
+Epoch: 10/60 Iter: 32/102 loss: 1.1009 time 1.89s
+Epoch: 10/60 Iter: 33/102 loss: 1.1003 time 1.89s
+Epoch: 10/60 Iter: 34/102 loss: 1.1003 time 1.89s
+Epoch: 10/60 Iter: 35/102 loss: 1.1006 time 1.89s
+Epoch: 10/60 Iter: 36/102 loss: 1.1007 time 1.89s
+Epoch: 10/60 Iter: 37/102 loss: 1.1008 time 1.89s
+Epoch: 10/60 Iter: 38/102 loss: 1.1008 time 1.89s
+Epoch: 10/60 Iter: 39/102 loss: 1.1007 time 1.89s
+Epoch: 10/60 Iter: 40/102 loss: 1.1006 time 1.89s
+Epoch: 10/60 Iter: 41/102 loss: 1.1008 time 1.89s
+Epoch: 10/60 Iter: 42/102 loss: 1.1003 time 1.89s
+Epoch: 10/60 Iter: 43/102 loss: 1.1004 time 1.89s
+Epoch: 10/60 Iter: 44/102 loss: 1.1000 time 1.89s
+Epoch: 10/60 Iter: 45/102 loss: 1.1004 time 1.88s
+Epoch: 10/60 Iter: 46/102 loss: 1.1005 time 1.89s
+Epoch: 10/60 Iter: 47/102 loss: 1.0997 time 1.89s
+Epoch: 10/60 Iter: 48/102 loss: 1.0998 time 1.89s
+Epoch: 10/60 Iter: 49/102 loss: 1.0994 time 1.89s
+Epoch: 10/60 Iter: 50/102 loss: 1.0994 time 1.89s
+Epoch: 10/60 Iter: 51/102 loss: 1.0996 time 1.89s
+Epoch: 10/60 Iter: 52/102 loss: 1.0993 time 1.89s
+Epoch: 10/60 Iter: 53/102 loss: 1.0995 time 1.89s
+Epoch: 10/60 Iter: 54/102 loss: 1.0995 time 1.89s
+Epoch: 10/60 Iter: 55/102 loss: 1.0995 time 1.89s
+Epoch: 10/60 Iter: 56/102 loss: 1.0997 time 1.89s
+Epoch: 10/60 Iter: 57/102 loss: 1.0996 time 1.89s
+Epoch: 10/60 Iter: 58/102 loss: 1.1000 time 1.89s
+Epoch: 10/60 Iter: 59/102 loss: 1.1001 time 1.89s
+Epoch: 10/60 Iter: 60/102 loss: 1.1003 time 1.89s
+Epoch: 10/60 Iter: 61/102 loss: 1.1004 time 1.89s
+Epoch: 10/60 Iter: 62/102 loss: 1.1005 time 1.89s
+Epoch: 10/60 Iter: 63/102 loss: 1.1006 time 1.89s
+Epoch: 10/60 Iter: 64/102 loss: 1.1005 time 1.89s
+Epoch: 10/60 Iter: 65/102 loss: 1.1003 time 1.89s
+Epoch: 10/60 Iter: 66/102 loss: 1.1004 time 1.89s
+Epoch: 10/60 Iter: 67/102 loss: 1.1004 time 1.89s
+Epoch: 10/60 Iter: 68/102 loss: 1.1009 time 1.89s
+Epoch: 10/60 Iter: 69/102 loss: 1.1006 time 1.89s
+Epoch: 10/60 Iter: 70/102 loss: 1.1007 time 1.90s
+Epoch: 10/60 Iter: 71/102 loss: 1.1007 time 1.89s
+Epoch: 10/60 Iter: 72/102 loss: 1.1007 time 1.89s
+Epoch: 10/60 Iter: 73/102 loss: 1.1008 time 1.89s
+Epoch: 10/60 Iter: 74/102 loss: 1.1009 time 1.90s
+Epoch: 10/60 Iter: 75/102 loss: 1.1009 time 1.89s
+Epoch: 10/60 Iter: 76/102 loss: 1.1007 time 1.89s
+Epoch: 10/60 Iter: 77/102 loss: 1.1008 time 1.90s
+Epoch: 10/60 Iter: 78/102 loss: 1.1006 time 1.89s
+Epoch: 10/60 Iter: 79/102 loss: 1.1008 time 1.89s
+Epoch: 10/60 Iter: 80/102 loss: 1.1009 time 1.90s
+Epoch: 10/60 Iter: 81/102 loss: 1.1011 time 1.89s
+Epoch: 10/60 Iter: 82/102 loss: 1.1012 time 1.89s
+Epoch: 10/60 Iter: 83/102 loss: 1.1012 time 1.90s
+Epoch: 10/60 Iter: 84/102 loss: 1.1012 time 1.89s
+Epoch: 10/60 Iter: 85/102 loss: 1.1013 time 1.89s
+Epoch: 10/60 Iter: 86/102 loss: 1.1013 time 1.89s
+Epoch: 10/60 Iter: 87/102 loss: 1.1008 time 1.90s
+Epoch: 10/60 Iter: 88/102 loss: 1.1009 time 1.89s
+Epoch: 10/60 Iter: 89/102 loss: 1.1010 time 1.88s
+Epoch: 10/60 Iter: 90/102 loss: 1.1009 time 1.89s
+Epoch: 10/60 Iter: 91/102 loss: 1.1008 time 1.89s
+Epoch: 10/60 Iter: 92/102 loss: 1.1009 time 1.89s
+Epoch: 10/60 Iter: 93/102 loss: 1.1010 time 1.89s
+Epoch: 10/60 Iter: 94/102 loss: 1.1010 time 1.89s
+Epoch: 10/60 Iter: 95/102 loss: 1.1009 time 1.89s
+Epoch: 10/60 Iter: 96/102 loss: 1.1008 time 1.89s
+Epoch: 10/60 Iter: 97/102 loss: 1.1010 time 1.89s
+Epoch: 10/60 Iter: 98/102 loss: 1.1009 time 1.90s
+Epoch: 10/60 Iter: 99/102 loss: 1.1010 time 1.89s
+Epoch: 10/60 Iter: 100/102 loss: 1.1011 time 1.89s
+Epoch: 10/60 Iter: 101/102 loss: 1.1013 time 1.89s
+Final training  10/59 loss: 1.1013 time 193.09s lr: 0.000010
+[EarlyStopping] no improve (10/30)
+0 Mon Oct 13 15:59:07 2025 Epoch: 11
+Epoch: 11/60 Iter: 0/102 loss: 1.1115 time 2.34s
+Epoch: 11/60 Iter: 1/102 loss: 1.1023 time 1.89s
+Epoch: 11/60 Iter: 2/102 loss: 1.1017 time 1.89s
+Epoch: 11/60 Iter: 3/102 loss: 1.0996 time 1.89s
+Epoch: 11/60 Iter: 4/102 loss: 1.1023 time 1.89s
+Epoch: 11/60 Iter: 5/102 loss: 1.1028 time 1.89s
+Epoch: 11/60 Iter: 6/102 loss: 1.1019 time 1.89s
+Epoch: 11/60 Iter: 7/102 loss: 1.1024 time 1.89s
+Epoch: 11/60 Iter: 8/102 loss: 1.1040 time 1.89s
+Epoch: 11/60 Iter: 9/102 loss: 1.1039 time 1.89s
+Epoch: 11/60 Iter: 10/102 loss: 1.1020 time 1.89s
+Epoch: 11/60 Iter: 11/102 loss: 1.1025 time 1.90s
+Epoch: 11/60 Iter: 12/102 loss: 1.1029 time 1.89s
+Epoch: 11/60 Iter: 13/102 loss: 1.1021 time 1.89s
+Epoch: 11/60 Iter: 14/102 loss: 1.1026 time 1.89s
+Epoch: 11/60 Iter: 15/102 loss: 1.1034 time 1.89s
+Epoch: 11/60 Iter: 16/102 loss: 1.1040 time 1.89s
+Epoch: 11/60 Iter: 17/102 loss: 1.1043 time 1.89s
+Epoch: 11/60 Iter: 18/102 loss: 1.1032 time 1.89s
+Epoch: 11/60 Iter: 19/102 loss: 1.1032 time 1.89s
+Epoch: 11/60 Iter: 20/102 loss: 1.1026 time 1.89s
+Epoch: 11/60 Iter: 21/102 loss: 1.1020 time 1.89s
+Epoch: 11/60 Iter: 22/102 loss: 1.1018 time 1.89s
+Epoch: 11/60 Iter: 23/102 loss: 1.1010 time 1.89s
+Epoch: 11/60 Iter: 24/102 loss: 1.1013 time 1.90s
+Epoch: 11/60 Iter: 25/102 loss: 1.1011 time 1.89s
+Epoch: 11/60 Iter: 26/102 loss: 1.1013 time 1.89s
+Epoch: 11/60 Iter: 27/102 loss: 1.1008 time 1.89s
+Epoch: 11/60 Iter: 28/102 loss: 1.1013 time 1.89s
+Epoch: 11/60 Iter: 29/102 loss: 1.1017 time 1.89s
+Epoch: 11/60 Iter: 30/102 loss: 1.1013 time 1.89s
+Epoch: 11/60 Iter: 31/102 loss: 1.1017 time 1.89s
+Epoch: 11/60 Iter: 32/102 loss: 1.1015 time 1.89s
+Epoch: 11/60 Iter: 33/102 loss: 1.1014 time 1.89s
+Epoch: 11/60 Iter: 34/102 loss: 1.1009 time 1.89s
+Epoch: 11/60 Iter: 35/102 loss: 1.1004 time 1.89s
+Epoch: 11/60 Iter: 36/102 loss: 1.1007 time 1.89s
+Epoch: 11/60 Iter: 37/102 loss: 1.1009 time 1.89s
+Epoch: 11/60 Iter: 38/102 loss: 1.1013 time 1.90s
+Epoch: 11/60 Iter: 39/102 loss: 1.1012 time 1.89s
+Epoch: 11/60 Iter: 40/102 loss: 1.1015 time 1.89s
+Epoch: 11/60 Iter: 41/102 loss: 1.1018 time 1.89s
+Epoch: 11/60 Iter: 42/102 loss: 1.1021 time 1.90s
+Epoch: 11/60 Iter: 43/102 loss: 1.1024 time 1.89s
+Epoch: 11/60 Iter: 44/102 loss: 1.1025 time 1.90s
+Epoch: 11/60 Iter: 45/102 loss: 1.1023 time 1.89s
+Epoch: 11/60 Iter: 46/102 loss: 1.1025 time 1.89s
+Epoch: 11/60 Iter: 47/102 loss: 1.1020 time 1.89s
+Epoch: 11/60 Iter: 48/102 loss: 1.1016 time 1.89s
+Epoch: 11/60 Iter: 49/102 loss: 1.1015 time 1.89s
+Epoch: 11/60 Iter: 50/102 loss: 1.1016 time 1.89s
+Epoch: 11/60 Iter: 51/102 loss: 1.1017 time 1.89s
+Epoch: 11/60 Iter: 52/102 loss: 1.1017 time 1.89s
+Epoch: 11/60 Iter: 53/102 loss: 1.1013 time 1.89s
+Epoch: 11/60 Iter: 54/102 loss: 1.1012 time 1.89s
+Epoch: 11/60 Iter: 55/102 loss: 1.1013 time 1.89s
+Epoch: 11/60 Iter: 56/102 loss: 1.1013 time 1.90s
+Epoch: 11/60 Iter: 57/102 loss: 1.1012 time 1.89s
+Epoch: 11/60 Iter: 58/102 loss: 1.1012 time 1.89s
+Epoch: 11/60 Iter: 59/102 loss: 1.1015 time 1.89s
+Epoch: 11/60 Iter: 60/102 loss: 1.1017 time 1.89s
+Epoch: 11/60 Iter: 61/102 loss: 1.1016 time 1.89s
+Epoch: 11/60 Iter: 62/102 loss: 1.1013 time 1.89s
+Epoch: 11/60 Iter: 63/102 loss: 1.1013 time 1.89s
+Epoch: 11/60 Iter: 64/102 loss: 1.1015 time 1.89s
+Epoch: 11/60 Iter: 65/102 loss: 1.1015 time 1.89s
+Epoch: 11/60 Iter: 66/102 loss: 1.1016 time 1.89s
+Epoch: 11/60 Iter: 67/102 loss: 1.1015 time 1.89s
+Epoch: 11/60 Iter: 68/102 loss: 1.1014 time 1.89s
+Epoch: 11/60 Iter: 69/102 loss: 1.1011 time 1.89s
+Epoch: 11/60 Iter: 70/102 loss: 1.1010 time 1.89s
+Epoch: 11/60 Iter: 71/102 loss: 1.1008 time 1.90s
+Epoch: 11/60 Iter: 72/102 loss: 1.1009 time 1.89s
+Epoch: 11/60 Iter: 73/102 loss: 1.1011 time 1.89s
+Epoch: 11/60 Iter: 74/102 loss: 1.1014 time 1.89s
+Epoch: 11/60 Iter: 75/102 loss: 1.1014 time 1.89s
+Epoch: 11/60 Iter: 76/102 loss: 1.1013 time 1.89s
+Epoch: 11/60 Iter: 77/102 loss: 1.1010 time 1.89s
+Epoch: 11/60 Iter: 78/102 loss: 1.1012 time 1.89s
+Epoch: 11/60 Iter: 79/102 loss: 1.1010 time 1.89s
+Epoch: 11/60 Iter: 80/102 loss: 1.1008 time 1.89s
+Epoch: 11/60 Iter: 81/102 loss: 1.1008 time 1.89s
+Epoch: 11/60 Iter: 82/102 loss: 1.1008 time 1.89s
+Epoch: 11/60 Iter: 83/102 loss: 1.1007 time 1.89s
+Epoch: 11/60 Iter: 84/102 loss: 1.1008 time 1.89s
+Epoch: 11/60 Iter: 85/102 loss: 1.1008 time 1.89s
+Epoch: 11/60 Iter: 86/102 loss: 1.1007 time 1.90s
+Epoch: 11/60 Iter: 87/102 loss: 1.1007 time 1.89s
+Epoch: 11/60 Iter: 88/102 loss: 1.1009 time 1.89s
+Epoch: 11/60 Iter: 89/102 loss: 1.1008 time 1.89s
+Epoch: 11/60 Iter: 90/102 loss: 1.1007 time 1.89s
+Epoch: 11/60 Iter: 91/102 loss: 1.1006 time 1.89s
+Epoch: 11/60 Iter: 92/102 loss: 1.1006 time 1.89s
+Epoch: 11/60 Iter: 93/102 loss: 1.1008 time 1.89s
+Epoch: 11/60 Iter: 94/102 loss: 1.1004 time 1.89s
+Epoch: 11/60 Iter: 95/102 loss: 1.1003 time 1.90s
+Epoch: 11/60 Iter: 96/102 loss: 1.1004 time 1.89s
+Epoch: 11/60 Iter: 97/102 loss: 1.1004 time 1.89s
+Epoch: 11/60 Iter: 98/102 loss: 1.1004 time 1.89s
+Epoch: 11/60 Iter: 99/102 loss: 1.1005 time 1.89s
+Epoch: 11/60 Iter: 100/102 loss: 1.1005 time 1.89s
+Epoch: 11/60 Iter: 101/102 loss: 1.1004 time 1.89s
+Final training  11/59 loss: 1.1004 time 193.26s lr: 0.000010
+[EarlyStopping] no improve (11/30)
+Val 11/60 0/27, Acc: 0.0000, time 1.92s
+Val 11/60 1/27, Acc: 0.5000, time 1.92s
+Val 11/60 2/27, Acc: 0.3333, time 1.93s
+Val 11/60 3/27, Acc: 0.5000, time 1.93s
+Val 11/60 4/27, Acc: 0.4000, time 1.91s
+Val 11/60 5/27, Acc: 0.3333, time 1.94s
+Val 11/60 6/27, Acc: 0.4286, time 1.92s
+Val 11/60 7/27, Acc: 0.3750, time 1.92s
+Val 11/60 8/27, Acc: 0.4444, time 1.92s
+Val 11/60 9/27, Acc: 0.4000, time 1.93s
+Val 11/60 10/27, Acc: 0.3636, time 1.94s
+Val 11/60 11/27, Acc: 0.3333, time 1.92s
+Val 11/60 12/27, Acc: 0.3846, time 1.93s
+Val 11/60 13/27, Acc: 0.4286, time 1.93s
+Val 11/60 14/27, Acc: 0.4000, time 1.92s
+Val 11/60 15/27, Acc: 0.3750, time 1.95s
+Val 11/60 16/27, Acc: 0.3529, time 1.96s
+Val 11/60 17/27, Acc: 0.3333, time 1.92s
+Val 11/60 18/27, Acc: 0.3158, time 2.06s
+Val 11/60 19/27, Acc: 0.3000, time 2.00s
+Val 11/60 20/27, Acc: 0.3333, time 1.93s
+Val 11/60 21/27, Acc: 0.3182, time 1.93s
+Val 11/60 22/27, Acc: 0.3478, time 1.93s
+Val 11/60 23/27, Acc: 0.3750, time 1.91s
+Val 11/60 24/27, Acc: 0.3600, time 1.94s
+Val 11/60 25/27, Acc: 0.3846, time 1.91s
+Val 11/60 26/27, Acc: 0.4074, time 1.91s
+[Val epoch 11] avg_acc=0.4074 | per-class [c0: 0.111, c1: 0.333, c2: 0.778]
+Final validation stats 11/59 , Val_acc: 0.4074074074074074 , time 52.22s
+[EarlyStopping] no improve (1/10)
+
+0 Mon Oct 13 16:03:13 2025 Epoch: 12
+Epoch: 12/60 Iter: 0/102 loss: 1.0975 time 2.76s
+Epoch: 12/60 Iter: 1/102 loss: 1.0982 time 1.89s
+Epoch: 12/60 Iter: 2/102 loss: 1.0987 time 1.90s
+Epoch: 12/60 Iter: 3/102 loss: 1.0981 time 1.89s
+Epoch: 12/60 Iter: 4/102 loss: 1.0989 time 1.89s
+Epoch: 12/60 Iter: 5/102 loss: 1.0990 time 1.89s
+Epoch: 12/60 Iter: 6/102 loss: 1.0982 time 1.89s
+Epoch: 12/60 Iter: 7/102 loss: 1.0980 time 1.89s
+Epoch: 12/60 Iter: 8/102 loss: 1.1000 time 1.89s
+Epoch: 12/60 Iter: 9/102 loss: 1.0999 time 1.89s
+Epoch: 12/60 Iter: 10/102 loss: 1.1006 time 1.89s
+Epoch: 12/60 Iter: 11/102 loss: 1.0994 time 1.89s
+Epoch: 12/60 Iter: 12/102 loss: 1.1003 time 1.89s
+Epoch: 12/60 Iter: 13/102 loss: 1.1005 time 1.89s
+Epoch: 12/60 Iter: 14/102 loss: 1.0994 time 1.89s
+Epoch: 12/60 Iter: 15/102 loss: 1.0999 time 1.89s
+Epoch: 12/60 Iter: 16/102 loss: 1.1005 time 1.89s
+Epoch: 12/60 Iter: 17/102 loss: 1.1005 time 1.89s
+Epoch: 12/60 Iter: 18/102 loss: 1.1011 time 1.89s
+Epoch: 12/60 Iter: 19/102 loss: 1.1015 time 1.89s
+Epoch: 12/60 Iter: 20/102 loss: 1.1013 time 1.88s
+Epoch: 12/60 Iter: 21/102 loss: 1.1020 time 1.89s
+Epoch: 12/60 Iter: 22/102 loss: 1.1017 time 1.89s
+Epoch: 12/60 Iter: 23/102 loss: 1.1023 time 1.89s
+Epoch: 12/60 Iter: 24/102 loss: 1.1024 time 1.89s
+Epoch: 12/60 Iter: 25/102 loss: 1.1024 time 1.89s
+Epoch: 12/60 Iter: 26/102 loss: 1.1024 time 1.89s
+Epoch: 12/60 Iter: 27/102 loss: 1.1025 time 1.89s
+Epoch: 12/60 Iter: 28/102 loss: 1.1025 time 1.89s
+Epoch: 12/60 Iter: 29/102 loss: 1.1030 time 1.89s
+Epoch: 12/60 Iter: 30/102 loss: 1.1032 time 1.90s
+Epoch: 12/60 Iter: 31/102 loss: 1.1039 time 1.89s
+Epoch: 12/60 Iter: 32/102 loss: 1.1039 time 1.89s
+Epoch: 12/60 Iter: 33/102 loss: 1.1036 time 1.89s
+Epoch: 12/60 Iter: 34/102 loss: 1.1037 time 1.90s
+Epoch: 12/60 Iter: 35/102 loss: 1.1037 time 1.89s
+Epoch: 12/60 Iter: 36/102 loss: 1.1033 time 1.89s
+Epoch: 12/60 Iter: 37/102 loss: 1.1034 time 1.89s
+Epoch: 12/60 Iter: 38/102 loss: 1.1035 time 1.89s
+Epoch: 12/60 Iter: 39/102 loss: 1.1030 time 1.89s
+Epoch: 12/60 Iter: 40/102 loss: 1.1019 time 1.89s
+Epoch: 12/60 Iter: 41/102 loss: 1.1018 time 1.89s
+Epoch: 12/60 Iter: 42/102 loss: 1.1013 time 1.89s
+Epoch: 12/60 Iter: 43/102 loss: 1.1009 time 1.89s
+Epoch: 12/60 Iter: 44/102 loss: 1.1011 time 1.89s
+Epoch: 12/60 Iter: 45/102 loss: 1.1006 time 1.89s
+Epoch: 12/60 Iter: 46/102 loss: 1.1001 time 1.89s
+Epoch: 12/60 Iter: 47/102 loss: 1.1002 time 1.89s
+Epoch: 12/60 Iter: 48/102 loss: 1.1003 time 1.89s
+Epoch: 12/60 Iter: 49/102 loss: 1.1003 time 1.89s
+Epoch: 12/60 Iter: 50/102 loss: 1.1007 time 1.89s
+Epoch: 12/60 Iter: 51/102 loss: 1.1012 time 1.89s
+Epoch: 12/60 Iter: 52/102 loss: 1.1013 time 1.89s
+Epoch: 12/60 Iter: 53/102 loss: 1.1014 time 1.90s
+Epoch: 12/60 Iter: 54/102 loss: 1.1014 time 1.89s
+Epoch: 12/60 Iter: 55/102 loss: 1.1013 time 1.89s
+Epoch: 12/60 Iter: 56/102 loss: 1.1015 time 1.89s
+Epoch: 12/60 Iter: 57/102 loss: 1.1011 time 1.89s
+Epoch: 12/60 Iter: 58/102 loss: 1.1014 time 1.89s
+Epoch: 12/60 Iter: 59/102 loss: 1.1016 time 1.89s
+Epoch: 12/60 Iter: 60/102 loss: 1.1013 time 1.89s
+Epoch: 12/60 Iter: 61/102 loss: 1.1014 time 1.89s
+Epoch: 12/60 Iter: 62/102 loss: 1.1016 time 1.89s
+Epoch: 12/60 Iter: 63/102 loss: 1.1018 time 1.89s
+Epoch: 12/60 Iter: 64/102 loss: 1.1019 time 1.89s
+Epoch: 12/60 Iter: 65/102 loss: 1.1020 time 1.89s
+Epoch: 12/60 Iter: 66/102 loss: 1.1021 time 1.89s
+Epoch: 12/60 Iter: 67/102 loss: 1.1021 time 1.89s
+Epoch: 12/60 Iter: 68/102 loss: 1.1019 time 1.89s
+Epoch: 12/60 Iter: 69/102 loss: 1.1016 time 1.89s
+Epoch: 12/60 Iter: 70/102 loss: 1.1015 time 1.89s
+Epoch: 12/60 Iter: 71/102 loss: 1.1015 time 1.89s
+Epoch: 12/60 Iter: 72/102 loss: 1.1011 time 1.89s
+Epoch: 12/60 Iter: 73/102 loss: 1.1010 time 1.89s
+Epoch: 12/60 Iter: 74/102 loss: 1.1008 time 1.89s
+Epoch: 12/60 Iter: 75/102 loss: 1.1008 time 1.89s
+Epoch: 12/60 Iter: 76/102 loss: 1.1008 time 1.89s
+Epoch: 12/60 Iter: 77/102 loss: 1.1008 time 1.89s
+Epoch: 12/60 Iter: 78/102 loss: 1.1007 time 1.89s
+Epoch: 12/60 Iter: 79/102 loss: 1.1007 time 1.90s
+Epoch: 12/60 Iter: 80/102 loss: 1.1006 time 1.90s
+Epoch: 12/60 Iter: 81/102 loss: 1.1006 time 1.89s
+Epoch: 12/60 Iter: 82/102 loss: 1.1006 time 1.89s
+Epoch: 12/60 Iter: 83/102 loss: 1.1007 time 1.89s
+Epoch: 12/60 Iter: 84/102 loss: 1.1006 time 1.90s
+Epoch: 12/60 Iter: 85/102 loss: 1.1005 time 1.89s
+Epoch: 12/60 Iter: 86/102 loss: 1.1005 time 1.89s
+Epoch: 12/60 Iter: 87/102 loss: 1.1005 time 1.89s
+Epoch: 12/60 Iter: 88/102 loss: 1.1006 time 1.89s
+Epoch: 12/60 Iter: 89/102 loss: 1.1005 time 1.90s
+Epoch: 12/60 Iter: 90/102 loss: 1.1004 time 1.88s
+Epoch: 12/60 Iter: 91/102 loss: 1.1006 time 1.89s
+Epoch: 12/60 Iter: 92/102 loss: 1.1006 time 1.89s
+Epoch: 12/60 Iter: 93/102 loss: 1.1008 time 1.89s
+Epoch: 12/60 Iter: 94/102 loss: 1.1010 time 1.89s
+Epoch: 12/60 Iter: 95/102 loss: 1.1008 time 1.89s
+Epoch: 12/60 Iter: 96/102 loss: 1.1011 time 1.89s
+Epoch: 12/60 Iter: 97/102 loss: 1.1008 time 1.90s
+Epoch: 12/60 Iter: 98/102 loss: 1.1009 time 1.89s
+Epoch: 12/60 Iter: 99/102 loss: 1.1011 time 1.89s
+Epoch: 12/60 Iter: 100/102 loss: 1.1010 time 1.89s
+Epoch: 12/60 Iter: 101/102 loss: 1.1010 time 1.89s
+Final training  12/59 loss: 1.1010 time 193.62s lr: 0.000009
+[EarlyStopping] no improve (12/30)
+0 Mon Oct 13 16:06:27 2025 Epoch: 13
+Epoch: 13/60 Iter: 0/102 loss: 1.0898 time 2.27s
+Epoch: 13/60 Iter: 1/102 loss: 1.0931 time 1.89s
+Epoch: 13/60 Iter: 2/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 3/102 loss: 1.1015 time 1.89s
+Epoch: 13/60 Iter: 4/102 loss: 1.1000 time 1.89s
+Epoch: 13/60 Iter: 5/102 loss: 1.1023 time 1.89s
+Epoch: 13/60 Iter: 6/102 loss: 1.1010 time 1.89s
+Epoch: 13/60 Iter: 7/102 loss: 1.1009 time 1.90s
+Epoch: 13/60 Iter: 8/102 loss: 1.1028 time 1.89s
+Epoch: 13/60 Iter: 9/102 loss: 1.1029 time 1.89s
+Epoch: 13/60 Iter: 10/102 loss: 1.1024 time 1.89s
+Epoch: 13/60 Iter: 11/102 loss: 1.0999 time 1.90s
+Epoch: 13/60 Iter: 12/102 loss: 1.1013 time 1.89s
+Epoch: 13/60 Iter: 13/102 loss: 1.1012 time 1.89s
+Epoch: 13/60 Iter: 14/102 loss: 1.1014 time 1.89s
+Epoch: 13/60 Iter: 15/102 loss: 1.1003 time 1.89s
+Epoch: 13/60 Iter: 16/102 loss: 1.1005 time 1.89s
+Epoch: 13/60 Iter: 17/102 loss: 1.1008 time 1.89s
+Epoch: 13/60 Iter: 18/102 loss: 1.1017 time 1.89s
+Epoch: 13/60 Iter: 19/102 loss: 1.1018 time 1.89s
+Epoch: 13/60 Iter: 20/102 loss: 1.1022 time 1.89s
+Epoch: 13/60 Iter: 21/102 loss: 1.1010 time 1.89s
+Epoch: 13/60 Iter: 22/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 23/102 loss: 1.1012 time 1.89s
+Epoch: 13/60 Iter: 24/102 loss: 1.1010 time 1.89s
+Epoch: 13/60 Iter: 25/102 loss: 1.1007 time 1.89s
+Epoch: 13/60 Iter: 26/102 loss: 1.1009 time 1.90s
+Epoch: 13/60 Iter: 27/102 loss: 1.1011 time 1.90s
+Epoch: 13/60 Iter: 28/102 loss: 1.1008 time 1.89s
+Epoch: 13/60 Iter: 29/102 loss: 1.1009 time 1.90s
+Epoch: 13/60 Iter: 30/102 loss: 1.1010 time 1.89s
+Epoch: 13/60 Iter: 31/102 loss: 1.1010 time 1.89s
+Epoch: 13/60 Iter: 32/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 33/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 34/102 loss: 1.1008 time 1.89s
+Epoch: 13/60 Iter: 35/102 loss: 1.1006 time 1.89s
+Epoch: 13/60 Iter: 36/102 loss: 1.1005 time 1.90s
+Epoch: 13/60 Iter: 37/102 loss: 1.1004 time 1.89s
+Epoch: 13/60 Iter: 38/102 loss: 1.1002 time 1.89s
+Epoch: 13/60 Iter: 39/102 loss: 1.0992 time 1.89s
+Epoch: 13/60 Iter: 40/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 41/102 loss: 1.0998 time 1.89s
+Epoch: 13/60 Iter: 42/102 loss: 1.1002 time 1.89s
+Epoch: 13/60 Iter: 43/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 44/102 loss: 1.0995 time 1.90s
+Epoch: 13/60 Iter: 45/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 46/102 loss: 1.0995 time 1.89s
+Epoch: 13/60 Iter: 47/102 loss: 1.0995 time 1.89s
+Epoch: 13/60 Iter: 48/102 loss: 1.0997 time 1.89s
+Epoch: 13/60 Iter: 49/102 loss: 1.0997 time 1.89s
+Epoch: 13/60 Iter: 50/102 loss: 1.0997 time 1.89s
+Epoch: 13/60 Iter: 51/102 loss: 1.0997 time 1.89s
+Epoch: 13/60 Iter: 52/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 53/102 loss: 1.0995 time 1.89s
+Epoch: 13/60 Iter: 54/102 loss: 1.0995 time 1.89s
+Epoch: 13/60 Iter: 55/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 56/102 loss: 1.0996 time 1.90s
+Epoch: 13/60 Iter: 57/102 loss: 1.0997 time 1.89s
+Epoch: 13/60 Iter: 58/102 loss: 1.0997 time 1.89s
+Epoch: 13/60 Iter: 59/102 loss: 1.0994 time 1.89s
+Epoch: 13/60 Iter: 60/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 61/102 loss: 1.1001 time 1.89s
+Epoch: 13/60 Iter: 62/102 loss: 1.1001 time 1.89s
+Epoch: 13/60 Iter: 63/102 loss: 1.1001 time 1.89s
+Epoch: 13/60 Iter: 64/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 65/102 loss: 1.0997 time 1.89s
+Epoch: 13/60 Iter: 66/102 loss: 1.0993 time 1.89s
+Epoch: 13/60 Iter: 67/102 loss: 1.0994 time 1.90s
+Epoch: 13/60 Iter: 68/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 69/102 loss: 1.0999 time 1.89s
+Epoch: 13/60 Iter: 70/102 loss: 1.1000 time 1.89s
+Epoch: 13/60 Iter: 71/102 loss: 1.0996 time 1.89s
+Epoch: 13/60 Iter: 72/102 loss: 1.0997 time 1.89s
+Epoch: 13/60 Iter: 73/102 loss: 1.0997 time 1.89s
+Epoch: 13/60 Iter: 74/102 loss: 1.0998 time 1.89s
+Epoch: 13/60 Iter: 75/102 loss: 1.1000 time 1.89s
+Epoch: 13/60 Iter: 76/102 loss: 1.1001 time 1.89s
+Epoch: 13/60 Iter: 77/102 loss: 1.1001 time 1.89s
+Epoch: 13/60 Iter: 78/102 loss: 1.1002 time 1.89s
+Epoch: 13/60 Iter: 79/102 loss: 1.1004 time 1.89s
+Epoch: 13/60 Iter: 80/102 loss: 1.1006 time 1.89s
+Epoch: 13/60 Iter: 81/102 loss: 1.1007 time 1.89s
+Epoch: 13/60 Iter: 82/102 loss: 1.1007 time 1.89s
+Epoch: 13/60 Iter: 83/102 loss: 1.1006 time 1.89s
+Epoch: 13/60 Iter: 84/102 loss: 1.1006 time 1.90s
+Epoch: 13/60 Iter: 85/102 loss: 1.1007 time 1.89s
+Epoch: 13/60 Iter: 86/102 loss: 1.1007 time 1.89s
+Epoch: 13/60 Iter: 87/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 88/102 loss: 1.1008 time 1.89s
+Epoch: 13/60 Iter: 89/102 loss: 1.1008 time 1.89s
+Epoch: 13/60 Iter: 90/102 loss: 1.1008 time 1.89s
+Epoch: 13/60 Iter: 91/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 92/102 loss: 1.1008 time 1.89s
+Epoch: 13/60 Iter: 93/102 loss: 1.1007 time 1.88s
+Epoch: 13/60 Iter: 94/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 95/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 96/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 97/102 loss: 1.1010 time 1.89s
+Epoch: 13/60 Iter: 98/102 loss: 1.1008 time 1.89s
+Epoch: 13/60 Iter: 99/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 100/102 loss: 1.1009 time 1.89s
+Epoch: 13/60 Iter: 101/102 loss: 1.1010 time 1.89s
+Final training  13/59 loss: 1.1010 time 193.16s lr: 0.000009
+[EarlyStopping] no improve (13/30)
+0 Mon Oct 13 16:09:40 2025 Epoch: 14
+Epoch: 14/60 Iter: 0/102 loss: 1.0962 time 2.15s
+Epoch: 14/60 Iter: 1/102 loss: 1.0971 time 1.89s
+Epoch: 14/60 Iter: 2/102 loss: 1.0986 time 1.89s
+Epoch: 14/60 Iter: 3/102 loss: 1.0999 time 1.89s
+Epoch: 14/60 Iter: 4/102 loss: 1.0982 time 1.89s
+Epoch: 14/60 Iter: 5/102 loss: 1.0987 time 1.90s
+Epoch: 14/60 Iter: 6/102 loss: 1.0987 time 1.89s
+Epoch: 14/60 Iter: 7/102 loss: 1.0970 time 1.89s
+Epoch: 14/60 Iter: 8/102 loss: 1.0965 time 1.89s
+Epoch: 14/60 Iter: 9/102 loss: 1.0976 time 1.89s
+Epoch: 14/60 Iter: 10/102 loss: 1.0976 time 1.89s
+Epoch: 14/60 Iter: 11/102 loss: 1.0972 time 1.89s
+Epoch: 14/60 Iter: 12/102 loss: 1.0967 time 1.89s
+Epoch: 14/60 Iter: 13/102 loss: 1.0962 time 1.89s
+Epoch: 14/60 Iter: 14/102 loss: 1.0960 time 1.89s
+Epoch: 14/60 Iter: 15/102 loss: 1.0976 time 1.89s
+Epoch: 14/60 Iter: 16/102 loss: 1.0980 time 1.89s
+Epoch: 14/60 Iter: 17/102 loss: 1.0981 time 1.89s
+Epoch: 14/60 Iter: 18/102 loss: 1.0988 time 1.89s
+Epoch: 14/60 Iter: 19/102 loss: 1.0983 time 1.89s
+Epoch: 14/60 Iter: 20/102 loss: 1.0978 time 1.89s
+Epoch: 14/60 Iter: 21/102 loss: 1.0979 time 1.89s
+Epoch: 14/60 Iter: 22/102 loss: 1.0998 time 1.89s
+Epoch: 14/60 Iter: 23/102 loss: 1.1011 time 1.89s
+Epoch: 14/60 Iter: 24/102 loss: 1.1016 time 1.89s
+Epoch: 14/60 Iter: 25/102 loss: 1.1012 time 1.89s
+Epoch: 14/60 Iter: 26/102 loss: 1.1022 time 1.89s
+Epoch: 14/60 Iter: 27/102 loss: 1.1017 time 1.90s
+Epoch: 14/60 Iter: 28/102 loss: 1.1022 time 1.89s
+Epoch: 14/60 Iter: 29/102 loss: 1.1013 time 1.89s
+Epoch: 14/60 Iter: 30/102 loss: 1.1019 time 1.89s
+Epoch: 14/60 Iter: 31/102 loss: 1.1017 time 1.89s
+Epoch: 14/60 Iter: 32/102 loss: 1.1004 time 1.90s
+Epoch: 14/60 Iter: 33/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 34/102 loss: 1.1009 time 1.89s
+Epoch: 14/60 Iter: 35/102 loss: 1.1010 time 1.89s
+Epoch: 14/60 Iter: 36/102 loss: 1.1009 time 1.89s
+Epoch: 14/60 Iter: 37/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 38/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 39/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 40/102 loss: 1.1006 time 1.89s
+Epoch: 14/60 Iter: 41/102 loss: 1.1004 time 1.89s
+Epoch: 14/60 Iter: 42/102 loss: 1.1005 time 1.89s
+Epoch: 14/60 Iter: 43/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 44/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 45/102 loss: 1.1007 time 1.89s
+Epoch: 14/60 Iter: 46/102 loss: 1.1009 time 1.90s
+Epoch: 14/60 Iter: 47/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 48/102 loss: 1.1006 time 1.89s
+Epoch: 14/60 Iter: 49/102 loss: 1.1002 time 1.89s
+Epoch: 14/60 Iter: 50/102 loss: 1.0999 time 1.89s
+Epoch: 14/60 Iter: 51/102 loss: 1.0994 time 1.89s
+Epoch: 14/60 Iter: 52/102 loss: 1.0993 time 1.89s
+Epoch: 14/60 Iter: 53/102 loss: 1.0994 time 1.89s
+Epoch: 14/60 Iter: 54/102 loss: 1.0998 time 1.90s
+Epoch: 14/60 Iter: 55/102 loss: 1.1002 time 1.90s
+Epoch: 14/60 Iter: 56/102 loss: 1.1007 time 1.90s
+Epoch: 14/60 Iter: 57/102 loss: 1.1004 time 1.89s
+Epoch: 14/60 Iter: 58/102 loss: 1.1004 time 1.89s
+Epoch: 14/60 Iter: 59/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 60/102 loss: 1.1004 time 1.89s
+Epoch: 14/60 Iter: 61/102 loss: 1.1009 time 1.89s
+Epoch: 14/60 Iter: 62/102 loss: 1.1013 time 1.89s
+Epoch: 14/60 Iter: 63/102 loss: 1.1012 time 1.89s
+Epoch: 14/60 Iter: 64/102 loss: 1.1016 time 1.89s
+Epoch: 14/60 Iter: 65/102 loss: 1.1014 time 1.89s
+Epoch: 14/60 Iter: 66/102 loss: 1.1017 time 1.89s
+Epoch: 14/60 Iter: 67/102 loss: 1.1019 time 1.89s
+Epoch: 14/60 Iter: 68/102 loss: 1.1018 time 1.89s
+Epoch: 14/60 Iter: 69/102 loss: 1.1014 time 1.89s
+Epoch: 14/60 Iter: 70/102 loss: 1.1017 time 1.90s
+Epoch: 14/60 Iter: 71/102 loss: 1.1016 time 1.89s
+Epoch: 14/60 Iter: 72/102 loss: 1.1018 time 1.89s
+Epoch: 14/60 Iter: 73/102 loss: 1.1010 time 1.89s
+Epoch: 14/60 Iter: 74/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 75/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 76/102 loss: 1.1009 time 1.89s
+Epoch: 14/60 Iter: 77/102 loss: 1.1011 time 1.89s
+Epoch: 14/60 Iter: 78/102 loss: 1.1012 time 1.90s
+Epoch: 14/60 Iter: 79/102 loss: 1.1010 time 1.89s
+Epoch: 14/60 Iter: 80/102 loss: 1.1009 time 1.89s
+Epoch: 14/60 Iter: 81/102 loss: 1.1010 time 1.89s
+Epoch: 14/60 Iter: 82/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 83/102 loss: 1.1009 time 1.89s
+Epoch: 14/60 Iter: 84/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 85/102 loss: 1.1010 time 1.89s
+Epoch: 14/60 Iter: 86/102 loss: 1.1009 time 1.89s
+Epoch: 14/60 Iter: 87/102 loss: 1.1006 time 1.89s
+Epoch: 14/60 Iter: 88/102 loss: 1.1006 time 1.89s
+Epoch: 14/60 Iter: 89/102 loss: 1.1006 time 1.89s
+Epoch: 14/60 Iter: 90/102 loss: 1.1007 time 1.89s
+Epoch: 14/60 Iter: 91/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 92/102 loss: 1.1006 time 1.89s
+Epoch: 14/60 Iter: 93/102 loss: 1.1004 time 1.89s
+Epoch: 14/60 Iter: 94/102 loss: 1.1006 time 1.90s
+Epoch: 14/60 Iter: 95/102 loss: 1.1007 time 1.89s
+Epoch: 14/60 Iter: 96/102 loss: 1.1008 time 1.89s
+Epoch: 14/60 Iter: 97/102 loss: 1.1007 time 1.89s
+Epoch: 14/60 Iter: 98/102 loss: 1.1009 time 1.89s
+Epoch: 14/60 Iter: 99/102 loss: 1.1011 time 1.89s
+Epoch: 14/60 Iter: 100/102 loss: 1.1012 time 1.89s
+Epoch: 14/60 Iter: 101/102 loss: 1.1014 time 1.89s
+Final training  14/59 loss: 1.1014 time 193.06s lr: 0.000009
+[EarlyStopping] no improve (14/30)
+0 Mon Oct 13 16:12:53 2025 Epoch: 15
+Epoch: 15/60 Iter: 0/102 loss: 1.0790 time 2.36s
+Epoch: 15/60 Iter: 1/102 loss: 1.0944 time 1.89s
+Epoch: 15/60 Iter: 2/102 loss: 1.0991 time 1.89s
+Epoch: 15/60 Iter: 3/102 loss: 1.1010 time 1.89s
+Epoch: 15/60 Iter: 4/102 loss: 1.0980 time 1.89s
+Epoch: 15/60 Iter: 5/102 loss: 1.0968 time 1.89s
+Epoch: 15/60 Iter: 6/102 loss: 1.0967 time 1.89s
+Epoch: 15/60 Iter: 7/102 loss: 1.0980 time 1.89s
+Epoch: 15/60 Iter: 8/102 loss: 1.0977 time 1.89s
+Epoch: 15/60 Iter: 9/102 loss: 1.0985 time 1.89s
+Epoch: 15/60 Iter: 10/102 loss: 1.0985 time 1.89s
+Epoch: 15/60 Iter: 11/102 loss: 1.0990 time 1.89s
+Epoch: 15/60 Iter: 12/102 loss: 1.0997 time 1.89s
+Epoch: 15/60 Iter: 13/102 loss: 1.0991 time 1.89s
+Epoch: 15/60 Iter: 14/102 loss: 1.0981 time 1.89s
+Epoch: 15/60 Iter: 15/102 loss: 1.0984 time 1.89s
+Epoch: 15/60 Iter: 16/102 loss: 1.0977 time 1.89s
+Epoch: 15/60 Iter: 17/102 loss: 1.0986 time 1.89s
+Epoch: 15/60 Iter: 18/102 loss: 1.0992 time 1.89s
+Epoch: 15/60 Iter: 19/102 loss: 1.0981 time 1.89s
+Epoch: 15/60 Iter: 20/102 loss: 1.0989 time 1.89s
+Epoch: 15/60 Iter: 21/102 loss: 1.0979 time 1.89s
+Epoch: 15/60 Iter: 22/102 loss: 1.0970 time 1.89s
+Epoch: 15/60 Iter: 23/102 loss: 1.0957 time 1.89s
+Epoch: 15/60 Iter: 24/102 loss: 1.0967 time 1.90s
+Epoch: 15/60 Iter: 25/102 loss: 1.0957 time 1.89s
+Epoch: 15/60 Iter: 26/102 loss: 1.0958 time 1.89s
+Epoch: 15/60 Iter: 27/102 loss: 1.0953 time 1.89s
+Epoch: 15/60 Iter: 28/102 loss: 1.0964 time 1.90s
+Epoch: 15/60 Iter: 29/102 loss: 1.0964 time 1.89s
+Epoch: 15/60 Iter: 30/102 loss: 1.0953 time 1.89s
+Epoch: 15/60 Iter: 31/102 loss: 1.0963 time 1.89s
+Epoch: 15/60 Iter: 32/102 loss: 1.0955 time 1.90s
+Epoch: 15/60 Iter: 33/102 loss: 1.0965 time 1.89s
+Epoch: 15/60 Iter: 34/102 loss: 1.0971 time 1.89s
+Epoch: 15/60 Iter: 35/102 loss: 1.0978 time 1.90s
+Epoch: 15/60 Iter: 36/102 loss: 1.0969 time 1.89s
+Epoch: 15/60 Iter: 37/102 loss: 1.0965 time 1.89s
+Epoch: 15/60 Iter: 38/102 loss: 1.0955 time 1.89s
+Epoch: 15/60 Iter: 39/102 loss: 1.0958 time 1.89s
+Epoch: 15/60 Iter: 40/102 loss: 1.0965 time 1.90s
+Epoch: 15/60 Iter: 41/102 loss: 1.0961 time 1.89s
+Epoch: 15/60 Iter: 42/102 loss: 1.0968 time 1.90s
+Epoch: 15/60 Iter: 43/102 loss: 1.0976 time 1.89s
+Epoch: 15/60 Iter: 44/102 loss: 1.0977 time 1.89s
+Epoch: 15/60 Iter: 45/102 loss: 1.0983 time 1.89s
+Epoch: 15/60 Iter: 46/102 loss: 1.0989 time 1.89s
+Epoch: 15/60 Iter: 47/102 loss: 1.0990 time 1.89s
+Epoch: 15/60 Iter: 48/102 loss: 1.0988 time 1.89s
+Epoch: 15/60 Iter: 49/102 loss: 1.0993 time 1.89s
+Epoch: 15/60 Iter: 50/102 loss: 1.0997 time 1.89s
+Epoch: 15/60 Iter: 51/102 loss: 1.1000 time 1.89s
+Epoch: 15/60 Iter: 52/102 loss: 1.0997 time 1.89s
+Epoch: 15/60 Iter: 53/102 loss: 1.1000 time 1.89s
+Epoch: 15/60 Iter: 54/102 loss: 1.1003 time 1.89s
+Epoch: 15/60 Iter: 55/102 loss: 1.1006 time 1.89s
+Epoch: 15/60 Iter: 56/102 loss: 1.1008 time 1.89s
+Epoch: 15/60 Iter: 57/102 loss: 1.1006 time 1.89s
+Epoch: 15/60 Iter: 58/102 loss: 1.1008 time 1.89s
+Epoch: 15/60 Iter: 59/102 loss: 1.1010 time 1.89s
+Epoch: 15/60 Iter: 60/102 loss: 1.1013 time 1.89s
+Epoch: 15/60 Iter: 61/102 loss: 1.1012 time 1.89s
+Epoch: 15/60 Iter: 62/102 loss: 1.1013 time 1.89s
+Epoch: 15/60 Iter: 63/102 loss: 1.1015 time 1.90s
+Epoch: 15/60 Iter: 64/102 loss: 1.1017 time 1.89s
+Epoch: 15/60 Iter: 65/102 loss: 1.1016 time 1.89s
+Epoch: 15/60 Iter: 66/102 loss: 1.1013 time 1.89s
+Epoch: 15/60 Iter: 67/102 loss: 1.1014 time 1.89s
+Epoch: 15/60 Iter: 68/102 loss: 1.1011 time 1.89s
+Epoch: 15/60 Iter: 69/102 loss: 1.1013 time 1.89s
+Epoch: 15/60 Iter: 70/102 loss: 1.1014 time 1.89s
+Epoch: 15/60 Iter: 71/102 loss: 1.1016 time 1.90s
+Epoch: 15/60 Iter: 72/102 loss: 1.1013 time 1.89s
+Epoch: 15/60 Iter: 73/102 loss: 1.1012 time 1.89s
+Epoch: 15/60 Iter: 74/102 loss: 1.1013 time 1.89s
+Epoch: 15/60 Iter: 75/102 loss: 1.1011 time 1.89s
+Epoch: 15/60 Iter: 76/102 loss: 1.1009 time 1.89s
+Epoch: 15/60 Iter: 77/102 loss: 1.1011 time 1.90s
+Epoch: 15/60 Iter: 78/102 loss: 1.1013 time 1.89s
+Epoch: 15/60 Iter: 79/102 loss: 1.1016 time 1.89s
+Epoch: 15/60 Iter: 80/102 loss: 1.1017 time 1.89s
+Epoch: 15/60 Iter: 81/102 loss: 1.1016 time 1.89s
+Epoch: 15/60 Iter: 82/102 loss: 1.1017 time 1.89s
+Epoch: 15/60 Iter: 83/102 loss: 1.1013 time 1.89s
+Epoch: 15/60 Iter: 84/102 loss: 1.1010 time 1.89s
+Epoch: 15/60 Iter: 85/102 loss: 1.1008 time 1.89s
+Epoch: 15/60 Iter: 86/102 loss: 1.1006 time 1.89s
+Epoch: 15/60 Iter: 87/102 loss: 1.1006 time 1.89s
+Epoch: 15/60 Iter: 88/102 loss: 1.1008 time 1.89s
+Epoch: 15/60 Iter: 89/102 loss: 1.1009 time 1.89s
+Epoch: 15/60 Iter: 90/102 loss: 1.1009 time 1.89s
+Epoch: 15/60 Iter: 91/102 loss: 1.1010 time 1.90s
+Epoch: 15/60 Iter: 92/102 loss: 1.1010 time 1.89s
+Epoch: 15/60 Iter: 93/102 loss: 1.1010 time 1.89s
+Epoch: 15/60 Iter: 94/102 loss: 1.1008 time 1.89s
+Epoch: 15/60 Iter: 95/102 loss: 1.1008 time 1.89s
+Epoch: 15/60 Iter: 96/102 loss: 1.1009 time 1.89s
+Epoch: 15/60 Iter: 97/102 loss: 1.1009 time 1.89s
+Epoch: 15/60 Iter: 98/102 loss: 1.1010 time 1.89s
+Epoch: 15/60 Iter: 99/102 loss: 1.1010 time 1.89s
+Epoch: 15/60 Iter: 100/102 loss: 1.1010 time 1.89s
+Epoch: 15/60 Iter: 101/102 loss: 1.1010 time 1.89s
+Final training  15/59 loss: 1.1010 time 193.25s lr: 0.000009
+[EarlyStopping] no improve (15/30)
+Val 15/60 0/27, Acc: 1.0000, time 1.91s
+Val 15/60 1/27, Acc: 0.5000, time 1.93s
+Val 15/60 2/27, Acc: 0.3333, time 1.93s
+Val 15/60 3/27, Acc: 0.5000, time 1.93s
+Val 15/60 4/27, Acc: 0.4000, time 1.91s
+Val 15/60 5/27, Acc: 0.3333, time 1.95s
+Val 15/60 6/27, Acc: 0.4286, time 1.92s
+Val 15/60 7/27, Acc: 0.5000, time 2.37s
+Val 15/60 8/27, Acc: 0.5556, time 2.46s
+Val 15/60 9/27, Acc: 0.5000, time 2.38s
+Val 15/60 10/27, Acc: 0.4545, time 2.39s
+Val 15/60 11/27, Acc: 0.4167, time 2.35s
+Val 15/60 12/27, Acc: 0.4615, time 2.38s
+Val 15/60 13/27, Acc: 0.4286, time 2.46s
+Val 15/60 14/27, Acc: 0.4667, time 1.93s
+Val 15/60 15/27, Acc: 0.4375, time 1.95s
+Val 15/60 16/27, Acc: 0.4118, time 1.96s
+Val 15/60 17/27, Acc: 0.3889, time 1.92s
+Val 15/60 18/27, Acc: 0.3684, time 2.06s
+Val 15/60 19/27, Acc: 0.3500, time 2.00s
+Val 15/60 20/27, Acc: 0.3333, time 1.92s
+Val 15/60 21/27, Acc: 0.3182, time 1.93s
+Val 15/60 22/27, Acc: 0.3478, time 1.93s
+Val 15/60 23/27, Acc: 0.3750, time 1.91s
+Val 15/60 24/27, Acc: 0.3600, time 1.94s
+Val 15/60 25/27, Acc: 0.3846, time 1.91s
+Val 15/60 26/27, Acc: 0.4074, time 1.90s
+[Val epoch 15] avg_acc=0.4074 | per-class [c0: 0.000, c1: 0.667, c2: 0.556]
+Final validation stats 15/59 , Val_acc: 0.4074074074074074 , time 55.50s
+[EarlyStopping] no improve (2/10)
+
+0 Mon Oct 13 16:17:02 2025 Epoch: 16
+Epoch: 16/60 Iter: 0/102 loss: 1.1083 time 2.40s
+Epoch: 16/60 Iter: 1/102 loss: 1.0937 time 1.89s
+Epoch: 16/60 Iter: 2/102 loss: 1.0957 time 1.90s
+Epoch: 16/60 Iter: 3/102 loss: 1.0979 time 1.89s
+Epoch: 16/60 Iter: 4/102 loss: 1.1006 time 1.89s
+Epoch: 16/60 Iter: 5/102 loss: 1.1003 time 1.89s
+Epoch: 16/60 Iter: 6/102 loss: 1.0999 time 1.89s
+Epoch: 16/60 Iter: 7/102 loss: 1.1006 time 1.88s
+Epoch: 16/60 Iter: 8/102 loss: 1.1000 time 1.88s
+Epoch: 16/60 Iter: 9/102 loss: 1.0993 time 1.89s
+Epoch: 16/60 Iter: 10/102 loss: 1.0989 time 1.89s
+Epoch: 16/60 Iter: 11/102 loss: 1.0992 time 1.89s
+Epoch: 16/60 Iter: 12/102 loss: 1.0986 time 1.89s
+Epoch: 16/60 Iter: 13/102 loss: 1.0999 time 1.89s
+Epoch: 16/60 Iter: 14/102 loss: 1.0992 time 1.89s
+Epoch: 16/60 Iter: 15/102 loss: 1.0985 time 1.89s
+Epoch: 16/60 Iter: 16/102 loss: 1.0983 time 1.89s
+Epoch: 16/60 Iter: 17/102 loss: 1.0977 time 1.89s
+Epoch: 16/60 Iter: 18/102 loss: 1.0983 time 1.89s
+Epoch: 16/60 Iter: 19/102 loss: 1.0976 time 1.90s
+Epoch: 16/60 Iter: 20/102 loss: 1.0988 time 1.89s
+Epoch: 16/60 Iter: 21/102 loss: 1.0981 time 1.89s
+Epoch: 16/60 Iter: 22/102 loss: 1.0983 time 1.89s
+Epoch: 16/60 Iter: 23/102 loss: 1.0974 time 1.89s
+Epoch: 16/60 Iter: 24/102 loss: 1.0977 time 1.89s
+Epoch: 16/60 Iter: 25/102 loss: 1.0979 time 1.89s
+Epoch: 16/60 Iter: 26/102 loss: 1.0980 time 1.89s
+Epoch: 16/60 Iter: 27/102 loss: 1.0978 time 1.89s
+Epoch: 16/60 Iter: 28/102 loss: 1.0977 time 1.89s
+Epoch: 16/60 Iter: 29/102 loss: 1.0970 time 1.89s
+Epoch: 16/60 Iter: 30/102 loss: 1.0976 time 1.89s
+Epoch: 16/60 Iter: 31/102 loss: 1.0981 time 1.89s
+Epoch: 16/60 Iter: 32/102 loss: 1.0974 time 1.90s
+Epoch: 16/60 Iter: 33/102 loss: 1.0978 time 1.89s
+Epoch: 16/60 Iter: 34/102 loss: 1.0976 time 1.89s
+Epoch: 16/60 Iter: 35/102 loss: 1.0975 time 1.89s
+Epoch: 16/60 Iter: 36/102 loss: 1.0968 time 1.89s
+Epoch: 16/60 Iter: 37/102 loss: 1.0975 time 1.89s
+Epoch: 16/60 Iter: 38/102 loss: 1.0981 time 1.89s
+Epoch: 16/60 Iter: 39/102 loss: 1.0979 time 1.89s
+Epoch: 16/60 Iter: 40/102 loss: 1.0989 time 1.89s
+Epoch: 16/60 Iter: 41/102 loss: 1.0990 time 1.89s
+Epoch: 16/60 Iter: 42/102 loss: 1.0986 time 1.88s
+Epoch: 16/60 Iter: 43/102 loss: 1.0981 time 1.90s
+Epoch: 16/60 Iter: 44/102 loss: 1.0977 time 1.89s
+Epoch: 16/60 Iter: 45/102 loss: 1.0974 time 1.89s
+Epoch: 16/60 Iter: 46/102 loss: 1.0972 time 1.89s
+Epoch: 16/60 Iter: 47/102 loss: 1.0981 time 1.89s
+Epoch: 16/60 Iter: 48/102 loss: 1.0977 time 1.89s
+Epoch: 16/60 Iter: 49/102 loss: 1.0986 time 1.89s
+Epoch: 16/60 Iter: 50/102 loss: 1.0982 time 1.89s
+Epoch: 16/60 Iter: 51/102 loss: 1.0979 time 1.90s
+Epoch: 16/60 Iter: 52/102 loss: 1.0977 time 1.89s
+Epoch: 16/60 Iter: 53/102 loss: 1.0983 time 1.89s
+Epoch: 16/60 Iter: 54/102 loss: 1.0981 time 1.89s
+Epoch: 16/60 Iter: 55/102 loss: 1.0989 time 1.88s
+Epoch: 16/60 Iter: 56/102 loss: 1.0989 time 1.89s
+Epoch: 16/60 Iter: 57/102 loss: 1.0986 time 1.89s
+Epoch: 16/60 Iter: 58/102 loss: 1.0993 time 1.89s
+Epoch: 16/60 Iter: 59/102 loss: 1.1000 time 1.89s
+Epoch: 16/60 Iter: 60/102 loss: 1.0999 time 1.89s
+Epoch: 16/60 Iter: 61/102 loss: 1.1004 time 1.89s
+Epoch: 16/60 Iter: 62/102 loss: 1.1001 time 1.90s
+Epoch: 16/60 Iter: 63/102 loss: 1.1003 time 1.89s
+Epoch: 16/60 Iter: 64/102 loss: 1.1000 time 1.89s
+Epoch: 16/60 Iter: 65/102 loss: 1.0999 time 1.90s
+Epoch: 16/60 Iter: 66/102 loss: 1.0998 time 1.89s
+Epoch: 16/60 Iter: 67/102 loss: 1.1003 time 1.89s
+Epoch: 16/60 Iter: 68/102 loss: 1.0999 time 1.89s
+Epoch: 16/60 Iter: 69/102 loss: 1.0995 time 1.89s
+Epoch: 16/60 Iter: 70/102 loss: 1.0994 time 1.89s
+Epoch: 16/60 Iter: 71/102 loss: 1.0993 time 1.89s
+Epoch: 16/60 Iter: 72/102 loss: 1.0997 time 1.88s
+Epoch: 16/60 Iter: 73/102 loss: 1.1000 time 1.89s
+Epoch: 16/60 Iter: 74/102 loss: 1.0999 time 1.89s
+Epoch: 16/60 Iter: 75/102 loss: 1.0997 time 1.89s
+Epoch: 16/60 Iter: 76/102 loss: 1.1002 time 1.88s
+Epoch: 16/60 Iter: 77/102 loss: 1.1000 time 1.89s
+Epoch: 16/60 Iter: 78/102 loss: 1.1000 time 1.89s
+Epoch: 16/60 Iter: 79/102 loss: 1.1002 time 1.89s
+Epoch: 16/60 Iter: 80/102 loss: 1.1007 time 1.89s
+Epoch: 16/60 Iter: 81/102 loss: 1.1010 time 1.89s
+Epoch: 16/60 Iter: 82/102 loss: 1.1011 time 1.89s
+Epoch: 16/60 Iter: 83/102 loss: 1.1013 time 1.89s
+Epoch: 16/60 Iter: 84/102 loss: 1.1014 time 1.89s
+Epoch: 16/60 Iter: 85/102 loss: 1.1011 time 1.89s
+Epoch: 16/60 Iter: 86/102 loss: 1.1011 time 1.89s
+Epoch: 16/60 Iter: 87/102 loss: 1.1011 time 1.89s
+Epoch: 16/60 Iter: 88/102 loss: 1.1008 time 1.89s
+Epoch: 16/60 Iter: 89/102 loss: 1.1009 time 1.89s
+Epoch: 16/60 Iter: 90/102 loss: 1.1010 time 1.89s
+Epoch: 16/60 Iter: 91/102 loss: 1.1011 time 1.90s
+Epoch: 16/60 Iter: 92/102 loss: 1.1008 time 1.89s
+Epoch: 16/60 Iter: 93/102 loss: 1.1010 time 1.89s
+Epoch: 16/60 Iter: 94/102 loss: 1.1011 time 1.90s
+Epoch: 16/60 Iter: 95/102 loss: 1.1010 time 1.89s
+Epoch: 16/60 Iter: 96/102 loss: 1.1010 time 1.89s
+Epoch: 16/60 Iter: 97/102 loss: 1.1011 time 1.89s
+Epoch: 16/60 Iter: 98/102 loss: 1.1012 time 1.90s
+Epoch: 16/60 Iter: 99/102 loss: 1.1010 time 1.89s
+Epoch: 16/60 Iter: 100/102 loss: 1.1010 time 1.89s
+Epoch: 16/60 Iter: 101/102 loss: 1.1010 time 1.89s
+Final training  16/59 loss: 1.1010 time 193.19s lr: 0.000009
+[EarlyStopping] no improve (16/30)
+0 Mon Oct 13 16:20:16 2025 Epoch: 17
+Epoch: 17/60 Iter: 0/102 loss: 1.1110 time 2.09s
+Epoch: 17/60 Iter: 1/102 loss: 1.0890 time 1.90s
+Epoch: 17/60 Iter: 2/102 loss: 1.0871 time 1.89s
+Epoch: 17/60 Iter: 3/102 loss: 1.0890 time 1.89s
+Epoch: 17/60 Iter: 4/102 loss: 1.0914 time 1.89s
+Epoch: 17/60 Iter: 5/102 loss: 1.0908 time 1.89s
+Epoch: 17/60 Iter: 6/102 loss: 1.0917 time 1.88s
+Epoch: 17/60 Iter: 7/102 loss: 1.0930 time 1.89s
+Epoch: 17/60 Iter: 8/102 loss: 1.0935 time 1.89s
+Epoch: 17/60 Iter: 9/102 loss: 1.0922 time 1.89s
+Epoch: 17/60 Iter: 10/102 loss: 1.0955 time 1.89s
+Epoch: 17/60 Iter: 11/102 loss: 1.0956 time 1.89s
+Epoch: 17/60 Iter: 12/102 loss: 1.0959 time 1.89s
+Epoch: 17/60 Iter: 13/102 loss: 1.0969 time 1.89s
+Epoch: 17/60 Iter: 14/102 loss: 1.0978 time 1.89s
+Epoch: 17/60 Iter: 15/102 loss: 1.0977 time 1.89s
+Epoch: 17/60 Iter: 16/102 loss: 1.0983 time 1.89s
+Epoch: 17/60 Iter: 17/102 loss: 1.0990 time 1.89s
+Epoch: 17/60 Iter: 18/102 loss: 1.0998 time 1.89s
+Epoch: 17/60 Iter: 19/102 loss: 1.1003 time 1.89s
+Epoch: 17/60 Iter: 20/102 loss: 1.0998 time 1.89s
+Epoch: 17/60 Iter: 21/102 loss: 1.1003 time 1.90s
+Epoch: 17/60 Iter: 22/102 loss: 1.0998 time 1.89s
+Epoch: 17/60 Iter: 23/102 loss: 1.1004 time 1.89s
+Epoch: 17/60 Iter: 24/102 loss: 1.0997 time 1.89s
+Epoch: 17/60 Iter: 25/102 loss: 1.0998 time 1.89s
+Epoch: 17/60 Iter: 26/102 loss: 1.0993 time 1.89s
+Epoch: 17/60 Iter: 27/102 loss: 1.0992 time 1.89s
+Epoch: 17/60 Iter: 28/102 loss: 1.0996 time 1.90s
+Epoch: 17/60 Iter: 29/102 loss: 1.0995 time 1.89s
+Epoch: 17/60 Iter: 30/102 loss: 1.0997 time 1.89s
+Epoch: 17/60 Iter: 31/102 loss: 1.0997 time 1.89s
+Epoch: 17/60 Iter: 32/102 loss: 1.1000 time 1.89s
+Epoch: 17/60 Iter: 33/102 loss: 1.1004 time 1.89s
+Epoch: 17/60 Iter: 34/102 loss: 1.1000 time 1.89s
+Epoch: 17/60 Iter: 35/102 loss: 1.0994 time 1.89s
+Epoch: 17/60 Iter: 36/102 loss: 1.0997 time 1.90s
+Epoch: 17/60 Iter: 37/102 loss: 1.0999 time 1.90s
+Epoch: 17/60 Iter: 38/102 loss: 1.0992 time 1.89s
+Epoch: 17/60 Iter: 39/102 loss: 1.0992 time 1.89s
+Epoch: 17/60 Iter: 40/102 loss: 1.0993 time 1.89s
+Epoch: 17/60 Iter: 41/102 loss: 1.0988 time 1.89s
+Epoch: 17/60 Iter: 42/102 loss: 1.0987 time 1.89s
+Epoch: 17/60 Iter: 43/102 loss: 1.0988 time 1.89s
+Epoch: 17/60 Iter: 44/102 loss: 1.0984 time 1.89s
+Epoch: 17/60 Iter: 45/102 loss: 1.0982 time 1.89s
+Epoch: 17/60 Iter: 46/102 loss: 1.0978 time 1.89s
+Epoch: 17/60 Iter: 47/102 loss: 1.0980 time 1.89s
+Epoch: 17/60 Iter: 48/102 loss: 1.0986 time 1.89s
+Epoch: 17/60 Iter: 49/102 loss: 1.0987 time 1.89s
+Epoch: 17/60 Iter: 50/102 loss: 1.0993 time 1.89s
+Epoch: 17/60 Iter: 51/102 loss: 1.0995 time 1.89s
+Epoch: 17/60 Iter: 52/102 loss: 1.0996 time 1.89s
+Epoch: 17/60 Iter: 53/102 loss: 1.1001 time 1.89s
+Epoch: 17/60 Iter: 54/102 loss: 1.1002 time 1.89s
+Epoch: 17/60 Iter: 55/102 loss: 1.1005 time 1.89s
+Epoch: 17/60 Iter: 56/102 loss: 1.1006 time 1.89s
+Epoch: 17/60 Iter: 57/102 loss: 1.1008 time 1.90s
+Epoch: 17/60 Iter: 58/102 loss: 1.1004 time 1.89s
+Epoch: 17/60 Iter: 59/102 loss: 1.1006 time 1.89s
+Epoch: 17/60 Iter: 60/102 loss: 1.1009 time 1.89s
+Epoch: 17/60 Iter: 61/102 loss: 1.1003 time 1.89s
+Epoch: 17/60 Iter: 62/102 loss: 1.1002 time 1.89s
+Epoch: 17/60 Iter: 63/102 loss: 1.1004 time 1.91s
+Epoch: 17/60 Iter: 64/102 loss: 1.1005 time 1.90s
+Epoch: 17/60 Iter: 65/102 loss: 1.1006 time 1.89s
+Epoch: 17/60 Iter: 66/102 loss: 1.1003 time 1.90s
+Epoch: 17/60 Iter: 67/102 loss: 1.1006 time 1.89s
+Epoch: 17/60 Iter: 68/102 loss: 1.1007 time 1.91s
+Epoch: 17/60 Iter: 69/102 loss: 1.1004 time 1.89s
+Epoch: 17/60 Iter: 70/102 loss: 1.1006 time 1.90s
+Epoch: 17/60 Iter: 71/102 loss: 1.1006 time 1.89s
+Epoch: 17/60 Iter: 72/102 loss: 1.1007 time 1.90s
+Epoch: 17/60 Iter: 73/102 loss: 1.1006 time 1.90s
+Epoch: 17/60 Iter: 74/102 loss: 1.1005 time 1.89s
+Epoch: 17/60 Iter: 75/102 loss: 1.1005 time 1.90s
+Epoch: 17/60 Iter: 76/102 loss: 1.1006 time 1.90s
+Epoch: 17/60 Iter: 77/102 loss: 1.1006 time 1.89s
+Epoch: 17/60 Iter: 78/102 loss: 1.1006 time 1.89s
+Epoch: 17/60 Iter: 79/102 loss: 1.1007 time 1.89s
+Epoch: 17/60 Iter: 80/102 loss: 1.1007 time 1.90s
+Epoch: 17/60 Iter: 81/102 loss: 1.1007 time 1.90s
+Epoch: 17/60 Iter: 82/102 loss: 1.1007 time 1.90s
+Epoch: 17/60 Iter: 83/102 loss: 1.1009 time 1.90s
+Epoch: 17/60 Iter: 84/102 loss: 1.1012 time 1.90s
+Epoch: 17/60 Iter: 85/102 loss: 1.1011 time 1.91s
+Epoch: 17/60 Iter: 86/102 loss: 1.1009 time 1.90s
+Epoch: 17/60 Iter: 87/102 loss: 1.1009 time 1.90s
+Epoch: 17/60 Iter: 88/102 loss: 1.1010 time 1.90s
+Epoch: 17/60 Iter: 89/102 loss: 1.1008 time 1.90s
+Epoch: 17/60 Iter: 90/102 loss: 1.1010 time 1.90s
+Epoch: 17/60 Iter: 91/102 loss: 1.1010 time 1.90s
+Epoch: 17/60 Iter: 92/102 loss: 1.1010 time 1.90s
+Epoch: 17/60 Iter: 93/102 loss: 1.1010 time 1.89s
+Epoch: 17/60 Iter: 94/102 loss: 1.1011 time 1.90s
+Epoch: 17/60 Iter: 95/102 loss: 1.1012 time 1.90s
+Epoch: 17/60 Iter: 96/102 loss: 1.1012 time 1.89s
+Epoch: 17/60 Iter: 97/102 loss: 1.1011 time 1.89s
+Epoch: 17/60 Iter: 98/102 loss: 1.1011 time 1.89s
+Epoch: 17/60 Iter: 99/102 loss: 1.1009 time 1.89s
+Epoch: 17/60 Iter: 100/102 loss: 1.1011 time 1.90s
+Epoch: 17/60 Iter: 101/102 loss: 1.1011 time 1.91s
+Final training  17/59 loss: 1.1011 time 193.30s lr: 0.000009
+[EarlyStopping] no improve (17/30)
+0 Mon Oct 13 16:23:29 2025 Epoch: 18
+Epoch: 18/60 Iter: 0/102 loss: 1.0897 time 2.36s
+Epoch: 18/60 Iter: 1/102 loss: 1.0951 time 1.90s
+Epoch: 18/60 Iter: 2/102 loss: 1.0911 time 1.89s
+Epoch: 18/60 Iter: 3/102 loss: 1.0969 time 1.89s
+Epoch: 18/60 Iter: 4/102 loss: 1.1014 time 1.89s
+Epoch: 18/60 Iter: 5/102 loss: 1.1009 time 1.90s
+Epoch: 18/60 Iter: 6/102 loss: 1.1007 time 1.91s
+Epoch: 18/60 Iter: 7/102 loss: 1.1006 time 1.90s
+Epoch: 18/60 Iter: 8/102 loss: 1.1039 time 1.90s
+Epoch: 18/60 Iter: 9/102 loss: 1.1055 time 1.90s
+Epoch: 18/60 Iter: 10/102 loss: 1.1056 time 1.89s
+Epoch: 18/60 Iter: 11/102 loss: 1.1059 time 1.89s
+Epoch: 18/60 Iter: 12/102 loss: 1.1053 time 1.89s
+Epoch: 18/60 Iter: 13/102 loss: 1.1057 time 1.89s
+Epoch: 18/60 Iter: 14/102 loss: 1.1064 time 1.89s
+Epoch: 18/60 Iter: 15/102 loss: 1.1045 time 1.89s
+Epoch: 18/60 Iter: 16/102 loss: 1.1043 time 1.89s
+Epoch: 18/60 Iter: 17/102 loss: 1.1036 time 1.89s
+Epoch: 18/60 Iter: 18/102 loss: 1.1035 time 1.89s
+Epoch: 18/60 Iter: 19/102 loss: 1.1030 time 1.89s
+Epoch: 18/60 Iter: 20/102 loss: 1.1031 time 1.89s
+Epoch: 18/60 Iter: 21/102 loss: 1.1036 time 1.89s
+Epoch: 18/60 Iter: 22/102 loss: 1.1031 time 1.89s
+Epoch: 18/60 Iter: 23/102 loss: 1.1023 time 1.89s
+Epoch: 18/60 Iter: 24/102 loss: 1.1024 time 1.89s
+Epoch: 18/60 Iter: 25/102 loss: 1.1026 time 1.89s
+Epoch: 18/60 Iter: 26/102 loss: 1.1028 time 1.89s
+Epoch: 18/60 Iter: 27/102 loss: 1.1029 time 1.89s
+Epoch: 18/60 Iter: 28/102 loss: 1.1024 time 1.89s
+Epoch: 18/60 Iter: 29/102 loss: 1.1020 time 1.89s
+Epoch: 18/60 Iter: 30/102 loss: 1.1016 time 1.89s
+Epoch: 18/60 Iter: 31/102 loss: 1.1019 time 1.89s
+Epoch: 18/60 Iter: 32/102 loss: 1.1015 time 1.89s
+Epoch: 18/60 Iter: 33/102 loss: 1.1008 time 1.89s
+Epoch: 18/60 Iter: 34/102 loss: 1.1006 time 1.89s
+Epoch: 18/60 Iter: 35/102 loss: 1.1005 time 1.89s
+Epoch: 18/60 Iter: 36/102 loss: 1.1000 time 1.89s
+Epoch: 18/60 Iter: 37/102 loss: 1.1005 time 1.89s
+Epoch: 18/60 Iter: 38/102 loss: 1.1002 time 1.89s
+Epoch: 18/60 Iter: 39/102 loss: 1.1000 time 1.89s
+Epoch: 18/60 Iter: 40/102 loss: 1.0996 time 1.89s
+Epoch: 18/60 Iter: 41/102 loss: 1.0994 time 1.89s
+Epoch: 18/60 Iter: 42/102 loss: 1.0991 time 1.89s
+Epoch: 18/60 Iter: 43/102 loss: 1.0997 time 1.90s
+Epoch: 18/60 Iter: 44/102 loss: 1.1002 time 1.90s
+Epoch: 18/60 Iter: 45/102 loss: 1.1007 time 1.89s
+Epoch: 18/60 Iter: 46/102 loss: 1.1003 time 1.89s
+Epoch: 18/60 Iter: 47/102 loss: 1.1008 time 1.90s
+Epoch: 18/60 Iter: 48/102 loss: 1.1004 time 1.89s
+Epoch: 18/60 Iter: 49/102 loss: 1.1009 time 1.90s
+Epoch: 18/60 Iter: 50/102 loss: 1.1013 time 1.89s
+Epoch: 18/60 Iter: 51/102 loss: 1.1008 time 1.89s
+Epoch: 18/60 Iter: 52/102 loss: 1.1012 time 1.90s
+Epoch: 18/60 Iter: 53/102 loss: 1.1011 time 1.89s
+Epoch: 18/60 Iter: 54/102 loss: 1.1012 time 1.89s
+Epoch: 18/60 Iter: 55/102 loss: 1.1013 time 1.89s
+Epoch: 18/60 Iter: 56/102 loss: 1.1011 time 1.89s
+Epoch: 18/60 Iter: 57/102 loss: 1.1013 time 1.89s
+Epoch: 18/60 Iter: 58/102 loss: 1.1011 time 1.89s
+Epoch: 18/60 Iter: 59/102 loss: 1.1008 time 1.89s
+Epoch: 18/60 Iter: 60/102 loss: 1.1008 time 1.89s
+Epoch: 18/60 Iter: 61/102 loss: 1.1008 time 1.88s
+Epoch: 18/60 Iter: 62/102 loss: 1.1010 time 1.89s
+Epoch: 18/60 Iter: 63/102 loss: 1.1013 time 1.90s
+Epoch: 18/60 Iter: 64/102 loss: 1.1011 time 1.89s
+Epoch: 18/60 Iter: 65/102 loss: 1.1010 time 1.89s
+Epoch: 18/60 Iter: 66/102 loss: 1.1007 time 1.89s
+Epoch: 18/60 Iter: 67/102 loss: 1.1009 time 1.89s
+Epoch: 18/60 Iter: 68/102 loss: 1.1009 time 1.89s
+Epoch: 18/60 Iter: 69/102 loss: 1.1007 time 1.89s
+Epoch: 18/60 Iter: 70/102 loss: 1.1005 time 1.88s
+Epoch: 18/60 Iter: 71/102 loss: 1.1008 time 1.89s
+Epoch: 18/60 Iter: 72/102 loss: 1.1010 time 1.89s
+Epoch: 18/60 Iter: 73/102 loss: 1.1008 time 1.89s
+Epoch: 18/60 Iter: 74/102 loss: 1.1006 time 1.89s
+Epoch: 18/60 Iter: 75/102 loss: 1.1008 time 1.89s
+Epoch: 18/60 Iter: 76/102 loss: 1.1005 time 1.89s
+Epoch: 18/60 Iter: 77/102 loss: 1.1006 time 1.88s
+Epoch: 18/60 Iter: 78/102 loss: 1.1007 time 1.89s
+Epoch: 18/60 Iter: 79/102 loss: 1.1007 time 1.89s
+Epoch: 18/60 Iter: 80/102 loss: 1.1007 time 1.89s
+Epoch: 18/60 Iter: 81/102 loss: 1.1009 time 1.90s
+Epoch: 18/60 Iter: 82/102 loss: 1.1007 time 1.89s
+Epoch: 18/60 Iter: 83/102 loss: 1.1005 time 1.89s
+Epoch: 18/60 Iter: 84/102 loss: 1.1005 time 1.89s
+Epoch: 18/60 Iter: 85/102 loss: 1.1006 time 1.89s
+Epoch: 18/60 Iter: 86/102 loss: 1.1003 time 1.90s
+Epoch: 18/60 Iter: 87/102 loss: 1.1001 time 1.89s
+Epoch: 18/60 Iter: 88/102 loss: 1.1000 time 1.89s
+Epoch: 18/60 Iter: 89/102 loss: 1.0995 time 1.89s
+Epoch: 18/60 Iter: 90/102 loss: 1.0996 time 1.90s
+Epoch: 18/60 Iter: 91/102 loss: 1.0996 time 1.89s
+Epoch: 18/60 Iter: 92/102 loss: 1.0997 time 1.89s
+Epoch: 18/60 Iter: 93/102 loss: 1.1000 time 1.89s
+Epoch: 18/60 Iter: 94/102 loss: 1.1002 time 1.89s
+Epoch: 18/60 Iter: 95/102 loss: 1.1001 time 1.89s
+Epoch: 18/60 Iter: 96/102 loss: 1.1002 time 1.89s
+Epoch: 18/60 Iter: 97/102 loss: 1.1004 time 1.90s
+Epoch: 18/60 Iter: 98/102 loss: 1.1004 time 1.89s
+Epoch: 18/60 Iter: 99/102 loss: 1.1004 time 1.89s
+Epoch: 18/60 Iter: 100/102 loss: 1.1005 time 1.89s
+Epoch: 18/60 Iter: 101/102 loss: 1.1007 time 1.89s
+Final training  18/59 loss: 1.1007 time 193.25s lr: 0.000008
+[EarlyStopping] no improve (18/30)
+0 Mon Oct 13 16:26:42 2025 Epoch: 19
+Epoch: 19/60 Iter: 0/102 loss: 1.0832 time 2.22s
+Epoch: 19/60 Iter: 1/102 loss: 1.0940 time 1.89s
+Epoch: 19/60 Iter: 2/102 loss: 1.0972 time 1.90s
+Epoch: 19/60 Iter: 3/102 loss: 1.0960 time 1.89s
+Epoch: 19/60 Iter: 4/102 loss: 1.0953 time 1.89s
+Epoch: 19/60 Iter: 5/102 loss: 1.0959 time 1.89s
+Epoch: 19/60 Iter: 6/102 loss: 1.0964 time 1.90s
+Epoch: 19/60 Iter: 7/102 loss: 1.0965 time 1.88s
+Epoch: 19/60 Iter: 8/102 loss: 1.0960 time 1.89s
+Epoch: 19/60 Iter: 9/102 loss: 1.0974 time 1.89s
+Epoch: 19/60 Iter: 10/102 loss: 1.0966 time 1.89s
+Epoch: 19/60 Iter: 11/102 loss: 1.0970 time 1.89s
+Epoch: 19/60 Iter: 12/102 loss: 1.0964 time 1.89s
+Epoch: 19/60 Iter: 13/102 loss: 1.0979 time 1.88s
+Epoch: 19/60 Iter: 14/102 loss: 1.0974 time 1.90s
+Epoch: 19/60 Iter: 15/102 loss: 1.0970 time 1.89s
+Epoch: 19/60 Iter: 16/102 loss: 1.0977 time 1.89s
+Epoch: 19/60 Iter: 17/102 loss: 1.0975 time 1.89s
+Epoch: 19/60 Iter: 18/102 loss: 1.0982 time 1.89s
+Epoch: 19/60 Iter: 19/102 loss: 1.0979 time 1.89s
+Epoch: 19/60 Iter: 20/102 loss: 1.0976 time 1.88s
+Epoch: 19/60 Iter: 21/102 loss: 1.0980 time 1.89s
+Epoch: 19/60 Iter: 22/102 loss: 1.0984 time 1.88s
+Epoch: 19/60 Iter: 23/102 loss: 1.0990 time 1.89s
+Epoch: 19/60 Iter: 24/102 loss: 1.0983 time 1.90s
+Epoch: 19/60 Iter: 25/102 loss: 1.0980 time 1.89s
+Epoch: 19/60 Iter: 26/102 loss: 1.0978 time 1.89s
+Epoch: 19/60 Iter: 27/102 loss: 1.0972 time 1.89s
+Epoch: 19/60 Iter: 28/102 loss: 1.0970 time 1.89s
+Epoch: 19/60 Iter: 29/102 loss: 1.0972 time 1.89s
+Epoch: 19/60 Iter: 30/102 loss: 1.0977 time 1.89s
+Epoch: 19/60 Iter: 31/102 loss: 1.0981 time 1.89s
+Epoch: 19/60 Iter: 32/102 loss: 1.0976 time 1.88s
+Epoch: 19/60 Iter: 33/102 loss: 1.0970 time 1.89s
+Epoch: 19/60 Iter: 34/102 loss: 1.0970 time 1.89s
+Epoch: 19/60 Iter: 35/102 loss: 1.0962 time 1.89s
+Epoch: 19/60 Iter: 36/102 loss: 1.0970 time 1.89s
+Epoch: 19/60 Iter: 37/102 loss: 1.0965 time 1.89s
+Epoch: 19/60 Iter: 38/102 loss: 1.0959 time 1.89s
+Epoch: 19/60 Iter: 39/102 loss: 1.0966 time 1.89s
+Epoch: 19/60 Iter: 40/102 loss: 1.0975 time 1.88s
+Epoch: 19/60 Iter: 41/102 loss: 1.0976 time 1.89s
+Epoch: 19/60 Iter: 42/102 loss: 1.0973 time 1.89s
+Epoch: 19/60 Iter: 43/102 loss: 1.0976 time 1.90s
+Epoch: 19/60 Iter: 44/102 loss: 1.0979 time 1.89s
+Epoch: 19/60 Iter: 45/102 loss: 1.0980 time 1.89s
+Epoch: 19/60 Iter: 46/102 loss: 1.0982 time 1.89s
+Epoch: 19/60 Iter: 47/102 loss: 1.0987 time 1.89s
+Epoch: 19/60 Iter: 48/102 loss: 1.0982 time 1.89s
+Epoch: 19/60 Iter: 49/102 loss: 1.0988 time 1.89s
+Epoch: 19/60 Iter: 50/102 loss: 1.0995 time 1.88s
+Epoch: 19/60 Iter: 51/102 loss: 1.0988 time 1.89s
+Epoch: 19/60 Iter: 52/102 loss: 1.0981 time 1.89s
+Epoch: 19/60 Iter: 53/102 loss: 1.0989 time 1.88s
+Epoch: 19/60 Iter: 54/102 loss: 1.0990 time 1.89s
+Epoch: 19/60 Iter: 55/102 loss: 1.0992 time 1.89s
+Epoch: 19/60 Iter: 56/102 loss: 1.0988 time 1.89s
+Epoch: 19/60 Iter: 57/102 loss: 1.0990 time 1.89s
+Epoch: 19/60 Iter: 58/102 loss: 1.0991 time 1.89s
+Epoch: 19/60 Iter: 59/102 loss: 1.0998 time 1.89s
+Epoch: 19/60 Iter: 60/102 loss: 1.0991 time 1.89s
+Epoch: 19/60 Iter: 61/102 loss: 1.0996 time 1.88s
+Epoch: 19/60 Iter: 62/102 loss: 1.1002 time 1.89s
+Epoch: 19/60 Iter: 63/102 loss: 1.0998 time 1.89s
+Epoch: 19/60 Iter: 64/102 loss: 1.1004 time 1.89s
+Epoch: 19/60 Iter: 65/102 loss: 1.1005 time 1.89s
+Epoch: 19/60 Iter: 66/102 loss: 1.1008 time 1.89s
+Epoch: 19/60 Iter: 67/102 loss: 1.1003 time 1.89s
+Epoch: 19/60 Iter: 68/102 loss: 1.1004 time 1.89s
+Epoch: 19/60 Iter: 69/102 loss: 1.1008 time 1.89s
+Epoch: 19/60 Iter: 70/102 loss: 1.1010 time 1.89s
+Epoch: 19/60 Iter: 71/102 loss: 1.1012 time 1.90s
+Epoch: 19/60 Iter: 72/102 loss: 1.1013 time 1.90s
+Epoch: 19/60 Iter: 73/102 loss: 1.1013 time 1.89s
+Epoch: 19/60 Iter: 74/102 loss: 1.1015 time 1.89s
+Epoch: 19/60 Iter: 75/102 loss: 1.1015 time 1.89s
+Epoch: 19/60 Iter: 76/102 loss: 1.1016 time 1.89s
+Epoch: 19/60 Iter: 77/102 loss: 1.1013 time 1.89s
+Epoch: 19/60 Iter: 78/102 loss: 1.1013 time 1.89s
+Epoch: 19/60 Iter: 79/102 loss: 1.1016 time 1.89s
+Epoch: 19/60 Iter: 80/102 loss: 1.1016 time 1.89s
+Epoch: 19/60 Iter: 81/102 loss: 1.1013 time 1.89s
+Epoch: 19/60 Iter: 82/102 loss: 1.1016 time 1.89s
+Epoch: 19/60 Iter: 83/102 loss: 1.1015 time 1.89s
+Epoch: 19/60 Iter: 84/102 loss: 1.1014 time 1.89s
+Epoch: 19/60 Iter: 85/102 loss: 1.1013 time 1.89s
+Epoch: 19/60 Iter: 86/102 loss: 1.1016 time 1.88s
+Epoch: 19/60 Iter: 87/102 loss: 1.1015 time 1.89s
+Epoch: 19/60 Iter: 88/102 loss: 1.1015 time 1.89s
+Epoch: 19/60 Iter: 89/102 loss: 1.1014 time 1.90s
+Epoch: 19/60 Iter: 90/102 loss: 1.1017 time 1.88s
+Epoch: 19/60 Iter: 91/102 loss: 1.1015 time 1.89s
+Epoch: 19/60 Iter: 92/102 loss: 1.1012 time 1.89s
+Epoch: 19/60 Iter: 93/102 loss: 1.1013 time 1.89s
+Epoch: 19/60 Iter: 94/102 loss: 1.1012 time 1.90s
+Epoch: 19/60 Iter: 95/102 loss: 1.1012 time 1.89s
+Epoch: 19/60 Iter: 96/102 loss: 1.1010 time 1.89s
+Epoch: 19/60 Iter: 97/102 loss: 1.1010 time 1.89s
+Epoch: 19/60 Iter: 98/102 loss: 1.1010 time 1.89s
+Epoch: 19/60 Iter: 99/102 loss: 1.1011 time 1.89s
+Epoch: 19/60 Iter: 100/102 loss: 1.1011 time 1.89s
+Epoch: 19/60 Iter: 101/102 loss: 1.1010 time 1.89s
+Final training  19/59 loss: 1.1010 time 192.99s lr: 0.000008
+[EarlyStopping] no improve (19/30)
+Val 19/60 0/27, Acc: 0.0000, time 1.91s
+Val 19/60 1/27, Acc: 0.5000, time 1.92s
+Val 19/60 2/27, Acc: 0.6667, time 1.93s
+Val 19/60 3/27, Acc: 0.5000, time 1.93s
+Val 19/60 4/27, Acc: 0.4000, time 1.91s
+Val 19/60 5/27, Acc: 0.5000, time 1.94s
+Val 19/60 6/27, Acc: 0.4286, time 1.92s
+Val 19/60 7/27, Acc: 0.3750, time 1.92s
+Val 19/60 8/27, Acc: 0.4444, time 1.92s
+Val 19/60 9/27, Acc: 0.4000, time 1.93s
+Val 19/60 10/27, Acc: 0.3636, time 1.95s
+Val 19/60 11/27, Acc: 0.3333, time 1.91s
+Val 19/60 12/27, Acc: 0.3077, time 1.92s
+Val 19/60 13/27, Acc: 0.2857, time 1.93s
+Val 19/60 14/27, Acc: 0.2667, time 1.92s
+Val 19/60 15/27, Acc: 0.3125, time 1.95s
+Val 19/60 16/27, Acc: 0.2941, time 1.98s
+Val 19/60 17/27, Acc: 0.3333, time 1.94s
+Val 19/60 18/27, Acc: 0.3684, time 2.08s
+Val 19/60 19/27, Acc: 0.3500, time 2.01s
+Val 19/60 20/27, Acc: 0.3333, time 1.95s
+Val 19/60 21/27, Acc: 0.3182, time 1.95s
+Val 19/60 22/27, Acc: 0.3043, time 1.93s
+Val 19/60 23/27, Acc: 0.2917, time 1.92s
+Val 19/60 24/27, Acc: 0.3200, time 1.95s
+Val 19/60 25/27, Acc: 0.3077, time 1.91s
+Val 19/60 26/27, Acc: 0.2963, time 1.91s
+[Val epoch 19] avg_acc=0.2963 | per-class [c0: 0.778, c1: 0.111, c2: 0.000]
+Final validation stats 19/59 , Val_acc: 0.2962962962962963 , time 52.33s
+[EarlyStopping] no improve (3/10)
+
+0 Mon Oct 13 16:30:48 2025 Epoch: 20
+Epoch: 20/60 Iter: 0/102 loss: 1.1139 time 2.18s
+Epoch: 20/60 Iter: 1/102 loss: 1.0994 time 1.89s
+Epoch: 20/60 Iter: 2/102 loss: 1.0956 time 1.89s
+Epoch: 20/60 Iter: 3/102 loss: 1.0935 time 1.89s
+Epoch: 20/60 Iter: 4/102 loss: 1.0949 time 1.89s
+Epoch: 20/60 Iter: 5/102 loss: 1.0985 time 1.89s
+Epoch: 20/60 Iter: 6/102 loss: 1.0990 time 1.89s
+Epoch: 20/60 Iter: 7/102 loss: 1.1020 time 1.89s
+Epoch: 20/60 Iter: 8/102 loss: 1.1019 time 1.89s
+Epoch: 20/60 Iter: 9/102 loss: 1.1012 time 1.89s
+Epoch: 20/60 Iter: 10/102 loss: 1.0997 time 1.89s
+Epoch: 20/60 Iter: 11/102 loss: 1.0993 time 1.89s
+Epoch: 20/60 Iter: 12/102 loss: 1.0991 time 1.89s
+Epoch: 20/60 Iter: 13/102 loss: 1.0994 time 1.89s
+Epoch: 20/60 Iter: 14/102 loss: 1.0985 time 1.89s
+Epoch: 20/60 Iter: 15/102 loss: 1.0979 time 1.89s
+Epoch: 20/60 Iter: 16/102 loss: 1.0987 time 1.89s
+Epoch: 20/60 Iter: 17/102 loss: 1.0982 time 1.89s
+Epoch: 20/60 Iter: 18/102 loss: 1.0986 time 1.89s
+Epoch: 20/60 Iter: 19/102 loss: 1.0994 time 1.89s
+Epoch: 20/60 Iter: 20/102 loss: 1.1002 time 1.89s
+Epoch: 20/60 Iter: 21/102 loss: 1.1002 time 1.89s
+Epoch: 20/60 Iter: 22/102 loss: 1.1006 time 1.88s
+Epoch: 20/60 Iter: 23/102 loss: 1.0997 time 1.89s
+Epoch: 20/60 Iter: 24/102 loss: 1.0993 time 1.89s
+Epoch: 20/60 Iter: 25/102 loss: 1.0990 time 1.89s
+Epoch: 20/60 Iter: 26/102 loss: 1.0988 time 1.90s
+Epoch: 20/60 Iter: 27/102 loss: 1.0985 time 1.89s
+Epoch: 20/60 Iter: 28/102 loss: 1.0983 time 1.89s
+Epoch: 20/60 Iter: 29/102 loss: 1.0994 time 1.89s
+Epoch: 20/60 Iter: 30/102 loss: 1.0998 time 1.89s
+Epoch: 20/60 Iter: 31/102 loss: 1.0992 time 1.89s
+Epoch: 20/60 Iter: 32/102 loss: 1.1000 time 1.89s
+Epoch: 20/60 Iter: 33/102 loss: 1.0998 time 1.89s
+Epoch: 20/60 Iter: 34/102 loss: 1.0997 time 1.89s
+Epoch: 20/60 Iter: 35/102 loss: 1.0996 time 1.89s
+Epoch: 20/60 Iter: 36/102 loss: 1.0995 time 1.89s
+Epoch: 20/60 Iter: 37/102 loss: 1.0983 time 1.90s
+Epoch: 20/60 Iter: 38/102 loss: 1.0991 time 1.89s
+Epoch: 20/60 Iter: 39/102 loss: 1.0999 time 1.89s
+Epoch: 20/60 Iter: 40/102 loss: 1.1005 time 1.89s
+Epoch: 20/60 Iter: 41/102 loss: 1.0995 time 1.89s
+Epoch: 20/60 Iter: 42/102 loss: 1.0995 time 1.89s
+Epoch: 20/60 Iter: 43/102 loss: 1.0994 time 1.90s
+Epoch: 20/60 Iter: 44/102 loss: 1.0996 time 1.89s
+Epoch: 20/60 Iter: 45/102 loss: 1.0994 time 1.89s
+Epoch: 20/60 Iter: 46/102 loss: 1.0992 time 1.89s
+Epoch: 20/60 Iter: 47/102 loss: 1.0991 time 1.89s
+Epoch: 20/60 Iter: 48/102 loss: 1.0998 time 1.89s
+Epoch: 20/60 Iter: 49/102 loss: 1.0995 time 1.89s
+Epoch: 20/60 Iter: 50/102 loss: 1.0991 time 1.88s
+Epoch: 20/60 Iter: 51/102 loss: 1.0992 time 1.89s
+Epoch: 20/60 Iter: 52/102 loss: 1.0991 time 1.89s
+Epoch: 20/60 Iter: 53/102 loss: 1.0991 time 1.89s
+Epoch: 20/60 Iter: 54/102 loss: 1.0993 time 1.88s
+Epoch: 20/60 Iter: 55/102 loss: 1.0991 time 1.90s
+Epoch: 20/60 Iter: 56/102 loss: 1.0989 time 1.89s
+Epoch: 20/60 Iter: 57/102 loss: 1.0986 time 1.89s
+Epoch: 20/60 Iter: 58/102 loss: 1.0989 time 1.89s
+Epoch: 20/60 Iter: 59/102 loss: 1.0991 time 1.89s
+Epoch: 20/60 Iter: 60/102 loss: 1.0992 time 1.89s
+Epoch: 20/60 Iter: 61/102 loss: 1.0990 time 1.89s
+Epoch: 20/60 Iter: 62/102 loss: 1.0988 time 1.89s
+Epoch: 20/60 Iter: 63/102 loss: 1.0996 time 1.89s
+Epoch: 20/60 Iter: 64/102 loss: 1.0994 time 1.88s
+Epoch: 20/60 Iter: 65/102 loss: 1.0992 time 1.90s
+Epoch: 20/60 Iter: 66/102 loss: 1.0992 time 1.89s
+Epoch: 20/60 Iter: 67/102 loss: 1.0991 time 1.89s
+Epoch: 20/60 Iter: 68/102 loss: 1.0989 time 1.89s
+Epoch: 20/60 Iter: 69/102 loss: 1.0992 time 1.89s
+Epoch: 20/60 Iter: 70/102 loss: 1.0997 time 1.89s
+Epoch: 20/60 Iter: 71/102 loss: 1.0995 time 1.89s
+Epoch: 20/60 Iter: 72/102 loss: 1.0993 time 1.89s
+Epoch: 20/60 Iter: 73/102 loss: 1.0996 time 1.89s
+Epoch: 20/60 Iter: 74/102 loss: 1.0999 time 1.89s
+Epoch: 20/60 Iter: 75/102 loss: 1.0997 time 1.90s
+Epoch: 20/60 Iter: 76/102 loss: 1.0995 time 1.90s
+Epoch: 20/60 Iter: 77/102 loss: 1.0994 time 1.89s
+Epoch: 20/60 Iter: 78/102 loss: 1.0991 time 1.89s
+Epoch: 20/60 Iter: 79/102 loss: 1.0996 time 1.89s
+Epoch: 20/60 Iter: 80/102 loss: 1.0994 time 1.90s
+Epoch: 20/60 Iter: 81/102 loss: 1.0991 time 1.89s
+Epoch: 20/60 Iter: 82/102 loss: 1.0994 time 1.89s
+Epoch: 20/60 Iter: 83/102 loss: 1.0996 time 1.89s
+Epoch: 20/60 Iter: 84/102 loss: 1.0999 time 1.89s
+Epoch: 20/60 Iter: 85/102 loss: 1.1003 time 1.89s
+Epoch: 20/60 Iter: 86/102 loss: 1.1001 time 1.89s
+Epoch: 20/60 Iter: 87/102 loss: 1.1002 time 1.89s
+Epoch: 20/60 Iter: 88/102 loss: 1.1003 time 1.89s
+Epoch: 20/60 Iter: 89/102 loss: 1.1001 time 1.89s
+Epoch: 20/60 Iter: 90/102 loss: 1.1003 time 1.89s
+Epoch: 20/60 Iter: 91/102 loss: 1.1004 time 1.89s
+Epoch: 20/60 Iter: 92/102 loss: 1.1003 time 1.89s
+Epoch: 20/60 Iter: 93/102 loss: 1.1004 time 1.89s
+Epoch: 20/60 Iter: 94/102 loss: 1.0999 time 1.89s
+Epoch: 20/60 Iter: 95/102 loss: 1.0997 time 1.89s
+Epoch: 20/60 Iter: 96/102 loss: 1.0999 time 1.88s
+Epoch: 20/60 Iter: 97/102 loss: 1.0998 time 1.89s
+Epoch: 20/60 Iter: 98/102 loss: 1.0999 time 1.89s
+Epoch: 20/60 Iter: 99/102 loss: 1.1000 time 1.89s
+Epoch: 20/60 Iter: 100/102 loss: 1.1000 time 1.89s
+Epoch: 20/60 Iter: 101/102 loss: 1.0999 time 1.90s
+Final training  20/59 loss: 1.0999 time 192.99s lr: 0.000008
+[EarlyStopping] no improve (20/30)
+0 Mon Oct 13 16:34:01 2025 Epoch: 21
+Epoch: 21/60 Iter: 0/102 loss: 1.0945 time 2.23s
+Epoch: 21/60 Iter: 1/102 loss: 1.0828 time 1.89s
+Epoch: 21/60 Iter: 2/102 loss: 1.0843 time 1.88s
+Epoch: 21/60 Iter: 3/102 loss: 1.0863 time 1.89s
+Epoch: 21/60 Iter: 4/102 loss: 1.0895 time 1.88s
+Epoch: 21/60 Iter: 5/102 loss: 1.0899 time 1.89s
+Epoch: 21/60 Iter: 6/102 loss: 1.0879 time 1.89s
+Epoch: 21/60 Iter: 7/102 loss: 1.0925 time 1.89s
+Epoch: 21/60 Iter: 8/102 loss: 1.0927 time 1.89s
+Epoch: 21/60 Iter: 9/102 loss: 1.0954 time 1.89s
+Epoch: 21/60 Iter: 10/102 loss: 1.0962 time 1.89s
+Epoch: 21/60 Iter: 11/102 loss: 1.0988 time 1.89s
+Epoch: 21/60 Iter: 12/102 loss: 1.0995 time 1.89s
+Epoch: 21/60 Iter: 13/102 loss: 1.1001 time 1.89s
+Epoch: 21/60 Iter: 14/102 loss: 1.0990 time 1.89s
+Epoch: 21/60 Iter: 15/102 loss: 1.0992 time 1.88s
+Epoch: 21/60 Iter: 16/102 loss: 1.0994 time 1.89s
+Epoch: 21/60 Iter: 17/102 loss: 1.0995 time 1.89s
+Epoch: 21/60 Iter: 18/102 loss: 1.0996 time 1.90s
+Epoch: 21/60 Iter: 19/102 loss: 1.0996 time 1.89s
+Epoch: 21/60 Iter: 20/102 loss: 1.0997 time 1.88s
+Epoch: 21/60 Iter: 21/102 loss: 1.0997 time 1.89s
+Epoch: 21/60 Iter: 22/102 loss: 1.0998 time 1.89s
+Epoch: 21/60 Iter: 23/102 loss: 1.1006 time 1.89s
+Epoch: 21/60 Iter: 24/102 loss: 1.1007 time 1.88s
+Epoch: 21/60 Iter: 25/102 loss: 1.1006 time 1.90s
+Epoch: 21/60 Iter: 26/102 loss: 1.1008 time 1.89s
+Epoch: 21/60 Iter: 27/102 loss: 1.1015 time 1.89s
+Epoch: 21/60 Iter: 28/102 loss: 1.1020 time 1.89s
+Epoch: 21/60 Iter: 29/102 loss: 1.1016 time 1.89s
+Epoch: 21/60 Iter: 30/102 loss: 1.1020 time 1.89s
+Epoch: 21/60 Iter: 31/102 loss: 1.1021 time 1.89s
+Epoch: 21/60 Iter: 32/102 loss: 1.1017 time 1.89s
+Epoch: 21/60 Iter: 33/102 loss: 1.1016 time 1.89s
+Epoch: 21/60 Iter: 34/102 loss: 1.1014 time 1.89s
+Epoch: 21/60 Iter: 35/102 loss: 1.1013 time 1.89s
+Epoch: 21/60 Iter: 36/102 loss: 1.1013 time 1.89s
+Epoch: 21/60 Iter: 37/102 loss: 1.1011 time 1.89s
+Epoch: 21/60 Iter: 38/102 loss: 1.1006 time 1.89s
+Epoch: 21/60 Iter: 39/102 loss: 1.1006 time 1.89s
+Epoch: 21/60 Iter: 40/102 loss: 1.1007 time 1.89s
+Epoch: 21/60 Iter: 41/102 loss: 1.1008 time 1.89s
+Epoch: 21/60 Iter: 42/102 loss: 1.1008 time 1.88s
+Epoch: 21/60 Iter: 43/102 loss: 1.1008 time 1.89s
+Epoch: 21/60 Iter: 44/102 loss: 1.1003 time 1.89s
+Epoch: 21/60 Iter: 45/102 loss: 1.1003 time 1.89s
+Epoch: 21/60 Iter: 46/102 loss: 1.1004 time 1.89s
+Epoch: 21/60 Iter: 47/102 loss: 1.1005 time 1.89s
+Epoch: 21/60 Iter: 48/102 loss: 1.1005 time 1.90s
+Epoch: 21/60 Iter: 49/102 loss: 1.1001 time 1.89s
+Epoch: 21/60 Iter: 50/102 loss: 1.1001 time 1.90s
+Epoch: 21/60 Iter: 51/102 loss: 1.1000 time 1.89s
+Epoch: 21/60 Iter: 52/102 loss: 1.1005 time 1.89s
+Epoch: 21/60 Iter: 53/102 loss: 1.1005 time 1.90s
+Epoch: 21/60 Iter: 54/102 loss: 1.1003 time 1.89s
+Epoch: 21/60 Iter: 55/102 loss: 1.0994 time 1.90s
+Epoch: 21/60 Iter: 56/102 loss: 1.0995 time 1.89s
+Epoch: 21/60 Iter: 57/102 loss: 1.0990 time 1.89s
+Epoch: 21/60 Iter: 58/102 loss: 1.0995 time 1.89s
+Epoch: 21/60 Iter: 59/102 loss: 1.0994 time 1.89s
+Epoch: 21/60 Iter: 60/102 loss: 1.0994 time 1.89s
+Epoch: 21/60 Iter: 61/102 loss: 1.0994 time 1.89s
+Epoch: 21/60 Iter: 62/102 loss: 1.0993 time 1.89s
+Epoch: 21/60 Iter: 63/102 loss: 1.0993 time 1.89s
+Epoch: 21/60 Iter: 64/102 loss: 1.0997 time 1.89s
+Epoch: 21/60 Iter: 65/102 loss: 1.0997 time 1.89s
+Epoch: 21/60 Iter: 66/102 loss: 1.0997 time 1.90s
+Epoch: 21/60 Iter: 67/102 loss: 1.1002 time 1.89s
+Epoch: 21/60 Iter: 68/102 loss: 1.1010 time 1.89s
+Epoch: 21/60 Iter: 69/102 loss: 1.1012 time 1.89s
+Epoch: 21/60 Iter: 70/102 loss: 1.1011 time 1.89s
+Epoch: 21/60 Iter: 71/102 loss: 1.1010 time 1.89s
+Epoch: 21/60 Iter: 72/102 loss: 1.1009 time 1.89s
+Epoch: 21/60 Iter: 73/102 loss: 1.1011 time 1.89s
+Epoch: 21/60 Iter: 74/102 loss: 1.1009 time 1.89s
+Epoch: 21/60 Iter: 75/102 loss: 1.1011 time 1.89s
+Epoch: 21/60 Iter: 76/102 loss: 1.1010 time 1.89s
+Epoch: 21/60 Iter: 77/102 loss: 1.1008 time 1.90s
+Epoch: 21/60 Iter: 78/102 loss: 1.1011 time 1.89s
+Epoch: 21/60 Iter: 79/102 loss: 1.1011 time 1.89s
+Epoch: 21/60 Iter: 80/102 loss: 1.1010 time 1.89s
+Epoch: 21/60 Iter: 81/102 loss: 1.1008 time 1.89s
+Epoch: 21/60 Iter: 82/102 loss: 1.1006 time 1.89s
+Epoch: 21/60 Iter: 83/102 loss: 1.1003 time 1.90s
+Epoch: 21/60 Iter: 84/102 loss: 1.1001 time 1.89s
+Epoch: 21/60 Iter: 85/102 loss: 1.1003 time 1.88s
+Epoch: 21/60 Iter: 86/102 loss: 1.1003 time 1.89s
+Epoch: 21/60 Iter: 87/102 loss: 1.1000 time 1.89s
+Epoch: 21/60 Iter: 88/102 loss: 1.1001 time 1.89s
+Epoch: 21/60 Iter: 89/102 loss: 1.0997 time 1.89s
+Epoch: 21/60 Iter: 90/102 loss: 1.0998 time 1.89s
+Epoch: 21/60 Iter: 91/102 loss: 1.0999 time 1.88s
+Epoch: 21/60 Iter: 92/102 loss: 1.1000 time 1.89s
+Epoch: 21/60 Iter: 93/102 loss: 1.1002 time 1.89s
+Epoch: 21/60 Iter: 94/102 loss: 1.1004 time 1.89s
+Epoch: 21/60 Iter: 95/102 loss: 1.1006 time 1.89s
+Epoch: 21/60 Iter: 96/102 loss: 1.1008 time 1.89s
+Epoch: 21/60 Iter: 97/102 loss: 1.1008 time 1.89s
+Epoch: 21/60 Iter: 98/102 loss: 1.1010 time 1.89s
+Epoch: 21/60 Iter: 99/102 loss: 1.1010 time 1.89s
+Epoch: 21/60 Iter: 100/102 loss: 1.1012 time 1.89s
+Epoch: 21/60 Iter: 101/102 loss: 1.1012 time 1.89s
+Final training  21/59 loss: 1.1012 time 193.04s lr: 0.000008
+[EarlyStopping] no improve (21/30)
+0 Mon Oct 13 16:37:14 2025 Epoch: 22
+Epoch: 22/60 Iter: 0/102 loss: 1.0829 time 2.21s
+Epoch: 22/60 Iter: 1/102 loss: 1.0899 time 1.89s
+Epoch: 22/60 Iter: 2/102 loss: 1.0983 time 1.89s
+Epoch: 22/60 Iter: 3/102 loss: 1.0988 time 1.89s
+Epoch: 22/60 Iter: 4/102 loss: 1.0964 time 1.90s
+Epoch: 22/60 Iter: 5/102 loss: 1.0990 time 1.89s
+Epoch: 22/60 Iter: 6/102 loss: 1.0949 time 1.90s
+Epoch: 22/60 Iter: 7/102 loss: 1.0946 time 1.89s
+Epoch: 22/60 Iter: 8/102 loss: 1.0943 time 1.89s
+Epoch: 22/60 Iter: 9/102 loss: 1.0962 time 1.89s
+Epoch: 22/60 Iter: 10/102 loss: 1.0978 time 1.89s
+Epoch: 22/60 Iter: 11/102 loss: 1.0985 time 1.89s
+Epoch: 22/60 Iter: 12/102 loss: 1.0983 time 1.89s
+Epoch: 22/60 Iter: 13/102 loss: 1.0983 time 1.89s
+Epoch: 22/60 Iter: 14/102 loss: 1.0980 time 1.89s
+Epoch: 22/60 Iter: 15/102 loss: 1.0986 time 1.89s
+Epoch: 22/60 Iter: 16/102 loss: 1.0986 time 1.89s
+Epoch: 22/60 Iter: 17/102 loss: 1.0991 time 1.88s
+Epoch: 22/60 Iter: 18/102 loss: 1.0990 time 1.90s
+Epoch: 22/60 Iter: 19/102 loss: 1.0991 time 1.89s
+Epoch: 22/60 Iter: 20/102 loss: 1.0995 time 1.89s
+Epoch: 22/60 Iter: 21/102 loss: 1.0987 time 1.89s
+Epoch: 22/60 Iter: 22/102 loss: 1.0998 time 1.89s
+Epoch: 22/60 Iter: 23/102 loss: 1.0997 time 1.89s
+Epoch: 22/60 Iter: 24/102 loss: 1.1000 time 1.89s
+Epoch: 22/60 Iter: 25/102 loss: 1.1009 time 1.89s
+Epoch: 22/60 Iter: 26/102 loss: 1.1006 time 1.89s
+Epoch: 22/60 Iter: 27/102 loss: 1.1004 time 1.89s
+Epoch: 22/60 Iter: 28/102 loss: 1.1005 time 1.89s
+Epoch: 22/60 Iter: 29/102 loss: 1.1005 time 1.90s
+Epoch: 22/60 Iter: 30/102 loss: 1.1004 time 1.89s
+Epoch: 22/60 Iter: 31/102 loss: 1.1004 time 1.90s
+Epoch: 22/60 Iter: 32/102 loss: 1.1001 time 1.89s
+Epoch: 22/60 Iter: 33/102 loss: 1.0999 time 1.89s
+Epoch: 22/60 Iter: 34/102 loss: 1.1000 time 1.89s
+Epoch: 22/60 Iter: 35/102 loss: 1.1005 time 1.89s
+Epoch: 22/60 Iter: 36/102 loss: 1.1003 time 1.89s
+Epoch: 22/60 Iter: 37/102 loss: 1.1005 time 1.89s
+Epoch: 22/60 Iter: 38/102 loss: 1.1008 time 1.89s
+Epoch: 22/60 Iter: 39/102 loss: 1.1006 time 1.89s
+Epoch: 22/60 Iter: 40/102 loss: 1.1009 time 1.89s
+Epoch: 22/60 Iter: 41/102 loss: 1.1009 time 1.89s
+Epoch: 22/60 Iter: 42/102 loss: 1.1007 time 1.89s
+Epoch: 22/60 Iter: 43/102 loss: 1.1005 time 1.89s
+Epoch: 22/60 Iter: 44/102 loss: 1.1002 time 1.90s
+Epoch: 22/60 Iter: 45/102 loss: 1.1003 time 1.89s
+Epoch: 22/60 Iter: 46/102 loss: 1.1002 time 1.89s
+Epoch: 22/60 Iter: 47/102 loss: 1.0999 time 1.89s
+Epoch: 22/60 Iter: 48/102 loss: 1.1002 time 1.89s
+Epoch: 22/60 Iter: 49/102 loss: 1.1005 time 1.89s
+Epoch: 22/60 Iter: 50/102 loss: 1.1008 time 1.89s
+Epoch: 22/60 Iter: 51/102 loss: 1.1010 time 1.89s
+Epoch: 22/60 Iter: 52/102 loss: 1.1014 time 1.89s
+Epoch: 22/60 Iter: 53/102 loss: 1.1015 time 1.89s
+Epoch: 22/60 Iter: 54/102 loss: 1.1013 time 1.89s
+Epoch: 22/60 Iter: 55/102 loss: 1.1014 time 1.89s
+Epoch: 22/60 Iter: 56/102 loss: 1.1020 time 1.89s
+Epoch: 22/60 Iter: 57/102 loss: 1.1021 time 1.89s
+Epoch: 22/60 Iter: 58/102 loss: 1.1018 time 1.89s
+Epoch: 22/60 Iter: 59/102 loss: 1.1015 time 1.89s
+Epoch: 22/60 Iter: 60/102 loss: 1.1014 time 1.89s
+Epoch: 22/60 Iter: 61/102 loss: 1.1015 time 1.89s
+Epoch: 22/60 Iter: 62/102 loss: 1.1015 time 1.89s
+Epoch: 22/60 Iter: 63/102 loss: 1.1013 time 1.89s
+Epoch: 22/60 Iter: 64/102 loss: 1.1010 time 1.89s
+Epoch: 22/60 Iter: 65/102 loss: 1.1014 time 1.89s
+Epoch: 22/60 Iter: 66/102 loss: 1.1013 time 1.89s
+Epoch: 22/60 Iter: 67/102 loss: 1.1010 time 1.89s
+Epoch: 22/60 Iter: 68/102 loss: 1.1009 time 1.89s
+Epoch: 22/60 Iter: 69/102 loss: 1.1006 time 1.89s
+Epoch: 22/60 Iter: 70/102 loss: 1.1008 time 1.89s
+Epoch: 22/60 Iter: 71/102 loss: 1.1007 time 1.89s
+Epoch: 22/60 Iter: 72/102 loss: 1.1009 time 1.89s
+Epoch: 22/60 Iter: 73/102 loss: 1.1010 time 1.89s
+Epoch: 22/60 Iter: 74/102 loss: 1.1009 time 1.89s
+Epoch: 22/60 Iter: 75/102 loss: 1.1010 time 1.89s
+Epoch: 22/60 Iter: 76/102 loss: 1.1013 time 1.89s
+Epoch: 22/60 Iter: 77/102 loss: 1.1013 time 1.90s
+Epoch: 22/60 Iter: 78/102 loss: 1.1011 time 1.89s
+Epoch: 22/60 Iter: 79/102 loss: 1.1012 time 1.89s
+Epoch: 22/60 Iter: 80/102 loss: 1.1015 time 1.89s
+Epoch: 22/60 Iter: 81/102 loss: 1.1012 time 1.89s
+Epoch: 22/60 Iter: 82/102 loss: 1.1009 time 1.89s
+Epoch: 22/60 Iter: 83/102 loss: 1.1007 time 1.89s
+Epoch: 22/60 Iter: 84/102 loss: 1.1008 time 1.89s
+Epoch: 22/60 Iter: 85/102 loss: 1.1008 time 1.90s
+Epoch: 22/60 Iter: 86/102 loss: 1.1009 time 1.89s
+Epoch: 22/60 Iter: 87/102 loss: 1.1009 time 1.89s
+Epoch: 22/60 Iter: 88/102 loss: 1.1006 time 1.89s
+Epoch: 22/60 Iter: 89/102 loss: 1.1003 time 1.88s
+Epoch: 22/60 Iter: 90/102 loss: 1.1005 time 1.89s
+Epoch: 22/60 Iter: 91/102 loss: 1.1007 time 1.88s
+Epoch: 22/60 Iter: 92/102 loss: 1.1007 time 1.89s
+Epoch: 22/60 Iter: 93/102 loss: 1.1007 time 1.89s
+Epoch: 22/60 Iter: 94/102 loss: 1.1004 time 1.89s
+Epoch: 22/60 Iter: 95/102 loss: 1.1000 time 1.89s
+Epoch: 22/60 Iter: 96/102 loss: 1.1001 time 1.89s
+Epoch: 22/60 Iter: 97/102 loss: 1.1002 time 1.90s
+Epoch: 22/60 Iter: 98/102 loss: 1.1003 time 1.90s
+Epoch: 22/60 Iter: 99/102 loss: 1.1003 time 1.89s
+Epoch: 22/60 Iter: 100/102 loss: 1.1004 time 1.89s
+Epoch: 22/60 Iter: 101/102 loss: 1.1004 time 1.89s
+Final training  22/59 loss: 1.1004 time 193.07s lr: 0.000008
+[EarlyStopping] no improve (22/30)
+0 Mon Oct 13 16:40:27 2025 Epoch: 23
+Epoch: 23/60 Iter: 0/102 loss: 1.1061 time 2.54s
+Epoch: 23/60 Iter: 1/102 loss: 1.0948 time 1.89s
+Epoch: 23/60 Iter: 2/102 loss: 1.0922 time 1.89s
+Epoch: 23/60 Iter: 3/102 loss: 1.0951 time 1.90s
+Epoch: 23/60 Iter: 4/102 loss: 1.0915 time 1.89s
+Epoch: 23/60 Iter: 5/102 loss: 1.0949 time 1.89s
+Epoch: 23/60 Iter: 6/102 loss: 1.0943 time 1.89s
+Epoch: 23/60 Iter: 7/102 loss: 1.0964 time 1.89s
+Epoch: 23/60 Iter: 8/102 loss: 1.0967 time 1.89s
+Epoch: 23/60 Iter: 9/102 loss: 1.0973 time 1.89s
+Epoch: 23/60 Iter: 10/102 loss: 1.0976 time 1.89s
+Epoch: 23/60 Iter: 11/102 loss: 1.0977 time 1.89s
+Epoch: 23/60 Iter: 12/102 loss: 1.0992 time 1.88s
+Epoch: 23/60 Iter: 13/102 loss: 1.0991 time 1.89s
+Epoch: 23/60 Iter: 14/102 loss: 1.0994 time 1.89s
+Epoch: 23/60 Iter: 15/102 loss: 1.0995 time 1.89s
+Epoch: 23/60 Iter: 16/102 loss: 1.0991 time 1.90s
+Epoch: 23/60 Iter: 17/102 loss: 1.0998 time 1.89s
+Epoch: 23/60 Iter: 18/102 loss: 1.0996 time 1.89s
+Epoch: 23/60 Iter: 19/102 loss: 1.0992 time 1.89s
+Epoch: 23/60 Iter: 20/102 loss: 1.0990 time 1.89s
+Epoch: 23/60 Iter: 21/102 loss: 1.0988 time 1.90s
+Epoch: 23/60 Iter: 22/102 loss: 1.0991 time 1.89s
+Epoch: 23/60 Iter: 23/102 loss: 1.0986 time 1.89s
+Epoch: 23/60 Iter: 24/102 loss: 1.0994 time 1.89s
+Epoch: 23/60 Iter: 25/102 loss: 1.1001 time 1.89s
+Epoch: 23/60 Iter: 26/102 loss: 1.1004 time 1.89s
+Epoch: 23/60 Iter: 27/102 loss: 1.1009 time 1.89s
+Epoch: 23/60 Iter: 28/102 loss: 1.1012 time 1.89s
+Epoch: 23/60 Iter: 29/102 loss: 1.1014 time 1.89s
+Epoch: 23/60 Iter: 30/102 loss: 1.1012 time 1.89s
+Epoch: 23/60 Iter: 31/102 loss: 1.1011 time 1.89s
+Epoch: 23/60 Iter: 32/102 loss: 1.1011 time 1.89s
+Epoch: 23/60 Iter: 33/102 loss: 1.1009 time 1.89s
+Epoch: 23/60 Iter: 34/102 loss: 1.1008 time 1.89s
+Epoch: 23/60 Iter: 35/102 loss: 1.1007 time 1.89s
+Epoch: 23/60 Iter: 36/102 loss: 1.1009 time 1.89s
+Epoch: 23/60 Iter: 37/102 loss: 1.1012 time 1.89s
+Epoch: 23/60 Iter: 38/102 loss: 1.1013 time 1.89s
+Epoch: 23/60 Iter: 39/102 loss: 1.1014 time 1.89s
+Epoch: 23/60 Iter: 40/102 loss: 1.1015 time 1.89s
+Epoch: 23/60 Iter: 41/102 loss: 1.1013 time 1.89s
+Epoch: 23/60 Iter: 42/102 loss: 1.1012 time 1.89s
+Epoch: 23/60 Iter: 43/102 loss: 1.1009 time 1.89s
+Epoch: 23/60 Iter: 44/102 loss: 1.1011 time 1.88s
+Epoch: 23/60 Iter: 45/102 loss: 1.1008 time 1.89s
+Epoch: 23/60 Iter: 46/102 loss: 1.1005 time 1.89s
+Epoch: 23/60 Iter: 47/102 loss: 1.1006 time 1.89s
+Epoch: 23/60 Iter: 48/102 loss: 1.1004 time 1.89s
+Epoch: 23/60 Iter: 49/102 loss: 1.1004 time 1.89s
+Epoch: 23/60 Iter: 50/102 loss: 1.1006 time 1.89s
+Epoch: 23/60 Iter: 51/102 loss: 1.1003 time 1.88s
+Epoch: 23/60 Iter: 52/102 loss: 1.1005 time 1.89s
+Epoch: 23/60 Iter: 53/102 loss: 1.1003 time 1.89s
+Epoch: 23/60 Iter: 54/102 loss: 1.0999 time 1.89s
+Epoch: 23/60 Iter: 55/102 loss: 1.0997 time 1.89s
+Epoch: 23/60 Iter: 56/102 loss: 1.0999 time 1.89s
+Epoch: 23/60 Iter: 57/102 loss: 1.1001 time 1.89s
+Epoch: 23/60 Iter: 58/102 loss: 1.1002 time 1.89s
+Epoch: 23/60 Iter: 59/102 loss: 1.1004 time 1.90s
+Epoch: 23/60 Iter: 60/102 loss: 1.1002 time 1.89s
+Epoch: 23/60 Iter: 61/102 loss: 1.1003 time 1.88s
+Epoch: 23/60 Iter: 62/102 loss: 1.1004 time 1.90s
+Epoch: 23/60 Iter: 63/102 loss: 1.1003 time 1.89s
+Epoch: 23/60 Iter: 64/102 loss: 1.1002 time 1.89s
+Epoch: 23/60 Iter: 65/102 loss: 1.1003 time 1.89s
+Epoch: 23/60 Iter: 66/102 loss: 1.1001 time 1.89s
+Epoch: 23/60 Iter: 67/102 loss: 1.0996 time 1.90s
+Epoch: 23/60 Iter: 68/102 loss: 1.0998 time 1.89s
+Epoch: 23/60 Iter: 69/102 loss: 1.0999 time 1.89s
+Epoch: 23/60 Iter: 70/102 loss: 1.0999 time 1.90s
+Epoch: 23/60 Iter: 71/102 loss: 1.0997 time 1.89s
+Epoch: 23/60 Iter: 72/102 loss: 1.0998 time 1.90s
+Epoch: 23/60 Iter: 73/102 loss: 1.0999 time 1.89s
+Epoch: 23/60 Iter: 74/102 loss: 1.0996 time 1.89s
+Epoch: 23/60 Iter: 75/102 loss: 1.0997 time 1.89s
+Epoch: 23/60 Iter: 76/102 loss: 1.0995 time 1.89s
+Epoch: 23/60 Iter: 77/102 loss: 1.0995 time 1.89s
+Epoch: 23/60 Iter: 78/102 loss: 1.0990 time 1.89s
+Epoch: 23/60 Iter: 79/102 loss: 1.0987 time 1.89s
+Epoch: 23/60 Iter: 80/102 loss: 1.0985 time 1.89s
+Epoch: 23/60 Iter: 81/102 loss: 1.0985 time 1.89s
+Epoch: 23/60 Iter: 82/102 loss: 1.0986 time 1.89s
+Epoch: 23/60 Iter: 83/102 loss: 1.0986 time 1.89s
+Epoch: 23/60 Iter: 84/102 loss: 1.0986 time 1.89s
+Epoch: 23/60 Iter: 85/102 loss: 1.0987 time 1.89s
+Epoch: 23/60 Iter: 86/102 loss: 1.0988 time 1.89s
+Epoch: 23/60 Iter: 87/102 loss: 1.0986 time 1.89s
+Epoch: 23/60 Iter: 88/102 loss: 1.0987 time 1.89s
+Epoch: 23/60 Iter: 89/102 loss: 1.0986 time 1.89s
+Epoch: 23/60 Iter: 90/102 loss: 1.0989 time 1.89s
+Epoch: 23/60 Iter: 91/102 loss: 1.0991 time 1.89s
+Epoch: 23/60 Iter: 92/102 loss: 1.0992 time 1.89s
+Epoch: 23/60 Iter: 93/102 loss: 1.0993 time 1.89s
+Epoch: 23/60 Iter: 94/102 loss: 1.0994 time 1.90s
+Epoch: 23/60 Iter: 95/102 loss: 1.0994 time 1.89s
+Epoch: 23/60 Iter: 96/102 loss: 1.0995 time 1.89s
+Epoch: 23/60 Iter: 97/102 loss: 1.0995 time 1.89s
+Epoch: 23/60 Iter: 98/102 loss: 1.0995 time 1.89s
+Epoch: 23/60 Iter: 99/102 loss: 1.0997 time 1.89s
+Epoch: 23/60 Iter: 100/102 loss: 1.0998 time 1.89s
+Epoch: 23/60 Iter: 101/102 loss: 1.0999 time 1.89s
+Final training  23/59 loss: 1.0999 time 193.36s lr: 0.000007
+[EarlyStopping] no improve (23/30)
+Val 23/60 0/27, Acc: 0.0000, time 1.93s
+Val 23/60 1/27, Acc: 0.0000, time 1.93s
+Val 23/60 2/27, Acc: 0.0000, time 1.93s
+Val 23/60 3/27, Acc: 0.2500, time 1.93s
+Val 23/60 4/27, Acc: 0.2000, time 1.91s
+Val 23/60 5/27, Acc: 0.1667, time 1.94s
+Val 23/60 6/27, Acc: 0.1429, time 1.92s
+Val 23/60 7/27, Acc: 0.1250, time 1.92s
+Val 23/60 8/27, Acc: 0.2222, time 1.92s
+Val 23/60 9/27, Acc: 0.2000, time 1.93s
+Val 23/60 10/27, Acc: 0.1818, time 1.94s
+Val 23/60 11/27, Acc: 0.1667, time 1.91s
+Val 23/60 12/27, Acc: 0.1538, time 1.92s
+Val 23/60 13/27, Acc: 0.2143, time 1.93s
+Val 23/60 14/27, Acc: 0.2000, time 1.92s
+Val 23/60 15/27, Acc: 0.1875, time 1.95s
+Val 23/60 16/27, Acc: 0.2353, time 1.96s
+Val 23/60 17/27, Acc: 0.2222, time 1.92s
+Val 23/60 18/27, Acc: 0.2105, time 2.06s
+Val 23/60 19/27, Acc: 0.2000, time 2.01s
+Val 23/60 20/27, Acc: 0.2381, time 1.93s
+Val 23/60 21/27, Acc: 0.2273, time 1.93s
+Val 23/60 22/27, Acc: 0.2609, time 1.93s
+Val 23/60 23/27, Acc: 0.2917, time 1.92s
+Val 23/60 24/27, Acc: 0.2800, time 1.94s
+Val 23/60 25/27, Acc: 0.3077, time 1.91s
+Val 23/60 26/27, Acc: 0.3333, time 1.92s
+[Val epoch 23] avg_acc=0.3333 | per-class [c0: 0.000, c1: 0.111, c2: 0.889]
+Final validation stats 23/59 , Val_acc: 0.3333333333333333 , time 52.25s
+[EarlyStopping] no improve (4/10)
+
+0 Mon Oct 13 16:44:34 2025 Epoch: 24
+Epoch: 24/60 Iter: 0/102 loss: 1.0791 time 3.48s
+Epoch: 24/60 Iter: 1/102 loss: 1.0796 time 1.88s
+Epoch: 24/60 Iter: 2/102 loss: 1.0794 time 1.88s
+Epoch: 24/60 Iter: 3/102 loss: 1.0884 time 1.89s
+Epoch: 24/60 Iter: 4/102 loss: 1.0900 time 1.89s
+Epoch: 24/60 Iter: 5/102 loss: 1.0918 time 1.89s
+Epoch: 24/60 Iter: 6/102 loss: 1.0933 time 1.89s
+Epoch: 24/60 Iter: 7/102 loss: 1.0963 time 1.88s
+Epoch: 24/60 Iter: 8/102 loss: 1.0969 time 1.89s
+Epoch: 24/60 Iter: 9/102 loss: 1.0960 time 1.89s
+Epoch: 24/60 Iter: 10/102 loss: 1.0956 time 1.89s
+Epoch: 24/60 Iter: 11/102 loss: 1.0969 time 1.89s
+Epoch: 24/60 Iter: 12/102 loss: 1.0969 time 1.88s
+Epoch: 24/60 Iter: 13/102 loss: 1.0967 time 1.89s
+Epoch: 24/60 Iter: 14/102 loss: 1.0971 time 1.89s
+Epoch: 24/60 Iter: 15/102 loss: 1.0978 time 1.89s
+Epoch: 24/60 Iter: 16/102 loss: 1.0970 time 1.89s
+Epoch: 24/60 Iter: 17/102 loss: 1.0975 time 1.89s
+Epoch: 24/60 Iter: 18/102 loss: 1.0980 time 1.89s
+Epoch: 24/60 Iter: 19/102 loss: 1.0976 time 1.89s
+Epoch: 24/60 Iter: 20/102 loss: 1.0972 time 1.89s
+Epoch: 24/60 Iter: 21/102 loss: 1.0978 time 1.90s
+Epoch: 24/60 Iter: 22/102 loss: 1.0965 time 1.89s
+Epoch: 24/60 Iter: 23/102 loss: 1.0968 time 1.88s
+Epoch: 24/60 Iter: 24/102 loss: 1.0975 time 1.89s
+Epoch: 24/60 Iter: 25/102 loss: 1.0975 time 1.89s
+Epoch: 24/60 Iter: 26/102 loss: 1.0976 time 1.88s
+Epoch: 24/60 Iter: 27/102 loss: 1.0970 time 1.89s
+Epoch: 24/60 Iter: 28/102 loss: 1.0968 time 1.88s
+Epoch: 24/60 Iter: 29/102 loss: 1.0974 time 1.89s
+Epoch: 24/60 Iter: 30/102 loss: 1.0968 time 1.89s
+Epoch: 24/60 Iter: 31/102 loss: 1.0967 time 1.89s
+Epoch: 24/60 Iter: 32/102 loss: 1.0961 time 1.89s
+Epoch: 24/60 Iter: 33/102 loss: 1.0959 time 1.89s
+Epoch: 24/60 Iter: 34/102 loss: 1.0968 time 1.89s
+Epoch: 24/60 Iter: 35/102 loss: 1.0974 time 1.90s
+Epoch: 24/60 Iter: 36/102 loss: 1.0982 time 1.89s
+Epoch: 24/60 Iter: 37/102 loss: 1.0977 time 1.89s
+Epoch: 24/60 Iter: 38/102 loss: 1.0983 time 1.89s
+Epoch: 24/60 Iter: 39/102 loss: 1.0975 time 1.89s
+Epoch: 24/60 Iter: 40/102 loss: 1.0976 time 1.89s
+Epoch: 24/60 Iter: 41/102 loss: 1.0968 time 1.89s
+Epoch: 24/60 Iter: 42/102 loss: 1.0973 time 1.89s
+Epoch: 24/60 Iter: 43/102 loss: 1.0979 time 1.89s
+Epoch: 24/60 Iter: 44/102 loss: 1.0970 time 1.89s
+Epoch: 24/60 Iter: 45/102 loss: 1.0976 time 1.89s
+Epoch: 24/60 Iter: 46/102 loss: 1.0981 time 1.89s
+Epoch: 24/60 Iter: 47/102 loss: 1.0985 time 1.89s
+Epoch: 24/60 Iter: 48/102 loss: 1.0991 time 1.89s
+Epoch: 24/60 Iter: 49/102 loss: 1.0996 time 1.90s
+Epoch: 24/60 Iter: 50/102 loss: 1.0999 time 1.89s
+Epoch: 24/60 Iter: 51/102 loss: 1.0999 time 1.89s
+Epoch: 24/60 Iter: 52/102 loss: 1.1000 time 1.89s
+Epoch: 24/60 Iter: 53/102 loss: 1.0995 time 1.88s
+Epoch: 24/60 Iter: 54/102 loss: 1.1000 time 1.90s
+Epoch: 24/60 Iter: 55/102 loss: 1.1004 time 1.90s
+Epoch: 24/60 Iter: 56/102 loss: 1.0998 time 1.89s
+Epoch: 24/60 Iter: 57/102 loss: 1.0987 time 1.90s
+Epoch: 24/60 Iter: 58/102 loss: 1.0988 time 1.89s
+Epoch: 24/60 Iter: 59/102 loss: 1.0993 time 1.89s
+Epoch: 24/60 Iter: 60/102 loss: 1.0996 time 1.89s
+Epoch: 24/60 Iter: 61/102 loss: 1.0994 time 1.89s
+Epoch: 24/60 Iter: 62/102 loss: 1.0996 time 1.89s
+Epoch: 24/60 Iter: 63/102 loss: 1.0996 time 1.89s
+Epoch: 24/60 Iter: 64/102 loss: 1.0996 time 1.89s
+Epoch: 24/60 Iter: 65/102 loss: 1.0994 time 1.89s
+Epoch: 24/60 Iter: 66/102 loss: 1.0997 time 1.89s
+Epoch: 24/60 Iter: 67/102 loss: 1.0993 time 1.89s
+Epoch: 24/60 Iter: 68/102 loss: 1.0996 time 1.89s
+Epoch: 24/60 Iter: 69/102 loss: 1.0999 time 1.89s
+Epoch: 24/60 Iter: 70/102 loss: 1.1001 time 1.89s
+Epoch: 24/60 Iter: 71/102 loss: 1.1004 time 1.89s
+Epoch: 24/60 Iter: 72/102 loss: 1.1004 time 1.89s
+Epoch: 24/60 Iter: 73/102 loss: 1.1006 time 1.89s
+Epoch: 24/60 Iter: 74/102 loss: 1.1003 time 1.89s
+Epoch: 24/60 Iter: 75/102 loss: 1.1003 time 1.89s
+Epoch: 24/60 Iter: 76/102 loss: 1.1002 time 1.88s
+Epoch: 24/60 Iter: 77/102 loss: 1.1000 time 1.89s
+Epoch: 24/60 Iter: 78/102 loss: 1.0999 time 1.89s
+Epoch: 24/60 Iter: 79/102 loss: 1.1001 time 1.89s
+Epoch: 24/60 Iter: 80/102 loss: 1.1000 time 1.89s
+Epoch: 24/60 Iter: 81/102 loss: 1.1002 time 1.89s
+Epoch: 24/60 Iter: 82/102 loss: 1.0995 time 1.89s
+Epoch: 24/60 Iter: 83/102 loss: 1.0997 time 1.89s
+Epoch: 24/60 Iter: 84/102 loss: 1.0999 time 1.89s
+Epoch: 24/60 Iter: 85/102 loss: 1.1000 time 1.89s
+Epoch: 24/60 Iter: 86/102 loss: 1.1002 time 1.89s
+Epoch: 24/60 Iter: 87/102 loss: 1.0999 time 1.89s
+Epoch: 24/60 Iter: 88/102 loss: 1.0997 time 1.89s
+Epoch: 24/60 Iter: 89/102 loss: 1.0999 time 1.90s
+Epoch: 24/60 Iter: 90/102 loss: 1.1001 time 1.89s
+Epoch: 24/60 Iter: 91/102 loss: 1.0999 time 1.89s
+Epoch: 24/60 Iter: 92/102 loss: 1.1000 time 1.89s
+Epoch: 24/60 Iter: 93/102 loss: 1.1000 time 1.88s
+Epoch: 24/60 Iter: 94/102 loss: 1.1001 time 1.89s
+Epoch: 24/60 Iter: 95/102 loss: 1.1000 time 1.89s
+Epoch: 24/60 Iter: 96/102 loss: 1.1001 time 1.89s
+Epoch: 24/60 Iter: 97/102 loss: 1.1002 time 1.89s
+Epoch: 24/60 Iter: 98/102 loss: 1.1001 time 1.88s
+Epoch: 24/60 Iter: 99/102 loss: 1.1002 time 1.89s
+Epoch: 24/60 Iter: 100/102 loss: 1.1002 time 1.89s
+Epoch: 24/60 Iter: 101/102 loss: 1.1003 time 1.89s
+Final training  24/59 loss: 1.1003 time 194.27s lr: 0.000007
+[EarlyStopping] no improve (24/30)
+0 Mon Oct 13 16:47:48 2025 Epoch: 25
+Epoch: 25/60 Iter: 0/102 loss: 1.0901 time 2.29s
+Epoch: 25/60 Iter: 1/102 loss: 1.0942 time 1.89s
+Epoch: 25/60 Iter: 2/102 loss: 1.0932 time 1.88s
+Epoch: 25/60 Iter: 3/102 loss: 1.0936 time 1.89s
+Epoch: 25/60 Iter: 4/102 loss: 1.0931 time 1.89s
+Epoch: 25/60 Iter: 5/102 loss: 1.0935 time 1.89s
+Epoch: 25/60 Iter: 6/102 loss: 1.0969 time 1.88s
+Epoch: 25/60 Iter: 7/102 loss: 1.0982 time 1.89s
+Epoch: 25/60 Iter: 8/102 loss: 1.0986 time 1.90s
+Epoch: 25/60 Iter: 9/102 loss: 1.0979 time 1.89s
+Epoch: 25/60 Iter: 10/102 loss: 1.0993 time 1.89s
+Epoch: 25/60 Iter: 11/102 loss: 1.0994 time 1.89s
+Epoch: 25/60 Iter: 12/102 loss: 1.0974 time 1.89s
+Epoch: 25/60 Iter: 13/102 loss: 1.0977 time 1.89s
+Epoch: 25/60 Iter: 14/102 loss: 1.0980 time 1.90s
+Epoch: 25/60 Iter: 15/102 loss: 1.0982 time 1.89s
+Epoch: 25/60 Iter: 16/102 loss: 1.0969 time 1.88s
+Epoch: 25/60 Iter: 17/102 loss: 1.0972 time 1.89s
+Epoch: 25/60 Iter: 18/102 loss: 1.0974 time 1.89s
+Epoch: 25/60 Iter: 19/102 loss: 1.0958 time 1.89s
+Epoch: 25/60 Iter: 20/102 loss: 1.0950 time 1.89s
+Epoch: 25/60 Iter: 21/102 loss: 1.0952 time 1.89s
+Epoch: 25/60 Iter: 22/102 loss: 1.0963 time 1.88s
+Epoch: 25/60 Iter: 23/102 loss: 1.0968 time 1.89s
+Epoch: 25/60 Iter: 24/102 loss: 1.0971 time 1.89s
+Epoch: 25/60 Iter: 25/102 loss: 1.0971 time 1.89s
+Epoch: 25/60 Iter: 26/102 loss: 1.0976 time 1.89s
+Epoch: 25/60 Iter: 27/102 loss: 1.0969 time 1.89s
+Epoch: 25/60 Iter: 28/102 loss: 1.0975 time 1.89s
+Epoch: 25/60 Iter: 29/102 loss: 1.0976 time 1.89s
+Epoch: 25/60 Iter: 30/102 loss: 1.0977 time 1.89s
+Epoch: 25/60 Iter: 31/102 loss: 1.0982 time 1.89s
+Epoch: 25/60 Iter: 32/102 loss: 1.0979 time 1.89s
+Epoch: 25/60 Iter: 33/102 loss: 1.0974 time 1.89s
+Epoch: 25/60 Iter: 34/102 loss: 1.0971 time 1.89s
+Epoch: 25/60 Iter: 35/102 loss: 1.0967 time 1.89s
+Epoch: 25/60 Iter: 36/102 loss: 1.0969 time 1.89s
+Epoch: 25/60 Iter: 37/102 loss: 1.0964 time 1.89s
+Epoch: 25/60 Iter: 38/102 loss: 1.0960 time 1.89s
+Epoch: 25/60 Iter: 39/102 loss: 1.0965 time 1.90s
+Epoch: 25/60 Iter: 40/102 loss: 1.0971 time 1.89s
+Epoch: 25/60 Iter: 41/102 loss: 1.0969 time 1.89s
+Epoch: 25/60 Iter: 42/102 loss: 1.0971 time 1.89s
+Epoch: 25/60 Iter: 43/102 loss: 1.0967 time 1.89s
+Epoch: 25/60 Iter: 44/102 loss: 1.0972 time 1.90s
+Epoch: 25/60 Iter: 45/102 loss: 1.0968 time 1.89s
+Epoch: 25/60 Iter: 46/102 loss: 1.0973 time 1.89s
+Epoch: 25/60 Iter: 47/102 loss: 1.0979 time 1.89s
+Epoch: 25/60 Iter: 48/102 loss: 1.0978 time 1.89s
+Epoch: 25/60 Iter: 49/102 loss: 1.0978 time 1.89s
+Epoch: 25/60 Iter: 50/102 loss: 1.0974 time 1.89s
+Epoch: 25/60 Iter: 51/102 loss: 1.0977 time 1.89s
+Epoch: 25/60 Iter: 52/102 loss: 1.0978 time 1.89s
+Epoch: 25/60 Iter: 53/102 loss: 1.0978 time 1.89s
+Epoch: 25/60 Iter: 54/102 loss: 1.0978 time 1.89s
+Epoch: 25/60 Iter: 55/102 loss: 1.0978 time 1.89s
+Epoch: 25/60 Iter: 56/102 loss: 1.0983 time 1.90s
+Epoch: 25/60 Iter: 57/102 loss: 1.0987 time 1.89s
+Epoch: 25/60 Iter: 58/102 loss: 1.0985 time 1.89s
+Epoch: 25/60 Iter: 59/102 loss: 1.0982 time 1.89s
+Epoch: 25/60 Iter: 60/102 loss: 1.0987 time 1.89s
+Epoch: 25/60 Iter: 61/102 loss: 1.0985 time 1.88s
+Epoch: 25/60 Iter: 62/102 loss: 1.0989 time 1.89s
+Epoch: 25/60 Iter: 63/102 loss: 1.0994 time 1.89s
+Epoch: 25/60 Iter: 64/102 loss: 1.0987 time 1.89s
+Epoch: 25/60 Iter: 65/102 loss: 1.0987 time 1.89s
+Epoch: 25/60 Iter: 66/102 loss: 1.0987 time 1.89s
+Epoch: 25/60 Iter: 67/102 loss: 1.0991 time 1.89s
+Epoch: 25/60 Iter: 68/102 loss: 1.0994 time 1.90s
+Epoch: 25/60 Iter: 69/102 loss: 1.0997 time 1.89s
+Epoch: 25/60 Iter: 70/102 loss: 1.0997 time 1.89s
+Epoch: 25/60 Iter: 71/102 loss: 1.0996 time 1.88s
+Epoch: 25/60 Iter: 72/102 loss: 1.0999 time 1.89s
+Epoch: 25/60 Iter: 73/102 loss: 1.1002 time 1.90s
+Epoch: 25/60 Iter: 74/102 loss: 1.1004 time 1.89s
+Epoch: 25/60 Iter: 75/102 loss: 1.1005 time 1.89s
+Epoch: 25/60 Iter: 76/102 loss: 1.1007 time 1.90s
+Epoch: 25/60 Iter: 77/102 loss: 1.1007 time 1.89s
+Epoch: 25/60 Iter: 78/102 loss: 1.1008 time 1.89s
+Epoch: 25/60 Iter: 79/102 loss: 1.1007 time 1.89s
+Epoch: 25/60 Iter: 80/102 loss: 1.1008 time 1.89s
+Epoch: 25/60 Iter: 81/102 loss: 1.1002 time 1.90s
+Epoch: 25/60 Iter: 82/102 loss: 1.1003 time 1.89s
+Epoch: 25/60 Iter: 83/102 loss: 1.1004 time 1.89s
+Epoch: 25/60 Iter: 84/102 loss: 1.1006 time 1.89s
+Epoch: 25/60 Iter: 85/102 loss: 1.1007 time 1.89s
+Epoch: 25/60 Iter: 86/102 loss: 1.1006 time 1.89s
+Epoch: 25/60 Iter: 87/102 loss: 1.1006 time 1.89s
+Epoch: 25/60 Iter: 88/102 loss: 1.1006 time 1.89s
+Epoch: 25/60 Iter: 89/102 loss: 1.1006 time 1.89s
+Epoch: 25/60 Iter: 90/102 loss: 1.1006 time 1.90s
+Epoch: 25/60 Iter: 91/102 loss: 1.1005 time 1.89s
+Epoch: 25/60 Iter: 92/102 loss: 1.1004 time 1.89s
+Epoch: 25/60 Iter: 93/102 loss: 1.1003 time 1.89s
+Epoch: 25/60 Iter: 94/102 loss: 1.1005 time 1.89s
+Epoch: 25/60 Iter: 95/102 loss: 1.1004 time 1.89s
+Epoch: 25/60 Iter: 96/102 loss: 1.1004 time 1.89s
+Epoch: 25/60 Iter: 97/102 loss: 1.1006 time 1.89s
+Epoch: 25/60 Iter: 98/102 loss: 1.1006 time 1.89s
+Epoch: 25/60 Iter: 99/102 loss: 1.1005 time 1.89s
+Epoch: 25/60 Iter: 100/102 loss: 1.1006 time 1.89s
+Epoch: 25/60 Iter: 101/102 loss: 1.1006 time 1.89s
+Final training  25/59 loss: 1.1006 time 193.11s lr: 0.000007
+[EarlyStopping] no improve (25/30)
+0 Mon Oct 13 16:51:01 2025 Epoch: 26
+Epoch: 26/60 Iter: 0/102 loss: 1.1198 time 2.31s
+Epoch: 26/60 Iter: 1/102 loss: 1.1069 time 1.90s
+Epoch: 26/60 Iter: 2/102 loss: 1.1084 time 1.89s
+Epoch: 26/60 Iter: 3/102 loss: 1.1042 time 1.90s
+Epoch: 26/60 Iter: 4/102 loss: 1.1013 time 1.89s
+Epoch: 26/60 Iter: 5/102 loss: 1.1032 time 1.89s
+Epoch: 26/60 Iter: 6/102 loss: 1.1013 time 1.89s
+Epoch: 26/60 Iter: 7/102 loss: 1.1007 time 1.89s
+Epoch: 26/60 Iter: 8/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 9/102 loss: 1.0996 time 1.89s
+Epoch: 26/60 Iter: 10/102 loss: 1.0981 time 1.89s
+Epoch: 26/60 Iter: 11/102 loss: 1.0981 time 1.89s
+Epoch: 26/60 Iter: 12/102 loss: 1.0971 time 1.89s
+Epoch: 26/60 Iter: 13/102 loss: 1.0980 time 1.89s
+Epoch: 26/60 Iter: 14/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 15/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 16/102 loss: 1.1002 time 1.89s
+Epoch: 26/60 Iter: 17/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 18/102 loss: 1.0987 time 1.89s
+Epoch: 26/60 Iter: 19/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 20/102 loss: 1.0998 time 1.89s
+Epoch: 26/60 Iter: 21/102 loss: 1.0996 time 1.89s
+Epoch: 26/60 Iter: 22/102 loss: 1.1004 time 1.89s
+Epoch: 26/60 Iter: 23/102 loss: 1.0998 time 1.89s
+Epoch: 26/60 Iter: 24/102 loss: 1.0989 time 1.89s
+Epoch: 26/60 Iter: 25/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 26/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 27/102 loss: 1.0991 time 1.89s
+Epoch: 26/60 Iter: 28/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 29/102 loss: 1.0989 time 1.90s
+Epoch: 26/60 Iter: 30/102 loss: 1.0990 time 1.89s
+Epoch: 26/60 Iter: 31/102 loss: 1.0985 time 1.89s
+Epoch: 26/60 Iter: 32/102 loss: 1.0984 time 1.89s
+Epoch: 26/60 Iter: 33/102 loss: 1.0981 time 1.89s
+Epoch: 26/60 Iter: 34/102 loss: 1.0977 time 1.89s
+Epoch: 26/60 Iter: 35/102 loss: 1.0982 time 1.89s
+Epoch: 26/60 Iter: 36/102 loss: 1.0977 time 1.89s
+Epoch: 26/60 Iter: 37/102 loss: 1.0983 time 1.89s
+Epoch: 26/60 Iter: 38/102 loss: 1.0983 time 1.89s
+Epoch: 26/60 Iter: 39/102 loss: 1.0984 time 1.89s
+Epoch: 26/60 Iter: 40/102 loss: 1.0986 time 1.89s
+Epoch: 26/60 Iter: 41/102 loss: 1.0982 time 1.89s
+Epoch: 26/60 Iter: 42/102 loss: 1.0981 time 1.89s
+Epoch: 26/60 Iter: 43/102 loss: 1.0987 time 1.88s
+Epoch: 26/60 Iter: 44/102 loss: 1.0989 time 1.89s
+Epoch: 26/60 Iter: 45/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 46/102 loss: 1.0995 time 1.89s
+Epoch: 26/60 Iter: 47/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 48/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 49/102 loss: 1.0990 time 1.90s
+Epoch: 26/60 Iter: 50/102 loss: 1.0990 time 1.89s
+Epoch: 26/60 Iter: 51/102 loss: 1.0995 time 1.89s
+Epoch: 26/60 Iter: 52/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 53/102 loss: 1.0990 time 1.89s
+Epoch: 26/60 Iter: 54/102 loss: 1.0990 time 1.89s
+Epoch: 26/60 Iter: 55/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 56/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 57/102 loss: 1.0995 time 1.89s
+Epoch: 26/60 Iter: 58/102 loss: 1.0994 time 1.89s
+Epoch: 26/60 Iter: 59/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 60/102 loss: 1.0990 time 1.90s
+Epoch: 26/60 Iter: 61/102 loss: 1.0990 time 1.89s
+Epoch: 26/60 Iter: 62/102 loss: 1.0988 time 1.89s
+Epoch: 26/60 Iter: 63/102 loss: 1.0987 time 1.89s
+Epoch: 26/60 Iter: 64/102 loss: 1.0987 time 1.89s
+Epoch: 26/60 Iter: 65/102 loss: 1.0991 time 1.89s
+Epoch: 26/60 Iter: 66/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 67/102 loss: 1.0989 time 1.89s
+Epoch: 26/60 Iter: 68/102 loss: 1.0991 time 1.89s
+Epoch: 26/60 Iter: 69/102 loss: 1.0993 time 1.89s
+Epoch: 26/60 Iter: 70/102 loss: 1.0996 time 1.89s
+Epoch: 26/60 Iter: 71/102 loss: 1.0991 time 1.89s
+Epoch: 26/60 Iter: 72/102 loss: 1.0994 time 1.89s
+Epoch: 26/60 Iter: 73/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 74/102 loss: 1.0990 time 1.90s
+Epoch: 26/60 Iter: 75/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 76/102 loss: 1.0989 time 1.89s
+Epoch: 26/60 Iter: 77/102 loss: 1.0988 time 1.90s
+Epoch: 26/60 Iter: 78/102 loss: 1.0986 time 1.89s
+Epoch: 26/60 Iter: 79/102 loss: 1.0987 time 1.89s
+Epoch: 26/60 Iter: 80/102 loss: 1.0985 time 1.90s
+Epoch: 26/60 Iter: 81/102 loss: 1.0983 time 1.89s
+Epoch: 26/60 Iter: 82/102 loss: 1.0985 time 1.89s
+Epoch: 26/60 Iter: 83/102 loss: 1.0987 time 1.88s
+Epoch: 26/60 Iter: 84/102 loss: 1.0989 time 1.89s
+Epoch: 26/60 Iter: 85/102 loss: 1.0990 time 1.89s
+Epoch: 26/60 Iter: 86/102 loss: 1.0988 time 1.89s
+Epoch: 26/60 Iter: 87/102 loss: 1.0987 time 1.89s
+Epoch: 26/60 Iter: 88/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 89/102 loss: 1.0990 time 1.89s
+Epoch: 26/60 Iter: 90/102 loss: 1.0987 time 1.89s
+Epoch: 26/60 Iter: 91/102 loss: 1.0989 time 1.89s
+Epoch: 26/60 Iter: 92/102 loss: 1.0990 time 1.89s
+Epoch: 26/60 Iter: 93/102 loss: 1.0990 time 1.89s
+Epoch: 26/60 Iter: 94/102 loss: 1.0992 time 1.89s
+Epoch: 26/60 Iter: 95/102 loss: 1.0996 time 1.89s
+Epoch: 26/60 Iter: 96/102 loss: 1.0998 time 1.89s
+Epoch: 26/60 Iter: 97/102 loss: 1.0996 time 1.90s
+Epoch: 26/60 Iter: 98/102 loss: 1.0997 time 1.89s
+Epoch: 26/60 Iter: 99/102 loss: 1.0998 time 1.89s
+Epoch: 26/60 Iter: 100/102 loss: 1.0998 time 1.89s
+Epoch: 26/60 Iter: 101/102 loss: 1.0999 time 1.89s
+Final training  26/59 loss: 1.0999 time 193.16s lr: 0.000006
+[EarlyStopping] no improve (26/30)
+0 Mon Oct 13 16:54:14 2025 Epoch: 27

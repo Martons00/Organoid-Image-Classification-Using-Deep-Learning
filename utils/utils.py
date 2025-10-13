@@ -507,47 +507,6 @@ def extract_patches_5d_torch(
     pd, ph, pw = patch_size
     sd, sh, sw = step
 
-    # 1) Riduzione/espansione D a esattamente max_D prima del patching
-    if D != max_D:
-        if D_mode == "uniform":
-            if D > max_D:
-                # Selezione equispaziata di esattamente max_D indici
-                idx = torch.linspace(10, D - 1, steps=max_D, device=x.device).round().to(torch.long)
-                idx = torch.clamp(idx, 10, D - 1)
-                x = x.index_select(2, idx)  # [B,C,max_D,H,W]
-            else:
-                # D < max_D: padding a destra per raggiungere max_D
-                pad_d = max_D - D
-                x = F.pad(x, (0, 0, 0, 0, 0, pad_d), value=pad_value)  # [B,C,max_D,H,W]
-                
-        elif D_mode == "center":
-            if D > max_D:
-                start = max(0, (D - max_D) // 2)
-                end = start + max_D
-                x = x[:, :, start:end]
-            else:
-                # D < max_D: padding simmetrico per centrare
-                pad_total = max_D - D
-                pad_left = pad_total // 2
-                pad_right = pad_total - pad_left
-                x = F.pad(x, (0, 0, 0, 0, pad_left, pad_right), value=pad_value)
-                
-        elif D_mode == "first":
-            if D > max_D:
-                x = x[:, :, :max_D]
-            else:
-                # D < max_D: padding a destra
-                pad_d = max_D - D
-                x = F.pad(x, (0, 0, 0, 0, 0, pad_d), value=pad_value)
-                
-        elif D_mode == "interpolate":
-            # Interpolazione a esattamente max_D (funziona sia per up che down)
-            x = F.interpolate(x, size=(max_D, H, W), mode="trilinear", align_corners=False)
-        else:
-            raise ValueError("D_mode deve essere uno tra {'uniform','center','first','interpolate'}")
-        
-        D = max_D  # Ora D è esattamente max_D
-
     # 2) Generazione degli indici di start (si assume esista _starts)
     zs = _starts(D, pd, sd)
     ys = _starts(H, ph, sh)

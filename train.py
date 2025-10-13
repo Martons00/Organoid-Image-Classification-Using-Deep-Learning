@@ -229,7 +229,7 @@ def main_worker(gpu, args):
     logger.info(f"Dataset length is: {len(dataset)}")
     dataset_loader = torch.utils.data.DataLoader(
         dataset,
-        batch_size=1,
+        batch_size=args.batch_size,
         shuffle=False,
         num_workers=1,
         pin_memory=True,
