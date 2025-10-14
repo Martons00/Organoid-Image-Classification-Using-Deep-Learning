@@ -151,7 +151,9 @@ _C.TRAINING.warmup_epochs = 50
 # Loss settings
 
 _C.LOSS = CN()
-_C.LOSS.weight = 0.5
+
+_C.LOSS.loss_name = "CE" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+
 
 # Inference settings
 
@@ -298,7 +300,8 @@ def config_to_args(cfg):
     args.warmup_epochs = cfg.TRAINING.warmup_epochs
     
     # Loss
-    args.loss_weight = cfg.LOSS.weight
+    args.loss_name = cfg.LOSS.loss_name
+
     # Inference
     args.infer_overlap = cfg.INFERENCE.infer_overlap
     

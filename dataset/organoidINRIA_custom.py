@@ -5,6 +5,17 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset
 import tifffile as tiff
+# Dentro training/train.py
+import os
+import sys
+
+# Calcola il path assoluto di project_root/tools
+TOOLS_PATH = os.path.abspath(os.path.join(__file__, '..', '..', 'tools'))
+if TOOLS_PATH not in sys.path:
+    sys.path.insert(0, TOOLS_PATH)
+
+from similarity import compute_similarity_matrix, plot_similarity_heatmap
+
 
 CLASSES = {
     "chouxfleurs": 0,
@@ -110,12 +121,19 @@ class OrganoidsINRIA3D(Dataset):
 
         return {"vol": vol, "label": label, "name": name, "size": size, "path": p}
 
+
+
 if __name__ == "__main__":
     # Matching per sottostringa: include solo i file che contengono una delle 3 classi nel percorso
     ds = OrganoidsINRIA3D(
         root="/home/mraffael/martone_project/Organoids_Dataset",
         exact_class_dir=False
     )
-    dl = torch.utils.data.DataLoader(ds, batch_size=3, shuffle=False)
-    for batch in dl:
-        print(batch["vol"].shape, batch["label"], batch["name"], batch["size"], batch["path"])
+    dl = torch.utils.data.DataLoader(ds, batch_size=1, shuffle=True)
+    samples = [dl.dataset[i]['vol'].view(1, -1) for i in range(100)]
+    samples = torch.cat(samples, dim=0)  # [N,C*D*H*W]
+    print(samples.shape)
+    sim = compute_similarity_matrix(samples)
+    print(f"AVG SIMILARITY: {sim.mean()}")
+    plot_similarity_heatmap(sim, save_path="similarity_example.png")
+

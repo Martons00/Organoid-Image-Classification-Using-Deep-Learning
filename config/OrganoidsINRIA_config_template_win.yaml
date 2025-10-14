@@ -73,7 +73,8 @@ TRAINING:
   warmup_epochs: 50
 
 LOSS:
-  weight: 0.5
+  loss_name: "FocalLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+
 
 INFERENCE:
   infer_overlap: 0.5

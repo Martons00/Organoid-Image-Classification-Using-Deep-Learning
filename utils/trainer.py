@@ -22,6 +22,7 @@ from .utils import AverageMeter, distributed_all_gather
 from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches, plot_training_curve,plot_multi_class_training_curve,plot_loss_lr
 from .data_utils import send_alert
 from optimizers.early_stop import EarlyStopping  # Uncomment if used
+from tools.similarity import compute_similarity_matrix, plot_similarity_heatmap
 
 
 def freeze_backbone_and_select_head_fixed(model):
@@ -30,7 +31,7 @@ def freeze_backbone_and_select_head_fixed(model):
     trainable_params = 0
     
     for name, param in model.named_parameters():
-        if 'global_pool' in name or 'fc' in name or 'head' in name:
+        if 'global_pool' in name or 'fc' in name or 'head' in name or "encoder10" in name:
             param.requires_grad = True
             trainable_params += param.numel()
             print(f"✓ Unfrozen: {name} ({param.numel()} params)")
@@ -66,6 +67,8 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
 
         # Costruisci logits per l'intero batch iterando i volumi
         batch_logits = []
+        feat_list_ENT = []
+        hidden_list_ENT = []
         B = data.shape[0]
         for b in range(B):
             vol = data[b:b+1]                  # [1,C,D,H,W] o [1,D,H,W]
@@ -76,13 +79,17 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
 
             # Inferenza per patch con forward_features
             feat_list = []
+            hidden_list = []
             for i in range(patches.shape[0]):
                 patch = patches[i:i+1].to(device).to(torch.float32)  # [1,1,128,128,128]
-                feats = model.forward_features(patch)                # es. [1,Cf] o [1,Cf,1,1,N]
+                feats,hid = model.forward_features(patch)                # es. [1,Cf] o [1,Cf,1,1,N]
                 feat_list.append(feats)
+                hidden_list.append(hid)
 
             feats_cat = torch.cat(feat_list, dim=0)                  # [N,Cf,...]
             feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # ricostruzione feature per volume
+            feat_list_ENT.append(feats_tiled.detach().cpu())                  # salva per similarità
+            hidden_list_ENT.append(torch.cat(hidden_list, dim=0).detach().cpu())  # salva per similarità
 
             # Testa di classificazione: global_pool → flatten → fc
             pooled = model.global_pool(feats_tiled)                  # [1,C]
@@ -94,26 +101,41 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
                 pooled = pooled.flatten(1)                               # [1,C,1]
             logits_b = model.fc(pooled)                              # [1,num_classes]
             batch_logits.append(logits_b)
+        
+        
+        # feat_list_ENT = torch.cat(feat_list_ENT[:], dim=0)  # [B,Cf,D,H,W]
+        # print(f"Features shape: {feat_list_ENT.shape}")
+        # feat_list_ENT = feat_list_ENT.view(feat_list_ENT.shape[0], -1)  # [B,Cf*D*H*W]
+        # sim = compute_similarity_matrix(feat_list_ENT)
+        # plot_similarity_heatmap(sim, target, save_path=os.path.join(args.final_output_dir, f"similarity_epoch{epoch}_iter{idx}.png"))
+
+        # hidden_list_ENT = torch.cat(hidden_list_ENT[:], dim=0)  # [B,Cf]
+        # print(f"Hidden states shape: {hidden_list_ENT.shape}")
+        # hidden_list_ENT = hidden_list_ENT.view(hidden_list_ENT.shape[0], -1)
+        # sim_hid = compute_similarity_matrix(hidden_list_ENT)
+        # plot_similarity_heatmap(sim_hid, target, save_path=os.path.join(args.final_output_dir, f"similarity_hidden_epoch{epoch}_iter{idx}.png"))
+
 
         logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
+        print(f"Logits: {logits.detach().cpu().numpy()}, Target: {target.view(-1).detach().cpu().numpy()}") 
         predictions = torch.softmax(logits, dim=1).argmax(dim=1)  # [B]
+        print(f"Predictions: {predictions.detach().cpu().numpy()}, Targets: {target.view(-1).detach().cpu().numpy()}")
         loss = loss_func(logits, target) 
         loss.backward()
         total_losses.append(loss.item())
 
-        '''
-        # Verifica che ci siano parametri con requires_grad=True
-        trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-        print(f"Trainable parameters: {trainable_params}")
+        # # Verifica che ci siano parametri con requires_grad=True
+        # trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+        # print(f"Trainable parameters: {trainable_params}")
 
-        # Debug gradienti
-        grad_norm = 0
-        for name, param in model.named_parameters():
-            if param.requires_grad and param.grad is not None:
-                grad_norm += param.grad.data.norm(2).item() ** 2
-        grad_norm = grad_norm ** 0.5
-        print(f"Gradient norm: {grad_norm}")
-        '''
+        # # Debug gradienti
+        # grad_norm = 0
+        # for name, param in model.named_parameters():
+        #     if param.requires_grad and param.grad is not None:
+        #         grad_norm += param.grad.data.norm(2).item() ** 2
+        # grad_norm = grad_norm ** 0.5
+        # print(f"Gradient norm: {grad_norm}")
+
         optimizer.step()
         optimizer.zero_grad()
 
@@ -326,6 +348,7 @@ def run_training(
     validation_accuracies = []
     validation_per_class_accuracies = []
     lr_history = []
+    args.final_output_dir = final_output_dir
 
 
     val_acc_max = 0.0

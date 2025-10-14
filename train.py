@@ -49,9 +49,13 @@ from utils.data_utils import (
     create_kfold_splits_balanced,
     create_fold_dataloaders,
 )
+from tools.loss import (
+FocalLoss, LabelSmoothingLoss, DiversityLoss, CombinedLoss, CenterLoss
+)
 
 import asyncio
 from models.ML_Decoder_main.src_files.ml_decoder.ml_decoder import MLDecoder
+from models.NOAH_main.modules.noah import NOAH
 from dataset import OrganoidsINRIA3D
 from test import SwinUNETREncoder
 # from datasets.base_dataset import AugmentedDataset
@@ -129,10 +133,37 @@ def main_worker(gpu, args):
         use_checkpoint=True
     )
 
-    if args.resume_ckpt:
-        model_dict = torch.load(pretrained_pth)["state_dict"]
-        model.load_state_dict(model_dict)
-        print("Using pretrained weights")
+    state_dict_model = model.state_dict()
+
+    
+    # Caricamento del checkpoint
+    checkpoint = torch.load(pretrained_pth, map_location="cpu")
+    state_dict = checkpoint.get("state_dict", checkpoint)
+
+
+
+    # Rinomino le chiavi rimuovendo 'module.' e aggiungendo 'swinViT.'
+    new_state_dict = {}
+    for k, v in state_dict.items():
+        # rimuove 'module.' all'inizio e aggiunge 'swinViT.'
+        if k.startswith('module.'):
+            new_key = 'swinViT.' + k[len('module.'):]
+            new_key = new_key.replace('fc', 'linear')
+        else:
+            new_key = k
+        new_state_dict[new_key] = v
+    
+
+
+    # Caricamento flessibile dei pesi
+    missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
+    print("Using pretrained weights")
+    if missing:
+        print(f"Number of missing keys when loading pretrained weights: {len(missing)}")
+
+    if unexpected:
+        print(f"Number of unexpected keys when loading pretrained weights: {len(unexpected)}")
+
     
 
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -171,7 +202,7 @@ def main_worker(gpu, args):
         # Here we add the classification head
         if MLDecoder:
             head = MLDecoder(
-                num_classes=3, 
+                num_classes=args.num_classes,
                 initial_num_features=1024, 
                 num_of_groups=1, 
                 decoder_embedding=768, 
@@ -182,6 +213,15 @@ def main_worker(gpu, args):
             print("ML-Decoder applicato con successo")
         print("Using SwinUNETR with Multi-Layer Classification Head")
         logger.info("Using SwinUNETR with Multi-Layer Classification Head")
+    elif args.model_name == "swinunetr+NOAH":
+        # Here we add the classification head
+        if NOAH:
+            head = NOAH(inplanes=1024, outplanes=args.num_classes, dropout=0.0, head_num=1, head_split=True, kv_split=False)
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            print("NOAH applicato con successo")
+            print("Using SwinUNETR with NOAH Classification Head")
+            logger.info("Using SwinUNETR with NOAH Classification Head")
     else:
         print("Using SwinUNETR with Single Linear Classification Head")
         logger.info("Using SwinUNETR with Single Linear Classification Head")
@@ -334,13 +374,31 @@ def main_worker(gpu, args):
     logger.info("")
 
     class_weights = compute_class_weight(class_weight='balanced',classes=np.unique(labels),y=labels[train_indices])
-    weights = torch.tensor(class_weights, dtype=torch.float)
+    weights = torch.tensor(class_weights, dtype=torch.float) * 10
     print("Class weights:", weights.numpy())
     logger.info("Class weights: " + str(weights.numpy()))
-    loss_func = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
+
+    if args.loss_name == "FocalLoss":
+        loss_func = FocalLoss(alpha=weights.cuda(args.gpu), gamma=2.0)
+    elif args.loss_name == "LabelSmoothingLoss":
+        loss_func = LabelSmoothingLoss(classes=3, smoothing=0.1, weight=weights.cuda(args.gpu))
+    elif args.loss_name == "DiversityLoss":
+        base = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
+        loss_func = DiversityLoss(base, diversity_weight=0.15)
+    elif args.loss_name == "CombinedLoss":
+        loss_func = CombinedLoss(
+            alpha=weights.cuda(args.gpu), 
+            gamma=2.0, 
+            diversity_weight=0.15
+        )
+    elif args.loss_name == "CenterLoss":
+        loss_func = CenterLoss(num_classes=3, feat_dim=128)
+    elif args.loss_name == "CE":
+        loss_func = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
+    else:
+        raise ValueError(f"Unsupported loss function: {args.loss_name}")
 
     acc_metric = MulticlassAccuracy(num_classes=3, average='macro').cuda(args.gpu)
-
 
     start = timeit.default_timer()
     print("")
@@ -369,7 +427,6 @@ def main_worker(gpu, args):
     logger.info("Total time spent: %d", end - start)
     writer_dict['writer'].close()
     torch.cuda.empty_cache()
-
 
     return accuracy
 
