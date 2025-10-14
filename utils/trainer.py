@@ -117,9 +117,9 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
 
 
         logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
-        print(f"Logits: {logits.detach().cpu().numpy()}, Target: {target.view(-1).detach().cpu().numpy()}") 
+        #print(f"Logits: {logits.detach().cpu().numpy()}, Target: {target.view(-1).detach().cpu().numpy()}") 
         predictions = torch.softmax(logits, dim=1).argmax(dim=1)  # [B]
-        print(f"Predictions: {predictions.detach().cpu().numpy()}, Targets: {target.view(-1).detach().cpu().numpy()}")
+        #print(f"Predictions: {predictions.detach().cpu().numpy()}, Targets: {target.view(-1).detach().cpu().numpy()}")
         loss = loss_func(logits, target) 
         loss.backward()
         total_losses.append(loss.item())
@@ -216,7 +216,7 @@ def val_epoch(
                 feat_list = []
                 for i in range(patches.shape[0]):
                     patch = patches[i:i+1].to(device).to(torch.float32)
-                    feats = model.forward_features(patch)
+                    feats, _  = model.forward_features(patch)
                     feat_list.append(feats)
 
                 feats_cat = torch.cat(feat_list, dim=0)

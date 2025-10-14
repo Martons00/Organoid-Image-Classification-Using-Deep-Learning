@@ -1,7 +1,7 @@
 /var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
 /var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
-2025-10-14 13:30:32,089 INFO Log directory: outputs/OrganoidsINRIA/train/2025-10-14-13-30
-2025-10-14 13:30:32,091 INFO {'RandFlipd_prob': 0.2,
+2025-10-14 14:13:11,698 INFO Log directory: outputs/OrganoidsINRIA/train/2025-10-14-14-13
+2025-10-14 14:13:11,700 INFO {'RandFlipd_prob': 0.2,
  'RandRotate90d_prob': 0.2,
  'RandScaleIntensityd_prob': 0.1,
  'RandShiftIntensityd_prob': 0.1,
@@ -40,7 +40,7 @@
  'momentum': 0.99,
  'noamp': False,
  'norm_name': 'instance',
- 'oar_id': 2068776,
+ 'oar_id': 2068912,
  'optim_lr': 1e-05,
  'optim_name': 'adamw',
  'out_channels': 1,
@@ -68,28 +68,36 @@
  'warmup_epochs': 3,
  'workers': 8,
  'world_size': 1}
-2025-10-14 13:30:32,091 INFO 
-2025-10-14 13:30:36,592 INFO Total parameters count: 62186659
-2025-10-14 13:30:36,593 INFO Using SwinUNETR with Single Linear Classification Head
-2025-10-14 13:30:36,652 INFO 
-2025-10-14 13:30:36,652 INFO Dataset INFO:
-2025-10-14 13:30:36,652 INFO Dataset length is: 423
-2025-10-14 13:30:36,653 INFO Class 0: 137
-2025-10-14 13:30:36,653 INFO Class 1: 43
-2025-10-14 13:30:36,653 INFO Class 2: 243
-2025-10-14 13:30:36,657 INFO Train class 0: 34 (33.3%)
-2025-10-14 13:30:36,657 INFO Train class 1: 34 (33.3%)
-2025-10-14 13:30:36,657 INFO Train class 2: 34 (33.3%)
-2025-10-14 13:30:36,657 INFO Val class 0: 9 (33.3%)
-2025-10-14 13:30:36,657 INFO Val class 1: 9 (33.3%)
-2025-10-14 13:30:36,657 INFO Val class 2: 9 (33.3%)
-2025-10-14 13:30:36,657 INFO **************************************************
-2025-10-14 13:30:36,657 INFO 
-2025-10-14 13:30:36,663 INFO Class weights: [ 10.000  10.000  10.000]
-2025-10-14 13:30:36,666 INFO 
-2025-10-14 13:30:36,666 INFO Starting training...
-2025-10-14 13:30:36,667 INFO 0 Tue Oct 14 13:30:36 2025 Epoch: 0
+2025-10-14 14:13:11,700 INFO 
+2025-10-14 14:13:16,278 INFO Total parameters count: 62186659
+2025-10-14 14:13:16,279 INFO Using SwinUNETR with Single Linear Classification Head
+2025-10-14 14:13:16,343 INFO 
+2025-10-14 14:13:16,343 INFO Dataset INFO:
+2025-10-14 14:13:16,343 INFO Dataset length is: 423
+2025-10-14 14:13:16,343 INFO Class 0: 137
+2025-10-14 14:13:16,343 INFO Class 1: 43
+2025-10-14 14:13:16,343 INFO Class 2: 243
+2025-10-14 14:13:16,348 INFO Train class 0: 34 (33.3%)
+2025-10-14 14:13:16,348 INFO Train class 1: 34 (33.3%)
+2025-10-14 14:13:16,348 INFO Train class 2: 34 (33.3%)
+2025-10-14 14:13:16,348 INFO Val class 0: 9 (33.3%)
+2025-10-14 14:13:16,348 INFO Val class 1: 9 (33.3%)
+2025-10-14 14:13:16,348 INFO Val class 2: 9 (33.3%)
+2025-10-14 14:13:16,348 INFO **************************************************
+2025-10-14 14:13:16,348 INFO 
+2025-10-14 14:13:16,354 INFO Class weights: [ 10.000  10.000  10.000]
+2025-10-14 14:13:16,357 INFO 
+2025-10-14 14:13:16,357 INFO Starting training...
+2025-10-14 14:13:16,357 INFO 0 Tue Oct 14 14:13:16 2025 Epoch: 0
 /home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
   return fn(*args, **kwargs)
 /home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   warnings.warn(
+2025-10-14 14:16:47,013 INFO Final training  0/59loss: 4.7754time 210.66slr: 0.000000
+2025-10-14 14:16:47,466 INFO --------------------------------------------------
+2025-10-14 14:16:47,466 INFO 
+2025-10-14 14:16:47,467 INFO 0 Tue Oct 14 14:16:47 2025 Epoch: 1
+2025-10-14 14:19:55,641 INFO Final training  1/59loss: 4.8249time 188.17slr: 0.000005
+2025-10-14 14:19:55,645 INFO --------------------------------------------------
+2025-10-14 14:19:55,645 INFO 
+2025-10-14 14:19:55,645 INFO 0 Tue Oct 14 14:19:55 2025 Epoch: 2
