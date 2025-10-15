@@ -1,0 +1,528 @@
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+2025-10-14 14:13:11,698 INFO Log directory: outputs/OrganoidsINRIA/train/2025-10-14-14-13
+2025-10-14 14:13:11,700 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'batch_size': 8,
+ 'cache_dataset': False,
+ 'checkpoint': None,
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset/',
+ 'dataset_name': 'OrganoidsINRIA',
+ 'debug': False,
+ 'debug_train_samples': 3,
+ 'debug_val_samples': 3,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'exact_class': True,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'training',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CombinedLoss',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 60,
+ 'min_delta_loss': 0.01,
+ 'min_delta_val': 0.02,
+ 'model_name': 'swinunetr',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2068912,
+ 'optim_lr': 1e-05,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patience_loss': 30,
+ 'patience_val': 10,
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model_swinvit.pt',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': False,
+ 'seed': 304,
+ 'spatial_dims': 3,
+ 'split_method': 'balanced',
+ 'sw_batch_size': 1,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 4,
+ 'warmup_epochs': 3,
+ 'workers': 8,
+ 'world_size': 1}
+2025-10-14 14:13:11,700 INFO 
+2025-10-14 14:13:16,278 INFO Total parameters count: 62186659
+2025-10-14 14:13:16,279 INFO Using SwinUNETR with Single Linear Classification Head
+2025-10-14 14:13:16,343 INFO 
+2025-10-14 14:13:16,343 INFO Dataset INFO:
+2025-10-14 14:13:16,343 INFO Dataset length is: 423
+2025-10-14 14:13:16,343 INFO Class 0: 137
+2025-10-14 14:13:16,343 INFO Class 1: 43
+2025-10-14 14:13:16,343 INFO Class 2: 243
+2025-10-14 14:13:16,348 INFO Train class 0: 34 (33.3%)
+2025-10-14 14:13:16,348 INFO Train class 1: 34 (33.3%)
+2025-10-14 14:13:16,348 INFO Train class 2: 34 (33.3%)
+2025-10-14 14:13:16,348 INFO Val class 0: 9 (33.3%)
+2025-10-14 14:13:16,348 INFO Val class 1: 9 (33.3%)
+2025-10-14 14:13:16,348 INFO Val class 2: 9 (33.3%)
+2025-10-14 14:13:16,348 INFO **************************************************
+2025-10-14 14:13:16,348 INFO 
+2025-10-14 14:13:16,354 INFO Class weights: [ 10.000  10.000  10.000]
+2025-10-14 14:13:16,357 INFO 
+2025-10-14 14:13:16,357 INFO Starting training...
+2025-10-14 14:13:16,357 INFO 0 Tue Oct 14 14:13:16 2025 Epoch: 0
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+2025-10-14 14:16:47,013 INFO Final training  0/59loss: 4.7754time 210.66slr: 0.000000
+2025-10-14 14:16:47,466 INFO --------------------------------------------------
+2025-10-14 14:16:47,466 INFO 
+2025-10-14 14:16:47,467 INFO 0 Tue Oct 14 14:16:47 2025 Epoch: 1
+2025-10-14 14:19:55,641 INFO Final training  1/59loss: 4.8249time 188.17slr: 0.000005
+2025-10-14 14:19:55,645 INFO --------------------------------------------------
+2025-10-14 14:19:55,645 INFO 
+2025-10-14 14:19:55,645 INFO 0 Tue Oct 14 14:19:55 2025 Epoch: 2
+2025-10-14 14:23:04,366 INFO Final training  2/59loss: 4.7151time 188.72slr: 0.000010
+2025-10-14 14:23:04,372 INFO --------------------------------------------------
+2025-10-14 14:23:04,372 INFO 
+2025-10-14 14:23:04,373 INFO 0 Tue Oct 14 14:23:04 2025 Epoch: 3
+2025-10-14 14:26:13,202 INFO Final training  3/59loss: 4.5294time 188.83slr: 0.000010
+2025-10-14 14:26:13,206 INFO --------------------------------------------------
+2025-10-14 14:26:13,206 INFO 
+2025-10-14 14:27:12,813 INFO Final validation stats 3/59, Val_acc: 0.370370, time 59.61s
+2025-10-14 14:27:13,213 INFO new best (0.000000 --> 0.370370). 
+2025-10-14 14:27:13,213 INFO --------------------------------------------------
+2025-10-14 14:27:13,213 INFO 
+2025-10-14 14:27:13,214 INFO 0 Tue Oct 14 14:27:13 2025 Epoch: 4
+2025-10-14 14:30:19,919 INFO Final training  4/59loss: 4.4178time 186.71slr: 0.000010
+2025-10-14 14:30:19,922 INFO --------------------------------------------------
+2025-10-14 14:30:19,922 INFO 
+2025-10-14 14:30:19,923 INFO 0 Tue Oct 14 14:30:19 2025 Epoch: 5
+2025-10-14 14:33:27,723 INFO Final training  5/59loss: 4.2736time 187.80slr: 0.000010
+2025-10-14 14:33:27,727 INFO --------------------------------------------------
+2025-10-14 14:33:27,728 INFO 
+2025-10-14 14:33:27,728 INFO 0 Tue Oct 14 14:33:27 2025 Epoch: 6
+2025-10-14 14:36:33,729 INFO Final training  6/59loss: 4.3468time 186.00slr: 0.000010
+2025-10-14 14:36:33,731 INFO --------------------------------------------------
+2025-10-14 14:36:33,731 INFO 
+2025-10-14 14:36:33,731 INFO 0 Tue Oct 14 14:36:33 2025 Epoch: 7
+2025-10-14 14:39:41,719 INFO Final training  7/59loss: 4.2733time 187.99slr: 0.000010
+2025-10-14 14:39:41,726 INFO --------------------------------------------------
+2025-10-14 14:39:41,726 INFO 
+2025-10-14 14:40:34,988 INFO Final validation stats 7/59, Val_acc: 0.407407, time 53.26s
+2025-10-14 14:40:35,393 INFO new best (0.370370 --> 0.407407). 
+2025-10-14 14:40:35,394 INFO --------------------------------------------------
+2025-10-14 14:40:35,394 INFO 
+2025-10-14 14:40:35,394 INFO 0 Tue Oct 14 14:40:35 2025 Epoch: 8
+2025-10-14 14:43:43,033 INFO Final training  8/59loss: 4.1619time 187.64slr: 0.000010
+2025-10-14 14:43:43,039 INFO --------------------------------------------------
+2025-10-14 14:43:43,039 INFO 
+2025-10-14 14:43:43,039 INFO 0 Tue Oct 14 14:43:43 2025 Epoch: 9
+2025-10-14 14:46:50,950 INFO Final training  9/59loss: 4.0675time 187.91slr: 0.000010
+2025-10-14 14:46:50,952 INFO --------------------------------------------------
+2025-10-14 14:46:50,952 INFO 
+2025-10-14 14:46:50,952 INFO 0 Tue Oct 14 14:46:50 2025 Epoch: 10
+2025-10-14 14:49:57,835 INFO Final training  10/59loss: 4.0059time 186.88slr: 0.000010
+2025-10-14 14:49:58,216 INFO --------------------------------------------------
+2025-10-14 14:49:58,216 INFO 
+2025-10-14 14:49:58,216 INFO 0 Tue Oct 14 14:49:58 2025 Epoch: 11
+2025-10-14 14:53:05,215 INFO Final training  11/59loss: 4.1235time 187.00slr: 0.000010
+2025-10-14 14:53:05,216 INFO --------------------------------------------------
+2025-10-14 14:53:05,216 INFO 
+2025-10-14 14:53:58,684 INFO Final validation stats 11/59, Val_acc: 0.555556, time 53.47s
+2025-10-14 14:53:59,144 INFO new best (0.407407 --> 0.555556). 
+2025-10-14 14:53:59,144 INFO --------------------------------------------------
+2025-10-14 14:53:59,144 INFO 
+2025-10-14 14:53:59,144 INFO 0 Tue Oct 14 14:53:59 2025 Epoch: 12
+2025-10-14 14:57:05,088 INFO Final training  12/59loss: 3.9384time 185.94slr: 0.000009
+2025-10-14 14:57:05,093 INFO --------------------------------------------------
+2025-10-14 14:57:05,093 INFO 
+2025-10-14 14:57:05,093 INFO 0 Tue Oct 14 14:57:05 2025 Epoch: 13
+2025-10-14 15:00:13,548 INFO Final training  13/59loss: 3.9396time 188.45slr: 0.000009
+2025-10-14 15:00:13,554 INFO --------------------------------------------------
+2025-10-14 15:00:13,554 INFO 
+2025-10-14 15:00:13,554 INFO 0 Tue Oct 14 15:00:13 2025 Epoch: 14
+2025-10-14 15:03:21,264 INFO Final training  14/59loss: 3.8946time 187.71slr: 0.000009
+2025-10-14 15:03:21,270 INFO --------------------------------------------------
+2025-10-14 15:03:21,270 INFO 
+2025-10-14 15:03:21,270 INFO 0 Tue Oct 14 15:03:21 2025 Epoch: 15
+2025-10-14 15:06:29,046 INFO Final training  15/59loss: 3.8893time 187.78slr: 0.000009
+2025-10-14 15:06:29,052 INFO --------------------------------------------------
+2025-10-14 15:06:29,052 INFO 
+2025-10-14 15:07:22,403 INFO Final validation stats 15/59, Val_acc: 0.629630, time 53.35s
+2025-10-14 15:07:22,796 INFO new best (0.555556 --> 0.629630). 
+2025-10-14 15:07:22,796 INFO --------------------------------------------------
+2025-10-14 15:07:22,796 INFO 
+2025-10-14 15:07:22,797 INFO 0 Tue Oct 14 15:07:22 2025 Epoch: 16
+2025-10-14 15:10:31,510 INFO Final training  16/59loss: 3.7520time 188.71slr: 0.000009
+2025-10-14 15:10:31,511 INFO --------------------------------------------------
+2025-10-14 15:10:31,511 INFO 
+2025-10-14 15:10:31,512 INFO 0 Tue Oct 14 15:10:31 2025 Epoch: 17
+2025-10-14 15:13:38,224 INFO Final training  17/59loss: 3.6899time 186.71slr: 0.000009
+2025-10-14 15:13:38,229 INFO --------------------------------------------------
+2025-10-14 15:13:38,229 INFO 
+2025-10-14 15:13:38,230 INFO 0 Tue Oct 14 15:13:38 2025 Epoch: 18
+2025-10-14 15:16:45,641 INFO Final training  18/59loss: 3.7228time 187.41slr: 0.000008
+2025-10-14 15:16:45,647 INFO --------------------------------------------------
+2025-10-14 15:16:45,647 INFO 
+2025-10-14 15:16:45,647 INFO 0 Tue Oct 14 15:16:45 2025 Epoch: 19
+2025-10-14 15:19:53,629 INFO Final training  19/59loss: 3.7735time 187.98slr: 0.000008
+2025-10-14 15:19:53,630 INFO --------------------------------------------------
+2025-10-14 15:19:53,630 INFO 
+2025-10-14 15:20:47,041 INFO Final validation stats 19/59, Val_acc: 0.555556, time 53.41s
+2025-10-14 15:20:47,524 INFO --------------------------------------------------
+2025-10-14 15:20:47,524 INFO 
+2025-10-14 15:20:47,524 INFO 0 Tue Oct 14 15:20:47 2025 Epoch: 20
+2025-10-14 15:23:54,105 INFO Final training  20/59loss: 3.9038time 186.58slr: 0.000008
+2025-10-14 15:23:54,581 INFO --------------------------------------------------
+2025-10-14 15:23:54,581 INFO 
+2025-10-14 15:23:54,581 INFO 0 Tue Oct 14 15:23:54 2025 Epoch: 21
+2025-10-14 15:27:01,743 INFO Final training  21/59loss: 3.7284time 187.16slr: 0.000008
+2025-10-14 15:27:01,750 INFO --------------------------------------------------
+2025-10-14 15:27:01,750 INFO 
+2025-10-14 15:27:01,750 INFO 0 Tue Oct 14 15:27:01 2025 Epoch: 22
+2025-10-14 15:30:08,382 INFO Final training  22/59loss: 3.6130time 186.63slr: 0.000008
+2025-10-14 15:30:08,386 INFO --------------------------------------------------
+2025-10-14 15:30:08,386 INFO 
+2025-10-14 15:30:08,386 INFO 0 Tue Oct 14 15:30:08 2025 Epoch: 23
+2025-10-14 15:33:15,213 INFO Final training  23/59loss: 3.4986time 186.83slr: 0.000007
+2025-10-14 15:33:15,217 INFO --------------------------------------------------
+2025-10-14 15:33:15,217 INFO 
+2025-10-14 15:34:08,674 INFO Final validation stats 23/59, Val_acc: 0.666667, time 53.46s
+2025-10-14 15:34:09,080 INFO new best (0.629630 --> 0.666667). 
+2025-10-14 15:34:09,080 INFO --------------------------------------------------
+2025-10-14 15:34:09,080 INFO 
+2025-10-14 15:34:09,081 INFO 0 Tue Oct 14 15:34:09 2025 Epoch: 24
+2025-10-14 15:37:15,642 INFO Final training  24/59loss: 3.4846time 186.56slr: 0.000007
+2025-10-14 15:37:15,643 INFO --------------------------------------------------
+2025-10-14 15:37:15,643 INFO 
+2025-10-14 15:37:15,643 INFO 0 Tue Oct 14 15:37:15 2025 Epoch: 25
+2025-10-14 15:40:23,126 INFO Final training  25/59loss: 3.5236time 187.48slr: 0.000007
+2025-10-14 15:40:23,130 INFO --------------------------------------------------
+2025-10-14 15:40:23,130 INFO 
+2025-10-14 15:40:23,131 INFO 0 Tue Oct 14 15:40:23 2025 Epoch: 26
+2025-10-14 15:43:29,102 INFO Final training  26/59loss: 3.4503time 185.97slr: 0.000006
+2025-10-14 15:43:29,103 INFO --------------------------------------------------
+2025-10-14 15:43:29,103 INFO 
+2025-10-14 15:43:29,104 INFO 0 Tue Oct 14 15:43:29 2025 Epoch: 27
+2025-10-14 15:46:35,191 INFO Final training  27/59loss: 3.3993time 186.09slr: 0.000006
+2025-10-14 15:46:35,192 INFO --------------------------------------------------
+2025-10-14 15:46:35,192 INFO 
+2025-10-14 15:47:28,902 INFO Final validation stats 27/59, Val_acc: 0.629630, time 53.71s
+2025-10-14 15:47:29,363 INFO --------------------------------------------------
+2025-10-14 15:47:29,363 INFO 
+2025-10-14 15:47:29,363 INFO 0 Tue Oct 14 15:47:29 2025 Epoch: 28
+2025-10-14 15:50:37,522 INFO Final training  28/59loss: 3.3972time 188.16slr: 0.000006
+2025-10-14 15:50:37,523 INFO --------------------------------------------------
+2025-10-14 15:50:37,523 INFO 
+2025-10-14 15:50:37,524 INFO 0 Tue Oct 14 15:50:37 2025 Epoch: 29
+2025-10-14 15:53:43,833 INFO Final training  29/59loss: 3.5451time 186.31slr: 0.000006
+2025-10-14 15:53:43,837 INFO --------------------------------------------------
+2025-10-14 15:53:43,837 INFO 
+2025-10-14 15:53:43,838 INFO 0 Tue Oct 14 15:53:43 2025 Epoch: 30
+2025-10-14 15:56:49,881 INFO Final training  30/59loss: 3.3955time 186.04slr: 0.000005
+2025-10-14 15:56:50,276 INFO --------------------------------------------------
+2025-10-14 15:56:50,276 INFO 
+2025-10-14 15:56:50,277 INFO 0 Tue Oct 14 15:56:50 2025 Epoch: 31
+2025-10-14 15:59:56,335 INFO Final training  31/59loss: 3.4352time 186.06slr: 0.000005
+2025-10-14 15:59:56,340 INFO --------------------------------------------------
+2025-10-14 15:59:56,340 INFO 
+2025-10-14 16:00:49,992 INFO Final validation stats 31/59, Val_acc: 0.666667, time 53.65s
+2025-10-14 16:00:50,391 INFO --------------------------------------------------
+2025-10-14 16:00:50,391 INFO 
+2025-10-14 16:00:50,391 INFO 0 Tue Oct 14 16:00:50 2025 Epoch: 32
+2025-10-14 16:03:56,767 INFO Final training  32/59loss: 3.3095time 186.38slr: 0.000005
+2025-10-14 16:03:56,771 INFO --------------------------------------------------
+2025-10-14 16:03:56,771 INFO 
+2025-10-14 16:03:56,771 INFO 0 Tue Oct 14 16:03:56 2025 Epoch: 33
+2025-10-14 16:07:05,734 INFO Final training  33/59loss: 3.3295time 188.96slr: 0.000005
+2025-10-14 16:07:05,734 INFO --------------------------------------------------
+2025-10-14 16:07:05,735 INFO 
+2025-10-14 16:07:05,735 INFO 0 Tue Oct 14 16:07:05 2025 Epoch: 34
+2025-10-14 16:10:13,473 INFO Final training  34/59loss: 3.2514time 187.74slr: 0.000004
+2025-10-14 16:10:13,478 INFO --------------------------------------------------
+2025-10-14 16:10:13,478 INFO 
+2025-10-14 16:10:13,479 INFO 0 Tue Oct 14 16:10:13 2025 Epoch: 35
+2025-10-14 16:13:20,933 INFO Final training  35/59loss: 3.3208time 187.45slr: 0.000004
+2025-10-14 16:13:20,938 INFO --------------------------------------------------
+2025-10-14 16:13:20,938 INFO 
+2025-10-14 16:14:14,428 INFO Final validation stats 35/59, Val_acc: 0.629630, time 53.49s
+2025-10-14 16:14:14,925 INFO --------------------------------------------------
+2025-10-14 16:14:14,925 INFO 
+2025-10-14 16:14:14,925 INFO 0 Tue Oct 14 16:14:14 2025 Epoch: 36
+2025-10-14 16:17:22,938 INFO Final training  36/59loss: 3.3591time 188.01slr: 0.000004
+2025-10-14 16:17:22,943 INFO --------------------------------------------------
+2025-10-14 16:17:22,943 INFO 
+2025-10-14 16:17:22,943 INFO 0 Tue Oct 14 16:17:22 2025 Epoch: 37
+2025-10-14 16:20:29,726 INFO Final training  37/59loss: 3.2621time 186.78slr: 0.000004
+2025-10-14 16:20:29,730 INFO --------------------------------------------------
+2025-10-14 16:20:29,730 INFO 
+2025-10-14 16:20:29,731 INFO 0 Tue Oct 14 16:20:29 2025 Epoch: 38
+2025-10-14 16:23:36,184 INFO Final training  38/59loss: 3.2741time 186.45slr: 0.000003
+2025-10-14 16:23:36,190 INFO --------------------------------------------------
+2025-10-14 16:23:36,190 INFO 
+2025-10-14 16:23:36,190 INFO 0 Tue Oct 14 16:23:36 2025 Epoch: 39
+2025-10-14 16:26:42,285 INFO Final training  39/59loss: 3.2570time 186.09slr: 0.000003
+2025-10-14 16:26:42,291 INFO --------------------------------------------------
+2025-10-14 16:26:42,291 INFO 
+2025-10-14 16:27:35,629 INFO Final validation stats 39/59, Val_acc: 0.666667, time 53.34s
+2025-10-14 16:27:36,051 INFO --------------------------------------------------
+2025-10-14 16:27:36,051 INFO 
+2025-10-14 16:27:36,051 INFO 0 Tue Oct 14 16:27:36 2025 Epoch: 40
+2025-10-14 16:30:43,975 INFO Final training  40/59loss: 3.2830time 187.92slr: 0.000003
+2025-10-14 16:30:44,371 INFO --------------------------------------------------
+2025-10-14 16:30:44,371 INFO 
+2025-10-14 16:30:44,372 INFO 0 Tue Oct 14 16:30:44 2025 Epoch: 41
+2025-10-14 16:33:52,317 INFO Final training  41/59loss: 3.2023time 187.95slr: 0.000003
+2025-10-14 16:33:52,324 INFO --------------------------------------------------
+2025-10-14 16:33:52,324 INFO 
+2025-10-14 16:33:52,324 INFO 0 Tue Oct 14 16:33:52 2025 Epoch: 42
+2025-10-14 16:36:58,393 INFO Final training  42/59loss: 3.1711time 186.07slr: 0.000002
+2025-10-14 16:36:58,398 INFO --------------------------------------------------
+2025-10-14 16:36:58,398 INFO 
+2025-10-14 16:36:58,398 INFO 0 Tue Oct 14 16:36:58 2025 Epoch: 43
+2025-10-14 16:40:05,861 INFO Final training  43/59loss: 3.1629time 187.46slr: 0.000002
+2025-10-14 16:40:05,866 INFO --------------------------------------------------
+2025-10-14 16:40:05,866 INFO 
+2025-10-14 16:40:59,241 INFO Final validation stats 43/59, Val_acc: 0.592593, time 53.37s
+2025-10-14 16:40:59,694 INFO --------------------------------------------------
+2025-10-14 16:40:59,694 INFO 
+2025-10-14 16:40:59,694 INFO 0 Tue Oct 14 16:40:59 2025 Epoch: 44
+2025-10-14 16:44:06,478 INFO Final training  44/59loss: 3.1590time 186.78slr: 0.000002
+2025-10-14 16:44:06,485 INFO --------------------------------------------------
+2025-10-14 16:44:06,485 INFO 
+2025-10-14 16:44:06,486 INFO 0 Tue Oct 14 16:44:06 2025 Epoch: 45
+2025-10-14 16:47:13,680 INFO Final training  45/59loss: 3.2101time 187.19slr: 0.000002
+2025-10-14 16:47:13,687 INFO --------------------------------------------------
+2025-10-14 16:47:13,687 INFO 
+2025-10-14 16:47:13,687 INFO 0 Tue Oct 14 16:47:13 2025 Epoch: 46
+2025-10-14 16:50:21,078 INFO Final training  46/59loss: 3.1328time 187.39slr: 0.000001
+2025-10-14 16:50:21,084 INFO --------------------------------------------------
+2025-10-14 16:50:21,084 INFO 
+2025-10-14 16:50:21,085 INFO 0 Tue Oct 14 16:50:21 2025 Epoch: 47
+2025-10-14 16:53:28,114 INFO Final training  47/59loss: 3.1170time 187.03slr: 0.000001
+2025-10-14 16:53:28,121 INFO --------------------------------------------------
+2025-10-14 16:53:28,121 INFO 
+2025-10-14 16:54:21,501 INFO Final validation stats 47/59, Val_acc: 0.666667, time 53.38s
+2025-10-14 16:54:22,052 INFO --------------------------------------------------
+2025-10-14 16:54:22,052 INFO 
+2025-10-14 16:54:22,052 INFO 0 Tue Oct 14 16:54:22 2025 Epoch: 48
+2025-10-14 16:57:29,408 INFO Final training  48/59loss: 3.1778time 187.36slr: 0.000001
+2025-10-14 16:57:29,414 INFO --------------------------------------------------
+2025-10-14 16:57:29,415 INFO 
+2025-10-14 16:57:29,415 INFO 0 Tue Oct 14 16:57:29 2025 Epoch: 49
+2025-10-14 17:00:35,882 INFO Final training  49/59loss: 3.1567time 186.47slr: 0.000001
+2025-10-14 17:00:35,888 INFO --------------------------------------------------
+2025-10-14 17:00:35,889 INFO 
+2025-10-14 17:00:35,889 INFO 0 Tue Oct 14 17:00:35 2025 Epoch: 50
+2025-10-14 17:03:43,149 INFO Final training  50/59loss: 3.1504time 187.26slr: 0.000001
+2025-10-14 17:03:43,554 INFO --------------------------------------------------
+2025-10-14 17:03:43,554 INFO 
+2025-10-14 17:03:43,554 INFO 0 Tue Oct 14 17:03:43 2025 Epoch: 51
+2025-10-14 17:06:50,984 INFO Final training  51/59loss: 3.1055time 187.43slr: 0.000001
+2025-10-14 17:06:50,988 INFO --------------------------------------------------
+2025-10-14 17:06:50,988 INFO 
+2025-10-14 17:07:44,352 INFO Final validation stats 51/59, Val_acc: 0.629630, time 53.36s
+2025-10-14 17:07:44,794 INFO --------------------------------------------------
+2025-10-14 17:07:44,794 INFO 
+2025-10-14 17:07:44,795 INFO 0 Tue Oct 14 17:07:44 2025 Epoch: 52
+2025-10-14 17:10:51,069 INFO Final training  52/59loss: 3.1642time 186.27slr: 0.000000
+2025-10-14 17:10:51,075 INFO --------------------------------------------------
+2025-10-14 17:10:51,075 INFO 
+2025-10-14 17:10:51,075 INFO 0 Tue Oct 14 17:10:51 2025 Epoch: 53
+2025-10-14 17:13:57,064 INFO Final training  53/59loss: 3.1811time 185.99slr: 0.000000
+2025-10-14 17:13:57,070 INFO --------------------------------------------------
+2025-10-14 17:13:57,070 INFO 
+2025-10-14 17:13:57,071 INFO 0 Tue Oct 14 17:13:57 2025 Epoch: 54
+2025-10-14 17:17:04,824 INFO Final training  54/59loss: 3.1736time 187.75slr: 0.000000
+2025-10-14 17:17:04,824 INFO --------------------------------------------------
+2025-10-14 17:17:04,824 INFO 
+2025-10-14 17:17:04,825 INFO 0 Tue Oct 14 17:17:04 2025 Epoch: 55
+2025-10-14 17:20:12,740 INFO Final training  55/59loss: 3.1149time 187.91slr: 0.000000
+2025-10-14 17:20:12,743 INFO --------------------------------------------------
+2025-10-14 17:20:12,743 INFO 
+2025-10-14 17:21:05,901 INFO Final validation stats 55/59, Val_acc: 0.629630, time 53.16s
+2025-10-14 17:21:06,317 INFO --------------------------------------------------
+2025-10-14 17:21:06,318 INFO 
+2025-10-14 17:21:06,318 INFO 0 Tue Oct 14 17:21:06 2025 Epoch: 56
+2025-10-14 17:24:14,368 INFO Final training  56/59loss: 3.1553time 188.05slr: 0.000000
+2025-10-14 17:24:14,372 INFO --------------------------------------------------
+2025-10-14 17:24:14,372 INFO 
+2025-10-14 17:24:14,373 INFO 0 Tue Oct 14 17:24:14 2025 Epoch: 57
+2025-10-14 17:27:21,059 INFO Final training  57/59loss: 3.0606time 186.69slr: 0.000000
+2025-10-14 17:27:21,065 INFO --------------------------------------------------
+2025-10-14 17:27:21,065 INFO 
+2025-10-14 17:27:21,065 INFO 0 Tue Oct 14 17:27:21 2025 Epoch: 58
+2025-10-14 17:30:29,220 INFO Final training  58/59loss: 3.1404time 188.16slr: 0.000000
+2025-10-14 17:30:29,226 INFO --------------------------------------------------
+2025-10-14 17:30:29,226 INFO 
+2025-10-14 17:30:29,226 INFO 0 Tue Oct 14 17:30:29 2025 Epoch: 59
+2025-10-14 17:33:37,044 INFO Final training  59/59loss: 3.0349time 187.82slr: 0.000000
+2025-10-14 17:33:37,050 INFO --------------------------------------------------
+2025-10-14 17:33:37,050 INFO 
+2025-10-14 17:34:30,235 INFO Final validation stats 59/59, Val_acc: 0.629630, time 53.18s
+2025-10-14 17:34:30,649 INFO --------------------------------------------------
+2025-10-14 17:34:30,650 INFO 
+2025-10-14 17:34:30,650 INFO Training Finished !, Best Accuracy: 0.6666666666666666
+2025-10-14 17:34:31,031 INFO ====================================================================================================
+2025-10-14 17:34:37,546 INFO Total time spent: 12081
+2025-10-14 17:35:05,711 INFO Log directory: outputs/OrganoidsINRIA/train/2025-10-14-17-35
+2025-10-14 17:35:05,713 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'batch_size': 8,
+ 'cache_dataset': False,
+ 'checkpoint': None,
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset/',
+ 'dataset_name': 'OrganoidsINRIA',
+ 'debug': False,
+ 'debug_train_samples': 3,
+ 'debug_val_samples': 3,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'exact_class': True,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'training',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CombinedLoss',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 60,
+ 'min_delta_loss': 0.01,
+ 'min_delta_val': 0.02,
+ 'model_name': 'swinunetr',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2068912,
+ 'optim_lr': 0.001,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patience_loss': 30,
+ 'patience_val': 10,
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model_swinvit.pt',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': False,
+ 'seed': 304,
+ 'spatial_dims': 3,
+ 'split_method': 'balanced',
+ 'sw_batch_size': 1,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 4,
+ 'warmup_epochs': 3,
+ 'workers': 8,
+ 'world_size': 1}
+2025-10-14 17:35:05,713 INFO 
+2025-10-14 17:35:06,685 INFO Total parameters count: 62186659
+2025-10-14 17:35:06,685 INFO Using SwinUNETR with Single Linear Classification Head
+2025-10-14 17:35:06,734 INFO 
+2025-10-14 17:35:06,734 INFO Dataset INFO:
+2025-10-14 17:35:06,734 INFO Dataset length is: 423
+2025-10-14 17:35:06,734 INFO Class 0: 137
+2025-10-14 17:35:06,735 INFO Class 1: 43
+2025-10-14 17:35:06,735 INFO Class 2: 243
+2025-10-14 17:35:06,735 INFO Train class 0: 34 (33.3%)
+2025-10-14 17:35:06,735 INFO Train class 1: 34 (33.3%)
+2025-10-14 17:35:06,735 INFO Train class 2: 34 (33.3%)
+2025-10-14 17:35:06,735 INFO Val class 0: 9 (33.3%)
+2025-10-14 17:35:06,735 INFO Val class 1: 9 (33.3%)
+2025-10-14 17:35:06,735 INFO Val class 2: 9 (33.3%)
+2025-10-14 17:35:06,735 INFO **************************************************
+2025-10-14 17:35:06,735 INFO 
+2025-10-14 17:35:06,737 INFO Class weights: [ 10.000  10.000  10.000]
+2025-10-14 17:35:06,740 INFO 
+2025-10-14 17:35:06,740 INFO Starting training...
+2025-10-14 17:35:06,740 INFO 0 Tue Oct 14 17:35:06 2025 Epoch: 0
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+2025-10-14 17:38:19,602 INFO Final training  0/59loss: 5.3329time 192.86slr: 0.000000
+2025-10-14 17:38:20,046 INFO --------------------------------------------------
+2025-10-14 17:38:20,046 INFO 
+2025-10-14 17:38:20,046 INFO 0 Tue Oct 14 17:38:20 2025 Epoch: 1
+2025-10-14 17:41:27,153 INFO Final training  1/59loss: 5.4991time 187.11slr: 0.000500
+2025-10-14 17:41:27,154 INFO --------------------------------------------------
+2025-10-14 17:41:27,154 INFO 
+2025-10-14 17:41:27,154 INFO 0 Tue Oct 14 17:41:27 2025 Epoch: 2
+2025-10-14 17:44:35,484 INFO Final training  2/59loss: 4.8601time 188.33slr: 0.001000
+2025-10-14 17:44:35,485 INFO --------------------------------------------------
+2025-10-14 17:44:35,486 INFO 
+2025-10-14 17:44:35,486 INFO 0 Tue Oct 14 17:44:35 2025 Epoch: 3
+2025-10-14 17:47:43,985 INFO Final training  3/59loss: 4.6244time 188.50slr: 0.001000
+2025-10-14 17:47:43,989 INFO --------------------------------------------------
+2025-10-14 17:47:43,990 INFO 
+2025-10-14 17:48:37,496 INFO Final validation stats 3/59, Val_acc: 0.333333, time 53.51s
+2025-10-14 17:48:37,916 INFO new best (0.000000 --> 0.333333). 
+2025-10-14 17:48:37,916 INFO --------------------------------------------------
+2025-10-14 17:48:37,916 INFO 
+2025-10-14 17:48:37,916 INFO 0 Tue Oct 14 17:48:37 2025 Epoch: 4
+2025-10-14 17:51:43,846 INFO Final training  4/59loss: 4.7642time 185.93slr: 0.000999
+2025-10-14 17:51:43,854 INFO --------------------------------------------------
+2025-10-14 17:51:43,854 INFO 
+2025-10-14 17:51:43,855 INFO 0 Tue Oct 14 17:51:43 2025 Epoch: 5
+2025-10-14 17:54:50,099 INFO Final training  5/59loss: 4.6140time 186.24slr: 0.000997
+2025-10-14 17:54:50,103 INFO --------------------------------------------------
+2025-10-14 17:54:50,103 INFO 
+2025-10-14 17:54:50,104 INFO 0 Tue Oct 14 17:54:50 2025 Epoch: 6
+2025-10-14 17:57:57,803 INFO Final training  6/59loss: 4.8757time 187.70slr: 0.000993
+2025-10-14 17:57:57,808 INFO --------------------------------------------------
+2025-10-14 17:57:57,808 INFO 
+2025-10-14 17:57:57,809 INFO 0 Tue Oct 14 17:57:57 2025 Epoch: 7
+2025-10-14 18:01:06,219 INFO Final training  7/59loss: 5.7583time 188.41slr: 0.000988
+2025-10-14 18:01:06,219 INFO --------------------------------------------------
+2025-10-14 18:01:06,219 INFO 
+2025-10-14 18:01:59,584 INFO Final validation stats 7/59, Val_acc: 0.333333, time 53.36s
+2025-10-14 18:02:00,004 INFO --------------------------------------------------
+2025-10-14 18:02:00,004 INFO 
+2025-10-14 18:02:00,004 INFO 0 Tue Oct 14 18:01:59 2025 Epoch: 8
+2025-10-14 18:05:08,384 INFO Final training  8/59loss: 4.7422time 188.38slr: 0.000981
+2025-10-14 18:05:08,385 INFO --------------------------------------------------
+2025-10-14 18:05:08,385 INFO 
+2025-10-14 18:05:08,385 INFO 0 Tue Oct 14 18:05:08 2025 Epoch: 9
+2025-10-14 18:08:16,306 INFO Final training  9/59loss: 4.7324time 187.92slr: 0.000973
+2025-10-14 18:08:16,307 INFO --------------------------------------------------
+2025-10-14 18:08:16,307 INFO 
+2025-10-14 18:08:16,307 INFO 0 Tue Oct 14 18:08:16 2025 Epoch: 10
+## OAR [2025-10-14 18:11:23] Job 2068912 KILLED ##

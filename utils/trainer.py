@@ -322,7 +322,7 @@ def save_checkpoint(model, epoch, args, filename="model.pt", best_acc=0, optimiz
         save_dict["optimizer"] = optimizer.state_dict()
     if scheduler is not None:
         save_dict["scheduler"] = scheduler.state_dict()
-    filename = os.path.join(args.logdir, filename)
+    filename = os.path.join(args.final_output_dir, filename)
     torch.save(save_dict, filename)
     print("Saving checkpoint", filename)
 
@@ -400,8 +400,6 @@ def run_training(
                     asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
             logging.info("" + "-" * 50)
             logging.info("")
-        if args.rank == 0 and writer is not None:
-            writer.add_scalar("train_loss", train_loss, epoch)
         b_new_best = False
         if (epoch + 1) % args.val_every == 0:
             if args.distributed:
@@ -433,10 +431,6 @@ def run_training(
                     asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
 
 
-
-                if writer is not None:
-                    writer.add_scalar("Mean_Val", val_acc, epoch)  # Val_acc is already a float, no need to use np.mean
-
                 val_avg_acc = val_acc  # val_acc è già il valore medio
                 if val_avg_acc > val_acc_max:
                     print("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
@@ -444,16 +438,17 @@ def run_training(
                     val_acc_max = val_avg_acc
                     b_new_best = True
 
-                    if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
+                    if args.rank == 0 and args.final_output_dir is not None and args.save_checkpoint:
+                        print("Saving new best model to model_final.pt")
                         save_checkpoint(
                             model, epoch, args, best_acc=val_acc_max, optimizer=optimizer, scheduler=scheduler
                         )
-            if args.rank == 0 and args.logdir is not None and args.save_checkpoint:
+            if args.rank == 0 and args.final_output_dir is not None and args.save_checkpoint:
                 save_checkpoint(model, epoch, args, best_acc=val_acc_max, filename="model_final.pt")
                 if b_new_best:
                     print("Copying to model.pt new best model!!!!")
                     logging.info("Copying to model.pt new best model!!!!")
-                    shutil.copyfile(os.path.join(args.logdir, "model_final.pt"), os.path.join(args.logdir, "model.pt"))
+                    shutil.copyfile(os.path.join(args.final_output_dir, "model_final.pt"), os.path.join(args.final_output_dir, "model.pt"))
 
             if args.early_stopping:
                 # Early Stopping step
@@ -479,42 +474,32 @@ def run_training(
         asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
     logging.info("" + "=" * 100)
 
-    time_str = time.strftime('%Y-%m-%d-%H-%M')
-    name_file = '{}_{}'.format(args.logdir, time_str)
     if final_output_dir == None:
+        time_str = time.strftime('%Y-%m-%d-%H-%M')
+        name_file = '{}_{}'.format(args.logdir, time_str)
         final_log_file = os.path.join(args.output_dir, name_file)
-        plot_training_curve(training_losses, metric_name="Loss", title="Training Curve - Loss", save_path=os.path.join(final_log_file, "training_loss_curve.png"))
-        plot_training_curve(lr_history, metric_name="Learning Rate", title="Training Curve - Learning Rate", save_path=os.path.join(final_log_file, "learning_rate_curve.png"))
-        plot_loss_lr(training_losses, lr_history, title="Training Curve - Loss vs Learning Rate", save_path=os.path.join(final_log_file, "loss_vs_lr_curve.png"))
-        plot_multi_class_training_curve(validation_accuracies, validation_per_class_accuracies, title="Training Curve - Accuracy", save_path=os.path.join(final_log_file, "validation_accuracy_curve.png"))
-        if args.telegram_log:
-            message = f"*📈 Training curves saved*\n{final_log_file}"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
-            message = f"*Loss Curve*"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_log_file, "training_loss_curve.png")))
-            message = f"*Accuracy Curve*"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_log_file, "validation_accuracy_curve.png")))
-            message = f"*Learning Rate Curve*"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_log_file, "learning_rate_curve.png")))
-            message = f"*Loss vs Learning Rate Curve*"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_log_file, "loss_vs_lr_curve.png")))
-
+        final_output_dir = final_log_file + "/plots/"
     else:
-        plot_training_curve(training_losses, metric_name="Loss", title="Training Curve - Loss", save_path=os.path.join(final_output_dir, "training_loss_curve.png"))
-        plot_training_curve(lr_history, metric_name="Learning Rate", title="Training Curve - Learning Rate", save_path=os.path.join(final_output_dir, "learning_rate_curve.png"))
-        plot_loss_lr(training_losses, lr_history, title="Training Curve - Loss vs Learning Rate", save_path=os.path.join(final_output_dir, "loss_vs_lr_curve.png"))
-        plot_multi_class_training_curve(validation_accuracies, validation_per_class_accuracies, title="Training Curve - Accuracy", save_path=os.path.join(final_output_dir, "validation_accuracy_curve.png"))
-        if args.telegram_log:
-            message = f"*📈 Training curves saved*\n{final_output_dir}"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
-            message = f"*Loss Curve*"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "training_loss_curve.png")))
-            message = f"*Accuracy Curve*"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "validation_accuracy_curve.png")))
-            message = f"*Learning Rate Curve*"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "learning_rate_curve.png")))
-            message = f"*Loss vs Learning Rate Curve*"
-            asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "loss_vs_lr_curve.png")))
+        final_output_dir = final_output_dir + "/plots/"
+    print("Saving plots to:", final_output_dir)
+    os.makedirs(final_output_dir, exist_ok=True)
+
+
+    plot_training_curve(training_losses, metric_name="Loss", title="Training Curve - Loss", save_path=os.path.join(final_output_dir, "training_loss_curve.png"))
+    plot_training_curve(lr_history, metric_name="Learning Rate", title="Training Curve - Learning Rate", save_path=os.path.join(final_output_dir, "learning_rate_curve.png"))
+    plot_loss_lr(training_losses, lr_history, title="Training Curve - Loss vs Learning Rate", save_path=os.path.join(final_output_dir, "loss_vs_lr_curve.png"))
+    plot_multi_class_training_curve(validation_accuracies, validation_per_class_accuracies, title="Training Curve - Accuracy", save_path=os.path.join(final_output_dir, "validation_accuracy_curve.png"))
+    if args.telegram_log:
+        message = f"*📈 Training curves saved*\n{final_output_dir}"
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
+        message = f"*Loss Curve*"
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "training_loss_curve.png")))
+        message = f"*Accuracy Curve*"
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "validation_accuracy_curve.png")))
+        message = f"*Learning Rate Curve*"
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "learning_rate_curve.png")))
+        message = f"*Loss vs Learning Rate Curve*"
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "loss_vs_lr_curve.png")))
 
     return val_acc_max
 

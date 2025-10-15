@@ -129,11 +129,11 @@ def create_logger(cfg, cfg_name, phase="training"):
     fmt = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
     fh = logging.FileHandler(str(log_path))
     fh.setFormatter(fmt)
-    ch = logging.StreamHandler()
-    ch.setFormatter(fmt)
+    #ch = logging.StreamHandler()
+    #ch.setFormatter(fmt)
 
     logger.addHandler(fh)
-    logger.addHandler(ch)
+    #logger.addHandler(ch)
 
     # TensorBoard: opzionale, coerente con struttura
     tensorboard_log_dir = final_output_dir / "tensorboard"

@@ -116,8 +116,8 @@ def main_worker(gpu, args):
         asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
 
 
-
-    print(args.rank, " gpu", args.gpu)
+    print("Using GPU:", args.gpu)
+    logger.info("Using GPU: %d" % (args.gpu))
 
     inf_size = [args.roi_x, args.roi_y, args.roi_z]
 
@@ -141,7 +141,6 @@ def main_worker(gpu, args):
     state_dict = checkpoint.get("state_dict", checkpoint)
 
 
-
     # Rinomino le chiavi rimuovendo 'module.' e aggiungendo 'swinViT.'
     new_state_dict = {}
     for k, v in state_dict.items():
@@ -153,18 +152,23 @@ def main_worker(gpu, args):
             new_key = k
         new_state_dict[new_key] = v
     
-
-
     # Caricamento flessibile dei pesi
     missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
+    print("")
+    logger.info("")
+    print("Model INFO:")
+    logger.info("Model INFO:")
     print("Using pretrained weights")
+    logger.info("Using pretrained weights")
+    print(f"=> loaded pretrained model '{pretrained_pth}'")
+    logger.info(f"=> loaded pretrained model '{pretrained_pth}'")
     if missing:
         print(f"Number of missing keys when loading pretrained weights: {len(missing)}")
-
+        logger.info("Number of missing keys when loading pretrained weights: %d", len(missing))
     if unexpected:
         print(f"Number of unexpected keys when loading pretrained weights: {len(unexpected)}")
+        logger.info("Number of unexpected keys when loading pretrained weights: %d", len(unexpected))
 
-    
 
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print("Total parameters count", pytorch_total_params)
@@ -173,20 +177,33 @@ def main_worker(gpu, args):
     best_acc = 0
     start_epoch = 0
 
-    if args.checkpoint is not None:
-        checkpoint = torch.load(args.checkpoint, map_location="cpu")
-        from collections import OrderedDict
 
-        new_state_dict = OrderedDict()
-        for k, v in checkpoint["state_dict"].items():
-            new_state_dict[k.replace("backbone.", "")] = v
-        model.load_state_dict(new_state_dict, strict=False)
+    if args.checkpoint is not None:
+        checkpoint = torch.load(args.checkpoint, map_location="cpu")  # può essere un dict con "state_dict" [parametri] [web:27]
+        state_dict = checkpoint.get("state_dict", checkpoint)  # fallback se il checkpoint è già uno state_dict [web:27]
+
+        new_state_dict = {}
+        for k, v in state_dict.items():
+            # Caso 1: i pesi sono sotto "backbone.encode10.*" -> rimuovi solo "backbone."
+            if k.startswith("encoder10."):
+                new_state_dict[k] = v
+            # Altri prefissi vengono ignorati
+
+        # Caricamento parziale: ignora mismatch e preserva solo le chiavi compatibili
+        incompatible = model.load_state_dict(new_state_dict, strict=False)  # utile per caricare subset di pesi [web:29]
+        # Opzionale: logga chiavi mancanti/inattese per debug
+        if getattr(incompatible, "missing_keys", None):
+            print(f"Caricati: {len(model.state_dict().keys())-len(incompatible.missing_keys)}")  # utile per capire cosa non è stato caricato [web:27]
+            logger.info(f"Caricati: {len(model.state_dict().keys())-len(incompatible.missing_keys)}")
+
         if "epoch" in checkpoint:
-            start_epoch = checkpoint["epoch"]
+            start_epoch = checkpoint["epoch"]  # ripristina lo stato di training se presente [web:27]
         if "best_acc" in checkpoint:
-            best_acc = checkpoint["best_acc"]
-        print("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(args.checkpoint, start_epoch, best_acc))
-        logger.info("=> loaded checkpoint '{}' (epoch {}) (bestacc {})".format(args.checkpoint, start_epoch, best_acc))
+            best_acc = checkpoint["best_acc"]  # ripristina metrica migliore se presente [web:27]
+
+        msg = "=> loaded checkpoint for encoder10 '{}' (epoch {}) (bestacc {})".format(args.checkpoint, start_epoch, best_acc)  # messaggio riepilogo [web:27]
+        print(msg)  # stampa su stdout [web:27]
+        logger.info(msg)  # log su logger [web:27]
 
 
     # Here we have to extract the encoder part from the pretrained model and load it
@@ -202,7 +219,7 @@ def main_worker(gpu, args):
         # Here we add the classification head
         if MLDecoder:
             head = MLDecoder(
-                num_classes=args.num_classes,
+                num_classes=3,
                 initial_num_features=1024, 
                 num_of_groups=1, 
                 decoder_embedding=768, 
@@ -253,8 +270,6 @@ def main_worker(gpu, args):
         )
     elif args.lrschedule == "cosine_anneal":
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
-        if args.checkpoint is not None:
-            scheduler.step(epoch=start_epoch)
     else:
         scheduler = None
 
@@ -287,6 +302,7 @@ def main_worker(gpu, args):
 
 
     # Eventuale sottoinsieme per il debug con split stratificato
+    print(f"\nUsing split method: {args.split_method}")
     if args.split_method == "random":
         train_set, val_set = split_dataset_random(dataset, val_size=0.2, seed=args.seed)
         print("Training set length:", len(train_set))
@@ -311,6 +327,7 @@ def main_worker(gpu, args):
     
     if args.debug:
         # Impostazioni debug
+        print("\nDEBUG MODE ACTIVE")
         DEBUG_TRAIN_SAMPLES = args.debug_train_samples if args.debug_train_samples > 0 else 20
         DEBUG_VAL_SAMPLES = args.debug_val_samples if args.debug_val_samples > 0 else 10
         if args.split_method == "balanced":
@@ -351,6 +368,9 @@ def main_worker(gpu, args):
     
     print(f"Training loader length is {len(train_loader)} batches")
     print(f"Validation loader length is {len(validation_loader)} batches")
+    print("")
+
+    
     
     # Calcola le distribuzioni finali
     train_indices = train_set.indices if hasattr(train_set, 'indices') else list(range(len(train_set)))
@@ -371,13 +391,24 @@ def main_worker(gpu, args):
         print(f"Val class {c}: {n} ({percentage:.1f}%)")
         logger.info(f"Val class {c}: {n} ({percentage:.1f}%)")
     logger.info("" + "*" * 50)
+    print("*" * 50)
     logger.info("")
 
+
+    print("\nTraining setting summary:")
+    logger.info("Training setting summary:")
+    print(f"Using optimizer: {args.optim_name} with lr={args.optim_lr}, weight decay={args.reg_weight}")
+    logger.info(f"Using optimizer: {args.optim_name} with lr={args.optim_lr}, weight decay={args.reg_weight}")
+    if scheduler is not None:
+        print(f"Using LR scheduler: {args.lrschedule}")
+        logger.info(f"Using LR scheduler: {args.lrschedule}")
     class_weights = compute_class_weight(class_weight='balanced',classes=np.unique(labels),y=labels[train_indices])
     weights = torch.tensor(class_weights, dtype=torch.float) * 10
     print("Class weights:", weights.numpy())
     logger.info("Class weights: " + str(weights.numpy()))
 
+    print(f"Using loss function: {args.loss_name}")
+    logger.info(f"Using loss function: {args.loss_name}")
     if args.loss_name == "FocalLoss":
         loss_func = FocalLoss(alpha=weights.cuda(args.gpu), gamma=2.0)
     elif args.loss_name == "LabelSmoothingLoss":
@@ -403,24 +434,26 @@ def main_worker(gpu, args):
     start = timeit.default_timer()
     print("")
     logger.info("")
+    print("*" * 50)
+    logger.info("*" * 50)
     print("Starting training...")
     logger.info("Starting training...")
 
 
-    accuracy = run_training(
-        model=model,
-        train_loader=train_loader,
-        val_loader=validation_loader,
-        optimizer=optimizer,
-        loss_func=loss_func,
-        acc_func=acc_metric,
-        args=args,
-        scheduler=scheduler,
-        start_epoch=start_epoch,
-        writer_dict=writer_dict,
-        final_output_dir = final_output_dir,
-        logger=logger,
-    )
+    # accuracy = run_training(
+    #     model=model,
+    #     train_loader=train_loader,
+    #     val_loader=validation_loader,
+    #     optimizer=optimizer,
+    #     loss_func=loss_func,
+    #     acc_func=acc_metric,
+    #     args=args,
+    #     scheduler=scheduler,
+    #     start_epoch=start_epoch,
+    #     writer_dict=writer_dict,
+    #     final_output_dir = final_output_dir,
+    #     logger=logger,
+    # )
 
     end = timeit.default_timer()
     print("Total time spent:", end - start)
@@ -428,7 +461,7 @@ def main_worker(gpu, args):
     writer_dict['writer'].close()
     torch.cuda.empty_cache()
 
-    return accuracy
+    return 0
 
 
 if __name__ == "__main__":
