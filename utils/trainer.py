@@ -97,7 +97,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
                 pooled = pooled.flatten(2)
                 #pool = nn.AdaptiveAvgPool1d(1024)   # output sempre L=1024
                 #pooled = pool(pooled)                               # [1,C]
-            else:
+            elif args.model_name == "swinunetr":
                 pooled = pooled.flatten(1)                               # [1,C,1]
             logits_b = model.fc(pooled)                              # [1,num_classes]
             batch_logits.append(logits_b)
@@ -118,7 +118,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
 
         logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
         #print(f"Logits: {logits.detach().cpu().numpy()}, Target: {target.view(-1).detach().cpu().numpy()}") 
-        predictions = torch.softmax(logits, dim=1).argmax(dim=1)  # [B]
+        #predictions = torch.softmax(logits, dim=1).argmax(dim=1)  # [B]
         #print(f"Predictions: {predictions.detach().cpu().numpy()}, Targets: {target.view(-1).detach().cpu().numpy()}")
         loss = loss_func(logits, target) 
         loss.backward()
@@ -225,7 +225,7 @@ def val_epoch(
                 pooled = model.global_pool(feats_tiled)  # [1,Cf,1,1,1]
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)                             # [1,C]
-                else:
+                elif args.model_name == "swinunetr":
                     pooled = pooled.flatten(1)                               # [1,C,1]
                 logits_b = model.fc(pooled)              # [1,num_classes]
                 batch_logits.append(logits_b)

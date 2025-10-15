@@ -7,10 +7,6 @@ class SwinUNETREncoder(nn.Module):
         
         # Copiamo le componenti dell'encoder dal modello originale
         self.swinViT = original_model.swinViT
-        self.encoder1 = original_model.encoder1
-        self.encoder2 = original_model.encoder2 
-        self.encoder3 = original_model.encoder3
-        self.encoder4 = original_model.encoder4
         self.encoder10 = original_model.encoder10
         
         # Attributi necessari per il forward del SwinViT
@@ -41,17 +37,9 @@ class SwinUNETREncoder(nn.Module):
         hidden_states_out = self.swinViT(x, self.normalize)
         
         # Applica i blocchi encoder in sequenza
-        enc1 = self.encoder1(x)
-        enc2 = self.encoder2(hidden_states_out[0])
-        enc3 = self.encoder3(hidden_states_out[1]) 
-        enc4 = self.encoder4(hidden_states_out[2])
         enc_hidden = self.encoder10(hidden_states_out[4])
         
         return {
-            'enc1': enc1,
-            'enc2': enc2,
-            'enc3': enc3,  
-            'enc4': enc4,
             'enc_hidden': enc_hidden,
             'hidden_states': hidden_states_out
         }
@@ -98,10 +86,6 @@ class SwinUNETREncoder_only(nn.Module):
         
         # Copia le componenti dell'encoder dal modello originale
         self.swinViT = original_model.swinViT
-        self.encoder1 = original_model.encoder1
-        self.encoder2 = original_model.encoder2 
-        self.encoder3 = original_model.encoder3
-        self.encoder4 = original_model.encoder4
         self.encoder10 = original_model.encoder10
         
         # Attributi necessari per il forward del SwinViT
@@ -118,16 +102,8 @@ class SwinUNETREncoder_only(nn.Module):
     def forward_all_features(self, x):
         """Ritorna tutte le feature per backward compatibility"""
         hidden_states_out = self.swinViT(x, self.normalize)
-        enc1 = self.encoder1(x)
-        enc2 = self.encoder2(hidden_states_out[0])
-        enc3 = self.encoder3(hidden_states_out[1]) 
-        enc4 = self.encoder4(hidden_states_out[2])
         enc_hidden = self.encoder10(hidden_states_out[4])
         return {
-            'enc1': enc1,
-            'enc2': enc2,
-            'enc3': enc3,  
-            'enc4': enc4,
             'enc_hidden': enc_hidden,
             'hidden_states': hidden_states_out
         }

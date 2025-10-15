@@ -230,10 +230,10 @@ def main_worker(gpu, args):
             print("ML-Decoder applicato con successo")
         print("Using SwinUNETR with Multi-Layer Classification Head")
         logger.info("Using SwinUNETR with Multi-Layer Classification Head")
-    elif args.model_name == "swinunetr+NOAH":
+    elif args.model_name == "swinunetr+noah":
         # Here we add the classification head
         if NOAH:
-            head = NOAH(inplanes=1024, outplanes=args.num_classes, dropout=0.0, head_num=1, head_split=True, kv_split=False)
+            head = NOAH(inplanes=768, outplanes=3, dropout=0.0, head_num=1, head_split=True, kv_split=False)
             model.global_pool = torch.nn.Identity()
             model.fc = head
             print("NOAH applicato con successo")
@@ -440,20 +440,20 @@ def main_worker(gpu, args):
     logger.info("Starting training...")
 
 
-    # accuracy = run_training(
-    #     model=model,
-    #     train_loader=train_loader,
-    #     val_loader=validation_loader,
-    #     optimizer=optimizer,
-    #     loss_func=loss_func,
-    #     acc_func=acc_metric,
-    #     args=args,
-    #     scheduler=scheduler,
-    #     start_epoch=start_epoch,
-    #     writer_dict=writer_dict,
-    #     final_output_dir = final_output_dir,
-    #     logger=logger,
-    # )
+    accuracy = run_training(
+        model=model,
+        train_loader=train_loader,
+        val_loader=validation_loader,
+        optimizer=optimizer,
+        loss_func=loss_func,
+        acc_func=acc_metric,
+        args=args,
+        scheduler=scheduler,
+        start_epoch=start_epoch,
+        writer_dict=writer_dict,
+        final_output_dir = final_output_dir,
+        logger=logger,
+    )
 
     end = timeit.default_timer()
     print("Total time spent:", end - start)

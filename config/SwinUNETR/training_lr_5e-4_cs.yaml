@@ -15,7 +15,7 @@ SYSTEM:
   oar_id: 0
 
 MODEL:
-  name: "swinunetr+ml_decoder" # "swinunetr", "swinunetr+ml_decoder"
+  name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder"
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
   checkpoint: null
@@ -48,8 +48,8 @@ AUGMENTATION:
   RandShiftIntensityd_prob: 0.1
 
 TRAINING:
-  max_epochs: 20
-  batch_size: 1
+  max_epochs: 100
+  batch_size: 8
   sw_batch_size: 1
   val_every: 4
   folds: false
@@ -66,17 +66,17 @@ TRAINING:
   save_checkpoint: false
   noamp: false
   # Optimizer parameters
-  optim_lr: 1e-5
+  optim_lr: 5e-4
   optim_name: "adamw" # "adam", "adamw" or "sgd"
   reg_weight: 5e-5
   momentum: 0.99
   # Learning rate scheduler
-  lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
+  lrschedule: "cosine_anneal" #  "cosine_anneal" or "warmup_cosine"
   warmup_epochs: 3
 
 
 LOSS:
-  loss_name: "FocalLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+  loss_name: "CombinedLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
 
 
 INFERENCE:
