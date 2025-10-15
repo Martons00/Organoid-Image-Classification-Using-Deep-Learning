@@ -170,9 +170,6 @@ def main_worker(gpu, args):
         logger.info("Number of unexpected keys when loading pretrained weights: %d", len(unexpected))
 
 
-    pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    print("Total parameters count", pytorch_total_params)
-    logger.info("Total parameters count: %d", pytorch_total_params)
 
     best_acc = 0
     start_epoch = 0
@@ -243,6 +240,12 @@ def main_worker(gpu, args):
         print("Using SwinUNETR with Single Linear Classification Head")
         logger.info("Using SwinUNETR with Single Linear Classification Head")
         # The classification head is already added in the SwinUNETREncoder class
+
+
+    pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print("Total parameters count", pytorch_total_params)
+    logger.info("Total parameters count: %d", pytorch_total_params)
+    print(model)
 
     model.cuda(args.gpu)
 

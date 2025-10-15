@@ -63,7 +63,7 @@ TRAINING:
   debug_train_samples: 3
   debug_val_samples: 3
   split_method: "balanced"  # "random" , "stratified" or "balanced"
-  save_checkpoint: false
+  save_checkpoint: true
   noamp: false
   # Optimizer parameters
   optim_lr: 1e-3

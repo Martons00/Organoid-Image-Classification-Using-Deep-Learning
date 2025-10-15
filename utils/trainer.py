@@ -356,6 +356,10 @@ def run_training(
     # Chiama SOLO una volta prima del training loop
     model = freeze_backbone_and_select_head_fixed(model)
 
+    # for name, param in model.named_parameters():
+    #     param.requires_grad = True
+
+
     if args.early_stopping:
         early_stopping_val = EarlyStopping(mode='max', patience=args.patience_val, min_delta=args.min_delta_val, restore_best=False, verbose=True)
         early_stopping_loss = EarlyStopping(mode='min', patience=args.patience_loss, min_delta=args.min_delta_loss, restore_best=False, verbose=True)
