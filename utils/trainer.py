@@ -15,14 +15,16 @@ import shutil
 import time
 from tracemalloc import start
 
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+
 import numpy as np
 import torch
 import torch.nn as nn
 from .utils import AverageMeter, distributed_all_gather
-from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches, plot_training_curve,plot_multi_class_training_curve,plot_loss_lr
+from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches, plot_training_curve,plot_multi_class_training_curve,plot_loss_lr,plot_confusion_matrix
 from .data_utils import send_alert
 from optimizers.early_stop import EarlyStopping  # Uncomment if used
-from tools.similarity import compute_similarity_matrix, plot_similarity_heatmap
+from tools.similarity import compute_similarity_matrix, plot_similarity_heatmap, plot_similarity_heatmap_new
 
 
 def freeze_backbone_and_select_head_fixed(model):
@@ -68,6 +70,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
         # Costruisci logits per l'intero batch iterando i volumi
         batch_logits = []
         feat_list_ENT = []
+    
         hidden_list_ENT = []
         B = data.shape[0]
         for b in range(B):
@@ -87,9 +90,11 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
                 hidden_list.append(hid)
 
             feats_cat = torch.cat(feat_list, dim=0)                  # [N,Cf,...]
+            hidden_cat = torch.cat(hidden_list, dim=0)              # [N,Cf,...]
             feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # ricostruzione feature per volume
+            hidden_tiled = tile_feature_patches(hidden_cat, coords=coords)  # ricostruzione feature per volume
             feat_list_ENT.append(feats_tiled.detach().cpu())                  # salva per similarità
-            hidden_list_ENT.append(torch.cat(hidden_list, dim=0).detach().cpu())  # salva per similarità
+            hidden_list_ENT.append(hidden_tiled.detach().cpu())  # salva per similarità
 
             # Testa di classificazione: global_pool → flatten → fc
             pooled = model.global_pool(feats_tiled)                  # [1,C]
@@ -101,19 +106,17 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
                 pooled = pooled.flatten(1)                               # [1,C,1]
             logits_b = model.fc(pooled)                              # [1,num_classes]
             batch_logits.append(logits_b)
-        
-        
-        # feat_list_ENT = torch.cat(feat_list_ENT[:], dim=0)  # [B,Cf,D,H,W]
-        # print(f"Features shape: {feat_list_ENT.shape}")
-        # feat_list_ENT = feat_list_ENT.view(feat_list_ENT.shape[0], -1)  # [B,Cf*D*H*W]
-        # sim = compute_similarity_matrix(feat_list_ENT)
-        # plot_similarity_heatmap(sim, target, save_path=os.path.join(args.final_output_dir, f"similarity_epoch{epoch}_iter{idx}.png"))
 
-        # hidden_list_ENT = torch.cat(hidden_list_ENT[:], dim=0)  # [B,Cf]
-        # print(f"Hidden states shape: {hidden_list_ENT.shape}")
-        # hidden_list_ENT = hidden_list_ENT.view(hidden_list_ENT.shape[0], -1)
-        # sim_hid = compute_similarity_matrix(hidden_list_ENT)
-        # plot_similarity_heatmap(sim_hid, target, save_path=os.path.join(args.final_output_dir, f"similarity_hidden_epoch{epoch}_iter{idx}.png"))
+        if (epoch == 0 or epoch == (args.max_epochs-1) or epoch == int(args.max_epochs * 0.5) ) and idx == 0 and args.rank == 0:
+            feat_list_ENT = torch.cat(feat_list_ENT[:], dim=0)  # [B,Cf,D,H,W]
+            feat_list_ENT = feat_list_ENT.view(feat_list_ENT.shape[0], -1)  # [B,Cf*D*H*W]
+            sim = compute_similarity_matrix(feat_list_ENT)
+            plot_similarity_heatmap_new(sim, target, save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch}_iter{idx}.png"))
+
+            hidden_list_ENT = torch.cat(hidden_list_ENT[:], dim=0)  # [B,Cf]
+            hidden_list_ENT = hidden_list_ENT.view(hidden_list_ENT.shape[0], -1)
+            sim_hid = compute_similarity_matrix(hidden_list_ENT)
+            plot_similarity_heatmap_new(sim_hid, target, save_path=os.path.join(args.sim_plots_dir, f"similarity_hidden_epoch{epoch}_iter{idx}.png"))
 
 
         logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
@@ -188,6 +191,11 @@ def val_epoch(
     per_class_correct = None
     per_class_total = None
 
+
+    # Liste per confusion matrix
+    all_preds = []
+    all_targets = []
+
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
             # Estrai data/target
@@ -242,6 +250,9 @@ def val_epoch(
             probs = torch.softmax(logits, dim=1)
             preds = probs.argmax(dim=1)                  # [B]
             target_eval = target.view(-1) if (target.ndim > 1 and target.size(-1) == 1) else target
+
+            all_preds.append(preds.detach().cpu())
+            all_targets.append(target_eval.detach().cpu())
 
             # Accuracy batch
             correct = (preds == target_eval).sum().item()
@@ -306,12 +317,19 @@ def val_epoch(
         for c in range(num_classes)
     }
 
+    all_preds = torch.cat(all_preds, dim=0).numpy()
+    all_targets = torch.cat(all_targets, dim=0).numpy()
+
+    # Calcola confusion matrix
+    cm = confusion_matrix(all_targets, all_preds, labels=np.arange(num_classes))
+        
+
     # Facoltativo: stampa riassunto
     if getattr(args, "rank", 0) == 0:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
         print(f"[Val epoch {epoch}] avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
 
-    return float(run_acc.avg), per_class_acc
+    return float(run_acc.avg), per_class_acc, cm
 
 
 
@@ -349,6 +367,21 @@ def run_training(
     validation_per_class_accuracies = []
     lr_history = []
     args.final_output_dir = final_output_dir
+    if final_output_dir == None:
+        time_str = time.strftime('%Y-%m-%d-%H-%M')
+        name_file = '{}_{}'.format(args.logdir, time_str)
+        final_log_file = os.path.join(args.output_dir, name_file)
+        final_plots_dir = final_log_file + "/plots/"
+    else:
+        final_plots_dir = final_output_dir + "/plots/"
+    os.makedirs(final_plots_dir, exist_ok=True)
+    args.final_plots_dir = final_plots_dir
+    sim_plots_dir = final_plots_dir + "/similarity/"
+    args.sim_plots_dir = sim_plots_dir
+    os.makedirs(sim_plots_dir, exist_ok=True)
+    cm_plots_dir = final_plots_dir + "/confusion_matrix/"
+    os.makedirs(cm_plots_dir, exist_ok=True)
+    
 
 
     val_acc_max = 0.0
@@ -409,7 +442,7 @@ def run_training(
             if args.distributed:
                 torch.distributed.barrier()
             epoch_time = time.time()
-            val_acc,val_per_class = val_epoch(
+            val_acc,val_per_class, cm = val_epoch(
                 model,
                 val_loader,
                 epoch=epoch,
@@ -434,13 +467,13 @@ def run_training(
                     message = f"*✅ Final Validation - Epoch {epoch}/{args.max_epochs - 1}*\nValidation Accuracy: {val_acc:.4f}\nBest Val Acc: {val_acc_max:.4f}"
                     asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
 
-
                 val_avg_acc = val_acc  # val_acc è già il valore medio
                 if val_avg_acc > val_acc_max:
                     print("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
                     logging.info("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
                     val_acc_max = val_avg_acc
                     b_new_best = True
+                    plot_confusion_matrix(cm, class_names=[f"class {i}" for i in range(cm.shape[0])], title=f'Confusion Matrix - Epoch {epoch}', save_path=os.path.join(cm_plots_dir, f"best_confusion_matrix_epoch{epoch}.png"))
 
                     if args.rank == 0 and args.final_output_dir is not None and args.save_checkpoint:
                         print("Saving new best model to model_final.pt")
@@ -478,32 +511,28 @@ def run_training(
         asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
     logging.info("" + "=" * 100)
 
-    if final_output_dir == None:
-        time_str = time.strftime('%Y-%m-%d-%H-%M')
-        name_file = '{}_{}'.format(args.logdir, time_str)
-        final_log_file = os.path.join(args.output_dir, name_file)
-        final_output_dir = final_log_file + "/plots/"
-    else:
-        final_output_dir = final_output_dir + "/plots/"
-    print("Saving plots to:", final_output_dir)
-    os.makedirs(final_output_dir, exist_ok=True)
 
 
-    plot_training_curve(training_losses, metric_name="Loss", title="Training Curve - Loss", save_path=os.path.join(final_output_dir, "training_loss_curve.png"))
-    plot_training_curve(lr_history, metric_name="Learning Rate", title="Training Curve - Learning Rate", save_path=os.path.join(final_output_dir, "learning_rate_curve.png"))
-    plot_loss_lr(training_losses, lr_history, title="Training Curve - Loss vs Learning Rate", save_path=os.path.join(final_output_dir, "loss_vs_lr_curve.png"))
-    plot_multi_class_training_curve(validation_accuracies, validation_per_class_accuracies, title="Training Curve - Accuracy", save_path=os.path.join(final_output_dir, "validation_accuracy_curve.png"))
+
+    print("Saving plots to:", final_plots_dir)
+    plot_confusion_matrix(cm, class_names=[f"class {i}" for i in range(cm.shape[0])], title=f'Confusion Matrix - Final Epoch', save_path=os.path.join(cm_plots_dir, f"final_confusion_matrix.png"))
+    plot_training_curve(training_losses, metric_name="Loss", title="Training Curve - Loss", save_path=os.path.join(final_plots_dir, "training_loss_curve.png"))
+    plot_training_curve(lr_history, metric_name="Learning Rate", title="Training Curve - Learning Rate", save_path=os.path.join(final_plots_dir, "learning_rate_curve.png"))
+    plot_loss_lr(training_losses, lr_history, title="Training Curve - Loss vs Learning Rate", save_path=os.path.join(final_plots_dir, "loss_vs_lr_curve.png"))
+    plot_multi_class_training_curve(validation_accuracies, validation_per_class_accuracies, title="Training Curve - Accuracy", save_path=os.path.join(final_plots_dir, "validation_accuracy_curve.png"))
     if args.telegram_log:
-        message = f"*📈 Training curves saved*\n{final_output_dir}"
+        message = f"*📈 Training curves saved*\n{final_plots_dir}"
         asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
         message = f"*Loss Curve*"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "training_loss_curve.png")))
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_plots_dir, "training_loss_curve.png")))
         message = f"*Accuracy Curve*"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "validation_accuracy_curve.png")))
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_plots_dir, "validation_accuracy_curve.png")))
         message = f"*Learning Rate Curve*"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "learning_rate_curve.png")))
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_plots_dir, "learning_rate_curve.png")))
         message = f"*Loss vs Learning Rate Curve*"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_output_dir, "loss_vs_lr_curve.png")))
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_plots_dir, "loss_vs_lr_curve.png")))
+        message = f"*Confusion Matrix*"
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(cm_plots_dir, "final_confusion_matrix.png")))
 
     return val_acc_max
 

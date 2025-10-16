@@ -72,7 +72,7 @@ TRAINING:
   momentum: 0.99
   # Learning rate scheduler
   lrschedule: "cosine_anneal" #  "cosine_anneal" or "warmup_cosine"
-  warmup_epochs: 10
+  warmup_epochs: 5
 
 
 LOSS:

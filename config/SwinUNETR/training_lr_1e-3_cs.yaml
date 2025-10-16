@@ -66,13 +66,13 @@ TRAINING:
   save_checkpoint: true
   noamp: false
   # Optimizer parameters
-  optim_lr: 5e-4
+  optim_lr: 1e-3
   optim_name: "adamw" # "adam", "adamw" or "sgd"
   reg_weight: 5e-5
   momentum: 0.99
   # Learning rate scheduler
   lrschedule: "cosine_anneal" #  "cosine_anneal" or "warmup_cosine"
-  warmup_epochs: 10
+  warmup_epochs: 3
 
 
 LOSS:

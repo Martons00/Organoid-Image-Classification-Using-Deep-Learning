@@ -98,7 +98,7 @@ def main_worker(gpu, args):
 
 
     logger, final_output_dir, tb_log_dir = create_logger(
-        args, args.logdir, 'train')
+        args, args.logdir, args.model_name)
     
     
     writer_dict = {
@@ -130,7 +130,7 @@ def main_worker(gpu, args):
         in_channels=args.in_channels, 
         out_channels=args.out_channels, 
         feature_size=48,    
-        use_checkpoint=True
+        use_checkpoint=False
     )
 
     state_dict_model = model.state_dict()
@@ -139,6 +139,7 @@ def main_worker(gpu, args):
     # Caricamento del checkpoint
     checkpoint = torch.load(pretrained_pth, map_location="cpu")
     state_dict = checkpoint.get("state_dict", checkpoint)
+
 
 
     # Rinomino le chiavi rimuovendo 'module.' e aggiungendo 'swinViT.'
@@ -158,6 +159,8 @@ def main_worker(gpu, args):
     logger.info("")
     print("Model INFO:")
     logger.info("Model INFO:")
+    print(f"Model architecture: {args.model_name}")
+    logger.info(f"Model architecture: {args.model_name}")
     print("Using pretrained weights")
     logger.info("Using pretrained weights")
     print(f"=> loaded pretrained model '{pretrained_pth}'")
@@ -245,7 +248,6 @@ def main_worker(gpu, args):
     pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print("Total parameters count", pytorch_total_params)
     logger.info("Total parameters count: %d", pytorch_total_params)
-    print(model)
 
     model.cuda(args.gpu)
 
@@ -441,6 +443,8 @@ def main_worker(gpu, args):
     logger.info("*" * 50)
     print("Starting training...")
     logger.info("Starting training...")
+
+
 
 
     accuracy = run_training(

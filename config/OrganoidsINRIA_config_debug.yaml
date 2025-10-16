@@ -15,7 +15,7 @@ SYSTEM:
   oar_id: 0
 
 MODEL:
-  name: "swinunetr+noah" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah"
+  name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah"
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
   checkpoint: "./pretrained_models/encode10/model.pt"
@@ -48,8 +48,8 @@ AUGMENTATION:
   RandShiftIntensityd_prob: 0.1
 
 TRAINING:
-  max_epochs: 2
-  batch_size: 2
+  max_epochs: 3
+  batch_size: 3
   sw_batch_size: 1
   val_every: 1
   folds: false

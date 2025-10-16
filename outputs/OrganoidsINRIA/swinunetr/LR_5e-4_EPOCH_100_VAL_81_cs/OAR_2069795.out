@@ -1084,3 +1084,870 @@ Epoch: 42/100 Iter: 11/12 loss: 2.8782 time 15.30s
 Final training  42/99 loss: 2.8782 time 186.01s lr: 0.000312
 [EarlyStopping] no improve (1/30)
 0 Wed Oct 15 13:54:43 2025 Epoch: 43
+Epoch: 43/100 Iter: 0/12 loss: 2.4327 time 19.38s
+Epoch: 43/100 Iter: 1/12 loss: 3.0689 time 15.31s
+Epoch: 43/100 Iter: 2/12 loss: 2.8468 time 15.30s
+Epoch: 43/100 Iter: 3/12 loss: 2.7130 time 15.30s
+Epoch: 43/100 Iter: 4/12 loss: 2.5934 time 15.29s
+Epoch: 43/100 Iter: 5/12 loss: 2.5046 time 15.30s
+Epoch: 43/100 Iter: 6/12 loss: 2.5703 time 15.30s
+Epoch: 43/100 Iter: 7/12 loss: 2.4142 time 15.31s
+Epoch: 43/100 Iter: 8/12 loss: 2.4933 time 15.32s
+Epoch: 43/100 Iter: 9/12 loss: 2.4829 time 15.29s
+Epoch: 43/100 Iter: 10/12 loss: 2.5141 time 15.31s
+Epoch: 43/100 Iter: 11/12 loss: 2.6119 time 15.30s
+Final training  43/99 loss: 2.6119 time 187.76s lr: 0.000305
+[EarlyStopping] no improve (2/30)
+Val 43/100 0/27, Acc: 1.0000, time 1.95s
+Val 43/100 1/27, Acc: 0.5000, time 1.96s
+Val 43/100 2/27, Acc: 0.6667, time 1.96s
+Val 43/100 3/27, Acc: 0.7500, time 1.99s
+Val 43/100 4/27, Acc: 0.8000, time 1.98s
+Val 43/100 5/27, Acc: 0.8333, time 2.01s
+Val 43/100 6/27, Acc: 0.8571, time 1.99s
+Val 43/100 7/27, Acc: 0.8750, time 1.97s
+Val 43/100 8/27, Acc: 0.8889, time 1.95s
+Val 43/100 9/27, Acc: 0.8000, time 1.99s
+Val 43/100 10/27, Acc: 0.7273, time 2.02s
+Val 43/100 11/27, Acc: 0.6667, time 1.98s
+Val 43/100 12/27, Acc: 0.6154, time 1.95s
+Val 43/100 13/27, Acc: 0.6429, time 1.95s
+Val 43/100 14/27, Acc: 0.6667, time 1.95s
+Val 43/100 15/27, Acc: 0.6875, time 1.99s
+Val 43/100 16/27, Acc: 0.6471, time 2.01s
+Val 43/100 17/27, Acc: 0.6111, time 1.96s
+Val 43/100 18/27, Acc: 0.6316, time 2.13s
+Val 43/100 19/27, Acc: 0.6500, time 2.06s
+Val 43/100 20/27, Acc: 0.6667, time 1.97s
+Val 43/100 21/27, Acc: 0.6818, time 1.97s
+Val 43/100 22/27, Acc: 0.6957, time 1.96s
+Val 43/100 23/27, Acc: 0.7083, time 1.95s
+Val 43/100 24/27, Acc: 0.7200, time 1.97s
+Val 43/100 25/27, Acc: 0.7308, time 1.95s
+Val 43/100 26/27, Acc: 0.7407, time 1.93s
+[Val epoch 43] avg_acc=0.7407 | per-class [c0: 0.778, c1: 0.667, c2: 0.778]
+Final validation stats 43/99 , Val_acc: 0.7407407407407407 , time 53.47s
+[EarlyStopping] no improve (1/10)
+
+0 Wed Oct 15 13:58:45 2025 Epoch: 44
+Epoch: 44/100 Iter: 0/12 loss: 1.7946 time 20.03s
+Epoch: 44/100 Iter: 1/12 loss: 2.0602 time 15.31s
+Epoch: 44/100 Iter: 2/12 loss: 1.9501 time 15.31s
+Epoch: 44/100 Iter: 3/12 loss: 1.9279 time 15.30s
+Epoch: 44/100 Iter: 4/12 loss: 2.1836 time 15.32s
+Epoch: 44/100 Iter: 5/12 loss: 2.1387 time 15.31s
+Epoch: 44/100 Iter: 6/12 loss: 2.3113 time 15.31s
+Epoch: 44/100 Iter: 7/12 loss: 2.2813 time 15.31s
+Epoch: 44/100 Iter: 8/12 loss: 2.5359 time 15.31s
+Epoch: 44/100 Iter: 9/12 loss: 2.4526 time 15.31s
+Epoch: 44/100 Iter: 10/12 loss: 2.4837 time 15.30s
+Epoch: 44/100 Iter: 11/12 loss: 2.5412 time 15.30s
+Final training  44/99 loss: 2.5412 time 188.45s lr: 0.000297
+[EarlyStopping] improved to 2.541199
+0 Wed Oct 15 14:01:53 2025 Epoch: 45
+Epoch: 45/100 Iter: 0/12 loss: 1.8964 time 18.90s
+Epoch: 45/100 Iter: 1/12 loss: 2.2403 time 15.30s
+Epoch: 45/100 Iter: 2/12 loss: 2.4904 time 15.30s
+Epoch: 45/100 Iter: 3/12 loss: 2.6987 time 15.31s
+Epoch: 45/100 Iter: 4/12 loss: 2.7565 time 15.31s
+Epoch: 45/100 Iter: 5/12 loss: 2.9758 time 15.30s
+Epoch: 45/100 Iter: 6/12 loss: 2.8908 time 15.31s
+Epoch: 45/100 Iter: 7/12 loss: 2.8189 time 15.32s
+Epoch: 45/100 Iter: 8/12 loss: 2.8466 time 15.30s
+Epoch: 45/100 Iter: 9/12 loss: 2.7630 time 15.30s
+Epoch: 45/100 Iter: 10/12 loss: 2.8638 time 15.29s
+Epoch: 45/100 Iter: 11/12 loss: 2.8088 time 15.30s
+Final training  45/99 loss: 2.8088 time 187.29s lr: 0.000289
+[EarlyStopping] no improve (1/30)
+0 Wed Oct 15 14:05:00 2025 Epoch: 46
+Epoch: 46/100 Iter: 0/12 loss: 2.2959 time 20.09s
+Epoch: 46/100 Iter: 1/12 loss: 2.5456 time 15.31s
+Epoch: 46/100 Iter: 2/12 loss: 2.5888 time 15.31s
+Epoch: 46/100 Iter: 3/12 loss: 2.4842 time 15.30s
+Epoch: 46/100 Iter: 4/12 loss: 2.4022 time 15.31s
+Epoch: 46/100 Iter: 5/12 loss: 2.4104 time 15.33s
+Epoch: 46/100 Iter: 6/12 loss: 2.2750 time 15.30s
+Epoch: 46/100 Iter: 7/12 loss: 2.2466 time 15.30s
+Epoch: 46/100 Iter: 8/12 loss: 2.3891 time 15.30s
+Epoch: 46/100 Iter: 9/12 loss: 2.4630 time 15.30s
+Epoch: 46/100 Iter: 10/12 loss: 2.4937 time 15.31s
+Epoch: 46/100 Iter: 11/12 loss: 2.5353 time 15.30s
+Final training  46/99 loss: 2.5353 time 188.50s lr: 0.000281
+[EarlyStopping] no improve (2/30)
+0 Wed Oct 15 14:08:09 2025 Epoch: 47
+Epoch: 47/100 Iter: 0/12 loss: 2.6874 time 19.00s
+Epoch: 47/100 Iter: 1/12 loss: 2.6200 time 15.30s
+Epoch: 47/100 Iter: 2/12 loss: 2.4169 time 15.31s
+Epoch: 47/100 Iter: 3/12 loss: 2.4636 time 15.30s
+Epoch: 47/100 Iter: 4/12 loss: 2.5972 time 15.30s
+Epoch: 47/100 Iter: 5/12 loss: 2.5852 time 15.33s
+Epoch: 47/100 Iter: 6/12 loss: 2.4621 time 15.31s
+Epoch: 47/100 Iter: 7/12 loss: 2.3095 time 15.30s
+Epoch: 47/100 Iter: 8/12 loss: 2.2906 time 15.30s
+Epoch: 47/100 Iter: 9/12 loss: 2.2827 time 15.30s
+Epoch: 47/100 Iter: 10/12 loss: 2.3079 time 15.29s
+Epoch: 47/100 Iter: 11/12 loss: 2.3588 time 15.30s
+Final training  47/99 loss: 2.3588 time 187.40s lr: 0.000274
+[EarlyStopping] improved to 2.358782
+Val 47/100 0/27, Acc: 1.0000, time 1.99s
+Val 47/100 1/27, Acc: 0.5000, time 1.99s
+Val 47/100 2/27, Acc: 0.3333, time 2.00s
+Val 47/100 3/27, Acc: 0.5000, time 1.97s
+Val 47/100 4/27, Acc: 0.6000, time 1.95s
+Val 47/100 5/27, Acc: 0.6667, time 1.97s
+Val 47/100 6/27, Acc: 0.7143, time 1.96s
+Val 47/100 7/27, Acc: 0.7500, time 1.99s
+Val 47/100 8/27, Acc: 0.7778, time 1.98s
+Val 47/100 9/27, Acc: 0.7000, time 1.96s
+Val 47/100 10/27, Acc: 0.6364, time 2.00s
+Val 47/100 11/27, Acc: 0.6667, time 1.96s
+Val 47/100 12/27, Acc: 0.6923, time 1.96s
+Val 47/100 13/27, Acc: 0.7143, time 1.97s
+Val 47/100 14/27, Acc: 0.7333, time 1.96s
+Val 47/100 15/27, Acc: 0.7500, time 1.98s
+Val 47/100 16/27, Acc: 0.7059, time 2.02s
+Val 47/100 17/27, Acc: 0.6667, time 1.96s
+Val 47/100 18/27, Acc: 0.6842, time 2.10s
+Val 47/100 19/27, Acc: 0.7000, time 2.06s
+Val 47/100 20/27, Acc: 0.7143, time 2.00s
+Val 47/100 21/27, Acc: 0.7273, time 1.99s
+Val 47/100 22/27, Acc: 0.7391, time 1.96s
+Val 47/100 23/27, Acc: 0.7083, time 1.94s
+Val 47/100 24/27, Acc: 0.6800, time 1.97s
+Val 47/100 25/27, Acc: 0.6923, time 1.96s
+Val 47/100 26/27, Acc: 0.7037, time 1.95s
+[Val epoch 47] avg_acc=0.7037 | per-class [c0: 0.556, c1: 0.889, c2: 0.667]
+Final validation stats 47/99 , Val_acc: 0.7037037037037037 , time 53.53s
+[EarlyStopping] no improve (2/10)
+
+0 Wed Oct 15 14:12:10 2025 Epoch: 48
+Epoch: 48/100 Iter: 0/12 loss: 2.8492 time 18.85s
+Epoch: 48/100 Iter: 1/12 loss: 2.6972 time 15.32s
+Epoch: 48/100 Iter: 2/12 loss: 2.7862 time 15.30s
+Epoch: 48/100 Iter: 3/12 loss: 2.5241 time 15.30s
+Epoch: 48/100 Iter: 4/12 loss: 2.4010 time 15.30s
+Epoch: 48/100 Iter: 5/12 loss: 2.3059 time 15.30s
+Epoch: 48/100 Iter: 6/12 loss: 2.2592 time 15.30s
+Epoch: 48/100 Iter: 7/12 loss: 2.2603 time 15.29s
+Epoch: 48/100 Iter: 8/12 loss: 2.1855 time 15.29s
+Epoch: 48/100 Iter: 9/12 loss: 2.4494 time 15.31s
+Epoch: 48/100 Iter: 10/12 loss: 2.3962 time 15.30s
+Epoch: 48/100 Iter: 11/12 loss: 2.4680 time 15.30s
+Final training  48/99 loss: 2.4680 time 187.23s lr: 0.000266
+[EarlyStopping] no improve (1/30)
+0 Wed Oct 15 14:15:18 2025 Epoch: 49
+Epoch: 49/100 Iter: 0/12 loss: 1.8157 time 18.33s
+Epoch: 49/100 Iter: 1/12 loss: 2.0359 time 15.30s
+Epoch: 49/100 Iter: 2/12 loss: 2.1458 time 15.30s
+Epoch: 49/100 Iter: 3/12 loss: 2.3287 time 15.30s
+Epoch: 49/100 Iter: 4/12 loss: 2.3805 time 15.30s
+Epoch: 49/100 Iter: 5/12 loss: 2.3814 time 15.30s
+Epoch: 49/100 Iter: 6/12 loss: 2.3899 time 15.29s
+Epoch: 49/100 Iter: 7/12 loss: 2.5193 time 15.30s
+Epoch: 49/100 Iter: 8/12 loss: 2.4353 time 15.30s
+Epoch: 49/100 Iter: 9/12 loss: 2.3822 time 15.31s
+Epoch: 49/100 Iter: 10/12 loss: 2.3740 time 15.30s
+Epoch: 49/100 Iter: 11/12 loss: 2.3192 time 15.30s
+Final training  49/99 loss: 2.3192 time 186.70s lr: 0.000258
+[EarlyStopping] improved to 2.319242
+0 Wed Oct 15 14:18:24 2025 Epoch: 50
+Epoch: 50/100 Iter: 0/12 loss: 2.0219 time 19.25s
+Epoch: 50/100 Iter: 1/12 loss: 2.0964 time 15.30s
+Epoch: 50/100 Iter: 2/12 loss: 2.2249 time 15.30s
+Epoch: 50/100 Iter: 3/12 loss: 2.0247 time 15.31s
+Epoch: 50/100 Iter: 4/12 loss: 2.0475 time 15.32s
+Epoch: 50/100 Iter: 5/12 loss: 2.1517 time 15.30s
+Epoch: 50/100 Iter: 6/12 loss: 2.2842 time 15.30s
+Epoch: 50/100 Iter: 7/12 loss: 2.2248 time 15.30s
+Epoch: 50/100 Iter: 8/12 loss: 2.2131 time 15.30s
+Epoch: 50/100 Iter: 9/12 loss: 2.1402 time 15.31s
+Epoch: 50/100 Iter: 10/12 loss: 2.1718 time 15.30s
+Epoch: 50/100 Iter: 11/12 loss: 2.1842 time 15.30s
+Final training  50/99 loss: 2.1842 time 187.64s lr: 0.000250
+[EarlyStopping] improved to 2.184156
+0 Wed Oct 15 14:21:32 2025 Epoch: 51
+Epoch: 51/100 Iter: 0/12 loss: 1.3969 time 20.19s
+Epoch: 51/100 Iter: 1/12 loss: 1.9585 time 15.31s
+Epoch: 51/100 Iter: 2/12 loss: 2.1450 time 15.30s
+Epoch: 51/100 Iter: 3/12 loss: 2.2017 time 15.31s
+Epoch: 51/100 Iter: 4/12 loss: 2.2622 time 15.30s
+Epoch: 51/100 Iter: 5/12 loss: 2.3297 time 15.31s
+Epoch: 51/100 Iter: 6/12 loss: 2.3270 time 15.30s
+Epoch: 51/100 Iter: 7/12 loss: 2.3181 time 15.30s
+Epoch: 51/100 Iter: 8/12 loss: 2.3107 time 15.30s
+Epoch: 51/100 Iter: 9/12 loss: 2.2319 time 15.31s
+Epoch: 51/100 Iter: 10/12 loss: 2.2238 time 15.30s
+Epoch: 51/100 Iter: 11/12 loss: 2.2519 time 15.29s
+Final training  51/99 loss: 2.2519 time 188.58s lr: 0.000242
+[EarlyStopping] no improve (1/30)
+Val 51/100 0/27, Acc: 1.0000, time 1.99s
+Val 51/100 1/27, Acc: 0.5000, time 1.95s
+Val 51/100 2/27, Acc: 0.3333, time 1.96s
+Val 51/100 3/27, Acc: 0.5000, time 1.97s
+Val 51/100 4/27, Acc: 0.6000, time 1.96s
+Val 51/100 5/27, Acc: 0.6667, time 2.01s
+Val 51/100 6/27, Acc: 0.7143, time 1.97s
+Val 51/100 7/27, Acc: 0.7500, time 1.97s
+Val 51/100 8/27, Acc: 0.7778, time 1.99s
+Val 51/100 9/27, Acc: 0.7000, time 2.00s
+Val 51/100 10/27, Acc: 0.6364, time 2.02s
+Val 51/100 11/27, Acc: 0.5833, time 1.97s
+Val 51/100 12/27, Acc: 0.5385, time 1.95s
+Val 51/100 13/27, Acc: 0.5714, time 1.97s
+Val 51/100 14/27, Acc: 0.6000, time 1.95s
+Val 51/100 15/27, Acc: 0.5625, time 1.99s
+Val 51/100 16/27, Acc: 0.5294, time 2.01s
+Val 51/100 17/27, Acc: 0.5000, time 1.99s
+Val 51/100 18/27, Acc: 0.5263, time 2.11s
+Val 51/100 19/27, Acc: 0.5500, time 2.04s
+Val 51/100 20/27, Acc: 0.5714, time 1.98s
+Val 51/100 21/27, Acc: 0.5909, time 1.98s
+Val 51/100 22/27, Acc: 0.6087, time 1.96s
+Val 51/100 23/27, Acc: 0.6250, time 1.98s
+Val 51/100 24/27, Acc: 0.6400, time 2.00s
+Val 51/100 25/27, Acc: 0.6538, time 1.98s
+Val 51/100 26/27, Acc: 0.6667, time 1.97s
+[Val epoch 51] avg_acc=0.6667 | per-class [c0: 0.556, c1: 0.667, c2: 0.778]
+Final validation stats 51/99 , Val_acc: 0.6666666666666666 , time 53.65s
+[EarlyStopping] no improve (3/10)
+
+0 Wed Oct 15 14:25:35 2025 Epoch: 52
+Epoch: 52/100 Iter: 0/12 loss: 1.8434 time 17.92s
+Epoch: 52/100 Iter: 1/12 loss: 2.0320 time 15.31s
+Epoch: 52/100 Iter: 2/12 loss: 2.0616 time 15.31s
+Epoch: 52/100 Iter: 3/12 loss: 1.9724 time 15.30s
+Epoch: 52/100 Iter: 4/12 loss: 1.9861 time 15.30s
+Epoch: 52/100 Iter: 5/12 loss: 1.9576 time 15.30s
+Epoch: 52/100 Iter: 6/12 loss: 2.1389 time 15.30s
+Epoch: 52/100 Iter: 7/12 loss: 2.0827 time 15.30s
+Epoch: 52/100 Iter: 8/12 loss: 2.1157 time 15.30s
+Epoch: 52/100 Iter: 9/12 loss: 2.1074 time 15.31s
+Epoch: 52/100 Iter: 10/12 loss: 2.2336 time 15.31s
+Epoch: 52/100 Iter: 11/12 loss: 2.1855 time 15.30s
+Final training  52/99 loss: 2.1855 time 186.31s lr: 0.000234
+[EarlyStopping] no improve (2/30)
+0 Wed Oct 15 14:28:41 2025 Epoch: 53
+Epoch: 53/100 Iter: 0/12 loss: 2.1829 time 19.26s
+Epoch: 53/100 Iter: 1/12 loss: 1.7648 time 15.31s
+Epoch: 53/100 Iter: 2/12 loss: 1.9193 time 15.32s
+Epoch: 53/100 Iter: 3/12 loss: 1.8496 time 15.30s
+Epoch: 53/100 Iter: 4/12 loss: 1.9149 time 15.30s
+Epoch: 53/100 Iter: 5/12 loss: 2.0881 time 15.30s
+Epoch: 53/100 Iter: 6/12 loss: 2.0833 time 15.31s
+Epoch: 53/100 Iter: 7/12 loss: 2.0590 time 15.30s
+Epoch: 53/100 Iter: 8/12 loss: 2.0383 time 15.29s
+Epoch: 53/100 Iter: 9/12 loss: 2.1560 time 15.30s
+Epoch: 53/100 Iter: 10/12 loss: 2.1266 time 15.29s
+Epoch: 53/100 Iter: 11/12 loss: 2.1261 time 15.30s
+Final training  53/99 loss: 2.1261 time 187.65s lr: 0.000226
+[EarlyStopping] improved to 2.126120
+0 Wed Oct 15 14:31:49 2025 Epoch: 54
+Epoch: 54/100 Iter: 0/12 loss: 1.3026 time 19.72s
+Epoch: 54/100 Iter: 1/12 loss: 1.3403 time 15.31s
+Epoch: 54/100 Iter: 2/12 loss: 1.8931 time 15.31s
+Epoch: 54/100 Iter: 3/12 loss: 2.0176 time 15.31s
+Epoch: 54/100 Iter: 4/12 loss: 1.9607 time 15.30s
+Epoch: 54/100 Iter: 5/12 loss: 1.9148 time 15.29s
+Epoch: 54/100 Iter: 6/12 loss: 1.8745 time 15.32s
+Epoch: 54/100 Iter: 7/12 loss: 1.9832 time 15.30s
+Epoch: 54/100 Iter: 8/12 loss: 2.0130 time 15.31s
+Epoch: 54/100 Iter: 9/12 loss: 2.1540 time 15.30s
+Epoch: 54/100 Iter: 10/12 loss: 2.1359 time 15.30s
+Epoch: 54/100 Iter: 11/12 loss: 2.1568 time 15.30s
+Final training  54/99 loss: 2.1568 time 188.11s lr: 0.000219
+[EarlyStopping] no improve (1/30)
+0 Wed Oct 15 14:34:57 2025 Epoch: 55
+Epoch: 55/100 Iter: 0/12 loss: 1.7464 time 18.80s
+Epoch: 55/100 Iter: 1/12 loss: 2.1911 time 15.31s
+Epoch: 55/100 Iter: 2/12 loss: 2.3574 time 15.31s
+Epoch: 55/100 Iter: 3/12 loss: 2.2223 time 15.30s
+Epoch: 55/100 Iter: 4/12 loss: 2.0792 time 15.30s
+Epoch: 55/100 Iter: 5/12 loss: 2.2205 time 15.30s
+Epoch: 55/100 Iter: 6/12 loss: 2.2221 time 15.29s
+Epoch: 55/100 Iter: 7/12 loss: 2.2846 time 15.30s
+Epoch: 55/100 Iter: 8/12 loss: 2.2233 time 15.30s
+Epoch: 55/100 Iter: 9/12 loss: 2.1944 time 15.30s
+Epoch: 55/100 Iter: 10/12 loss: 2.1285 time 15.30s
+Epoch: 55/100 Iter: 11/12 loss: 2.1184 time 15.30s
+Final training  55/99 loss: 2.1184 time 187.15s lr: 0.000211
+[EarlyStopping] no improve (2/30)
+Val 55/100 0/27, Acc: 1.0000, time 1.95s
+Val 55/100 1/27, Acc: 0.5000, time 1.95s
+Val 55/100 2/27, Acc: 0.6667, time 1.96s
+Val 55/100 3/27, Acc: 0.7500, time 1.98s
+Val 55/100 4/27, Acc: 0.8000, time 1.95s
+Val 55/100 5/27, Acc: 0.8333, time 1.97s
+Val 55/100 6/27, Acc: 0.8571, time 1.98s
+Val 55/100 7/27, Acc: 0.8750, time 1.99s
+Val 55/100 8/27, Acc: 0.8889, time 1.96s
+Val 55/100 9/27, Acc: 0.8000, time 1.96s
+Val 55/100 10/27, Acc: 0.7273, time 1.97s
+Val 55/100 11/27, Acc: 0.7500, time 1.96s
+Val 55/100 12/27, Acc: 0.6923, time 1.97s
+Val 55/100 13/27, Acc: 0.7143, time 1.96s
+Val 55/100 14/27, Acc: 0.7333, time 1.96s
+Val 55/100 15/27, Acc: 0.7500, time 1.97s
+Val 55/100 16/27, Acc: 0.7059, time 2.00s
+Val 55/100 17/27, Acc: 0.6667, time 1.95s
+Val 55/100 18/27, Acc: 0.6842, time 2.09s
+Val 55/100 19/27, Acc: 0.7000, time 2.04s
+Val 55/100 20/27, Acc: 0.7143, time 1.96s
+Val 55/100 21/27, Acc: 0.7273, time 1.96s
+Val 55/100 22/27, Acc: 0.7391, time 1.96s
+Val 55/100 23/27, Acc: 0.7500, time 1.98s
+Val 55/100 24/27, Acc: 0.7600, time 1.98s
+Val 55/100 25/27, Acc: 0.7692, time 1.94s
+Val 55/100 26/27, Acc: 0.7778, time 1.94s
+[Val epoch 55] avg_acc=0.7778 | per-class [c0: 0.778, c1: 0.778, c2: 0.778]
+Final validation stats 55/99 , Val_acc: 0.7777777777777778 , time 53.23s
+[EarlyStopping] no improve (4/10)
+
+0 Wed Oct 15 14:38:58 2025 Epoch: 56
+Epoch: 56/100 Iter: 0/12 loss: 1.8781 time 19.55s
+Epoch: 56/100 Iter: 1/12 loss: 2.0113 time 15.30s
+Epoch: 56/100 Iter: 2/12 loss: 1.9231 time 15.31s
+Epoch: 56/100 Iter: 3/12 loss: 1.7921 time 15.31s
+Epoch: 56/100 Iter: 4/12 loss: 1.7810 time 15.30s
+Epoch: 56/100 Iter: 5/12 loss: 1.7424 time 15.30s
+Epoch: 56/100 Iter: 6/12 loss: 1.8551 time 15.30s
+Epoch: 56/100 Iter: 7/12 loss: 1.8846 time 15.31s
+Epoch: 56/100 Iter: 8/12 loss: 1.9987 time 15.29s
+Epoch: 56/100 Iter: 9/12 loss: 2.0775 time 15.29s
+Epoch: 56/100 Iter: 10/12 loss: 2.0608 time 15.29s
+Epoch: 56/100 Iter: 11/12 loss: 2.0759 time 15.31s
+Final training  56/99 loss: 2.0759 time 187.92s lr: 0.000203
+[EarlyStopping] improved to 2.075898
+0 Wed Oct 15 14:42:06 2025 Epoch: 57
+Epoch: 57/100 Iter: 0/12 loss: 1.9430 time 17.65s
+Epoch: 57/100 Iter: 1/12 loss: 2.0512 time 15.30s
+Epoch: 57/100 Iter: 2/12 loss: 1.8762 time 15.30s
+Epoch: 57/100 Iter: 3/12 loss: 2.1183 time 15.30s
+Epoch: 57/100 Iter: 4/12 loss: 2.0405 time 15.30s
+Epoch: 57/100 Iter: 5/12 loss: 2.0970 time 15.30s
+Epoch: 57/100 Iter: 6/12 loss: 2.0985 time 15.29s
+Epoch: 57/100 Iter: 7/12 loss: 2.1074 time 15.29s
+Epoch: 57/100 Iter: 8/12 loss: 2.1149 time 15.30s
+Epoch: 57/100 Iter: 9/12 loss: 2.0885 time 15.30s
+Epoch: 57/100 Iter: 10/12 loss: 2.0696 time 15.30s
+Epoch: 57/100 Iter: 11/12 loss: 2.0189 time 15.30s
+Final training  57/99 loss: 2.0189 time 185.98s lr: 0.000195
+[EarlyStopping] improved to 2.018915
+0 Wed Oct 15 14:45:12 2025 Epoch: 58
+Epoch: 58/100 Iter: 0/12 loss: 0.9837 time 17.67s
+Epoch: 58/100 Iter: 1/12 loss: 1.0805 time 15.31s
+Epoch: 58/100 Iter: 2/12 loss: 1.3536 time 15.30s
+Epoch: 58/100 Iter: 3/12 loss: 1.3716 time 15.30s
+Epoch: 58/100 Iter: 4/12 loss: 1.6830 time 15.30s
+Epoch: 58/100 Iter: 5/12 loss: 1.6610 time 15.30s
+Epoch: 58/100 Iter: 6/12 loss: 1.9062 time 15.30s
+Epoch: 58/100 Iter: 7/12 loss: 1.8779 time 15.29s
+Epoch: 58/100 Iter: 8/12 loss: 1.8502 time 15.30s
+Epoch: 58/100 Iter: 9/12 loss: 1.8443 time 15.30s
+Epoch: 58/100 Iter: 10/12 loss: 1.8353 time 15.29s
+Epoch: 58/100 Iter: 11/12 loss: 1.8536 time 15.31s
+Final training  58/99 loss: 1.8536 time 186.02s lr: 0.000188
+[EarlyStopping] improved to 1.853568
+0 Wed Oct 15 14:48:18 2025 Epoch: 59
+Epoch: 59/100 Iter: 0/12 loss: 3.0111 time 18.16s
+Epoch: 59/100 Iter: 1/12 loss: 2.5193 time 15.32s
+Epoch: 59/100 Iter: 2/12 loss: 2.3915 time 15.31s
+Epoch: 59/100 Iter: 3/12 loss: 2.1723 time 15.30s
+Epoch: 59/100 Iter: 4/12 loss: 2.1294 time 15.30s
+Epoch: 59/100 Iter: 5/12 loss: 1.9980 time 15.29s
+Epoch: 59/100 Iter: 6/12 loss: 1.8946 time 15.29s
+Epoch: 59/100 Iter: 7/12 loss: 1.8968 time 15.31s
+Epoch: 59/100 Iter: 8/12 loss: 1.8381 time 15.30s
+Epoch: 59/100 Iter: 9/12 loss: 1.8768 time 15.30s
+Epoch: 59/100 Iter: 10/12 loss: 1.8569 time 15.30s
+Epoch: 59/100 Iter: 11/12 loss: 1.8095 time 15.30s
+Final training  59/99 loss: 1.8095 time 186.54s lr: 0.000180
+[EarlyStopping] improved to 1.809500
+Val 59/100 0/27, Acc: 1.0000, time 1.99s
+Val 59/100 1/27, Acc: 0.5000, time 1.98s
+Val 59/100 2/27, Acc: 0.6667, time 1.98s
+Val 59/100 3/27, Acc: 0.7500, time 1.96s
+Val 59/100 4/27, Acc: 0.8000, time 1.95s
+Val 59/100 5/27, Acc: 0.8333, time 2.00s
+Val 59/100 6/27, Acc: 0.8571, time 1.96s
+Val 59/100 7/27, Acc: 0.8750, time 1.96s
+Val 59/100 8/27, Acc: 0.8889, time 1.99s
+Val 59/100 9/27, Acc: 0.8000, time 2.00s
+Val 59/100 10/27, Acc: 0.7273, time 2.01s
+Val 59/100 11/27, Acc: 0.7500, time 1.97s
+Val 59/100 12/27, Acc: 0.6923, time 1.96s
+Val 59/100 13/27, Acc: 0.7143, time 1.95s
+Val 59/100 14/27, Acc: 0.7333, time 1.96s
+Val 59/100 15/27, Acc: 0.7500, time 1.99s
+Val 59/100 16/27, Acc: 0.7059, time 2.02s
+Val 59/100 17/27, Acc: 0.6667, time 2.00s
+Val 59/100 18/27, Acc: 0.6842, time 2.12s
+Val 59/100 19/27, Acc: 0.7000, time 2.05s
+Val 59/100 20/27, Acc: 0.7143, time 1.98s
+Val 59/100 21/27, Acc: 0.7273, time 1.97s
+Val 59/100 22/27, Acc: 0.7391, time 1.97s
+Val 59/100 23/27, Acc: 0.7500, time 1.95s
+Val 59/100 24/27, Acc: 0.7600, time 1.97s
+Val 59/100 25/27, Acc: 0.7692, time 1.94s
+Val 59/100 26/27, Acc: 0.7778, time 1.94s
+[Val epoch 59] avg_acc=0.7778 | per-class [c0: 0.778, c1: 0.778, c2: 0.778]
+Final validation stats 59/99 , Val_acc: 0.7777777777777778 , time 53.48s
+[EarlyStopping] no improve (5/10)
+
+0 Wed Oct 15 14:52:18 2025 Epoch: 60
+Epoch: 60/100 Iter: 0/12 loss: 1.8008 time 19.48s
+Epoch: 60/100 Iter: 1/12 loss: 2.3534 time 15.32s
+Epoch: 60/100 Iter: 2/12 loss: 1.9903 time 15.31s
+Epoch: 60/100 Iter: 3/12 loss: 1.7715 time 15.31s
+Epoch: 60/100 Iter: 4/12 loss: 1.8703 time 15.30s
+Epoch: 60/100 Iter: 5/12 loss: 1.9790 time 15.29s
+Epoch: 60/100 Iter: 6/12 loss: 1.8958 time 15.31s
+Epoch: 60/100 Iter: 7/12 loss: 2.0125 time 15.30s
+Epoch: 60/100 Iter: 8/12 loss: 1.8468 time 15.30s
+Epoch: 60/100 Iter: 9/12 loss: 1.8185 time 15.30s
+Epoch: 60/100 Iter: 10/12 loss: 1.7860 time 15.30s
+Epoch: 60/100 Iter: 11/12 loss: 1.8287 time 15.30s
+Final training  60/99 loss: 1.8287 time 187.86s lr: 0.000173
+[EarlyStopping] no improve (1/30)
+0 Wed Oct 15 14:55:27 2025 Epoch: 61
+Epoch: 61/100 Iter: 0/12 loss: 1.8738 time 19.78s
+Epoch: 61/100 Iter: 1/12 loss: 1.7059 time 15.33s
+Epoch: 61/100 Iter: 2/12 loss: 2.0851 time 15.31s
+Epoch: 61/100 Iter: 3/12 loss: 1.8978 time 15.31s
+Epoch: 61/100 Iter: 4/12 loss: 1.8670 time 15.30s
+Epoch: 61/100 Iter: 5/12 loss: 1.9456 time 15.30s
+Epoch: 61/100 Iter: 6/12 loss: 1.9361 time 15.30s
+Epoch: 61/100 Iter: 7/12 loss: 1.9575 time 15.30s
+Epoch: 61/100 Iter: 8/12 loss: 1.8843 time 15.30s
+Epoch: 61/100 Iter: 9/12 loss: 1.8483 time 15.30s
+Epoch: 61/100 Iter: 10/12 loss: 1.7361 time 15.30s
+Epoch: 61/100 Iter: 11/12 loss: 1.8005 time 15.30s
+Final training  61/99 loss: 1.8005 time 188.17s lr: 0.000165
+[EarlyStopping] no improve (2/30)
+0 Wed Oct 15 14:58:35 2025 Epoch: 62
+Epoch: 62/100 Iter: 0/12 loss: 1.5260 time 18.74s
+Epoch: 62/100 Iter: 1/12 loss: 1.5983 time 15.30s
+Epoch: 62/100 Iter: 2/12 loss: 1.6395 time 15.30s
+Epoch: 62/100 Iter: 3/12 loss: 1.6799 time 15.29s
+Epoch: 62/100 Iter: 4/12 loss: 1.5939 time 15.30s
+Epoch: 62/100 Iter: 5/12 loss: 1.7059 time 15.31s
+Epoch: 62/100 Iter: 6/12 loss: 1.7086 time 15.31s
+Epoch: 62/100 Iter: 7/12 loss: 1.7622 time 15.30s
+Epoch: 62/100 Iter: 8/12 loss: 1.8056 time 15.30s
+Epoch: 62/100 Iter: 9/12 loss: 1.8191 time 15.31s
+Epoch: 62/100 Iter: 10/12 loss: 1.8219 time 15.29s
+Epoch: 62/100 Iter: 11/12 loss: 1.7892 time 15.30s
+Final training  62/99 loss: 1.7892 time 187.11s lr: 0.000158
+[EarlyStopping] improved to 1.789217
+0 Wed Oct 15 15:01:42 2025 Epoch: 63
+Epoch: 63/100 Iter: 0/12 loss: 1.9550 time 19.18s
+Epoch: 63/100 Iter: 1/12 loss: 1.9413 time 15.31s
+Epoch: 63/100 Iter: 2/12 loss: 1.6753 time 15.32s
+Epoch: 63/100 Iter: 3/12 loss: 1.5199 time 15.30s
+Epoch: 63/100 Iter: 4/12 loss: 1.6282 time 15.30s
+Epoch: 63/100 Iter: 5/12 loss: 1.8381 time 15.30s
+Epoch: 63/100 Iter: 6/12 loss: 1.8255 time 15.30s
+Epoch: 63/100 Iter: 7/12 loss: 1.8860 time 15.30s
+Epoch: 63/100 Iter: 8/12 loss: 1.8818 time 15.30s
+Epoch: 63/100 Iter: 9/12 loss: 1.8325 time 15.30s
+Epoch: 63/100 Iter: 10/12 loss: 1.8348 time 15.29s
+Epoch: 63/100 Iter: 11/12 loss: 1.8161 time 15.30s
+Final training  63/99 loss: 1.8161 time 187.57s lr: 0.000151
+[EarlyStopping] no improve (1/30)
+Val 63/100 0/27, Acc: 1.0000, time 1.95s
+Val 63/100 1/27, Acc: 0.5000, time 1.97s
+Val 63/100 2/27, Acc: 0.6667, time 1.97s
+Val 63/100 3/27, Acc: 0.7500, time 1.97s
+Val 63/100 4/27, Acc: 0.8000, time 1.95s
+Val 63/100 5/27, Acc: 0.8333, time 1.98s
+Val 63/100 6/27, Acc: 0.8571, time 1.96s
+Val 63/100 7/27, Acc: 0.8750, time 1.95s
+Val 63/100 8/27, Acc: 0.8889, time 1.95s
+Val 63/100 9/27, Acc: 0.8000, time 1.99s
+Val 63/100 10/27, Acc: 0.7273, time 1.98s
+Val 63/100 11/27, Acc: 0.6667, time 1.96s
+Val 63/100 12/27, Acc: 0.6154, time 1.97s
+Val 63/100 13/27, Acc: 0.6429, time 1.96s
+Val 63/100 14/27, Acc: 0.6667, time 1.96s
+Val 63/100 15/27, Acc: 0.6875, time 1.98s
+Val 63/100 16/27, Acc: 0.6471, time 1.99s
+Val 63/100 17/27, Acc: 0.6111, time 1.95s
+Val 63/100 18/27, Acc: 0.6316, time 2.10s
+Val 63/100 19/27, Acc: 0.6500, time 2.03s
+Val 63/100 20/27, Acc: 0.6667, time 2.00s
+Val 63/100 21/27, Acc: 0.6818, time 1.98s
+Val 63/100 22/27, Acc: 0.6957, time 1.97s
+Val 63/100 23/27, Acc: 0.7083, time 1.97s
+Val 63/100 24/27, Acc: 0.7200, time 2.00s
+Val 63/100 25/27, Acc: 0.7308, time 1.94s
+Val 63/100 26/27, Acc: 0.7407, time 1.95s
+[Val epoch 63] avg_acc=0.7407 | per-class [c0: 0.778, c1: 0.667, c2: 0.778]
+Final validation stats 63/99 , Val_acc: 0.7407407407407407 , time 53.34s
+[EarlyStopping] no improve (6/10)
+
+0 Wed Oct 15 15:05:43 2025 Epoch: 64
+Epoch: 64/100 Iter: 0/12 loss: 2.0615 time 17.81s
+Epoch: 64/100 Iter: 1/12 loss: 1.4988 time 15.31s
+Epoch: 64/100 Iter: 2/12 loss: 1.4512 time 15.31s
+Epoch: 64/100 Iter: 3/12 loss: 1.7388 time 15.30s
+Epoch: 64/100 Iter: 4/12 loss: 2.0313 time 15.31s
+Epoch: 64/100 Iter: 5/12 loss: 2.0739 time 15.30s
+Epoch: 64/100 Iter: 6/12 loss: 1.9684 time 15.30s
+Epoch: 64/100 Iter: 7/12 loss: 1.9522 time 15.30s
+Epoch: 64/100 Iter: 8/12 loss: 1.9155 time 15.30s
+Epoch: 64/100 Iter: 9/12 loss: 1.8881 time 15.31s
+Epoch: 64/100 Iter: 10/12 loss: 1.8129 time 15.29s
+Epoch: 64/100 Iter: 11/12 loss: 1.8211 time 15.29s
+Final training  64/99 loss: 1.8211 time 186.19s lr: 0.000144
+[EarlyStopping] no improve (2/30)
+0 Wed Oct 15 15:08:49 2025 Epoch: 65
+Epoch: 65/100 Iter: 0/12 loss: 2.9579 time 20.47s
+Epoch: 65/100 Iter: 1/12 loss: 2.1177 time 15.31s
+Epoch: 65/100 Iter: 2/12 loss: 1.9358 time 15.30s
+Epoch: 65/100 Iter: 3/12 loss: 1.9924 time 15.29s
+Epoch: 65/100 Iter: 4/12 loss: 1.8836 time 15.33s
+Epoch: 65/100 Iter: 5/12 loss: 1.8115 time 15.30s
+Epoch: 65/100 Iter: 6/12 loss: 1.8592 time 15.29s
+Epoch: 65/100 Iter: 7/12 loss: 1.7585 time 15.30s
+Epoch: 65/100 Iter: 8/12 loss: 1.7840 time 15.30s
+Epoch: 65/100 Iter: 9/12 loss: 1.7802 time 15.31s
+Epoch: 65/100 Iter: 10/12 loss: 1.7938 time 15.30s
+Epoch: 65/100 Iter: 11/12 loss: 1.6958 time 15.30s
+Final training  65/99 loss: 1.6958 time 188.85s lr: 0.000137
+[EarlyStopping] improved to 1.695791
+0 Wed Oct 15 15:11:58 2025 Epoch: 66
+Epoch: 66/100 Iter: 0/12 loss: 1.4325 time 18.27s
+Epoch: 66/100 Iter: 1/12 loss: 1.4967 time 15.32s
+Epoch: 66/100 Iter: 2/12 loss: 1.2951 time 15.32s
+Epoch: 66/100 Iter: 3/12 loss: 1.3406 time 15.31s
+Epoch: 66/100 Iter: 4/12 loss: 1.4135 time 15.31s
+Epoch: 66/100 Iter: 5/12 loss: 1.5209 time 15.30s
+Epoch: 66/100 Iter: 6/12 loss: 1.6853 time 15.30s
+Epoch: 66/100 Iter: 7/12 loss: 1.6677 time 15.30s
+Epoch: 66/100 Iter: 8/12 loss: 1.7297 time 15.30s
+Epoch: 66/100 Iter: 9/12 loss: 1.6680 time 15.30s
+Epoch: 66/100 Iter: 10/12 loss: 1.6523 time 15.30s
+Epoch: 66/100 Iter: 11/12 loss: 1.6469 time 15.30s
+Final training  66/99 loss: 1.6469 time 186.68s lr: 0.000130
+[EarlyStopping] improved to 1.646872
+0 Wed Oct 15 15:15:05 2025 Epoch: 67
+Epoch: 67/100 Iter: 0/12 loss: 0.8420 time 19.25s
+Epoch: 67/100 Iter: 1/12 loss: 1.2360 time 15.31s
+Epoch: 67/100 Iter: 2/12 loss: 1.6601 time 15.30s
+Epoch: 67/100 Iter: 3/12 loss: 1.6689 time 15.29s
+Epoch: 67/100 Iter: 4/12 loss: 1.6022 time 15.30s
+Epoch: 67/100 Iter: 5/12 loss: 1.5355 time 15.31s
+Epoch: 67/100 Iter: 6/12 loss: 1.5247 time 15.30s
+Epoch: 67/100 Iter: 7/12 loss: 1.5627 time 15.32s
+Epoch: 67/100 Iter: 8/12 loss: 1.6192 time 15.30s
+Epoch: 67/100 Iter: 9/12 loss: 1.6368 time 15.30s
+Epoch: 67/100 Iter: 10/12 loss: 1.6432 time 15.30s
+Epoch: 67/100 Iter: 11/12 loss: 1.6370 time 15.31s
+Final training  67/99 loss: 1.6370 time 187.64s lr: 0.000123
+[EarlyStopping] no improve (1/30)
+Val 67/100 0/27, Acc: 1.0000, time 1.98s
+Val 67/100 1/27, Acc: 0.5000, time 1.99s
+Val 67/100 2/27, Acc: 0.3333, time 1.99s
+Val 67/100 3/27, Acc: 0.5000, time 1.99s
+Val 67/100 4/27, Acc: 0.6000, time 1.95s
+Val 67/100 5/27, Acc: 0.6667, time 2.00s
+Val 67/100 6/27, Acc: 0.7143, time 1.96s
+Val 67/100 7/27, Acc: 0.7500, time 1.96s
+Val 67/100 8/27, Acc: 0.7778, time 1.95s
+Val 67/100 9/27, Acc: 0.7000, time 1.96s
+Val 67/100 10/27, Acc: 0.6364, time 1.98s
+Val 67/100 11/27, Acc: 0.6667, time 1.99s
+Val 67/100 12/27, Acc: 0.6154, time 1.97s
+Val 67/100 13/27, Acc: 0.6429, time 1.96s
+Val 67/100 14/27, Acc: 0.6667, time 1.97s
+Val 67/100 15/27, Acc: 0.6250, time 1.98s
+Val 67/100 16/27, Acc: 0.5882, time 1.99s
+Val 67/100 17/27, Acc: 0.5556, time 1.97s
+Val 67/100 18/27, Acc: 0.5789, time 2.09s
+Val 67/100 19/27, Acc: 0.6000, time 2.03s
+Val 67/100 20/27, Acc: 0.6190, time 1.96s
+Val 67/100 21/27, Acc: 0.6364, time 1.99s
+Val 67/100 22/27, Acc: 0.6522, time 1.97s
+Val 67/100 23/27, Acc: 0.6667, time 1.95s
+Val 67/100 24/27, Acc: 0.6400, time 1.98s
+Val 67/100 25/27, Acc: 0.6538, time 1.95s
+Val 67/100 26/27, Acc: 0.6667, time 1.94s
+[Val epoch 67] avg_acc=0.6667 | per-class [c0: 0.444, c1: 0.778, c2: 0.778]
+Final validation stats 67/99 , Val_acc: 0.6666666666666666 , time 53.42s
+[EarlyStopping] no improve (7/10)
+
+0 Wed Oct 15 15:19:06 2025 Epoch: 68
+Epoch: 68/100 Iter: 0/12 loss: 1.8834 time 19.21s
+Epoch: 68/100 Iter: 1/12 loss: 1.5863 time 15.31s
+Epoch: 68/100 Iter: 2/12 loss: 1.7117 time 15.31s
+Epoch: 68/100 Iter: 3/12 loss: 1.5995 time 15.31s
+Epoch: 68/100 Iter: 4/12 loss: 1.6668 time 15.31s
+Epoch: 68/100 Iter: 5/12 loss: 1.6289 time 15.30s
+Epoch: 68/100 Iter: 6/12 loss: 1.6049 time 15.31s
+Epoch: 68/100 Iter: 7/12 loss: 1.6011 time 15.30s
+Epoch: 68/100 Iter: 8/12 loss: 1.6304 time 15.30s
+Epoch: 68/100 Iter: 9/12 loss: 1.6350 time 15.30s
+Epoch: 68/100 Iter: 10/12 loss: 1.6756 time 15.30s
+Epoch: 68/100 Iter: 11/12 loss: 1.6718 time 15.30s
+Final training  68/99 loss: 1.6718 time 187.62s lr: 0.000116
+[EarlyStopping] no improve (2/30)
+0 Wed Oct 15 15:22:14 2025 Epoch: 69
+Epoch: 69/100 Iter: 0/12 loss: 1.3766 time 20.11s
+Epoch: 69/100 Iter: 1/12 loss: 1.6819 time 15.32s
+Epoch: 69/100 Iter: 2/12 loss: 1.8327 time 15.31s
+Epoch: 69/100 Iter: 3/12 loss: 1.6956 time 15.31s
+Epoch: 69/100 Iter: 4/12 loss: 1.6492 time 15.30s
+Epoch: 69/100 Iter: 5/12 loss: 1.6071 time 15.29s
+Epoch: 69/100 Iter: 6/12 loss: 1.5497 time 15.30s
+Epoch: 69/100 Iter: 7/12 loss: 1.6113 time 15.30s
+Epoch: 69/100 Iter: 8/12 loss: 1.7665 time 15.30s
+Epoch: 69/100 Iter: 9/12 loss: 1.7203 time 15.29s
+Epoch: 69/100 Iter: 10/12 loss: 1.6852 time 15.30s
+Epoch: 69/100 Iter: 11/12 loss: 1.6839 time 15.29s
+Final training  69/99 loss: 1.6839 time 188.47s lr: 0.000109
+[EarlyStopping] no improve (3/30)
+0 Wed Oct 15 15:25:23 2025 Epoch: 70
+Epoch: 70/100 Iter: 0/12 loss: 1.4347 time 18.62s
+Epoch: 70/100 Iter: 1/12 loss: 1.5035 time 15.31s
+Epoch: 70/100 Iter: 2/12 loss: 1.5354 time 15.31s
+Epoch: 70/100 Iter: 3/12 loss: 1.5022 time 15.30s
+Epoch: 70/100 Iter: 4/12 loss: 1.5629 time 15.30s
+Epoch: 70/100 Iter: 5/12 loss: 1.5869 time 15.29s
+Epoch: 70/100 Iter: 6/12 loss: 1.5537 time 15.30s
+Epoch: 70/100 Iter: 7/12 loss: 1.5308 time 15.30s
+Epoch: 70/100 Iter: 8/12 loss: 1.5857 time 15.30s
+Epoch: 70/100 Iter: 9/12 loss: 1.6378 time 15.30s
+Epoch: 70/100 Iter: 10/12 loss: 1.5826 time 15.30s
+Epoch: 70/100 Iter: 11/12 loss: 1.5734 time 15.31s
+Final training  70/99 loss: 1.5734 time 187.00s lr: 0.000103
+[EarlyStopping] improved to 1.573382
+0 Wed Oct 15 15:28:30 2025 Epoch: 71
+Epoch: 71/100 Iter: 0/12 loss: 1.0882 time 20.38s
+Epoch: 71/100 Iter: 1/12 loss: 1.1176 time 15.30s
+Epoch: 71/100 Iter: 2/12 loss: 1.3089 time 15.31s
+Epoch: 71/100 Iter: 3/12 loss: 1.5057 time 15.30s
+Epoch: 71/100 Iter: 4/12 loss: 1.4914 time 15.31s
+Epoch: 71/100 Iter: 5/12 loss: 1.4872 time 15.31s
+Epoch: 71/100 Iter: 6/12 loss: 1.4957 time 15.30s
+Epoch: 71/100 Iter: 7/12 loss: 1.4907 time 15.29s
+Epoch: 71/100 Iter: 8/12 loss: 1.5283 time 15.30s
+Epoch: 71/100 Iter: 9/12 loss: 1.4896 time 15.30s
+Epoch: 71/100 Iter: 10/12 loss: 1.4654 time 15.29s
+Epoch: 71/100 Iter: 11/12 loss: 1.4834 time 15.29s
+Final training  71/99 loss: 1.4834 time 188.73s lr: 0.000097
+[EarlyStopping] improved to 1.483374
+Val 71/100 0/27, Acc: 1.0000, time 1.97s
+Val 71/100 1/27, Acc: 0.5000, time 1.95s
+Val 71/100 2/27, Acc: 0.3333, time 1.99s
+Val 71/100 3/27, Acc: 0.5000, time 1.98s
+Val 71/100 4/27, Acc: 0.6000, time 1.94s
+Val 71/100 5/27, Acc: 0.6667, time 1.97s
+Val 71/100 6/27, Acc: 0.7143, time 1.95s
+Val 71/100 7/27, Acc: 0.7500, time 1.97s
+Val 71/100 8/27, Acc: 0.7778, time 1.96s
+Val 71/100 9/27, Acc: 0.7000, time 1.96s
+Val 71/100 10/27, Acc: 0.6364, time 1.98s
+Val 71/100 11/27, Acc: 0.6667, time 1.95s
+Val 71/100 12/27, Acc: 0.6154, time 1.95s
+Val 71/100 13/27, Acc: 0.6429, time 1.99s
+Val 71/100 14/27, Acc: 0.6667, time 1.96s
+Val 71/100 15/27, Acc: 0.6875, time 1.98s
+Val 71/100 16/27, Acc: 0.6471, time 2.02s
+Val 71/100 17/27, Acc: 0.6111, time 1.96s
+Val 71/100 18/27, Acc: 0.6316, time 2.13s
+Val 71/100 19/27, Acc: 0.6500, time 2.06s
+Val 71/100 20/27, Acc: 0.6667, time 1.98s
+Val 71/100 21/27, Acc: 0.6818, time 1.98s
+Val 71/100 22/27, Acc: 0.6957, time 1.99s
+Val 71/100 23/27, Acc: 0.7083, time 1.94s
+Val 71/100 24/27, Acc: 0.7200, time 1.97s
+Val 71/100 25/27, Acc: 0.7308, time 1.94s
+Val 71/100 26/27, Acc: 0.7407, time 1.94s
+[Val epoch 71] avg_acc=0.7407 | per-class [c0: 0.667, c1: 0.778, c2: 0.778]
+Final validation stats 71/99 , Val_acc: 0.7407407407407407 , time 53.37s
+[EarlyStopping] no improve (8/10)
+
+0 Wed Oct 15 15:32:33 2025 Epoch: 72
+Epoch: 72/100 Iter: 0/12 loss: 1.1648 time 19.21s
+Epoch: 72/100 Iter: 1/12 loss: 1.4774 time 15.32s
+Epoch: 72/100 Iter: 2/12 loss: 1.5811 time 15.30s
+Epoch: 72/100 Iter: 3/12 loss: 1.7386 time 15.30s
+Epoch: 72/100 Iter: 4/12 loss: 1.6970 time 15.30s
+Epoch: 72/100 Iter: 5/12 loss: 1.5667 time 15.30s
+Epoch: 72/100 Iter: 6/12 loss: 1.5452 time 15.31s
+Epoch: 72/100 Iter: 7/12 loss: 1.5272 time 15.30s
+Epoch: 72/100 Iter: 8/12 loss: 1.5372 time 15.30s
+Epoch: 72/100 Iter: 9/12 loss: 1.4907 time 15.30s
+Epoch: 72/100 Iter: 10/12 loss: 1.4881 time 15.30s
+Epoch: 72/100 Iter: 11/12 loss: 1.4867 time 15.30s
+Final training  72/99 loss: 1.4867 time 187.58s lr: 0.000091
+[EarlyStopping] no improve (1/30)
+0 Wed Oct 15 15:35:40 2025 Epoch: 73
+Epoch: 73/100 Iter: 0/12 loss: 1.7670 time 17.74s
+Epoch: 73/100 Iter: 1/12 loss: 1.3835 time 15.31s
+Epoch: 73/100 Iter: 2/12 loss: 1.2308 time 15.30s
+Epoch: 73/100 Iter: 3/12 loss: 1.2710 time 15.30s
+Epoch: 73/100 Iter: 4/12 loss: 1.5385 time 15.29s
+Epoch: 73/100 Iter: 5/12 loss: 1.4222 time 15.30s
+Epoch: 73/100 Iter: 6/12 loss: 1.5007 time 15.30s
+Epoch: 73/100 Iter: 7/12 loss: 1.4293 time 15.30s
+Epoch: 73/100 Iter: 8/12 loss: 1.4704 time 15.29s
+Epoch: 73/100 Iter: 9/12 loss: 1.4542 time 15.29s
+Epoch: 73/100 Iter: 10/12 loss: 1.4248 time 15.30s
+Epoch: 73/100 Iter: 11/12 loss: 1.4360 time 15.29s
+Final training  73/99 loss: 1.4360 time 186.07s lr: 0.000085
+[EarlyStopping] improved to 1.436026
+0 Wed Oct 15 15:38:46 2025 Epoch: 74
+Epoch: 74/100 Iter: 0/12 loss: 2.0782 time 18.56s
+Epoch: 74/100 Iter: 1/12 loss: 1.4587 time 15.31s
+Epoch: 74/100 Iter: 2/12 loss: 1.2971 time 15.30s
+Epoch: 74/100 Iter: 3/12 loss: 1.3621 time 15.31s
+Epoch: 74/100 Iter: 4/12 loss: 1.4691 time 15.30s
+Epoch: 74/100 Iter: 5/12 loss: 1.4649 time 15.30s
+Epoch: 74/100 Iter: 6/12 loss: 1.4607 time 15.30s
+Epoch: 74/100 Iter: 7/12 loss: 1.3799 time 15.30s
+Epoch: 74/100 Iter: 8/12 loss: 1.3574 time 15.30s
+Epoch: 74/100 Iter: 9/12 loss: 1.4880 time 15.30s
+Epoch: 74/100 Iter: 10/12 loss: 1.4741 time 15.30s
+Epoch: 74/100 Iter: 11/12 loss: 1.4461 time 15.30s
+Final training  74/99 loss: 1.4461 time 186.92s lr: 0.000079
+[EarlyStopping] no improve (1/30)
+0 Wed Oct 15 15:41:53 2025 Epoch: 75
+Epoch: 75/100 Iter: 0/12 loss: 1.3974 time 18.68s
+Epoch: 75/100 Iter: 1/12 loss: 1.0177 time 15.30s
+Epoch: 75/100 Iter: 2/12 loss: 1.0761 time 15.30s
+Epoch: 75/100 Iter: 3/12 loss: 1.1445 time 15.31s
+Epoch: 75/100 Iter: 4/12 loss: 1.1318 time 15.29s
+Epoch: 75/100 Iter: 5/12 loss: 1.3329 time 15.30s
+Epoch: 75/100 Iter: 6/12 loss: 1.3899 time 15.30s
+Epoch: 75/100 Iter: 7/12 loss: 1.4363 time 15.30s
+Epoch: 75/100 Iter: 8/12 loss: 1.3715 time 15.31s
+Epoch: 75/100 Iter: 9/12 loss: 1.3273 time 15.30s
+Epoch: 75/100 Iter: 10/12 loss: 1.3951 time 15.31s
+Epoch: 75/100 Iter: 11/12 loss: 1.4422 time 15.30s
+Final training  75/99 loss: 1.4422 time 187.06s lr: 0.000073
+[EarlyStopping] no improve (2/30)
+Val 75/100 0/27, Acc: 1.0000, time 1.99s
+Val 75/100 1/27, Acc: 0.5000, time 1.99s
+Val 75/100 2/27, Acc: 0.6667, time 2.00s
+Val 75/100 3/27, Acc: 0.7500, time 1.99s
+Val 75/100 4/27, Acc: 0.8000, time 1.98s
+Val 75/100 5/27, Acc: 0.8333, time 1.98s
+Val 75/100 6/27, Acc: 0.8571, time 1.96s
+Val 75/100 7/27, Acc: 0.8750, time 1.96s
+Val 75/100 8/27, Acc: 0.8889, time 1.96s
+Val 75/100 9/27, Acc: 0.8000, time 1.95s
+Val 75/100 10/27, Acc: 0.7273, time 1.97s
+Val 75/100 11/27, Acc: 0.7500, time 1.96s
+Val 75/100 12/27, Acc: 0.6923, time 1.98s
+Val 75/100 13/27, Acc: 0.7143, time 1.99s
+Val 75/100 14/27, Acc: 0.7333, time 1.97s
+Val 75/100 15/27, Acc: 0.7500, time 1.98s
+Val 75/100 16/27, Acc: 0.7059, time 2.01s
+Val 75/100 17/27, Acc: 0.6667, time 1.96s
+Val 75/100 18/27, Acc: 0.6842, time 2.11s
+Val 75/100 19/27, Acc: 0.7000, time 2.03s
+Val 75/100 20/27, Acc: 0.7143, time 2.00s
+Val 75/100 21/27, Acc: 0.7273, time 1.97s
+Val 75/100 22/27, Acc: 0.7391, time 1.95s
+Val 75/100 23/27, Acc: 0.7500, time 1.98s
+Val 75/100 24/27, Acc: 0.7600, time 2.00s
+Val 75/100 25/27, Acc: 0.7692, time 1.98s
+Val 75/100 26/27, Acc: 0.7778, time 1.98s
+[Val epoch 75] avg_acc=0.7778 | per-class [c0: 0.778, c1: 0.778, c2: 0.778]
+Final validation stats 75/99 , Val_acc: 0.7777777777777778 , time 53.59s
+[EarlyStopping] no improve (9/10)
+
+0 Wed Oct 15 15:45:54 2025 Epoch: 76
+Epoch: 76/100 Iter: 0/12 loss: 0.9820 time 19.47s
+Epoch: 76/100 Iter: 1/12 loss: 1.1441 time 15.30s
+Epoch: 76/100 Iter: 2/12 loss: 1.3101 time 15.31s
+Epoch: 76/100 Iter: 3/12 loss: 1.4944 time 15.31s
+Epoch: 76/100 Iter: 4/12 loss: 1.4702 time 15.30s
+Epoch: 76/100 Iter: 5/12 loss: 1.4409 time 15.30s
+Epoch: 76/100 Iter: 6/12 loss: 1.5317 time 15.31s
+Epoch: 76/100 Iter: 7/12 loss: 1.4932 time 15.29s
+Epoch: 76/100 Iter: 8/12 loss: 1.4520 time 15.31s
+Epoch: 76/100 Iter: 9/12 loss: 1.4952 time 15.31s
+Epoch: 76/100 Iter: 10/12 loss: 1.4871 time 15.29s
+Epoch: 76/100 Iter: 11/12 loss: 1.4504 time 15.31s
+Final training  76/99 loss: 1.4504 time 187.87s lr: 0.000068
+[EarlyStopping] no improve (3/30)
+0 Wed Oct 15 15:49:02 2025 Epoch: 77
+Epoch: 77/100 Iter: 0/12 loss: 1.7632 time 19.73s
+Epoch: 77/100 Iter: 1/12 loss: 1.7841 time 15.31s
+Epoch: 77/100 Iter: 2/12 loss: 1.6510 time 15.30s
+Epoch: 77/100 Iter: 3/12 loss: 1.7317 time 15.30s
+Epoch: 77/100 Iter: 4/12 loss: 1.5993 time 15.30s
+Epoch: 77/100 Iter: 5/12 loss: 1.5846 time 15.30s
+Epoch: 77/100 Iter: 6/12 loss: 1.4960 time 15.30s
+Epoch: 77/100 Iter: 7/12 loss: 1.3921 time 15.30s
+Epoch: 77/100 Iter: 8/12 loss: 1.4028 time 15.31s
+Epoch: 77/100 Iter: 9/12 loss: 1.4045 time 15.30s
+Epoch: 77/100 Iter: 10/12 loss: 1.4183 time 15.30s
+Epoch: 77/100 Iter: 11/12 loss: 1.4224 time 15.30s
+Final training  77/99 loss: 1.4224 time 188.10s lr: 0.000062
+[EarlyStopping] improved to 1.422408
+0 Wed Oct 15 15:52:10 2025 Epoch: 78
+Epoch: 78/100 Iter: 0/12 loss: 1.5093 time 17.83s
+Epoch: 78/100 Iter: 1/12 loss: 1.1473 time 15.32s
+Epoch: 78/100 Iter: 2/12 loss: 1.1267 time 15.30s
+Epoch: 78/100 Iter: 3/12 loss: 1.0337 time 15.30s
+Epoch: 78/100 Iter: 4/12 loss: 1.0256 time 15.30s
+Epoch: 78/100 Iter: 5/12 loss: 0.9931 time 15.31s
+Epoch: 78/100 Iter: 6/12 loss: 1.0630 time 15.30s
+Epoch: 78/100 Iter: 7/12 loss: 1.1384 time 15.30s
+Epoch: 78/100 Iter: 8/12 loss: 1.1705 time 15.30s
+Epoch: 78/100 Iter: 9/12 loss: 1.1966 time 15.30s
+Epoch: 78/100 Iter: 10/12 loss: 1.2171 time 15.30s
+Epoch: 78/100 Iter: 11/12 loss: 1.2790 time 15.30s
+Final training  78/99 loss: 1.2790 time 186.23s lr: 0.000057
+[EarlyStopping] improved to 1.279030
+0 Wed Oct 15 15:55:16 2025 Epoch: 79
+Epoch: 79/100 Iter: 0/12 loss: 0.5416 time 17.78s
+Epoch: 79/100 Iter: 1/12 loss: 0.7749 time 15.31s
+Epoch: 79/100 Iter: 2/12 loss: 0.8600 time 15.30s
+Epoch: 79/100 Iter: 3/12 loss: 1.0717 time 15.30s
+Epoch: 79/100 Iter: 4/12 loss: 1.1505 time 15.30s
+Epoch: 79/100 Iter: 5/12 loss: 1.1781 time 15.30s
+Epoch: 79/100 Iter: 6/12 loss: 1.2333 time 15.30s
+Epoch: 79/100 Iter: 7/12 loss: 1.2330 time 15.31s
+Epoch: 79/100 Iter: 8/12 loss: 1.2524 time 15.31s
+Epoch: 79/100 Iter: 9/12 loss: 1.3139 time 15.29s
+Epoch: 79/100 Iter: 10/12 loss: 1.3477 time 15.30s
+Epoch: 79/100 Iter: 11/12 loss: 1.3057 time 15.30s
+Final training  79/99 loss: 1.3057 time 186.15s lr: 0.000052
+[EarlyStopping] no improve (1/30)
+Val 79/100 0/27, Acc: 1.0000, time 1.97s
+Val 79/100 1/27, Acc: 0.5000, time 1.96s
+Val 79/100 2/27, Acc: 0.6667, time 1.97s
+Val 79/100 3/27, Acc: 0.7500, time 1.96s
+Val 79/100 4/27, Acc: 0.8000, time 1.94s
+Val 79/100 5/27, Acc: 0.8333, time 1.98s
+Val 79/100 6/27, Acc: 0.8571, time 1.95s
+Val 79/100 7/27, Acc: 0.8750, time 1.95s
+Val 79/100 8/27, Acc: 0.8889, time 1.96s
+Val 79/100 9/27, Acc: 0.8000, time 1.99s
+Val 79/100 10/27, Acc: 0.7273, time 2.01s
+Val 79/100 11/27, Acc: 0.7500, time 1.95s
+Val 79/100 12/27, Acc: 0.6923, time 1.99s
+Val 79/100 13/27, Acc: 0.7143, time 2.00s
+Val 79/100 14/27, Acc: 0.7333, time 2.00s
+Val 79/100 15/27, Acc: 0.7500, time 1.98s
+Val 79/100 16/27, Acc: 0.7059, time 2.00s
+Val 79/100 17/27, Acc: 0.6667, time 1.95s
+Val 79/100 18/27, Acc: 0.6842, time 2.10s
+Val 79/100 19/27, Acc: 0.7000, time 2.05s
+Val 79/100 20/27, Acc: 0.7143, time 1.99s
+Val 79/100 21/27, Acc: 0.7273, time 1.98s
+Val 79/100 22/27, Acc: 0.7391, time 1.96s
+Val 79/100 23/27, Acc: 0.7500, time 1.95s
+Val 79/100 24/27, Acc: 0.7600, time 1.97s
+Val 79/100 25/27, Acc: 0.7692, time 1.95s
+Val 79/100 26/27, Acc: 0.7778, time 1.94s
+[Val epoch 79] avg_acc=0.7778 | per-class [c0: 0.778, c1: 0.778, c2: 0.778]
+Final validation stats 79/99 , Val_acc: 0.7777777777777778 , time 53.41s
+[EarlyStopping] no improve (10/10)
+[EarlyStopping] stopping training for validation accuracy
+Training Finished !, Best Accuracy:  0.8148148148148148
+Saving plots to: outputs/OrganoidsINRIA/train/2025-10-15-11-30/plots/
+Total time spent: 16112.577730034

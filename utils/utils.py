@@ -806,3 +806,110 @@ def plot_loss_lr(
         plt.close()
     else:
         plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+from typing import Sequence, Optional
+
+def plot_confusion_matrix(
+    cm: np.ndarray,
+    class_names: Optional[Sequence] = None,
+    normalize: Optional[str] = None,   # opzioni: None, "true", "pred", "all"
+    title: Optional[str] = None,
+    figsize: tuple = (8, 6),
+    save_path: Optional[str] = None,
+    cmap: str = "Blues",
+    show_colorbar: bool = True,
+    annot: bool = True,
+    fmt: str = ".2f",
+    rotate_xticks: int = 45
+) -> None:
+    """
+    Plotta una confusion matrix già calcolata.
+
+    Args:
+        cm: matrice di confusione shape (num_classes, num_classes).
+        class_names: etichette asse x/y; se None, usa range(num_classes).
+        normalize: None (conteggi), "true" (normalizza per riga), 
+                   "pred" (normalizza per colonna), "all" (normalizza globale).
+        title: titolo del grafico; default "Confusion Matrix" (+ suffisso normalizzazione).
+        figsize: dimensioni figura (width, height).
+        save_path: percorso file per salvare il grafico; se None, mostra a schermo.
+        cmap: colormap Matplotlib.
+        show_colorbar: se True, mostra la colorbar.
+        annot: se True, scrive i valori nelle celle.
+        fmt: formato dei valori annotati quando normalizzati (es. ".2f").
+        rotate_xticks: rotazione etichette asse x in gradi.
+    """
+    cm = np.asarray(cm)
+    assert cm.ndim == 2 and cm.shape[0] == cm.shape[1], "cm deve essere una matrice quadrata"
+
+    num_classes = cm.shape[0]
+    if class_names is None:
+        class_names = np.arange(num_classes)
+
+    # Normalizzazione opzionale
+    cm_plot = cm.astype(np.float64)
+    norm_suffix = ""
+    if normalize is not None:
+        if normalize == "true":
+            denom = cm_plot.sum(axis=1, keepdims=True)
+            cm_plot = np.divide(cm_plot, denom, out=np.zeros_like(cm_plot), where=denom > 0)
+            norm_suffix = " (Normalized by True)"
+        elif normalize == "pred":
+            denom = cm_plot.sum(axis=0, keepdims=True)
+            cm_plot = np.divide(cm_plot, denom, out=np.zeros_like(cm_plot), where=denom > 0)
+            norm_suffix = " (Normalized by Pred)"
+        elif normalize == "all":
+            total = cm_plot.sum()
+            cm_plot = cm_plot / total if total > 0 else cm_plot
+            norm_suffix = " (Normalized Overall)"
+        else:
+            raise ValueError("normalize deve essere None, 'true', 'pred' o 'all'")
+
+    # Titolo
+    if title is None:
+        title = f"Confusion Matrix{norm_suffix}"
+
+    # Plot
+    fig, ax = plt.subplots(figsize=figsize)
+    im = ax.imshow(cm_plot, interpolation="nearest", cmap=cmap)
+    ax.set_title(title)
+    ax.set_xlabel("Predetta")
+    ax.set_ylabel("Reale")
+
+    # Tick e etichette
+    ax.set_xticks(np.arange(num_classes))
+    ax.set_yticks(np.arange(num_classes))
+    ax.set_xticklabels(class_names)
+    ax.set_yticklabels(class_names)
+    plt.setp(ax.get_xticklabels(), rotation=rotate_xticks, ha="right")
+
+    # Colorbar
+    if show_colorbar:
+        fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+
+    # Annotazioni nelle celle
+    if annot:
+        # Soglia per colore del testo
+        thresh = cm_plot.max() / 2.0 if cm_plot.size > 0 else 0.0
+        for i in range(num_classes):
+            for j in range(num_classes):
+                val = cm_plot[i, j]
+                if normalize is None:
+                    text_str = f"{int(cm[i, j])}"
+                else:
+                    text_str = format(val, fmt)
+                ax.text(
+                    j, i, text_str,
+                    ha="center", va="center",
+                    color="white" if val > thresh else "black"
+                )
+
+    fig.tight_layout()
+
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches="tight")
+        plt.close(fig)
+    else:
+        plt.show()
