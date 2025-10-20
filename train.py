@@ -197,9 +197,9 @@ def main_worker(gpu, args):
             logger.info(f"Caricati: {len(model.state_dict().keys())-len(incompatible.missing_keys)}")
 
         if "epoch" in checkpoint:
-            start_epoch = checkpoint["epoch"]  # ripristina lo stato di training se presente [web:27]
+            start_epoch = 0 #checkpoint["epoch"]  ripristina lo stato di training se presente [web:27]
         if "best_acc" in checkpoint:
-            best_acc = checkpoint["best_acc"]  # ripristina metrica migliore se presente [web:27]
+            best_acc = 0 #checkpoint["best_acc"]  ripristina metrica migliore se presente [web:27]
 
         msg = "=> loaded checkpoint for encoder10 '{}' (epoch {}) (bestacc {})".format(args.checkpoint, start_epoch, best_acc)  # messaggio riepilogo [web:27]
         print(msg)  # stampa su stdout [web:27]

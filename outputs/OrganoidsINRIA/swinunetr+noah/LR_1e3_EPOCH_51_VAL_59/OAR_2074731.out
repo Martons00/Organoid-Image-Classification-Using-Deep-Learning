@@ -922,3 +922,393 @@ Epoch: 34/100 Iter: 11/12 loss: 44.0937 time 15.32s
 Final training  34/99 loss: 44.0937 time 186.75s lr: 0.000768
 [EarlyStopping] no improve (13/30)
 0 Mon Oct 20 12:20:04 2025 Epoch: 35
+Epoch: 35/100 Iter: 0/12 loss: 9.8026 time 19.61s
+Epoch: 35/100 Iter: 1/12 loss: 5.9682 time 15.32s
+Epoch: 35/100 Iter: 2/12 loss: 30.2373 time 15.31s
+Epoch: 35/100 Iter: 3/12 loss: 50.4236 time 15.31s
+Epoch: 35/100 Iter: 4/12 loss: 49.1751 time 15.31s
+Epoch: 35/100 Iter: 5/12 loss: 42.9842 time 15.33s
+Epoch: 35/100 Iter: 6/12 loss: 44.3833 time 15.31s
+Epoch: 35/100 Iter: 7/12 loss: 42.4435 time 15.31s
+Epoch: 35/100 Iter: 8/12 loss: 53.3693 time 15.31s
+Epoch: 35/100 Iter: 9/12 loss: 69.4836 time 15.31s
+Epoch: 35/100 Iter: 10/12 loss: 72.0287 time 15.32s
+Epoch: 35/100 Iter: 11/12 loss: 71.5067 time 15.31s
+Final training  35/99 loss: 71.5067 time 188.11s lr: 0.000755
+[EarlyStopping] no improve (14/30)
+Val 35/100 0/27, Acc: 1.0000, time 1.94s
+Val 35/100 1/27, Acc: 0.5000, time 1.94s
+Val 35/100 2/27, Acc: 0.3333, time 1.95s
+Val 35/100 3/27, Acc: 0.2500, time 1.94s
+Val 35/100 4/27, Acc: 0.4000, time 1.94s
+Val 35/100 5/27, Acc: 0.5000, time 1.96s
+Val 35/100 6/27, Acc: 0.5714, time 1.94s
+Val 35/100 7/27, Acc: 0.6250, time 1.94s
+Val 35/100 8/27, Acc: 0.6667, time 1.94s
+Val 35/100 9/27, Acc: 0.7000, time 1.94s
+Val 35/100 10/27, Acc: 0.6364, time 1.96s
+Val 35/100 11/27, Acc: 0.6667, time 1.94s
+Val 35/100 12/27, Acc: 0.6923, time 1.95s
+Val 35/100 13/27, Acc: 0.6429, time 1.94s
+Val 35/100 14/27, Acc: 0.6667, time 1.95s
+Val 35/100 15/27, Acc: 0.6250, time 1.95s
+Val 35/100 16/27, Acc: 0.5882, time 1.97s
+Val 35/100 17/27, Acc: 0.5556, time 1.94s
+Val 35/100 18/27, Acc: 0.5263, time 2.03s
+Val 35/100 19/27, Acc: 0.5500, time 2.00s
+Val 35/100 20/27, Acc: 0.5238, time 1.95s
+Val 35/100 21/27, Acc: 0.5000, time 1.95s
+Val 35/100 22/27, Acc: 0.4783, time 1.95s
+Val 35/100 23/27, Acc: 0.4583, time 1.93s
+Val 35/100 24/27, Acc: 0.4400, time 1.95s
+Val 35/100 25/27, Acc: 0.4231, time 1.93s
+Val 35/100 26/27, Acc: 0.4074, time 1.93s
+[Val epoch 35] avg_acc=0.4074 | per-class [c0: 0.222, c1: 1.000, c2: 0.000]
+Final validation stats 35/99 , Val_acc: 0.4074074074074074 , time 52.65s
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr+noah/2025-10-20-10-22/model_final.pt
+[EarlyStopping] no improve (3/10)
+
+0 Mon Oct 20 12:24:07 2025 Epoch: 36
+Epoch: 36/100 Iter: 0/12 loss: 28.6749 time 17.54s
+Epoch: 36/100 Iter: 1/12 loss: 33.2793 time 15.31s
+Epoch: 36/100 Iter: 2/12 loss: 34.0637 time 15.31s
+Epoch: 36/100 Iter: 3/12 loss: 58.1165 time 15.30s
+Epoch: 36/100 Iter: 4/12 loss: 56.2717 time 15.31s
+Epoch: 36/100 Iter: 5/12 loss: 62.1017 time 15.31s
+Epoch: 36/100 Iter: 6/12 loss: 59.7495 time 15.31s
+Epoch: 36/100 Iter: 7/12 loss: 58.7664 time 15.32s
+Epoch: 36/100 Iter: 8/12 loss: 55.9014 time 15.32s
+Epoch: 36/100 Iter: 9/12 loss: 53.4062 time 15.31s
+Epoch: 36/100 Iter: 10/12 loss: 54.3135 time 15.32s
+Epoch: 36/100 Iter: 11/12 loss: 55.4742 time 15.31s
+Final training  36/99 loss: 55.4742 time 186.02s lr: 0.000741
+[EarlyStopping] no improve (15/30)
+0 Mon Oct 20 12:27:13 2025 Epoch: 37
+Epoch: 37/100 Iter: 0/12 loss: 34.5367 time 20.13s
+Epoch: 37/100 Iter: 1/12 loss: 28.8173 time 15.31s
+Epoch: 37/100 Iter: 2/12 loss: 21.1216 time 15.31s
+Epoch: 37/100 Iter: 3/12 loss: 18.8779 time 15.31s
+Epoch: 37/100 Iter: 4/12 loss: 37.0730 time 15.31s
+Epoch: 37/100 Iter: 5/12 loss: 37.9548 time 15.31s
+Epoch: 37/100 Iter: 6/12 loss: 38.0118 time 15.30s
+Epoch: 37/100 Iter: 7/12 loss: 43.6835 time 15.31s
+Epoch: 37/100 Iter: 8/12 loss: 50.4026 time 15.31s
+Epoch: 37/100 Iter: 9/12 loss: 50.9580 time 15.32s
+Epoch: 37/100 Iter: 10/12 loss: 46.3114 time 15.31s
+Epoch: 37/100 Iter: 11/12 loss: 42.4533 time 15.32s
+Final training  37/99 loss: 42.4533 time 188.59s lr: 0.000726
+[EarlyStopping] no improve (16/30)
+0 Mon Oct 20 12:30:22 2025 Epoch: 38
+Epoch: 38/100 Iter: 0/12 loss: 10.5013 time 19.58s
+Epoch: 38/100 Iter: 1/12 loss: 35.2410 time 15.32s
+Epoch: 38/100 Iter: 2/12 loss: 34.5015 time 15.31s
+Epoch: 38/100 Iter: 3/12 loss: 28.2776 time 15.31s
+Epoch: 38/100 Iter: 4/12 loss: 28.0148 time 15.32s
+Epoch: 38/100 Iter: 5/12 loss: 29.5729 time 15.33s
+Epoch: 38/100 Iter: 6/12 loss: 35.8670 time 15.32s
+Epoch: 38/100 Iter: 7/12 loss: 32.6273 time 15.31s
+Epoch: 38/100 Iter: 8/12 loss: 32.6591 time 15.32s
+Epoch: 38/100 Iter: 9/12 loss: 30.1015 time 15.31s
+Epoch: 38/100 Iter: 10/12 loss: 29.7890 time 15.31s
+Epoch: 38/100 Iter: 11/12 loss: 30.0460 time 15.31s
+Final training  38/99 loss: 30.0460 time 188.11s lr: 0.000712
+[EarlyStopping] no improve (17/30)
+0 Mon Oct 20 12:33:30 2025 Epoch: 39
+Epoch: 39/100 Iter: 0/12 loss: 4.8747 time 17.42s
+Epoch: 39/100 Iter: 1/12 loss: 27.2661 time 15.32s
+Epoch: 39/100 Iter: 2/12 loss: 30.9430 time 15.31s
+Epoch: 39/100 Iter: 3/12 loss: 26.0884 time 15.31s
+Epoch: 39/100 Iter: 4/12 loss: 22.0589 time 15.32s
+Epoch: 39/100 Iter: 5/12 loss: 22.9327 time 15.32s
+Epoch: 39/100 Iter: 6/12 loss: 21.8008 time 15.31s
+Epoch: 39/100 Iter: 7/12 loss: 20.4337 time 15.31s
+Epoch: 39/100 Iter: 8/12 loss: 19.3634 time 15.31s
+Epoch: 39/100 Iter: 9/12 loss: 19.2634 time 15.31s
+Epoch: 39/100 Iter: 10/12 loss: 18.0094 time 15.31s
+Epoch: 39/100 Iter: 11/12 loss: 19.2183 time 15.31s
+Final training  39/99 loss: 19.2183 time 185.93s lr: 0.000697
+[EarlyStopping] no improve (18/30)
+Val 39/100 0/27, Acc: 1.0000, time 1.94s
+Val 39/100 1/27, Acc: 0.5000, time 1.95s
+Val 39/100 2/27, Acc: 0.6667, time 1.95s
+Val 39/100 3/27, Acc: 0.5000, time 1.95s
+Val 39/100 4/27, Acc: 0.6000, time 1.93s
+Val 39/100 5/27, Acc: 0.6667, time 1.98s
+Val 39/100 6/27, Acc: 0.7143, time 1.94s
+Val 39/100 7/27, Acc: 0.7500, time 1.94s
+Val 39/100 8/27, Acc: 0.7778, time 1.94s
+Val 39/100 9/27, Acc: 0.8000, time 1.95s
+Val 39/100 10/27, Acc: 0.8182, time 1.96s
+Val 39/100 11/27, Acc: 0.8333, time 1.94s
+Val 39/100 12/27, Acc: 0.7692, time 1.94s
+Val 39/100 13/27, Acc: 0.7143, time 1.95s
+Val 39/100 14/27, Acc: 0.7333, time 1.94s
+Val 39/100 15/27, Acc: 0.7500, time 1.95s
+Val 39/100 16/27, Acc: 0.7059, time 1.97s
+Val 39/100 17/27, Acc: 0.6667, time 1.94s
+Val 39/100 18/27, Acc: 0.6842, time 2.03s
+Val 39/100 19/27, Acc: 0.7000, time 2.00s
+Val 39/100 20/27, Acc: 0.6667, time 1.95s
+Val 39/100 21/27, Acc: 0.6818, time 1.95s
+Val 39/100 22/27, Acc: 0.6522, time 1.94s
+Val 39/100 23/27, Acc: 0.6250, time 1.93s
+Val 39/100 24/27, Acc: 0.6400, time 1.96s
+Val 39/100 25/27, Acc: 0.6154, time 1.93s
+Val 39/100 26/27, Acc: 0.5926, time 1.93s
+[Val epoch 39] avg_acc=0.5926 | per-class [c0: 0.778, c1: 0.889, c2: 0.111]
+Final validation stats 39/99 , Val_acc: 0.5925925925925926 , time 52.72s
+new best (0.555556 --> 0.592593). 
+Saving new best model to model_final.pt
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr+noah/2025-10-20-10-22/model.pt
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr+noah/2025-10-20-10-22/model_final.pt
+Copying to model.pt new best model!!!!
+[EarlyStopping] improved to 0.592593
+
+0 Mon Oct 20 12:37:37 2025 Epoch: 40
+Epoch: 40/100 Iter: 0/12 loss: 45.2839 time 18.46s
+Epoch: 40/100 Iter: 1/12 loss: 22.7261 time 15.29s
+Epoch: 40/100 Iter: 2/12 loss: 18.5002 time 15.29s
+Epoch: 40/100 Iter: 3/12 loss: 20.2127 time 15.29s
+Epoch: 40/100 Iter: 4/12 loss: 17.7797 time 15.31s
+Epoch: 40/100 Iter: 5/12 loss: 17.0187 time 15.31s
+Epoch: 40/100 Iter: 6/12 loss: 17.8538 time 15.31s
+Epoch: 40/100 Iter: 7/12 loss: 17.9339 time 15.31s
+Epoch: 40/100 Iter: 8/12 loss: 16.0648 time 15.31s
+Epoch: 40/100 Iter: 9/12 loss: 20.2779 time 15.30s
+Epoch: 40/100 Iter: 10/12 loss: 21.4317 time 15.31s
+Epoch: 40/100 Iter: 11/12 loss: 20.9554 time 15.31s
+Final training  40/99 loss: 20.9554 time 186.85s lr: 0.000682
+[EarlyStopping] no improve (19/30)
+0 Mon Oct 20 12:40:44 2025 Epoch: 41
+Epoch: 41/100 Iter: 0/12 loss: 1.4508 time 17.48s
+Epoch: 41/100 Iter: 1/12 loss: 8.7259 time 15.32s
+Epoch: 41/100 Iter: 2/12 loss: 9.2408 time 15.31s
+Epoch: 41/100 Iter: 3/12 loss: 21.6448 time 15.31s
+Epoch: 41/100 Iter: 4/12 loss: 19.2250 time 15.31s
+Epoch: 41/100 Iter: 5/12 loss: 20.2768 time 15.31s
+Epoch: 41/100 Iter: 6/12 loss: 17.3593 time 15.31s
+Epoch: 41/100 Iter: 7/12 loss: 23.8142 time 15.31s
+Epoch: 41/100 Iter: 8/12 loss: 28.8745 time 15.31s
+Epoch: 41/100 Iter: 9/12 loss: 30.8612 time 15.31s
+Epoch: 41/100 Iter: 10/12 loss: 29.9005 time 15.31s
+Epoch: 41/100 Iter: 11/12 loss: 27.5900 time 15.32s
+Final training  41/99 loss: 27.5900 time 185.93s lr: 0.000667
+[EarlyStopping] no improve (20/30)
+0 Mon Oct 20 12:43:50 2025 Epoch: 42
+Epoch: 42/100 Iter: 0/12 loss: -0.1366 time 20.08s
+Epoch: 42/100 Iter: 1/12 loss: 10.0384 time 15.32s
+Epoch: 42/100 Iter: 2/12 loss: 6.8432 time 15.31s
+Epoch: 42/100 Iter: 3/12 loss: 22.8987 time 15.31s
+Epoch: 42/100 Iter: 4/12 loss: 24.5988 time 15.31s
+Epoch: 42/100 Iter: 5/12 loss: 24.3067 time 15.31s
+Epoch: 42/100 Iter: 6/12 loss: 23.9157 time 15.31s
+Epoch: 42/100 Iter: 7/12 loss: 26.9208 time 15.30s
+Epoch: 42/100 Iter: 8/12 loss: 26.9254 time 15.31s
+Epoch: 42/100 Iter: 9/12 loss: 26.9700 time 15.31s
+Epoch: 42/100 Iter: 10/12 loss: 24.5041 time 15.32s
+Epoch: 42/100 Iter: 11/12 loss: 23.4450 time 15.31s
+Final training  42/99 loss: 23.4450 time 188.55s lr: 0.000651
+[EarlyStopping] no improve (21/30)
+0 Mon Oct 20 12:46:59 2025 Epoch: 43
+Epoch: 43/100 Iter: 0/12 loss: 50.2246 time 19.29s
+Epoch: 43/100 Iter: 1/12 loss: 26.4897 time 15.32s
+Epoch: 43/100 Iter: 2/12 loss: 23.1500 time 15.31s
+Epoch: 43/100 Iter: 3/12 loss: 18.5996 time 15.31s
+Epoch: 43/100 Iter: 4/12 loss: 15.3141 time 15.31s
+Epoch: 43/100 Iter: 5/12 loss: 14.5045 time 15.31s
+Epoch: 43/100 Iter: 6/12 loss: 14.9623 time 15.31s
+Epoch: 43/100 Iter: 7/12 loss: 13.3538 time 15.31s
+Epoch: 43/100 Iter: 8/12 loss: 13.7731 time 15.31s
+Epoch: 43/100 Iter: 9/12 loss: 15.0811 time 15.31s
+Epoch: 43/100 Iter: 10/12 loss: 14.4378 time 15.31s
+Epoch: 43/100 Iter: 11/12 loss: 13.6781 time 15.31s
+Final training  43/99 loss: 13.6781 time 187.74s lr: 0.000636
+[EarlyStopping] no improve (22/30)
+Val 43/100 0/27, Acc: 0.0000, time 1.94s
+Val 43/100 1/27, Acc: 0.0000, time 1.95s
+Val 43/100 2/27, Acc: 0.0000, time 1.95s
+Val 43/100 3/27, Acc: 0.0000, time 1.98s
+Val 43/100 4/27, Acc: 0.2000, time 1.94s
+Val 43/100 5/27, Acc: 0.1667, time 1.96s
+Val 43/100 6/27, Acc: 0.2857, time 1.94s
+Val 43/100 7/27, Acc: 0.3750, time 1.94s
+Val 43/100 8/27, Acc: 0.4444, time 1.96s
+Val 43/100 9/27, Acc: 0.5000, time 1.94s
+Val 43/100 10/27, Acc: 0.5455, time 1.96s
+Val 43/100 11/27, Acc: 0.5833, time 1.94s
+Val 43/100 12/27, Acc: 0.6154, time 1.96s
+Val 43/100 13/27, Acc: 0.5714, time 1.94s
+Val 43/100 14/27, Acc: 0.6000, time 1.95s
+Val 43/100 15/27, Acc: 0.6250, time 1.96s
+Val 43/100 16/27, Acc: 0.5882, time 1.97s
+Val 43/100 17/27, Acc: 0.5556, time 1.94s
+Val 43/100 18/27, Acc: 0.5789, time 2.03s
+Val 43/100 19/27, Acc: 0.6000, time 2.00s
+Val 43/100 20/27, Acc: 0.6190, time 1.95s
+Val 43/100 21/27, Acc: 0.5909, time 1.95s
+Val 43/100 22/27, Acc: 0.6087, time 1.95s
+Val 43/100 23/27, Acc: 0.5833, time 1.96s
+Val 43/100 24/27, Acc: 0.5600, time 1.95s
+Val 43/100 25/27, Acc: 0.5385, time 1.93s
+Val 43/100 26/27, Acc: 0.5185, time 1.93s
+[Val epoch 43] avg_acc=0.5185 | per-class [c0: 0.333, c1: 0.889, c2: 0.333]
+Final validation stats 43/99 , Val_acc: 0.5185185185185185 , time 52.75s
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr+noah/2025-10-20-10-22/model_final.pt
+[EarlyStopping] no improve (1/10)
+
+0 Mon Oct 20 12:51:01 2025 Epoch: 44
+Epoch: 44/100 Iter: 0/12 loss: 5.6355 time 19.66s
+Epoch: 44/100 Iter: 1/12 loss: 9.2242 time 15.31s
+Epoch: 44/100 Iter: 2/12 loss: 6.1910 time 15.30s
+Epoch: 44/100 Iter: 3/12 loss: 6.1171 time 15.31s
+Epoch: 44/100 Iter: 4/12 loss: 6.5415 time 15.31s
+Epoch: 44/100 Iter: 5/12 loss: 10.3996 time 15.30s
+Epoch: 44/100 Iter: 6/12 loss: 10.7797 time 15.31s
+Epoch: 44/100 Iter: 7/12 loss: 13.9388 time 15.31s
+Epoch: 44/100 Iter: 8/12 loss: 14.5673 time 15.31s
+Epoch: 44/100 Iter: 9/12 loss: 14.8853 time 15.31s
+Epoch: 44/100 Iter: 10/12 loss: 14.4132 time 15.31s
+Epoch: 44/100 Iter: 11/12 loss: 13.3400 time 15.31s
+Final training  44/99 loss: 13.3400 time 188.11s lr: 0.000620
+[EarlyStopping] no improve (23/30)
+0 Mon Oct 20 12:54:09 2025 Epoch: 45
+Epoch: 45/100 Iter: 0/12 loss: 66.3558 time 19.00s
+Epoch: 45/100 Iter: 1/12 loss: 43.4000 time 15.32s
+Epoch: 45/100 Iter: 2/12 loss: 32.6267 time 15.31s
+Epoch: 45/100 Iter: 3/12 loss: 32.1270 time 15.30s
+Epoch: 45/100 Iter: 4/12 loss: 28.5363 time 15.31s
+Epoch: 45/100 Iter: 5/12 loss: 26.5199 time 15.30s
+Epoch: 45/100 Iter: 6/12 loss: 34.7454 time 15.30s
+Epoch: 45/100 Iter: 7/12 loss: 35.5609 time 15.32s
+Epoch: 45/100 Iter: 8/12 loss: 36.5600 time 15.31s
+Epoch: 45/100 Iter: 9/12 loss: 33.0145 time 15.31s
+Epoch: 45/100 Iter: 10/12 loss: 35.0984 time 15.31s
+Epoch: 45/100 Iter: 11/12 loss: 37.1799 time 15.32s
+Final training  45/99 loss: 37.1799 time 187.48s lr: 0.000604
+[EarlyStopping] no improve (24/30)
+0 Mon Oct 20 12:57:17 2025 Epoch: 46
+Epoch: 46/100 Iter: 0/12 loss: 27.9716 time 19.55s
+Epoch: 46/100 Iter: 1/12 loss: 35.4104 time 15.32s
+Epoch: 46/100 Iter: 2/12 loss: 28.9043 time 15.32s
+Epoch: 46/100 Iter: 3/12 loss: 38.6441 time 15.31s
+Epoch: 46/100 Iter: 4/12 loss: 33.7834 time 15.31s
+Epoch: 46/100 Iter: 5/12 loss: 30.5309 time 15.31s
+Epoch: 46/100 Iter: 6/12 loss: 33.6869 time 15.31s
+Epoch: 46/100 Iter: 7/12 loss: 31.9551 time 15.31s
+Epoch: 46/100 Iter: 8/12 loss: 37.2614 time 15.31s
+Epoch: 46/100 Iter: 9/12 loss: 34.0974 time 15.31s
+Epoch: 46/100 Iter: 10/12 loss: 31.4320 time 15.32s
+Epoch: 46/100 Iter: 11/12 loss: 29.2678 time 15.31s
+Final training  46/99 loss: 29.2678 time 188.03s lr: 0.000589
+[EarlyStopping] no improve (25/30)
+0 Mon Oct 20 13:00:25 2025 Epoch: 47
+Epoch: 47/100 Iter: 0/12 loss: 46.8021 time 17.80s
+Epoch: 47/100 Iter: 1/12 loss: 59.0058 time 15.32s
+Epoch: 47/100 Iter: 2/12 loss: 43.4685 time 15.31s
+Epoch: 47/100 Iter: 3/12 loss: 38.7146 time 15.31s
+Epoch: 47/100 Iter: 4/12 loss: 37.7947 time 15.32s
+Epoch: 47/100 Iter: 5/12 loss: 35.1601 time 15.31s
+Epoch: 47/100 Iter: 6/12 loss: 32.2013 time 15.31s
+Epoch: 47/100 Iter: 7/12 loss: 29.6291 time 15.31s
+Epoch: 47/100 Iter: 8/12 loss: 32.0106 time 15.31s
+Epoch: 47/100 Iter: 9/12 loss: 29.6272 time 15.31s
+Epoch: 47/100 Iter: 10/12 loss: 26.9207 time 15.32s
+Epoch: 47/100 Iter: 11/12 loss: 24.6664 time 15.32s
+Final training  47/99 loss: 24.6664 time 186.29s lr: 0.000573
+[EarlyStopping] no improve (26/30)
+Val 47/100 0/27, Acc: 0.0000, time 1.94s
+Val 47/100 1/27, Acc: 0.0000, time 1.95s
+Val 47/100 2/27, Acc: 0.0000, time 1.95s
+Val 47/100 3/27, Acc: 0.2500, time 1.95s
+Val 47/100 4/27, Acc: 0.2000, time 1.94s
+Val 47/100 5/27, Acc: 0.1667, time 1.96s
+Val 47/100 6/27, Acc: 0.2857, time 1.94s
+Val 47/100 7/27, Acc: 0.3750, time 1.95s
+Val 47/100 8/27, Acc: 0.4444, time 1.94s
+Val 47/100 9/27, Acc: 0.4000, time 1.95s
+Val 47/100 10/27, Acc: 0.3636, time 1.96s
+Val 47/100 11/27, Acc: 0.4167, time 1.94s
+Val 47/100 12/27, Acc: 0.3846, time 1.95s
+Val 47/100 13/27, Acc: 0.4286, time 1.94s
+Val 47/100 14/27, Acc: 0.4000, time 1.94s
+Val 47/100 15/27, Acc: 0.4375, time 1.96s
+Val 47/100 16/27, Acc: 0.4118, time 1.97s
+Val 47/100 17/27, Acc: 0.3889, time 1.94s
+Val 47/100 18/27, Acc: 0.4211, time 2.03s
+Val 47/100 19/27, Acc: 0.4500, time 2.00s
+Val 47/100 20/27, Acc: 0.4762, time 1.95s
+Val 47/100 21/27, Acc: 0.4545, time 1.95s
+Val 47/100 22/27, Acc: 0.4783, time 1.95s
+Val 47/100 23/27, Acc: 0.5000, time 1.94s
+Val 47/100 24/27, Acc: 0.4800, time 1.95s
+Val 47/100 25/27, Acc: 0.5000, time 1.93s
+Val 47/100 26/27, Acc: 0.5185, time 1.93s
+[Val epoch 47] avg_acc=0.5185 | per-class [c0: 0.333, c1: 0.444, c2: 0.778]
+Final validation stats 47/99 , Val_acc: 0.5185185185185185 , time 52.69s
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr+noah/2025-10-20-10-22/model_final.pt
+[EarlyStopping] no improve (2/10)
+
+0 Mon Oct 20 13:04:26 2025 Epoch: 48
+Epoch: 48/100 Iter: 0/12 loss: 6.6607 time 18.61s
+Epoch: 48/100 Iter: 1/12 loss: 13.2936 time 15.32s
+Epoch: 48/100 Iter: 2/12 loss: 8.8397 time 15.31s
+Epoch: 48/100 Iter: 3/12 loss: 7.4506 time 15.30s
+Epoch: 48/100 Iter: 4/12 loss: 7.1099 time 15.31s
+Epoch: 48/100 Iter: 5/12 loss: 6.7293 time 15.30s
+Epoch: 48/100 Iter: 6/12 loss: 11.1396 time 15.31s
+Epoch: 48/100 Iter: 7/12 loss: 11.6912 time 15.31s
+Epoch: 48/100 Iter: 8/12 loss: 11.1044 time 15.31s
+Epoch: 48/100 Iter: 9/12 loss: 9.9882 time 15.31s
+Epoch: 48/100 Iter: 10/12 loss: 11.8479 time 15.31s
+Epoch: 48/100 Iter: 11/12 loss: 12.5651 time 15.31s
+Final training  48/99 loss: 12.5651 time 187.05s lr: 0.000557
+[EarlyStopping] no improve (27/30)
+0 Mon Oct 20 13:07:33 2025 Epoch: 49
+Epoch: 49/100 Iter: 0/12 loss: 3.1273 time 17.34s
+Epoch: 49/100 Iter: 1/12 loss: 2.8723 time 15.32s
+Epoch: 49/100 Iter: 2/12 loss: 4.1613 time 15.31s
+Epoch: 49/100 Iter: 3/12 loss: 5.0679 time 15.31s
+Epoch: 49/100 Iter: 4/12 loss: 10.4547 time 15.31s
+Epoch: 49/100 Iter: 5/12 loss: 14.4075 time 15.30s
+Epoch: 49/100 Iter: 6/12 loss: 15.8543 time 15.31s
+Epoch: 49/100 Iter: 7/12 loss: 18.0343 time 15.31s
+Epoch: 49/100 Iter: 8/12 loss: 23.0217 time 15.31s
+Epoch: 49/100 Iter: 9/12 loss: 21.1725 time 15.31s
+Epoch: 49/100 Iter: 10/12 loss: 20.1565 time 15.31s
+Epoch: 49/100 Iter: 11/12 loss: 21.0033 time 15.31s
+Final training  49/99 loss: 21.0033 time 185.82s lr: 0.000540
+[EarlyStopping] no improve (28/30)
+0 Mon Oct 20 13:10:39 2025 Epoch: 50
+Epoch: 50/100 Iter: 0/12 loss: 20.2190 time 19.64s
+Epoch: 50/100 Iter: 1/12 loss: 18.8112 time 15.30s
+Epoch: 50/100 Iter: 2/12 loss: 15.3621 time 15.31s
+Epoch: 50/100 Iter: 3/12 loss: 13.2320 time 15.31s
+Epoch: 50/100 Iter: 4/12 loss: 12.0290 time 15.32s
+Epoch: 50/100 Iter: 5/12 loss: 10.9358 time 15.30s
+Epoch: 50/100 Iter: 6/12 loss: 12.3246 time 15.30s
+Epoch: 50/100 Iter: 7/12 loss: 11.9157 time 15.31s
+Epoch: 50/100 Iter: 8/12 loss: 14.5914 time 15.31s
+Epoch: 50/100 Iter: 9/12 loss: 13.6229 time 15.31s
+Epoch: 50/100 Iter: 10/12 loss: 12.4362 time 15.31s
+Epoch: 50/100 Iter: 11/12 loss: 14.6479 time 15.31s
+Final training  50/99 loss: 14.6479 time 188.08s lr: 0.000524
+[EarlyStopping] no improve (29/30)
+0 Mon Oct 20 13:13:47 2025 Epoch: 51
+Epoch: 51/100 Iter: 0/12 loss: 30.0377 time 19.64s
+Epoch: 51/100 Iter: 1/12 loss: 59.2939 time 15.31s
+Epoch: 51/100 Iter: 2/12 loss: 42.4963 time 15.30s
+Epoch: 51/100 Iter: 3/12 loss: 33.0979 time 15.30s
+Epoch: 51/100 Iter: 4/12 loss: 29.4337 time 15.31s
+Epoch: 51/100 Iter: 5/12 loss: 31.4818 time 15.30s
+Epoch: 51/100 Iter: 6/12 loss: 31.0384 time 15.31s
+Epoch: 51/100 Iter: 7/12 loss: 32.0949 time 15.31s
+Epoch: 51/100 Iter: 8/12 loss: 29.3833 time 15.31s
+Epoch: 51/100 Iter: 9/12 loss: 28.3582 time 15.31s
+Epoch: 51/100 Iter: 10/12 loss: 28.2445 time 15.31s
+Epoch: 51/100 Iter: 11/12 loss: 26.6034 time 15.31s
+Final training  51/99 loss: 26.6034 time 188.04s lr: 0.000508
+[EarlyStopping] no improve (30/30)
+[EarlyStopping] stopping training for loss
+Training Finished !, Best Accuracy:  0.5925925925925926
+Saving plots to: outputs/OrganoidsINRIA/swinunetr+noah/2025-10-20-10-22/plots/
+Total time spent: 10463.939314656978

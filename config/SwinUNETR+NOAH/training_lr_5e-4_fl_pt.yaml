@@ -10,15 +10,15 @@ SYSTEM:
   workers: 8
   output_dir: "outputs/"
   logs_dir: "logs/"
-  telegram_log: false
+  telegram_log: true
   telegram_token: "./token/tlg_token.txt"
   oar_id: 0
 
 MODEL:
-  name: "swinunetr_test" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah"
+  name: "swinunetr+noah" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah" 
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
-  checkpoint: "" #"./pretrained_models/encode10/model.pt"
+  checkpoint: "./pretrained_models/encode10/model.pt"
   resume_ckpt: false
   feature_size: 48
   in_channels: 1
@@ -48,10 +48,10 @@ AUGMENTATION:
   RandShiftIntensityd_prob: 0.1
 
 TRAINING:
-  max_epochs: 3
-  batch_size: 3
+  max_epochs: 100
+  batch_size: 8
   sw_batch_size: 1
-  val_every: 1
+  val_every: 4
   folds: false
   k_folds: 5
   early_stopping: true
@@ -59,14 +59,14 @@ TRAINING:
   min_delta_val: 0.02
   patience_loss: 30
   min_delta_loss: 0.01
-  debug: true
+  debug: false
   debug_train_samples: 3
   debug_val_samples: 3
   split_method: "balanced"  # "random" , "stratified" or "balanced"
   save_checkpoint: true
   noamp: false
   # Optimizer parameters
-  optim_lr: 1e-5
+  optim_lr: 5e-4
   optim_name: "adamw" # "adam", "adamw" or "sgd"
   reg_weight: 5e-5
   momentum: 0.99
@@ -74,8 +74,10 @@ TRAINING:
   lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
   warmup_epochs: 3
 
+
 LOSS:
   loss_name: "FocalLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+
 
 INFERENCE:
   infer_overlap: 0.5

@@ -27,13 +27,30 @@ from optimizers.early_stop import EarlyStopping  # Uncomment if used
 from tools.similarity import compute_similarity_matrix, plot_similarity_heatmap, plot_similarity_heatmap_new
 
 
-def freeze_backbone_and_select_head_fixed(model):
+def freeze_backbone_and_select_head_fixed_plus(model):
     """Freezing corretto - chiama SOLO UNA VOLTA all'inizio del training"""
     frozen_params = 0
     trainable_params = 0
     
     for name, param in model.named_parameters():
         if 'global_pool' in name or 'fc' in name or 'head' in name or "encoder10" in name:
+            param.requires_grad = True
+            trainable_params += param.numel()
+            print(f"✓ Unfrozen: {name} ({param.numel()} params)")
+        else:
+            param.requires_grad = False
+            frozen_params += param.numel()
+    
+    #print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
+    return model
+
+def freeze_backbone_and_select_head_fixed(model):
+    """Freezing corretto - chiama SOLO UNA VOLTA all'inizio del training"""
+    frozen_params = 0
+    trainable_params = 0
+    
+    for name, param in model.named_parameters():
+        if 'global_pool' in name or 'fc' in name or 'head' in name:
             param.requires_grad = True
             trainable_params += param.numel()
             print(f"✓ Unfrozen: {name} ({param.numel()} params)")
@@ -387,7 +404,11 @@ def run_training(
     val_acc_max = 0.0
 
     # Chiama SOLO una volta prima del training loop
-    model = freeze_backbone_and_select_head_fixed(model)
+    if args.checkpoint is None:
+        model = freeze_backbone_and_select_head_fixed_plus(model)
+    else:
+        model = freeze_backbone_and_select_head_fixed(model)
+        print("Loaded from checkpoint, all layers unfrozen for fine-tuning.")
 
     # for name, param in model.named_parameters():
     #     param.requires_grad = True
