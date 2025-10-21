@@ -1,0 +1,38 @@
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+Traceback (most recent call last):
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train.py", line 475, in <module>
+    main()
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train.py", line 82, in main
+    raise e  # Re-raise the exception for further handling if needed
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train.py", line 75, in main
+    main_worker(gpu=0, args=args)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train.py", line 450, in main_worker
+    accuracy = run_training(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/utils/trainer.py", line 546, in run_training
+    asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/utils/data_utils.py", line 429, in send_alert
+    await application.bot.send_message(chat_id=chat_id, text=message, parse_mode=ParseMode.MARKDOWN)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/ext/_extbot.py", line 3107, in send_message
+    return await super().send_message(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/_bot.py", line 1118, in send_message
+    return await self._send_message(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/ext/_extbot.py", line 634, in _send_message
+    result = await super()._send_message(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/_bot.py", line 819, in _send_message
+    result = await self._post(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/_bot.py", line 703, in _post
+    return await self._do_post(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/ext/_extbot.py", line 372, in _do_post
+    return await super()._do_post(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/_bot.py", line 732, in _do_post
+    result = await request.post(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 87

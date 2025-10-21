@@ -18,7 +18,7 @@ MODEL:
   name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder"
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
-  checkpoint: null
+  checkpoint: "./pretrained_models/encode10/model.pt"
   resume_ckpt: false
   feature_size: 48
   in_channels: 1

@@ -15,10 +15,10 @@ SYSTEM:
   oar_id: 0
 
 MODEL:
-  name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder"
+  name: "swinunetr+noah" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah" 
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
-  checkpoint: null
+  checkpoint: "./pretrained_models/encode10/model.pt"
   resume_ckpt: false
   feature_size: 48
   in_channels: 1
@@ -55,9 +55,9 @@ TRAINING:
   folds: false
   k_folds: 5
   early_stopping: true
-  patience_val: 15
+  patience_val: 30
   min_delta_val: 0.02
-  patience_loss: 50
+  patience_loss: 60
   min_delta_loss: 0.01
   debug: false
   debug_train_samples: 3
@@ -66,7 +66,7 @@ TRAINING:
   save_checkpoint: true
   noamp: false
   # Optimizer parameters
-  optim_lr: 1e-4
+  optim_lr: 1e-3
   optim_name: "adamw" # "adam", "adamw" or "sgd"
   reg_weight: 5e-5
   momentum: 0.99

@@ -48,16 +48,16 @@ AUGMENTATION:
   RandShiftIntensityd_prob: 0.1
 
 TRAINING:
-  max_epochs: 100
+  max_epochs: 150
   batch_size: 8
   sw_batch_size: 1
   val_every: 4
   folds: false
   k_folds: 5
   early_stopping: true
-  patience_val: 10
+  patience_val: 30
   min_delta_val: 0.02
-  patience_loss: 30
+  patience_loss: 60
   min_delta_loss: 0.01
   debug: false
   debug_train_samples: 3

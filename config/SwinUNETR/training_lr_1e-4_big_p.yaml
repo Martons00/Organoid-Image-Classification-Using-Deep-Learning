@@ -37,8 +37,8 @@ DATASET:
   fold: 0
   cache_dataset: false
   # ROI size
-  roi_x: 128
-  roi_y: 128
+  roi_x: 256
+  roi_y: 256
   roi_z: 128
 
 AUGMENTATION:
