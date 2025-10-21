@@ -15,7 +15,7 @@ SYSTEM:
   oar_id: 0
 
 MODEL:
-  name: "swinunetr_test" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah"
+  name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah"
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
   checkpoint: "" #"./pretrained_models/encode10/model.pt"
@@ -76,6 +76,8 @@ TRAINING:
 
 LOSS:
   loss_name: "FocalLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+  similarity_loss: "contrastive"  # "contrastive" or "margin" or ""
+  similarity_loss_weight: 10.0
 
 INFERENCE:
   infer_overlap: 0.5

@@ -154,6 +154,9 @@ _C.LOSS = CN()
 
 _C.LOSS.loss_name = "CE" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
 
+_C.LOSS.similarity_loss = ""  # "contrastive" or "margin" or ""
+
+_C.LOSS.similarity_loss_weight = 0.0
 
 # Inference settings
 
@@ -301,6 +304,8 @@ def config_to_args(cfg):
     
     # Loss
     args.loss_name = cfg.LOSS.loss_name
+    args.similarity_loss = cfg.LOSS.similarity_loss
+    args.similarity_loss_weight = cfg.LOSS.similarity_loss_weight
 
     # Inference
     args.infer_overlap = cfg.INFERENCE.infer_overlap

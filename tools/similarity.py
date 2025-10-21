@@ -6,19 +6,59 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def compute_similarity_matrix(features, metric='cosine'):
-    """Calcola matrice di similarità tra feature"""
-    features = F.normalize(features, p=2, dim=1)  # Normalizza per coseno
-    
-    if metric == 'cosine':
-        # Cosine similarity: A·B / (||A|| ||B||)
-        similarity_matrix = torch.mm(features, features.t())
-    elif metric == 'euclidean':
-        # Distanza euclidea convertita in similarità
-        dist_matrix = torch.cdist(features, features, p=2)
-        similarity_matrix = 1 / (1 + dist_matrix)  # Converti distanza in similarità
-    
-    return similarity_matrix.numpy()
+import torch
+import torch.nn.functional as F
+from typing import Optional
+
+def compute_similarity_matrix(
+    features: torch.Tensor,
+    metric: str = "cosine",            # "cosine" | "dot" | "euclidean" | "rbf"
+    normalize: Optional[bool] = None,  # default intelligente per metrica
+    rbf_gamma: Optional[float] = None, # se None, stima con median heuristic
+    eps: float = 1e-12,
+) -> torch.Tensor:
+    """
+    Restituisce una matrice di similarità NxN come torch.Tensor (no numpy).
+    Converte a numpy solo fuori da questa funzione per il plotting.
+    """
+    assert features.ndim == 2, "features deve essere [N, D]"
+    N, D = features.shape
+
+    if normalize is None:
+        normalize = (metric in ("cosine", "dot"))
+
+    X = F.normalize(features, p=2, dim=1) if normalize else features
+
+    if metric == "cosine":
+        # Con L2-normalizzazione: cosine = dot product
+        sim = X @ X.t()
+
+    elif metric == "dot":
+        # Dot product (scala dipende dalla norma se normalize=False)
+        sim = X @ X.t()
+
+    elif metric == "euclidean":
+        # Similarità monotona di distanze: 1 / (1 + dist)
+        dist = torch.cdist(X, X, p=2)
+        sim = 1.0 / (1.0 + dist.clamp_min(0.0))
+
+    elif metric == "rbf":
+        # Kernel RBF: exp(-gamma * dist^2), scala stabile (0,1]
+        dist = torch.cdist(X, X, p=2)
+        dist2 = dist.pow(2)
+        if rbf_gamma is None:
+            # Median heuristic: gamma = 1 / median(dist^2) su off-diagonale
+            off = dist2[~torch.eye(N, dtype=torch.bool, device=dist2.device)]
+            med = torch.median(off) if off.numel() > 0 else dist2.mean()
+            gamma = 1.0 / torch.clamp(med, min=eps)
+        else:
+            gamma = torch.as_tensor(rbf_gamma, device=dist2.device, dtype=dist2.dtype)
+        sim = torch.exp(-gamma * dist2)
+    else:
+        raise ValueError(f"Metrica non supportata: {metric}")
+
+    return sim
+
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -105,6 +145,7 @@ def plot_similarity_heatmap(
         plt.show()
 
     return order
+
 def plot_similarity_heatmap_new(
     similarity_matrix: np.ndarray,
     labels: Optional[Sequence] = None,          # etichette per sample (id o string)

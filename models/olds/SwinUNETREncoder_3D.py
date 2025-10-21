@@ -7,6 +7,10 @@ class SwinUNETREncoder(nn.Module):
         
         # Copiamo le componenti dell'encoder dal modello originale
         self.swinViT = original_model.swinViT
+        self.encoder1 = original_model.encoder1
+        self.encoder2 = original_model.encoder2 
+        self.encoder3 = original_model.encoder3
+        self.encoder4 = original_model.encoder4
         self.encoder10 = original_model.encoder10
         
         # Attributi necessari per il forward del SwinViT
@@ -29,7 +33,7 @@ class SwinUNETREncoder(nn.Module):
         enc_hidden = self.encoder10(hidden_states_out[4])
         # enc_hidden dovrebbe avere forma [B, 384, D, H, W]
         
-        return enc_hidden , hidden_states_out[4]
+        return enc_hidden, hidden_states_out[4]
         
     def forward_all_features(self, x):
         """Ritorna tutte le feature per backward compatibility"""
@@ -37,9 +41,17 @@ class SwinUNETREncoder(nn.Module):
         hidden_states_out = self.swinViT(x, self.normalize)
         
         # Applica i blocchi encoder in sequenza
+        enc1 = self.encoder1(x)
+        enc2 = self.encoder2(hidden_states_out[0])
+        enc3 = self.encoder3(hidden_states_out[1]) 
+        enc4 = self.encoder4(hidden_states_out[2])
         enc_hidden = self.encoder10(hidden_states_out[4])
         
         return {
+            'enc1': enc1,
+            'enc2': enc2,
+            'enc3': enc3,  
+            'enc4': enc4,
             'enc_hidden': enc_hidden,
             'hidden_states': hidden_states_out
         }
@@ -48,7 +60,6 @@ class SwinUNETREncoder(nn.Module):
         """Forward standard per classificazione compatibile con dati 3D"""
         # Estrai le feature: [B, C, D, H, W]
         features = self.forward_features(x)
-        print(f"Features shape: {features.shape}")
         
         # Applica global pooling 3D se presente
         if hasattr(self, 'global_pool') and self.global_pool is not None:
@@ -59,7 +70,6 @@ class SwinUNETREncoder(nn.Module):
             features = features.flatten(1)
         
         # Applica la testa di classificazione
-        print(f"Features shape before classifier: {features.shape}")
         if hasattr(self, 'fc'):
             return self.fc(features)  # [B, 384] -> [B, num_classes]
         elif hasattr(self, 'head'):
@@ -79,48 +89,6 @@ class SwinUNETREncoder(nn.Module):
             print(f"Shape dopo global pooling: {pooled.shape}")
             print(f"Shape dopo flatten: {flattened.shape}")
             return features.shape, pooled.shape, flattened.shape
-        
-class SwinUNETREncoder_only(nn.Module):
-    def __init__(self, original_model, num_features=384):
-        super(SwinUNETREncoder_only, self).__init__()
-        
-        # Copia le componenti dell'encoder dal modello originale
-        self.swinViT = original_model.swinViT
-        self.encoder10 = original_model.encoder10
-        
-        # Attributi necessari per il forward del SwinViT
-        self.normalize = getattr(original_model, 'normalize', True)
-        
-        self.num_features = num_features
-        
-    def forward_features(self, x):
-        """Estrae le feature senza classificazione"""
-        hidden_states_out = self.swinViT(x, self.normalize)
-        enc_hidden = self.encoder10(hidden_states_out[4])
-        return enc_hidden
-        
-    def forward_all_features(self, x):
-        """Ritorna tutte le feature per backward compatibility"""
-        hidden_states_out = self.swinViT(x, self.normalize)
-        enc_hidden = self.encoder10(hidden_states_out[4])
-        return {
-            'enc_hidden': enc_hidden,
-            'hidden_states': hidden_states_out
-        }
-        
-    def forward(self, x):
-        """Forward che restituisce solo le feature dell'encoder"""
-        features = self.forward_features(x)
-        return features
-
-    def get_feature_dimensions(self, input_shape):
-        """Utility per verificare le dimensioni delle feature"""
-        print(f"Input shape: {input_shape}")
-        with torch.no_grad():
-            dummy_input = torch.randn(1, *input_shape[1:])  # Rimuovi batch dimension
-            features = self.forward_features(dummy_input)
-            print(f"Feature shape dopo encoder: {features.shape}")
-            return features.shape
 
 
 if __name__ == "__main__":
@@ -139,7 +107,7 @@ if __name__ == "__main__":
     encoder_model = SwinUNETREncoder(
         original_model, 
         num_classes=3, 
-        num_features=768  # Verifica che questo corrisponda all'output dell'encoder10
+        num_features=384  # Verifica che questo corrisponda all'output dell'encoder10
     )
     
     print("\nModello encoder adattato:")

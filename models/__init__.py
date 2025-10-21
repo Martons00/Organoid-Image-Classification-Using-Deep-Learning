@@ -1,1 +1,1 @@
-from .SwinUNETREncoder import SwinUNETREncoder
+from .SwinUNETREncoder_3D import SwinUNETREncoder

@@ -32,7 +32,7 @@ from monai.networks.nets import SwinUNETR
 
 # ========== Project-Specific ==========
 from config import config, parse_args
-from utils.utils_old import create_logger
+from utils.utils import create_logger
 from utils.trainer import run_training
 from utils.data_utils import (
     get_loader,
@@ -57,7 +57,7 @@ import asyncio
 from models.ML_Decoder_main.src_files.ml_decoder.ml_decoder import MLDecoder
 from models.NOAH_main.modules.noah import NOAH
 from dataset import OrganoidsINRIA3D
-from test import SwinUNETREncoder
+from models import SwinUNETREncoder
 # from datasets.base_dataset import AugmentedDataset
 from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR  # Uncomment if used
 
@@ -80,290 +80,419 @@ def main():
             message = f"🚨 *ERROR*\nAn exception occurred during training:\n{str(e)}"
             asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
         raise e  # Re-raise the exception for further handling if needed
-
 def main_worker(gpu, args):
-
-    if args.distributed:
-        torch.multiprocessing.set_start_method("fork", force=True)
-    np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
-    args.gpu = gpu
-    if args.distributed:
-        args.rank = args.rank * args.ngpus_per_node + gpu
-        dist.init_process_group(
-            backend=args.dist_backend, init_method=args.dist_url, world_size=args.world_size, rank=args.rank
-        )
-    torch.cuda.set_device(args.gpu)
-    torch.backends.cudnn.benchmark = True
-    args.test_mode = False
-
-
-    logger, final_output_dir, tb_log_dir = create_logger(
-        args, args.logdir, args.model_name)
+    """Main training worker con setup distribuito."""
+    # Setup base
+    _setup_distributed(gpu, args)
+    _setup_logging_and_device(args)
     
-    
+    # Crea logger e directories
+    logger, final_output_dir, tb_log_dir = create_logger(args, args.logdir, args.model_name)
     writer_dict = {
         'writer': SummaryWriter(tb_log_dir),
         'train_global_steps': 0,
         'valid_global_steps': 0,
     }
-
-    logger.info(pprint.pformat(vars(args)))
-    logger.info("")
-
-
+    
+    # Log helper
+    def log(msg, level="info"):
+        """Helper per logging unificato."""
+        print(msg)
+        if logger:
+            getattr(logger, level)(msg)
+    
+    log(pprint.pformat(vars(args)))
+    log("")
+    
+    # Telegram notification iniziale
     if args.telegram_log:
         message = build_training_message(args)
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
+        _send_telegram_safe(args, message)
+    
+    log(f"Using GPU: {args.gpu}")
+    
+    # Setup model
+    model = _setup_model(args, logger, log)
+    
+    # Setup optimizer e scheduler
+    optimizer = _setup_optimizer(model, args, logger, log)
+    scheduler = _setup_scheduler(optimizer, args)
+    
+    # Setup dataset e dataloaders
+    train_loader, val_loader, class_weights = _setup_data(args, logger, log)
+    
+    # Setup loss function
+    loss_func = _setup_loss(args, class_weights, log)
+    acc_metric = MulticlassAccuracy(num_classes=3, average='macro').cuda(args.gpu)
+    
+    # Training
+    log("*" * 50)
+    log("Starting training...")
+    
+    start = timeit.default_timer()
+    accuracy = run_training(
+        model=model,
+        train_loader=train_loader,
+        val_loader=val_loader,
+        optimizer=optimizer,
+        loss_func=loss_func,
+        acc_func=acc_metric,
+        args=args,
+        scheduler=scheduler,
+        start_epoch=0,
+        writer_dict=writer_dict,
+        final_output_dir=final_output_dir,
+        logger=logger,
+    )
+    
+    end = timeit.default_timer()
+    log(f"Total time spent: {end - start:.2f}s")
+    
+    writer_dict['writer'].close()
+    torch.cuda.empty_cache()
+    
+    return 0
 
 
-    print("Using GPU:", args.gpu)
-    logger.info("Using GPU: %d" % (args.gpu))
+# ============================================================================
+# HELPER FUNCTIONS
+# ============================================================================
 
-    inf_size = [args.roi_x, args.roi_y, args.roi_z]
+def _setup_distributed(gpu, args):
+    """Setup per training distribuito."""
+    if args.distributed:
+        torch.multiprocessing.set_start_method("fork", force=True)
+    
+    np.set_printoptions(formatter={"float": "{: 0.3f}".format}, suppress=True)
+    args.gpu = gpu
+    
+    if args.distributed:
+        args.rank = args.rank * args.ngpus_per_node + gpu
+        dist.init_process_group(
+            backend=args.dist_backend,
+            init_method=args.dist_url,
+            world_size=args.world_size,
+            rank=args.rank
+        )
 
-    pretrained_dir = args.pretrained_dir
-    model_name = args.pretrained_model_name
-    pretrained_pth = os.path.join(pretrained_dir, model_name)
 
+def _setup_logging_and_device(args):
+    """Setup device e cudnn."""
+    torch.cuda.set_device(args.gpu)
+    torch.backends.cudnn.benchmark = True
+    args.test_mode = False
+
+
+def _setup_model(args, logger, log):
+    """Setup e caricamento del modello."""
+    log("")
+    log("Model INFO:")
+    log(f"Model architecture: {args.model_name}")
+    
+    # Crea modello base
     model = SwinUNETR(
-        img_size=(args.roi_x, args.roi_y, args.roi_z), 
-        in_channels=args.in_channels, 
-        out_channels=args.out_channels, 
-        feature_size=48,    
+        img_size=(args.roi_x, args.roi_y, args.roi_z),
+        in_channels=args.in_channels,
+        out_channels=args.out_channels,
+        feature_size=48,
         use_checkpoint=False
     )
-
-    state_dict_model = model.state_dict()
-
     
-    # Caricamento del checkpoint
-    checkpoint = torch.load(pretrained_pth, map_location="cpu")
-    state_dict = checkpoint.get("state_dict", checkpoint)
-
-
-
-    # Rinomino le chiavi rimuovendo 'module.' e aggiungendo 'swinViT.'
-    new_state_dict = {}
-    for k, v in state_dict.items():
-        # rimuove 'module.' all'inizio e aggiunge 'swinViT.'
-        if k.startswith('module.'):
-            new_key = 'swinViT.' + k[len('module.'):]
-            new_key = new_key.replace('fc', 'linear')
-        else:
-            new_key = k
-        new_state_dict[new_key] = v
+    # Carica pretrained weights
+    pretrained_pth = os.path.join(args.pretrained_dir, args.pretrained_model_name)
     
-    # Caricamento flessibile dei pesi
-    missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
-    print("")
-    logger.info("")
-    print("Model INFO:")
-    logger.info("Model INFO:")
-    print(f"Model architecture: {args.model_name}")
-    logger.info(f"Model architecture: {args.model_name}")
-    print("Using pretrained weights")
-    logger.info("Using pretrained weights")
-    print(f"=> loaded pretrained model '{pretrained_pth}'")
-    logger.info(f"=> loaded pretrained model '{pretrained_pth}'")
-    if missing:
-        print(f"Number of missing keys when loading pretrained weights: {len(missing)}")
-        logger.info("Number of missing keys when loading pretrained weights: %d", len(missing))
-    if unexpected:
-        print(f"Number of unexpected keys when loading pretrained weights: {len(unexpected)}")
-        logger.info("Number of unexpected keys when loading pretrained weights: %d", len(unexpected))
-
-
-
-    best_acc = 0
-    start_epoch = 0
-
-
-    if args.checkpoint is not None:
-        checkpoint = torch.load(args.checkpoint, map_location="cpu")  # può essere un dict con "state_dict" [parametri] [web:27]
-        state_dict = checkpoint.get("state_dict", checkpoint)  # fallback se il checkpoint è già uno state_dict [web:27]
-
+    if os.path.exists(pretrained_pth):
+        log("Using pretrained weights")
+        log(f"=> loading pretrained model '{pretrained_pth}'")
+        
+        checkpoint = torch.load(pretrained_pth, map_location="cpu")
+        state_dict = checkpoint.get("state_dict", checkpoint)
+        
+        # Rinomina chiavi per compatibilità
         new_state_dict = {}
         for k, v in state_dict.items():
-            # Caso 1: i pesi sono sotto "backbone.encode10.*" -> rimuovi solo "backbone."
-            if k.startswith("encoder10."):
-                new_state_dict[k] = v
-            # Altri prefissi vengono ignorati
-
-        # Caricamento parziale: ignora mismatch e preserva solo le chiavi compatibili
-        incompatible = model.load_state_dict(new_state_dict, strict=False)  # utile per caricare subset di pesi [web:29]
-        # Opzionale: logga chiavi mancanti/inattese per debug
-        if getattr(incompatible, "missing_keys", None):
-            print(f"Caricati: {len(model.state_dict().keys())-len(incompatible.missing_keys)}")  # utile per capire cosa non è stato caricato [web:27]
-            logger.info(f"Caricati: {len(model.state_dict().keys())-len(incompatible.missing_keys)}")
-
-        if "epoch" in checkpoint:
-            start_epoch = 0 #checkpoint["epoch"]  ripristina lo stato di training se presente [web:27]
-        if "best_acc" in checkpoint:
-            best_acc = 0 #checkpoint["best_acc"]  ripristina metrica migliore se presente [web:27]
-
-        msg = "=> loaded checkpoint for encoder10 '{}' (epoch {}) (bestacc {})".format(args.checkpoint, start_epoch, best_acc)  # messaggio riepilogo [web:27]
-        print(msg)  # stampa su stdout [web:27]
-        logger.info(msg)  # log su logger [web:27]
-
-
-    # Here we have to extract the encoder part from the pretrained model and load it
-    # into our model
-
-    model = SwinUNETREncoder(
-        model, 
-        num_classes=3, 
-        num_features=768
-    )
-
+            if k.startswith('module.'):
+                new_key = 'swinViT.' + k[len('module.'):]
+                new_key = new_key.replace('fc', 'linear')
+            else:
+                new_key = k
+            new_state_dict[new_key] = v
+        
+        missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
+        
+        if missing:
+            log(f"Missing keys when loading pretrained: {len(missing)}")
+        if unexpected:
+            log(f"Unexpected keys when loading pretrained: {len(unexpected)}")
+    else:
+        log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+    
+    # Carica checkpoint per fine-tuning (se specificato)
+    if args.checkpoint is not None and os.path.exists(args.checkpoint):
+        log(f"=> loading checkpoint '{args.checkpoint}'")
+        checkpoint = torch.load(args.checkpoint, map_location="cpu")
+        state_dict = checkpoint.get("state_dict", checkpoint)
+        
+        # Filtra solo encoder10 keys
+        new_state_dict = {k: v for k, v in state_dict.items() if k.startswith("encoder10.")}
+        
+        incompatible = model.load_state_dict(new_state_dict, strict=False)
+        loaded_keys = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
+        log(f"Loaded {loaded_keys} keys from checkpoint")
+    
+    # Converti a encoder + classification head
+    model = SwinUNETREncoder(model, num_classes=3, num_features=768)
+    
+    # Aggiungi classification head custom
     if args.model_name == "swinunetr+ml_decoder":
-        # Here we add the classification head
-        if MLDecoder:
+        try:
             head = MLDecoder(
                 num_classes=3,
-                initial_num_features=1024, 
-                num_of_groups=1, 
-                decoder_embedding=768, 
+                initial_num_features=1024,
+                num_of_groups=1,
+                decoder_embedding=768,
                 zsl=0
             )
             model.global_pool = torch.nn.Identity()
             model.fc = head
-            print("ML-Decoder applicato con successo")
-        print("Using SwinUNETR with Multi-Layer Classification Head")
-        logger.info("Using SwinUNETR with Multi-Layer Classification Head")
+            log("Using SwinUNETR with ML-Decoder Classification Head")
+        except NameError:
+            log("Warning: MLDecoder not imported, using default head", level="warning")
+    
     elif args.model_name == "swinunetr+noah":
-        # Here we add the classification head
-        if NOAH:
-            head = NOAH(inplanes=768, outplanes=3, dropout=0.0, head_num=1, head_split=True, kv_split=False)
+        try:
+            head = NOAH(
+                inplanes=768,
+                outplanes=3,
+                dropout=0.0,
+                head_num=1,
+                head_split=True,
+                kv_split=False
+            )
             model.global_pool = torch.nn.Identity()
             model.fc = head
-            print("NOAH applicato con successo")
-            print("Using SwinUNETR with NOAH Classification Head")
-            logger.info("Using SwinUNETR with NOAH Classification Head")
+            log("Using SwinUNETR with NOAH Classification Head")
+        except NameError:
+            log("Warning: NOAH not imported, using default head", level="warning")
     else:
-        print("Using SwinUNETR with Single Linear Classification Head")
-        logger.info("Using SwinUNETR with Single Linear Classification Head")
-        # The classification head is already added in the SwinUNETREncoder class
-
-
-    pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    print("Total parameters count", pytorch_total_params)
-    logger.info("Total parameters count: %d", pytorch_total_params)
-
-    model.cuda(args.gpu)
-
+        log("Using SwinUNETR with Single Linear Classification Head")
+    
+    # Count parameters
+    total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    log(f"Total trainable parameters: {total_params:,}")
+    
+    # Move to GPU
+    model = model.cuda(args.gpu)
+    
+    # Setup distributed
     if args.distributed:
-        torch.cuda.set_device(args.gpu)
         if args.norm_name == "batch":
             model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
-        model.cuda(args.gpu)
-        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], output_device=args.gpu)
+        model = torch.nn.parallel.DistributedDataParallel(
+            model,
+            device_ids=[args.gpu],
+            output_device=args.gpu
+        )
+    
+    return model
+
+
+def _setup_optimizer(model, args, logger, log):
+    """Setup optimizer."""
+    log("")
+    log("Optimizer INFO:")
+    
     if args.optim_name == "adam":
-        optimizer = torch.optim.Adam(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
+        optimizer = torch.optim.Adam(
+            model.parameters(),
+            lr=args.optim_lr,
+            weight_decay=args.reg_weight
+        )
     elif args.optim_name == "adamw":
-        optimizer = torch.optim.AdamW(model.parameters(), lr=args.optim_lr, weight_decay=args.reg_weight)
+        optimizer = torch.optim.AdamW(
+            model.parameters(),
+            lr=args.optim_lr,
+            weight_decay=args.reg_weight
+        )
     elif args.optim_name == "sgd":
         optimizer = torch.optim.SGD(
-            model.parameters(), lr=args.optim_lr, momentum=args.momentum, nesterov=True, weight_decay=args.reg_weight
+            model.parameters(),
+            lr=args.optim_lr,
+            momentum=args.momentum,
+            nesterov=True,
+            weight_decay=args.reg_weight
         )
     else:
-        logger.error("Unsupported Optimization Procedure: " + str(args.optim_name))
-        raise ValueError("Unsupported Optimization Procedure: " + str(args.optim_name))
+        raise ValueError(f"Unsupported optimizer: {args.optim_name}")
+    
+    log(f"Using optimizer: {args.optim_name} with lr={args.optim_lr}, weight_decay={args.reg_weight}")
+    
+    return optimizer
 
+
+def _setup_scheduler(optimizer, args):
+    """Setup learning rate scheduler."""
     if args.lrschedule == "warmup_cosine":
-        scheduler = LinearWarmupCosineAnnealingLR(
-            optimizer, warmup_epochs=args.warmup_epochs, max_epochs=args.max_epochs
+        return LinearWarmupCosineAnnealingLR(
+            optimizer,
+            warmup_epochs=args.warmup_epochs,
+            max_epochs=args.max_epochs
         )
     elif args.lrschedule == "cosine_anneal":
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.max_epochs)
-    else:
-        scheduler = None
+        return torch.optim.lr_scheduler.CosineAnnealingLR(
+            optimizer,
+            T_max=args.max_epochs
+        )
+    return None
 
+
+from torch.utils.data import Sampler
+import random
+
+
+class BalancedBatchSampler(Sampler):
+    """Crea batch con esattamente lo stesso numero di campioni per classe."""
     
-    # Here we prepare the data loader
+    def __init__(self, labels, batch_size, num_classes=3):
+        self.labels = np.array(labels)
+        self.batch_size = batch_size
+        self.num_classes = num_classes
+        self.samples_per_class = batch_size // num_classes
+        
+        # Raggruppa indici per classe
+        self.class_indices = [
+            np.where(self.labels == c)[0].tolist()
+            for c in range(num_classes)
+        ]
+        
+        # Numero di batch = minimo tra le classi
+        min_samples = min(len(idx) for idx in self.class_indices)
+        self.num_batches = min_samples // self.samples_per_class
+    
+    def __iter__(self):
+        # Shuffle ogni classe
+        shuffled = [random.sample(idx, len(idx)) for idx in self.class_indices]
+        
+        # Crea batch bilanciati
+        for i in range(self.num_batches):
+            batch = []
+            for c in range(self.num_classes):
+                start = i * self.samples_per_class
+                end = start + self.samples_per_class
+                batch.extend(shuffled[c][start:end])
+            
+            random.shuffle(batch)  # Shuffle interno al batch
+            yield batch
+    
+    def __len__(self):
+        return self.num_batches
+
+
+def _setup_data(args, logger, log):
+    """Setup dataset, dataloaders e calcola class weights."""
+    log("")
+    log("Dataset INFO:")
+    
+    # Carica dataset
     dataset = OrganoidsINRIA3D(args.data_dir, exact_class_dir=args.exact_class)
-    print("")
-    logger.info("")
-    print("Dataset INFO:")
-    logger.info("Dataset INFO:")
-    print("Dataset length is:", len(dataset))
-    logger.info(f"Dataset length is: {len(dataset)}")
-    dataset_loader = torch.utils.data.DataLoader(
-        dataset,
-        batch_size=args.batch_size,
-        shuffle=False,
-        num_workers=1,
-        pin_memory=True,
-        drop_last=False,
-    )
-
-    num_classes = 3  # 0,1,2 + "other"=3
-    labels = dataset.labels  # np.ndarray
+    labels = dataset.labels
+    num_classes = 3
+    
+    log(f"Dataset length: {len(dataset)}")
+    
+    # Class distribution totale
     dataset_counts = np.bincount(labels, minlength=num_classes)
-
-    print("Class distribution in the entire dataset:")
+    log("Class distribution in entire dataset:")
     for c, n in enumerate(dataset_counts):
-        print(f"Class {c}: {n}")
-        logger.info(f"Class {c}: {n}")
-
-
-    # Eventuale sottoinsieme per il debug con split stratificato
-    print(f"\nUsing split method: {args.split_method}")
+        log(f"  Class {c}: {n}")
+    
+    # Split dataset
+    log(f"\nUsing split method: {args.split_method}")
+    
     if args.split_method == "random":
         train_set, val_set = split_dataset_random(dataset, val_size=0.2, seed=args.seed)
-        print("Training set length:", len(train_set))
-        logger.info(f"Training set length: {len(train_set)}")
-        print("Validation set length:", len(val_set))
-        logger.info(f"Validation set length: {len(val_set)}")
     elif args.split_method == "stratified":
         train_set, val_set = split_dataset_stratified(dataset, val_size=0.2, seed=args.seed)
-        print("Training set length:", len(train_set))
-        logger.info(f"Training set length: {len(train_set)}")
-        print("Validation set length:", len(val_set))
-        logger.info(f"Validation set length: {len(val_set)}")
     elif args.split_method == "balanced":
-        # Split bilanciato - stesso numero di campioni per classe
-        train_set, val_set = split_dataset_balanced(dataset, val_size=0.2, seed=42)
-        print("\nTrain set balance:")
-        verify_balance(train_set, dataset.labels)
-        print("\nVal set balance:")
-        verify_balance(val_set, dataset.labels)
+        train_set, val_set = split_dataset_balanced(dataset, val_size=0.2, seed=args.seed)
+        log("\nTrain set balance:")
+        verify_balance(train_set, labels)
+        log("\nVal set balance:")
+        verify_balance(val_set, labels)
     else:
         raise ValueError(f"Unsupported split method: {args.split_method}")
     
+    # Debug mode
     if args.debug:
-        # Impostazioni debug
-        print("\nDEBUG MODE ACTIVE")
-        DEBUG_TRAIN_SAMPLES = args.debug_train_samples if args.debug_train_samples > 0 else 20
-        DEBUG_VAL_SAMPLES = args.debug_val_samples if args.debug_val_samples > 0 else 10
-        if args.split_method == "balanced":
-            # Debug subset bilanciato - es. 10 campioni per classe per train, 3 per val
-            train_set = create_balanced_debug_subset(train_set, dataset.labels, samples_per_class=int(DEBUG_TRAIN_SAMPLES/3), seed=42)
-            val_set = create_balanced_debug_subset(val_set, dataset.labels, samples_per_class=int(DEBUG_VAL_SAMPLES/3), seed=43)
-            
-            print("\nDebug train balance:")
-            verify_balance(train_set, dataset.labels)
-            print("\nDebug val balance:")
-            verify_balance(val_set, dataset.labels)
-        else:   
-            train_set = create_stratified_debug_subset(
-                train_set, labels, DEBUG_TRAIN_SAMPLES, seed=args.seed
-            )
-            val_set = create_stratified_debug_subset(
-                val_set, labels, DEBUG_VAL_SAMPLES, seed=args.seed + 1
-            )
-            print(f"DEBUG: using {len(train_set)} samples for training (stratified)")
-            print(f"DEBUG: using {len(val_set)} samples for validation (stratified)")
+        log("\nDEBUG MODE ACTIVE")
+        train_samples = args.debug_train_samples if args.debug_train_samples > 0 else 20
+        val_samples = args.debug_val_samples if args.debug_val_samples > 0 else 10
         
+        if args.split_method == "balanced":
+            samples_per_class_train = max(1, train_samples // num_classes)
+            samples_per_class_val = max(1, val_samples // num_classes)
+            
+            train_set = create_balanced_debug_subset(
+                train_set, labels, samples_per_class=samples_per_class_train, seed=args.seed
+            )
+            val_set = create_balanced_debug_subset(
+                val_set, labels, samples_per_class=samples_per_class_val, seed=args.seed + 1
+            )
+            
+            log("\nDebug train balance:")
+            verify_balance(train_set, labels)
+            log("\nDebug val balance:")
+            verify_balance(val_set, labels)
+        else:
+            train_set = create_stratified_debug_subset(train_set, labels, train_samples, seed=args.seed)
+            val_set = create_stratified_debug_subset(val_set, labels, val_samples, seed=args.seed + 1)
+        
+        log(f"DEBUG: using {len(train_set)} train samples, {len(val_set)} val samples")
     
-    train_loader = DataLoader(
-        train_set,
-        batch_size=args.batch_size,
-        num_workers=args.workers,
-        shuffle=True,
-        pin_memory=True,
-        drop_last=True,
-    )
-    validation_loader = DataLoader(
+    log(f"Training set length: {len(train_set)}")
+    log(f"Validation set length: {len(val_set)}")
+    
+    # Ottieni indici per calcolare weights
+    train_indices = _get_indices(train_set, len(train_set))
+    val_indices = _get_indices(val_set, len(val_set))
+    train_labels = labels[train_indices]
+    
+    # Create dataloaders
+    # Se similarity_loss è attivo, usa BalancedBatchSampler
+    if args.similarity_loss is not None and args.similarity_loss != "":
+        # Verifica che batch_size sia multiplo di num_classes
+        if args.batch_size % num_classes != 0:
+            log(f"\nWARNING: batch_size ({args.batch_size}) non è multiplo di {num_classes}")
+            log(f"Con similarity loss, ogni batch avrà {args.batch_size // num_classes} campioni per classe")
+        
+        log(f"\nUsing BalancedBatchSampler: {args.batch_size // num_classes} samples per class per batch")
+        
+        batch_sampler = BalancedBatchSampler(
+            labels=train_labels,
+            batch_size=args.batch_size,
+            num_classes=num_classes
+        )
+        
+        train_loader = DataLoader(
+            train_set,
+            num_workers=args.workers,
+            batch_sampler=batch_sampler,  # batch_sampler sostituisce batch_size e shuffle
+            pin_memory=True,
+        )
+        
+        log(f"Balanced batches created: {len(batch_sampler)} batches")
+    else:
+        log("\nUsing standard shuffle for training")
+        train_loader = DataLoader(
+            train_set,
+            batch_size=args.batch_size,
+            num_workers=args.workers,
+            shuffle=True,
+            pin_memory=True,
+            drop_last=True,
+        )
+    
+    val_loader = DataLoader(
         val_set,
         batch_size=1,
         shuffle=False,
@@ -371,104 +500,76 @@ def main_worker(gpu, args):
         drop_last=False,
     )
     
-    print(f"Training loader length is {len(train_loader)} batches")
-    print(f"Validation loader length is {len(validation_loader)} batches")
-    print("")
-
+    log(f"Training loader: {len(train_loader)} batches")
+    log(f"Validation loader: {len(val_loader)} batches")
     
-    
-    # Calcola le distribuzioni finali
-    train_indices = train_set.indices if hasattr(train_set, 'indices') else list(range(len(train_set)))
-    val_indices = val_set.indices if hasattr(val_set, 'indices') else list(range(len(val_set)))
-    
-    train_counts = np.bincount(labels[train_indices], minlength=num_classes)
+    # Calcola distribuzioni finali
+    train_counts = np.bincount(train_labels, minlength=num_classes)
     val_counts = np.bincount(labels[val_indices], minlength=num_classes)
     
-    print("Class distribution in the training set:")
+    log("\nClass distribution in training set:")
     for c, n in enumerate(train_counts):
-        percentage = (n / len(train_set)) * 100 if len(train_set) > 0 else 0
-        print(f"Train class {c}: {n} ({percentage:.1f}%)")
-        logger.info(f"Train class {c}: {n} ({percentage:.1f}%)")
-        
-    print("Class distribution in the validation set:")
+        pct = (n / len(train_set)) * 100 if len(train_set) > 0 else 0
+        log(f"  Class {c}: {n} ({pct:.1f}%)")
+    
+    log("Class distribution in validation set:")
     for c, n in enumerate(val_counts):
-        percentage = (n / len(val_set)) * 100 if len(val_set) > 0 else 0
-        print(f"Val class {c}: {n} ({percentage:.1f}%)")
-        logger.info(f"Val class {c}: {n} ({percentage:.1f}%)")
-    logger.info("" + "*" * 50)
-    print("*" * 50)
-    logger.info("")
+        pct = (n / len(val_set)) * 100 if len(val_set) > 0 else 0
+        log(f"  Class {c}: {n} ({pct:.1f}%)")
+    
+    log("*" * 50)
+    
+    # Calcola class weights
+    class_weights = compute_class_weight(
+        class_weight='balanced',
+        classes=np.unique(labels),
+        y=train_labels
+    )
+    weights_tensor = torch.tensor(class_weights, dtype=torch.float).cuda(args.gpu) * 10
+    log(f"Class weights: {weights_tensor.cpu().numpy()}")
+    
+    return train_loader, val_loader, weights_tensor
 
 
-    print("\nTraining setting summary:")
-    logger.info("Training setting summary:")
-    print(f"Using optimizer: {args.optim_name} with lr={args.optim_lr}, weight decay={args.reg_weight}")
-    logger.info(f"Using optimizer: {args.optim_name} with lr={args.optim_lr}, weight decay={args.reg_weight}")
-    if scheduler is not None:
-        print(f"Using LR scheduler: {args.lrschedule}")
-        logger.info(f"Using LR scheduler: {args.lrschedule}")
-    class_weights = compute_class_weight(class_weight='balanced',classes=np.unique(labels),y=labels[train_indices])
-    weights = torch.tensor(class_weights, dtype=torch.float) * 10
-    print("Class weights:", weights.numpy())
-    logger.info("Class weights: " + str(weights.numpy()))
 
-    print(f"Using loss function: {args.loss_name}")
-    logger.info(f"Using loss function: {args.loss_name}")
+def _setup_loss(args, class_weights, log):
+    """Setup loss function."""
+    log("")
+    log(f"Using loss function: {args.loss_name}")
+    
+    if args.similarity_loss:
+        log(f"Using similarity loss: {args.similarity_loss} (weight: {args.similarity_loss_weight})")
+    
     if args.loss_name == "FocalLoss":
-        loss_func = FocalLoss(alpha=weights.cuda(args.gpu), gamma=2.0)
+        return FocalLoss(alpha=class_weights, gamma=2.0)
     elif args.loss_name == "LabelSmoothingLoss":
-        loss_func = LabelSmoothingLoss(classes=3, smoothing=0.1, weight=weights.cuda(args.gpu))
+        return LabelSmoothingLoss(classes=3, smoothing=0.1, weight=class_weights)
     elif args.loss_name == "DiversityLoss":
-        base = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
-        loss_func = DiversityLoss(base, diversity_weight=0.15)
+        base = nn.CrossEntropyLoss(weight=class_weights)
+        return DiversityLoss(base, diversity_weight=0.15)
     elif args.loss_name == "CombinedLoss":
-        loss_func = CombinedLoss(
-            alpha=weights.cuda(args.gpu), 
-            gamma=2.0, 
-            diversity_weight=0.15
-        )
+        return CombinedLoss(alpha=class_weights, gamma=2.0, diversity_weight=0.15)
     elif args.loss_name == "CenterLoss":
-        loss_func = CenterLoss(num_classes=3, feat_dim=128)
+        return CenterLoss(num_classes=3, feat_dim=128)
     elif args.loss_name == "CE":
-        loss_func = nn.CrossEntropyLoss(weight=weights.cuda(args.gpu))
+        return nn.CrossEntropyLoss(weight=class_weights)
     else:
         raise ValueError(f"Unsupported loss function: {args.loss_name}")
 
-    acc_metric = MulticlassAccuracy(num_classes=3, average='macro').cuda(args.gpu)
 
-    start = timeit.default_timer()
-    print("")
-    logger.info("")
-    print("*" * 50)
-    logger.info("*" * 50)
-    print("Starting training...")
-    logger.info("Starting training...")
+def _get_indices(dataset, default_length):
+    """Helper per ottenere indices da dataset."""
+    if hasattr(dataset, 'indices'):
+        return dataset.indices
+    return list(range(default_length))
 
 
-
-
-    accuracy = run_training(
-        model=model,
-        train_loader=train_loader,
-        val_loader=validation_loader,
-        optimizer=optimizer,
-        loss_func=loss_func,
-        acc_func=acc_metric,
-        args=args,
-        scheduler=scheduler,
-        start_epoch=start_epoch,
-        writer_dict=writer_dict,
-        final_output_dir = final_output_dir,
-        logger=logger,
-    )
-
-    end = timeit.default_timer()
-    print("Total time spent:", end - start)
-    logger.info("Total time spent: %d", end - start)
-    writer_dict['writer'].close()
-    torch.cuda.empty_cache()
-
-    return 0
+def _send_telegram_safe(args, message):
+    """Helper per telegram con error handling."""
+    try:
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
+    except Exception as e:
+        print(f"[Warning] Telegram notification failed: {e}")
 
 
 if __name__ == "__main__":

@@ -14,18 +14,22 @@ import os
 import shutil
 import time
 from tracemalloc import start
+import torch.nn.functional as F
 
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.metrics import confusion_matrix
 
+from torch.utils.data import DataLoader
 import numpy as np
 import torch
 import torch.nn as nn
 from .utils import AverageMeter, distributed_all_gather
-from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches, plot_training_curve,plot_multi_class_training_curve,plot_loss_lr,plot_confusion_matrix
+from .utils import extract_patches_5d_torch, ensure_single_channel, tile_feature_patches
+from tools.plots import plot_training_curve,plot_multi_class_training_curve,plot_loss_lr
+from tools.confusion_matrix import plot_confusion_matrix,metrics_from_confusion_matrix, format_print_metrics,plot_metrics_table
 from .data_utils import send_alert
 from optimizers.early_stop import EarlyStopping  # Uncomment if used
 from tools.similarity import compute_similarity_matrix, plot_similarity_heatmap, plot_similarity_heatmap_new
-
+from tools.loss import similarity_margin_loss, supervised_contrastive_from_similarity
 
 def freeze_backbone_and_select_head_fixed_plus(model):
     """Freezing corretto - chiama SOLO UNA VOLTA all'inizio del training"""
@@ -63,107 +67,130 @@ def freeze_backbone_and_select_head_fixed(model):
 
 def train_epoch(model, loader, optimizer, epoch, loss_func, args):
     """
-    Training che usa la pipeline di inferenza a patch con forward_features,
-    fine-tunando solo global_pool e fc (backbone congelato).
+    Training con pipeline di inferenza a patch usando forward_features.
+    Fine-tuning di global_pool e fc con backbone congelato.
     """
     model.train()
-    losses = []
-
     device = torch.device("cuda", args.rank) if torch.cuda.is_available() else torch.device("cpu")
+    
     start_time = time.time()
     run_loss = AverageMeter()
-    total_losses = []
-    optimizer.zero_grad()
-
+    
     for idx, batch_data in enumerate(loader):
-        # Estrai data/target come nel codice esistente
+        # Estrai data e target
         if isinstance(batch_data, list):
             data, target = batch_data
         else:
             data, target = batch_data["vol"], batch_data["label"]
+        
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
-
-        # Costruisci logits per l'intero batch iterando i volumi
+        
+        # Costruisci logits per l'intero batch
         batch_logits = []
-        feat_list_ENT = []
-    
-        hidden_list_ENT = []
+        feat_list_all = []
+        hidden_list_all = []
+        
         B = data.shape[0]
         for b in range(B):
-            vol = data[b:b+1]                  # [1,C,D,H,W] o [1,D,H,W]
-            vol = ensure_single_channel(vol, mode="first")  # -> [1,1,D,H,W]
+            vol = data[b:b+1]  # [1,C,D,H,W]
+            vol = ensure_single_channel(vol, mode="first")  # [1,1,D,H,W]
+            
+            # Estrai patch dal volume
             patches, coords = extract_patches_5d_torch(
-                vol, patch_size=(args.roi_z,args.roi_y,args.roi_x), step=(args.roi_z,args.roi_y,args.roi_x), pad_value=0
-            )  # patches: [N,1,128,128,128]
-
-            # Inferenza per patch con forward_features
+                vol, 
+                patch_size=(args.roi_z, args.roi_y, args.roi_x), 
+                step=(args.roi_z, args.roi_y, args.roi_x), 
+                pad_value=0
+            )
+            
+            # Inferenza per ogni patch
             feat_list = []
             hidden_list = []
+            patches = patches.to(device).to(torch.float32)  # Converti una volta sola
+            
             for i in range(patches.shape[0]):
-                patch = patches[i:i+1].to(device).to(torch.float32)  # [1,1,128,128,128]
-                feats,hid = model.forward_features(patch)                # es. [1,Cf] o [1,Cf,1,1,N]
+                patch = patches[i:i+1]  # [1,1,128,128,128]
+                feats, hidden = model.forward_features(patch)
                 feat_list.append(feats)
-                hidden_list.append(hid)
-
-            feats_cat = torch.cat(feat_list, dim=0)                  # [N,Cf,...]
-            hidden_cat = torch.cat(hidden_list, dim=0)              # [N,Cf,...]
-            feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # ricostruzione feature per volume
-            hidden_tiled = tile_feature_patches(hidden_cat, coords=coords)  # ricostruzione feature per volume
-            feat_list_ENT.append(feats_tiled.detach().cpu())                  # salva per similarità
-            hidden_list_ENT.append(hidden_tiled.detach().cpu())  # salva per similarità
-
-            # Testa di classificazione: global_pool → flatten → fc
-            pooled = model.global_pool(feats_tiled)                  # [1,C]
+                hidden_list.append(hidden)
+            
+            # Concatena features e ricostruisci volume
+            feats_cat = torch.cat(feat_list, dim=0)  # [N,Cf,...]
+            hidden_cat = torch.cat(hidden_list, dim=0)  # [N,Cf,...]
+            
+            feats_tiled = tile_feature_patches(feats_cat, coords=coords)
+            hidden_tiled = tile_feature_patches(hidden_cat, coords=coords)
+            
+            feat_list_all.append(feats_tiled)
+            hidden_list_all.append(hidden_tiled)
+            
+            # Classificazione: global_pool → flatten → fc
+            pooled = model.global_pool(feats_tiled)
+            
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-                #pool = nn.AdaptiveAvgPool1d(1024)   # output sempre L=1024
-                #pooled = pool(pooled)                               # [1,C]
             elif args.model_name == "swinunetr":
-                pooled = pooled.flatten(1)                               # [1,C,1]
-            logits_b = model.fc(pooled)                              # [1,num_classes]
+                pooled = pooled.flatten(1)
+            
+            logits_b = model.fc(pooled)  # [1,num_classes]
             batch_logits.append(logits_b)
-
-        if (epoch == 0 or epoch == (args.max_epochs-1) or epoch == int(args.max_epochs * 0.5) ) and idx == 0 and args.rank == 0:
-            feat_list_ENT = torch.cat(feat_list_ENT[:], dim=0)  # [B,Cf,D,H,W]
-            feat_list_ENT = feat_list_ENT.view(feat_list_ENT.shape[0], -1)  # [B,Cf*D*H*W]
-            sim = compute_similarity_matrix(feat_list_ENT)
-            plot_similarity_heatmap_new(sim, target, save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch}_iter{idx}.png"))
-
-            hidden_list_ENT = torch.cat(hidden_list_ENT[:], dim=0)  # [B,Cf]
-            hidden_list_ENT = hidden_list_ENT.view(hidden_list_ENT.shape[0], -1)
-            sim_hid = compute_similarity_matrix(hidden_list_ENT)
-            plot_similarity_heatmap_new(sim_hid, target, save_path=os.path.join(args.sim_plots_dir, f"similarity_hidden_epoch{epoch}_iter{idx}.png"))
-
-
-        logits = torch.cat(batch_logits, dim=0)                      # [B,num_classes]
-        #print(f"Logits: {logits.detach().cpu().numpy()}, Target: {target.view(-1).detach().cpu().numpy()}") 
-        #predictions = torch.softmax(logits, dim=1).argmax(dim=1)  # [B]
-        #print(f"Predictions: {predictions.detach().cpu().numpy()}, Targets: {target.view(-1).detach().cpu().numpy()}")
-        loss = loss_func(logits, target) 
-        loss.backward()
-        total_losses.append(loss.item())
-
-        # # Verifica che ci siano parametri con requires_grad=True
-        # trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-        # print(f"Trainable parameters: {trainable_params}")
-
-        # # Debug gradienti
-        # grad_norm = 0
-        # for name, param in model.named_parameters():
-        #     if param.requires_grad and param.grad is not None:
-        #         grad_norm += param.grad.data.norm(2).item() ** 2
-        # grad_norm = grad_norm ** 0.5
-        # print(f"Gradient norm: {grad_norm}")
-
-        optimizer.step()
+        
+        # Calcola similarity matrices solo per epoche selezionate
+        should_compute_sim = (
+            (epoch == 0 or epoch == (args.max_epochs - 1) or epoch == int(args.max_epochs * 0.5)) 
+            and idx == 0 
+            and args.rank == 0
+        )
+        
+        sim = None
+        if should_compute_sim or args.similarity_loss in ["contrastive", "margin"]:
+            feat_concat = torch.cat(feat_list_all, dim=0)  # [B,Cf,D,H,W]
+            feat_flat = feat_concat.view(feat_concat.shape[0], -1)  # [B,Cf*D*H*W]
+            sim = compute_similarity_matrix(feat_flat)
+            
+            if should_compute_sim:
+                sim_np = sim.detach().float().cpu().numpy()
+                plot_similarity_heatmap_new(
+                    sim_np, 
+                    target, 
+                    save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch}_iter{idx}.png")
+                )
+                
+                hidden_concat = torch.cat(hidden_list_all, dim=0)
+                hidden_flat = hidden_concat.view(hidden_concat.shape[0], -1)
+                sim_hidden = compute_similarity_matrix(hidden_flat).cpu().detach().numpy()
+                plot_similarity_heatmap_new(
+                    sim_hidden, 
+                    target, 
+                    save_path=os.path.join(args.sim_plots_dir, f"similarity_hidden_epoch{epoch}_iter{idx}.png")
+                )
+        
+        # Calcola loss
+        logits = torch.cat(batch_logits, dim=0)  # [B,num_classes]
+        loss = loss_func(logits, target)
+        
+        sim_loss_value = 0.0
+        if args.similarity_loss == "contrastive" and sim is not None:
+            loss_sim = supervised_contrastive_from_similarity(sim, target, temperature=0.07)
+            loss = loss + args.similarity_loss_weight * loss_sim
+            sim_loss_value = loss_sim.item()
+        elif args.similarity_loss == "margin" and sim is not None:
+            loss_sim = similarity_margin_loss(sim, target, pos_margin=0.5, neg_margin=0.0)
+            loss = loss + args.similarity_loss_weight * loss_sim
+            sim_loss_value = loss_sim.item()
+        
+        # Backpropagation
         optimizer.zero_grad()
-
-
-        # Aggiorna metriche come nel codice originale
+        loss.backward()
+        optimizer.step()
+        
+        # Aggiorna metriche
         if args.distributed:
             loss_list = distributed_all_gather(
-                [loss], out_numpy=True, is_valid=idx < loader.sampler.valid_length
+                [loss], 
+                out_numpy=True, 
+                is_valid=idx < loader.sampler.valid_length
             )
             run_loss.update(
                 np.mean(np.mean(np.stack(loss_list, axis=0), axis=0), axis=0),
@@ -171,181 +198,200 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
             )
         else:
             run_loss.update(loss.item(), n=args.batch_size)
-
+        
+        # Logging
         if args.rank == 0:
             print(
-                "Epoch: {}/{} Iter: {}/{}".format(epoch, args.max_epochs, idx, len(loader)),
-                "loss: {:.4f}".format(run_loss.avg),
-                "time {:.2f}s".format(time.time() - start_time),
+                f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
+                f"loss: {run_loss.avg:.4f} sim_loss: {sim_loss_value:.4f} "
+                f"time {time.time() - start_time:.2f}s"
             )
         start_time = time.time()
-
-    # Pulisci eventuali gradienti residui
-    for p in model.parameters():
-        if p.grad is not None:
-            p.grad = None
+    
     return run_loss.avg
-
-import time
-import torch
-import numpy as np
-from torch.utils.data import DataLoader
 
 def val_epoch(
     model,
     loader: DataLoader,
     epoch: int,
-    acc_func,           # opzionale: se None, usa accuracy semplice
-    args,               # deve contenere: rank, max_epochs, distributed, roi_x/y/z
-):
+    acc_func,
+    args,
+) -> tuple[float, dict, np.ndarray]:
+    """
+    Validazione con pipeline di inferenza a patch usando forward_features.
+    
+    Returns:
+        tuple: (avg_accuracy, per_class_accuracy_dict, confusion_matrix)
+    """
     model.eval()
     device = torch.device("cuda", args.rank) if torch.cuda.is_available() else torch.device("cpu")
+    
     start_time = time.time()
     run_acc = AverageMeter()
-
+    
     # Contatori per classe
     num_classes = None
     per_class_correct = None
     per_class_total = None
-
-
+    
     # Liste per confusion matrix
     all_preds = []
     all_targets = []
-
+    
+    # Cache per attributi args
+    is_distributed = getattr(args, "distributed", False)
+    is_main_process = getattr(args, "rank", 0) == 0
+    
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
-            # Estrai data/target
+            # Estrai data e target
             if isinstance(batch_data, list):
                 data, target = batch_data
             else:
                 data, target = batch_data["vol"], batch_data["label"]
-
+            
             data = data.to(device, non_blocking=True)
-            target = target.to(device, non_blocking=True)  # [B] o [B,1]
-
+            target = target.to(device, non_blocking=True)
+            
             # Forward a patch per volume
             batch_logits = []
             B = data.shape[0]
+            
             for b in range(B):
-                vol = data[b:b+1]                                 # [1,C,D,H,W] o [1,D,H,W]
-                vol = ensure_single_channel(vol, mode="first")    # -> [1,1,D,H,W]
-
+                vol = data[b:b+1]  # [1,C,D,H,W]
+                vol = ensure_single_channel(vol, mode="first")  # [1,1,D,H,W]
+                
+                # Estrai patch
                 patches, coords = extract_patches_5d_torch(
                     vol,
                     patch_size=(args.roi_z, args.roi_y, args.roi_x),
                     step=(args.roi_z, args.roi_y, args.roi_x),
                     pad_value=0
-                )  # [N,1,roi_z,roi_y,roi_x]
-
+                )
+                
+                # Converti patches una volta sola
+                patches = patches.to(device).to(torch.float32)
+                
+                # Inferenza per ogni patch
                 feat_list = []
                 for i in range(patches.shape[0]):
-                    patch = patches[i:i+1].to(device).to(torch.float32)
-                    feats, _  = model.forward_features(patch)
+                    patch = patches[i:i+1]
+                    feats, _ = model.forward_features(patch)
                     feat_list.append(feats)
-
+                
+                # Ricostruisci volume features
                 feats_cat = torch.cat(feat_list, dim=0)
-                feats_tiled = tile_feature_patches(feats_cat, coords=coords)  # [1,Cf,D,H,W]
-
-                pooled = model.global_pool(feats_tiled)  # [1,Cf,1,1,1]
+                feats_tiled = tile_feature_patches(feats_cat, coords=coords)
+                
+                # Classificazione
+                pooled = model.global_pool(feats_tiled)
+                
                 if args.model_name == "swinunetr+ml_decoder":
-                    pooled = pooled.flatten(2)                             # [1,C]
+                    pooled = pooled.flatten(2)
                 elif args.model_name == "swinunetr":
-                    pooled = pooled.flatten(1)                               # [1,C,1]
-                logits_b = model.fc(pooled)              # [1,num_classes]
+                    pooled = pooled.flatten(1)
+                
+                logits_b = model.fc(pooled)  # [1,num_classes]
                 batch_logits.append(logits_b)
-
-            logits = torch.cat(batch_logits, dim=0)      # [B,num_classes]
-
-            # Inizializza i contatori per classe alla prima iterazione
+            
+            logits = torch.cat(batch_logits, dim=0)  # [B,num_classes]
+            
+            # Inizializza contatori per classe alla prima iterazione
             if num_classes is None:
                 num_classes = logits.shape[1]
                 per_class_correct = np.zeros(num_classes, dtype=np.int64)
                 per_class_total = np.zeros(num_classes, dtype=np.int64)
-
-            # Predizioni e target flat
+            
+            # Predizioni
             probs = torch.softmax(logits, dim=1)
-            preds = probs.argmax(dim=1)                  # [B]
-            target_eval = target.view(-1) if (target.ndim > 1 and target.size(-1) == 1) else target
-
-            all_preds.append(preds.detach().cpu())
-            all_targets.append(target_eval.detach().cpu())
-
+            preds = probs.argmax(dim=1)  # [B]
+            target_eval = target.view(-1) if target.ndim > 1 else target
+            
+            all_preds.append(preds.cpu())
+            all_targets.append(target_eval.cpu())
+            
             # Accuracy batch
             correct = (preds == target_eval).sum().item()
-            not_nans = int(target_eval.numel())
+            not_nans = target_eval.numel()
+            
             if acc_func is not None:
                 acc = float(acc_func(logits, target_eval))
             else:
                 acc = correct / max(1, not_nans)
-
-            # Per-class (batch) su CPU per semplicità
-            t_cpu = target_eval.detach().to('cpu')
-            p_cpu = preds.detach().to('cpu')
-            # totali per classe
-            batch_total = np.bincount(t_cpu.numpy(), minlength=num_classes)
-            # corretti per classe
-            mask = (p_cpu == t_cpu).numpy()
-            batch_correct = np.bincount(t_cpu.numpy()[mask], minlength=num_classes)
-
-            if getattr(args, "distributed", False):
-                # All-gather dei vettori per classe
+            
+            # Per-class accuracy
+            t_cpu = target_eval.cpu().numpy()
+            p_cpu = preds.cpu().numpy()
+            
+            # Calcola correttezza per ogni sample
+            mask = (p_cpu == t_cpu)
+            
+            # Conta totali e corretti per classe in un solo passaggio
+            batch_total = np.bincount(t_cpu, minlength=num_classes)
+            batch_correct = np.bincount(t_cpu[mask], minlength=num_classes)
+            
+            if is_distributed:
+                # Verifica validità sample
+                is_valid = idx < loader.sampler.valid_length if hasattr(loader.sampler, "valid_length") else True
+                
+                # All-gather per classe
                 correct_vec = torch.tensor(batch_correct, device=device, dtype=torch.float32)
                 total_vec = torch.tensor(batch_total, device=device, dtype=torch.float32)
+                
                 corr_list, tot_list = distributed_all_gather(
                     [correct_vec, total_vec],
                     out_numpy=True,
-                    is_valid=(idx < loader.sampler.valid_length) if hasattr(loader.sampler, "valid_length") else True
+                    is_valid=is_valid
                 )
-                # Somma su tutti i rank
+                
                 per_class_correct += np.sum(np.stack(corr_list, axis=0), axis=0).astype(np.int64)
-                per_class_total   += np.sum(np.stack(tot_list, axis=0), axis=0).astype(np.int64)
-
-                # Aggregazione globale dell’accuracy media pesata
+                per_class_total += np.sum(np.stack(tot_list, axis=0), axis=0).astype(np.int64)
+                
+                # Aggregazione accuracy globale
                 acc_tensor = torch.tensor(acc, device=device, dtype=torch.float32)
                 n_tensor = torch.tensor(not_nans, device=device, dtype=torch.float32)
+                
                 acc_list, not_nans_list = distributed_all_gather(
                     [acc_tensor, n_tensor],
                     out_numpy=True,
-                    is_valid=(idx < loader.sampler.valid_length) if hasattr(loader.sampler, "valid_length") else True
+                    is_valid=is_valid
                 )
+                
                 for al, nl in zip(acc_list, not_nans_list):
                     run_acc.update(float(al), n=int(nl))
             else:
-                # Single process
-                per_class_correct += batch_correct.astype(np.int64)
-                per_class_total   += batch_total.astype(np.int64)
+                per_class_correct += batch_correct
+                per_class_total += batch_total
                 run_acc.update(acc, n=not_nans)
-
-            if getattr(args, "rank", 0) == 0:
+            
+            # Logging
+            if is_main_process:
                 print(
                     f"Val {epoch}/{args.max_epochs} {idx}/{len(loader)}, "
                     f"Acc: {run_acc.avg:.4f}, time {time.time() - start_time:.2f}s"
                 )
             start_time = time.time()
-
-    # Calcolo accuracy per classe e packaging del risultato
+    
+    # Gestisci caso senza batch processati
     if num_classes is None:
-        # Nessun batch processato
-        return float('nan'), {}
-
+        return float('nan'), {}, np.array([])
+    
+    # Calcola accuracy per classe
     per_class_acc = {
-        int(c): (float(per_class_correct[c]) / max(1, int(per_class_total[c])))
+        int(c): float(per_class_correct[c]) / max(1, int(per_class_total[c]))
         for c in range(num_classes)
     }
-
+    
+    # Confusion matrix
     all_preds = torch.cat(all_preds, dim=0).numpy()
     all_targets = torch.cat(all_targets, dim=0).numpy()
-
-    # Calcola confusion matrix
     cm = confusion_matrix(all_targets, all_preds, labels=np.arange(num_classes))
-        
-
-    # Facoltativo: stampa riassunto
-    if getattr(args, "rank", 0) == 0:
+    
+    # Stampa riassunto
+    if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
         print(f"[Val epoch {epoch}] avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
-
+    
     return float(run_acc.avg), per_class_acc, cm
 
 
@@ -361,7 +407,7 @@ def save_checkpoint(model, epoch, args, filename="model.pt", best_acc=0, optimiz
     torch.save(save_dict, filename)
     print("Saving checkpoint", filename)
 
-
+    
 def run_training(
     model,
     train_loader,
@@ -375,185 +421,319 @@ def run_training(
     writer_dict=None,
     final_output_dir=None,
     logger=None,
-):
-    if logger is not None:
-        logging = logger
-    writer = writer_dict["writer"] if writer_dict is not None else None
+) -> float:
+    """
+    Loop di training principale con validation, early stopping e logging.
+    
+    Returns:
+        float: Best validation accuracy raggiunta
+    """
+    # Setup logging e writer
+    writer = writer_dict.get("writer") if writer_dict is not None else None
+    
+    # Inizializza liste per metriche
     training_losses = []
     validation_accuracies = []
     validation_per_class_accuracies = []
     lr_history = []
+    
+    # Setup directory output
     args.final_output_dir = final_output_dir
-    if final_output_dir == None:
+    if final_output_dir is None:
         time_str = time.strftime('%Y-%m-%d-%H-%M')
-        name_file = '{}_{}'.format(args.logdir, time_str)
-        final_log_file = os.path.join(args.output_dir, name_file)
-        final_plots_dir = final_log_file + "/plots/"
-    else:
-        final_plots_dir = final_output_dir + "/plots/"
+        name_file = f'{args.logdir}_{time_str}'
+        final_output_dir = os.path.join(args.output_dir, name_file)
+    
+    # Crea struttura directory
+    final_plots_dir = os.path.join(final_output_dir, "plots")
+    sim_plots_dir = os.path.join(final_plots_dir, "similarity")
+    cm_plots_dir = os.path.join(final_plots_dir, "confusion_matrix")
+    
     os.makedirs(final_plots_dir, exist_ok=True)
-    args.final_plots_dir = final_plots_dir
-    sim_plots_dir = final_plots_dir + "/similarity/"
-    args.sim_plots_dir = sim_plots_dir
     os.makedirs(sim_plots_dir, exist_ok=True)
-    cm_plots_dir = final_plots_dir + "/confusion_matrix/"
     os.makedirs(cm_plots_dir, exist_ok=True)
     
-
-
+    args.final_plots_dir = final_plots_dir
+    args.sim_plots_dir = sim_plots_dir
+    
+    # Cache attributi comuni
+    is_main_process = args.rank == 0
+    should_save = is_main_process and args.final_output_dir is not None and args.save_checkpoint
+    use_telegram = args.telegram_log if hasattr(args, 'telegram_log') else False
+    
     val_acc_max = 0.0
-
-    # Chiama SOLO una volta prima del training loop
+    last_cm = None
+    last_metrics = None
+    
+    # Freeze/unfreeze layers
     if args.checkpoint is None:
         model = freeze_backbone_and_select_head_fixed_plus(model)
     else:
         model = freeze_backbone_and_select_head_fixed(model)
-        print("Loaded from checkpoint, all layers unfrozen for fine-tuning.")
-
-    # for name, param in model.named_parameters():
-    #     param.requires_grad = True
-
-
+        if is_main_process:
+            print("Loaded from checkpoint, layers unfrozen for fine-tuning")
+            if logger:
+                logger.info("Loaded from checkpoint, layers unfrozen for fine-tuning")
+    
+    # Setup early stopping
+    early_stopping_val = None
+    early_stopping_loss = None
     if args.early_stopping:
-        early_stopping_val = EarlyStopping(mode='max', patience=args.patience_val, min_delta=args.min_delta_val, restore_best=False, verbose=True)
-        early_stopping_loss = EarlyStopping(mode='min', patience=args.patience_loss, min_delta=args.min_delta_loss, restore_best=False, verbose=True)
-
+        early_stopping_val = EarlyStopping(
+            mode='max', 
+            patience=args.patience_val, 
+            min_delta=args.min_delta_val, 
+            restore_best=False, 
+            verbose=True
+        )
+        early_stopping_loss = EarlyStopping(
+            mode='min', 
+            patience=args.patience_loss, 
+            min_delta=args.min_delta_loss, 
+            restore_best=False, 
+            verbose=True
+        )
+    
+    # Training loop
     for epoch in range(start_epoch, args.max_epochs):
         if args.distributed:
             train_loader.sampler.set_epoch(epoch)
             torch.distributed.barrier()
-        print(args.rank, time.ctime(), "Epoch:", epoch)
-        logging.info(f"{args.rank} {time.ctime()} Epoch: {epoch}")
+        
+        if is_main_process:
+            print(f"{args.rank} {time.ctime()} Epoch: {epoch}")
+            if logger:
+                logger.info(f"{args.rank} {time.ctime()} Epoch: {epoch}")
+        
+        # Training
         epoch_time = time.time()
         train_loss = train_epoch(
             model, train_loader, optimizer, epoch=epoch, loss_func=loss_func, args=args
         )
         training_losses.append(train_loss)
-        if args.rank == 0:
-            print(
-                "Final training  {}/{}".format(epoch, args.max_epochs - 1),
-                "loss: {:.4f}".format(train_loss),
-                "time {:.2f}s".format(time.time() - epoch_time),
-                "lr: {:.6f}".format(optimizer.param_groups[0]["lr"]),
+        
+        # Learning rate attuale
+        current_lr = optimizer.param_groups[0]["lr"]
+        lr_history.append(current_lr)
+        
+        if is_main_process:
+            train_time = time.time() - epoch_time
+            msg = (
+                f"Final training {epoch}/{args.max_epochs - 1}, "
+                f"loss: {train_loss:.4f}, time {train_time:.2f}s, lr: {current_lr:.6f}"
             )
-            logging.info(
-                "Final training  {}/{}".format(epoch, args.max_epochs - 1)
-                + "loss: {:.4f}".format(train_loss)
-                + "time {:.2f}s".format(time.time() - epoch_time)
-                + "lr: {:.6f}".format(optimizer.param_groups[0]["lr"])
-            )
-            lr_history.append(optimizer.param_groups[0]["lr"])
-            if args.early_stopping:
-                # Early Stopping step
-                if early_stopping_loss.step(train_loss, model):
-                    print("[EarlyStopping] stopping training for loss")
-                    logging.info("[EarlyStopping] stopping training for loss")
-                    if args.telegram_log:
-                        message = f"*🛑 Early Stopping (Loss) Triggered at Epoch {epoch}*\n"
-                        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
-                    break
-            if epoch%10 == 0:
-                if args.telegram_log:
-                    message = f"*🏋 Final Training - Epoch {epoch}/{args.max_epochs - 1}*\nTrain Loss: {train_loss:.4f}\nBest Val Acc: {val_acc_max:.4f}\nLR: {optimizer.param_groups[0]['lr']:.6f}"
-                    asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
-            logging.info("" + "-" * 50)
-            logging.info("")
-        b_new_best = False
+            print(msg)
+            if logger:
+                logger.info(msg)
+            
+            # Telegram notification ogni 10 epoche
+            if use_telegram and epoch % 10 == 0:
+                telegram_msg = (
+                    f"*🏋 Training - Epoch {epoch}/{args.max_epochs - 1}*\n"
+                    f"Train Loss: {train_loss:.4f}\n"
+                    f"Best Val Acc: {val_acc_max:.4f}\n"
+                    f"LR: {current_lr:.6f}"
+                )
+                _send_telegram_safe(args, telegram_msg)
+            
+            # Early stopping per loss
+            if early_stopping_loss and early_stopping_loss.step(train_loss, model):
+                print(f"[EarlyStopping] Stopping training for loss at epoch {epoch}")
+                if logger:
+                    logger.info(f"[EarlyStopping] Stopping training for loss at epoch {epoch}")
+                if use_telegram:
+                    _send_telegram_safe(args, f"*🛑 Early Stopping (Loss) at Epoch {epoch}*")
+                break
+        
+        # Validation
+        is_new_best = False
         if (epoch + 1) % args.val_every == 0:
             if args.distributed:
                 torch.distributed.barrier()
+            
             epoch_time = time.time()
-            val_acc,val_per_class, cm = val_epoch(
-                model,
-                val_loader,
-                epoch=epoch,
-                acc_func=acc_func,
-                args=args,
+            val_acc, val_per_class, cm = val_epoch(
+                model, val_loader, epoch=epoch, acc_func=acc_func, args=args
             )
+            
+            last_cm = cm
+            metrics = metrics_from_confusion_matrix(cm)
+            last_metrics = metrics
+            metrics_str = format_print_metrics(metrics)
+            
             validation_accuracies.append(val_acc)
             validation_per_class_accuracies.append(val_per_class)
-            if args.rank == 0:
-                print(
-                    "Final validation stats {}/{}".format(epoch, args.max_epochs - 1),
-                    ", Val_acc:",
-                    val_acc,
-                    ", time {:.2f}s".format(time.time() - epoch_time),
+            
+            if is_main_process:
+                val_time = time.time() - epoch_time
+                msg = (
+                    f"Final validation {epoch}/{args.max_epochs - 1}, "
+                    f"Val_acc: {val_acc:.4f}, time {val_time:.2f}s\n{metrics_str}"
                 )
-                logging.info(
-                    "Final validation stats {}/{}".format(epoch, args.max_epochs - 1) +
-                    ", Val_acc: {:.6f}".format(val_acc) +
-                    ", time {:.2f}s".format(time.time() - epoch_time)
+                print(msg)
+                if logger:
+                    logger.info(msg)
+                
+                # Check new best
+                if val_acc > val_acc_max:
+                    print(f"New best ({val_acc_max:.6f} --> {val_acc:.6f})")
+                    if logger:
+                        logger.info(f"New best ({val_acc_max:.6f} --> {val_acc:.6f})")
+                    
+                    val_acc_max = val_acc
+                    is_new_best = True
+                    
+                    # Salva plot del best model
+                    class_names = [f"class {i}" for i in range(cm.shape[0])]
+                    plot_confusion_matrix(
+                        cm, 
+                        class_names=class_names,
+                        title=f'Confusion Matrix - Epoch {epoch}',
+                        save_path=os.path.join(cm_plots_dir, f"best_confusion_matrix_epoch{epoch}.png")
+                    )
+                    plot_metrics_table(
+                        metrics,
+                        class_names=class_names,
+                        title=f'Metrics Table - Epoch {epoch}',
+                        save_path=os.path.join(cm_plots_dir, f"best_metrics_table_epoch{epoch}.png")
+                    )
+                
+                # Telegram notification
+                if use_telegram:
+                    telegram_msg = (
+                        f"*✅ Validation - Epoch {epoch}/{args.max_epochs - 1}*\n"
+                        f"Val Acc: {val_acc:.4f}\n"
+                        f"Best Val Acc: {val_acc_max:.4f}"
+                    )
+                    _send_telegram_safe(args, telegram_msg)
+            
+            # Salva checkpoint
+            if should_save:
+                save_checkpoint(
+                    model, epoch, args, 
+                    best_acc=val_acc_max, 
+                    optimizer=optimizer, 
+                    scheduler=scheduler,
+                    filename="model_final.pt"
                 )
-                if args.telegram_log:
-                    message = f"*✅ Final Validation - Epoch {epoch}/{args.max_epochs - 1}*\nValidation Accuracy: {val_acc:.4f}\nBest Val Acc: {val_acc_max:.4f}"
-                    asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
-
-                val_avg_acc = val_acc  # val_acc è già il valore medio
-                if val_avg_acc > val_acc_max:
-                    print("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
-                    logging.info("new best ({:.6f} --> {:.6f}). ".format(val_acc_max, val_avg_acc))
-                    val_acc_max = val_avg_acc
-                    b_new_best = True
-                    plot_confusion_matrix(cm, class_names=[f"class {i}" for i in range(cm.shape[0])], title=f'Confusion Matrix - Epoch {epoch}', save_path=os.path.join(cm_plots_dir, f"best_confusion_matrix_epoch{epoch}.png"))
-
-                    if args.rank == 0 and args.final_output_dir is not None and args.save_checkpoint:
-                        print("Saving new best model to model_final.pt")
-                        save_checkpoint(
-                            model, epoch, args, best_acc=val_acc_max, optimizer=optimizer, scheduler=scheduler
-                        )
-            if args.rank == 0 and args.final_output_dir is not None and args.save_checkpoint:
-                save_checkpoint(model, epoch, args, best_acc=val_acc_max, filename="model_final.pt")
-                if b_new_best:
-                    print("Copying to model.pt new best model!!!!")
-                    logging.info("Copying to model.pt new best model!!!!")
-                    shutil.copyfile(os.path.join(args.final_output_dir, "model_final.pt"), os.path.join(args.final_output_dir, "model.pt"))
-
-            if args.early_stopping:
-                # Early Stopping step
-                if early_stopping_val.step(val_acc, model):
-                    print("[EarlyStopping] stopping training for validation accuracy")
-                    logging.info("[EarlyStopping] stopping training for validation accuracy")
-                    if args.telegram_log:
-                        message = f"*🛑 Early Stopping (Validation) Triggered at Epoch {epoch}*\n"
-                        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
-                    break
-            logging.info("" + "-" * 50)
-            logging.info("")
-            print("")
-
+                
+                if is_new_best:
+                    print("Copying best model to model.pt")
+                    if logger:
+                        logger.info("Copying best model to model.pt")
+                    shutil.copyfile(
+                        os.path.join(args.final_output_dir, "model_final.pt"),
+                        os.path.join(args.final_output_dir, "model.pt")
+                    )
+            
+            # Early stopping per validation
+            if early_stopping_val and early_stopping_val.step(val_acc, model):
+                print(f"[EarlyStopping] Stopping training for val accuracy at epoch {epoch}")
+                if logger:
+                    logger.info(f"[EarlyStopping] Stopping training for val accuracy at epoch {epoch}")
+                if use_telegram:
+                    _send_telegram_safe(args, f"*🛑 Early Stopping (Validation) at Epoch {epoch}*")
+                break
+        
+        # Step scheduler
         if scheduler is not None:
             scheduler.step()
-
-    print("Training Finished !, Best Accuracy: ", val_acc_max)
-    logging.info(f"Training Finished !, Best Accuracy: {val_acc_max}")
-    if args.telegram_log:
-        time_str = time.strftime('%Y/%m/%d %H-%M')
-        message = f"*🏆 Training Finished!*\n{time_str}\nBest Validation Accuracy: {val_acc_max:.4f}"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
-    logging.info("" + "=" * 100)
-
-
-
-
-    print("Saving plots to:", final_plots_dir)
-    plot_confusion_matrix(cm, class_names=[f"class {i}" for i in range(cm.shape[0])], title=f'Confusion Matrix - Final Epoch', save_path=os.path.join(cm_plots_dir, f"final_confusion_matrix.png"))
-    plot_training_curve(training_losses, metric_name="Loss", title="Training Curve - Loss", save_path=os.path.join(final_plots_dir, "training_loss_curve.png"))
-    plot_training_curve(lr_history, metric_name="Learning Rate", title="Training Curve - Learning Rate", save_path=os.path.join(final_plots_dir, "learning_rate_curve.png"))
-    plot_loss_lr(training_losses, lr_history, title="Training Curve - Loss vs Learning Rate", save_path=os.path.join(final_plots_dir, "loss_vs_lr_curve.png"))
-    plot_multi_class_training_curve(validation_accuracies, validation_per_class_accuracies, title="Training Curve - Accuracy", save_path=os.path.join(final_plots_dir, "validation_accuracy_curve.png"))
-    if args.telegram_log:
-        message = f"*📈 Training curves saved*\n{final_plots_dir}"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
-        message = f"*Loss Curve*"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_plots_dir, "training_loss_curve.png")))
-        message = f"*Accuracy Curve*"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_plots_dir, "validation_accuracy_curve.png")))
-        message = f"*Learning Rate Curve*"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_plots_dir, "learning_rate_curve.png")))
-        message = f"*Loss vs Learning Rate Curve*"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(final_plots_dir, "loss_vs_lr_curve.png")))
-        message = f"*Confusion Matrix*"
-        asyncio.run(send_alert(args.oar_id, message, token_file=args.token, image_path=os.path.join(cm_plots_dir, "final_confusion_matrix.png")))
-
+    
+    # Fine training
+    if is_main_process:
+        print(f"Training Finished! Best Accuracy: {val_acc_max:.4f}")
+        if logger:
+            logger.info(f"Training Finished! Best Accuracy: {val_acc_max:.4f}")
+            logger.info("=" * 100)
+        
+        if use_telegram:
+            time_str = time.strftime('%Y/%m/%d %H:%M')
+            telegram_msg = (
+                f"*🏆 Training Finished!*\n"
+                f"{time_str}\n"
+                f"Best Val Acc: {val_acc_max:.4f}"
+            )
+            _send_telegram_safe(args, telegram_msg)
+        
+        # Salva plot finali
+        if last_cm is not None and last_metrics is not None:
+            print(f"Saving plots to: {final_plots_dir}")
+            
+            class_names = [f"class {i}" for i in range(last_cm.shape[0])]
+            
+            # Confusion matrix e metrics
+            plot_confusion_matrix(
+                last_cm,
+                class_names=class_names,
+                title='Confusion Matrix - Final Epoch',
+                save_path=os.path.join(cm_plots_dir, "final_confusion_matrix.png")
+            )
+            plot_metrics_table(
+                last_metrics,
+                class_names=class_names,
+                title='Metrics Table - Final Epoch',
+                save_path=os.path.join(cm_plots_dir, "final_metrics_table.png")
+            )
+            
+            # Training curves
+            plot_training_curve(
+                training_losses,
+                metric_name="Loss",
+                title="Training Curve - Loss",
+                save_path=os.path.join(final_plots_dir, "training_loss_curve.png")
+            )
+            plot_training_curve(
+                lr_history,
+                metric_name="Learning Rate",
+                title="Training Curve - Learning Rate",
+                save_path=os.path.join(final_plots_dir, "learning_rate_curve.png")
+            )
+            plot_loss_lr(
+                training_losses,
+                lr_history,
+                title="Training Curve - Loss vs Learning Rate",
+                save_path=os.path.join(final_plots_dir, "loss_vs_lr_curve.png")
+            )
+            plot_multi_class_training_curve(
+                validation_accuracies,
+                validation_per_class_accuracies,
+                title="Training Curve - Accuracy",
+                save_path=os.path.join(final_plots_dir, "validation_accuracy_curve.png")
+            )
+            
+            # Telegram plot notifications
+            if use_telegram:
+                _send_telegram_plots(args, final_plots_dir, cm_plots_dir)
+    
     return val_acc_max
 
+
+def _send_telegram_safe(args, message):
+    """Helper per inviare messaggi Telegram con gestione errori."""
+    try:
+        asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
+    except Exception as e:
+        print(f"[Warning] Telegram notification failed: {e}")
+
+
+def _send_telegram_plots(args, plots_dir, cm_dir):
+    """Helper per inviare plot via Telegram."""
+    plots_to_send = [
+        ("*📈 Training curves saved*", None, f"{plots_dir}"),
+        ("*Loss Curve*", os.path.join(plots_dir, "training_loss_curve.png"), None),
+        ("*Accuracy Curve*", os.path.join(plots_dir, "validation_accuracy_curve.png"), None),
+        ("*Learning Rate Curve*", os.path.join(plots_dir, "learning_rate_curve.png"), None),
+        ("*Loss vs LR Curve*", os.path.join(plots_dir, "loss_vs_lr_curve.png"), None),
+        ("*Confusion Matrix*", os.path.join(cm_dir, "final_confusion_matrix.png"), None),
+        ("*Metrics Table*", os.path.join(cm_dir, "final_metrics_table.png"), None),
+    ]
+    
+    for msg, img_path, text_suffix in plots_to_send:
+        full_msg = f"{msg}\n{text_suffix}" if text_suffix else msg
+        try:
+            if img_path:
+                asyncio.run(send_alert(args.oar_id, full_msg, token_file=args.token, image_path=img_path))
+            else:
+                asyncio.run(send_alert(args.oar_id, full_msg, token_file=args.token))
+        except Exception as e:
+            print(f"[Warning] Failed to send telegram plot {msg}: {e}")
