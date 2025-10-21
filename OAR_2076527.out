@@ -985,3 +985,18 @@ Epoch: 36/150 Iter: 11/12 loss: 2.0364 time 14.06s
 Final training  36/149 loss: 2.0364 time 173.02s lr: 0.000088
 [EarlyStopping] no improve (1/50)
 0 Tue Oct 21 11:34:22 2025 Epoch: 37
+Epoch: 37/150 Iter: 0/12 loss: 2.1584 time 18.63s
+Epoch: 37/150 Iter: 1/12 loss: 1.7236 time 14.07s
+Epoch: 37/150 Iter: 2/12 loss: 1.7986 time 14.07s
+Epoch: 37/150 Iter: 3/12 loss: 1.6277 time 14.06s
+Epoch: 37/150 Iter: 4/12 loss: 1.5263 time 14.07s
+Epoch: 37/150 Iter: 5/12 loss: 1.6297 time 14.06s
+Epoch: 37/150 Iter: 6/12 loss: 1.6749 time 14.07s
+Epoch: 37/150 Iter: 7/12 loss: 1.5958 time 14.06s
+Epoch: 37/150 Iter: 8/12 loss: 1.7166 time 14.06s
+Epoch: 37/150 Iter: 9/12 loss: 1.7788 time 14.06s
+Epoch: 37/150 Iter: 10/12 loss: 1.7555 time 14.06s
+Epoch: 37/150 Iter: 11/12 loss: 1.8275 time 14.06s
+Final training  37/149 loss: 1.8275 time 173.38s lr: 0.000087
+[EarlyStopping] improved to 1.827476
+0 Tue Oct 21 11:37:15 2025 Epoch: 38
