@@ -77,7 +77,7 @@ TRAINING:
 
 LOSS:
   loss_name: "CombinedLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
-  similarity_loss: "margin"  # "contrastive" or "margin" or ""
+  similarity_loss: "contrastive"  # "contrastive" or "margin" or ""
   similarity_loss_weight: 3.0
 
 

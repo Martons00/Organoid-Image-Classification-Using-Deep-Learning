@@ -444,6 +444,8 @@ def build_training_message(args):
     desc = (
         f"Model: *{args.model_name}* \nDataset: *{args.dataset_name}*\nSplit Method: *{args.split_method}* \n"
         f"Epochs: *{args.max_epochs}* \nBatch: *{args.batch_size}* \nLR: *{args.optim_lr}*\n"
+        + (f"Loss: *{args.loss_name}* \n" if args.loss_name else "")
+        + (f"Similarity Loss: *{args.similarity_loss}* \n" if args.similarity_loss else "")
         + (f"Folds: *{args.folds}* | K: *{args.k_folds}*\n" if args.folds else "")
         + (f"DEBUG TRN: *{args.debug_train_samples} training samples*\n" if args.debug else "")
         + (f"DEBUG VAL: *{args.debug_val_samples} val samples*\n" if args.debug else "")
