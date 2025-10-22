@@ -1,0 +1,89 @@
+
+# BRATS Swin UNETR Segmentation Configuration
+SYSTEM:
+  seed: 304
+  distributed: false
+  world_size: 1
+  rank: 0
+  dist_url: "tcp://127.0.0.1:23456"
+  dist_backend: "nccl"
+  workers: 8
+  output_dir: "outputs/"
+  logs_dir: "logs/"
+  telegram_log: true
+  telegram_token: "./token/tlg_token.txt"
+  oar_id: 0
+
+MODEL:
+  name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder"
+  pretrained_model_name: "model_swinvit.pt"
+  pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
+  checkpoint: null
+  resume_ckpt: false
+  feature_size: 48
+  in_channels: 1
+  out_channels: 1
+  spatial_dims: 3
+  norm_name: "instance"
+  dropout_rate: 0.0
+  dropout_path_rate: 0.0
+  use_checkpoint: false
+
+DATASET:
+  name: "OrganoidsINRIA"
+  data_dir: "/home/mraffael/martone_project/Organoids_Dataset/"
+  exact_class: true # if true, use only exact folders, if false use all folders_reduced
+  ignore_label: 3
+  fold: 0
+  cache_dataset: false
+  # ROI size
+  roi_x: 128
+  roi_y: 128
+  roi_z: 128
+
+AUGMENTATION:
+  RandFlipd_prob: 0.2
+  RandRotate90d_prob: 0.2
+  RandScaleIntensityd_prob: 0.1
+  RandShiftIntensityd_prob: 0.1
+
+TRAINING:
+  max_epochs: 150
+  batch_size: 8
+  sw_batch_size: 1
+  val_every: 5
+  folds: false
+  k_folds: 5
+  early_stopping: false
+  patience_val: 25
+  min_delta_val: 0.02
+  patience_loss: 30
+  min_delta_loss: 0.01
+  debug: false
+  debug_train_samples: 3
+  debug_val_samples: 3
+  split_method: "balanced"  # "random" , "stratified" or "balanced"
+  save_checkpoint: true
+  noamp: false
+  # Optimizer parameters
+  optim_lr: 5e-4
+  optim_name: "adamw" # "adam", "adamw" or "sgd"
+  reg_weight: 5e-4
+  momentum: 0.99
+  # Learning rate scheduler
+  lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
+  warmup_epochs: 7
+
+
+LOSS:
+  loss_name: "CombinedLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+  similarity_loss: "margin"
+  similarity_loss_weight: 0.1
+
+
+
+INFERENCE:
+  infer_overlap: 0.5
+
+LOGGING:
+  logdir: "training"

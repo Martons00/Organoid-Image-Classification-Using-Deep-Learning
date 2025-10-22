@@ -30,3 +30,29 @@
 | swinunetr+noah (pt)   | (Focal + Diversity Loss)                     | 5E-4  | 90-300     | 44  | warmup |
 | swinunetr+noah (pt)   | focal loss                                   | 5E-4  | 51-99      | 59  | warmup |
 
+### Cluster execution
+- Testing with cluster scripts using best effort and priority 1
+- Distributed testing across multiple GPUs
+- Telegram bot for cluster management
+
+### Models and weights
+- Pre-trained model: SwinViT
+- Pre-trained encoder10
+- Model selection: 'swinunetr', 'swinunetr+ml_decoder', or 'swinunetr+noah'
+
+### Data and splits
+- Dataset split method: 'random', 'stratified', or 'balanced'
+- Training set split method: 'random' or 'balanced'
+
+### Configuration and control
+- Automated configuration via YAML file
+- Checkpoint
+- Early stopping
+- Debug mode
+- Telegram bot for monitoring
+
+### Optimization and losses
+- Scheduler: 'cosine_anneal' or 'warmup_cosine'
+- Optimizer: 'adam', 'adamw', or 'sgd'
+- Loss: 'CE', 'FocalLoss', 'LabelSmoothingLoss', 'DiversityLoss', 'CombinedLoss', or 'CenterLoss'
+- Similarity loss: 'contrastive', 'margin', or '' (none)

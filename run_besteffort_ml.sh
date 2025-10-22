@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #OAR -q besteffort
-#OAR -l gpu=1,walltime=6:00:00
+#OAR -l gpu=1,walltime=12:00:00
 #OAR -p esterel40
 #OAR -O OAR_%jobid%.out
 #OAR -E OAR_%jobid%.err

@@ -65,6 +65,7 @@ def main():
     try:
         args,cfgs = parse_args()  # Aggiorna automaticamente la variabile globale config
         args.amp = not args.noamp
+        args.start_epoch = 0
         
         if args.distributed:
             args.ngpus_per_node = torch.cuda.device_count()
@@ -148,7 +149,7 @@ def main_worker(gpu, args, configs):
         acc_func=acc_metric,
         args=args,
         scheduler=scheduler,
-        start_epoch=model.start_epoch if model.start_epoch else 0,
+        start_epoch=args.start_epoch if args.start_epoch else 0,
         writer_dict=writer_dict,
         final_output_dir=final_output_dir,
         logger=logger,
@@ -299,9 +300,9 @@ def _setup_model(args, logger, log):
         incompatible = model.load_state_dict(state_dict, strict=False)
 
         if "epoch" in checkpoint:
-            model.start_epoch = checkpoint["epoch"]  
+            args.start_epoch = checkpoint["epoch"]  
         if "best_acc" in checkpoint:
-            model.best_acc = checkpoint["best_acc"]  
+            args.best_acc = checkpoint["best_acc"]  
 
         
         loaded_keys = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
