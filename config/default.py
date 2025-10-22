@@ -44,6 +44,8 @@ _C.MODEL.name = "swinunetr"
 
 _C.MODEL.pretrained_dir = "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
 
+_C.MODEL.encoder10_pth = ""
+
 _C.MODEL.checkpoint = ""
 
 _C.MODEL.resume_ckpt = False
@@ -222,7 +224,7 @@ def parse_args():
     args = config_to_args(config)  # Ora usa la config AGGIORNATA dal YAML
     args.oar_id = oar_id  # Sovrascrivi con il valore passato da linea di comando
     
-    return args
+    return args, config
 
 # Funzione di utilità per accedere ai parametri in modo compatibile
 def config_to_args(cfg):
@@ -249,7 +251,8 @@ def config_to_args(cfg):
     args.model_name = cfg.MODEL.name
     args.pretrained_model_name = cfg.MODEL.pretrained_model_name
     args.pretrained_dir = cfg.MODEL.pretrained_dir
-    args.checkpoint = cfg.MODEL.checkpoint if cfg.MODEL.checkpoint else None
+    args.encoder10_pth = cfg.MODEL.encoder10_pth
+    args.checkpoint_path = cfg.MODEL.checkpoint if cfg.MODEL.checkpoint else None
     args.resume_ckpt = cfg.MODEL.resume_ckpt
     args.feature_size = cfg.MODEL.feature_size
     args.in_channels = cfg.MODEL.in_channels

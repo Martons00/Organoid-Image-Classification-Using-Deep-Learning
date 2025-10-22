@@ -18,7 +18,8 @@ MODEL:
   name: "swinunetr+noah" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah" 
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
-  checkpoint: "./pretrained_models/encode10/model.pt"
+  encoder10_pth: "./pretrained_models/encode10/model.pt"
+  checkpoint: ""
   resume_ckpt: false
   feature_size: 48
   in_channels: 1
@@ -48,16 +49,16 @@ AUGMENTATION:
   RandShiftIntensityd_prob: 0.1
 
 TRAINING:
-  max_epochs: 100
+  max_epochs: 300
   batch_size: 8
   sw_batch_size: 1
-  val_every: 4
+  val_every: 5
   folds: false
-  k_folds: 5
+  k_folds: 10
   early_stopping: true
-  patience_val: 10
+  patience_val: 20
   min_delta_val: 0.02
-  patience_loss: 30
+  patience_loss: 100
   min_delta_loss: 0.01
   debug: false
   debug_train_samples: 3
@@ -72,7 +73,7 @@ TRAINING:
   momentum: 0.99
   # Learning rate scheduler
   lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
-  warmup_epochs: 3
+  warmup_epochs: 10
 
 
 LOSS:

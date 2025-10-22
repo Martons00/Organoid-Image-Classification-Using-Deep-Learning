@@ -464,16 +464,18 @@ def run_training(
     val_acc_max = 0.0
     last_cm = None
     last_metrics = None
+
+    model = freeze_backbone_and_select_head_fixed_plus(model)
     
     # Freeze/unfreeze layers
-    if args.checkpoint is None:
-        model = freeze_backbone_and_select_head_fixed_plus(model)
-    else:
-        model = freeze_backbone_and_select_head_fixed(model)
-        if is_main_process:
-            print("Loaded from checkpoint, layers unfrozen for fine-tuning")
-            if logger:
-                logger.info("Loaded from checkpoint, layers unfrozen for fine-tuning")
+    # if args.encoder10_pth is not None:
+    #     model = freeze_backbone_and_select_head_fixed_plus(model)
+    # else:
+    #     model = freeze_backbone_and_select_head_fixed(model)
+    #     if is_main_process:
+    #         print("Loaded from checkpoint, layers unfrozen for fine-tuning")
+    #         if logger:
+    #             logger.info("Loaded from checkpoint, layers unfrozen for fine-tuning")
     
     # Setup early stopping
     early_stopping_val = None

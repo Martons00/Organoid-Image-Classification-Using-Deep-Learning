@@ -63,7 +63,7 @@ from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR  # Uncomment i
 
 def main():
     try:
-        args = parse_args()  # Aggiorna automaticamente la variabile globale config
+        args,cfgs = parse_args()  # Aggiorna automaticamente la variabile globale config
         args.amp = not args.noamp
         
         if args.distributed:
@@ -72,7 +72,7 @@ def main():
             args.world_size = args.ngpus_per_node * args.world_size
             mp.spawn(main_worker, nprocs=args.ngpus_per_node, args=(args,))
         else:
-            main_worker(gpu=0, args=args)
+            main_worker(gpu=0, args=args, configs=cfgs)
     except Exception as e:
         print("An exception occurred during training:")
         print(str(e))
@@ -80,7 +80,8 @@ def main():
             message = f"🚨 *ERROR*\nAn exception occurred during training:\n{str(e)}"
             asyncio.run(send_alert(args.oar_id, message, token_file=args.token))
         raise e  # Re-raise the exception for further handling if needed
-def main_worker(gpu, args):
+
+def main_worker(gpu, args, configs):
     """Main training worker con setup distribuito."""
     # Setup base
     _setup_distributed(gpu, args)
@@ -103,6 +104,14 @@ def main_worker(gpu, args):
     
     log(pprint.pformat(vars(args)))
     log("")
+    # Save args/config to a file named "config" in the final output directory
+    try:
+        config_path = os.path.join(final_output_dir, "config.txt")
+        with open(config_path, "w") as cf:
+            cf.write(configs.dump())
+        log(f"Saved configuration to: {config_path}")
+    except Exception as e:
+        log(f"Failed to write config file: {e}", level="warning")
     
     # Telegram notification iniziale
     if args.telegram_log:
@@ -139,7 +148,7 @@ def main_worker(gpu, args):
         acc_func=acc_metric,
         args=args,
         scheduler=scheduler,
-        start_epoch=0,
+        start_epoch=model.start_epoch if model.start_epoch else 0,
         writer_dict=writer_dict,
         final_output_dir=final_output_dir,
         logger=logger,
@@ -200,8 +209,9 @@ def _setup_model(args, logger, log):
     
     # Carica pretrained weights
     pretrained_pth = os.path.join(args.pretrained_dir, args.pretrained_model_name)
-    
-    if os.path.exists(pretrained_pth):
+
+
+    if os.path.exists(pretrained_pth) and args.checkpoint_path is None:
         log("Using pretrained weights")
         log(f"=> loading pretrained model '{pretrained_pth}'")
         
@@ -225,12 +235,15 @@ def _setup_model(args, logger, log):
         if unexpected:
             log(f"Unexpected keys when loading pretrained: {len(unexpected)}")
     else:
-        log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+        if args.checkpoint_path is None:
+            log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+        else:
+            log("Skipping loading pretrained weights since checkpoint path is provided")
     
     # Carica checkpoint per fine-tuning (se specificato)
-    if args.checkpoint is not None and os.path.exists(args.checkpoint):
-        log(f"=> loading checkpoint '{args.checkpoint}'")
-        checkpoint = torch.load(args.checkpoint, map_location="cpu")
+    if args.encoder10_pth is not None and os.path.exists(args.encoder10_pth) and args.checkpoint_path is None:
+        log(f"=> loading encoder '{args.encoder10_pth}'")
+        checkpoint = torch.load(args.encoder10_pth, map_location="cpu")
         state_dict = checkpoint.get("state_dict", checkpoint)
         
         # Filtra solo encoder10 keys
@@ -238,7 +251,7 @@ def _setup_model(args, logger, log):
         
         incompatible = model.load_state_dict(new_state_dict, strict=False)
         loaded_keys = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
-        log(f"Loaded {loaded_keys} keys from checkpoint")
+        log(f"Loaded {loaded_keys} keys from encoder10 checkpoint")
     
     # Converti a encoder + classification head
     model = SwinUNETREncoder(model, num_classes=3, num_features=768)
@@ -264,7 +277,7 @@ def _setup_model(args, logger, log):
             head = NOAH(
                 inplanes=768,
                 outplanes=3,
-                dropout=0.0,
+                dropout=0.1,
                 head_num=1,
                 head_split=True,
                 kv_split=False
@@ -276,6 +289,23 @@ def _setup_model(args, logger, log):
             log("Warning: NOAH not imported, using default head", level="warning")
     else:
         log("Using SwinUNETR with Single Linear Classification Head")
+
+        # Carica checkpoint per fine-tuning (se specificato)
+    if args.checkpoint_path is not None and os.path.exists(args.checkpoint_path):
+        log(f"=> loading checkpoint '{args.checkpoint_path}'")
+        checkpoint = torch.load(args.checkpoint_path, map_location="cpu")
+        state_dict = checkpoint.get("state_dict", checkpoint)
+        
+        incompatible = model.load_state_dict(state_dict, strict=False)
+
+        if "epoch" in checkpoint:
+            model.start_epoch = checkpoint["epoch"]  
+        if "best_acc" in checkpoint:
+            model.best_acc = checkpoint["best_acc"]  
+
+        
+        loaded_keys = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
+        log(f"Loaded {loaded_keys} keys from checkpoint")
     
     # Count parameters
     total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
