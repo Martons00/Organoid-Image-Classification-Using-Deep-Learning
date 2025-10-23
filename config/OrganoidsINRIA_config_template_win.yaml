@@ -48,7 +48,7 @@ AUGMENTATION:
 TRAINING:
   max_epochs: 3
   batch_size: 1
-  sw_batch_size: 1
+  sw_batch_size: 4
   val_every: 1
   early_stopping: true
   patience_val: 3

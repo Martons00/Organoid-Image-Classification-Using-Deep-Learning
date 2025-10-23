@@ -51,7 +51,7 @@ AUGMENTATION:
 TRAINING:
   max_epochs: 3
   batch_size: 3
-  sw_batch_size: 1
+  sw_batch_size: 4
   val_every: 1
   folds: false
   k_folds: 5

@@ -460,33 +460,6 @@ def _starts(size, patch, step):
         s.append(size - patch)
     return s
 
-def extract_patches_5d_torch_old(x, patch_size=(128,256,256), step=(128,256,256), pad_value=0):
-    # x: [B,1,D,H,W], ritorna patches: [N,1,pd,ph,pw] e coords: [(b,z,y,x0), ...]
-    B, C, D, H, W = x.shape
-    pd, ph, pw = patch_size
-    sd, sh, sw = step
-    zs, ys, xs = _starts(D, pd, sd), _starts(H, ph, sh), _starts(W, pw, sw)
-
-    patches = []
-    coords  = []
-    for b in range(B):
-        for z in zs:
-            for y in ys:
-                for x0 in xs:
-                    patch = x[b:b+1, :, z:z+pd, y:y+ph, x0:x0+pw]  # [1,1,d',h',w']
-                    dd, hh, ww = patch.shape[-3:]
-                    if (dd, hh, ww) != (pd, ph, pw):
-                        # pad solo a destra su D,H,W: (wL,wR,hL,hR,dL,dR)
-                        pad_d = pd - dd
-                        pad_h = ph - hh
-                        pad_w = pw - ww
-                        patch = F.pad(patch, (0, pad_w, 0, pad_h, 0, pad_d), value=pad_value)
-                    patches.append(patch)   # [1,1,pd,ph,pw]
-                    coords.append((b, z, y, x0))
-    if not patches:
-        return torch.empty(0, 1, *patch_size), []
-    patches = torch.cat(patches, dim=0)  # [N,1,pd,ph,pw]
-    return patches, coords
 import math
 import torch
 import torch.nn.functional as F
@@ -534,5 +507,108 @@ def extract_patches_5d_torch(
     patches = torch.cat(patches, dim=0)  # [N,C,pd,ph,pw]
     return patches, coords
 
-
-
+def tile_with_gaussian_blending(feats, coords, patch_size, step):
+    """
+    Merge delle feature patches con blending gaussiano.
+    Opera direttamente nello spazio delle features senza rescaling.
+    
+    Args:
+        feats: [N, C, fD, fH, fW] features delle N patch
+        coords: lista di coordinate [(b, z, y, x), ...] in input space
+        patch_size: (pD, pH, pW) dimensioni della patch in input space
+        step: (sD, sH, sW) step tra patch in input space
+    
+    Returns:
+        torch.Tensor: [1, C, out_fD, out_fH, out_fW] volume features merged
+    """
+    from monai.inferers.utils import compute_importance_map
+    
+    N, C, fD, fH, fW = feats.shape
+    pD, pH, pW = patch_size
+    sD, sH, sW = step
+    
+    # Calcola la griglia delle patch dalle coordinate
+    unique_z = sorted(set(c[1] for c in coords))
+    unique_y = sorted(set(c[2] for c in coords))
+    unique_x = sorted(set(c[3] for c in coords))
+    
+    # Calcola le dimensioni output in feature space
+    # Numero di patch in ogni dimensione
+    nZ = len(unique_z)
+    nY = len(unique_y)
+    nX = len(unique_x)
+    
+    # Dimensione totale considerando overlap
+    # Ultima patch: posizione + dimensione patch
+    # Tutto il resto: step * (n-1)
+    max_z = unique_z[-1] + pD
+    max_y = unique_y[-1] + pH
+    max_x = unique_x[-1] + pW
+    
+    # Scale factor da input space a feature space
+    scale_d = fD / pD
+    scale_h = fH / pH
+    scale_w = fW / pW
+    
+    # Dimensioni output in feature space
+    out_D = int(max_z * scale_d)
+    out_H = int(max_y * scale_h)
+    out_W = int(max_x * scale_w)
+    
+    # Step size in feature space
+    step_d_feat = int(sD * scale_d)
+    step_h_feat = int(sH * scale_h)
+    step_w_feat = int(sW * scale_w)
+    
+    # Alloca output e count map
+    output = torch.zeros(1, C, out_D, out_H, out_W, 
+                        device=feats.device, dtype=feats.dtype)
+    count = torch.zeros(1, 1, out_D, out_H, out_W, 
+                       device=feats.device, dtype=feats.dtype)
+    
+    # Crea importance map gaussiana
+    try:
+        importance = compute_importance_map(
+            (fD, fH, fW),
+            mode="gaussian",
+            sigma_scale=0.125,
+            device=feats.device,
+            dtype=feats.dtype
+        )
+        # Reshape per broadcasting: [1, 1, fD, fH, fW]
+        if importance.ndim == 3:
+            importance = importance.unsqueeze(0).unsqueeze(0)
+    except:
+        # Fallback a constant se gaussian fallisce
+        importance = torch.ones(1, 1, fD, fH, fW, 
+                               device=feats.device, dtype=feats.dtype)
+    
+    # Riempi output con weighted accumulation
+    for i, (b, z, y, x) in enumerate(coords):
+        # Converti coordinate da input space a feature space
+        z_f = int(z * scale_d)
+        y_f = int(y * scale_h)
+        x_f = int(x * scale_w)
+        
+        # Calcola end coordinates (clamp ai bordi)
+        z_end = min(z_f + fD, out_D)
+        y_end = min(y_f + fH, out_H)
+        x_end = min(x_f + fW, out_W)
+        
+        # Dimensioni effettive da copiare (gestisce bordi)
+        actual_d = z_end - z_f
+        actual_h = y_end - y_f
+        actual_w = x_end - x_f
+        
+        # Slice della feature e importance map
+        feat_slice = feats[i:i+1, :, :actual_d, :actual_h, :actual_w]
+        imp_slice = importance[:, :, :actual_d, :actual_h, :actual_w]
+        
+        # Accumula con peso
+        output[:, :, z_f:z_end, y_f:y_end, x_f:x_end] += feat_slice * imp_slice
+        count[:, :, z_f:z_end, y_f:y_end, x_f:x_end] += imp_slice
+    
+    # Normalizza dividendo per count (evita divisione per zero)
+    output = output / count.clamp(min=1e-8)
+    
+    return output
