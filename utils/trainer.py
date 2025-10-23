@@ -75,6 +75,20 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
     
     start_time = time.time()
     run_loss = AverageMeter()
+    run_acc = AverageMeter()
+    
+    # Contatori per classe
+    num_classes = None
+    per_class_correct = None
+    per_class_total = None
+    
+    # Liste per confusion matrix
+    all_preds = []
+    all_targets = []
+    
+    # Cache per attributi args
+    is_distributed = getattr(args, "distributed", False)
+    is_main_process = getattr(args, "rank", 0) == 0
     
     for idx, batch_data in enumerate(loader):
         # Estrai data e target
@@ -169,8 +183,44 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
         # Calcola loss
         logits = torch.cat(batch_logits, dim=0)  # [B,num_classes]
         loss = loss_func(logits, target)
-
         
+        # Inizializza contatori per classe alla prima iterazione
+        if num_classes is None:
+            num_classes = logits.shape[1]
+            per_class_correct = np.zeros(num_classes, dtype=np.int64)
+            per_class_total = np.zeros(num_classes, dtype=np.int64)
+        
+        # Calcola metriche di accuracy
+        with torch.no_grad():
+            probs = torch.softmax(logits, dim=1)
+            preds = probs.argmax(dim=1)  # [B]
+            target_eval = target.view(-1) if target.ndim > 1 else target
+            
+            all_preds.append(preds.cpu())
+            all_targets.append(target_eval.cpu())
+            
+            # Accuracy batch
+            correct = (preds == target_eval).sum().item()
+            not_nans = target_eval.numel()
+            
+            if acc_func is not None:
+                acc = float(acc_func(logits, target_eval))
+            else:
+                acc = correct / max(1, not_nans)
+            
+            # Per-class accuracy
+            t_cpu = target_eval.cpu().numpy()
+            p_cpu = preds.cpu().numpy()
+            
+            # Calcola correttezza per ogni sample
+            mask = (p_cpu == t_cpu)
+            
+            # Conta totali e corretti per classe
+            batch_total = np.bincount(t_cpu, minlength=num_classes)
+            batch_correct = np.bincount(t_cpu[mask], minlength=num_classes)
+            
+            per_class_correct += batch_correct
+            per_class_total += batch_total
         
         sim_loss_value = 0.0
         if args.similarity_loss == "contrastive" and sim is not None:
@@ -188,7 +238,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
         optimizer.step()
         
         # Aggiorna metriche
-        if args.distributed:
+        if is_distributed:
             loss_list = distributed_all_gather(
                 [loss], 
                 out_numpy=True, 
@@ -198,19 +248,50 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
                 np.mean(np.mean(np.stack(loss_list, axis=0), axis=0), axis=0),
                 n=args.batch_size * args.world_size
             )
+            
+            # Aggregazione accuracy globale
+            acc_tensor = torch.tensor(acc, device=device, dtype=torch.float32)
+            n_tensor = torch.tensor(not_nans, device=device, dtype=torch.float32)
+            
+            acc_list, not_nans_list = distributed_all_gather(
+                [acc_tensor, n_tensor],
+                out_numpy=True,
+                is_valid=idx < loader.sampler.valid_length
+            )
+            
+            for al, nl in zip(acc_list, not_nans_list):
+                run_acc.update(float(al), n=int(nl))
         else:
             run_loss.update(loss.item(), n=args.batch_size)
+            run_acc.update(acc, n=not_nans)
         
         # Logging
-        if args.rank == 0:
+        if is_main_process:
             print(
                 f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
-                f"loss: {run_loss.avg:.4f} sim_loss: {sim_loss_value:.4f} "
+                f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} sim_loss: {sim_loss_value:.4f} "
                 f"time {time.time() - start_time:.2f}s"
             )
         start_time = time.time()
     
-    return run_loss.avg
+    # Calcola accuracy per classe
+    per_class_acc = {
+        int(c): float(per_class_correct[c]) / max(1, int(per_class_total[c]))
+        for c in range(num_classes)
+    }
+    
+    # Confusion matrix
+    all_preds = torch.cat(all_preds, dim=0).numpy()
+    all_targets = torch.cat(all_targets, dim=0).numpy()
+    cm = confusion_matrix(all_targets, all_preds, labels=np.arange(num_classes))
+    
+    # Stampa riassunto
+    if is_main_process:
+        summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
+        print(f"[Train epoch {epoch}] avg_loss={run_loss.avg:.4f} avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
+    
+    return run_loss.avg, float(run_acc.avg), per_class_acc, cm
+
 
 def val_epoch(
     model,
@@ -512,7 +593,7 @@ def run_training(
         # Training
         epoch_time = time.time()
         train_loss = train_epoch(
-            model, train_loader, optimizer, epoch=epoch, loss_func=loss_func, args=args
+            model, train_loader, optimizer, epoch=epoch, loss_func=loss_func, acc_func=acc_func, args=args
         )
         training_losses.append(train_loss)
         
