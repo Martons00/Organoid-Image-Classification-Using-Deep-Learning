@@ -540,13 +540,12 @@ def tile_with_gaussian_blending(feats, coords, patch_size, step):
     
     # Dimensione totale considerando overlap
     # Ultima patch: posizione + dimensione patch
-    # Tutto il resto: step * (n-1)
     max_z = unique_z[-1] + pD
     max_y = unique_y[-1] + pH
     max_x = unique_x[-1] + pW
     
-    # Scale factor da input space a feature space
-    scale_d = fD / pD
+    # Scale factor da input space a feature space (downsampling 32x)
+    scale_d = fD / pD  # es. 4 / 128 = 0.03125
     scale_h = fH / pH
     scale_w = fW / pW
     
@@ -612,3 +611,4 @@ def tile_with_gaussian_blending(feats, coords, patch_size, step):
     output = output / count.clamp(min=1e-8)
     
     return output
+
