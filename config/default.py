@@ -108,6 +108,8 @@ _C.TRAINING.max_epochs = 300
 
 _C.TRAINING.batch_size = 1
 
+_C.TRAINING.patch_merging = False
+
 _C.TRAINING.sw_batch_size = 1
 
 _C.TRAINING.val_every = 100
@@ -283,6 +285,7 @@ def config_to_args(cfg):
     # Training
     args.max_epochs = cfg.TRAINING.max_epochs
     args.batch_size = cfg.TRAINING.batch_size
+    args.patch_merging = cfg.TRAINING.patch_merging
     args.sw_batch_size = cfg.TRAINING.sw_batch_size
     args.val_every = cfg.TRAINING.val_every
     args.early_stopping = cfg.TRAINING.early_stopping

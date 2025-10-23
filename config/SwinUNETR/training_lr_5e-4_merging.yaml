@@ -50,7 +50,7 @@ AUGMENTATION:
 TRAINING:
   max_epochs: 100
   batch_size: 8
-  patch_merging: false
+  patch_merging: true
   sw_batch_size: 4
   val_every: 2
   folds: false
