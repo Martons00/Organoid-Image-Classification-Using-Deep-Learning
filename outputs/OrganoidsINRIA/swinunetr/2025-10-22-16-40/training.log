@@ -124,3 +124,489 @@ Class distribution in training set:
 2025-10-22 16:44:29,112 INFO 0 Wed Oct 22 16:44:29 2025 Epoch: 1
 2025-10-22 16:47:48,589 INFO Final training 1/149, loss: 4.9953, time 199.48s, lr: 0.000083
 2025-10-22 16:47:48,593 INFO 0 Wed Oct 22 16:47:48 2025 Epoch: 2
+2025-10-22 16:50:56,456 INFO Final training 2/149, loss: 4.9278, time 187.86s, lr: 0.000167
+2025-10-22 16:50:56,462 INFO 0 Wed Oct 22 16:50:56 2025 Epoch: 3
+2025-10-22 16:54:04,413 INFO Final training 3/149, loss: 4.8415, time 187.95s, lr: 0.000250
+2025-10-22 16:54:04,420 INFO 0 Wed Oct 22 16:54:04 2025 Epoch: 4
+2025-10-22 16:57:12,700 INFO Final training 4/149, loss: 4.7755, time 188.28s, lr: 0.000333
+2025-10-22 16:58:19,426 INFO Final validation 4/149, Val_acc: 0.4444, time 66.40s
+Accuracy: 0.444
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.000     0.000         1.000   0.000         9
+1                          0.462     0.667         0.611   0.545         9
+2                          0.429     0.667         0.556   0.522         9
+2025-10-22 16:58:19,427 INFO New best (0.000000 --> 0.444444)
+2025-10-22 16:58:24,551 INFO Copying best model to model.pt
+2025-10-22 16:58:28,398 INFO 0 Wed Oct 22 16:58:28 2025 Epoch: 5
+2025-10-22 17:01:35,622 INFO Final training 5/149, loss: 4.6055, time 187.22s, lr: 0.000417
+2025-10-22 17:01:35,623 INFO 0 Wed Oct 22 17:01:35 2025 Epoch: 6
+2025-10-22 17:04:42,981 INFO Final training 6/149, loss: 4.6583, time 187.36s, lr: 0.000500
+2025-10-22 17:04:42,985 INFO 0 Wed Oct 22 17:04:42 2025 Epoch: 7
+2025-10-22 17:07:51,035 INFO Final training 7/149, loss: 4.5968, time 188.05s, lr: 0.000500
+2025-10-22 17:07:51,041 INFO 0 Wed Oct 22 17:07:51 2025 Epoch: 8
+2025-10-22 17:10:58,084 INFO Final training 8/149, loss: 4.5787, time 187.04s, lr: 0.000500
+2025-10-22 17:10:58,090 INFO 0 Wed Oct 22 17:10:58 2025 Epoch: 9
+2025-10-22 17:14:05,304 INFO Final training 9/149, loss: 4.8315, time 187.21s, lr: 0.000500
+2025-10-22 17:14:58,326 INFO Final validation 9/149, Val_acc: 0.4074, time 53.02s
+Accuracy: 0.407
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.391     1.000         0.222   0.562         9
+1                          0.000     0.000         1.000   0.000         9
+2                          0.500     0.222         0.889   0.308         9
+2025-10-22 17:15:02,890 INFO 0 Wed Oct 22 17:15:02 2025 Epoch: 10
+2025-10-22 17:18:10,544 INFO Final training 10/149, loss: 4.7503, time 187.65s, lr: 0.000499
+2025-10-22 17:18:11,057 INFO 0 Wed Oct 22 17:18:11 2025 Epoch: 11
+2025-10-22 17:21:17,429 INFO Final training 11/149, loss: 4.4849, time 186.37s, lr: 0.000499
+2025-10-22 17:21:17,436 INFO 0 Wed Oct 22 17:21:17 2025 Epoch: 12
+2025-10-22 17:24:24,263 INFO Final training 12/149, loss: 4.3534, time 186.83s, lr: 0.000498
+2025-10-22 17:24:24,268 INFO 0 Wed Oct 22 17:24:24 2025 Epoch: 13
+2025-10-22 17:27:32,687 INFO Final training 13/149, loss: 4.2058, time 188.42s, lr: 0.000498
+2025-10-22 17:27:32,693 INFO 0 Wed Oct 22 17:27:32 2025 Epoch: 14
+2025-10-22 17:30:39,231 INFO Final training 14/149, loss: 3.9542, time 186.54s, lr: 0.000497
+2025-10-22 17:31:32,240 INFO Final validation 14/149, Val_acc: 0.4444, time 53.00s
+Accuracy: 0.444
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.000     0.000         1.000   0.000         9
+1                          0.500     0.556         0.722   0.526         9
+2                          0.412     0.778         0.444   0.538         9
+2025-10-22 17:31:44,945 INFO 0 Wed Oct 22 17:31:44 2025 Epoch: 15
+2025-10-22 17:34:55,598 INFO Final training 15/149, loss: 3.8670, time 190.65s, lr: 0.000496
+2025-10-22 17:34:55,908 INFO 0 Wed Oct 22 17:34:55 2025 Epoch: 16
+2025-10-22 17:38:06,769 INFO Final training 16/149, loss: 4.2421, time 190.86s, lr: 0.000495
+2025-10-22 17:38:06,773 INFO 0 Wed Oct 22 17:38:06 2025 Epoch: 17
+2025-10-22 17:41:15,167 INFO Final training 17/149, loss: 4.1600, time 188.39s, lr: 0.000494
+2025-10-22 17:41:15,174 INFO 0 Wed Oct 22 17:41:15 2025 Epoch: 18
+2025-10-22 17:44:21,338 INFO Final training 18/149, loss: 3.9253, time 186.16s, lr: 0.000493
+2025-10-22 17:44:21,344 INFO 0 Wed Oct 22 17:44:21 2025 Epoch: 19
+2025-10-22 17:47:29,884 INFO Final training 19/149, loss: 3.7433, time 188.54s, lr: 0.000491
+2025-10-22 17:48:26,781 INFO Final validation 19/149, Val_acc: 0.3333, time 56.61s
+Accuracy: 0.333
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.333     1.000         0.000   0.500         9
+1                          0.000     0.000         1.000   0.000         9
+2                          0.000     0.000         1.000   0.000         9
+2025-10-22 17:48:31,426 INFO 0 Wed Oct 22 17:48:31 2025 Epoch: 20
+2025-10-22 17:51:38,328 INFO Final training 20/149, loss: 4.1388, time 186.90s, lr: 0.000490
+2025-10-22 17:51:38,803 INFO 0 Wed Oct 22 17:51:38 2025 Epoch: 21
+2025-10-22 17:54:45,160 INFO Final training 21/149, loss: 3.6483, time 186.36s, lr: 0.000488
+2025-10-22 17:54:45,503 INFO 0 Wed Oct 22 17:54:45 2025 Epoch: 22
+2025-10-22 17:57:57,382 INFO Final training 22/149, loss: 3.4962, time 191.88s, lr: 0.000487
+2025-10-22 17:57:57,391 INFO 0 Wed Oct 22 17:57:57 2025 Epoch: 23
+2025-10-22 18:01:04,959 INFO Final training 23/149, loss: 3.2942, time 187.57s, lr: 0.000485
+2025-10-22 18:01:04,965 INFO 0 Wed Oct 22 18:01:04 2025 Epoch: 24
+2025-10-22 18:04:12,699 INFO Final training 24/149, loss: 3.9967, time 187.73s, lr: 0.000483
+2025-10-22 18:05:10,589 INFO Final validation 24/149, Val_acc: 0.3333, time 57.59s
+Accuracy: 0.333
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.320     0.889         0.056   0.471         9
+1                          0.500     0.111         0.944   0.182         9
+2                          0.000     0.000         1.000   0.000         9
+2025-10-22 18:05:15,224 INFO 0 Wed Oct 22 18:05:15 2025 Epoch: 25
+2025-10-22 18:08:22,852 INFO Final training 25/149, loss: 3.6046, time 187.63s, lr: 0.000481
+2025-10-22 18:08:23,181 INFO 0 Wed Oct 22 18:08:23 2025 Epoch: 26
+2025-10-22 18:11:36,287 INFO Final training 26/149, loss: 3.3250, time 193.11s, lr: 0.000479
+2025-10-22 18:11:36,293 INFO 0 Wed Oct 22 18:11:36 2025 Epoch: 27
+2025-10-22 18:14:43,556 INFO Final training 27/149, loss: 3.3040, time 187.26s, lr: 0.000476
+2025-10-22 18:14:43,959 INFO 0 Wed Oct 22 18:14:43 2025 Epoch: 28
+2025-10-22 18:17:56,171 INFO Final training 28/149, loss: 3.3601, time 192.21s, lr: 0.000474
+2025-10-22 18:17:56,175 INFO 0 Wed Oct 22 18:17:56 2025 Epoch: 29
+2025-10-22 18:21:02,688 INFO Final training 29/149, loss: 3.6985, time 186.51s, lr: 0.000471
+2025-10-22 18:21:58,974 INFO Final validation 29/149, Val_acc: 0.4444, time 56.28s
+Accuracy: 0.444
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.667     0.222         0.944   0.333         9
+1                          0.385     0.556         0.556   0.455         9
+2                          0.455     0.556         0.667   0.500         9
+2025-10-22 18:22:03,583 INFO 0 Wed Oct 22 18:22:03 2025 Epoch: 30
+2025-10-22 18:25:09,961 INFO Final training 30/149, loss: 3.7430, time 186.38s, lr: 0.000469
+2025-10-22 18:25:10,415 INFO 0 Wed Oct 22 18:25:10 2025 Epoch: 31
+2025-10-22 18:28:16,941 INFO Final training 31/149, loss: 3.4827, time 186.53s, lr: 0.000466
+2025-10-22 18:28:16,951 INFO 0 Wed Oct 22 18:28:16 2025 Epoch: 32
+2025-10-22 18:31:24,113 INFO Final training 32/149, loss: 3.0696, time 187.16s, lr: 0.000463
+2025-10-22 18:31:24,114 INFO 0 Wed Oct 22 18:31:24 2025 Epoch: 33
+2025-10-22 18:34:30,627 INFO Final training 33/149, loss: 2.7782, time 186.51s, lr: 0.000460
+2025-10-22 18:34:30,639 INFO 0 Wed Oct 22 18:34:30 2025 Epoch: 34
+2025-10-22 18:37:37,600 INFO Final training 34/149, loss: 2.7857, time 186.96s, lr: 0.000457
+2025-10-22 18:38:32,771 INFO Final validation 34/149, Val_acc: 0.5185, time 55.17s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.571     0.889         0.667   0.696         9
+1                          0.444     0.444         0.722   0.444         9
+2                          0.500     0.222         0.889   0.308         9
+2025-10-22 18:38:32,772 INFO New best (0.444444 --> 0.518519)
+2025-10-22 18:38:44,455 INFO Copying best model to model.pt
+2025-10-22 18:38:48,377 INFO 0 Wed Oct 22 18:38:48 2025 Epoch: 35
+2025-10-22 18:41:55,643 INFO Final training 35/149, loss: 2.9792, time 187.27s, lr: 0.000454
+2025-10-22 18:41:55,648 INFO 0 Wed Oct 22 18:41:55 2025 Epoch: 36
+2025-10-22 18:45:03,484 INFO Final training 36/149, loss: 2.8312, time 187.84s, lr: 0.000451
+2025-10-22 18:45:03,494 INFO 0 Wed Oct 22 18:45:03 2025 Epoch: 37
+2025-10-22 18:48:11,430 INFO Final training 37/149, loss: 2.8192, time 187.94s, lr: 0.000448
+2025-10-22 18:48:11,818 INFO 0 Wed Oct 22 18:48:11 2025 Epoch: 38
+2025-10-22 18:51:22,007 INFO Final training 38/149, loss: 2.5383, time 190.19s, lr: 0.000444
+2025-10-22 18:51:22,015 INFO 0 Wed Oct 22 18:51:22 2025 Epoch: 39
+2025-10-22 18:54:32,553 INFO Final training 39/149, loss: 2.3997, time 190.54s, lr: 0.000441
+2025-10-22 18:55:26,129 INFO Final validation 39/149, Val_acc: 0.4815, time 53.57s
+Accuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.500     0.333         0.833   0.400         9
+2025-10-22 18:55:35,384 INFO 0 Wed Oct 22 18:55:35 2025 Epoch: 40
+2025-10-22 18:58:44,538 INFO Final training 40/149, loss: 2.5188, time 189.15s, lr: 0.000437
+2025-10-22 18:58:46,413 INFO 0 Wed Oct 22 18:58:46 2025 Epoch: 41
+2025-10-22 19:01:52,987 INFO Final training 41/149, loss: 2.6932, time 186.57s, lr: 0.000433
+2025-10-22 19:01:52,994 INFO 0 Wed Oct 22 19:01:52 2025 Epoch: 42
+2025-10-22 19:04:59,820 INFO Final training 42/149, loss: 2.4277, time 186.83s, lr: 0.000430
+2025-10-22 19:04:59,825 INFO 0 Wed Oct 22 19:04:59 2025 Epoch: 43
+2025-10-22 19:08:07,467 INFO Final training 43/149, loss: 2.4419, time 187.64s, lr: 0.000426
+2025-10-22 19:08:07,468 INFO 0 Wed Oct 22 19:08:07 2025 Epoch: 44
+2025-10-22 19:11:15,025 INFO Final training 44/149, loss: 2.2502, time 187.56s, lr: 0.000422
+2025-10-22 19:12:08,089 INFO Final validation 44/149, Val_acc: 0.5556, time 53.06s
+Accuracy: 0.556
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.583     0.778         0.722   0.667         9
+1                          0.500     0.444         0.778   0.471         9
+2                          0.571     0.444         0.833   0.500         9
+2025-10-22 19:12:08,090 INFO New best (0.518519 --> 0.555556)
+2025-10-22 19:12:13,364 INFO Copying best model to model.pt
+2025-10-22 19:12:17,350 INFO 0 Wed Oct 22 19:12:17 2025 Epoch: 45
+2025-10-22 19:15:24,839 INFO Final training 45/149, loss: 2.5271, time 187.49s, lr: 0.000418
+2025-10-22 19:15:24,845 INFO 0 Wed Oct 22 19:15:24 2025 Epoch: 46
+2025-10-22 19:18:32,590 INFO Final training 46/149, loss: 2.1265, time 187.74s, lr: 0.000414
+2025-10-22 19:18:32,594 INFO 0 Wed Oct 22 19:18:32 2025 Epoch: 47
+2025-10-22 19:21:39,758 INFO Final training 47/149, loss: 2.4397, time 187.16s, lr: 0.000410
+2025-10-22 19:21:39,764 INFO 0 Wed Oct 22 19:21:39 2025 Epoch: 48
+2025-10-22 19:24:48,294 INFO Final training 48/149, loss: 2.1081, time 188.53s, lr: 0.000405
+2025-10-22 19:24:48,298 INFO 0 Wed Oct 22 19:24:48 2025 Epoch: 49
+2025-10-22 19:27:56,874 INFO Final training 49/149, loss: 2.0446, time 188.58s, lr: 0.000401
+2025-10-22 19:28:51,045 INFO Final validation 49/149, Val_acc: 0.4815, time 54.16s
+Accuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.385     0.556         0.556   0.455         9
+2                          0.600     0.333         0.889   0.429         9
+2025-10-22 19:28:55,731 INFO 0 Wed Oct 22 19:28:55 2025 Epoch: 50
+2025-10-22 19:32:01,487 INFO Final training 50/149, loss: 1.9714, time 185.76s, lr: 0.000397
+2025-10-22 19:32:02,037 INFO 0 Wed Oct 22 19:32:02 2025 Epoch: 51
+2025-10-22 19:35:10,303 INFO Final training 51/149, loss: 2.0182, time 188.27s, lr: 0.000392
+2025-10-22 19:35:10,308 INFO 0 Wed Oct 22 19:35:10 2025 Epoch: 52
+2025-10-22 19:38:16,438 INFO Final training 52/149, loss: 1.9530, time 186.13s, lr: 0.000387
+2025-10-22 19:38:16,445 INFO 0 Wed Oct 22 19:38:16 2025 Epoch: 53
+2025-10-22 19:41:24,752 INFO Final training 53/149, loss: 2.0195, time 188.31s, lr: 0.000383
+2025-10-22 19:41:24,758 INFO 0 Wed Oct 22 19:41:24 2025 Epoch: 54
+2025-10-22 19:44:30,638 INFO Final training 54/149, loss: 1.9231, time 185.88s, lr: 0.000378
+2025-10-22 19:45:24,445 INFO Final validation 54/149, Val_acc: 0.4815, time 53.80s
+Accuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.385     0.556         0.556   0.455         9
+2                          0.600     0.333         0.889   0.429         9
+2025-10-22 19:45:29,054 INFO 0 Wed Oct 22 19:45:29 2025 Epoch: 55
+2025-10-22 19:48:35,421 INFO Final training 55/149, loss: 1.8592, time 186.37s, lr: 0.000373
+2025-10-22 19:48:35,427 INFO 0 Wed Oct 22 19:48:35 2025 Epoch: 56
+2025-10-22 19:51:43,734 INFO Final training 56/149, loss: 2.1652, time 188.31s, lr: 0.000369
+2025-10-22 19:51:43,735 INFO 0 Wed Oct 22 19:51:43 2025 Epoch: 57
+2025-10-22 19:54:50,813 INFO Final training 57/149, loss: 1.9030, time 187.08s, lr: 0.000364
+2025-10-22 19:54:50,817 INFO 0 Wed Oct 22 19:54:50 2025 Epoch: 58
+2025-10-22 19:57:58,426 INFO Final training 58/149, loss: 1.9097, time 187.61s, lr: 0.000359
+2025-10-22 19:57:58,434 INFO 0 Wed Oct 22 19:57:58 2025 Epoch: 59
+2025-10-22 20:01:05,773 INFO Final training 59/149, loss: 1.8529, time 187.34s, lr: 0.000354
+2025-10-22 20:01:58,817 INFO Final validation 59/149, Val_acc: 0.4815, time 53.04s
+Accuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.385     0.556         0.556   0.455         9
+2                          0.600     0.333         0.889   0.429         9
+2025-10-22 20:02:03,451 INFO 0 Wed Oct 22 20:02:03 2025 Epoch: 60
+2025-10-22 20:05:10,185 INFO Final training 60/149, loss: 1.6366, time 186.73s, lr: 0.000349
+2025-10-22 20:05:10,704 INFO 0 Wed Oct 22 20:05:10 2025 Epoch: 61
+2025-10-22 20:08:19,175 INFO Final training 61/149, loss: 1.5722, time 188.47s, lr: 0.000344
+2025-10-22 20:08:19,180 INFO 0 Wed Oct 22 20:08:19 2025 Epoch: 62
+2025-10-22 20:11:26,583 INFO Final training 62/149, loss: 1.5552, time 187.40s, lr: 0.000339
+2025-10-22 20:11:26,589 INFO 0 Wed Oct 22 20:11:26 2025 Epoch: 63
+2025-10-22 20:14:35,054 INFO Final training 63/149, loss: 1.7081, time 188.47s, lr: 0.000333
+2025-10-22 20:14:35,061 INFO 0 Wed Oct 22 20:14:35 2025 Epoch: 64
+2025-10-22 20:17:42,180 INFO Final training 64/149, loss: 1.5665, time 187.12s, lr: 0.000328
+2025-10-22 20:18:35,140 INFO Final validation 64/149, Val_acc: 0.5185, time 52.96s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.600     0.667         0.778   0.632         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.600     0.333         0.889   0.429         9
+2025-10-22 20:18:39,817 INFO 0 Wed Oct 22 20:18:39 2025 Epoch: 65
+2025-10-22 20:21:45,867 INFO Final training 65/149, loss: 1.4583, time 186.05s, lr: 0.000323
+2025-10-22 20:21:45,873 INFO 0 Wed Oct 22 20:21:45 2025 Epoch: 66
+2025-10-22 20:24:53,024 INFO Final training 66/149, loss: 1.5237, time 187.15s, lr: 0.000318
+2025-10-22 20:24:53,030 INFO 0 Wed Oct 22 20:24:53 2025 Epoch: 67
+2025-10-22 20:27:59,161 INFO Final training 67/149, loss: 1.4657, time 186.13s, lr: 0.000312
+2025-10-22 20:27:59,176 INFO 0 Wed Oct 22 20:27:59 2025 Epoch: 68
+2025-10-22 20:31:05,008 INFO Final training 68/149, loss: 1.3540, time 185.83s, lr: 0.000307
+2025-10-22 20:31:05,022 INFO 0 Wed Oct 22 20:31:05 2025 Epoch: 69
+2025-10-22 20:34:13,503 INFO Final training 69/149, loss: 1.3321, time 188.48s, lr: 0.000302
+2025-10-22 20:35:06,478 INFO Final validation 69/149, Val_acc: 0.5556, time 52.97s
+Accuracy: 0.556
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.600     0.667         0.778   0.632         9
+1                          0.500     0.556         0.722   0.526         9
+2                          0.571     0.444         0.833   0.500         9
+2025-10-22 20:35:11,262 INFO 0 Wed Oct 22 20:35:11 2025 Epoch: 70
+2025-10-22 20:38:19,010 INFO Final training 70/149, loss: 1.4235, time 187.75s, lr: 0.000296
+2025-10-22 20:38:19,509 INFO 0 Wed Oct 22 20:38:19 2025 Epoch: 71
+2025-10-22 20:41:26,682 INFO Final training 71/149, loss: 1.4573, time 187.17s, lr: 0.000291
+2025-10-22 20:41:26,686 INFO 0 Wed Oct 22 20:41:26 2025 Epoch: 72
+2025-10-22 20:44:33,137 INFO Final training 72/149, loss: 1.6687, time 186.45s, lr: 0.000286
+2025-10-22 20:44:33,144 INFO 0 Wed Oct 22 20:44:33 2025 Epoch: 73
+2025-10-22 20:47:39,610 INFO Final training 73/149, loss: 1.6140, time 186.47s, lr: 0.000280
+2025-10-22 20:47:39,618 INFO 0 Wed Oct 22 20:47:39 2025 Epoch: 74
+2025-10-22 20:50:47,736 INFO Final training 74/149, loss: 1.3035, time 188.12s, lr: 0.000275
+2025-10-22 20:51:40,677 INFO Final validation 74/149, Val_acc: 0.5185, time 52.93s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.571     0.444         0.833   0.500         9
+2025-10-22 20:51:45,391 INFO 0 Wed Oct 22 20:51:45 2025 Epoch: 75
+2025-10-22 20:54:53,257 INFO Final training 75/149, loss: 1.5270, time 187.87s, lr: 0.000269
+2025-10-22 20:54:53,264 INFO 0 Wed Oct 22 20:54:53 2025 Epoch: 76
+2025-10-22 20:58:00,207 INFO Final training 76/149, loss: 1.6753, time 186.94s, lr: 0.000264
+2025-10-22 20:58:00,214 INFO 0 Wed Oct 22 20:58:00 2025 Epoch: 77
+2025-10-22 21:01:08,814 INFO Final training 77/149, loss: 1.3387, time 188.60s, lr: 0.000258
+2025-10-22 21:01:08,820 INFO 0 Wed Oct 22 21:01:08 2025 Epoch: 78
+2025-10-22 21:04:16,697 INFO Final training 78/149, loss: 1.3151, time 187.88s, lr: 0.000253
+2025-10-22 21:04:16,703 INFO 0 Wed Oct 22 21:04:16 2025 Epoch: 79
+2025-10-22 21:07:24,721 INFO Final training 79/149, loss: 1.3629, time 188.02s, lr: 0.000247
+2025-10-22 21:08:17,652 INFO Final validation 79/149, Val_acc: 0.5185, time 52.93s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.625     0.556         0.833   0.588         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.500     0.444         0.778   0.471         9
+2025-10-22 21:08:22,290 INFO 0 Wed Oct 22 21:08:22 2025 Epoch: 80
+2025-10-22 21:11:28,252 INFO Final training 80/149, loss: 1.2206, time 185.96s, lr: 0.000242
+2025-10-22 21:11:28,743 INFO 0 Wed Oct 22 21:11:28 2025 Epoch: 81
+2025-10-22 21:14:36,843 INFO Final training 81/149, loss: 1.0622, time 188.10s, lr: 0.000236
+2025-10-22 21:14:36,850 INFO 0 Wed Oct 22 21:14:36 2025 Epoch: 82
+2025-10-22 21:17:42,861 INFO Final training 82/149, loss: 1.0229, time 186.01s, lr: 0.000231
+2025-10-22 21:17:42,862 INFO 0 Wed Oct 22 21:17:42 2025 Epoch: 83
+2025-10-22 21:20:49,906 INFO Final training 83/149, loss: 0.9698, time 187.04s, lr: 0.000225
+2025-10-22 21:20:49,913 INFO 0 Wed Oct 22 21:20:49 2025 Epoch: 84
+2025-10-22 21:23:57,240 INFO Final training 84/149, loss: 0.9187, time 187.33s, lr: 0.000220
+2025-10-22 21:24:50,176 INFO Final validation 84/149, Val_acc: 0.5185, time 52.93s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.571     0.444         0.833   0.500         9
+2025-10-22 21:24:54,760 INFO 0 Wed Oct 22 21:24:54 2025 Epoch: 85
+2025-10-22 21:28:00,838 INFO Final training 85/149, loss: 0.9723, time 186.08s, lr: 0.000214
+2025-10-22 21:28:00,847 INFO 0 Wed Oct 22 21:28:00 2025 Epoch: 86
+2025-10-22 21:31:07,491 INFO Final training 86/149, loss: 0.9576, time 186.64s, lr: 0.000209
+2025-10-22 21:31:07,495 INFO 0 Wed Oct 22 21:31:07 2025 Epoch: 87
+2025-10-22 21:34:15,712 INFO Final training 87/149, loss: 0.8926, time 188.22s, lr: 0.000204
+2025-10-22 21:34:15,717 INFO 0 Wed Oct 22 21:34:15 2025 Epoch: 88
+2025-10-22 21:37:24,148 INFO Final training 88/149, loss: 0.9146, time 188.43s, lr: 0.000198
+2025-10-22 21:37:24,155 INFO 0 Wed Oct 22 21:37:24 2025 Epoch: 89
+2025-10-22 21:40:32,622 INFO Final training 89/149, loss: 0.8623, time 188.47s, lr: 0.000193
+2025-10-22 21:41:25,588 INFO Final validation 89/149, Val_acc: 0.5185, time 52.96s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.571     0.444         0.833   0.500         9
+2025-10-22 21:41:30,192 INFO 0 Wed Oct 22 21:41:30 2025 Epoch: 90
+2025-10-22 21:44:38,578 INFO Final training 90/149, loss: 0.8007, time 188.39s, lr: 0.000188
+2025-10-22 21:44:39,113 INFO 0 Wed Oct 22 21:44:39 2025 Epoch: 91
+2025-10-22 21:47:45,988 INFO Final training 91/149, loss: 0.7636, time 186.87s, lr: 0.000182
+2025-10-22 21:47:45,994 INFO 0 Wed Oct 22 21:47:45 2025 Epoch: 92
+2025-10-22 21:50:53,937 INFO Final training 92/149, loss: 0.7953, time 187.94s, lr: 0.000177
+2025-10-22 21:50:53,938 INFO 0 Wed Oct 22 21:50:53 2025 Epoch: 93
+2025-10-22 21:54:01,306 INFO Final training 93/149, loss: 0.7285, time 187.37s, lr: 0.000172
+2025-10-22 21:54:01,313 INFO 0 Wed Oct 22 21:54:01 2025 Epoch: 94
+2025-10-22 21:57:09,511 INFO Final training 94/149, loss: 0.8013, time 188.20s, lr: 0.000167
+2025-10-22 21:58:02,432 INFO Final validation 94/149, Val_acc: 0.5185, time 52.92s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.571     0.444         0.833   0.500         9
+2025-10-22 21:58:07,007 INFO 0 Wed Oct 22 21:58:07 2025 Epoch: 95
+2025-10-22 22:01:15,368 INFO Final training 95/149, loss: 0.7762, time 188.36s, lr: 0.000161
+2025-10-22 22:01:15,375 INFO 0 Wed Oct 22 22:01:15 2025 Epoch: 96
+2025-10-22 22:04:23,609 INFO Final training 96/149, loss: 0.7479, time 188.23s, lr: 0.000156
+2025-10-22 22:04:23,616 INFO 0 Wed Oct 22 22:04:23 2025 Epoch: 97
+2025-10-22 22:07:32,247 INFO Final training 97/149, loss: 0.6674, time 188.63s, lr: 0.000151
+2025-10-22 22:07:32,248 INFO 0 Wed Oct 22 22:07:32 2025 Epoch: 98
+2025-10-22 22:10:40,339 INFO Final training 98/149, loss: 0.6390, time 188.09s, lr: 0.000146
+2025-10-22 22:10:40,346 INFO 0 Wed Oct 22 22:10:40 2025 Epoch: 99
+2025-10-22 22:13:48,440 INFO Final training 99/149, loss: 0.5958, time 188.09s, lr: 0.000141
+2025-10-22 22:14:41,368 INFO Final validation 99/149, Val_acc: 0.5185, time 52.92s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.667     0.444         0.889   0.533         9
+2025-10-22 22:14:46,012 INFO 0 Wed Oct 22 22:14:46 2025 Epoch: 100
+2025-10-22 22:17:54,396 INFO Final training 100/149, loss: 0.6329, time 188.38s, lr: 0.000136
+2025-10-22 22:17:54,880 INFO 0 Wed Oct 22 22:17:54 2025 Epoch: 101
+2025-10-22 22:21:02,635 INFO Final training 101/149, loss: 0.6058, time 187.76s, lr: 0.000131
+2025-10-22 22:21:02,640 INFO 0 Wed Oct 22 22:21:02 2025 Epoch: 102
+2025-10-22 22:24:11,041 INFO Final training 102/149, loss: 0.5690, time 188.40s, lr: 0.000127
+2025-10-22 22:24:11,045 INFO 0 Wed Oct 22 22:24:11 2025 Epoch: 103
+2025-10-22 22:27:17,168 INFO Final training 103/149, loss: 0.5574, time 186.12s, lr: 0.000122
+2025-10-22 22:27:17,172 INFO 0 Wed Oct 22 22:27:17 2025 Epoch: 104
+2025-10-22 22:30:23,052 INFO Final training 104/149, loss: 0.6186, time 185.88s, lr: 0.000117
+2025-10-22 22:31:15,993 INFO Final validation 104/149, Val_acc: 0.5556, time 52.93s
+Accuracy: 0.556
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.600     0.667         0.778   0.632         9
+1                          0.500     0.556         0.722   0.526         9
+2                          0.571     0.444         0.833   0.500         9
+2025-10-22 22:31:20,633 INFO 0 Wed Oct 22 22:31:20 2025 Epoch: 105
+2025-10-22 22:34:26,591 INFO Final training 105/149, loss: 0.5936, time 185.96s, lr: 0.000113
+2025-10-22 22:34:26,591 INFO 0 Wed Oct 22 22:34:26 2025 Epoch: 106
+2025-10-22 22:37:34,361 INFO Final training 106/149, loss: 0.5463, time 187.77s, lr: 0.000108
+2025-10-22 22:37:34,362 INFO 0 Wed Oct 22 22:37:34 2025 Epoch: 107
+2025-10-22 22:40:41,788 INFO Final training 107/149, loss: 0.5006, time 187.43s, lr: 0.000103
+2025-10-22 22:40:41,789 INFO 0 Wed Oct 22 22:40:41 2025 Epoch: 108
+2025-10-22 22:43:49,004 INFO Final training 108/149, loss: 0.4834, time 187.22s, lr: 0.000099
+2025-10-22 22:43:49,010 INFO 0 Wed Oct 22 22:43:49 2025 Epoch: 109
+2025-10-22 22:46:56,187 INFO Final training 109/149, loss: 0.4536, time 187.18s, lr: 0.000095
+2025-10-22 22:47:49,106 INFO Final validation 109/149, Val_acc: 0.5185, time 52.91s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.667     0.444         0.889   0.533         9
+2025-10-22 22:47:53,748 INFO 0 Wed Oct 22 22:47:53 2025 Epoch: 110
+2025-10-22 22:51:01,953 INFO Final training 110/149, loss: 0.4907, time 188.20s, lr: 0.000090
+2025-10-22 22:51:02,425 INFO 0 Wed Oct 22 22:51:02 2025 Epoch: 111
+2025-10-22 22:54:09,675 INFO Final training 111/149, loss: 0.4675, time 187.25s, lr: 0.000086
+2025-10-22 22:54:09,676 INFO 0 Wed Oct 22 22:54:09 2025 Epoch: 112
+2025-10-22 22:57:17,827 INFO Final training 112/149, loss: 0.4927, time 188.15s, lr: 0.000082
+2025-10-22 22:57:17,828 INFO 0 Wed Oct 22 22:57:17 2025 Epoch: 113
+2025-10-22 23:00:24,985 INFO Final training 113/149, loss: 0.4815, time 187.16s, lr: 0.000078
+2025-10-22 23:00:24,985 INFO 0 Wed Oct 22 23:00:24 2025 Epoch: 114
+2025-10-22 23:03:33,214 INFO Final training 114/149, loss: 0.4451, time 188.23s, lr: 0.000074
+2025-10-22 23:04:26,176 INFO Final validation 114/149, Val_acc: 0.5185, time 52.96s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.625     0.556         0.833   0.588         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.500     0.444         0.778   0.471         9
+2025-10-22 23:04:31,314 INFO 0 Wed Oct 22 23:04:31 2025 Epoch: 115
+2025-10-22 23:07:38,441 INFO Final training 115/149, loss: 0.4734, time 187.13s, lr: 0.000070
+2025-10-22 23:07:38,448 INFO 0 Wed Oct 22 23:07:38 2025 Epoch: 116
+2025-10-22 23:10:44,364 INFO Final training 116/149, loss: 0.4354, time 185.92s, lr: 0.000067
+2025-10-22 23:10:44,365 INFO 0 Wed Oct 22 23:10:44 2025 Epoch: 117
+2025-10-22 23:13:51,321 INFO Final training 117/149, loss: 0.4336, time 186.96s, lr: 0.000063
+2025-10-22 23:13:51,326 INFO 0 Wed Oct 22 23:13:51 2025 Epoch: 118
+2025-10-22 23:16:59,234 INFO Final training 118/149, loss: 0.4110, time 187.91s, lr: 0.000059
+2025-10-22 23:16:59,239 INFO 0 Wed Oct 22 23:16:59 2025 Epoch: 119
+2025-10-22 23:20:06,498 INFO Final training 119/149, loss: 0.4130, time 187.26s, lr: 0.000056
+2025-10-22 23:20:59,413 INFO Final validation 119/149, Val_acc: 0.5185, time 52.92s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.667     0.444         0.889   0.533         9
+2025-10-22 23:21:03,998 INFO 0 Wed Oct 22 23:21:03 2025 Epoch: 120
+2025-10-22 23:24:10,020 INFO Final training 120/149, loss: 0.3761, time 186.02s, lr: 0.000052
+2025-10-22 23:24:10,631 INFO 0 Wed Oct 22 23:24:10 2025 Epoch: 121
+2025-10-22 23:27:18,849 INFO Final training 121/149, loss: 0.3906, time 188.22s, lr: 0.000049
+2025-10-22 23:27:18,856 INFO 0 Wed Oct 22 23:27:18 2025 Epoch: 122
+2025-10-22 23:30:25,273 INFO Final training 122/149, loss: 0.3747, time 186.42s, lr: 0.000046
+2025-10-22 23:30:25,277 INFO 0 Wed Oct 22 23:30:25 2025 Epoch: 123
+2025-10-22 23:33:33,272 INFO Final training 123/149, loss: 0.3798, time 187.99s, lr: 0.000043
+2025-10-22 23:33:33,273 INFO 0 Wed Oct 22 23:33:33 2025 Epoch: 124
+2025-10-22 23:36:40,212 INFO Final training 124/149, loss: 0.3824, time 186.94s, lr: 0.000040
+2025-10-22 23:37:33,164 INFO Final validation 124/149, Val_acc: 0.5185, time 52.95s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.667     0.444         0.889   0.533         9
+2025-10-22 23:37:37,735 INFO 0 Wed Oct 22 23:37:37 2025 Epoch: 125
+2025-10-22 23:40:46,377 INFO Final training 125/149, loss: 0.3710, time 188.64s, lr: 0.000037
+2025-10-22 23:40:46,381 INFO 0 Wed Oct 22 23:40:46 2025 Epoch: 126
+2025-10-22 23:43:54,404 INFO Final training 126/149, loss: 0.3803, time 188.02s, lr: 0.000034
+2025-10-22 23:43:54,411 INFO 0 Wed Oct 22 23:43:54 2025 Epoch: 127
+2025-10-22 23:47:02,159 INFO Final training 127/149, loss: 0.3840, time 187.75s, lr: 0.000031
+2025-10-22 23:47:02,165 INFO 0 Wed Oct 22 23:47:02 2025 Epoch: 128
+2025-10-22 23:50:08,240 INFO Final training 128/149, loss: 0.3591, time 186.07s, lr: 0.000029
+2025-10-22 23:50:08,244 INFO 0 Wed Oct 22 23:50:08 2025 Epoch: 129
+2025-10-22 23:53:16,828 INFO Final training 129/149, loss: 0.3555, time 188.58s, lr: 0.000026
+2025-10-22 23:54:09,767 INFO Final validation 129/149, Val_acc: 0.5185, time 52.93s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.667     0.444         0.889   0.533         9
+2025-10-22 23:54:14,379 INFO 0 Wed Oct 22 23:54:14 2025 Epoch: 130
+2025-10-22 23:57:20,682 INFO Final training 130/149, loss: 0.3436, time 186.30s, lr: 0.000024
+2025-10-22 23:57:22,292 INFO 0 Wed Oct 22 23:57:22 2025 Epoch: 131
+2025-10-23 00:00:30,136 INFO Final training 131/149, loss: 0.3518, time 187.84s, lr: 0.000021
+2025-10-23 00:00:30,137 INFO 0 Thu Oct 23 00:00:30 2025 Epoch: 132
+2025-10-23 00:03:38,793 INFO Final training 132/149, loss: 0.3449, time 188.66s, lr: 0.000019
+2025-10-23 00:03:38,800 INFO 0 Thu Oct 23 00:03:38 2025 Epoch: 133
+2025-10-23 00:06:46,403 INFO Final training 133/149, loss: 0.3412, time 187.60s, lr: 0.000017
+2025-10-23 00:06:46,404 INFO 0 Thu Oct 23 00:06:46 2025 Epoch: 134
+2025-10-23 00:09:54,726 INFO Final training 134/149, loss: 0.3459, time 188.32s, lr: 0.000015
+2025-10-23 00:10:47,642 INFO Final validation 134/149, Val_acc: 0.5185, time 52.91s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.667     0.444         0.889   0.533         9
+2025-10-23 00:10:52,296 INFO 0 Thu Oct 23 00:10:52 2025 Epoch: 135
+2025-10-23 00:13:58,358 INFO Final training 135/149, loss: 0.3333, time 186.06s, lr: 0.000013
+2025-10-23 00:13:58,367 INFO 0 Thu Oct 23 00:13:58 2025 Epoch: 136
+2025-10-23 00:17:06,269 INFO Final training 136/149, loss: 0.3359, time 187.90s, lr: 0.000012
+2025-10-23 00:17:06,270 INFO 0 Thu Oct 23 00:17:06 2025 Epoch: 137
+2025-10-23 00:20:14,336 INFO Final training 137/149, loss: 0.3365, time 188.07s, lr: 0.000010
+2025-10-23 00:20:14,343 INFO 0 Thu Oct 23 00:20:14 2025 Epoch: 138
+2025-10-23 00:23:20,537 INFO Final training 138/149, loss: 0.3249, time 186.19s, lr: 0.000009
+2025-10-23 00:23:20,538 INFO 0 Thu Oct 23 00:23:20 2025 Epoch: 139
+2025-10-23 00:26:26,630 INFO Final training 139/149, loss: 0.3285, time 186.09s, lr: 0.000007
+2025-10-23 00:27:19,564 INFO Final validation 139/149, Val_acc: 0.5185, time 52.93s
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.667     0.444         0.889   0.533         9
+2025-10-23 00:27:24,192 INFO 0 Thu Oct 23 00:27:24 2025 Epoch: 140
+2025-10-23 00:30:30,662 INFO Final training 140/149, loss: 0.3337, time 186.47s, lr: 0.000006
+2025-10-23 00:30:31,091 INFO 0 Thu Oct 23 00:30:31 2025 Epoch: 141
+2025-10-23 00:33:38,454 INFO Final training 141/149, loss: 0.3256, time 187.36s, lr: 0.000005
+2025-10-23 00:33:38,455 INFO 0 Thu Oct 23 00:33:38 2025 Epoch: 142
+2025-10-23 00:36:45,736 INFO Final training 142/149, loss: 0.3239, time 187.28s, lr: 0.000004
+2025-10-23 00:36:45,745 INFO 0 Thu Oct 23 00:36:45 2025 Epoch: 143
+2025-10-23 00:39:53,845 INFO Final training 143/149, loss: 0.3295, time 188.10s, lr: 0.000003
+2025-10-23 00:39:53,847 INFO 0 Thu Oct 23 00:39:53 2025 Epoch: 144

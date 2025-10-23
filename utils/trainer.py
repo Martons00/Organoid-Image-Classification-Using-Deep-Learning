@@ -65,7 +65,7 @@ def freeze_backbone_and_select_head_fixed(model):
     #print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
     return model
 
-def train_epoch(model, loader, optimizer, epoch, loss_func, args):
+def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
     """
     Training con pipeline di inferenza a patch usando forward_features.
     Fine-tuning di global_pool e fc con backbone congelato.
@@ -169,6 +169,8 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, args):
         # Calcola loss
         logits = torch.cat(batch_logits, dim=0)  # [B,num_classes]
         loss = loss_func(logits, target)
+
+        
         
         sim_loss_value = 0.0
         if args.similarity_loss == "contrastive" and sim is not None:

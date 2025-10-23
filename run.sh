@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#OAR -l gpu=1,walltime=8:00:00
+#OAR -l gpu=1,walltime=12:00:00
 #OAR -p esterel39
 #OAR -O OAR_%jobid%.out
 #OAR -E OAR_%jobid%.err
