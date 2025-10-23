@@ -76,6 +76,8 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
     start_time = time.time()
     run_loss = AverageMeter()
     run_acc = AverageMeter()
+
+    #train_transform = get_train_transforms()
     
     # Contatori per classe
     num_classes = None
@@ -97,6 +99,12 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
         else:
             data, target = batch_data["vol"], batch_data["label"]
         
+        # ============================================
+        # AUGMENTATION qui, on-the-fly
+        # ============================================
+        # if train_transform is not None:
+        #     data = train_transform(data)
+
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
         
@@ -369,6 +377,8 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
     num_classes = None
     per_class_correct = None
     per_class_total = None
+
+    #train_transform = get_train_transforms()
     
     # Liste per confusion matrix
     all_preds = []
@@ -385,6 +395,12 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
         else:
             data, target = batch_data["vol"], batch_data["label"]
         
+        # ============================================
+        # AUGMENTATION qui, on-the-fly
+        # ============================================
+        # if train_transform is not None:
+        #     data = train_transform(data)
+
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
         
