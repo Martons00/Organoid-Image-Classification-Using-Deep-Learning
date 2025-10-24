@@ -46,7 +46,11 @@ for k1,k2 in zip(new_state_dict2, new_state_dict):
 print(f"Number of matching keys: {count}/{len(state_dict.keys())}")
 
 count = 0
+count_shape = 0
 for v1, v2 in zip(state_dict.values(), new_state_dict.values()):
     if torch.equal(v1, v2):
         count += 1
+    if v1.shape == v2.shape:
+        count_shape += 1
 print(f"Number of matching values: {count}/{len(state_dict)}")
+print(f"Number of matching shapes: {count_shape}/{len(state_dict)}")

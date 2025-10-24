@@ -198,7 +198,7 @@ def metrics_from_confusion_matrix(cm: np.ndarray, zero_division: float = 0.0) ->
 def format_print_metrics(metrics: Dict[str, Any],
                          class_names: Optional[List[str]] = None,
                          digits: int = 3,
-                         print_out: bool = True) -> str:
+                         print_out: bool = False) -> str:
     """
     Formatta e (opzionalmente) stampa:
       - Accuracy globale

@@ -30,6 +30,7 @@ from .data_utils import send_alert
 from optimizers.early_stop import EarlyStopping  # Uncomment if used
 from tools.similarity import compute_similarity_matrix, plot_similarity_heatmap, plot_similarity_heatmap_new
 from tools.loss import similarity_margin_loss, supervised_contrastive_from_similarity
+from dataset import get_train_transforms
 
 def freeze_backbone_and_select_head_fixed_plus(model):
     """Freezing corretto - chiama SOLO UNA VOLTA all'inizio del training"""
@@ -77,7 +78,10 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
     run_loss = AverageMeter()
     run_acc = AverageMeter()
 
-    #train_transform = get_train_transforms()
+    if args.augmentation:
+        train_transform = get_train_transforms()
+    else:
+        train_transform = None
     
     # Contatori per classe
     num_classes = None
@@ -102,8 +106,8 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
         # ============================================
         # AUGMENTATION qui, on-the-fly
         # ============================================
-        # if train_transform is not None:
-        #     data = train_transform(data)
+        if train_transform is not None:
+            data = train_transform(data)
 
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
@@ -378,7 +382,11 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
     per_class_correct = None
     per_class_total = None
 
-    #train_transform = get_train_transforms()
+    
+    if args.augmentation:
+        train_transform = get_train_transforms()
+    else:
+        train_transform = None
     
     # Liste per confusion matrix
     all_preds = []
@@ -398,8 +406,8 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
         # ============================================
         # AUGMENTATION qui, on-the-fly
         # ============================================
-        # if train_transform is not None:
-        #     data = train_transform(data)
+        if train_transform is not None:
+            data = train_transform(data)
 
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
@@ -423,19 +431,24 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             )
             
             # Inferenza per ogni patch
-            feat_list = []
-            hidden_list = []
             patches = patches.to(device).to(torch.float32)  # Converti una volta sola
             
-            for i in range(patches.shape[0]):
-                patch = patches[i:i+1]  # [1,1,128,128,128]
-                feats, hidden = model.forward_features(patch)
-                feat_list.append(feats)
-                hidden_list.append(hidden)
-            
-            # Concatena features e ricostruisci volume
-            feats_cat = torch.cat(feat_list, dim=0)  # [N,Cf,...]
-            hidden_cat = torch.cat(hidden_list, dim=0)  # [N,Cf,...]
+            sw_batch_size = args.sw_batch_size if hasattr(args, 'sw_batch_size') else 4
+            feat_list = []
+            hidden_list = []
+
+            for i in range(0, patches.shape[0], sw_batch_size):
+                end_idx = min(i + sw_batch_size, patches.shape[0])
+                batch_patches = patches[i:end_idx]  # [sw_batch_size, 1, 128, 128, 128]
+                
+                feats, hidden = model.forward_features(batch_patches)  # Forward su batch
+                
+                feat_list.append(feats)    # [sw_batch_size, Cf, fD, fH, fW]
+                hidden_list.append(hidden) # [sw_batch_size, Ch, hD, hH, hW]
+
+            # Concatena tutti i batch
+            feats_cat = torch.cat(feat_list, dim=0)   # [N, Cf, fD, fH, fW]
+            hidden_cat = torch.cat(hidden_list, dim=0) # [N, Ch, hD, hH, hW]
             
             feats_tiled = tile_feature_patches(feats_cat, coords=coords)
             hidden_tiled = tile_feature_patches(hidden_cat, coords=coords)
@@ -1167,7 +1180,8 @@ def run_training(
             msg = (
                 f"Final training {epoch}/{args.max_epochs - 1}, "
                 f"loss: {train_loss:.4f}, time {train_time:.2f}s, lr: {current_lr:.6f}"
-                f"\n{train_metrics_str}"
+                f"\n{train_metrics_str}\n"
+                f"*----------------------------------------*"
             )
             print(msg)
             if logger:
@@ -1222,7 +1236,8 @@ def run_training(
                 msg = (
                     f"Final validation {epoch}/{args.max_epochs - 1}, "
                     f"Val_acc: {val_acc:.4f}, time {val_time:.2f}s"
-                    f"{metrics_str}"
+                    f"{metrics_str}\n"
+                    f"*========================================*"
                 )
                 print(msg)
                 if logger:
@@ -1248,21 +1263,20 @@ def run_training(
                     plot_confusion_matrix(
                         train_cm,
                         class_names=class_names,
-                        title=f'Confusion Matrix (Train) - Epoch {epoch} (Normalized)',
-                        normalize=True,
-                        save_path=os.path.join(cm_plots_dir, f"best_confusion_train_matrix_normalized_epoch{epoch}.png")
+                        title=f'Confusion Matrix (Train) - Epoch {epoch} ',
+                        save_path=os.path.join(cm_plots_dir, f"best_confusion_train_matrix_epoch{epoch}.png")
                     )
                     plot_metrics_table(
                         metrics,
                         class_names=class_names,
                         title=f'Metrics Table - Epoch {epoch}',
-                        save_path=os.path.join(cm_plots_dir, f"best_metrics_table_epoch{epoch}.png")
+                        save_path=os.path.join(metrics_plots_dir, f"best_metrics_table_epoch{epoch}.png")
                     )
                     plot_metrics_table(
                         train_metrics,
                         class_names=class_names,
                         title=f'Metrics Table (Train) - Epoch {epoch}',
-                        save_path=os.path.join(cm_plots_dir, f"best_train_metrics_table_epoch{epoch}.png")
+                        save_path=os.path.join(metrics_plots_dir, f"best_train_metrics_table_epoch{epoch}.png")
                     )
 
                 # Telegram notification
@@ -1338,21 +1352,20 @@ def run_training(
             plot_confusion_matrix(
                 last_train_cm,
                 class_names=class_names,
-                title='Confusion Matrix (Train) - Final Epoch (Normalized)',
-                normalize=True,
-                save_path=os.path.join(cm_plots_dir, "final_confusion_train_matrix_normalized.png")
+                title='Confusion Matrix (Train) - Final Epoch ',
+                save_path=os.path.join(cm_plots_dir, "final_confusion_train_matrix.png")
             )
             plot_metrics_table(
                 last_metrics,
                 class_names=class_names,
                 title='Metrics Table - Final Epoch',
-                save_path=os.path.join(cm_plots_dir, "final_metrics_table.png")
+                save_path=os.path.join(metrics_plots_dir, "final_metrics_table.png")
             )
             plot_metrics_table(
                 last_train_metrics,
                 class_names=class_names,
                 title='Metrics Table (Train) - Final Epoch',
-                save_path=os.path.join(cm_plots_dir, "final_train_metrics_table.png")
+                save_path=os.path.join(metrics_plots_dir, "final_train_metrics_table.png")
             )
             
             # Training curves
@@ -1405,13 +1418,12 @@ def _send_telegram_safe(args, message):
 def _send_telegram_plots(args, plots_dir, cm_dir):
     """Helper per inviare plot via Telegram."""
     plots_to_send = [
-        ("*📈 Training curves saved*", None, f"{plots_dir}"),
         ("*Loss Curve*", os.path.join(plots_dir, "training_loss_curve.png"), None),
         ("*Accuracy Curve*", os.path.join(plots_dir, "validation_accuracy_curve.png"), None),
         ("*Learning Rate Curve*", os.path.join(plots_dir, "learning_rate_curve.png"), None),
         ("*Loss vs LR Curve*", os.path.join(plots_dir, "loss_vs_lr_curve.png"), None),
         ("*Confusion Matrix*", os.path.join(cm_dir, "final_confusion_matrix.png"), None),
-        ("*Metrics Table*", os.path.join(cm_dir, "final_metrics_table.png"), None),
+        ("*Metrics Table*", os.path.join(plots_dir, "final_metrics_table.png"), None),
     ]
     
     for msg, img_path, text_suffix in plots_to_send:

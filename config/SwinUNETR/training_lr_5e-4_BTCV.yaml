@@ -16,8 +16,8 @@ SYSTEM:
 
 MODEL:
   name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder"
-  pretrained_model_name: "model_swinvit.pt"
-  pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
+  pretrained_model_name: "swin_unetr.base_5000ep_f48_lr2e-4_pretrained.pt"
+  pretrained_dir: "./pretrained_models/BTCV/"
   checkpoint: null
   resume_ckpt: false
   feature_size: 48

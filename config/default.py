@@ -92,6 +92,8 @@ _C.DATASET.roi_z = 128
 
 _C.AUGMENTATION = CN()
 
+_C.AUGMENTATION.augmentation = False
+
 _C.AUGMENTATION.RandFlipd_prob = 0.2
 
 _C.AUGMENTATION.RandRotate90d_prob = 0.2
@@ -277,6 +279,7 @@ def config_to_args(cfg):
     args.roi_z = cfg.DATASET.roi_z
     
     # Augmentation
+    args.augmentation = cfg.AUGMENTATION.augmentation
     args.RandFlipd_prob = cfg.AUGMENTATION.RandFlipd_prob
     args.RandRotate90d_prob = cfg.AUGMENTATION.RandRotate90d_prob
     args.RandScaleIntensityd_prob = cfg.AUGMENTATION.RandScaleIntensityd_prob

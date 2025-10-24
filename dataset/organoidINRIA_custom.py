@@ -4,6 +4,12 @@ import os
 import numpy as np
 import torch
 from torch.utils.data import Dataset
+
+from monai.transforms import Compose
+from monai.transforms import (
+    RandFlip, RandRotate90, RandAffine, RandGaussianNoise,
+    RandAdjustContrast, RandShiftIntensity, RandZoom, RandGibbsNoise
+)
 import tifffile as tiff
 # Dentro training/train.py
 import os
@@ -14,6 +20,7 @@ TOOLS_PATH = os.path.abspath(os.path.join(__file__, '..', '..', 'tools'))
 if TOOLS_PATH not in sys.path:
     sys.path.insert(0, TOOLS_PATH)
 
+
 from similarity import compute_similarity_matrix, plot_similarity_heatmap
 
 
@@ -22,6 +29,82 @@ CLASSES = {
     "compact": 1,
     "cystiques": 2,
 }
+
+def get_train_transforms():
+    """
+    Augmentation pipeline per TRAINING con patch completo per MONAI overflow
+    """
+    import monai
+    import monai.transforms.compose
+    import monai.transforms.transform
+    import numpy as np
+    
+    # ============================================
+    # PATCH COMPLETO per overflow MONAI
+    # ============================================
+    
+    # 1. Patch per monai.utils.get_seed
+    original_get_seed = monai.utils.get_seed
+    def safe_get_seed():
+        seed = original_get_seed()
+        return seed % (2**31 - 1) if seed is not None else None
+    monai.utils.get_seed = safe_get_seed
+    
+    # 2. Patch per Compose.set_random_state
+    original_compose_set_random_state = monai.transforms.compose.Compose.set_random_state
+    def safe_compose_set_random_state(self, seed=None, state=None):
+        if seed is not None:
+            seed = int(seed) % (2**31 - 1)
+        return original_compose_set_random_state(self, seed=seed, state=state)
+    monai.transforms.compose.Compose.set_random_state = safe_compose_set_random_state
+    
+    # 3. Patch per Randomizable.set_random_state  
+    original_randomizable_set_random_state = monai.transforms.transform.Randomizable.set_random_state
+    def safe_randomizable_set_random_state(self, seed=None, state=None):
+        if seed is not None:
+            if not isinstance(seed, (int, np.integer)):
+                seed = int(seed)
+            seed = seed % (2**31 - 1)
+        return original_randomizable_set_random_state(self, seed=seed, state=state)
+    monai.transforms.transform.Randomizable.set_random_state = safe_randomizable_set_random_state
+    
+    # 4. Patch per il MAX_SEED stesso
+    if hasattr(monai.transforms.transform, 'MAX_SEED'):
+        original_max_seed = monai.transforms.transform.MAX_SEED
+        monai.transforms.transform.MAX_SEED = 2**31 - 1
+    
+    # ============================================
+    # Transforms sicure (senza dimensioni variabili)
+    # ============================================
+    
+    return Compose([
+        # Flip 3D (specifica gli assi spaziali, non i canali)
+        RandFlip(spatial_axis=0, prob=0.5),  # depth
+        RandFlip(spatial_axis=1, prob=0.5),  # height  
+        RandFlip(spatial_axis=2, prob=0.5),  # width
+        
+        # Rotazioni 90° per 3D
+        RandRotate90(prob=0.5, max_k=3, spatial_axes=(0, 1)),  # Specifica gli assi
+        
+        # # Affine per 3D (NON 4D)
+        # RandAffine(
+        #     prob=0.3,
+        #     rotate_range=(0.1, 0.1, 0.1),  # 3 valori per 3D
+        #     translate_range=(10, 10, 10),  # 3 valori per 3D
+        #     shear_range=(0.03, 0.03, 0.03),  # 3 valori per 3D
+        #     spatial_size=None,  # Lascia che MONAI deduca automaticamente
+        #     mode="bilinear",
+        #     padding_mode="border",
+        # ),
+        
+        # Intensity transforms (sempre safe)
+        RandGaussianNoise(prob=0.2, mean=0.0, std=0.05),
+        RandShiftIntensity(prob=0.2, offsets=0.1),
+        RandAdjustContrast(prob=0.2, gamma=(0.8, 1.2)),
+    ])
+
+
+
 
 def label_from_substring_or_none(p: str) -> Optional[int]:
     s = p.lower()

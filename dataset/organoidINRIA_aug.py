@@ -33,55 +33,52 @@ def label_from_exact_parent_dir_or_none(p: str) -> Optional[int]:
 
 def get_train_transforms():
     """
-    Augmentation pipeline per TRAINING.
-    Applicato on-the-fly, diverso ogni volta.
+    Augmentation pipeline per TRAINING - VERSIONE SAFE per Stack
     """
+    import monai
+    
+    # Patch temporaneo per MONAI overflow
+    original_get_seed = monai.utils.get_seed
+    def safe_get_seed():
+        seed = original_get_seed()
+        return seed % (2**31 - 1) if seed is not None else None
+    
+    monai.utils.get_seed = safe_get_seed
+    
     return Compose([
         # ============================================
-        # Spatial Transformations
+        # SOLO Spatial Transformations che NON cambiano dimensioni
         # ============================================
-        # Flip su tutti gli assi
-        RandFlip(spatial_axis=0, prob=0.5),  # z-axis (depth)
-        RandFlip(spatial_axis=1, prob=0.5),  # y-axis (height)
-        RandFlip(spatial_axis=2, prob=0.5),  # x-axis (width)
+        # Flip - OK (non cambia dimensioni)
+        RandFlip(spatial_axis=0, prob=0.5),
+        RandFlip(spatial_axis=1, prob=0.5),  
+        RandFlip(spatial_axis=2, prob=0.5),
         
-        # Rotazioni di 90° (conservativo per organoid)
+        # Rotazioni 90° - OK (non cambia dimensioni)
         RandRotate90(prob=0.5, max_k=3),
         
-        # Affine trasformation (rotazione + zoom + traslazione)
+        # VERSIONE SAFE di Affine (solo rotazione, NO scale/zoom)
         RandAffine(
             prob=0.5,
-            rotate_range=(0.2, 0.2, 0.2),  # ±11.5° in radianti
-            translate_range=(15, 15, 15),  # max 15 pixel shift
-            scale_range=(0.1, 0.1, 0.1),  # scale ±10%
-            shear_range=(0.05, 0.05, 0.05),  # mild shear
+            rotate_range=(0.2, 0.2, 0.2),
+            translate_range=(15, 15, 15),
+            # scale_range=(0.1, 0.1, 0.1),  # <-- RIMOSSO
+            shear_range=(0.05, 0.05, 0.05),
             mode="bilinear",
             padding_mode="border",
         ),
         
-        # Zoom casuale (lieve)
-        RandZoom(
-            prob=0.3,
-            min_zoom=0.95,
-            max_zoom=1.05,
-            mode="trilinear"
-        ),
+        # RandZoom RIMOSSO completamente
         
         # ============================================
-        # Intensity-based Transformations
+        # Intensity Transformations - OK (non cambiano shape)
         # ============================================
-        # Gaussian noise
         RandGaussianNoise(prob=0.2, mean=0.0, std=0.05),
-        
-        # Gibbs noise (artefatti biologici realistici)
         RandGibbsNoise(prob=0.1, alpha=(0.0, 0.3)),
-        
-        # Shift intensità
         RandShiftIntensity(prob=0.2, offsets=0.1),
-        
-        # Contrast adjustment
         RandAdjustContrast(prob=0.2, gamma=(0.8, 1.2)),
     ])
+
 
 
 def get_val_transforms():

@@ -216,18 +216,28 @@ def _setup_model(args, logger, log):
         log("Using pretrained weights")
         log(f"=> loading pretrained model '{pretrained_pth}'")
         
-        checkpoint = torch.load(pretrained_pth, map_location="cpu")
+        checkpoint = torch.load(pretrained_pth, map_location="cpu", weights_only=False)
         state_dict = checkpoint.get("state_dict", checkpoint)
+        state_dict = state_dict['model'] if 'model' in state_dict else state_dict
         
         # Rinomina chiavi per compatibilità
         new_state_dict = {}
         for k, v in state_dict.items():
+            # Prima controlla se il layer deve essere saltato
+            if any(skip_layer in k for skip_layer in ['out.conv.conv.weight', 'out.conv.conv.bias']):
+                log(f"Skipping layer {k} due to size mismatch")
+                continue  # Salta questo layer completamente
+            
+            # Poi processa il nome della chiave
             if k.startswith('module.'):
                 new_key = 'swinViT.' + k[len('module.'):]
                 new_key = new_key.replace('fc', 'linear')
             else:
                 new_key = k
+            
+            # Aggiungi al nuovo state_dict solo se non è stato saltato
             new_state_dict[new_key] = v
+
         
         missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
         

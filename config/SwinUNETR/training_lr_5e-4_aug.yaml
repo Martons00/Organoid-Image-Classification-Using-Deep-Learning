@@ -1,7 +1,7 @@
 
 # BRATS Swin UNETR Segmentation Configuration
 SYSTEM:
-  seed: 304
+  seed: 3
   distributed: false
   world_size: 1
   rank: 0
@@ -42,6 +42,7 @@ DATASET:
   roi_z: 128
 
 AUGMENTATION:
+  augmentation: true
   RandFlipd_prob: 0.2
   RandRotate90d_prob: 0.2
   RandScaleIntensityd_prob: 0.1

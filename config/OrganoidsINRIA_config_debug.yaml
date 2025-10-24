@@ -10,7 +10,7 @@ SYSTEM:
   workers: 8
   output_dir: "outputs/"
   logs_dir: "logs/"
-  telegram_log: false
+  telegram_log: true
   telegram_token: "./token/tlg_token.txt"
   oar_id: 0
 
