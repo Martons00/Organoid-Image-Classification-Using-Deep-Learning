@@ -1,2 +1,2 @@
 from .SwinUNETREncoder_3D import SwinUNETREncoder
-from .resnet import resnet
+from .MedicalNet.models.resnet import resnet
