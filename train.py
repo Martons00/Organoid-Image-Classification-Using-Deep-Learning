@@ -37,6 +37,7 @@ from utils.trainer import run_training
 from utils.data_utils import (
     get_loader,
     split_dataset_balanced,
+    split_dataset_percentage,
     split_dataset_random,
     split_dataset_stratified,
     create_stratified_debug_subset,
@@ -57,7 +58,8 @@ import asyncio
 from models.ML_Decoder_main.src_files.ml_decoder.ml_decoder import MLDecoder
 from models.NOAH_main.modules.noah import NOAH
 from dataset import OrganoidsINRIA3D
-from models import SwinUNETREncoder
+from models import SwinUNETREncoder,resnet
+
 # from datasets.base_dataset import AugmentedDataset
 from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR  # Uncomment if used
 
@@ -198,129 +200,209 @@ def _setup_model(args, logger, log):
     log("")
     log("Model INFO:")
     log(f"Model architecture: {args.model_name}")
-    
-    # Crea modello base
-    model = SwinUNETR(
-        img_size=(args.roi_x, args.roi_y, args.roi_z),
-        in_channels=args.in_channels,
-        out_channels=args.out_channels,
-        feature_size=48,
-        use_checkpoint=False
-    )
-    
-    # Carica pretrained weights
-    pretrained_pth = os.path.join(args.pretrained_dir, args.pretrained_model_name)
+    if "swinunetr" in args.model_name.lower():
+        # Crea modello base
+        model = SwinUNETR(
+            img_size=(args.roi_x, args.roi_y, args.roi_z),
+            in_channels=args.in_channels,
+            out_channels=args.out_channels,
+            feature_size=48,
+            use_checkpoint=False
+        )
+        
+        # Carica pretrained weights
+        pretrained_pth = os.path.join(args.pretrained_dir, args.pretrained_model_name)
 
 
-    if os.path.exists(pretrained_pth) and args.checkpoint_path is None:
-        log("Using pretrained weights")
-        log(f"=> loading pretrained model '{pretrained_pth}'")
-        
-        checkpoint = torch.load(pretrained_pth, map_location="cpu", weights_only=False)
-        state_dict = checkpoint.get("state_dict", checkpoint)
-        state_dict = state_dict['model'] if 'model' in state_dict else state_dict
-        
-        # Rinomina chiavi per compatibilità
-        new_state_dict = {}
-        for k, v in state_dict.items():
-            # Prima controlla se il layer deve essere saltato
-            if any(skip_layer in k for skip_layer in ['out.conv.conv.weight', 'out.conv.conv.bias']):
-                log(f"Skipping layer {k} due to size mismatch")
-                continue  # Salta questo layer completamente
+        if os.path.exists(pretrained_pth) and args.checkpoint_path is None:
+            log("Using pretrained weights")
+            log(f"=> loading pretrained model '{pretrained_pth}'")
             
-            # Poi processa il nome della chiave
-            if k.startswith('module.'):
-                new_key = 'swinViT.' + k[len('module.'):]
-                new_key = new_key.replace('fc', 'linear')
-            else:
-                new_key = k
+            checkpoint = torch.load(pretrained_pth, map_location="cpu", weights_only=False)
+            state_dict = checkpoint.get("state_dict", checkpoint)
+            state_dict = state_dict['model'] if 'model' in state_dict else state_dict
             
-            # Aggiungi al nuovo state_dict solo se non è stato saltato
-            new_state_dict[new_key] = v
+            # Rinomina chiavi per compatibilità
+            new_state_dict = {}
+            for k, v in state_dict.items():
+                # Prima controlla se il layer deve essere saltato
+                if any(skip_layer in k for skip_layer in ['out.conv.conv.weight', 'out.conv.conv.bias']):
+                    log(f"Skipping layer {k} due to size mismatch")
+                    continue  # Salta questo layer completamente
+                
+                # Poi processa il nome della chiave
+                if k.startswith('module.'):
+                    new_key = 'swinViT.' + k[len('module.'):]
+                    new_key = new_key.replace('fc', 'linear')
+                else:
+                    new_key = k
+                
+                # Aggiungi al nuovo state_dict solo se non è stato saltato
+                new_state_dict[new_key] = v
 
-        
-        missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
-        
-        if missing:
-            log(f"Missing keys when loading pretrained: {len(missing)}")
-        if unexpected:
-            log(f"Unexpected keys when loading pretrained: {len(unexpected)}")
-    else:
-        if args.checkpoint_path is None:
-            log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+            
+            missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
+            
+            if missing:
+                log(f"Missing keys when loading pretrained: {len(missing)}")
+            if unexpected:
+                log(f"Unexpected keys when loading pretrained: {len(unexpected)}")
         else:
-            log("Skipping loading pretrained weights since checkpoint path is provided")
-    
-    # Carica checkpoint per fine-tuning (se specificato)
-    if args.encoder10_pth is not None and os.path.exists(args.encoder10_pth) and args.checkpoint_path is None:
-        log(f"=> loading encoder '{args.encoder10_pth}'")
-        checkpoint = torch.load(args.encoder10_pth, map_location="cpu")
-        state_dict = checkpoint.get("state_dict", checkpoint)
+            if args.checkpoint_path is None:
+                log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+            else:
+                log("Skipping loading pretrained weights since checkpoint path is provided")
         
-        # Filtra solo encoder10 keys
-        new_state_dict = {k: v for k, v in state_dict.items() if k.startswith("encoder10.")}
-        
-        incompatible = model.load_state_dict(new_state_dict, strict=False)
-        loaded_keys = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
-        log(f"Loaded {loaded_keys} keys from encoder10 checkpoint")
-    
-    # Converti a encoder + classification head
-    model = SwinUNETREncoder(model, num_classes=3, num_features=768)
-    
-    # Aggiungi classification head custom
-    if args.model_name == "swinunetr+ml_decoder":
-        try:
-            head = MLDecoder(
-                num_classes=3,
-                initial_num_features=1024,
-                num_of_groups=1,
-                decoder_embedding=768,
-                zsl=0
-            )
-            model.global_pool = torch.nn.Identity()
-            model.fc = head
-            log("Using SwinUNETR with ML-Decoder Classification Head")
-        except NameError:
-            log("Warning: MLDecoder not imported, using default head", level="warning")
-    
-    elif args.model_name == "swinunetr+noah":
-        try:
-            head = NOAH(
-                inplanes=768,
-                outplanes=3,
-                dropout=0.1,
-                head_num=1,
-                head_split=True,
-                kv_split=False
-            )
-            model.global_pool = torch.nn.Identity()
-            model.fc = head
-            log("Using SwinUNETR with NOAH Classification Head")
-        except NameError:
-            log("Warning: NOAH not imported, using default head", level="warning")
-    else:
-        log("Using SwinUNETR with Single Linear Classification Head")
-
         # Carica checkpoint per fine-tuning (se specificato)
-    if args.checkpoint_path is not None and os.path.exists(args.checkpoint_path):
-        log(f"=> loading checkpoint '{args.checkpoint_path}'")
-        checkpoint = torch.load(args.checkpoint_path, map_location="cpu")
-        state_dict = checkpoint.get("state_dict", checkpoint)
+        if args.encoder10_pth is not None and os.path.exists(args.encoder10_pth) and args.checkpoint_path is None:
+            log(f"=> loading encoder '{args.encoder10_pth}'")
+            checkpoint = torch.load(args.encoder10_pth, map_location="cpu")
+            state_dict = checkpoint.get("state_dict", checkpoint)
+            
+            # Filtra solo encoder10 keys
+            new_state_dict = {k: v for k, v in state_dict.items() if k.startswith("encoder10.")}
+            
+            incompatible = model.load_state_dict(new_state_dict, strict=False)
+            loaded_keys = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
+            log(f"Loaded {loaded_keys} keys from encoder10 checkpoint")
         
-        incompatible = model.load_state_dict(state_dict, strict=False)
-
-        if "epoch" in checkpoint:
-            args.start_epoch = checkpoint["epoch"]  
-        if "best_acc" in checkpoint:
-            args.best_acc = checkpoint["best_acc"]  
-
+        # Converti a encoder + classification head
+        model = SwinUNETREncoder(model, num_classes=3, num_features=768)
         
-        loaded_keys = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
-        log(f"Loaded {loaded_keys} keys from checkpoint")
-    
-    # Count parameters
-    total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    log(f"Total trainable parameters: {total_params:,}")
+        # Aggiungi classification head custom
+        if args.model_name == "swinunetr+ml_decoder":
+            try:
+                head = MLDecoder(
+                    num_classes=3,
+                    initial_num_features=1024,
+                    num_of_groups=1,
+                    decoder_embedding=768,
+                    zsl=0
+                )
+                model.global_pool = torch.nn.Identity()
+                model.fc = head
+                log("Using SwinUNETR with ML-Decoder Classification Head")
+            except NameError:
+                log("Warning: MLDecoder not imported, using default head", level="warning")
+        
+        elif args.model_name == "swinunetr+noah":
+            try:
+                head = NOAH(
+                    inplanes=768,
+                    outplanes=3,
+                    dropout=0.1,
+                    head_num=1,
+                    head_split=True,
+                    kv_split=False
+                )
+                model.global_pool = torch.nn.Identity()
+                model.fc = head
+                log("Using SwinUNETR with NOAH Classification Head")
+            except NameError:
+                log("Warning: NOAH not imported, using default head", level="warning")
+        else:
+            log("Using SwinUNETR with Single Linear Classification Head")
+
+            # Carica checkpoint per fine-tuning (se specificato)
+        if args.checkpoint_path is not None and os.path.exists(args.checkpoint_path):
+            log(f"=> loading checkpoint '{args.checkpoint_path}'")
+            checkpoint = torch.load(args.checkpoint_path, map_location="cpu")
+            state_dict = checkpoint.get("state_dict", checkpoint)
+            
+            incompatible = model.load_state_dict(state_dict, strict=False)
+
+            if "epoch" in checkpoint:
+                args.start_epoch = checkpoint["epoch"]  
+            if "best_acc" in checkpoint:
+                args.best_acc = checkpoint["best_acc"]  
+
+            
+            loaded_keys = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
+            log(f"Loaded {loaded_keys} keys from checkpoint")
+        
+        # Count parameters
+        total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+        log(f"Total trainable parameters: {total_params:,}")
+    elif "resnet50" in args.model_name.lower():
+        model = resnet.resnet50(
+                sample_input_W=args.roi_x,
+                sample_input_H=args.roi_y,
+                sample_input_D=args.roi_z,
+                num_seg_classes=1)
+        
+        model.forward_features = model.forward
+        
+        # Carica pretrained weights
+        pretrained_pth = os.path.join(args.pretrained_dir, args.pretrained_model_name)
+
+
+        if os.path.exists(pretrained_pth) and args.checkpoint_path is None:
+            log("Using pretrained weights")
+            log(f"=> loading pretrained model '{pretrained_pth}'")
+            
+            checkpoint = torch.load(pretrained_pth, map_location="cpu", weights_only=False)
+            state_dict = checkpoint.get("state_dict", checkpoint)
+            state_dict = state_dict['model'] if 'model' in state_dict else state_dict
+            
+            # Rinomina chiavi per compatibilità
+            new_state_dict = {}
+            for k, v in state_dict.items():
+                new_key = k
+                if k.startswith('module.'):
+                    new_key = k[7:]
+                new_state_dict[new_key] = v
+
+            
+            missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
+            
+            if missing:
+                log(f"Missing keys when loading pretrained: {len(missing)}")
+            if unexpected:
+                log(f"Unexpected keys when loading pretrained: {len(unexpected)}")
+        else:
+            if args.checkpoint_path is None:
+                log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+            else:
+                log("Skipping loading pretrained weights since checkpoint path is provided")
+
+                # Aggiungi classification head custom
+        if args.model_name == "swinunetr+ml_decoder":
+            try:
+                head = MLDecoder(
+                    num_classes=3,
+                    initial_num_features=1024,
+                    num_of_groups=1,
+                    decoder_embedding=768,
+                    zsl=0
+                )
+                model.global_pool = torch.nn.Identity()
+                model.fc = head
+                log("Using SwinUNETR with ML-Decoder Classification Head")
+            except NameError:
+                log("Warning: MLDecoder not imported, using default head", level="warning")
+        
+        elif args.model_name == "swinunetr+noah":
+            try:
+                head = NOAH(
+                    inplanes=768,
+                    outplanes=3,
+                    dropout=0.1,
+                    head_num=1,
+                    head_split=True,
+                    kv_split=False
+                )
+                model.global_pool = torch.nn.Identity()
+                model.fc = head
+                log("Using SwinUNETR with NOAH Classification Head")
+            except NameError:
+                log("Warning: NOAH not imported, using default head", level="warning")
+        else:
+            model.global_pool = nn.AdaptiveAvgPool3d(1)  # Pool globale 3D per volumi
+            model.fc = nn.Linear(768, 3)  # Testa di classificazione
+            log("Using SwinUNETR with Single Linear Classification Head")
+        
+    else:
+        raise ValueError(f"Unsupported model architecture: {args.model_name}")
     
     # Move to GPU
     model = model.cuda(args.gpu)
@@ -456,13 +538,15 @@ def _setup_data(args, logger, log):
         train_set, val_set = split_dataset_stratified(dataset, val_size=0.2, seed=args.seed)
     elif args.split_method == "balanced":
         train_set, val_set = split_dataset_balanced(dataset, val_size=0.2, seed=args.seed)
-        log("\nTrain set balance:")
-        verify_balance(train_set, labels)
-        log("\nVal set balance:")
-        verify_balance(val_set, labels)
+    elif args.split_method == "percentage":
+        train_set, val_set = split_dataset_percentage(dataset, val_size=0.2, seed=args.seed)
     else:
         raise ValueError(f"Unsupported split method: {args.split_method}")
     
+    log("\nTrain set balance:")
+    verify_balance(train_set, labels)
+    log("\nVal set balance:")
+    verify_balance(val_set, labels)
     # Debug mode
     if args.debug:
         log("\nDEBUG MODE ACTIVE")

@@ -1,0 +1,3098 @@
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Byte Order:                           Little Endian
+Address sizes:                        48 bits physical, 48 bits virtual
+CPU(s):                               64
+On-line CPU(s) list:                  0-63
+Thread(s) per core:                   2
+Core(s) per socket:                   16
+Socket(s):                            2
+NUMA node(s):                         8
+Vendor ID:                            AuthenticAMD
+CPU family:                           25
+Model:                                1
+Model name:                           AMD EPYC 7313 16-Core Processor
+Stepping:                             1
+Frequency boost:                      enabled
+CPU MHz:                              3689.214
+CPU max MHz:                          3000.0000
+CPU min MHz:                          1500.0000
+BogoMIPS:                             5988.80
+Virtualization:                       AMD-V
+L1d cache:                            1 MiB
+L1i cache:                            1 MiB
+L2 cache:                             16 MiB
+L3 cache:                             256 MiB
+NUMA node0 CPU(s):                    0-3,32-35
+NUMA node1 CPU(s):                    4-7,36-39
+NUMA node2 CPU(s):                    8-11,40-43
+NUMA node3 CPU(s):                    12-15,44-47
+NUMA node4 CPU(s):                    16-19,48-51
+NUMA node5 CPU(s):                    20-23,52-55
+NUMA node6 CPU(s):                    24-27,56-59
+NUMA node7 CPU(s):                    28-31,60-63
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Not affected
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Mitigation; safe RET
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Retpolines, IBPB conditional, IBRS_FW, STIBP always-on, RSB filling, PBRSB-eIBRS Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 invpcid_single hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local clzero irperf xsaveerptr rdpru wbnoinvd amd_ppin arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm
+Fri Oct 24 06:08:41 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.183.06             Driver Version: 535.183.06   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A40                     On  | 00000000:A3:00.0 Off |                    0 |
+|  0%   35C    P8              30W / 300W |      0MiB / 46068MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning
+{'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': False,
+ 'batch_size': 8,
+ 'cache_dataset': False,
+ 'checkpoint_path': None,
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset/',
+ 'dataset_name': 'OrganoidsINRIA',
+ 'debug': False,
+ 'debug_train_samples': 3,
+ 'debug_val_samples': 3,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': False,
+ 'encoder10_pth': '',
+ 'exact_class': True,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'training',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CombinedLoss',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 100,
+ 'min_delta_loss': 0.01,
+ 'min_delta_val': 0.02,
+ 'model_name': 'swinunetr',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2078807,
+ 'optim_lr': 0.0005,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': True,
+ 'patience_loss': 30,
+ 'patience_val': 10,
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model_swinvit.pt',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 304,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'balanced',
+ 'start_epoch': 0,
+ 'sw_batch_size': 4,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 4,
+ 'workers': 8,
+ 'world_size': 1}
+
+Saved configuration to: outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/config.txt
+Using GPU: 0
+
+Model INFO:
+Model architecture: swinunetr
+Using pretrained weights
+=> loading pretrained model './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/model_swinvit.pt'
+Missing keys when loading pretrained: 33
+Unexpected keys when loading pretrained: 8
+Using SwinUNETR with Single Linear Classification Head
+Total trainable parameters: 39,914,805
+
+Optimizer INFO:
+Using optimizer: adamw with lr=0.0005, weight_decay=5e-05
+
+Dataset INFO:
+Dataset length: 423
+Class distribution in entire dataset:
+  Class 0: 137
+  Class 1: 43
+  Class 2: 243
+
+Using split method: balanced
+Balanced split: 34 train samples per class, 9 val samples per class
+Total: 102 train, 27 val
+
+Train set balance:
+Class distribution:
+  Class 0: 34 samples
+  Class 1: 34 samples
+  Class 2: 34 samples
+
+Val set balance:
+Class distribution:
+  Class 0: 9 samples
+  Class 1: 9 samples
+  Class 2: 9 samples
+Training set length: 102
+Validation set length: 27
+
+Using standard shuffle for training
+Training loader: 12 batches
+Validation loader: 27 batches
+
+Class distribution in training set:
+  Class 0: 34 (33.3%)
+  Class 1: 34 (33.3%)
+  Class 2: 34 (33.3%)
+Class distribution in validation set:
+  Class 0: 9 (33.3%)
+  Class 1: 9 (33.3%)
+  Class 2: 9 (33.3%)
+**************************************************
+Class weights: [ 10.000  10.000  10.000]
+
+Using loss function: CombinedLoss
+**************************************************
+Starting training...
+✓ Unfrozen: encoder10.layer.conv1.conv.weight (15925248 params)
+✓ Unfrozen: encoder10.layer.conv2.conv.weight (15925248 params)
+✓ Unfrozen: fc.weight (2304 params)
+✓ Unfrozen: fc.bias (3 params)
+0 Fri Oct 24 06:08:58 2025 Epoch: 0
+Epoch: 0/100 Iter: 0/12 loss: 7.4701 acc: 0.3333 sim_loss: 0.0000 time 71.77s
+Epoch: 0/100 Iter: 1/12 loss: 7.4356 acc: 0.3333 time 42.70s
+Epoch: 0/100 Iter: 2/12 loss: 7.1147 acc: 0.3333 time 42.71s
+Epoch: 0/100 Iter: 3/12 loss: 6.7683 acc: 0.3333 time 42.79s
+Epoch: 0/100 Iter: 4/12 loss: 6.5265 acc: 0.3333 time 42.82s
+Epoch: 0/100 Iter: 5/12 loss: 6.5262 acc: 0.3333 time 42.85s
+Epoch: 0/100 Iter: 6/12 loss: 6.1559 acc: 0.3333 time 42.83s
+Epoch: 0/100 Iter: 7/12 loss: 6.1922 acc: 0.3333 time 42.85s
+Epoch: 0/100 Iter: 8/12 loss: 6.1346 acc: 0.3333 time 42.83s
+Epoch: 0/100 Iter: 9/12 loss: 6.0028 acc: 0.3333 time 42.85s
+Epoch: 0/100 Iter: 10/12 loss: 5.9771 acc: 0.3333 time 42.84s
+Epoch: 0/100 Iter: 11/12 loss: 6.0148 acc: 0.3333 time 42.87s
+[Train epoch 0] avg_loss=6.0148 avg_acc=0.3333 | per-class [c0: 1.000, c1: 0.000, c2: 0.000]
+Final training 0/99, loss: 6.0148, time 542.76s, lr: 0.000000
+Accuracy: 0.323
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.323     1.000         0.000   0.488        31
+1                          0.000     0.000         1.000   0.000        33
+2                          0.000     0.000         1.000   0.000        32
+*----------------------------------------*
+0 Fri Oct 24 06:18:02 2025 Epoch: 1
+Epoch: 1/100 Iter: 0/12 loss: 3.8774 acc: 0.3333 time 48.50s
+Epoch: 1/100 Iter: 1/12 loss: 4.0945 acc: 0.4167 time 42.85s
+Epoch: 1/100 Iter: 2/12 loss: 4.8073 acc: 0.3889 time 42.87s
+Epoch: 1/100 Iter: 3/12 loss: 4.8321 acc: 0.3750 time 42.87s
+Epoch: 1/100 Iter: 4/12 loss: 4.7377 acc: 0.4111 time 42.85s
+Epoch: 1/100 Iter: 5/12 loss: 4.7165 acc: 0.4120 time 42.84s
+Epoch: 1/100 Iter: 6/12 loss: 4.7421 acc: 0.4008 time 42.85s
+Epoch: 1/100 Iter: 7/12 loss: 4.6965 acc: 0.3924 time 42.88s
+Epoch: 1/100 Iter: 8/12 loss: 4.7744 acc: 0.3858 time 42.84s
+Epoch: 1/100 Iter: 9/12 loss: 4.7366 acc: 0.3806 time 42.84s
+Epoch: 1/100 Iter: 10/12 loss: 4.7383 acc: 0.3763 time 42.86s
+Epoch: 1/100 Iter: 11/12 loss: 4.7536 acc: 0.3727 time 42.86s
+[Train epoch 1] avg_loss=4.7536 avg_acc=0.3727 | per-class [c0: 0.147, c1: 0.656, c2: 0.467]
+Final training 1/99, loss: 4.7536, time 519.96s, lr: 0.000167
+Accuracy: 0.417
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.625     0.147         0.952   0.238        34
+1                          0.412     0.656         0.531   0.506        32
+2                          0.378     0.467         0.652   0.418        30
+*----------------------------------------*
+Val 1/100 0/27, Acc: 0.0000, time 6.33s
+Val 1/100 1/27, Acc: 0.0000, time 5.69s
+Val 1/100 2/27, Acc: 0.0000, time 5.66s
+Val 1/100 3/27, Acc: 0.2500, time 5.60s
+Val 1/100 4/27, Acc: 0.4000, time 5.57s
+Val 1/100 5/27, Acc: 0.3333, time 5.55s
+Val 1/100 6/27, Acc: 0.2857, time 5.54s
+Val 1/100 7/27, Acc: 0.2500, time 5.84s
+Val 1/100 8/27, Acc: 0.2222, time 5.73s
+Val 1/100 9/27, Acc: 0.2000, time 5.60s
+Val 1/100 10/27, Acc: 0.1818, time 5.59s
+Val 1/100 11/27, Acc: 0.1667, time 5.64s
+Val 1/100 12/27, Acc: 0.2308, time 5.53s
+Val 1/100 13/27, Acc: 0.2143, time 5.60s
+Val 1/100 14/27, Acc: 0.2667, time 5.54s
+Val 1/100 15/27, Acc: 0.2500, time 5.51s
+Val 1/100 16/27, Acc: 0.2941, time 5.51s
+Val 1/100 17/27, Acc: 0.3333, time 6.22s
+Val 1/100 18/27, Acc: 0.3684, time 5.62s
+Val 1/100 19/27, Acc: 0.3500, time 5.72s
+Val 1/100 20/27, Acc: 0.3333, time 5.86s
+Val 1/100 21/27, Acc: 0.3636, time 5.62s
+Val 1/100 22/27, Acc: 0.3478, time 5.65s
+Val 1/100 23/27, Acc: 0.3750, time 5.62s
+Val 1/100 24/27, Acc: 0.3600, time 5.64s
+Val 1/100 25/27, Acc: 0.3462, time 6.40s
+Val 1/100 26/27, Acc: 0.3333, time 6.26s
+[Val epoch 1] avg_acc=0.3333 | per-class [c0: 0.000, c1: 1.000, c2: 0.000]
+Final validation 1/99, Val_acc: 0.3333, time 154.65sAccuracy: 0.333
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.000     0.000         1.000   0.000         9
+1                          0.333     1.000         0.000   0.500         9
+2                          0.000     0.000         1.000   0.000         9
+*========================================*
+New best (0.000000 --> 0.333333)
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+Copying best model to model.pt
+0 Fri Oct 24 06:29:26 2025 Epoch: 2
+Epoch: 2/100 Iter: 0/12 loss: 4.5800 acc: 0.3333 time 47.10s
+Epoch: 2/100 Iter: 1/12 loss: 4.7150 acc: 0.3333 time 42.93s
+Epoch: 2/100 Iter: 2/12 loss: 4.6932 acc: 0.4444 time 42.88s
+Epoch: 2/100 Iter: 3/12 loss: 4.6615 acc: 0.4167 time 42.92s
+Epoch: 2/100 Iter: 4/12 loss: 4.6915 acc: 0.4000 time 42.87s
+Epoch: 2/100 Iter: 5/12 loss: 4.7423 acc: 0.3889 time 42.89s
+Epoch: 2/100 Iter: 6/12 loss: 4.7387 acc: 0.3929 time 42.87s
+Epoch: 2/100 Iter: 7/12 loss: 4.7536 acc: 0.3854 time 42.90s
+Epoch: 2/100 Iter: 8/12 loss: 4.7674 acc: 0.3920 time 42.88s
+Epoch: 2/100 Iter: 9/12 loss: 4.7511 acc: 0.3944 time 42.90s
+Epoch: 2/100 Iter: 10/12 loss: 4.7230 acc: 0.3889 time 42.89s
+Epoch: 2/100 Iter: 11/12 loss: 4.6970 acc: 0.3843 time 42.90s
+[Train epoch 2] avg_loss=4.6970 avg_acc=0.3843 | per-class [c0: 0.094, c1: 0.344, c2: 0.625]
+Final training 2/99, loss: 4.6970, time 518.95s, lr: 0.000333
+Accuracy: 0.354
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.300     0.094         0.891   0.143        32
+1                          0.355     0.344         0.688   0.349        32
+2                          0.364     0.625         0.453   0.460        32
+*----------------------------------------*
+0 Fri Oct 24 06:38:05 2025 Epoch: 3
+Epoch: 3/100 Iter: 0/12 loss: 4.2715 acc: 0.3333 time 47.02s
+Epoch: 3/100 Iter: 1/12 loss: 4.4698 acc: 0.3333 time 42.90s
+Epoch: 3/100 Iter: 2/12 loss: 4.3062 acc: 0.4074 time 42.88s
+Epoch: 3/100 Iter: 3/12 loss: 4.2007 acc: 0.4514 time 42.88s
+Epoch: 3/100 Iter: 4/12 loss: 4.4686 acc: 0.4500 time 42.90s
+Epoch: 3/100 Iter: 5/12 loss: 4.4758 acc: 0.4306 time 42.89s
+Epoch: 3/100 Iter: 6/12 loss: 4.4746 acc: 0.4167 time 42.89s
+Epoch: 3/100 Iter: 7/12 loss: 4.4967 acc: 0.3646 time 42.88s
+Epoch: 3/100 Iter: 8/12 loss: 4.5497 acc: 0.3735 time 42.88s
+Epoch: 3/100 Iter: 9/12 loss: 4.5299 acc: 0.4028 time 42.86s
+Epoch: 3/100 Iter: 10/12 loss: 4.5418 acc: 0.4116 time 42.77s
+Epoch: 3/100 Iter: 11/12 loss: 4.4943 acc: 0.4329 time 42.89s
+[Train epoch 3] avg_loss=4.4943 avg_acc=0.4329 | per-class [c0: 0.406, c1: 0.636, c2: 0.258]
+Final training 3/99, loss: 4.4943, time 518.68s, lr: 0.000500
+Accuracy: 0.438
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.310     0.406         0.547   0.351        32
+1                          0.500     0.636         0.667   0.560        33
+2                          0.667     0.258         0.938   0.372        31
+*----------------------------------------*
+Val 3/100 0/27, Acc: 0.0000, time 5.42s
+Val 3/100 1/27, Acc: 0.5000, time 5.43s
+Val 3/100 2/27, Acc: 0.3333, time 5.42s
+Val 3/100 3/27, Acc: 0.2500, time 5.41s
+Val 3/100 4/27, Acc: 0.4000, time 5.41s
+Val 3/100 5/27, Acc: 0.3333, time 5.41s
+Val 3/100 6/27, Acc: 0.4286, time 5.40s
+Val 3/100 7/27, Acc: 0.3750, time 5.46s
+Val 3/100 8/27, Acc: 0.4444, time 5.46s
+Val 3/100 9/27, Acc: 0.5000, time 5.41s
+Val 3/100 10/27, Acc: 0.5455, time 5.43s
+Val 3/100 11/27, Acc: 0.5833, time 5.42s
+Val 3/100 12/27, Acc: 0.5385, time 5.43s
+Val 3/100 13/27, Acc: 0.5714, time 5.42s
+Val 3/100 14/27, Acc: 0.5333, time 5.42s
+Val 3/100 15/27, Acc: 0.5625, time 5.39s
+Val 3/100 16/27, Acc: 0.5294, time 5.43s
+Val 3/100 17/27, Acc: 0.5000, time 5.53s
+Val 3/100 18/27, Acc: 0.4737, time 5.41s
+Val 3/100 19/27, Acc: 0.4500, time 5.43s
+Val 3/100 20/27, Acc: 0.4286, time 5.49s
+Val 3/100 21/27, Acc: 0.4091, time 5.46s
+Val 3/100 22/27, Acc: 0.4348, time 5.42s
+Val 3/100 23/27, Acc: 0.4583, time 5.43s
+Val 3/100 24/27, Acc: 0.4400, time 5.42s
+Val 3/100 25/27, Acc: 0.4231, time 5.58s
+Val 3/100 26/27, Acc: 0.4074, time 5.56s
+[Val epoch 3] avg_acc=0.4074 | per-class [c0: 0.000, c1: 0.222, c2: 1.000]
+Final validation 3/99, Val_acc: 0.4074, time 146.93sAccuracy: 0.407
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.000     0.000         1.000   0.000         9
+1                          0.500     0.222         0.889   0.308         9
+2                          0.391     1.000         0.222   0.562         9
+*========================================*
+New best (0.333333 --> 0.407407)
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+Copying best model to model.pt
+0 Fri Oct 24 06:49:21 2025 Epoch: 4
+Epoch: 4/100 Iter: 0/12 loss: 4.9726 acc: 0.3333 time 48.29s
+Epoch: 4/100 Iter: 1/12 loss: 4.6811 acc: 0.3889 time 42.83s
+Epoch: 4/100 Iter: 2/12 loss: 4.6966 acc: 0.4259 time 42.82s
+Epoch: 4/100 Iter: 3/12 loss: 4.4635 acc: 0.4028 time 42.89s
+Epoch: 4/100 Iter: 4/12 loss: 4.6916 acc: 0.3889 time 42.88s
+Epoch: 4/100 Iter: 5/12 loss: 4.7455 acc: 0.3796 time 42.89s
+Epoch: 4/100 Iter: 6/12 loss: 4.7277 acc: 0.3889 time 42.89s
+Epoch: 4/100 Iter: 7/12 loss: 4.6739 acc: 0.4340 time 42.89s
+Epoch: 4/100 Iter: 8/12 loss: 4.6546 acc: 0.4352 time 42.86s
+Epoch: 4/100 Iter: 9/12 loss: 4.6480 acc: 0.4417 time 42.87s
+Epoch: 4/100 Iter: 10/12 loss: 4.6434 acc: 0.4621 time 42.87s
+Epoch: 4/100 Iter: 11/12 loss: 4.6261 acc: 0.4653 time 42.89s
+[Train epoch 4] avg_loss=4.6261 avg_acc=0.4653 | per-class [c0: 0.250, c1: 0.375, c2: 0.688]
+Final training 4/99, loss: 4.6261, time 519.90s, lr: 0.000500
+Accuracy: 0.438
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.471     0.250         0.859   0.327        32
+1                          0.632     0.375         0.891   0.471        32
+2                          0.367     0.688         0.406   0.478        32
+*----------------------------------------*
+0 Fri Oct 24 06:58:01 2025 Epoch: 5
+Epoch: 5/100 Iter: 0/12 loss: 4.7314 acc: 0.5556 time 47.43s
+Epoch: 5/100 Iter: 1/12 loss: 4.7453 acc: 0.5000 time 42.91s
+Epoch: 5/100 Iter: 2/12 loss: 4.6631 acc: 0.4722 time 42.86s
+Epoch: 5/100 Iter: 3/12 loss: 4.6701 acc: 0.4613 time 42.89s
+Epoch: 5/100 Iter: 4/12 loss: 4.5181 acc: 0.4802 time 42.90s
+Epoch: 5/100 Iter: 5/12 loss: 4.4901 acc: 0.5020 time 42.86s
+Epoch: 5/100 Iter: 6/12 loss: 4.6293 acc: 0.4898 time 42.89s
+Epoch: 5/100 Iter: 7/12 loss: 4.6032 acc: 0.4668 time 42.89s
+Epoch: 5/100 Iter: 8/12 loss: 4.7309 acc: 0.4519 time 42.88s
+Epoch: 5/100 Iter: 9/12 loss: 4.7453 acc: 0.4534 time 42.88s
+Epoch: 5/100 Iter: 10/12 loss: 4.6498 acc: 0.4728 time 42.83s
+Epoch: 5/100 Iter: 11/12 loss: 4.6180 acc: 0.4862 time 42.81s
+[Train epoch 5] avg_loss=4.6180 avg_acc=0.4862 | per-class [c0: 0.242, c1: 0.455, c2: 0.533]
+Final training 5/99, loss: 4.6180, time 519.09s, lr: 0.000500
+Accuracy: 0.406
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.571     0.242         0.905   0.340        33
+1                          0.441     0.455         0.698   0.448        33
+2                          0.333     0.533         0.515   0.410        30
+*----------------------------------------*
+Val 5/100 0/27, Acc: 0.0000, time 5.42s
+Val 5/100 1/27, Acc: 0.0000, time 5.41s
+Val 5/100 2/27, Acc: 0.0000, time 5.46s
+Val 5/100 3/27, Acc: 0.2500, time 5.41s
+Val 5/100 4/27, Acc: 0.4000, time 5.41s
+Val 5/100 5/27, Acc: 0.3333, time 5.43s
+Val 5/100 6/27, Acc: 0.2857, time 5.43s
+Val 5/100 7/27, Acc: 0.3750, time 5.48s
+Val 5/100 8/27, Acc: 0.3333, time 5.46s
+Val 5/100 9/27, Acc: 0.3000, time 5.40s
+Val 5/100 10/27, Acc: 0.2727, time 5.40s
+Val 5/100 11/27, Acc: 0.2500, time 5.44s
+Val 5/100 12/27, Acc: 0.3077, time 5.43s
+Val 5/100 13/27, Acc: 0.2857, time 5.43s
+Val 5/100 14/27, Acc: 0.3333, time 5.41s
+Val 5/100 15/27, Acc: 0.3125, time 5.40s
+Val 5/100 16/27, Acc: 0.3529, time 5.40s
+Val 5/100 17/27, Acc: 0.3333, time 5.55s
+Val 5/100 18/27, Acc: 0.3684, time 5.43s
+Val 5/100 19/27, Acc: 0.3500, time 5.44s
+Val 5/100 20/27, Acc: 0.3810, time 5.49s
+Val 5/100 21/27, Acc: 0.4091, time 5.46s
+Val 5/100 22/27, Acc: 0.3913, time 5.43s
+Val 5/100 23/27, Acc: 0.4167, time 5.42s
+Val 5/100 24/27, Acc: 0.4000, time 5.45s
+Val 5/100 25/27, Acc: 0.4231, time 5.57s
+Val 5/100 26/27, Acc: 0.4444, time 5.53s
+[Val epoch 5] avg_acc=0.4444 | per-class [c0: 0.444, c1: 0.889, c2: 0.000]
+Final validation 5/99, Val_acc: 0.4444, time 146.97sAccuracy: 0.444
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.571     0.444         0.833   0.500         9
+1                          0.400     0.889         0.333   0.552         9
+2                          0.000     0.000         1.000   0.000         9
+*========================================*
+New best (0.407407 --> 0.444444)
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+Copying best model to model.pt
+0 Fri Oct 24 07:09:17 2025 Epoch: 6
+Epoch: 6/100 Iter: 0/12 loss: 4.2900 acc: 0.5000 time 47.23s
+Epoch: 6/100 Iter: 1/12 loss: 4.4005 acc: 0.4583 time 42.79s
+Epoch: 6/100 Iter: 2/12 loss: 4.5682 acc: 0.4167 time 42.85s
+Epoch: 6/100 Iter: 3/12 loss: 4.5793 acc: 0.3958 time 42.87s
+Epoch: 6/100 Iter: 4/12 loss: 4.7686 acc: 0.4167 time 42.87s
+Epoch: 6/100 Iter: 5/12 loss: 4.5937 acc: 0.4398 time 42.89s
+Epoch: 6/100 Iter: 6/12 loss: 4.5400 acc: 0.4444 time 42.86s
+Epoch: 6/100 Iter: 7/12 loss: 4.5754 acc: 0.4306 time 42.89s
+Epoch: 6/100 Iter: 8/12 loss: 4.4962 acc: 0.4290 time 42.88s
+Epoch: 6/100 Iter: 9/12 loss: 4.5791 acc: 0.4194 time 42.87s
+Epoch: 6/100 Iter: 10/12 loss: 4.5583 acc: 0.4116 time 42.86s
+Epoch: 6/100 Iter: 11/12 loss: 4.5568 acc: 0.4282 time 42.89s
+[Train epoch 6] avg_loss=4.5568 avg_acc=0.4282 | per-class [c0: 0.545, c1: 0.645, c2: 0.031]
+Final training 6/99, loss: 4.5568, time 518.80s, lr: 0.000499
+Accuracy: 0.406
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.419     0.545         0.603   0.474        33
+1                          0.400     0.645         0.538   0.494        31
+2                          0.333     0.031         0.969   0.057        32
+*----------------------------------------*
+0 Fri Oct 24 07:17:56 2025 Epoch: 7
+Epoch: 7/100 Iter: 0/12 loss: 4.1470 acc: 0.4444 time 45.99s
+Epoch: 7/100 Iter: 1/12 loss: 4.4579 acc: 0.4861 time 42.83s
+Epoch: 7/100 Iter: 2/12 loss: 4.4810 acc: 0.4630 time 42.83s
+Epoch: 7/100 Iter: 3/12 loss: 4.4626 acc: 0.4306 time 42.79s
+Epoch: 7/100 Iter: 4/12 loss: 4.3128 acc: 0.4444 time 42.85s
+Epoch: 7/100 Iter: 5/12 loss: 4.3071 acc: 0.4398 time 42.77s
+Epoch: 7/100 Iter: 6/12 loss: 4.4066 acc: 0.4365 time 42.84s
+Epoch: 7/100 Iter: 7/12 loss: 4.3455 acc: 0.4444 time 42.78s
+Epoch: 7/100 Iter: 8/12 loss: 4.3407 acc: 0.4321 time 42.81s
+Epoch: 7/100 Iter: 9/12 loss: 4.3728 acc: 0.4000 time 42.82s
+Epoch: 7/100 Iter: 10/12 loss: 4.3714 acc: 0.3990 time 42.79s
+Epoch: 7/100 Iter: 11/12 loss: 4.3141 acc: 0.4213 time 42.84s
+[Train epoch 7] avg_loss=4.3141 avg_acc=0.4213 | per-class [c0: 0.125, c1: 0.364, c2: 0.871]
+Final training 7/99, loss: 4.3141, time 516.99s, lr: 0.000499
+Accuracy: 0.448
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.571     0.125         0.953   0.205        32
+1                          0.667     0.364         0.905   0.471        33
+2                          0.380     0.871         0.323   0.529        31
+*----------------------------------------*
+Val 7/100 0/27, Acc: 0.0000, time 5.42s
+Val 7/100 1/27, Acc: 0.0000, time 5.41s
+Val 7/100 2/27, Acc: 0.0000, time 5.40s
+Val 7/100 3/27, Acc: 0.2500, time 5.40s
+Val 7/100 4/27, Acc: 0.4000, time 5.39s
+Val 7/100 5/27, Acc: 0.3333, time 5.41s
+Val 7/100 6/27, Acc: 0.2857, time 5.39s
+Val 7/100 7/27, Acc: 0.3750, time 5.44s
+Val 7/100 8/27, Acc: 0.3333, time 5.43s
+Val 7/100 9/27, Acc: 0.3000, time 5.41s
+Val 7/100 10/27, Acc: 0.2727, time 5.44s
+Val 7/100 11/27, Acc: 0.2500, time 5.45s
+Val 7/100 12/27, Acc: 0.3077, time 5.43s
+Val 7/100 13/27, Acc: 0.2857, time 5.44s
+Val 7/100 14/27, Acc: 0.3333, time 5.44s
+Val 7/100 15/27, Acc: 0.3125, time 5.41s
+Val 7/100 16/27, Acc: 0.3529, time 5.41s
+Val 7/100 17/27, Acc: 0.3333, time 5.51s
+Val 7/100 18/27, Acc: 0.3684, time 5.40s
+Val 7/100 19/27, Acc: 0.3500, time 5.42s
+Val 7/100 20/27, Acc: 0.3810, time 5.48s
+Val 7/100 21/27, Acc: 0.4091, time 5.41s
+Val 7/100 22/27, Acc: 0.3913, time 5.41s
+Val 7/100 23/27, Acc: 0.4167, time 5.42s
+Val 7/100 24/27, Acc: 0.4000, time 5.42s
+Val 7/100 25/27, Acc: 0.4231, time 5.57s
+Val 7/100 26/27, Acc: 0.4444, time 5.55s
+[Val epoch 7] avg_acc=0.4444 | per-class [c0: 0.444, c1: 0.889, c2: 0.000]
+Final validation 7/99, Val_acc: 0.4444, time 146.72sAccuracy: 0.444
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.500     0.444         0.778   0.471         9
+1                          0.421     0.889         0.389   0.571         9
+2                          0.000     0.000         1.000   0.000         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 07:29:05 2025 Epoch: 8
+Epoch: 8/100 Iter: 0/12 loss: 4.4782 acc: 0.5556 time 47.63s
+Epoch: 8/100 Iter: 1/12 loss: 4.4895 acc: 0.4444 time 42.81s
+Epoch: 8/100 Iter: 2/12 loss: 4.5841 acc: 0.5185 time 42.83s
+Epoch: 8/100 Iter: 3/12 loss: 4.4007 acc: 0.5556 time 42.80s
+Epoch: 8/100 Iter: 4/12 loss: 4.2929 acc: 0.5444 time 42.78s
+Epoch: 8/100 Iter: 5/12 loss: 4.1603 acc: 0.5648 time 42.79s
+Epoch: 8/100 Iter: 6/12 loss: 4.2261 acc: 0.5476 time 42.79s
+Epoch: 8/100 Iter: 7/12 loss: 4.2477 acc: 0.5417 time 42.80s
+Epoch: 8/100 Iter: 8/12 loss: 4.4798 acc: 0.4815 time 42.77s
+Epoch: 8/100 Iter: 9/12 loss: 4.4917 acc: 0.4667 time 42.82s
+Epoch: 8/100 Iter: 10/12 loss: 4.4752 acc: 0.4758 time 42.80s
+Epoch: 8/100 Iter: 11/12 loss: 4.3694 acc: 0.4986 time 42.84s
+[Train epoch 8] avg_loss=4.3694 avg_acc=0.4986 | per-class [c0: 0.344, c1: 0.667, c2: 0.382]
+Final training 8/99, loss: 4.3694, time 518.52s, lr: 0.000498
+Accuracy: 0.458
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.688     0.344         0.922   0.458        32
+1                          0.444     0.667         0.621   0.533        30
+2                          0.371     0.382         0.645   0.377        34
+*----------------------------------------*
+0 Fri Oct 24 07:37:43 2025 Epoch: 9
+Epoch: 9/100 Iter: 0/12 loss: 4.1227 acc: 0.4444 time 47.08s
+Epoch: 9/100 Iter: 1/12 loss: 5.0992 acc: 0.4722 time 42.82s
+Epoch: 9/100 Iter: 2/12 loss: 4.7664 acc: 0.4537 time 42.83s
+Epoch: 9/100 Iter: 3/12 loss: 4.5156 acc: 0.4236 time 42.83s
+Epoch: 9/100 Iter: 4/12 loss: 4.7606 acc: 0.3389 time 42.86s
+Epoch: 9/100 Iter: 5/12 loss: 4.6329 acc: 0.3380 time 42.84s
+Epoch: 9/100 Iter: 6/12 loss: 4.7246 acc: 0.3373 time 42.83s
+Epoch: 9/100 Iter: 7/12 loss: 4.7137 acc: 0.3785 time 42.82s
+Epoch: 9/100 Iter: 8/12 loss: 4.7847 acc: 0.4105 time 42.82s
+Epoch: 9/100 Iter: 9/12 loss: 4.8770 acc: 0.4028 time 42.82s
+Epoch: 9/100 Iter: 10/12 loss: 4.8359 acc: 0.4040 time 42.82s
+Epoch: 9/100 Iter: 11/12 loss: 4.8275 acc: 0.3981 time 42.84s
+[Train epoch 9] avg_loss=4.8275 avg_acc=0.3981 | per-class [c0: 0.788, c1: 0.226, c2: 0.188]
+Final training 9/99, loss: 4.8275, time 518.25s, lr: 0.000497
+Accuracy: 0.406
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.441     0.788         0.476   0.565        33
+1                          0.280     0.226         0.723   0.250        31
+2                          0.500     0.188         0.906   0.273        32
+*----------------------------------------*
+Val 9/100 0/27, Acc: 0.0000, time 5.41s
+Val 9/100 1/27, Acc: 0.5000, time 5.40s
+Val 9/100 2/27, Acc: 0.3333, time 5.41s
+Val 9/100 3/27, Acc: 0.2500, time 5.40s
+Val 9/100 4/27, Acc: 0.4000, time 5.40s
+Val 9/100 5/27, Acc: 0.3333, time 5.40s
+Val 9/100 6/27, Acc: 0.4286, time 5.40s
+Val 9/100 7/27, Acc: 0.3750, time 5.47s
+Val 9/100 8/27, Acc: 0.4444, time 5.46s
+Val 9/100 9/27, Acc: 0.5000, time 5.41s
+Val 9/100 10/27, Acc: 0.5455, time 5.44s
+Val 9/100 11/27, Acc: 0.5833, time 5.45s
+Val 9/100 12/27, Acc: 0.6154, time 5.41s
+Val 9/100 13/27, Acc: 0.6429, time 5.41s
+Val 9/100 14/27, Acc: 0.6000, time 5.40s
+Val 9/100 15/27, Acc: 0.6250, time 5.39s
+Val 9/100 16/27, Acc: 0.5882, time 5.43s
+Val 9/100 17/27, Acc: 0.5556, time 5.52s
+Val 9/100 18/27, Acc: 0.5263, time 5.44s
+Val 9/100 19/27, Acc: 0.5000, time 5.43s
+Val 9/100 20/27, Acc: 0.4762, time 5.48s
+Val 9/100 21/27, Acc: 0.5000, time 5.43s
+Val 9/100 22/27, Acc: 0.5217, time 5.44s
+Val 9/100 23/27, Acc: 0.5417, time 5.42s
+Val 9/100 24/27, Acc: 0.5200, time 5.44s
+Val 9/100 25/27, Acc: 0.5000, time 5.57s
+Val 9/100 26/27, Acc: 0.4815, time 5.55s
+[Val epoch 9] avg_acc=0.4815 | per-class [c0: 0.000, c1: 0.444, c2: 1.000]
+Final validation 9/99, Val_acc: 0.4815, time 146.79sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.000     0.000         1.000   0.000         9
+1                          0.571     0.444         0.833   0.500         9
+2                          0.450     1.000         0.389   0.621         9
+*========================================*
+New best (0.444444 --> 0.481481)
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+Copying best model to model.pt
+0 Fri Oct 24 07:48:59 2025 Epoch: 10
+Epoch: 10/100 Iter: 0/12 loss: 5.6709 acc: 0.3333 time 47.34s
+Epoch: 10/100 Iter: 1/12 loss: 5.2202 acc: 0.3333 time 42.82s
+Epoch: 10/100 Iter: 2/12 loss: 4.7974 acc: 0.3704 time 42.82s
+Epoch: 10/100 Iter: 3/12 loss: 4.8104 acc: 0.3611 time 42.81s
+Epoch: 10/100 Iter: 4/12 loss: 4.6325 acc: 0.3889 time 42.82s
+Epoch: 10/100 Iter: 5/12 loss: 4.5313 acc: 0.4074 time 42.86s
+Epoch: 10/100 Iter: 6/12 loss: 4.4775 acc: 0.4127 time 42.86s
+Epoch: 10/100 Iter: 7/12 loss: 4.7725 acc: 0.4028 time 42.82s
+Epoch: 10/100 Iter: 8/12 loss: 4.7448 acc: 0.4074 time 42.83s
+Epoch: 10/100 Iter: 9/12 loss: 4.7172 acc: 0.4000 time 42.84s
+Epoch: 10/100 Iter: 10/12 loss: 4.5915 acc: 0.4091 time 42.83s
+Epoch: 10/100 Iter: 11/12 loss: 4.5692 acc: 0.3889 time 42.85s
+[Train epoch 10] avg_loss=4.5692 avg_acc=0.3889 | per-class [c0: 0.333, c1: 0.194, c2: 0.656]
+Final training 10/99, loss: 4.5692, time 518.55s, lr: 0.000495
+Accuracy: 0.396
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.355     0.333         0.683   0.344        33
+1                          0.750     0.194         0.969   0.308        31
+2                          0.368     0.656         0.438   0.472        32
+*----------------------------------------*
+0 Fri Oct 24 07:57:38 2025 Epoch: 11
+Epoch: 11/100 Iter: 0/12 loss: 4.7909 acc: 0.1667 time 45.57s
+Epoch: 11/100 Iter: 1/12 loss: 4.3927 acc: 0.2500 time 42.89s
+Epoch: 11/100 Iter: 2/12 loss: 4.7037 acc: 0.2778 time 42.84s
+Epoch: 11/100 Iter: 3/12 loss: 4.7207 acc: 0.2917 time 42.82s
+Epoch: 11/100 Iter: 4/12 loss: 4.7231 acc: 0.3000 time 42.82s
+Epoch: 11/100 Iter: 5/12 loss: 4.7088 acc: 0.3056 time 42.83s
+Epoch: 11/100 Iter: 6/12 loss: 4.7407 acc: 0.3095 time 42.81s
+Epoch: 11/100 Iter: 7/12 loss: 4.7975 acc: 0.3264 time 42.81s
+Epoch: 11/100 Iter: 8/12 loss: 4.7305 acc: 0.3272 time 42.82s
+Epoch: 11/100 Iter: 9/12 loss: 4.6737 acc: 0.3611 time 42.82s
+Epoch: 11/100 Iter: 10/12 loss: 4.6352 acc: 0.3687 time 42.81s
+Epoch: 11/100 Iter: 11/12 loss: 4.5984 acc: 0.3583 time 42.81s
+[Train epoch 11] avg_loss=4.5984 avg_acc=0.3583 | per-class [c0: 0.032, c1: 0.656, c2: 0.364]
+Final training 11/99, loss: 4.5984, time 516.68s, lr: 0.000493
+Accuracy: 0.354
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.143     0.032         0.908   0.053        31
+1                          0.328     0.656         0.328   0.438        32
+2                          0.480     0.364         0.794   0.414        33
+*----------------------------------------*
+Val 11/100 0/27, Acc: 1.0000, time 5.44s
+Val 11/100 1/27, Acc: 1.0000, time 5.41s
+Val 11/100 2/27, Acc: 1.0000, time 5.43s
+Val 11/100 3/27, Acc: 0.7500, time 5.39s
+Val 11/100 4/27, Acc: 0.6000, time 5.42s
+Val 11/100 5/27, Acc: 0.6667, time 5.42s
+Val 11/100 6/27, Acc: 0.7143, time 5.39s
+Val 11/100 7/27, Acc: 0.6250, time 5.45s
+Val 11/100 8/27, Acc: 0.6667, time 5.46s
+Val 11/100 9/27, Acc: 0.6000, time 5.44s
+Val 11/100 10/27, Acc: 0.6364, time 5.43s
+Val 11/100 11/27, Acc: 0.6667, time 5.42s
+Val 11/100 12/27, Acc: 0.6154, time 5.40s
+Val 11/100 13/27, Acc: 0.6429, time 5.41s
+Val 11/100 14/27, Acc: 0.6000, time 5.40s
+Val 11/100 15/27, Acc: 0.6250, time 5.38s
+Val 11/100 16/27, Acc: 0.5882, time 5.42s
+Val 11/100 17/27, Acc: 0.5556, time 5.53s
+Val 11/100 18/27, Acc: 0.5263, time 5.43s
+Val 11/100 19/27, Acc: 0.5000, time 5.42s
+Val 11/100 20/27, Acc: 0.4762, time 5.46s
+Val 11/100 21/27, Acc: 0.4545, time 5.44s
+Val 11/100 22/27, Acc: 0.4783, time 5.43s
+Val 11/100 23/27, Acc: 0.4583, time 5.43s
+Val 11/100 24/27, Acc: 0.4800, time 5.43s
+Val 11/100 25/27, Acc: 0.4615, time 5.58s
+Val 11/100 26/27, Acc: 0.4444, time 5.55s
+[Val epoch 11] avg_acc=0.4444 | per-class [c0: 0.444, c1: 0.000, c2: 0.889]
+Final validation 11/99, Val_acc: 0.4444, time 146.81sAccuracy: 0.444
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.444     0.444         0.722   0.444         9
+1                          0.000     0.000         1.000   0.000         9
+2                          0.444     0.889         0.444   0.593         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 08:08:46 2025 Epoch: 12
+Epoch: 12/100 Iter: 0/12 loss: 3.8618 acc: 0.3333 time 47.52s
+Epoch: 12/100 Iter: 1/12 loss: 4.4380 acc: 0.5000 time 42.81s
+Epoch: 12/100 Iter: 2/12 loss: 4.6644 acc: 0.4444 time 42.78s
+Epoch: 12/100 Iter: 3/12 loss: 4.4562 acc: 0.5000 time 42.80s
+Epoch: 12/100 Iter: 4/12 loss: 4.3276 acc: 0.5533 time 42.79s
+Epoch: 12/100 Iter: 5/12 loss: 4.3271 acc: 0.5306 time 42.80s
+Epoch: 12/100 Iter: 6/12 loss: 4.2884 acc: 0.5222 time 42.82s
+Epoch: 12/100 Iter: 7/12 loss: 4.2389 acc: 0.5333 time 42.80s
+Epoch: 12/100 Iter: 8/12 loss: 4.2489 acc: 0.5204 time 42.78s
+Epoch: 12/100 Iter: 9/12 loss: 4.2655 acc: 0.4906 time 42.80s
+Epoch: 12/100 Iter: 10/12 loss: 4.2199 acc: 0.5217 time 42.80s
+Epoch: 12/100 Iter: 11/12 loss: 4.2142 acc: 0.5269 time 42.79s
+[Train epoch 12] avg_loss=4.2142 avg_acc=0.5269 | per-class [c0: 0.588, c1: 0.355, c2: 0.645]
+Final training 12/99, loss: 4.2142, time 518.34s, lr: 0.000491
+Accuracy: 0.531
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.571     0.588         0.758   0.580        34
+1                          0.611     0.355         0.892   0.449        31
+2                          0.465     0.645         0.646   0.541        31
+*----------------------------------------*
+0 Fri Oct 24 08:17:24 2025 Epoch: 13
+Epoch: 13/100 Iter: 0/12 loss: 3.9675 acc: 0.4333 time 46.69s
+Epoch: 13/100 Iter: 1/12 loss: 4.0943 acc: 0.4944 time 42.83s
+Epoch: 13/100 Iter: 2/12 loss: 3.9908 acc: 0.5296 time 42.79s
+Epoch: 13/100 Iter: 3/12 loss: 3.9319 acc: 0.5222 time 42.78s
+Epoch: 13/100 Iter: 4/12 loss: 4.0940 acc: 0.5178 time 42.80s
+Epoch: 13/100 Iter: 5/12 loss: 4.0265 acc: 0.5287 time 42.79s
+Epoch: 13/100 Iter: 6/12 loss: 4.0293 acc: 0.5127 time 42.79s
+Epoch: 13/100 Iter: 7/12 loss: 3.9800 acc: 0.5076 time 42.79s
+Epoch: 13/100 Iter: 8/12 loss: 4.0279 acc: 0.5006 time 42.78s
+Epoch: 13/100 Iter: 9/12 loss: 4.0017 acc: 0.4839 time 42.80s
+Epoch: 13/100 Iter: 10/12 loss: 4.0614 acc: 0.4551 time 42.79s
+Epoch: 13/100 Iter: 11/12 loss: 4.0465 acc: 0.4727 time 42.82s
+[Train epoch 13] avg_loss=4.0465 avg_acc=0.4727 | per-class [c0: 0.688, c1: 0.667, c2: 0.161]
+Final training 13/99, loss: 4.0465, time 517.49s, lr: 0.000489
+Accuracy: 0.510
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.478     0.688         0.625   0.564        32
+1                          0.537     0.667         0.698   0.595        33
+2                          0.556     0.161         0.938   0.250        31
+*----------------------------------------*
+Val 13/100 0/27, Acc: 1.0000, time 5.42s
+Val 13/100 1/27, Acc: 1.0000, time 5.44s
+Val 13/100 2/27, Acc: 1.0000, time 5.44s
+Val 13/100 3/27, Acc: 0.7500, time 5.40s
+Val 13/100 4/27, Acc: 0.8000, time 5.40s
+Val 13/100 5/27, Acc: 0.6667, time 5.39s
+Val 13/100 6/27, Acc: 0.7143, time 5.39s
+Val 13/100 7/27, Acc: 0.7500, time 5.45s
+Val 13/100 8/27, Acc: 0.7778, time 5.44s
+Val 13/100 9/27, Acc: 0.7000, time 5.44s
+Val 13/100 10/27, Acc: 0.7273, time 5.44s
+Val 13/100 11/27, Acc: 0.7500, time 5.42s
+Val 13/100 12/27, Acc: 0.7692, time 5.39s
+Val 13/100 13/27, Acc: 0.7857, time 5.41s
+Val 13/100 14/27, Acc: 0.7333, time 5.42s
+Val 13/100 15/27, Acc: 0.7500, time 5.43s
+Val 13/100 16/27, Acc: 0.7059, time 5.40s
+Val 13/100 17/27, Acc: 0.6667, time 5.55s
+Val 13/100 18/27, Acc: 0.6316, time 5.44s
+Val 13/100 19/27, Acc: 0.6000, time 5.44s
+Val 13/100 20/27, Acc: 0.5714, time 5.48s
+Val 13/100 21/27, Acc: 0.5909, time 5.42s
+Val 13/100 22/27, Acc: 0.6087, time 5.43s
+Val 13/100 23/27, Acc: 0.6250, time 5.45s
+Val 13/100 24/27, Acc: 0.6400, time 5.44s
+Val 13/100 25/27, Acc: 0.6154, time 5.55s
+Val 13/100 26/27, Acc: 0.5926, time 5.53s
+[Val epoch 13] avg_acc=0.5926 | per-class [c0: 0.444, c1: 0.444, c2: 0.889]
+Final validation 13/99, Val_acc: 0.5926, time 146.84sAccuracy: 0.593
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.800     0.444         0.944   0.571         9
+1                          0.800     0.444         0.944   0.571         9
+2                          0.471     0.889         0.500   0.615         9
+*========================================*
+New best (0.481481 --> 0.592593)
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+Copying best model to model.pt
+0 Fri Oct 24 08:28:39 2025 Epoch: 14
+Epoch: 14/100 Iter: 0/12 loss: 4.0222 acc: 0.5000 time 45.33s
+Epoch: 14/100 Iter: 1/12 loss: 4.4290 acc: 0.3167 time 42.84s
+Epoch: 14/100 Iter: 2/12 loss: 4.1343 acc: 0.4704 time 42.83s
+Epoch: 14/100 Iter: 3/12 loss: 3.9830 acc: 0.4778 time 42.81s
+Epoch: 14/100 Iter: 4/12 loss: 3.9036 acc: 0.4711 time 42.79s
+Epoch: 14/100 Iter: 5/12 loss: 4.0442 acc: 0.4593 time 42.82s
+Epoch: 14/100 Iter: 6/12 loss: 3.9709 acc: 0.4730 time 42.80s
+Epoch: 14/100 Iter: 7/12 loss: 4.0642 acc: 0.4486 time 42.81s
+Epoch: 14/100 Iter: 8/12 loss: 4.0977 acc: 0.4667 time 42.80s
+Epoch: 14/100 Iter: 9/12 loss: 4.0731 acc: 0.4867 time 42.80s
+Epoch: 14/100 Iter: 10/12 loss: 4.0054 acc: 0.5258 time 42.81s
+Epoch: 14/100 Iter: 11/12 loss: 3.9575 acc: 0.5306 time 42.80s
+[Train epoch 14] avg_loss=3.9575 avg_acc=0.5306 | per-class [c0: 0.382, c1: 0.500, c2: 0.800]
+Final training 14/99, loss: 3.9575, time 516.27s, lr: 0.000487
+Accuracy: 0.552
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.867     0.382         0.968   0.531        34
+1                          0.615     0.500         0.844   0.552        32
+2                          0.436     0.800         0.530   0.565        30
+*----------------------------------------*
+0 Fri Oct 24 08:37:15 2025 Epoch: 15
+Epoch: 15/100 Iter: 0/12 loss: 3.8521 acc: 0.6667 time 48.04s
+Epoch: 15/100 Iter: 1/12 loss: 3.4580 acc: 0.6667 time 42.82s
+Epoch: 15/100 Iter: 2/12 loss: 3.4019 acc: 0.6667 time 42.82s
+Epoch: 15/100 Iter: 3/12 loss: 3.4250 acc: 0.5833 time 42.82s
+Epoch: 15/100 Iter: 4/12 loss: 4.3698 acc: 0.4750 time 42.85s
+Epoch: 15/100 Iter: 5/12 loss: 4.3991 acc: 0.4468 time 42.84s
+Epoch: 15/100 Iter: 6/12 loss: 4.2311 acc: 0.4861 time 42.80s
+Epoch: 15/100 Iter: 7/12 loss: 4.2154 acc: 0.4740 time 42.79s
+Epoch: 15/100 Iter: 8/12 loss: 4.2590 acc: 0.4769 time 42.79s
+Epoch: 15/100 Iter: 9/12 loss: 4.4631 acc: 0.4625 time 42.84s
+Epoch: 15/100 Iter: 10/12 loss: 4.3931 acc: 0.4659 time 42.80s
+Epoch: 15/100 Iter: 11/12 loss: 4.3416 acc: 0.4757 time 42.80s
+[Train epoch 15] avg_loss=4.3416 avg_acc=0.4757 | per-class [c0: 0.419, c1: 0.545, c2: 0.438]
+Final training 15/99, loss: 4.3416, time 519.04s, lr: 0.000484
+Accuracy: 0.469
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.419     0.419         0.723   0.419        31
+1                          0.643     0.545         0.841   0.590        33
+2                          0.378     0.438         0.641   0.406        32
+*----------------------------------------*
+Val 15/100 0/27, Acc: 0.0000, time 5.44s
+Val 15/100 1/27, Acc: 0.5000, time 5.40s
+Val 15/100 2/27, Acc: 0.3333, time 5.40s
+Val 15/100 3/27, Acc: 0.5000, time 5.42s
+Val 15/100 4/27, Acc: 0.6000, time 5.40s
+Val 15/100 5/27, Acc: 0.5000, time 5.42s
+Val 15/100 6/27, Acc: 0.4286, time 5.41s
+Val 15/100 7/27, Acc: 0.5000, time 5.46s
+Val 15/100 8/27, Acc: 0.5556, time 5.44s
+Val 15/100 9/27, Acc: 0.5000, time 5.40s
+Val 15/100 10/27, Acc: 0.5455, time 5.41s
+Val 15/100 11/27, Acc: 0.5833, time 5.42s
+Val 15/100 12/27, Acc: 0.6154, time 5.39s
+Val 15/100 13/27, Acc: 0.5714, time 5.40s
+Val 15/100 14/27, Acc: 0.5333, time 5.40s
+Val 15/100 15/27, Acc: 0.5000, time 5.42s
+Val 15/100 16/27, Acc: 0.5294, time 5.39s
+Val 15/100 17/27, Acc: 0.5556, time 5.54s
+Val 15/100 18/27, Acc: 0.5263, time 5.43s
+Val 15/100 19/27, Acc: 0.5000, time 5.45s
+Val 15/100 20/27, Acc: 0.4762, time 5.47s
+Val 15/100 21/27, Acc: 0.5000, time 5.42s
+Val 15/100 22/27, Acc: 0.4783, time 5.42s
+Val 15/100 23/27, Acc: 0.5000, time 5.42s
+Val 15/100 24/27, Acc: 0.4800, time 5.42s
+Val 15/100 25/27, Acc: 0.5000, time 5.57s
+Val 15/100 26/27, Acc: 0.4815, time 5.55s
+[Val epoch 15] avg_acc=0.4815 | per-class [c0: 0.222, c1: 0.778, c2: 0.444]
+Final validation 15/99, Val_acc: 0.4815, time 146.73sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          1.000     0.222         1.000   0.364         9
+1                          0.412     0.778         0.444   0.538         9
+2                          0.500     0.444         0.778   0.471         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 08:48:26 2025 Epoch: 16
+Epoch: 16/100 Iter: 0/12 loss: 3.5637 acc: 0.5833 time 48.04s
+Epoch: 16/100 Iter: 1/12 loss: 3.6143 acc: 0.4806 time 42.82s
+Epoch: 16/100 Iter: 2/12 loss: 3.7266 acc: 0.5148 time 42.80s
+Epoch: 16/100 Iter: 3/12 loss: 3.6965 acc: 0.5944 time 42.81s
+Epoch: 16/100 Iter: 4/12 loss: 3.7018 acc: 0.5756 time 42.80s
+Epoch: 16/100 Iter: 5/12 loss: 3.9728 acc: 0.5907 time 42.83s
+Epoch: 16/100 Iter: 6/12 loss: 3.9073 acc: 0.6016 time 42.80s
+Epoch: 16/100 Iter: 7/12 loss: 3.7955 acc: 0.5993 time 42.81s
+Epoch: 16/100 Iter: 8/12 loss: 3.8400 acc: 0.5698 time 42.79s
+Epoch: 16/100 Iter: 9/12 loss: 3.8163 acc: 0.5600 time 42.81s
+Epoch: 16/100 Iter: 10/12 loss: 3.8715 acc: 0.5268 time 42.81s
+Epoch: 16/100 Iter: 11/12 loss: 3.8854 acc: 0.5060 time 42.82s
+[Train epoch 16] avg_loss=3.8854 avg_acc=0.5060 | per-class [c0: 0.613, c1: 0.788, c2: 0.281]
+Final training 16/99, loss: 3.8854, time 518.97s, lr: 0.000481
+Accuracy: 0.562
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.500     0.613         0.708   0.551        31
+1                          0.703     0.788         0.825   0.743        33
+2                          0.429     0.281         0.812   0.340        32
+*----------------------------------------*
+0 Fri Oct 24 08:57:04 2025 Epoch: 17
+Epoch: 17/100 Iter: 0/12 loss: 2.4594 acc: 0.8333 time 47.95s
+Epoch: 17/100 Iter: 1/12 loss: 3.3562 acc: 0.7361 time 42.81s
+Epoch: 17/100 Iter: 2/12 loss: 3.5308 acc: 0.5796 time 42.82s
+Epoch: 17/100 Iter: 3/12 loss: 3.9652 acc: 0.5736 time 42.80s
+Epoch: 17/100 Iter: 4/12 loss: 3.9220 acc: 0.5589 time 42.79s
+Epoch: 17/100 Iter: 5/12 loss: 3.8210 acc: 0.5769 time 42.80s
+Epoch: 17/100 Iter: 6/12 loss: 3.8554 acc: 0.5849 time 42.81s
+Epoch: 17/100 Iter: 7/12 loss: 3.8639 acc: 0.5785 time 42.84s
+Epoch: 17/100 Iter: 8/12 loss: 3.7704 acc: 0.6160 time 42.82s
+Epoch: 17/100 Iter: 9/12 loss: 3.7701 acc: 0.6211 time 42.82s
+Epoch: 17/100 Iter: 10/12 loss: 3.9252 acc: 0.5949 time 42.83s
+Epoch: 17/100 Iter: 11/12 loss: 4.0188 acc: 0.5894 time 42.82s
+[Train epoch 17] avg_loss=4.0188 avg_acc=0.5894 | per-class [c0: 0.424, c1: 0.515, c2: 0.700]
+Final training 17/99, loss: 4.0188, time 518.95s, lr: 0.000478
+Accuracy: 0.542
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.667     0.424         0.889   0.519        33
+1                          0.586     0.515         0.810   0.548        33
+2                          0.457     0.700         0.621   0.553        30
+*----------------------------------------*
+Val 17/100 0/27, Acc: 0.0000, time 5.44s
+Val 17/100 1/27, Acc: 0.0000, time 5.42s
+Val 17/100 2/27, Acc: 0.0000, time 5.42s
+Val 17/100 3/27, Acc: 0.2500, time 5.40s
+Val 17/100 4/27, Acc: 0.4000, time 5.40s
+Val 17/100 5/27, Acc: 0.3333, time 5.39s
+Val 17/100 6/27, Acc: 0.2857, time 5.40s
+Val 17/100 7/27, Acc: 0.3750, time 5.46s
+Val 17/100 8/27, Acc: 0.4444, time 5.46s
+Val 17/100 9/27, Acc: 0.4000, time 5.45s
+Val 17/100 10/27, Acc: 0.4545, time 5.44s
+Val 17/100 11/27, Acc: 0.5000, time 5.44s
+Val 17/100 12/27, Acc: 0.5385, time 5.39s
+Val 17/100 13/27, Acc: 0.5000, time 5.40s
+Val 17/100 14/27, Acc: 0.4667, time 5.40s
+Val 17/100 15/27, Acc: 0.4375, time 5.41s
+Val 17/100 16/27, Acc: 0.4706, time 5.39s
+Val 17/100 17/27, Acc: 0.5000, time 5.53s
+Val 17/100 18/27, Acc: 0.4737, time 5.41s
+Val 17/100 19/27, Acc: 0.4500, time 5.43s
+Val 17/100 20/27, Acc: 0.4286, time 5.46s
+Val 17/100 21/27, Acc: 0.4545, time 5.43s
+Val 17/100 22/27, Acc: 0.4348, time 5.44s
+Val 17/100 23/27, Acc: 0.4583, time 5.41s
+Val 17/100 24/27, Acc: 0.4400, time 5.41s
+Val 17/100 25/27, Acc: 0.4615, time 5.57s
+Val 17/100 26/27, Acc: 0.4815, time 5.55s
+[Val epoch 17] avg_acc=0.4815 | per-class [c0: 0.333, c1: 0.778, c2: 0.333]
+Final validation 17/99, Val_acc: 0.4815, time 146.76sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          1.000     0.333         1.000   0.500         9
+1                          0.389     0.778         0.389   0.519         9
+2                          0.500     0.333         0.833   0.400         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 09:08:15 2025 Epoch: 18
+Epoch: 18/100 Iter: 0/12 loss: 4.4584 acc: 0.4444 time 46.18s
+Epoch: 18/100 Iter: 1/12 loss: 4.1221 acc: 0.3333 time 42.84s
+Epoch: 18/100 Iter: 2/12 loss: 4.0963 acc: 0.4722 time 42.78s
+Epoch: 18/100 Iter: 3/12 loss: 3.9984 acc: 0.5417 time 42.78s
+Epoch: 18/100 Iter: 4/12 loss: 4.0128 acc: 0.5833 time 42.79s
+Epoch: 18/100 Iter: 5/12 loss: 3.9070 acc: 0.5972 time 42.79s
+Epoch: 18/100 Iter: 6/12 loss: 3.9021 acc: 0.6071 time 42.78s
+Epoch: 18/100 Iter: 7/12 loss: 3.9560 acc: 0.6007 time 42.79s
+Epoch: 18/100 Iter: 8/12 loss: 3.9827 acc: 0.5895 time 42.79s
+Epoch: 18/100 Iter: 9/12 loss: 3.9119 acc: 0.5806 time 42.79s
+Epoch: 18/100 Iter: 10/12 loss: 3.8451 acc: 0.5884 time 42.84s
+Epoch: 18/100 Iter: 11/12 loss: 3.7534 acc: 0.6088 time 42.84s
+[Train epoch 18] avg_loss=3.7534 avg_acc=0.6088 | per-class [c0: 0.656, c1: 0.567, c2: 0.559]
+Final training 18/99, loss: 3.7534, time 517.03s, lr: 0.000474
+Accuracy: 0.594
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.677     0.656         0.844   0.667        32
+1                          0.607     0.567         0.833   0.586        30
+2                          0.514     0.559         0.710   0.535        34
+*----------------------------------------*
+0 Fri Oct 24 09:16:52 2025 Epoch: 19
+Epoch: 19/100 Iter: 0/12 loss: 4.2860 acc: 0.2222 time 47.00s
+Epoch: 19/100 Iter: 1/12 loss: 4.0227 acc: 0.4444 time 42.83s
+Epoch: 19/100 Iter: 2/12 loss: 3.7832 acc: 0.4630 time 42.81s
+Epoch: 19/100 Iter: 3/12 loss: 3.5791 acc: 0.4653 time 42.85s
+Epoch: 19/100 Iter: 4/12 loss: 3.5450 acc: 0.5056 time 42.82s
+Epoch: 19/100 Iter: 5/12 loss: 3.8617 acc: 0.4769 time 42.84s
+Epoch: 19/100 Iter: 6/12 loss: 3.8378 acc: 0.5238 time 42.81s
+Epoch: 19/100 Iter: 7/12 loss: 3.8349 acc: 0.5486 time 42.85s
+Epoch: 19/100 Iter: 8/12 loss: 3.8689 acc: 0.5494 time 42.86s
+Epoch: 19/100 Iter: 9/12 loss: 3.8559 acc: 0.5194 time 42.83s
+Epoch: 19/100 Iter: 10/12 loss: 3.9484 acc: 0.4798 time 42.83s
+Epoch: 19/100 Iter: 11/12 loss: 3.8230 acc: 0.5093 time 42.82s
+[Train epoch 19] avg_loss=3.8230 avg_acc=0.5093 | per-class [c0: 0.562, c1: 0.438, c2: 0.500]
+Final training 19/99, loss: 3.8230, time 518.20s, lr: 0.000470
+Accuracy: 0.500
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.529     0.562         0.750   0.545        32
+1                          0.560     0.438         0.828   0.491        32
+2                          0.432     0.500         0.672   0.464        32
+*----------------------------------------*
+Val 19/100 0/27, Acc: 1.0000, time 5.45s
+Val 19/100 1/27, Acc: 1.0000, time 5.41s
+Val 19/100 2/27, Acc: 1.0000, time 5.42s
+Val 19/100 3/27, Acc: 0.7500, time 5.44s
+Val 19/100 4/27, Acc: 0.8000, time 5.42s
+Val 19/100 5/27, Acc: 0.6667, time 5.42s
+Val 19/100 6/27, Acc: 0.7143, time 5.39s
+Val 19/100 7/27, Acc: 0.7500, time 5.46s
+Val 19/100 8/27, Acc: 0.6667, time 5.46s
+Val 19/100 9/27, Acc: 0.6000, time 5.44s
+Val 19/100 10/27, Acc: 0.6364, time 5.44s
+Val 19/100 11/27, Acc: 0.5833, time 5.41s
+Val 19/100 12/27, Acc: 0.6154, time 5.40s
+Val 19/100 13/27, Acc: 0.6429, time 5.41s
+Val 19/100 14/27, Acc: 0.6000, time 5.40s
+Val 19/100 15/27, Acc: 0.6250, time 5.39s
+Val 19/100 16/27, Acc: 0.6471, time 5.40s
+Val 19/100 17/27, Acc: 0.6111, time 5.54s
+Val 19/100 18/27, Acc: 0.5789, time 5.42s
+Val 19/100 19/27, Acc: 0.6000, time 5.44s
+Val 19/100 20/27, Acc: 0.6190, time 5.48s
+Val 19/100 21/27, Acc: 0.5909, time 5.42s
+Val 19/100 22/27, Acc: 0.5652, time 5.42s
+Val 19/100 23/27, Acc: 0.5833, time 5.41s
+Val 19/100 24/27, Acc: 0.6000, time 5.45s
+Val 19/100 25/27, Acc: 0.6154, time 5.58s
+Val 19/100 26/27, Acc: 0.6296, time 5.54s
+[Val epoch 19] avg_acc=0.6296 | per-class [c0: 0.889, c1: 0.444, c2: 0.556]
+Final validation 19/99, Val_acc: 0.6296, time 146.86sAccuracy: 0.630
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.615     0.889         0.722   0.727         9
+1                          0.667     0.444         0.889   0.533         9
+2                          0.625     0.556         0.833   0.588         9
+*========================================*
+New best (0.592593 --> 0.629630)
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+Copying best model to model.pt
+0 Fri Oct 24 09:28:07 2025 Epoch: 20
+Epoch: 20/100 Iter: 0/12 loss: 3.6571 acc: 0.5833 time 46.90s
+Epoch: 20/100 Iter: 1/12 loss: 3.6357 acc: 0.4583 time 42.90s
+Epoch: 20/100 Iter: 2/12 loss: 3.4653 acc: 0.5370 time 42.85s
+Epoch: 20/100 Iter: 3/12 loss: 3.4934 acc: 0.5417 time 42.86s
+Epoch: 20/100 Iter: 4/12 loss: 3.5921 acc: 0.5267 time 42.85s
+Epoch: 20/100 Iter: 5/12 loss: 3.5040 acc: 0.5500 time 42.81s
+Epoch: 20/100 Iter: 6/12 loss: 3.4937 acc: 0.5587 time 42.86s
+Epoch: 20/100 Iter: 7/12 loss: 3.5641 acc: 0.5806 time 42.81s
+Epoch: 20/100 Iter: 8/12 loss: 3.6430 acc: 0.5531 time 42.87s
+Epoch: 20/100 Iter: 9/12 loss: 3.5728 acc: 0.5578 time 42.86s
+Epoch: 20/100 Iter: 10/12 loss: 3.5404 acc: 0.5707 time 42.81s
+Epoch: 20/100 Iter: 11/12 loss: 3.6674 acc: 0.5648 time 42.85s
+[Train epoch 20] avg_loss=3.6674 avg_acc=0.5648 | per-class [c0: 0.424, c1: 0.545, c2: 0.733]
+Final training 20/99, loss: 3.6674, time 518.28s, lr: 0.000467
+Accuracy: 0.562
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.778     0.424         0.937   0.549        33
+1                          0.600     0.545         0.810   0.571        33
+2                          0.458     0.733         0.606   0.564        30
+*----------------------------------------*
+0 Fri Oct 24 09:36:46 2025 Epoch: 21
+Epoch: 21/100 Iter: 0/12 loss: 2.2030 acc: 0.9286 time 46.21s
+Epoch: 21/100 Iter: 1/12 loss: 2.4839 acc: 0.6032 time 42.87s
+Epoch: 21/100 Iter: 2/12 loss: 2.9110 acc: 0.5132 time 42.83s
+Epoch: 21/100 Iter: 3/12 loss: 3.6230 acc: 0.5099 time 42.86s
+Epoch: 21/100 Iter: 4/12 loss: 3.7221 acc: 0.4746 time 42.83s
+Epoch: 21/100 Iter: 5/12 loss: 3.8599 acc: 0.5066 time 42.85s
+Epoch: 21/100 Iter: 6/12 loss: 3.9857 acc: 0.4819 time 42.82s
+Epoch: 21/100 Iter: 7/12 loss: 3.8869 acc: 0.4841 time 42.84s
+Epoch: 21/100 Iter: 8/12 loss: 3.8285 acc: 0.5192 time 42.83s
+Epoch: 21/100 Iter: 9/12 loss: 4.0306 acc: 0.5340 time 42.84s
+Epoch: 21/100 Iter: 10/12 loss: 3.9620 acc: 0.5258 time 42.84s
+Epoch: 21/100 Iter: 11/12 loss: 4.1965 acc: 0.5376 time 42.85s
+[Train epoch 21] avg_loss=4.1965 avg_acc=0.5376 | per-class [c0: 0.667, c1: 0.656, c2: 0.323]
+Final training 21/99, loss: 4.1965, time 517.53s, lr: 0.000462
+Accuracy: 0.552
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.489     0.667         0.635   0.564        33
+1                          0.636     0.656         0.812   0.646        32
+2                          0.556     0.323         0.877   0.408        31
+*----------------------------------------*
+Val 21/100 0/27, Acc: 0.0000, time 5.42s
+Val 21/100 1/27, Acc: 0.5000, time 5.41s
+Val 21/100 2/27, Acc: 0.3333, time 5.46s
+Val 21/100 3/27, Acc: 0.2500, time 5.40s
+Val 21/100 4/27, Acc: 0.4000, time 5.40s
+Val 21/100 5/27, Acc: 0.3333, time 5.41s
+Val 21/100 6/27, Acc: 0.4286, time 5.41s
+Val 21/100 7/27, Acc: 0.3750, time 5.47s
+Val 21/100 8/27, Acc: 0.4444, time 5.46s
+Val 21/100 9/27, Acc: 0.4000, time 5.41s
+Val 21/100 10/27, Acc: 0.4545, time 5.41s
+Val 21/100 11/27, Acc: 0.5000, time 5.42s
+Val 21/100 12/27, Acc: 0.5385, time 5.44s
+Val 21/100 13/27, Acc: 0.5714, time 5.44s
+Val 21/100 14/27, Acc: 0.5333, time 5.43s
+Val 21/100 15/27, Acc: 0.5625, time 5.40s
+Val 21/100 16/27, Acc: 0.5294, time 5.42s
+Val 21/100 17/27, Acc: 0.5000, time 5.55s
+Val 21/100 18/27, Acc: 0.4737, time 5.42s
+Val 21/100 19/27, Acc: 0.4500, time 5.44s
+Val 21/100 20/27, Acc: 0.4286, time 5.47s
+Val 21/100 21/27, Acc: 0.4545, time 5.45s
+Val 21/100 22/27, Acc: 0.4783, time 5.42s
+Val 21/100 23/27, Acc: 0.5000, time 5.42s
+Val 21/100 24/27, Acc: 0.4800, time 5.42s
+Val 21/100 25/27, Acc: 0.4615, time 5.56s
+Val 21/100 26/27, Acc: 0.4444, time 5.53s
+[Val epoch 21] avg_acc=0.4444 | per-class [c0: 0.000, c1: 0.444, c2: 0.889]
+Final validation 21/99, Val_acc: 0.4444, time 146.88sAccuracy: 0.444
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.000     0.000         1.000   0.000         9
+1                          0.500     0.444         0.778   0.471         9
+2                          0.421     0.889         0.389   0.571         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 09:47:55 2025 Epoch: 22
+Epoch: 22/100 Iter: 0/12 loss: 6.9021 acc: 0.2222 time 47.77s
+Epoch: 22/100 Iter: 1/12 loss: 5.7745 acc: 0.3194 time 42.80s
+Epoch: 22/100 Iter: 2/12 loss: 5.3004 acc: 0.3796 time 42.76s
+Epoch: 22/100 Iter: 3/12 loss: 4.9515 acc: 0.3889 time 42.75s
+Epoch: 22/100 Iter: 4/12 loss: 4.6516 acc: 0.4361 time 42.77s
+Epoch: 22/100 Iter: 5/12 loss: 4.3710 acc: 0.4745 time 42.84s
+Epoch: 22/100 Iter: 6/12 loss: 4.2998 acc: 0.4782 time 42.69s
+Epoch: 22/100 Iter: 7/12 loss: 4.1635 acc: 0.5295 time 42.83s
+Epoch: 22/100 Iter: 8/12 loss: 4.2638 acc: 0.5077 time 42.75s
+Epoch: 22/100 Iter: 9/12 loss: 4.2419 acc: 0.4903 time 42.82s
+Epoch: 22/100 Iter: 10/12 loss: 4.2251 acc: 0.4710 time 42.69s
+Epoch: 22/100 Iter: 11/12 loss: 4.0979 acc: 0.4873 time 42.73s
+[Train epoch 22] avg_loss=4.0979 avg_acc=0.4873 | per-class [c0: 0.484, c1: 0.455, c2: 0.562]
+Final training 22/99, loss: 4.0979, time 518.25s, lr: 0.000458
+Accuracy: 0.500
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.429     0.484         0.692   0.455        31
+1                          0.833     0.455         0.952   0.588        33
+2                          0.419     0.562         0.609   0.480        32
+*----------------------------------------*
+0 Fri Oct 24 09:56:33 2025 Epoch: 23
+Epoch: 23/100 Iter: 0/12 loss: 3.0801 acc: 0.2778 time 48.26s
+Epoch: 23/100 Iter: 1/12 loss: 3.2456 acc: 0.4722 time 42.72s
+Epoch: 23/100 Iter: 2/12 loss: 3.5730 acc: 0.4815 time 42.76s
+Epoch: 23/100 Iter: 3/12 loss: 3.7422 acc: 0.4722 time 42.78s
+Epoch: 23/100 Iter: 4/12 loss: 3.8845 acc: 0.5222 time 42.82s
+Epoch: 23/100 Iter: 5/12 loss: 3.9203 acc: 0.4630 time 42.78s
+Epoch: 23/100 Iter: 6/12 loss: 3.8319 acc: 0.4825 time 42.83s
+Epoch: 23/100 Iter: 7/12 loss: 3.7150 acc: 0.5160 time 42.71s
+Epoch: 23/100 Iter: 8/12 loss: 3.6951 acc: 0.4957 time 42.82s
+Epoch: 23/100 Iter: 9/12 loss: 3.7009 acc: 0.5100 time 42.77s
+Epoch: 23/100 Iter: 10/12 loss: 3.7380 acc: 0.5141 time 42.78s
+Epoch: 23/100 Iter: 11/12 loss: 3.6655 acc: 0.5477 time 42.78s
+[Train epoch 23] avg_loss=3.6655 avg_acc=0.5477 | per-class [c0: 0.500, c1: 0.688, c2: 0.375]
+Final training 23/99, loss: 3.6655, time 518.86s, lr: 0.000453
+Accuracy: 0.521
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.500     0.500         0.750   0.500        32
+1                          0.647     0.688         0.812   0.667        32
+2                          0.400     0.375         0.719   0.387        32
+*----------------------------------------*
+Val 23/100 0/27, Acc: 0.0000, time 5.43s
+Val 23/100 1/27, Acc: 0.5000, time 5.42s
+Val 23/100 2/27, Acc: 0.3333, time 5.43s
+Val 23/100 3/27, Acc: 0.5000, time 5.42s
+Val 23/100 4/27, Acc: 0.6000, time 5.39s
+Val 23/100 5/27, Acc: 0.5000, time 5.40s
+Val 23/100 6/27, Acc: 0.4286, time 5.41s
+Val 23/100 7/27, Acc: 0.3750, time 5.45s
+Val 23/100 8/27, Acc: 0.4444, time 5.42s
+Val 23/100 9/27, Acc: 0.4000, time 5.42s
+Val 23/100 10/27, Acc: 0.4545, time 5.39s
+Val 23/100 11/27, Acc: 0.5000, time 5.40s
+Val 23/100 12/27, Acc: 0.5385, time 5.41s
+Val 23/100 13/27, Acc: 0.5000, time 5.41s
+Val 23/100 14/27, Acc: 0.4667, time 5.40s
+Val 23/100 15/27, Acc: 0.5000, time 5.41s
+Val 23/100 16/27, Acc: 0.5294, time 5.40s
+Val 23/100 17/27, Acc: 0.5000, time 5.55s
+Val 23/100 18/27, Acc: 0.4737, time 5.41s
+Val 23/100 19/27, Acc: 0.4500, time 5.40s
+Val 23/100 20/27, Acc: 0.4286, time 5.45s
+Val 23/100 21/27, Acc: 0.4545, time 5.40s
+Val 23/100 22/27, Acc: 0.4783, time 5.40s
+Val 23/100 23/27, Acc: 0.5000, time 5.41s
+Val 23/100 24/27, Acc: 0.4800, time 5.39s
+Val 23/100 25/27, Acc: 0.4615, time 5.51s
+Val 23/100 26/27, Acc: 0.4444, time 5.51s
+[Val epoch 23] avg_acc=0.4444 | per-class [c0: 0.000, c1: 0.667, c2: 0.667]
+Final validation 23/99, Val_acc: 0.4444, time 146.43sAccuracy: 0.444
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.000     0.000         1.000   0.000         9
+1                          0.462     0.667         0.611   0.545         9
+2                          0.429     0.667         0.556   0.522         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 10:07:43 2025 Epoch: 24
+Epoch: 24/100 Iter: 0/12 loss: 4.3223 acc: 0.4444 time 47.50s
+Epoch: 24/100 Iter: 1/12 loss: 3.6718 acc: 0.4444 time 42.74s
+Epoch: 24/100 Iter: 2/12 loss: 3.5309 acc: 0.4815 time 42.77s
+Epoch: 24/100 Iter: 3/12 loss: 3.6285 acc: 0.5278 time 42.78s
+Epoch: 24/100 Iter: 4/12 loss: 3.6842 acc: 0.5389 time 42.70s
+Epoch: 24/100 Iter: 5/12 loss: 3.7379 acc: 0.4907 time 42.84s
+Epoch: 24/100 Iter: 6/12 loss: 3.6151 acc: 0.5278 time 42.72s
+Epoch: 24/100 Iter: 7/12 loss: 3.5513 acc: 0.5451 time 42.70s
+Epoch: 24/100 Iter: 8/12 loss: 3.4596 acc: 0.5772 time 42.82s
+Epoch: 24/100 Iter: 9/12 loss: 3.5059 acc: 0.5806 time 42.72s
+Epoch: 24/100 Iter: 10/12 loss: 3.5303 acc: 0.5732 time 42.83s
+Epoch: 24/100 Iter: 11/12 loss: 3.6139 acc: 0.5787 time 42.69s
+[Train epoch 24] avg_loss=3.6139 avg_acc=0.5787 | per-class [c0: 0.438, c1: 0.516, c2: 0.727]
+Final training 24/99, loss: 3.6139, time 517.85s, lr: 0.000448
+Accuracy: 0.562
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.933     0.438         0.984   0.596        32
+1                          0.571     0.516         0.815   0.542        31
+2                          0.453     0.727         0.540   0.558        33
+*----------------------------------------*
+0 Fri Oct 24 10:16:21 2025 Epoch: 25
+Epoch: 25/100 Iter: 0/12 loss: 3.2642 acc: 0.8333 time 46.11s
+Epoch: 25/100 Iter: 1/12 loss: 3.1303 acc: 0.7639 time 42.78s
+Epoch: 25/100 Iter: 2/12 loss: 3.1523 acc: 0.7500 time 42.79s
+Epoch: 25/100 Iter: 3/12 loss: 3.0281 acc: 0.7708 time 42.72s
+Epoch: 25/100 Iter: 4/12 loss: 3.0208 acc: 0.7722 time 42.75s
+Epoch: 25/100 Iter: 5/12 loss: 3.0310 acc: 0.7546 time 42.76s
+Epoch: 25/100 Iter: 6/12 loss: 3.2151 acc: 0.7063 time 42.79s
+Epoch: 25/100 Iter: 7/12 loss: 3.2863 acc: 0.6806 time 42.73s
+Epoch: 25/100 Iter: 8/12 loss: 3.3571 acc: 0.6790 time 42.79s
+Epoch: 25/100 Iter: 9/12 loss: 3.4045 acc: 0.6333 time 42.76s
+Epoch: 25/100 Iter: 10/12 loss: 3.3195 acc: 0.6364 time 42.75s
+Epoch: 25/100 Iter: 11/12 loss: 3.2401 acc: 0.6458 time 42.79s
+[Train epoch 25] avg_loss=3.2401 avg_acc=0.6458 | per-class [c0: 0.500, c1: 0.562, c2: 0.794]
+Final training 25/99, loss: 3.2401, time 516.56s, lr: 0.000443
+Accuracy: 0.625
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.750     0.500         0.924   0.600        30
+1                          0.720     0.562         0.891   0.632        32
+2                          0.529     0.794         0.613   0.635        34
+*----------------------------------------*
+Val 25/100 0/27, Acc: 0.0000, time 5.42s
+Val 25/100 1/27, Acc: 0.5000, time 5.44s
+Val 25/100 2/27, Acc: 0.3333, time 5.40s
+Val 25/100 3/27, Acc: 0.5000, time 5.39s
+Val 25/100 4/27, Acc: 0.6000, time 5.38s
+Val 25/100 5/27, Acc: 0.5000, time 5.38s
+Val 25/100 6/27, Acc: 0.4286, time 5.39s
+Val 25/100 7/27, Acc: 0.5000, time 5.44s
+Val 25/100 8/27, Acc: 0.5556, time 5.44s
+Val 25/100 9/27, Acc: 0.5000, time 5.38s
+Val 25/100 10/27, Acc: 0.5455, time 5.44s
+Val 25/100 11/27, Acc: 0.5000, time 5.45s
+Val 25/100 12/27, Acc: 0.5385, time 5.41s
+Val 25/100 13/27, Acc: 0.5000, time 5.41s
+Val 25/100 14/27, Acc: 0.4667, time 5.42s
+Val 25/100 15/27, Acc: 0.4375, time 5.39s
+Val 25/100 16/27, Acc: 0.4706, time 5.40s
+Val 25/100 17/27, Acc: 0.4444, time 5.49s
+Val 25/100 18/27, Acc: 0.4211, time 5.41s
+Val 25/100 19/27, Acc: 0.4000, time 5.43s
+Val 25/100 20/27, Acc: 0.3810, time 5.46s
+Val 25/100 21/27, Acc: 0.4091, time 5.43s
+Val 25/100 22/27, Acc: 0.4348, time 5.40s
+Val 25/100 23/27, Acc: 0.4583, time 5.43s
+Val 25/100 24/27, Acc: 0.4400, time 5.43s
+Val 25/100 25/27, Acc: 0.4615, time 5.53s
+Val 25/100 26/27, Acc: 0.4815, time 5.55s
+[Val epoch 25] avg_acc=0.4815 | per-class [c0: 0.333, c1: 0.667, c2: 0.444]
+Final validation 25/99, Val_acc: 0.4815, time 146.53sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.750     0.333         0.944   0.462         9
+1                          0.429     0.667         0.556   0.522         9
+2                          0.444     0.444         0.722   0.444         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 10:27:29 2025 Epoch: 26
+Epoch: 26/100 Iter: 0/12 loss: 2.7781 acc: 0.5000 time 48.01s
+Epoch: 26/100 Iter: 1/12 loss: 3.0557 acc: 0.5278 time 42.81s
+Epoch: 26/100 Iter: 2/12 loss: 3.0210 acc: 0.6296 time 42.69s
+Epoch: 26/100 Iter: 3/12 loss: 2.7654 acc: 0.7222 time 42.80s
+Epoch: 26/100 Iter: 4/12 loss: 2.8704 acc: 0.6778 time 42.72s
+Epoch: 26/100 Iter: 5/12 loss: 2.9593 acc: 0.7037 time 42.80s
+Epoch: 26/100 Iter: 6/12 loss: 2.9432 acc: 0.6865 time 42.77s
+Epoch: 26/100 Iter: 7/12 loss: 3.0458 acc: 0.6319 time 42.76s
+Epoch: 26/100 Iter: 8/12 loss: 3.0038 acc: 0.6543 time 42.75s
+Epoch: 26/100 Iter: 9/12 loss: 3.0755 acc: 0.6611 time 42.70s
+Epoch: 26/100 Iter: 10/12 loss: 3.0394 acc: 0.6667 time 42.77s
+Epoch: 26/100 Iter: 11/12 loss: 3.0902 acc: 0.6597 time 42.69s
+[Train epoch 26] avg_loss=3.0902 avg_acc=0.6597 | per-class [c0: 0.636, c1: 0.781, c2: 0.581]
+Final training 26/99, loss: 3.0902, time 518.32s, lr: 0.000438
+Accuracy: 0.667
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.700     0.636         0.857   0.667        33
+1                          0.676     0.781         0.812   0.725        32
+2                          0.621     0.581         0.831   0.600        31
+*----------------------------------------*
+0 Fri Oct 24 10:36:08 2025 Epoch: 27
+Epoch: 27/100 Iter: 0/12 loss: 3.0867 acc: 0.3333 time 47.74s
+Epoch: 27/100 Iter: 1/12 loss: 2.8885 acc: 0.6111 time 42.73s
+Epoch: 27/100 Iter: 2/12 loss: 2.7888 acc: 0.6741 time 42.76s
+Epoch: 27/100 Iter: 3/12 loss: 2.8103 acc: 0.7347 time 42.79s
+Epoch: 27/100 Iter: 4/12 loss: 3.0025 acc: 0.6711 time 42.72s
+Epoch: 27/100 Iter: 5/12 loss: 3.0603 acc: 0.6704 time 42.81s
+Epoch: 27/100 Iter: 6/12 loss: 2.9464 acc: 0.6937 time 42.76s
+Epoch: 27/100 Iter: 7/12 loss: 2.9473 acc: 0.6938 time 42.70s
+Epoch: 27/100 Iter: 8/12 loss: 2.8250 acc: 0.7278 time 42.72s
+Epoch: 27/100 Iter: 9/12 loss: 2.8699 acc: 0.6972 time 42.77s
+Epoch: 27/100 Iter: 10/12 loss: 2.9919 acc: 0.6641 time 42.72s
+Epoch: 27/100 Iter: 11/12 loss: 3.0023 acc: 0.6505 time 42.75s
+[Train epoch 27] avg_loss=3.0023 avg_acc=0.6505 | per-class [c0: 0.656, c1: 0.636, c2: 0.645]
+Final training 27/99, loss: 3.0023, time 518.00s, lr: 0.000432
+Accuracy: 0.646
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.677     0.656         0.844   0.667        32
+1                          0.724     0.636         0.873   0.677        33
+2                          0.556     0.645         0.754   0.597        31
+*----------------------------------------*
+Val 27/100 0/27, Acc: 0.0000, time 5.40s
+Val 27/100 1/27, Acc: 0.5000, time 5.39s
+Val 27/100 2/27, Acc: 0.3333, time 5.42s
+Val 27/100 3/27, Acc: 0.5000, time 5.42s
+Val 27/100 4/27, Acc: 0.6000, time 5.44s
+Val 27/100 5/27, Acc: 0.5000, time 5.40s
+Val 27/100 6/27, Acc: 0.4286, time 5.42s
+Val 27/100 7/27, Acc: 0.5000, time 5.47s
+Val 27/100 8/27, Acc: 0.5556, time 5.44s
+Val 27/100 9/27, Acc: 0.5000, time 5.41s
+Val 27/100 10/27, Acc: 0.5455, time 5.43s
+Val 27/100 11/27, Acc: 0.5833, time 5.43s
+Val 27/100 12/27, Acc: 0.6154, time 5.37s
+Val 27/100 13/27, Acc: 0.5714, time 5.42s
+Val 27/100 14/27, Acc: 0.5333, time 5.38s
+Val 27/100 15/27, Acc: 0.5000, time 5.37s
+Val 27/100 16/27, Acc: 0.5294, time 5.38s
+Val 27/100 17/27, Acc: 0.5000, time 5.49s
+Val 27/100 18/27, Acc: 0.4737, time 5.39s
+Val 27/100 19/27, Acc: 0.4500, time 5.43s
+Val 27/100 20/27, Acc: 0.4286, time 5.46s
+Val 27/100 21/27, Acc: 0.4545, time 5.41s
+Val 27/100 22/27, Acc: 0.4348, time 5.42s
+Val 27/100 23/27, Acc: 0.4583, time 5.42s
+Val 27/100 24/27, Acc: 0.4400, time 5.41s
+Val 27/100 25/27, Acc: 0.4615, time 5.50s
+Val 27/100 26/27, Acc: 0.4815, time 5.50s
+[Val epoch 27] avg_acc=0.4815 | per-class [c0: 0.333, c1: 0.667, c2: 0.444]
+Final validation 27/99, Val_acc: 0.4815, time 146.41sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          1.000     0.333         1.000   0.500         9
+1                          0.400     0.667         0.500   0.500         9
+2                          0.444     0.444         0.722   0.444         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 10:47:17 2025 Epoch: 28
+Epoch: 28/100 Iter: 0/12 loss: 3.3954 acc: 0.5556 time 46.15s
+Epoch: 28/100 Iter: 1/12 loss: 3.6536 acc: 0.5556 time 42.79s
+Epoch: 28/100 Iter: 2/12 loss: 3.1611 acc: 0.5185 time 42.83s
+Epoch: 28/100 Iter: 3/12 loss: 3.7032 acc: 0.4722 time 42.75s
+Epoch: 28/100 Iter: 4/12 loss: 3.7282 acc: 0.5111 time 42.77s
+Epoch: 28/100 Iter: 5/12 loss: 3.5987 acc: 0.5370 time 42.78s
+Epoch: 28/100 Iter: 6/12 loss: 3.4856 acc: 0.5698 time 42.77s
+Epoch: 28/100 Iter: 7/12 loss: 3.4525 acc: 0.5611 time 42.80s
+Epoch: 28/100 Iter: 8/12 loss: 3.5371 acc: 0.5728 time 42.70s
+Epoch: 28/100 Iter: 9/12 loss: 3.4137 acc: 0.5781 time 42.79s
+Epoch: 28/100 Iter: 10/12 loss: 3.5297 acc: 0.5760 time 42.67s
+Epoch: 28/100 Iter: 11/12 loss: 3.5232 acc: 0.5627 time 42.73s
+[Train epoch 28] avg_loss=3.5232 avg_acc=0.5627 | per-class [c0: 0.606, c1: 0.656, c2: 0.484]
+Final training 28/99, loss: 3.5232, time 516.58s, lr: 0.000427
+Accuracy: 0.583
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.606     0.606         0.794   0.606        33
+1                          0.636     0.656         0.812   0.646        32
+2                          0.500     0.484         0.769   0.492        31
+*----------------------------------------*
+0 Fri Oct 24 10:55:53 2025 Epoch: 29
+Epoch: 29/100 Iter: 0/12 loss: 2.3078 acc: 1.0000 time 47.32s
+Epoch: 29/100 Iter: 1/12 loss: 2.8396 acc: 0.7500 time 42.80s
+Epoch: 29/100 Iter: 2/12 loss: 2.9293 acc: 0.7222 time 42.83s
+Epoch: 29/100 Iter: 3/12 loss: 2.9586 acc: 0.6875 time 42.77s
+Epoch: 29/100 Iter: 4/12 loss: 3.1220 acc: 0.6111 time 42.75s
+Epoch: 29/100 Iter: 5/12 loss: 2.9082 acc: 0.6574 time 42.73s
+Epoch: 29/100 Iter: 6/12 loss: 3.0329 acc: 0.6230 time 42.81s
+Epoch: 29/100 Iter: 7/12 loss: 3.1451 acc: 0.5764 time 42.74s
+Epoch: 29/100 Iter: 8/12 loss: 3.0806 acc: 0.6111 time 42.76s
+Epoch: 29/100 Iter: 9/12 loss: 3.1945 acc: 0.6233 time 42.78s
+Epoch: 29/100 Iter: 10/12 loss: 3.1995 acc: 0.6020 time 42.84s
+Epoch: 29/100 Iter: 11/12 loss: 3.0775 acc: 0.6352 time 42.76s
+[Train epoch 29] avg_loss=3.0775 avg_acc=0.6352 | per-class [c0: 0.581, c1: 0.688, c2: 0.636]
+Final training 29/99, loss: 3.0775, time 517.94s, lr: 0.000421
+Accuracy: 0.635
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.692     0.581         0.877   0.632        31
+1                          0.688     0.688         0.844   0.688        32
+2                          0.553     0.636         0.730   0.592        33
+*----------------------------------------*
+Val 29/100 0/27, Acc: 0.0000, time 5.43s
+Val 29/100 1/27, Acc: 0.5000, time 5.42s
+Val 29/100 2/27, Acc: 0.3333, time 5.44s
+Val 29/100 3/27, Acc: 0.5000, time 5.40s
+Val 29/100 4/27, Acc: 0.6000, time 5.42s
+Val 29/100 5/27, Acc: 0.5000, time 5.39s
+Val 29/100 6/27, Acc: 0.4286, time 5.40s
+Val 29/100 7/27, Acc: 0.3750, time 5.44s
+Val 29/100 8/27, Acc: 0.4444, time 5.42s
+Val 29/100 9/27, Acc: 0.4000, time 5.38s
+Val 29/100 10/27, Acc: 0.4545, time 5.40s
+Val 29/100 11/27, Acc: 0.5000, time 5.39s
+Val 29/100 12/27, Acc: 0.5385, time 5.40s
+Val 29/100 13/27, Acc: 0.5000, time 5.42s
+Val 29/100 14/27, Acc: 0.4667, time 5.42s
+Val 29/100 15/27, Acc: 0.4375, time 5.41s
+Val 29/100 16/27, Acc: 0.4706, time 5.44s
+Val 29/100 17/27, Acc: 0.4444, time 5.54s
+Val 29/100 18/27, Acc: 0.4211, time 5.43s
+Val 29/100 19/27, Acc: 0.4000, time 5.46s
+Val 29/100 20/27, Acc: 0.3810, time 5.48s
+Val 29/100 21/27, Acc: 0.4091, time 5.44s
+Val 29/100 22/27, Acc: 0.4348, time 5.43s
+Val 29/100 23/27, Acc: 0.4583, time 5.38s
+Val 29/100 24/27, Acc: 0.4400, time 5.39s
+Val 29/100 25/27, Acc: 0.4615, time 5.52s
+Val 29/100 26/27, Acc: 0.4815, time 5.51s
+[Val epoch 29] avg_acc=0.4815 | per-class [c0: 0.222, c1: 0.667, c2: 0.556]
+Final validation 29/99, Val_acc: 0.4815, time 146.62sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.667     0.222         0.944   0.333         9
+1                          0.429     0.667         0.556   0.522         9
+2                          0.500     0.556         0.722   0.526         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 11:07:03 2025 Epoch: 30
+Epoch: 30/100 Iter: 0/12 loss: 3.3337 acc: 0.7500 time 46.35s
+Epoch: 30/100 Iter: 1/12 loss: 3.3736 acc: 0.7083 time 42.73s
+Epoch: 30/100 Iter: 2/12 loss: 2.9251 acc: 0.7500 time 42.82s
+Epoch: 30/100 Iter: 3/12 loss: 3.0125 acc: 0.7639 time 42.81s
+Epoch: 30/100 Iter: 4/12 loss: 3.0763 acc: 0.7111 time 42.78s
+Epoch: 30/100 Iter: 5/12 loss: 3.3305 acc: 0.6926 time 42.83s
+Epoch: 30/100 Iter: 6/12 loss: 3.2831 acc: 0.6889 time 42.74s
+Epoch: 30/100 Iter: 7/12 loss: 3.1304 acc: 0.7139 time 42.81s
+Epoch: 30/100 Iter: 8/12 loss: 3.0596 acc: 0.7179 time 42.73s
+Epoch: 30/100 Iter: 9/12 loss: 3.0871 acc: 0.6739 time 42.71s
+Epoch: 30/100 Iter: 10/12 loss: 3.0018 acc: 0.6960 time 42.68s
+Epoch: 30/100 Iter: 11/12 loss: 2.9651 acc: 0.7074 time 42.68s
+[Train epoch 30] avg_loss=2.9651 avg_acc=0.7074 | per-class [c0: 0.559, c1: 0.812, c2: 0.767]
+Final training 30/99, loss: 2.9651, time 516.71s, lr: 0.000415
+Accuracy: 0.708
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.826     0.559         0.935   0.667        34
+1                          0.765     0.812         0.875   0.788        32
+2                          0.590     0.767         0.758   0.667        30
+*----------------------------------------*
+0 Fri Oct 24 11:15:40 2025 Epoch: 31
+Epoch: 31/100 Iter: 0/12 loss: 1.9310 acc: 0.8750 time 47.00s
+Epoch: 31/100 Iter: 1/12 loss: 3.2741 acc: 0.7542 time 42.70s
+Epoch: 31/100 Iter: 2/12 loss: 3.4060 acc: 0.7694 time 42.69s
+Epoch: 31/100 Iter: 3/12 loss: 3.0709 acc: 0.8271 time 42.69s
+Epoch: 31/100 Iter: 4/12 loss: 3.0471 acc: 0.7950 time 42.71s
+Epoch: 31/100 Iter: 5/12 loss: 2.9436 acc: 0.8153 time 42.74s
+Epoch: 31/100 Iter: 6/12 loss: 2.7099 acc: 0.8417 time 42.73s
+Epoch: 31/100 Iter: 7/12 loss: 2.7780 acc: 0.8267 time 42.68s
+Epoch: 31/100 Iter: 8/12 loss: 2.9122 acc: 0.7812 time 42.60s
+Epoch: 31/100 Iter: 9/12 loss: 2.8993 acc: 0.7864 time 42.64s
+Epoch: 31/100 Iter: 10/12 loss: 2.8363 acc: 0.7604 time 42.62s
+Epoch: 31/100 Iter: 11/12 loss: 2.8797 acc: 0.7414 time 42.63s
+[Train epoch 31] avg_loss=2.8797 avg_acc=0.7414 | per-class [c0: 0.719, c1: 0.719, c2: 0.688]
+Final training 31/99, loss: 2.8797, time 516.47s, lr: 0.000409
+Accuracy: 0.708
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.742     0.719         0.875   0.730        32
+1                          0.742     0.719         0.875   0.730        32
+2                          0.647     0.688         0.812   0.667        32
+*----------------------------------------*
+Val 31/100 0/27, Acc: 0.0000, time 5.38s
+Val 31/100 1/27, Acc: 0.5000, time 5.40s
+Val 31/100 2/27, Acc: 0.3333, time 5.42s
+Val 31/100 3/27, Acc: 0.5000, time 5.40s
+Val 31/100 4/27, Acc: 0.6000, time 5.41s
+Val 31/100 5/27, Acc: 0.5000, time 5.38s
+Val 31/100 6/27, Acc: 0.4286, time 5.39s
+Val 31/100 7/27, Acc: 0.5000, time 5.43s
+Val 31/100 8/27, Acc: 0.4444, time 5.41s
+Val 31/100 9/27, Acc: 0.4000, time 5.42s
+Val 31/100 10/27, Acc: 0.4545, time 5.41s
+Val 31/100 11/27, Acc: 0.4167, time 5.41s
+Val 31/100 12/27, Acc: 0.4615, time 5.38s
+Val 31/100 13/27, Acc: 0.4286, time 5.41s
+Val 31/100 14/27, Acc: 0.4000, time 5.37s
+Val 31/100 15/27, Acc: 0.3750, time 5.37s
+Val 31/100 16/27, Acc: 0.4118, time 5.39s
+Val 31/100 17/27, Acc: 0.3889, time 5.52s
+Val 31/100 18/27, Acc: 0.4211, time 5.40s
+Val 31/100 19/27, Acc: 0.4500, time 5.44s
+Val 31/100 20/27, Acc: 0.4286, time 5.47s
+Val 31/100 21/27, Acc: 0.4545, time 5.43s
+Val 31/100 22/27, Acc: 0.4348, time 5.43s
+Val 31/100 23/27, Acc: 0.4583, time 5.44s
+Val 31/100 24/27, Acc: 0.4400, time 5.44s
+Val 31/100 25/27, Acc: 0.4615, time 5.56s
+Val 31/100 26/27, Acc: 0.4815, time 5.54s
+[Val epoch 31] avg_acc=0.4815 | per-class [c0: 0.444, c1: 0.778, c2: 0.222]
+Final validation 31/99, Val_acc: 0.4815, time 146.44sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.571     0.444         0.833   0.500         9
+1                          0.438     0.778         0.500   0.560         9
+2                          0.500     0.222         0.889   0.308         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 11:26:47 2025 Epoch: 32
+Epoch: 32/100 Iter: 0/12 loss: 3.0685 acc: 0.8333 time 47.10s
+Epoch: 32/100 Iter: 1/12 loss: 2.7029 acc: 0.8056 time 42.93s
+Epoch: 32/100 Iter: 2/12 loss: 2.8982 acc: 0.7926 time 42.84s
+Epoch: 32/100 Iter: 3/12 loss: 3.1373 acc: 0.6944 time 42.77s
+Epoch: 32/100 Iter: 4/12 loss: 3.0824 acc: 0.7156 time 42.77s
+Epoch: 32/100 Iter: 5/12 loss: 3.1098 acc: 0.6852 time 42.76s
+Epoch: 32/100 Iter: 6/12 loss: 3.0899 acc: 0.6667 time 42.71s
+Epoch: 32/100 Iter: 7/12 loss: 3.0018 acc: 0.6875 time 42.73s
+Epoch: 32/100 Iter: 8/12 loss: 3.0370 acc: 0.6543 time 42.73s
+Epoch: 32/100 Iter: 9/12 loss: 3.1173 acc: 0.6333 time 42.70s
+Epoch: 32/100 Iter: 10/12 loss: 3.1494 acc: 0.6061 time 42.68s
+Epoch: 32/100 Iter: 11/12 loss: 3.0191 acc: 0.6389 time 42.65s
+[Train epoch 32] avg_loss=3.0191 avg_acc=0.6389 | per-class [c0: 0.719, c1: 0.594, c2: 0.625]
+Final training 32/99, loss: 3.0191, time 517.42s, lr: 0.000402
+Accuracy: 0.646
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.742     0.719         0.875   0.730        32
+1                          0.655     0.594         0.844   0.623        32
+2                          0.556     0.625         0.750   0.588        32
+*----------------------------------------*
+0 Fri Oct 24 11:35:25 2025 Epoch: 33
+Epoch: 33/100 Iter: 0/12 loss: 2.6072 acc: 0.5000 time 46.98s
+Epoch: 33/100 Iter: 1/12 loss: 2.8108 acc: 0.4167 time 42.84s
+Epoch: 33/100 Iter: 2/12 loss: 2.4968 acc: 0.5556 time 42.83s
+Epoch: 33/100 Iter: 3/12 loss: 2.5887 acc: 0.6250 time 42.78s
+Epoch: 33/100 Iter: 4/12 loss: 2.6437 acc: 0.5667 time 42.72s
+Epoch: 33/100 Iter: 5/12 loss: 2.6896 acc: 0.6111 time 42.75s
+Epoch: 33/100 Iter: 6/12 loss: 2.6771 acc: 0.5913 time 42.74s
+Epoch: 33/100 Iter: 7/12 loss: 2.6955 acc: 0.5938 time 42.73s
+Epoch: 33/100 Iter: 8/12 loss: 2.6763 acc: 0.5895 time 42.66s
+Epoch: 33/100 Iter: 9/12 loss: 3.1079 acc: 0.5639 time 42.68s
+Epoch: 33/100 Iter: 10/12 loss: 2.9953 acc: 0.5429 time 42.67s
+Epoch: 33/100 Iter: 11/12 loss: 2.9944 acc: 0.5440 time 42.67s
+[Train epoch 33] avg_loss=2.9944 avg_acc=0.5440 | per-class [c0: 0.697, c1: 0.788, c2: 0.333]
+Final training 33/99, loss: 2.9944, time 517.10s, lr: 0.000396
+Accuracy: 0.615
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.590     0.697         0.746   0.639        33
+1                          0.684     0.788         0.810   0.732        33
+2                          0.526     0.333         0.864   0.408        30
+*----------------------------------------*
+Val 33/100 0/27, Acc: 1.0000, time 5.42s
+Val 33/100 1/27, Acc: 1.0000, time 5.38s
+Val 33/100 2/27, Acc: 1.0000, time 5.41s
+Val 33/100 3/27, Acc: 1.0000, time 5.40s
+Val 33/100 4/27, Acc: 1.0000, time 5.40s
+Val 33/100 5/27, Acc: 0.8333, time 5.37s
+Val 33/100 6/27, Acc: 0.7143, time 5.38s
+Val 33/100 7/27, Acc: 0.7500, time 5.42s
+Val 33/100 8/27, Acc: 0.6667, time 5.42s
+Val 33/100 9/27, Acc: 0.6000, time 5.42s
+Val 33/100 10/27, Acc: 0.6364, time 5.41s
+Val 33/100 11/27, Acc: 0.5833, time 5.41s
+Val 33/100 12/27, Acc: 0.6154, time 5.38s
+Val 33/100 13/27, Acc: 0.5714, time 5.39s
+Val 33/100 14/27, Acc: 0.5333, time 5.37s
+Val 33/100 15/27, Acc: 0.5625, time 5.38s
+Val 33/100 16/27, Acc: 0.5882, time 5.37s
+Val 33/100 17/27, Acc: 0.5556, time 5.49s
+Val 33/100 18/27, Acc: 0.5263, time 5.40s
+Val 33/100 19/27, Acc: 0.5500, time 5.41s
+Val 33/100 20/27, Acc: 0.5714, time 5.44s
+Val 33/100 21/27, Acc: 0.5455, time 5.38s
+Val 33/100 22/27, Acc: 0.5652, time 5.38s
+Val 33/100 23/27, Acc: 0.5833, time 5.41s
+Val 33/100 24/27, Acc: 0.5600, time 5.38s
+Val 33/100 25/27, Acc: 0.5769, time 5.52s
+Val 33/100 26/27, Acc: 0.5926, time 5.49s
+[Val epoch 33] avg_acc=0.5926 | per-class [c0: 0.778, c1: 0.556, c2: 0.444]
+Final validation 33/99, Val_acc: 0.5926, time 146.04sAccuracy: 0.593
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.636     0.778         0.778   0.700         9
+1                          0.500     0.556         0.722   0.526         9
+2                          0.667     0.444         0.889   0.533         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 11:46:33 2025 Epoch: 34
+Epoch: 34/100 Iter: 0/12 loss: 3.8491 acc: 0.2444 time 46.31s
+Epoch: 34/100 Iter: 1/12 loss: 2.7057 acc: 0.5889 time 42.63s
+Epoch: 34/100 Iter: 2/12 loss: 3.0202 acc: 0.6426 time 42.64s
+Epoch: 34/100 Iter: 3/12 loss: 3.4490 acc: 0.5653 time 42.64s
+Epoch: 34/100 Iter: 4/12 loss: 3.1090 acc: 0.6300 time 42.65s
+Epoch: 34/100 Iter: 5/12 loss: 3.1825 acc: 0.5944 time 42.62s
+Epoch: 34/100 Iter: 6/12 loss: 3.2340 acc: 0.6048 time 42.62s
+Epoch: 34/100 Iter: 7/12 loss: 3.1245 acc: 0.6125 time 42.63s
+Epoch: 34/100 Iter: 8/12 loss: 3.1419 acc: 0.6247 time 42.63s
+Epoch: 34/100 Iter: 9/12 loss: 3.1023 acc: 0.6178 time 42.64s
+Epoch: 34/100 Iter: 10/12 loss: 3.0666 acc: 0.6020 time 42.64s
+Epoch: 34/100 Iter: 11/12 loss: 3.0767 acc: 0.5935 time 42.87s
+[Train epoch 34] avg_loss=3.0767 avg_acc=0.5935 | per-class [c0: 0.375, c1: 0.719, c2: 0.844]
+Final training 34/99, loss: 3.0767, time 515.55s, lr: 0.000389
+Accuracy: 0.646
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.800     0.375         0.953   0.511        32
+1                          0.719     0.719         0.859   0.719        32
+2                          0.551     0.844         0.656   0.667        32
+*----------------------------------------*
+0 Fri Oct 24 11:55:08 2025 Epoch: 35
+Epoch: 35/100 Iter: 0/12 loss: 3.4951 acc: 0.4667 time 46.36s
+Epoch: 35/100 Iter: 1/12 loss: 2.8946 acc: 0.6500 time 42.64s
+Epoch: 35/100 Iter: 2/12 loss: 2.6212 acc: 0.6000 time 42.63s
+Epoch: 35/100 Iter: 3/12 loss: 2.9403 acc: 0.5958 time 42.65s
+Epoch: 35/100 Iter: 4/12 loss: 2.9895 acc: 0.5433 time 42.64s
+Epoch: 35/100 Iter: 5/12 loss: 2.8658 acc: 0.6194 time 42.64s
+Epoch: 35/100 Iter: 6/12 loss: 2.8666 acc: 0.6302 time 42.63s
+Epoch: 35/100 Iter: 7/12 loss: 2.8946 acc: 0.6382 time 42.65s
+Epoch: 35/100 Iter: 8/12 loss: 2.9804 acc: 0.6228 time 42.65s
+Epoch: 35/100 Iter: 9/12 loss: 2.9452 acc: 0.6356 time 42.62s
+Epoch: 35/100 Iter: 10/12 loss: 3.1273 acc: 0.6141 time 42.65s
+Epoch: 35/100 Iter: 11/12 loss: 3.1262 acc: 0.6046 time 42.62s
+[Train epoch 35] avg_loss=3.1262 avg_acc=0.6046 | per-class [c0: 0.727, c1: 0.625, c2: 0.387]
+Final training 35/99, loss: 3.1262, time 515.43s, lr: 0.000382
+Accuracy: 0.583
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.632     0.727         0.778   0.676        33
+1                          0.625     0.625         0.812   0.625        32
+2                          0.462     0.387         0.785   0.421        31
+*----------------------------------------*
+Val 35/100 0/27, Acc: 0.0000, time 5.42s
+Val 35/100 1/27, Acc: 0.5000, time 5.40s
+Val 35/100 2/27, Acc: 0.3333, time 5.39s
+Val 35/100 3/27, Acc: 0.5000, time 5.38s
+Val 35/100 4/27, Acc: 0.6000, time 5.40s
+Val 35/100 5/27, Acc: 0.5000, time 5.37s
+Val 35/100 6/27, Acc: 0.4286, time 5.40s
+Val 35/100 7/27, Acc: 0.5000, time 5.43s
+Val 35/100 8/27, Acc: 0.4444, time 5.41s
+Val 35/100 9/27, Acc: 0.4000, time 5.38s
+Val 35/100 10/27, Acc: 0.4545, time 5.37s
+Val 35/100 11/27, Acc: 0.4167, time 5.39s
+Val 35/100 12/27, Acc: 0.4615, time 5.40s
+Val 35/100 13/27, Acc: 0.4286, time 5.37s
+Val 35/100 14/27, Acc: 0.4000, time 5.40s
+Val 35/100 15/27, Acc: 0.4375, time 5.36s
+Val 35/100 16/27, Acc: 0.4706, time 5.36s
+Val 35/100 17/27, Acc: 0.4444, time 5.48s
+Val 35/100 18/27, Acc: 0.4211, time 5.41s
+Val 35/100 19/27, Acc: 0.4500, time 5.39s
+Val 35/100 20/27, Acc: 0.4762, time 5.44s
+Val 35/100 21/27, Acc: 0.4545, time 5.39s
+Val 35/100 22/27, Acc: 0.4783, time 5.41s
+Val 35/100 23/27, Acc: 0.5000, time 5.41s
+Val 35/100 24/27, Acc: 0.4800, time 5.40s
+Val 35/100 25/27, Acc: 0.5000, time 5.50s
+Val 35/100 26/27, Acc: 0.5185, time 5.48s
+[Val epoch 35] avg_acc=0.5185 | per-class [c0: 0.556, c1: 0.556, c2: 0.444]
+Final validation 35/99, Val_acc: 0.5185, time 145.95sAccuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.667     0.444         0.889   0.533         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 12:06:14 2025 Epoch: 36
+Epoch: 36/100 Iter: 0/12 loss: 2.6556 acc: 0.5000 time 45.89s
+Epoch: 36/100 Iter: 1/12 loss: 2.8672 acc: 0.5000 time 42.61s
+Epoch: 36/100 Iter: 2/12 loss: 2.8084 acc: 0.5370 time 42.61s
+Epoch: 36/100 Iter: 3/12 loss: 2.9277 acc: 0.6042 time 42.63s
+Epoch: 36/100 Iter: 4/12 loss: 3.1161 acc: 0.5500 time 42.63s
+Epoch: 36/100 Iter: 5/12 loss: 3.1441 acc: 0.5926 time 42.63s
+Epoch: 36/100 Iter: 6/12 loss: 3.0331 acc: 0.5952 time 42.62s
+Epoch: 36/100 Iter: 7/12 loss: 2.9339 acc: 0.6354 time 42.64s
+Epoch: 36/100 Iter: 8/12 loss: 2.7825 acc: 0.6667 time 42.62s
+Epoch: 36/100 Iter: 9/12 loss: 2.8198 acc: 0.6533 time 42.62s
+Epoch: 36/100 Iter: 10/12 loss: 2.7151 acc: 0.6470 time 42.61s
+Epoch: 36/100 Iter: 11/12 loss: 2.6982 acc: 0.6671 time 42.64s
+[Train epoch 36] avg_loss=2.6982 avg_acc=0.6671 | per-class [c0: 0.735, c1: 0.667, c2: 0.690]
+Final training 36/99, loss: 2.6982, time 514.80s, lr: 0.000375
+Accuracy: 0.698
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.735     0.735         0.855   0.735        34
+1                          0.733     0.667         0.873   0.698        33
+2                          0.625     0.690         0.821   0.656        29
+*----------------------------------------*
+0 Fri Oct 24 12:14:49 2025 Epoch: 37
+Epoch: 37/100 Iter: 0/12 loss: 2.0705 acc: 0.8333 time 46.38s
+Epoch: 37/100 Iter: 1/12 loss: 2.3974 acc: 0.7917 time 42.63s
+Epoch: 37/100 Iter: 2/12 loss: 2.2447 acc: 0.8611 time 42.61s
+Epoch: 37/100 Iter: 3/12 loss: 2.5286 acc: 0.8194 time 42.62s
+Epoch: 37/100 Iter: 4/12 loss: 2.6491 acc: 0.7756 time 42.64s
+Epoch: 37/100 Iter: 5/12 loss: 2.5181 acc: 0.7574 time 42.64s
+Epoch: 37/100 Iter: 6/12 loss: 2.5379 acc: 0.7587 time 42.64s
+Epoch: 37/100 Iter: 7/12 loss: 2.5560 acc: 0.7472 time 42.63s
+Epoch: 37/100 Iter: 8/12 loss: 2.5475 acc: 0.7167 time 42.63s
+Epoch: 37/100 Iter: 9/12 loss: 2.6125 acc: 0.6783 time 42.62s
+Epoch: 37/100 Iter: 10/12 loss: 2.6504 acc: 0.6803 time 42.64s
+Epoch: 37/100 Iter: 11/12 loss: 2.5817 acc: 0.6861 time 42.63s
+[Train epoch 37] avg_loss=2.5817 avg_acc=0.6861 | per-class [c0: 0.750, c1: 0.688, c2: 0.719]
+Final training 37/99, loss: 2.5817, time 515.35s, lr: 0.000368
+Accuracy: 0.719
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.828     0.750         0.922   0.787        32
+1                          0.710     0.688         0.859   0.698        32
+2                          0.639     0.719         0.797   0.676        32
+*----------------------------------------*
+Val 37/100 0/27, Acc: 0.0000, time 5.41s
+Val 37/100 1/27, Acc: 0.5000, time 5.41s
+Val 37/100 2/27, Acc: 0.3333, time 5.42s
+Val 37/100 3/27, Acc: 0.5000, time 5.39s
+Val 37/100 4/27, Acc: 0.6000, time 5.37s
+Val 37/100 5/27, Acc: 0.5000, time 5.37s
+Val 37/100 6/27, Acc: 0.4286, time 5.39s
+Val 37/100 7/27, Acc: 0.5000, time 5.43s
+Val 37/100 8/27, Acc: 0.4444, time 5.42s
+Val 37/100 9/27, Acc: 0.4000, time 5.38s
+Val 37/100 10/27, Acc: 0.4545, time 5.37s
+Val 37/100 11/27, Acc: 0.4167, time 5.39s
+Val 37/100 12/27, Acc: 0.4615, time 5.40s
+Val 37/100 13/27, Acc: 0.4286, time 5.40s
+Val 37/100 14/27, Acc: 0.4000, time 5.40s
+Val 37/100 15/27, Acc: 0.3750, time 5.36s
+Val 37/100 16/27, Acc: 0.4118, time 5.39s
+Val 37/100 17/27, Acc: 0.3889, time 5.49s
+Val 37/100 18/27, Acc: 0.3684, time 5.38s
+Val 37/100 19/27, Acc: 0.4000, time 5.41s
+Val 37/100 20/27, Acc: 0.4286, time 5.44s
+Val 37/100 21/27, Acc: 0.4545, time 5.38s
+Val 37/100 22/27, Acc: 0.4783, time 5.39s
+Val 37/100 23/27, Acc: 0.5000, time 5.39s
+Val 37/100 24/27, Acc: 0.4800, time 5.39s
+Val 37/100 25/27, Acc: 0.5000, time 5.52s
+Val 37/100 26/27, Acc: 0.5185, time 5.49s
+[Val epoch 37] avg_acc=0.5185 | per-class [c0: 0.556, c1: 0.667, c2: 0.333]
+Final validation 37/99, Val_acc: 0.5185, time 146.00sAccuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.714     0.556         0.889   0.625         9
+1                          0.429     0.667         0.556   0.522         9
+2                          0.500     0.333         0.833   0.400         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 12:25:55 2025 Epoch: 38
+Epoch: 38/100 Iter: 0/12 loss: 1.7365 acc: 0.9167 time 46.17s
+Epoch: 38/100 Iter: 1/12 loss: 1.9965 acc: 0.8194 time 42.63s
+Epoch: 38/100 Iter: 2/12 loss: 2.1822 acc: 0.7315 time 42.60s
+Epoch: 38/100 Iter: 3/12 loss: 2.6614 acc: 0.6319 time 42.62s
+Epoch: 38/100 Iter: 4/12 loss: 2.6606 acc: 0.6722 time 42.64s
+Epoch: 38/100 Iter: 5/12 loss: 2.5784 acc: 0.7269 time 42.63s
+Epoch: 38/100 Iter: 6/12 loss: 2.6880 acc: 0.6770 time 42.64s
+Epoch: 38/100 Iter: 7/12 loss: 2.5582 acc: 0.7035 time 42.66s
+Epoch: 38/100 Iter: 8/12 loss: 2.5856 acc: 0.6994 time 42.63s
+Epoch: 38/100 Iter: 9/12 loss: 2.6775 acc: 0.6878 time 42.64s
+Epoch: 38/100 Iter: 10/12 loss: 2.6921 acc: 0.6783 time 42.62s
+Epoch: 38/100 Iter: 11/12 loss: 2.6872 acc: 0.6889 time 42.64s
+[Train epoch 38] avg_loss=2.6872 avg_acc=0.6889 | per-class [c0: 0.645, c1: 0.812, c2: 0.667]
+Final training 38/99, loss: 2.6872, time 515.18s, lr: 0.000361
+Accuracy: 0.708
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.741     0.645         0.892   0.690        31
+1                          0.722     0.812         0.844   0.765        32
+2                          0.667     0.667         0.825   0.667        33
+*----------------------------------------*
+0 Fri Oct 24 12:34:31 2025 Epoch: 39
+Epoch: 39/100 Iter: 0/12 loss: 2.3800 acc: 0.7222 time 46.72s
+Epoch: 39/100 Iter: 1/12 loss: 2.2847 acc: 0.8194 time 42.63s
+Epoch: 39/100 Iter: 2/12 loss: 2.6554 acc: 0.7222 time 42.62s
+Epoch: 39/100 Iter: 3/12 loss: 2.8620 acc: 0.7014 time 42.62s
+Epoch: 39/100 Iter: 4/12 loss: 2.7265 acc: 0.7167 time 42.62s
+Epoch: 39/100 Iter: 5/12 loss: 2.8831 acc: 0.7269 time 42.63s
+Epoch: 39/100 Iter: 6/12 loss: 2.7081 acc: 0.7540 time 42.61s
+Epoch: 39/100 Iter: 7/12 loss: 2.6688 acc: 0.7764 time 42.63s
+Epoch: 39/100 Iter: 8/12 loss: 2.6462 acc: 0.7735 time 42.62s
+Epoch: 39/100 Iter: 9/12 loss: 2.6366 acc: 0.7767 time 42.62s
+Epoch: 39/100 Iter: 10/12 loss: 2.5704 acc: 0.7848 time 42.62s
+Epoch: 39/100 Iter: 11/12 loss: 2.5475 acc: 0.7773 time 42.64s
+[Train epoch 39] avg_loss=2.5475 avg_acc=0.7773 | per-class [c0: 0.710, c1: 0.758, c2: 0.688]
+Final training 39/99, loss: 2.5475, time 515.64s, lr: 0.000353
+Accuracy: 0.719
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.759     0.710         0.892   0.733        31
+1                          0.758     0.758         0.873   0.758        33
+2                          0.647     0.688         0.812   0.667        32
+*----------------------------------------*
+Val 39/100 0/27, Acc: 0.0000, time 5.42s
+Val 39/100 1/27, Acc: 0.5000, time 5.38s
+Val 39/100 2/27, Acc: 0.3333, time 5.41s
+Val 39/100 3/27, Acc: 0.5000, time 5.40s
+Val 39/100 4/27, Acc: 0.6000, time 5.40s
+Val 39/100 5/27, Acc: 0.5000, time 5.37s
+Val 39/100 6/27, Acc: 0.4286, time 5.40s
+Val 39/100 7/27, Acc: 0.5000, time 5.43s
+Val 39/100 8/27, Acc: 0.4444, time 5.42s
+Val 39/100 9/27, Acc: 0.4000, time 5.40s
+Val 39/100 10/27, Acc: 0.4545, time 5.41s
+Val 39/100 11/27, Acc: 0.4167, time 5.41s
+Val 39/100 12/27, Acc: 0.4615, time 5.39s
+Val 39/100 13/27, Acc: 0.4286, time 5.38s
+Val 39/100 14/27, Acc: 0.4000, time 5.37s
+Val 39/100 15/27, Acc: 0.3750, time 5.36s
+Val 39/100 16/27, Acc: 0.4118, time 5.40s
+Val 39/100 17/27, Acc: 0.3889, time 5.48s
+Val 39/100 18/27, Acc: 0.3684, time 5.38s
+Val 39/100 19/27, Acc: 0.4000, time 5.40s
+Val 39/100 20/27, Acc: 0.4286, time 5.43s
+Val 39/100 21/27, Acc: 0.4091, time 5.38s
+Val 39/100 22/27, Acc: 0.4348, time 5.42s
+Val 39/100 23/27, Acc: 0.4583, time 5.41s
+Val 39/100 24/27, Acc: 0.4400, time 5.40s
+Val 39/100 25/27, Acc: 0.4615, time 5.51s
+Val 39/100 26/27, Acc: 0.4815, time 5.49s
+[Val epoch 39] avg_acc=0.4815 | per-class [c0: 0.556, c1: 0.556, c2: 0.333]
+Final validation 39/99, Val_acc: 0.4815, time 146.06sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.556     0.556         0.778   0.556         9
+1                          0.385     0.556         0.556   0.455         9
+2                          0.600     0.333         0.889   0.429         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 12:45:37 2025 Epoch: 40
+Epoch: 40/100 Iter: 0/12 loss: 4.1801 acc: 0.4667 time 45.99s
+Epoch: 40/100 Iter: 1/12 loss: 2.9589 acc: 0.6500 time 42.62s
+Epoch: 40/100 Iter: 2/12 loss: 2.4758 acc: 0.6556 time 42.61s
+Epoch: 40/100 Iter: 3/12 loss: 2.4799 acc: 0.6653 time 42.64s
+Epoch: 40/100 Iter: 4/12 loss: 2.4113 acc: 0.7189 time 42.63s
+Epoch: 40/100 Iter: 5/12 loss: 2.2964 acc: 0.7519 time 42.63s
+Epoch: 40/100 Iter: 6/12 loss: 2.4159 acc: 0.7635 time 42.63s
+Epoch: 40/100 Iter: 7/12 loss: 2.3313 acc: 0.7722 time 42.64s
+Epoch: 40/100 Iter: 8/12 loss: 2.3881 acc: 0.7605 time 42.63s
+Epoch: 40/100 Iter: 9/12 loss: 2.4061 acc: 0.7733 time 42.63s
+Epoch: 40/100 Iter: 10/12 loss: 2.3202 acc: 0.7535 time 42.64s
+Epoch: 40/100 Iter: 11/12 loss: 2.3251 acc: 0.7394 time 42.65s
+[Train epoch 40] avg_loss=2.3251 avg_acc=0.7394 | per-class [c0: 0.677, c1: 0.906, c2: 0.727]
+Final training 40/99, loss: 2.3251, time 514.97s, lr: 0.000346
+Accuracy: 0.771
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.840     0.677         0.938   0.750        31
+1                          0.744     0.906         0.844   0.817        32
+2                          0.750     0.727         0.873   0.738        33
+*----------------------------------------*
+0 Fri Oct 24 12:54:12 2025 Epoch: 41
+Epoch: 41/100 Iter: 0/12 loss: 2.3084 acc: 0.7000 time 45.51s
+Epoch: 41/100 Iter: 1/12 loss: 2.5059 acc: 0.6000 time 42.64s
+Epoch: 41/100 Iter: 2/12 loss: 2.7613 acc: 0.5667 time 42.63s
+Epoch: 41/100 Iter: 3/12 loss: 2.7131 acc: 0.4845 time 42.64s
+Epoch: 41/100 Iter: 4/12 loss: 2.7970 acc: 0.5321 time 42.64s
+Epoch: 41/100 Iter: 5/12 loss: 2.6334 acc: 0.5684 time 42.63s
+Epoch: 41/100 Iter: 6/12 loss: 2.8302 acc: 0.5507 time 42.62s
+Epoch: 41/100 Iter: 7/12 loss: 2.7802 acc: 0.5235 time 42.64s
+Epoch: 41/100 Iter: 8/12 loss: 2.6215 acc: 0.5765 time 42.63s
+Epoch: 41/100 Iter: 9/12 loss: 2.5715 acc: 0.6105 time 42.64s
+Epoch: 41/100 Iter: 10/12 loss: 2.4821 acc: 0.6156 time 42.63s
+Epoch: 41/100 Iter: 11/12 loss: 2.4801 acc: 0.6152 time 42.66s
+[Train epoch 41] avg_loss=2.4801 avg_acc=0.6152 | per-class [c0: 0.774, c1: 0.531, c2: 0.697]
+Final training 41/99, loss: 2.4801, time 514.55s, lr: 0.000338
+Accuracy: 0.667
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.800     0.774         0.908   0.787        31
+1                          0.739     0.531         0.906   0.618        32
+2                          0.535     0.697         0.683   0.605        33
+*----------------------------------------*
+Val 41/100 0/27, Acc: 0.0000, time 5.42s
+Val 41/100 1/27, Acc: 0.5000, time 5.41s
+Val 41/100 2/27, Acc: 0.3333, time 5.38s
+Val 41/100 3/27, Acc: 0.5000, time 5.38s
+Val 41/100 4/27, Acc: 0.6000, time 5.40s
+Val 41/100 5/27, Acc: 0.5000, time 5.38s
+Val 41/100 6/27, Acc: 0.4286, time 5.40s
+Val 41/100 7/27, Acc: 0.5000, time 5.44s
+Val 41/100 8/27, Acc: 0.4444, time 5.42s
+Val 41/100 9/27, Acc: 0.4000, time 5.41s
+Val 41/100 10/27, Acc: 0.4545, time 5.41s
+Val 41/100 11/27, Acc: 0.4167, time 5.38s
+Val 41/100 12/27, Acc: 0.4615, time 5.39s
+Val 41/100 13/27, Acc: 0.4286, time 5.41s
+Val 41/100 14/27, Acc: 0.4667, time 5.40s
+Val 41/100 15/27, Acc: 0.4375, time 5.39s
+Val 41/100 16/27, Acc: 0.4706, time 5.37s
+Val 41/100 17/27, Acc: 0.4444, time 5.49s
+Val 41/100 18/27, Acc: 0.4737, time 5.38s
+Val 41/100 19/27, Acc: 0.5000, time 5.39s
+Val 41/100 20/27, Acc: 0.5238, time 5.43s
+Val 41/100 21/27, Acc: 0.5455, time 5.38s
+Val 41/100 22/27, Acc: 0.5217, time 5.41s
+Val 41/100 23/27, Acc: 0.5417, time 5.39s
+Val 41/100 24/27, Acc: 0.5200, time 5.38s
+Val 41/100 25/27, Acc: 0.5385, time 5.52s
+Val 41/100 26/27, Acc: 0.5556, time 5.49s
+[Val epoch 41] avg_acc=0.5556 | per-class [c0: 0.556, c1: 0.889, c2: 0.222]
+Final validation 41/99, Val_acc: 0.5556, time 146.04sAccuracy: 0.556
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.625     0.556         0.833   0.588         9
+1                          0.471     0.889         0.500   0.615         9
+2                          1.000     0.222         1.000   0.364         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 13:05:18 2025 Epoch: 42
+Epoch: 42/100 Iter: 0/12 loss: 3.9229 acc: 0.5000 time 45.49s
+Epoch: 42/100 Iter: 1/12 loss: 2.7131 acc: 0.5833 time 42.62s
+Epoch: 42/100 Iter: 2/12 loss: 2.5553 acc: 0.6111 time 42.58s
+Epoch: 42/100 Iter: 3/12 loss: 2.5407 acc: 0.6250 time 42.69s
+Epoch: 42/100 Iter: 4/12 loss: 3.0287 acc: 0.5889 time 42.84s
+Epoch: 42/100 Iter: 5/12 loss: 2.9288 acc: 0.5694 time 42.97s
+Epoch: 42/100 Iter: 6/12 loss: 2.8373 acc: 0.5992 time 42.90s
+Epoch: 42/100 Iter: 7/12 loss: 2.8255 acc: 0.6285 time 42.88s
+Epoch: 42/100 Iter: 8/12 loss: 2.7040 acc: 0.6512 time 42.86s
+Epoch: 42/100 Iter: 9/12 loss: 2.6988 acc: 0.6728 time 42.82s
+Epoch: 42/100 Iter: 10/12 loss: 2.7180 acc: 0.6646 time 42.81s
+Epoch: 42/100 Iter: 11/12 loss: 2.7437 acc: 0.6463 time 42.79s
+[Train epoch 42] avg_loss=2.7437 avg_acc=0.6463 | per-class [c0: 0.727, c1: 0.844, c2: 0.387]
+Final training 42/99, loss: 2.7437, time 516.31s, lr: 0.000330
+Accuracy: 0.656
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.649     0.727         0.794   0.686        33
+1                          0.692     0.844         0.812   0.761        32
+2                          0.600     0.387         0.877   0.471        31
+*----------------------------------------*
+0 Fri Oct 24 13:13:54 2025 Epoch: 43
+Epoch: 43/100 Iter: 0/12 loss: 3.7502 acc: 0.2222 time 47.40s
+Epoch: 43/100 Iter: 1/12 loss: 3.1505 acc: 0.2917 time 42.81s
+Epoch: 43/100 Iter: 2/12 loss: 3.4892 acc: 0.3611 time 42.82s
+Epoch: 43/100 Iter: 3/12 loss: 3.2866 acc: 0.4375 time 42.84s
+Epoch: 43/100 Iter: 4/12 loss: 2.9376 acc: 0.5278 time 42.81s
+Epoch: 43/100 Iter: 5/12 loss: 2.8631 acc: 0.5694 time 42.82s
+Epoch: 43/100 Iter: 6/12 loss: 2.7532 acc: 0.6190 time 42.81s
+Epoch: 43/100 Iter: 7/12 loss: 2.7002 acc: 0.6563 time 42.82s
+Epoch: 43/100 Iter: 8/12 loss: 2.6673 acc: 0.6698 time 42.79s
+Epoch: 43/100 Iter: 9/12 loss: 2.5506 acc: 0.6861 time 42.80s
+Epoch: 43/100 Iter: 10/12 loss: 2.6740 acc: 0.6742 time 42.80s
+Epoch: 43/100 Iter: 11/12 loss: 2.5711 acc: 0.7014 time 42.82s
+[Train epoch 43] avg_loss=2.5711 avg_acc=0.7014 | per-class [c0: 0.613, c1: 0.676, c2: 0.710]
+Final training 43/99, loss: 2.5711, time 518.38s, lr: 0.000323
+Accuracy: 0.667
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.864     0.613         0.954   0.717        31
+1                          0.719     0.676         0.855   0.697        34
+2                          0.524     0.710         0.692   0.603        31
+*----------------------------------------*
+Val 43/100 0/27, Acc: 1.0000, time 5.41s
+Val 43/100 1/27, Acc: 1.0000, time 5.43s
+Val 43/100 2/27, Acc: 1.0000, time 5.41s
+Val 43/100 3/27, Acc: 1.0000, time 5.43s
+Val 43/100 4/27, Acc: 1.0000, time 5.43s
+Val 43/100 5/27, Acc: 0.8333, time 5.43s
+Val 43/100 6/27, Acc: 0.7143, time 5.40s
+Val 43/100 7/27, Acc: 0.7500, time 5.46s
+Val 43/100 8/27, Acc: 0.6667, time 5.45s
+Val 43/100 9/27, Acc: 0.6000, time 5.41s
+Val 43/100 10/27, Acc: 0.6364, time 5.42s
+Val 43/100 11/27, Acc: 0.5833, time 5.44s
+Val 43/100 12/27, Acc: 0.6154, time 5.42s
+Val 43/100 13/27, Acc: 0.5714, time 5.41s
+Val 43/100 14/27, Acc: 0.5333, time 5.40s
+Val 43/100 15/27, Acc: 0.5000, time 5.39s
+Val 43/100 16/27, Acc: 0.5294, time 5.41s
+Val 43/100 17/27, Acc: 0.5000, time 5.51s
+Val 43/100 18/27, Acc: 0.4737, time 5.42s
+Val 43/100 19/27, Acc: 0.5000, time 5.42s
+Val 43/100 20/27, Acc: 0.5238, time 5.45s
+Val 43/100 21/27, Acc: 0.5000, time 5.44s
+Val 43/100 22/27, Acc: 0.5217, time 5.41s
+Val 43/100 23/27, Acc: 0.5417, time 5.41s
+Val 43/100 24/27, Acc: 0.5200, time 5.42s
+Val 43/100 25/27, Acc: 0.5385, time 5.55s
+Val 43/100 26/27, Acc: 0.5556, time 5.51s
+[Val epoch 43] avg_acc=0.5556 | per-class [c0: 0.778, c1: 0.556, c2: 0.333]
+Final validation 43/99, Val_acc: 0.5556, time 146.70sAccuracy: 0.556
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.636     0.778         0.778   0.700         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.600     0.333         0.889   0.429         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 13:25:04 2025 Epoch: 44
+Epoch: 44/100 Iter: 0/12 loss: 3.3333 acc: 0.7333 time 46.88s
+Epoch: 44/100 Iter: 1/12 loss: 3.0441 acc: 0.6583 time 42.82s
+Epoch: 44/100 Iter: 2/12 loss: 2.9320 acc: 0.7074 time 42.82s
+Epoch: 44/100 Iter: 3/12 loss: 2.8368 acc: 0.7139 time 42.81s
+Epoch: 44/100 Iter: 4/12 loss: 2.5757 acc: 0.7244 time 42.79s
+Epoch: 44/100 Iter: 5/12 loss: 2.9121 acc: 0.6778 time 42.80s
+Epoch: 44/100 Iter: 6/12 loss: 2.7313 acc: 0.7079 time 42.79s
+Epoch: 44/100 Iter: 7/12 loss: 2.6977 acc: 0.6958 time 42.80s
+Epoch: 44/100 Iter: 8/12 loss: 2.7227 acc: 0.7111 time 42.81s
+Epoch: 44/100 Iter: 9/12 loss: 2.8119 acc: 0.6733 time 42.79s
+Epoch: 44/100 Iter: 10/12 loss: 2.7202 acc: 0.7030 time 42.80s
+Epoch: 44/100 Iter: 11/12 loss: 2.6128 acc: 0.7278 time 42.79s
+[Train epoch 44] avg_loss=2.6128 avg_acc=0.7278 | per-class [c0: 0.697, c1: 0.727, c2: 0.667]
+Final training 44/99, loss: 2.6128, time 517.74s, lr: 0.000315
+Accuracy: 0.698
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.852     0.697         0.937   0.767        33
+1                          0.706     0.727         0.841   0.716        33
+2                          0.571     0.667         0.773   0.615        30
+*----------------------------------------*
+0 Fri Oct 24 13:33:42 2025 Epoch: 45
+Epoch: 45/100 Iter: 0/12 loss: 3.6267 acc: 0.6389 time 46.79s
+Epoch: 45/100 Iter: 1/12 loss: 2.7344 acc: 0.8194 time 42.82s
+Epoch: 45/100 Iter: 2/12 loss: 2.9406 acc: 0.7315 time 42.79s
+Epoch: 45/100 Iter: 3/12 loss: 3.2400 acc: 0.6736 time 42.80s
+Epoch: 45/100 Iter: 4/12 loss: 2.9226 acc: 0.7056 time 42.81s
+Epoch: 45/100 Iter: 5/12 loss: 2.8371 acc: 0.7130 time 42.79s
+Epoch: 45/100 Iter: 6/12 loss: 2.8650 acc: 0.7302 time 42.79s
+Epoch: 45/100 Iter: 7/12 loss: 2.7254 acc: 0.7639 time 42.77s
+Epoch: 45/100 Iter: 8/12 loss: 2.8068 acc: 0.7309 time 42.78s
+Epoch: 45/100 Iter: 9/12 loss: 2.8789 acc: 0.7144 time 42.76s
+Epoch: 45/100 Iter: 10/12 loss: 2.8220 acc: 0.6949 time 42.75s
+Epoch: 45/100 Iter: 11/12 loss: 2.7042 acc: 0.7134 time 42.76s
+[Train epoch 45] avg_loss=2.7042 avg_acc=0.7134 | per-class [c0: 0.833, c1: 0.688, c2: 0.559]
+Final training 45/99, loss: 2.7042, time 517.44s, lr: 0.000307
+Accuracy: 0.688
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.694     0.833         0.833   0.758        30
+1                          0.786     0.688         0.906   0.733        32
+2                          0.594     0.559         0.790   0.576        34
+*----------------------------------------*
+Val 45/100 0/27, Acc: 0.0000, time 5.41s
+Val 45/100 1/27, Acc: 0.5000, time 5.40s
+Val 45/100 2/27, Acc: 0.3333, time 5.40s
+Val 45/100 3/27, Acc: 0.5000, time 5.43s
+Val 45/100 4/27, Acc: 0.6000, time 5.40s
+Val 45/100 5/27, Acc: 0.5000, time 5.39s
+Val 45/100 6/27, Acc: 0.4286, time 5.38s
+Val 45/100 7/27, Acc: 0.3750, time 5.45s
+Val 45/100 8/27, Acc: 0.4444, time 5.43s
+Val 45/100 9/27, Acc: 0.4000, time 5.43s
+Val 45/100 10/27, Acc: 0.4545, time 5.42s
+Val 45/100 11/27, Acc: 0.5000, time 5.40s
+Val 45/100 12/27, Acc: 0.5385, time 5.42s
+Val 45/100 13/27, Acc: 0.5000, time 5.40s
+Val 45/100 14/27, Acc: 0.4667, time 5.39s
+Val 45/100 15/27, Acc: 0.4375, time 5.41s
+Val 45/100 16/27, Acc: 0.4706, time 5.42s
+Val 45/100 17/27, Acc: 0.4444, time 5.51s
+Val 45/100 18/27, Acc: 0.4211, time 5.42s
+Val 45/100 19/27, Acc: 0.4000, time 5.44s
+Val 45/100 20/27, Acc: 0.3810, time 5.44s
+Val 45/100 21/27, Acc: 0.4091, time 5.40s
+Val 45/100 22/27, Acc: 0.4348, time 5.40s
+Val 45/100 23/27, Acc: 0.4583, time 5.42s
+Val 45/100 24/27, Acc: 0.4400, time 5.39s
+Val 45/100 25/27, Acc: 0.4615, time 5.53s
+Val 45/100 26/27, Acc: 0.4815, time 5.51s
+[Val epoch 45] avg_acc=0.4815 | per-class [c0: 0.222, c1: 0.667, c2: 0.556]
+Final validation 45/99, Val_acc: 0.4815, time 146.45sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          1.000     0.222         1.000   0.364         9
+1                          0.429     0.667         0.556   0.522         9
+2                          0.455     0.556         0.667   0.500         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 13:44:50 2025 Epoch: 46
+Epoch: 46/100 Iter: 0/12 loss: 2.1081 acc: 0.8333 time 45.32s
+Epoch: 46/100 Iter: 1/12 loss: 3.0921 acc: 0.7222 time 42.78s
+Epoch: 46/100 Iter: 2/12 loss: 2.9819 acc: 0.6111 time 42.76s
+Epoch: 46/100 Iter: 3/12 loss: 3.4308 acc: 0.6250 time 42.76s
+Epoch: 46/100 Iter: 4/12 loss: 3.1659 acc: 0.6333 time 42.75s
+Epoch: 46/100 Iter: 5/12 loss: 3.0441 acc: 0.6389 time 42.76s
+Epoch: 46/100 Iter: 6/12 loss: 2.8445 acc: 0.6548 time 42.74s
+Epoch: 46/100 Iter: 7/12 loss: 2.7572 acc: 0.6632 time 42.75s
+Epoch: 46/100 Iter: 8/12 loss: 2.7287 acc: 0.6562 time 42.80s
+Epoch: 46/100 Iter: 9/12 loss: 2.7210 acc: 0.6711 time 42.83s
+Epoch: 46/100 Iter: 10/12 loss: 2.7325 acc: 0.6556 time 42.79s
+Epoch: 46/100 Iter: 11/12 loss: 2.7332 acc: 0.6565 time 42.84s
+[Train epoch 46] avg_loss=2.7332 avg_acc=0.6565 | per-class [c0: 0.500, c1: 0.781, c2: 0.719]
+Final training 46/99, loss: 2.7332, time 515.91s, lr: 0.000299
+Accuracy: 0.667
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.727     0.500         0.906   0.593        32
+1                          0.694     0.781         0.828   0.735        32
+2                          0.605     0.719         0.766   0.657        32
+*----------------------------------------*
+0 Fri Oct 24 13:53:26 2025 Epoch: 47
+Epoch: 47/100 Iter: 0/12 loss: 0.9681 acc: 1.0000 time 47.89s
+Epoch: 47/100 Iter: 1/12 loss: 2.0429 acc: 0.7917 time 42.87s
+Epoch: 47/100 Iter: 2/12 loss: 2.0917 acc: 0.7870 time 42.81s
+Epoch: 47/100 Iter: 3/12 loss: 2.1350 acc: 0.7153 time 42.82s
+Epoch: 47/100 Iter: 4/12 loss: 1.9581 acc: 0.7056 time 42.84s
+Epoch: 47/100 Iter: 5/12 loss: 2.1639 acc: 0.6713 time 42.81s
+Epoch: 47/100 Iter: 6/12 loss: 2.2604 acc: 0.6706 time 42.83s
+Epoch: 47/100 Iter: 7/12 loss: 2.3786 acc: 0.6701 time 42.82s
+Epoch: 47/100 Iter: 8/12 loss: 2.3869 acc: 0.6623 time 42.81s
+Epoch: 47/100 Iter: 9/12 loss: 2.4402 acc: 0.6461 time 42.84s
+Epoch: 47/100 Iter: 10/12 loss: 2.3745 acc: 0.6682 time 42.78s
+Epoch: 47/100 Iter: 11/12 loss: 2.4048 acc: 0.6495 time 42.82s
+[Train epoch 47] avg_loss=2.4048 avg_acc=0.6495 | per-class [c0: 0.735, c1: 0.871, c2: 0.387]
+Final training 47/99, loss: 2.4048, time 518.98s, lr: 0.000291
+Accuracy: 0.667
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.833     0.735         0.919   0.781        34
+1                          0.587     0.871         0.708   0.701        31
+2                          0.600     0.387         0.877   0.471        31
+*----------------------------------------*
+Val 47/100 0/27, Acc: 1.0000, time 5.43s
+Val 47/100 1/27, Acc: 1.0000, time 5.41s
+Val 47/100 2/27, Acc: 1.0000, time 5.43s
+Val 47/100 3/27, Acc: 0.7500, time 5.41s
+Val 47/100 4/27, Acc: 0.8000, time 5.39s
+Val 47/100 5/27, Acc: 0.6667, time 5.40s
+Val 47/100 6/27, Acc: 0.7143, time 5.39s
+Val 47/100 7/27, Acc: 0.7500, time 5.45s
+Val 47/100 8/27, Acc: 0.6667, time 5.44s
+Val 47/100 9/27, Acc: 0.6000, time 5.41s
+Val 47/100 10/27, Acc: 0.6364, time 5.41s
+Val 47/100 11/27, Acc: 0.5833, time 5.41s
+Val 47/100 12/27, Acc: 0.6154, time 5.39s
+Val 47/100 13/27, Acc: 0.6429, time 5.40s
+Val 47/100 14/27, Acc: 0.6000, time 5.39s
+Val 47/100 15/27, Acc: 0.6250, time 5.39s
+Val 47/100 16/27, Acc: 0.6471, time 5.39s
+Val 47/100 17/27, Acc: 0.6111, time 5.50s
+Val 47/100 18/27, Acc: 0.5789, time 5.41s
+Val 47/100 19/27, Acc: 0.6000, time 5.44s
+Val 47/100 20/27, Acc: 0.6190, time 5.47s
+Val 47/100 21/27, Acc: 0.5909, time 5.41s
+Val 47/100 22/27, Acc: 0.6087, time 5.42s
+Val 47/100 23/27, Acc: 0.5833, time 5.43s
+Val 47/100 24/27, Acc: 0.6000, time 5.41s
+Val 47/100 25/27, Acc: 0.6154, time 5.53s
+Val 47/100 26/27, Acc: 0.6296, time 5.50s
+[Val epoch 47] avg_acc=0.6296 | per-class [c0: 0.889, c1: 0.333, c2: 0.667]
+Final validation 47/99, Val_acc: 0.6296, time 146.47sAccuracy: 0.630
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.615     0.889         0.722   0.727         9
+1                          0.600     0.333         0.889   0.429         9
+2                          0.667     0.667         0.833   0.667         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 14:04:36 2025 Epoch: 48
+Epoch: 48/100 Iter: 0/12 loss: 1.9854 acc: 0.6333 time 47.80s
+Epoch: 48/100 Iter: 1/12 loss: 1.7990 acc: 0.7611 time 42.83s
+Epoch: 48/100 Iter: 2/12 loss: 2.3104 acc: 0.7667 time 42.81s
+Epoch: 48/100 Iter: 3/12 loss: 2.2312 acc: 0.7139 time 42.83s
+Epoch: 48/100 Iter: 4/12 loss: 2.2482 acc: 0.6822 time 42.83s
+Epoch: 48/100 Iter: 5/12 loss: 2.6826 acc: 0.6981 time 42.81s
+Epoch: 48/100 Iter: 6/12 loss: 2.7716 acc: 0.6341 time 42.82s
+Epoch: 48/100 Iter: 7/12 loss: 2.6545 acc: 0.6521 time 42.82s
+Epoch: 48/100 Iter: 8/12 loss: 2.6801 acc: 0.6389 time 42.82s
+Epoch: 48/100 Iter: 9/12 loss: 2.6544 acc: 0.6417 time 42.80s
+Epoch: 48/100 Iter: 10/12 loss: 2.7053 acc: 0.6389 time 42.81s
+Epoch: 48/100 Iter: 11/12 loss: 2.7514 acc: 0.6134 time 42.82s
+[Train epoch 48] avg_loss=2.7514 avg_acc=0.6134 | per-class [c0: 0.750, c1: 0.516, c2: 0.636]
+Final training 48/99, loss: 2.7514, time 518.85s, lr: 0.000283
+Accuracy: 0.635
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.750     0.750         0.875   0.750        32
+1                          0.696     0.516         0.892   0.593        31
+2                          0.512     0.636         0.683   0.568        33
+*----------------------------------------*
+0 Fri Oct 24 14:13:15 2025 Epoch: 49
+Epoch: 49/100 Iter: 0/12 loss: 2.7752 acc: 0.3778 time 45.73s
+Epoch: 49/100 Iter: 1/12 loss: 2.9305 acc: 0.4806 time 42.82s
+Epoch: 49/100 Iter: 2/12 loss: 2.5140 acc: 0.5426 time 42.79s
+Epoch: 49/100 Iter: 3/12 loss: 2.3401 acc: 0.6292 time 42.82s
+Epoch: 49/100 Iter: 4/12 loss: 2.2104 acc: 0.6700 time 42.81s
+Epoch: 49/100 Iter: 5/12 loss: 2.2356 acc: 0.6880 time 42.82s
+Epoch: 49/100 Iter: 6/12 loss: 2.2356 acc: 0.7008 time 42.77s
+Epoch: 49/100 Iter: 7/12 loss: 2.2491 acc: 0.6965 time 42.85s
+Epoch: 49/100 Iter: 8/12 loss: 2.4429 acc: 0.6525 time 42.81s
+Epoch: 49/100 Iter: 9/12 loss: 2.4803 acc: 0.6372 time 42.83s
+Epoch: 49/100 Iter: 10/12 loss: 2.4633 acc: 0.6500 time 42.80s
+Epoch: 49/100 Iter: 11/12 loss: 2.4559 acc: 0.6722 time 42.81s
+[Train epoch 49] avg_loss=2.4559 avg_acc=0.6722 | per-class [c0: 0.710, c1: 0.909, c2: 0.438]
+Final training 49/99, loss: 2.4559, time 516.70s, lr: 0.000275
+Accuracy: 0.688
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.759     0.710         0.892   0.733        31
+1                          0.667     0.909         0.762   0.769        33
+2                          0.636     0.438         0.875   0.519        32
+*----------------------------------------*
+Val 49/100 0/27, Acc: 1.0000, time 5.41s
+Val 49/100 1/27, Acc: 1.0000, time 5.40s
+Val 49/100 2/27, Acc: 1.0000, time 5.41s
+Val 49/100 3/27, Acc: 0.7500, time 5.40s
+Val 49/100 4/27, Acc: 0.8000, time 5.43s
+Val 49/100 5/27, Acc: 0.6667, time 5.40s
+Val 49/100 6/27, Acc: 0.7143, time 5.40s
+Val 49/100 7/27, Acc: 0.7500, time 5.44s
+Val 49/100 8/27, Acc: 0.6667, time 5.45s
+Val 49/100 9/27, Acc: 0.6000, time 5.40s
+Val 49/100 10/27, Acc: 0.6364, time 5.40s
+Val 49/100 11/27, Acc: 0.5833, time 5.40s
+Val 49/100 12/27, Acc: 0.6154, time 5.39s
+Val 49/100 13/27, Acc: 0.6429, time 5.43s
+Val 49/100 14/27, Acc: 0.6000, time 5.43s
+Val 49/100 15/27, Acc: 0.6250, time 5.39s
+Val 49/100 16/27, Acc: 0.6471, time 5.39s
+Val 49/100 17/27, Acc: 0.6111, time 5.50s
+Val 49/100 18/27, Acc: 0.5789, time 5.43s
+Val 49/100 19/27, Acc: 0.6000, time 5.43s
+Val 49/100 20/27, Acc: 0.6190, time 5.46s
+Val 49/100 21/27, Acc: 0.5909, time 5.44s
+Val 49/100 22/27, Acc: 0.6087, time 5.41s
+Val 49/100 23/27, Acc: 0.6250, time 5.40s
+Val 49/100 24/27, Acc: 0.6000, time 5.41s
+Val 49/100 25/27, Acc: 0.6154, time 5.54s
+Val 49/100 26/27, Acc: 0.6296, time 5.52s
+[Val epoch 49] avg_acc=0.6296 | per-class [c0: 0.778, c1: 0.444, c2: 0.667]
+Final validation 49/99, Val_acc: 0.6296, time 146.53sAccuracy: 0.630
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.700     0.778         0.833   0.737         9
+1                          0.667     0.444         0.889   0.533         9
+2                          0.545     0.667         0.722   0.600         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 14:24:23 2025 Epoch: 50
+Epoch: 50/100 Iter: 0/12 loss: 2.4119 acc: 0.7222 sim_loss: 0.0000 time 49.04s
+Epoch: 50/100 Iter: 1/12 loss: 2.2074 acc: 0.7778 time 42.80s
+Epoch: 50/100 Iter: 2/12 loss: 2.0203 acc: 0.8519 time 42.82s
+Epoch: 50/100 Iter: 3/12 loss: 2.3903 acc: 0.7639 time 42.82s
+Epoch: 50/100 Iter: 4/12 loss: 2.3401 acc: 0.7944 time 42.80s
+Epoch: 50/100 Iter: 5/12 loss: 2.2574 acc: 0.8065 time 42.79s
+Epoch: 50/100 Iter: 6/12 loss: 2.2160 acc: 0.7984 time 42.82s
+Epoch: 50/100 Iter: 7/12 loss: 2.4459 acc: 0.7403 time 42.80s
+Epoch: 50/100 Iter: 8/12 loss: 2.4359 acc: 0.7475 time 42.83s
+Epoch: 50/100 Iter: 9/12 loss: 2.4337 acc: 0.7261 time 42.81s
+Epoch: 50/100 Iter: 10/12 loss: 2.3703 acc: 0.7510 time 42.81s
+Epoch: 50/100 Iter: 11/12 loss: 2.4289 acc: 0.7162 time 42.82s
+[Train epoch 50] avg_loss=2.4289 avg_acc=0.7162 | per-class [c0: 0.677, c1: 0.636, c2: 0.812]
+Final training 50/99, loss: 2.4289, time 520.00s, lr: 0.000266
+Accuracy: 0.708
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.840     0.677         0.938   0.750        31
+1                          0.808     0.636         0.921   0.712        33
+2                          0.578     0.812         0.703   0.675        32
+*----------------------------------------*
+0 Fri Oct 24 14:33:04 2025 Epoch: 51
+Epoch: 51/100 Iter: 0/12 loss: 2.1601 acc: 0.6667 time 45.74s
+Epoch: 51/100 Iter: 1/12 loss: 2.4493 acc: 0.7333 time 42.82s
+Epoch: 51/100 Iter: 2/12 loss: 2.7131 acc: 0.6185 time 42.81s
+Epoch: 51/100 Iter: 3/12 loss: 2.3808 acc: 0.7139 time 42.81s
+Epoch: 51/100 Iter: 4/12 loss: 2.1661 acc: 0.7711 time 42.85s
+Epoch: 51/100 Iter: 5/12 loss: 2.1475 acc: 0.7444 time 42.81s
+Epoch: 51/100 Iter: 6/12 loss: 2.3288 acc: 0.7175 time 42.80s
+Epoch: 51/100 Iter: 7/12 loss: 2.2600 acc: 0.7250 time 42.84s
+Epoch: 51/100 Iter: 8/12 loss: 2.1770 acc: 0.7481 time 42.81s
+Epoch: 51/100 Iter: 9/12 loss: 2.1793 acc: 0.7400 time 42.83s
+Epoch: 51/100 Iter: 10/12 loss: 2.1405 acc: 0.7434 time 42.84s
+Epoch: 51/100 Iter: 11/12 loss: 2.1643 acc: 0.7394 time 42.84s
+[Train epoch 51] avg_loss=2.1643 avg_acc=0.7394 | per-class [c0: 0.774, c1: 0.909, c2: 0.562]
+Final training 51/99, loss: 2.1643, time 516.85s, lr: 0.000258
+Accuracy: 0.750
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.828     0.774         0.923   0.800        31
+1                          0.698     0.909         0.794   0.789        33
+2                          0.750     0.562         0.906   0.643        32
+*----------------------------------------*
+Val 51/100 0/27, Acc: 1.0000, time 5.41s
+Val 51/100 1/27, Acc: 1.0000, time 5.43s
+Val 51/100 2/27, Acc: 0.6667, time 5.44s
+Val 51/100 3/27, Acc: 0.7500, time 5.41s
+Val 51/100 4/27, Acc: 0.8000, time 5.41s
+Val 51/100 5/27, Acc: 0.6667, time 5.40s
+Val 51/100 6/27, Acc: 0.5714, time 5.40s
+Val 51/100 7/27, Acc: 0.6250, time 5.46s
+Val 51/100 8/27, Acc: 0.5556, time 5.44s
+Val 51/100 9/27, Acc: 0.5000, time 5.41s
+Val 51/100 10/27, Acc: 0.5455, time 5.39s
+Val 51/100 11/27, Acc: 0.5000, time 5.41s
+Val 51/100 12/27, Acc: 0.5385, time 5.38s
+Val 51/100 13/27, Acc: 0.5000, time 5.41s
+Val 51/100 14/27, Acc: 0.4667, time 5.40s
+Val 51/100 15/27, Acc: 0.4375, time 5.41s
+Val 51/100 16/27, Acc: 0.4706, time 5.40s
+Val 51/100 17/27, Acc: 0.4444, time 5.52s
+Val 51/100 18/27, Acc: 0.4211, time 5.42s
+Val 51/100 19/27, Acc: 0.4500, time 5.44s
+Val 51/100 20/27, Acc: 0.4762, time 5.47s
+Val 51/100 21/27, Acc: 0.4545, time 5.41s
+Val 51/100 22/27, Acc: 0.4783, time 5.40s
+Val 51/100 23/27, Acc: 0.5000, time 5.41s
+Val 51/100 24/27, Acc: 0.4800, time 5.40s
+Val 51/100 25/27, Acc: 0.5000, time 5.53s
+Val 51/100 26/27, Acc: 0.5185, time 5.52s
+[Val epoch 51] avg_acc=0.5185 | per-class [c0: 0.667, c1: 0.556, c2: 0.333]
+Final validation 51/99, Val_acc: 0.5185, time 146.55sAccuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.667     0.667         0.833   0.667         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.500     0.333         0.833   0.400         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 14:44:12 2025 Epoch: 52
+Epoch: 52/100 Iter: 0/12 loss: 1.2044 acc: 0.8889 time 47.34s
+Epoch: 52/100 Iter: 1/12 loss: 1.7364 acc: 0.6528 time 42.86s
+Epoch: 52/100 Iter: 2/12 loss: 1.8119 acc: 0.6852 time 42.81s
+Epoch: 52/100 Iter: 3/12 loss: 1.6946 acc: 0.7639 time 42.83s
+Epoch: 52/100 Iter: 4/12 loss: 1.7045 acc: 0.7667 time 42.80s
+Epoch: 52/100 Iter: 5/12 loss: 1.7376 acc: 0.7685 time 42.85s
+Epoch: 52/100 Iter: 6/12 loss: 2.0326 acc: 0.6841 time 42.82s
+Epoch: 52/100 Iter: 7/12 loss: 2.0389 acc: 0.6715 time 42.83s
+Epoch: 52/100 Iter: 8/12 loss: 2.1982 acc: 0.6710 time 42.85s
+Epoch: 52/100 Iter: 9/12 loss: 2.2605 acc: 0.6761 time 42.82s
+Epoch: 52/100 Iter: 10/12 loss: 2.2228 acc: 0.6904 time 42.84s
+Epoch: 52/100 Iter: 11/12 loss: 2.2639 acc: 0.6745 time 42.83s
+[Train epoch 52] avg_loss=2.2639 avg_acc=0.6745 | per-class [c0: 0.788, c1: 0.625, c2: 0.677]
+Final training 52/99, loss: 2.2639, time 518.52s, lr: 0.000250
+Accuracy: 0.698
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.765     0.788         0.873   0.776        33
+1                          0.833     0.625         0.938   0.714        32
+2                          0.553     0.677         0.738   0.609        31
+*----------------------------------------*
+0 Fri Oct 24 14:52:51 2025 Epoch: 53
+Epoch: 53/100 Iter: 0/12 loss: 1.6324 acc: 0.9333 time 46.74s
+Epoch: 53/100 Iter: 1/12 loss: 1.7388 acc: 0.8833 time 42.82s
+Epoch: 53/100 Iter: 2/12 loss: 1.7686 acc: 0.9222 time 42.79s
+Epoch: 53/100 Iter: 3/12 loss: 1.9745 acc: 0.8583 time 42.81s
+Epoch: 53/100 Iter: 4/12 loss: 2.1423 acc: 0.7700 time 42.79s
+Epoch: 53/100 Iter: 5/12 loss: 2.0119 acc: 0.8083 time 42.84s
+Epoch: 53/100 Iter: 6/12 loss: 2.0780 acc: 0.8000 time 42.83s
+Epoch: 53/100 Iter: 7/12 loss: 2.0160 acc: 0.7556 time 42.84s
+Epoch: 53/100 Iter: 8/12 loss: 2.0455 acc: 0.7198 time 42.79s
+Epoch: 53/100 Iter: 9/12 loss: 2.1896 acc: 0.7144 time 42.82s
+Epoch: 53/100 Iter: 10/12 loss: 2.2777 acc: 0.6949 time 42.83s
+Epoch: 53/100 Iter: 11/12 loss: 2.2218 acc: 0.7157 time 42.83s
+[Train epoch 53] avg_loss=2.2218 avg_acc=0.7157 | per-class [c0: 0.710, c1: 0.906, c2: 0.606]
+Final training 53/99, loss: 2.2218, time 517.77s, lr: 0.000242
+Accuracy: 0.740
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.786     0.710         0.908   0.746        31
+1                          0.690     0.906         0.797   0.784        32
+2                          0.769     0.606         0.905   0.678        33
+*----------------------------------------*
+Val 53/100 0/27, Acc: 1.0000, time 5.41s
+Val 53/100 1/27, Acc: 1.0000, time 5.41s
+Val 53/100 2/27, Acc: 1.0000, time 5.44s
+Val 53/100 3/27, Acc: 1.0000, time 5.40s
+Val 53/100 4/27, Acc: 1.0000, time 5.41s
+Val 53/100 5/27, Acc: 0.8333, time 5.40s
+Val 53/100 6/27, Acc: 0.7143, time 5.40s
+Val 53/100 7/27, Acc: 0.7500, time 5.44s
+Val 53/100 8/27, Acc: 0.6667, time 5.43s
+Val 53/100 9/27, Acc: 0.6000, time 5.40s
+Val 53/100 10/27, Acc: 0.6364, time 5.39s
+Val 53/100 11/27, Acc: 0.5833, time 5.40s
+Val 53/100 12/27, Acc: 0.6154, time 5.39s
+Val 53/100 13/27, Acc: 0.5714, time 5.43s
+Val 53/100 14/27, Acc: 0.5333, time 5.42s
+Val 53/100 15/27, Acc: 0.5625, time 5.38s
+Val 53/100 16/27, Acc: 0.5882, time 5.38s
+Val 53/100 17/27, Acc: 0.5556, time 5.51s
+Val 53/100 18/27, Acc: 0.5263, time 5.44s
+Val 53/100 19/27, Acc: 0.5500, time 5.42s
+Val 53/100 20/27, Acc: 0.5714, time 5.45s
+Val 53/100 21/27, Acc: 0.5455, time 5.41s
+Val 53/100 22/27, Acc: 0.5652, time 5.41s
+Val 53/100 23/27, Acc: 0.5833, time 5.42s
+Val 53/100 24/27, Acc: 0.5600, time 5.40s
+Val 53/100 25/27, Acc: 0.5769, time 5.54s
+Val 53/100 26/27, Acc: 0.5926, time 5.52s
+[Val epoch 53] avg_acc=0.5926 | per-class [c0: 0.778, c1: 0.556, c2: 0.444]
+Final validation 53/99, Val_acc: 0.5926, time 146.48sAccuracy: 0.593
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.636     0.778         0.778   0.700         9
+1                          0.500     0.556         0.722   0.526         9
+2                          0.667     0.444         0.889   0.533         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 15:04:00 2025 Epoch: 54
+Epoch: 54/100 Iter: 0/12 loss: 1.4037 acc: 1.0000 time 47.37s
+Epoch: 54/100 Iter: 1/12 loss: 1.7301 acc: 0.8889 time 42.82s
+Epoch: 54/100 Iter: 2/12 loss: 2.0771 acc: 0.7130 time 42.82s
+Epoch: 54/100 Iter: 3/12 loss: 2.1664 acc: 0.7153 time 42.83s
+Epoch: 54/100 Iter: 4/12 loss: 2.0750 acc: 0.7500 time 42.80s
+Epoch: 54/100 Iter: 5/12 loss: 2.2018 acc: 0.7500 time 42.83s
+Epoch: 54/100 Iter: 6/12 loss: 2.3073 acc: 0.7333 time 42.81s
+Epoch: 54/100 Iter: 7/12 loss: 2.2459 acc: 0.7563 time 42.82s
+Epoch: 54/100 Iter: 8/12 loss: 2.1880 acc: 0.7833 time 42.82s
+Epoch: 54/100 Iter: 9/12 loss: 2.1922 acc: 0.7583 time 42.81s
+Epoch: 54/100 Iter: 10/12 loss: 2.1780 acc: 0.7702 time 42.83s
+Epoch: 54/100 Iter: 11/12 loss: 2.1261 acc: 0.7801 time 42.82s
+[Train epoch 54] avg_loss=2.1261 avg_acc=0.7801 | per-class [c0: 0.788, c1: 0.774, c2: 0.719]
+Final training 54/99, loss: 2.1261, time 518.44s, lr: 0.000234
+Accuracy: 0.760
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.839     0.788         0.921   0.812        33
+1                          0.774     0.774         0.892   0.774        31
+2                          0.676     0.719         0.828   0.697        32
+*----------------------------------------*
+0 Fri Oct 24 15:12:38 2025 Epoch: 55
+Epoch: 55/100 Iter: 0/12 loss: 1.6330 acc: 0.8889 time 48.08s
+Epoch: 55/100 Iter: 1/12 loss: 2.2598 acc: 0.8444 time 42.81s
+Epoch: 55/100 Iter: 2/12 loss: 2.2336 acc: 0.8593 time 42.82s
+Epoch: 55/100 Iter: 3/12 loss: 2.1138 acc: 0.8528 time 42.80s
+Epoch: 55/100 Iter: 4/12 loss: 1.9239 acc: 0.8489 time 42.83s
+Epoch: 55/100 Iter: 5/12 loss: 1.8842 acc: 0.8463 time 42.82s
+Epoch: 55/100 Iter: 6/12 loss: 2.0311 acc: 0.8002 time 42.81s
+Epoch: 55/100 Iter: 7/12 loss: 2.0225 acc: 0.8148 time 42.78s
+Epoch: 55/100 Iter: 8/12 loss: 1.9569 acc: 0.8292 time 42.81s
+Epoch: 55/100 Iter: 9/12 loss: 1.9511 acc: 0.8185 time 42.81s
+Epoch: 55/100 Iter: 10/12 loss: 2.1480 acc: 0.8148 time 42.83s
+Epoch: 55/100 Iter: 11/12 loss: 2.1747 acc: 0.7913 time 42.82s
+[Train epoch 55] avg_loss=2.1747 avg_acc=0.7913 | per-class [c0: 0.719, c1: 0.909, c2: 0.677]
+Final training 55/99, loss: 2.1747, time 519.06s, lr: 0.000225
+Accuracy: 0.771
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.767     0.719         0.891   0.742        32
+1                          0.789     0.909         0.873   0.845        33
+2                          0.750     0.677         0.892   0.712        31
+*----------------------------------------*
+Val 55/100 0/27, Acc: 1.0000, time 5.41s
+Val 55/100 1/27, Acc: 1.0000, time 5.44s
+Val 55/100 2/27, Acc: 0.6667, time 5.42s
+Val 55/100 3/27, Acc: 0.7500, time 5.42s
+Val 55/100 4/27, Acc: 0.8000, time 5.40s
+Val 55/100 5/27, Acc: 0.6667, time 5.41s
+Val 55/100 6/27, Acc: 0.5714, time 5.40s
+Val 55/100 7/27, Acc: 0.6250, time 5.47s
+Val 55/100 8/27, Acc: 0.5556, time 5.44s
+Val 55/100 9/27, Acc: 0.5000, time 5.41s
+Val 55/100 10/27, Acc: 0.5455, time 5.41s
+Val 55/100 11/27, Acc: 0.5000, time 5.42s
+Val 55/100 12/27, Acc: 0.5385, time 5.43s
+Val 55/100 13/27, Acc: 0.5000, time 5.44s
+Val 55/100 14/27, Acc: 0.4667, time 5.40s
+Val 55/100 15/27, Acc: 0.4375, time 5.38s
+Val 55/100 16/27, Acc: 0.4706, time 5.42s
+Val 55/100 17/27, Acc: 0.4444, time 5.53s
+Val 55/100 18/27, Acc: 0.4211, time 5.43s
+Val 55/100 19/27, Acc: 0.4500, time 5.44s
+Val 55/100 20/27, Acc: 0.4762, time 5.47s
+Val 55/100 21/27, Acc: 0.4545, time 5.44s
+Val 55/100 22/27, Acc: 0.4783, time 5.45s
+Val 55/100 23/27, Acc: 0.5000, time 5.44s
+Val 55/100 24/27, Acc: 0.4800, time 5.45s
+Val 55/100 25/27, Acc: 0.5000, time 5.55s
+Val 55/100 26/27, Acc: 0.5185, time 5.54s
+[Val epoch 55] avg_acc=0.5185 | per-class [c0: 0.667, c1: 0.556, c2: 0.333]
+Final validation 55/99, Val_acc: 0.5185, time 146.89sAccuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.600     0.667         0.778   0.632         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.600     0.333         0.889   0.429         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 15:23:49 2025 Epoch: 56
+Epoch: 56/100 Iter: 0/12 loss: 1.3394 acc: 0.7500 time 45.24s
+Epoch: 56/100 Iter: 1/12 loss: 1.0091 acc: 0.8750 time 42.83s
+Epoch: 56/100 Iter: 2/12 loss: 1.4777 acc: 0.8333 time 42.82s
+Epoch: 56/100 Iter: 3/12 loss: 1.7968 acc: 0.7917 time 42.81s
+Epoch: 56/100 Iter: 4/12 loss: 1.7433 acc: 0.8333 time 42.83s
+Epoch: 56/100 Iter: 5/12 loss: 1.7832 acc: 0.8472 time 42.82s
+Epoch: 56/100 Iter: 6/12 loss: 1.7624 acc: 0.8500 time 42.81s
+Epoch: 56/100 Iter: 7/12 loss: 1.9041 acc: 0.8410 time 42.82s
+Epoch: 56/100 Iter: 8/12 loss: 1.9984 acc: 0.8123 time 42.82s
+Epoch: 56/100 Iter: 9/12 loss: 1.9414 acc: 0.8061 time 42.84s
+Epoch: 56/100 Iter: 10/12 loss: 2.0080 acc: 0.7813 time 42.79s
+Epoch: 56/100 Iter: 11/12 loss: 2.0371 acc: 0.7671 time 42.84s
+[Train epoch 56] avg_loss=2.0371 avg_acc=0.7671 | per-class [c0: 0.806, c1: 0.848, c2: 0.625]
+Final training 56/99, loss: 2.0371, time 516.32s, lr: 0.000217
+Accuracy: 0.760
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.806     0.806         0.908   0.806        31
+1                          0.778     0.848         0.873   0.812        33
+2                          0.690     0.625         0.859   0.656        32
+*----------------------------------------*
+0 Fri Oct 24 15:32:25 2025 Epoch: 57
+Epoch: 57/100 Iter: 0/12 loss: 2.0629 acc: 0.3333 time 46.95s
+Epoch: 57/100 Iter: 1/12 loss: 1.8496 acc: 0.6667 time 42.83s
+Epoch: 57/100 Iter: 2/12 loss: 1.8550 acc: 0.6944 time 42.84s
+Epoch: 57/100 Iter: 3/12 loss: 1.8213 acc: 0.7153 time 42.82s
+Epoch: 57/100 Iter: 4/12 loss: 1.9291 acc: 0.6889 time 42.85s
+Epoch: 57/100 Iter: 5/12 loss: 2.1356 acc: 0.6759 time 42.82s
+Epoch: 57/100 Iter: 6/12 loss: 2.1079 acc: 0.6825 time 42.84s
+Epoch: 57/100 Iter: 7/12 loss: 2.1421 acc: 0.6597 time 42.82s
+Epoch: 57/100 Iter: 8/12 loss: 2.1813 acc: 0.6636 time 42.81s
+Epoch: 57/100 Iter: 9/12 loss: 2.1141 acc: 0.6778 time 42.82s
+Epoch: 57/100 Iter: 10/12 loss: 2.0096 acc: 0.7071 time 42.78s
+Epoch: 57/100 Iter: 11/12 loss: 1.9288 acc: 0.7176 time 42.83s
+[Train epoch 57] avg_loss=1.9288 avg_acc=0.7176 | per-class [c0: 0.733, c1: 0.848, c2: 0.636]
+Final training 57/99, loss: 1.9288, time 518.06s, lr: 0.000209
+Accuracy: 0.740
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.786     0.733         0.909   0.759        30
+1                          0.778     0.848         0.873   0.812        33
+2                          0.656     0.636         0.825   0.646        33
+*----------------------------------------*
+Val 57/100 0/27, Acc: 0.0000, time 5.41s
+Val 57/100 1/27, Acc: 0.5000, time 5.41s
+Val 57/100 2/27, Acc: 0.3333, time 5.41s
+Val 57/100 3/27, Acc: 0.5000, time 5.42s
+Val 57/100 4/27, Acc: 0.6000, time 5.43s
+Val 57/100 5/27, Acc: 0.5000, time 5.39s
+Val 57/100 6/27, Acc: 0.4286, time 5.40s
+Val 57/100 7/27, Acc: 0.5000, time 5.47s
+Val 57/100 8/27, Acc: 0.4444, time 5.45s
+Val 57/100 9/27, Acc: 0.4000, time 5.41s
+Val 57/100 10/27, Acc: 0.4545, time 5.41s
+Val 57/100 11/27, Acc: 0.4167, time 5.42s
+Val 57/100 12/27, Acc: 0.4615, time 5.41s
+Val 57/100 13/27, Acc: 0.4286, time 5.41s
+Val 57/100 14/27, Acc: 0.4000, time 5.40s
+Val 57/100 15/27, Acc: 0.3750, time 5.40s
+Val 57/100 16/27, Acc: 0.4118, time 5.39s
+Val 57/100 17/27, Acc: 0.3889, time 5.51s
+Val 57/100 18/27, Acc: 0.3684, time 5.40s
+Val 57/100 19/27, Acc: 0.4000, time 5.44s
+Val 57/100 20/27, Acc: 0.4286, time 5.49s
+Val 57/100 21/27, Acc: 0.4091, time 5.43s
+Val 57/100 22/27, Acc: 0.4348, time 5.42s
+Val 57/100 23/27, Acc: 0.4583, time 5.42s
+Val 57/100 24/27, Acc: 0.4400, time 5.44s
+Val 57/100 25/27, Acc: 0.4615, time 5.57s
+Val 57/100 26/27, Acc: 0.4815, time 5.53s
+[Val epoch 57] avg_acc=0.4815 | per-class [c0: 0.556, c1: 0.556, c2: 0.333]
+Final validation 57/99, Val_acc: 0.4815, time 146.69sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.625     0.556         0.833   0.588         9
+1                          0.385     0.556         0.556   0.455         9
+2                          0.500     0.333         0.833   0.400         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 15:43:35 2025 Epoch: 58
+Epoch: 58/100 Iter: 0/12 loss: 1.7287 acc: 0.6389 time 47.31s
+Epoch: 58/100 Iter: 1/12 loss: 2.6539 acc: 0.7194 time 42.82s
+Epoch: 58/100 Iter: 2/12 loss: 2.1487 acc: 0.8130 time 42.82s
+Epoch: 58/100 Iter: 3/12 loss: 2.1647 acc: 0.7625 time 42.81s
+Epoch: 58/100 Iter: 4/12 loss: 2.1487 acc: 0.7367 time 42.82s
+Epoch: 58/100 Iter: 5/12 loss: 2.0925 acc: 0.7620 time 42.83s
+Epoch: 58/100 Iter: 6/12 loss: 1.9763 acc: 0.7722 time 42.81s
+Epoch: 58/100 Iter: 7/12 loss: 2.0112 acc: 0.7694 time 42.84s
+Epoch: 58/100 Iter: 8/12 loss: 2.0487 acc: 0.7691 time 42.81s
+Epoch: 58/100 Iter: 9/12 loss: 1.9812 acc: 0.7811 time 42.82s
+Epoch: 58/100 Iter: 10/12 loss: 1.9643 acc: 0.7798 time 42.83s
+Epoch: 58/100 Iter: 11/12 loss: 1.9539 acc: 0.7750 time 42.82s
+[Train epoch 58] avg_loss=1.9539 avg_acc=0.7750 | per-class [c0: 0.710, c1: 0.879, c2: 0.688]
+Final training 58/99, loss: 1.9539, time 518.40s, lr: 0.000201
+Accuracy: 0.760
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.815     0.710         0.923   0.759        31
+1                          0.784     0.879         0.873   0.829        33
+2                          0.688     0.688         0.844   0.688        32
+*----------------------------------------*
+0 Fri Oct 24 15:52:13 2025 Epoch: 59
+Epoch: 59/100 Iter: 0/12 loss: 1.3579 acc: 1.0000 time 46.12s
+Epoch: 59/100 Iter: 1/12 loss: 1.5562 acc: 0.8333 time 42.86s
+Epoch: 59/100 Iter: 2/12 loss: 1.3704 acc: 0.8889 time 42.81s
+Epoch: 59/100 Iter: 3/12 loss: 1.3618 acc: 0.8889 time 42.84s
+Epoch: 59/100 Iter: 4/12 loss: 1.6133 acc: 0.8311 time 42.80s
+Epoch: 59/100 Iter: 5/12 loss: 1.6088 acc: 0.8454 time 42.82s
+Epoch: 59/100 Iter: 6/12 loss: 1.5801 acc: 0.8103 time 42.81s
+Epoch: 59/100 Iter: 7/12 loss: 1.7229 acc: 0.7757 time 42.82s
+Epoch: 59/100 Iter: 8/12 loss: 1.7823 acc: 0.7698 time 42.84s
+Epoch: 59/100 Iter: 9/12 loss: 1.7618 acc: 0.7511 time 42.80s
+Epoch: 59/100 Iter: 10/12 loss: 1.7960 acc: 0.7510 time 42.83s
+Epoch: 59/100 Iter: 11/12 loss: 1.7963 acc: 0.7662 time 42.81s
+[Train epoch 59] avg_loss=1.7963 avg_acc=0.7662 | per-class [c0: 0.788, c1: 0.903, c2: 0.719]
+Final training 59/99, loss: 1.7963, time 517.20s, lr: 0.000193
+Accuracy: 0.802
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.867     0.788         0.937   0.825        33
+1                          0.757     0.903         0.862   0.824        31
+2                          0.793     0.719         0.906   0.754        32
+*----------------------------------------*
+Val 59/100 0/27, Acc: 1.0000, time 5.41s
+Val 59/100 1/27, Acc: 1.0000, time 5.42s
+Val 59/100 2/27, Acc: 1.0000, time 5.42s
+Val 59/100 3/27, Acc: 1.0000, time 5.40s
+Val 59/100 4/27, Acc: 1.0000, time 5.42s
+Val 59/100 5/27, Acc: 0.8333, time 5.42s
+Val 59/100 6/27, Acc: 0.7143, time 5.40s
+Val 59/100 7/27, Acc: 0.7500, time 5.46s
+Val 59/100 8/27, Acc: 0.6667, time 5.45s
+Val 59/100 9/27, Acc: 0.6000, time 5.40s
+Val 59/100 10/27, Acc: 0.6364, time 5.40s
+Val 59/100 11/27, Acc: 0.5833, time 5.42s
+Val 59/100 12/27, Acc: 0.6154, time 5.39s
+Val 59/100 13/27, Acc: 0.5714, time 5.41s
+Val 59/100 14/27, Acc: 0.5333, time 5.40s
+Val 59/100 15/27, Acc: 0.5000, time 5.39s
+Val 59/100 16/27, Acc: 0.5294, time 5.40s
+Val 59/100 17/27, Acc: 0.5000, time 5.52s
+Val 59/100 18/27, Acc: 0.4737, time 5.41s
+Val 59/100 19/27, Acc: 0.5000, time 5.43s
+Val 59/100 20/27, Acc: 0.5238, time 5.44s
+Val 59/100 21/27, Acc: 0.5000, time 5.41s
+Val 59/100 22/27, Acc: 0.5217, time 5.42s
+Val 59/100 23/27, Acc: 0.5417, time 5.42s
+Val 59/100 24/27, Acc: 0.5200, time 5.42s
+Val 59/100 25/27, Acc: 0.5385, time 5.56s
+Val 59/100 26/27, Acc: 0.5556, time 5.54s
+[Val epoch 59] avg_acc=0.5556 | per-class [c0: 0.778, c1: 0.556, c2: 0.333]
+Final validation 59/99, Val_acc: 0.5556, time 146.56sAccuracy: 0.556
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.636     0.778         0.778   0.700         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.600     0.333         0.889   0.429         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 16:03:21 2025 Epoch: 60
+Epoch: 60/100 Iter: 0/12 loss: 3.0999 acc: 0.5833 time 45.71s
+Epoch: 60/100 Iter: 1/12 loss: 2.5084 acc: 0.7361 time 42.85s
+Epoch: 60/100 Iter: 2/12 loss: 2.2197 acc: 0.6852 time 42.83s
+Epoch: 60/100 Iter: 3/12 loss: 2.3086 acc: 0.7472 time 42.82s
+Epoch: 60/100 Iter: 4/12 loss: 2.2984 acc: 0.7422 time 42.83s
+Epoch: 60/100 Iter: 5/12 loss: 2.1983 acc: 0.7713 time 42.77s
+Epoch: 60/100 Iter: 6/12 loss: 2.0841 acc: 0.7921 time 42.80s
+Epoch: 60/100 Iter: 7/12 loss: 2.0422 acc: 0.8042 time 42.83s
+Epoch: 60/100 Iter: 8/12 loss: 2.0683 acc: 0.7827 time 42.83s
+Epoch: 60/100 Iter: 9/12 loss: 2.0086 acc: 0.7644 time 42.79s
+Epoch: 60/100 Iter: 10/12 loss: 2.0199 acc: 0.7657 time 42.84s
+Epoch: 60/100 Iter: 11/12 loss: 2.0104 acc: 0.7713 time 42.80s
+[Train epoch 60] avg_loss=2.0104 avg_acc=0.7713 | per-class [c0: 0.824, c1: 0.848, c2: 0.586]
+Final training 60/99, loss: 2.0104, time 516.74s, lr: 0.000185
+Accuracy: 0.760
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.824     0.824         0.903   0.824        34
+1                          0.778     0.848         0.873   0.812        33
+2                          0.654     0.586         0.866   0.618        29
+*----------------------------------------*
+0 Fri Oct 24 16:11:59 2025 Epoch: 61
+Epoch: 61/100 Iter: 0/12 loss: 1.4453 acc: 0.8333 time 47.12s
+Epoch: 61/100 Iter: 1/12 loss: 1.6025 acc: 0.8611 time 42.84s
+Epoch: 61/100 Iter: 2/12 loss: 1.4541 acc: 0.7963 time 42.80s
+Epoch: 61/100 Iter: 3/12 loss: 1.4804 acc: 0.8306 time 42.83s
+Epoch: 61/100 Iter: 4/12 loss: 1.6383 acc: 0.7978 time 42.81s
+Epoch: 61/100 Iter: 5/12 loss: 1.5871 acc: 0.7944 time 42.82s
+Epoch: 61/100 Iter: 6/12 loss: 2.0274 acc: 0.7405 time 42.84s
+Epoch: 61/100 Iter: 7/12 loss: 1.8853 acc: 0.7729 time 42.83s
+Epoch: 61/100 Iter: 8/12 loss: 1.8607 acc: 0.7858 time 42.81s
+Epoch: 61/100 Iter: 9/12 loss: 1.9395 acc: 0.7822 time 42.81s
+Epoch: 61/100 Iter: 10/12 loss: 1.8917 acc: 0.7843 time 42.85s
+Epoch: 61/100 Iter: 11/12 loss: 1.8810 acc: 0.7699 time 42.81s
+[Train epoch 61] avg_loss=1.8810 avg_acc=0.7699 | per-class [c0: 0.781, c1: 0.882, c2: 0.633]
+Final training 61/99, loss: 1.8810, time 518.21s, lr: 0.000177
+Accuracy: 0.771
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.781     0.781         0.891   0.781        32
+1                          0.811     0.882         0.887   0.845        34
+2                          0.704     0.633         0.879   0.667        30
+*----------------------------------------*
+Val 61/100 0/27, Acc: 0.0000, time 5.41s
+Val 61/100 1/27, Acc: 0.5000, time 5.41s
+Val 61/100 2/27, Acc: 0.3333, time 5.42s
+Val 61/100 3/27, Acc: 0.5000, time 5.45s
+Val 61/100 4/27, Acc: 0.6000, time 5.44s
+Val 61/100 5/27, Acc: 0.5000, time 5.42s
+Val 61/100 6/27, Acc: 0.4286, time 5.43s
+Val 61/100 7/27, Acc: 0.5000, time 5.45s
+Val 61/100 8/27, Acc: 0.4444, time 5.45s
+Val 61/100 9/27, Acc: 0.4000, time 5.41s
+Val 61/100 10/27, Acc: 0.4545, time 5.41s
+Val 61/100 11/27, Acc: 0.4167, time 5.41s
+Val 61/100 12/27, Acc: 0.4615, time 5.39s
+Val 61/100 13/27, Acc: 0.4286, time 5.42s
+Val 61/100 14/27, Acc: 0.4000, time 5.40s
+Val 61/100 15/27, Acc: 0.4375, time 5.39s
+Val 61/100 16/27, Acc: 0.4706, time 5.43s
+Val 61/100 17/27, Acc: 0.4444, time 5.56s
+Val 61/100 18/27, Acc: 0.4211, time 5.41s
+Val 61/100 19/27, Acc: 0.4500, time 5.43s
+Val 61/100 20/27, Acc: 0.4762, time 5.47s
+Val 61/100 21/27, Acc: 0.4545, time 5.43s
+Val 61/100 22/27, Acc: 0.4783, time 5.41s
+Val 61/100 23/27, Acc: 0.5000, time 5.42s
+Val 61/100 24/27, Acc: 0.4800, time 5.41s
+Val 61/100 25/27, Acc: 0.5000, time 5.57s
+Val 61/100 26/27, Acc: 0.5185, time 5.54s
+[Val epoch 61] avg_acc=0.5185 | per-class [c0: 0.556, c1: 0.556, c2: 0.444]
+Final validation 61/99, Val_acc: 0.5185, time 146.78sAccuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.625     0.556         0.833   0.588         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.571     0.444         0.833   0.500         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 16:23:08 2025 Epoch: 62
+Epoch: 62/100 Iter: 0/12 loss: 1.1726 acc: 1.0000 time 46.00s
+Epoch: 62/100 Iter: 1/12 loss: 1.4142 acc: 0.9167 time 42.86s
+Epoch: 62/100 Iter: 2/12 loss: 1.6601 acc: 0.8704 time 42.83s
+Epoch: 62/100 Iter: 3/12 loss: 1.7836 acc: 0.8750 time 42.85s
+Epoch: 62/100 Iter: 4/12 loss: 1.6729 acc: 0.8778 time 42.84s
+Epoch: 62/100 Iter: 5/12 loss: 1.6885 acc: 0.8593 time 42.84s
+Epoch: 62/100 Iter: 6/12 loss: 1.6899 acc: 0.8222 time 42.83s
+Epoch: 62/100 Iter: 7/12 loss: 1.6404 acc: 0.8340 time 42.82s
+Epoch: 62/100 Iter: 8/12 loss: 1.6866 acc: 0.8377 time 42.82s
+Epoch: 62/100 Iter: 9/12 loss: 1.7740 acc: 0.7983 time 42.81s
+Epoch: 62/100 Iter: 10/12 loss: 1.8751 acc: 0.7864 time 42.80s
+Epoch: 62/100 Iter: 11/12 loss: 1.9426 acc: 0.7819 time 42.83s
+[Train epoch 62] avg_loss=1.9426 avg_acc=0.7819 | per-class [c0: 0.781, c1: 0.742, c2: 0.788]
+Final training 62/99, loss: 1.9426, time 517.17s, lr: 0.000170
+Accuracy: 0.771
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.806     0.781         0.906   0.794        32
+1                          0.793     0.742         0.908   0.767        31
+2                          0.722     0.788         0.841   0.754        33
+*----------------------------------------*
+0 Fri Oct 24 16:31:46 2025 Epoch: 63
+Epoch: 63/100 Iter: 0/12 loss: 2.2662 acc: 0.8889 time 47.23s
+Epoch: 63/100 Iter: 1/12 loss: 1.7529 acc: 0.8889 time 42.85s
+Epoch: 63/100 Iter: 2/12 loss: 1.8707 acc: 0.7704 time 42.81s
+Epoch: 63/100 Iter: 3/12 loss: 1.7670 acc: 0.7653 time 42.82s
+Epoch: 63/100 Iter: 4/12 loss: 1.6299 acc: 0.8122 time 42.83s
+Epoch: 63/100 Iter: 5/12 loss: 1.6462 acc: 0.7787 time 42.79s
+Epoch: 63/100 Iter: 6/12 loss: 1.7315 acc: 0.7817 time 42.81s
+Epoch: 63/100 Iter: 7/12 loss: 1.6598 acc: 0.7674 time 42.81s
+Epoch: 63/100 Iter: 8/12 loss: 1.8107 acc: 0.7562 time 42.83s
+Epoch: 63/100 Iter: 9/12 loss: 1.8333 acc: 0.7572 time 42.83s
+Epoch: 63/100 Iter: 10/12 loss: 1.8208 acc: 0.7717 time 42.81s
+Epoch: 63/100 Iter: 11/12 loss: 1.8298 acc: 0.7630 time 42.84s
+[Train epoch 63] avg_loss=1.8298 avg_acc=0.7630 | per-class [c0: 0.742, c1: 0.909, c2: 0.656]
+Final training 63/99, loss: 1.8298, time 518.30s, lr: 0.000162
+Accuracy: 0.771
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.821     0.742         0.923   0.780        31
+1                          0.769     0.909         0.857   0.833        33
+2                          0.724     0.656         0.875   0.689        32
+*----------------------------------------*
+Val 63/100 0/27, Acc: 1.0000, time 5.41s
+Val 63/100 1/27, Acc: 1.0000, time 5.41s
+Val 63/100 2/27, Acc: 0.6667, time 5.42s
+Val 63/100 3/27, Acc: 0.7500, time 5.43s
+Val 63/100 4/27, Acc: 0.8000, time 5.43s
+Val 63/100 5/27, Acc: 0.6667, time 5.43s
+Val 63/100 6/27, Acc: 0.5714, time 5.42s
+Val 63/100 7/27, Acc: 0.6250, time 5.47s
+Val 63/100 8/27, Acc: 0.5556, time 5.44s
+Val 63/100 9/27, Acc: 0.5000, time 5.41s
+Val 63/100 10/27, Acc: 0.5455, time 5.41s
+Val 63/100 11/27, Acc: 0.5000, time 5.42s
+Val 63/100 12/27, Acc: 0.5385, time 5.39s
+Val 63/100 13/27, Acc: 0.5000, time 5.41s
+Val 63/100 14/27, Acc: 0.4667, time 5.40s
+Val 63/100 15/27, Acc: 0.4375, time 5.38s
+Val 63/100 16/27, Acc: 0.4706, time 5.42s
+Val 63/100 17/27, Acc: 0.4444, time 5.54s
+Val 63/100 18/27, Acc: 0.4211, time 5.44s
+Val 63/100 19/27, Acc: 0.4500, time 5.46s
+Val 63/100 20/27, Acc: 0.4762, time 5.48s
+Val 63/100 21/27, Acc: 0.4545, time 5.42s
+Val 63/100 22/27, Acc: 0.4783, time 5.44s
+Val 63/100 23/27, Acc: 0.5000, time 5.42s
+Val 63/100 24/27, Acc: 0.4800, time 5.42s
+Val 63/100 25/27, Acc: 0.5000, time 5.53s
+Val 63/100 26/27, Acc: 0.5185, time 5.52s
+[Val epoch 63] avg_acc=0.5185 | per-class [c0: 0.667, c1: 0.556, c2: 0.333]
+Final validation 63/99, Val_acc: 0.5185, time 146.75sAccuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.667     0.667         0.833   0.667         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.500     0.333         0.833   0.400         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 16:42:55 2025 Epoch: 64
+Epoch: 64/100 Iter: 0/12 loss: 2.7972 acc: 0.6667 time 45.19s
+Epoch: 64/100 Iter: 1/12 loss: 1.9157 acc: 0.8333 time 42.82s
+Epoch: 64/100 Iter: 2/12 loss: 1.9012 acc: 0.7556 time 42.84s
+Epoch: 64/100 Iter: 3/12 loss: 1.7792 acc: 0.7889 time 42.81s
+Epoch: 64/100 Iter: 4/12 loss: 1.8665 acc: 0.8144 time 42.82s
+Epoch: 64/100 Iter: 5/12 loss: 1.9162 acc: 0.7898 time 42.82s
+Epoch: 64/100 Iter: 6/12 loss: 1.8660 acc: 0.7484 time 42.79s
+Epoch: 64/100 Iter: 7/12 loss: 1.8350 acc: 0.7160 time 42.84s
+Epoch: 64/100 Iter: 8/12 loss: 1.7826 acc: 0.7105 time 42.80s
+Epoch: 64/100 Iter: 9/12 loss: 1.7299 acc: 0.7283 time 42.85s
+Epoch: 64/100 Iter: 10/12 loss: 1.7395 acc: 0.7455 time 42.81s
+Epoch: 64/100 Iter: 11/12 loss: 1.7932 acc: 0.7250 time 42.81s
+[Train epoch 64] avg_loss=1.7932 avg_acc=0.7250 | per-class [c0: 0.788, c1: 0.875, c2: 0.677]
+Final training 64/99, loss: 1.7932, time 516.25s, lr: 0.000154
+Accuracy: 0.781
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.867     0.788         0.937   0.825        33
+1                          0.778     0.875         0.875   0.824        32
+2                          0.700     0.677         0.862   0.689        31
+*----------------------------------------*
+0 Fri Oct 24 16:51:32 2025 Epoch: 65
+Epoch: 65/100 Iter: 0/12 loss: 2.3503 acc: 0.6111 time 45.80s
+Epoch: 65/100 Iter: 1/12 loss: 1.9559 acc: 0.7222 time 42.79s
+Epoch: 65/100 Iter: 2/12 loss: 1.7906 acc: 0.6759 time 42.83s
+Epoch: 65/100 Iter: 3/12 loss: 2.0300 acc: 0.6736 time 42.83s
+Epoch: 65/100 Iter: 4/12 loss: 1.8966 acc: 0.7167 time 42.84s
+Epoch: 65/100 Iter: 5/12 loss: 1.8590 acc: 0.7546 time 42.84s
+Epoch: 65/100 Iter: 6/12 loss: 1.8204 acc: 0.7659 time 42.81s
+Epoch: 65/100 Iter: 7/12 loss: 1.8187 acc: 0.7639 time 42.84s
+Epoch: 65/100 Iter: 8/12 loss: 2.0458 acc: 0.7346 time 42.79s
+Epoch: 65/100 Iter: 9/12 loss: 2.0511 acc: 0.7194 time 42.85s
+Epoch: 65/100 Iter: 10/12 loss: 1.9663 acc: 0.7374 time 42.81s
+Epoch: 65/100 Iter: 11/12 loss: 1.8798 acc: 0.7593 time 42.83s
+[Train epoch 65] avg_loss=1.8798 avg_acc=0.7593 | per-class [c0: 0.839, c1: 0.742, c2: 0.706]
+Final training 65/99, loss: 1.8798, time 516.93s, lr: 0.000147
+Accuracy: 0.760
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.812     0.839         0.908   0.825        31
+1                          0.821     0.742         0.923   0.780        31
+2                          0.667     0.706         0.806   0.686        34
+*----------------------------------------*
+Val 65/100 0/27, Acc: 0.0000, time 5.43s
+Val 65/100 1/27, Acc: 0.5000, time 5.41s
+Val 65/100 2/27, Acc: 0.3333, time 5.41s
+Val 65/100 3/27, Acc: 0.5000, time 5.40s
+Val 65/100 4/27, Acc: 0.6000, time 5.40s
+Val 65/100 5/27, Acc: 0.5000, time 5.40s
+Val 65/100 6/27, Acc: 0.4286, time 5.43s
+Val 65/100 7/27, Acc: 0.5000, time 5.47s
+Val 65/100 8/27, Acc: 0.4444, time 5.45s
+Val 65/100 9/27, Acc: 0.4000, time 5.41s
+Val 65/100 10/27, Acc: 0.4545, time 5.41s
+Val 65/100 11/27, Acc: 0.4167, time 5.41s
+Val 65/100 12/27, Acc: 0.4615, time 5.40s
+Val 65/100 13/27, Acc: 0.4286, time 5.42s
+Val 65/100 14/27, Acc: 0.4000, time 5.40s
+Val 65/100 15/27, Acc: 0.3750, time 5.39s
+Val 65/100 16/27, Acc: 0.4118, time 5.39s
+Val 65/100 17/27, Acc: 0.3889, time 5.54s
+Val 65/100 18/27, Acc: 0.3684, time 5.40s
+Val 65/100 19/27, Acc: 0.4000, time 5.43s
+Val 65/100 20/27, Acc: 0.4286, time 5.47s
+Val 65/100 21/27, Acc: 0.4091, time 5.41s
+Val 65/100 22/27, Acc: 0.4348, time 5.41s
+Val 65/100 23/27, Acc: 0.4583, time 5.43s
+Val 65/100 24/27, Acc: 0.4400, time 5.42s
+Val 65/100 25/27, Acc: 0.4615, time 5.56s
+Val 65/100 26/27, Acc: 0.4815, time 5.53s
+[Val epoch 65] avg_acc=0.4815 | per-class [c0: 0.556, c1: 0.556, c2: 0.333]
+Final validation 65/99, Val_acc: 0.4815, time 146.65sAccuracy: 0.481
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.625     0.556         0.833   0.588         9
+1                          0.385     0.556         0.556   0.455         9
+2                          0.500     0.333         0.833   0.400         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 17:02:40 2025 Epoch: 66
+Epoch: 66/100 Iter: 0/12 loss: 1.5756 acc: 0.4889 time 47.40s
+Epoch: 66/100 Iter: 1/12 loss: 2.2152 acc: 0.5361 time 42.83s
+Epoch: 66/100 Iter: 2/12 loss: 2.0021 acc: 0.6685 time 42.85s
+Epoch: 66/100 Iter: 3/12 loss: 2.0016 acc: 0.7097 time 42.83s
+Epoch: 66/100 Iter: 4/12 loss: 2.0311 acc: 0.7178 time 42.83s
+Epoch: 66/100 Iter: 5/12 loss: 1.9988 acc: 0.7278 time 42.83s
+Epoch: 66/100 Iter: 6/12 loss: 1.9775 acc: 0.7349 time 42.79s
+Epoch: 66/100 Iter: 7/12 loss: 1.9146 acc: 0.7472 time 42.86s
+Epoch: 66/100 Iter: 8/12 loss: 1.9460 acc: 0.7414 time 42.78s
+Epoch: 66/100 Iter: 9/12 loss: 1.8598 acc: 0.7672 time 42.82s
+Epoch: 66/100 Iter: 10/12 loss: 1.9491 acc: 0.7631 time 42.80s
+Epoch: 66/100 Iter: 11/12 loss: 1.8494 acc: 0.7829 time 42.81s
+[Train epoch 66] avg_loss=1.8494 avg_acc=0.7829 | per-class [c0: 0.742, c1: 0.938, c2: 0.697]
+Final training 66/99, loss: 1.8494, time 518.48s, lr: 0.000139
+Accuracy: 0.792
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.821     0.742         0.923   0.780        31
+1                          0.769     0.938         0.859   0.845        32
+2                          0.793     0.697         0.905   0.742        33
+*----------------------------------------*
+0 Fri Oct 24 17:11:18 2025 Epoch: 67
+Epoch: 67/100 Iter: 0/12 loss: 1.1444 acc: 0.7500 time 45.77s
+Epoch: 67/100 Iter: 1/12 loss: 1.3807 acc: 0.6806 time 42.83s
+Epoch: 67/100 Iter: 2/12 loss: 1.6073 acc: 0.7315 time 42.84s
+Epoch: 67/100 Iter: 3/12 loss: 1.5935 acc: 0.7708 time 42.80s
+Epoch: 67/100 Iter: 4/12 loss: 1.6273 acc: 0.7500 time 42.81s
+Epoch: 67/100 Iter: 5/12 loss: 1.4918 acc: 0.7917 time 42.83s
+Epoch: 67/100 Iter: 6/12 loss: 1.5160 acc: 0.7976 time 42.80s
+Epoch: 67/100 Iter: 7/12 loss: 1.6110 acc: 0.8063 time 42.83s
+Epoch: 67/100 Iter: 8/12 loss: 1.6760 acc: 0.7969 time 42.81s
+Epoch: 67/100 Iter: 9/12 loss: 1.6908 acc: 0.7839 time 42.83s
+Epoch: 67/100 Iter: 10/12 loss: 1.7553 acc: 0.7808 time 42.82s
+Epoch: 67/100 Iter: 11/12 loss: 1.7816 acc: 0.7713 time 42.82s
+[Train epoch 67] avg_loss=1.7816 avg_acc=0.7713 | per-class [c0: 0.767, c1: 0.818, c2: 0.727]
+Final training 67/99, loss: 1.7816, time 516.86s, lr: 0.000132
+Accuracy: 0.771
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.821     0.767         0.924   0.793        30
+1                          0.844     0.818         0.921   0.831        33
+2                          0.667     0.727         0.810   0.696        33
+*----------------------------------------*
+Val 67/100 0/27, Acc: 1.0000, time 5.40s
+Val 67/100 1/27, Acc: 1.0000, time 5.40s
+Val 67/100 2/27, Acc: 1.0000, time 5.41s
+Val 67/100 3/27, Acc: 1.0000, time 5.45s
+Val 67/100 4/27, Acc: 1.0000, time 5.43s
+Val 67/100 5/27, Acc: 0.8333, time 5.40s
+Val 67/100 6/27, Acc: 0.7143, time 5.40s
+Val 67/100 7/27, Acc: 0.7500, time 5.47s
+Val 67/100 8/27, Acc: 0.6667, time 5.47s
+Val 67/100 9/27, Acc: 0.6000, time 5.45s
+Val 67/100 10/27, Acc: 0.6364, time 5.43s
+Val 67/100 11/27, Acc: 0.5833, time 5.44s
+Val 67/100 12/27, Acc: 0.6154, time 5.41s
+Val 67/100 13/27, Acc: 0.5714, time 5.43s
+Val 67/100 14/27, Acc: 0.5333, time 5.39s
+Val 67/100 15/27, Acc: 0.5000, time 5.42s
+Val 67/100 16/27, Acc: 0.5294, time 5.42s
+Val 67/100 17/27, Acc: 0.5000, time 5.53s
+Val 67/100 18/27, Acc: 0.4737, time 5.40s
+Val 67/100 19/27, Acc: 0.5000, time 5.43s
+Val 67/100 20/27, Acc: 0.5238, time 5.45s
+Val 67/100 21/27, Acc: 0.5000, time 5.40s
+Val 67/100 22/27, Acc: 0.5217, time 5.42s
+Val 67/100 23/27, Acc: 0.5417, time 5.41s
+Val 67/100 24/27, Acc: 0.5200, time 5.41s
+Val 67/100 25/27, Acc: 0.5385, time 5.56s
+Val 67/100 26/27, Acc: 0.5556, time 5.53s
+[Val epoch 67] avg_acc=0.5556 | per-class [c0: 0.778, c1: 0.556, c2: 0.333]
+Final validation 67/99, Val_acc: 0.5556, time 146.77sAccuracy: 0.556
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.636     0.778         0.778   0.700         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.600     0.333         0.889   0.429         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 17:22:27 2025 Epoch: 68
+Epoch: 68/100 Iter: 0/12 loss: 1.0355 acc: 0.9167 time 46.64s
+Epoch: 68/100 Iter: 1/12 loss: 0.9992 acc: 0.8750 time 42.86s
+Epoch: 68/100 Iter: 2/12 loss: 1.3825 acc: 0.8519 time 42.80s
+Epoch: 68/100 Iter: 3/12 loss: 1.4674 acc: 0.8681 time 42.82s
+Epoch: 68/100 Iter: 4/12 loss: 1.4683 acc: 0.8389 time 42.80s
+Epoch: 68/100 Iter: 5/12 loss: 1.5179 acc: 0.7713 time 42.83s
+Epoch: 68/100 Iter: 6/12 loss: 1.5319 acc: 0.7802 time 42.83s
+Epoch: 68/100 Iter: 7/12 loss: 1.4960 acc: 0.7868 time 42.82s
+Epoch: 68/100 Iter: 8/12 loss: 1.5990 acc: 0.7846 time 42.83s
+Epoch: 68/100 Iter: 9/12 loss: 1.6692 acc: 0.7783 time 42.78s
+Epoch: 68/100 Iter: 10/12 loss: 1.6394 acc: 0.7732 time 42.79s
+Epoch: 68/100 Iter: 11/12 loss: 1.6668 acc: 0.7736 time 42.84s
+[Train epoch 68] avg_loss=1.6668 avg_acc=0.7736 | per-class [c0: 0.839, c1: 0.912, c2: 0.613]
+Final training 68/99, loss: 1.6668, time 517.68s, lr: 0.000125
+Accuracy: 0.792
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.788     0.839         0.892   0.812        31
+1                          0.795     0.912         0.871   0.849        34
+2                          0.792     0.613         0.923   0.691        31
+*----------------------------------------*
+0 Fri Oct 24 17:31:05 2025 Epoch: 69
+Epoch: 69/100 Iter: 0/12 loss: 1.8762 acc: 0.6667 time 47.09s
+Epoch: 69/100 Iter: 1/12 loss: 1.9519 acc: 0.8056 time 42.85s
+Epoch: 69/100 Iter: 2/12 loss: 2.1447 acc: 0.7407 time 42.84s
+Epoch: 69/100 Iter: 3/12 loss: 2.0169 acc: 0.7639 time 42.81s
+Epoch: 69/100 Iter: 4/12 loss: 1.7596 acc: 0.8111 time 42.83s
+Epoch: 69/100 Iter: 5/12 loss: 1.9365 acc: 0.8056 time 42.79s
+Epoch: 69/100 Iter: 6/12 loss: 1.9497 acc: 0.7976 time 42.83s
+Epoch: 69/100 Iter: 7/12 loss: 1.8750 acc: 0.8090 time 42.83s
+Epoch: 69/100 Iter: 8/12 loss: 1.9671 acc: 0.7932 time 42.80s
+Epoch: 69/100 Iter: 9/12 loss: 1.8705 acc: 0.8139 time 42.79s
+Epoch: 69/100 Iter: 10/12 loss: 1.8552 acc: 0.7843 time 42.81s
+Epoch: 69/100 Iter: 11/12 loss: 1.7767 acc: 0.8023 time 42.82s
+[Train epoch 69] avg_loss=1.7767 avg_acc=0.8023 | per-class [c0: 0.848, c1: 0.879, c2: 0.700]
+Final training 69/99, loss: 1.7767, time 518.14s, lr: 0.000118
+Accuracy: 0.812
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.824     0.848         0.905   0.836        33
+1                          0.853     0.879         0.921   0.866        33
+2                          0.750     0.700         0.894   0.724        30
+*----------------------------------------*
+Val 69/100 0/27, Acc: 1.0000, time 5.44s
+Val 69/100 1/27, Acc: 1.0000, time 5.44s
+Val 69/100 2/27, Acc: 0.6667, time 5.45s
+Val 69/100 3/27, Acc: 0.7500, time 5.43s
+Val 69/100 4/27, Acc: 0.8000, time 5.43s
+Val 69/100 5/27, Acc: 0.6667, time 5.42s
+Val 69/100 6/27, Acc: 0.5714, time 5.42s
+Val 69/100 7/27, Acc: 0.6250, time 5.46s
+Val 69/100 8/27, Acc: 0.5556, time 5.44s
+Val 69/100 9/27, Acc: 0.5000, time 5.44s
+Val 69/100 10/27, Acc: 0.5455, time 5.44s
+Val 69/100 11/27, Acc: 0.5000, time 5.45s
+Val 69/100 12/27, Acc: 0.5385, time 5.39s
+Val 69/100 13/27, Acc: 0.5000, time 5.41s
+Val 69/100 14/27, Acc: 0.4667, time 5.40s
+Val 69/100 15/27, Acc: 0.4375, time 5.39s
+Val 69/100 16/27, Acc: 0.4706, time 5.42s
+Val 69/100 17/27, Acc: 0.4444, time 5.54s
+Val 69/100 18/27, Acc: 0.4211, time 5.44s
+Val 69/100 19/27, Acc: 0.4500, time 5.44s
+Val 69/100 20/27, Acc: 0.4762, time 5.46s
+Val 69/100 21/27, Acc: 0.4545, time 5.41s
+Val 69/100 22/27, Acc: 0.4783, time 5.40s
+Val 69/100 23/27, Acc: 0.5000, time 5.42s
+Val 69/100 24/27, Acc: 0.4800, time 5.43s
+Val 69/100 25/27, Acc: 0.5000, time 5.50s
+Val 69/100 26/27, Acc: 0.5185, time 5.52s
+[Val epoch 69] avg_acc=0.5185 | per-class [c0: 0.667, c1: 0.556, c2: 0.333]
+Final validation 69/99, Val_acc: 0.5185, time 146.84sAccuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.667     0.667         0.833   0.667         9
+1                          0.417     0.556         0.611   0.476         9
+2                          0.500     0.333         0.833   0.400         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 17:42:14 2025 Epoch: 70
+Epoch: 70/100 Iter: 0/12 loss: 1.3496 acc: 0.9333 time 44.98s
+Epoch: 70/100 Iter: 1/12 loss: 2.0738 acc: 0.7583 time 42.68s
+Epoch: 70/100 Iter: 2/12 loss: 1.8103 acc: 0.7833 time 42.66s
+Epoch: 70/100 Iter: 3/12 loss: 1.6974 acc: 0.8375 time 42.69s
+Epoch: 70/100 Iter: 4/12 loss: 1.8635 acc: 0.7811 time 42.66s
+Epoch: 70/100 Iter: 5/12 loss: 1.8577 acc: 0.7954 time 42.67s
+Epoch: 70/100 Iter: 6/12 loss: 1.7243 acc: 0.8246 time 42.66s
+Epoch: 70/100 Iter: 7/12 loss: 1.6873 acc: 0.8049 time 42.66s
+Epoch: 70/100 Iter: 8/12 loss: 1.6152 acc: 0.8265 time 42.67s
+Epoch: 70/100 Iter: 9/12 loss: 1.6482 acc: 0.8244 time 42.67s
+Epoch: 70/100 Iter: 10/12 loss: 1.7483 acc: 0.8202 time 42.67s
+Epoch: 70/100 Iter: 11/12 loss: 1.7557 acc: 0.8120 time 42.68s
+[Train epoch 70] avg_loss=1.7557 avg_acc=0.8120 | per-class [c0: 0.710, c1: 0.938, c2: 0.788]
+Final training 70/99, loss: 1.7557, time 514.39s, lr: 0.000111
+Accuracy: 0.812
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.917     0.710         0.969   0.800        31
+1                          0.769     0.938         0.859   0.845        32
+2                          0.788     0.788         0.889   0.788        33
+*----------------------------------------*
+0 Fri Oct 24 17:50:49 2025 Epoch: 71
+Epoch: 71/100 Iter: 0/12 loss: 2.2648 acc: 0.6667 time 46.24s
+Epoch: 71/100 Iter: 1/12 loss: 1.9322 acc: 0.7917 time 42.69s
+Epoch: 71/100 Iter: 2/12 loss: 2.0314 acc: 0.8167 time 42.66s
+Epoch: 71/100 Iter: 3/12 loss: 1.8382 acc: 0.8625 time 42.67s
+Epoch: 71/100 Iter: 4/12 loss: 1.9580 acc: 0.8122 time 42.67s
+Epoch: 71/100 Iter: 5/12 loss: 1.8204 acc: 0.8296 time 42.67s
+Epoch: 71/100 Iter: 6/12 loss: 1.8051 acc: 0.8381 time 42.66s
+Epoch: 71/100 Iter: 7/12 loss: 1.7144 acc: 0.8500 time 42.66s
+Epoch: 71/100 Iter: 8/12 loss: 1.6956 acc: 0.8481 time 42.67s
+Epoch: 71/100 Iter: 9/12 loss: 1.6970 acc: 0.8467 time 42.66s
+Epoch: 71/100 Iter: 10/12 loss: 1.6931 acc: 0.8429 time 42.66s
+Epoch: 71/100 Iter: 11/12 loss: 1.7008 acc: 0.8134 time 42.66s
+[Train epoch 71] avg_loss=1.7008 avg_acc=0.8134 | per-class [c0: 0.818, c1: 0.818, c2: 0.733]
+Final training 71/99, loss: 1.7008, time 515.62s, lr: 0.000104
+Accuracy: 0.792
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.818     0.818         0.905   0.818        33
+1                          0.844     0.818         0.921   0.831        33
+2                          0.710     0.733         0.864   0.721        30
+*----------------------------------------*
+Val 71/100 0/27, Acc: 1.0000, time 5.42s
+Val 71/100 1/27, Acc: 1.0000, time 5.41s
+Val 71/100 2/27, Acc: 1.0000, time 5.42s
+Val 71/100 3/27, Acc: 1.0000, time 5.41s
+Val 71/100 4/27, Acc: 1.0000, time 5.41s
+Val 71/100 5/27, Acc: 0.8333, time 5.41s
+Val 71/100 6/27, Acc: 0.7143, time 5.40s
+Val 71/100 7/27, Acc: 0.7500, time 5.42s
+Val 71/100 8/27, Acc: 0.6667, time 5.43s
+Val 71/100 9/27, Acc: 0.6000, time 5.42s
+Val 71/100 10/27, Acc: 0.6364, time 5.42s
+Val 71/100 11/27, Acc: 0.5833, time 5.42s
+Val 71/100 12/27, Acc: 0.6154, time 5.40s
+Val 71/100 13/27, Acc: 0.5714, time 5.40s
+Val 71/100 14/27, Acc: 0.5333, time 5.37s
+Val 71/100 15/27, Acc: 0.5000, time 5.37s
+Val 71/100 16/27, Acc: 0.5294, time 5.37s
+Val 71/100 17/27, Acc: 0.5000, time 5.50s
+Val 71/100 18/27, Acc: 0.4737, time 5.42s
+Val 71/100 19/27, Acc: 0.5000, time 5.41s
+Val 71/100 20/27, Acc: 0.5238, time 5.44s
+Val 71/100 21/27, Acc: 0.5000, time 5.42s
+Val 71/100 22/27, Acc: 0.5217, time 5.40s
+Val 71/100 23/27, Acc: 0.5417, time 5.38s
+Val 71/100 24/27, Acc: 0.5200, time 5.41s
+Val 71/100 25/27, Acc: 0.5385, time 5.54s
+Val 71/100 26/27, Acc: 0.5556, time 5.52s
+[Val epoch 71] avg_acc=0.5556 | per-class [c0: 0.778, c1: 0.556, c2: 0.333]
+Final validation 71/99, Val_acc: 0.5556, time 146.35sAccuracy: 0.556
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.636     0.778         0.778   0.700         9
+1                          0.455     0.556         0.667   0.500         9
+2                          0.600     0.333         0.889   0.429         9
+*========================================*
+Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-10-24-06-08/model_final.pt
+0 Fri Oct 24 18:01:56 2025 Epoch: 72

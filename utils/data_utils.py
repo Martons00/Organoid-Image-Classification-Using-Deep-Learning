@@ -13,7 +13,7 @@ import json
 import math
 import os
 
-from typing import Tuple, Union, Optional
+from typing import Dict, Sequence, Tuple, Union, Optional
 import numpy as np
 import torch
 from torch.utils.data import Dataset, Subset, random_split
@@ -162,6 +162,133 @@ def get_loader(args):
         loader = [train_loader, val_loader]
 
     return loader
+
+from typing import Sequence, Dict, Union, Tuple
+import numpy as np
+from torch.utils.data import Dataset, Subset
+
+def split_dataset_percentage(
+    dataset: Dataset,
+    split_fracs: Union[Sequence[float], Dict[Union[int, str], float]] = (0.4, 0.2, 0.4),
+    val_size: Union[int, float] = 0.2,
+    seed: int = 42
+) -> Tuple[Subset, Subset]:
+    """
+    Crea uno split train/val stratificato dove il numero di campioni per classe
+    è proporzionale alle frazioni desiderate e la suddivisione train/val avviene
+    all'interno di ciascuna classe.
+    
+    Parametri:
+      - split_fracs: sequence (nell'ordine di unique_classes) oppure dict {label: frazione}.
+                     Le frazioni vengono normalizzate se non sommano a 1.
+      - val_size: frazione (0<val<=1) oppure numero intero di campioni PER CLASSE nel validation.
+      - seed: riproducibilità.
+    
+    Restituisce:
+      - (train_subset, val_subset)
+    """
+    labels = np.asarray(dataset.labels)
+    unique_classes, class_counts = np.unique(labels, return_counts=True)
+    n_classes = len(unique_classes)
+
+    # Mappa frazioni ai label, accetta sequence o dict
+    if isinstance(split_fracs, dict):
+        fracs = np.array([float(split_fracs.get(cls, 0.0)) for cls in unique_classes], dtype=float)
+    else:
+        fracs = np.array(split_fracs, dtype=float)
+        if len(fracs) != n_classes:
+            raise ValueError(f"split_fracs length {len(fracs)} != n_classes {n_classes}")
+
+    # Normalizza frazioni (e valida)
+    fracs = np.maximum(fracs, 0.0)
+    total = fracs.sum()
+    if total <= 0:
+        raise ValueError("split_fracs deve contenere almeno una frazione > 0")
+    fracs = fracs / total
+
+    # Se tutte le frazioni sono zero (dopo clip) errore già gestito; altrimenti calcola T massimo
+    # T = min_c floor(N_c / f_c) per f_c > 0
+    positive = fracs > 0
+    if not np.any(positive):
+        raise ValueError("Tutte le frazioni risultano 0 dopo la normalizzazione")
+    T_candidates = np.floor(class_counts[positive] / fracs[positive])
+    if T_candidates.size == 0 or np.min(T_candidates) < 1:
+        raise ValueError("Frazioni troppo ambiziose rispetto ai conteggi: impossibile selezionare almeno 1 campione")
+
+    T = int(np.min(T_candidates))
+
+    # Conteggi base e resti (Hamilton / largest remainder), con cap per disponibilità
+    raw = fracs * T
+    base = np.floor(raw).astype(int)
+    rema = raw - base
+    # Cap di disponibilità: non superare N_c
+    cap = class_counts - base
+    # Quanti restano da assegnare per raggiungere T totale
+    R = T - int(base.sum())
+    if R > 0:
+        order = np.argsort(-rema)  # decrescente per resto
+        i = 0
+        while R > 0 and np.any(cap > 0):
+            idx = order[i % n_classes]
+            if cap[idx] > 0 and fracs[idx] > 0:
+                base[idx] += 1
+                cap[idx] -= 1
+                R -= 1
+            i += 1
+
+    target_per_class = base
+    # Verifica finale: non superare class_counts
+    target_per_class = np.minimum(target_per_class, class_counts)
+
+    rng = np.random.default_rng(seed)
+    train_indices = []
+    val_indices = []
+
+    # Split per classe
+    for cls, n_target in zip(unique_classes, target_per_class):
+        cls_idx = np.where(labels == cls)[0]
+        rng.shuffle(cls_idx)
+
+        if n_target <= 0:
+            continue
+
+        selected = cls_idx[:n_target]
+
+        # Calcola val per classe
+        if isinstance(val_size, float):
+            v = int(round(val_size * n_target))
+        else:
+            v = int(val_size)
+
+        # Vincoli: 0 <= v <= n_target-1, lasciando almeno 1 in train quando possibile
+        if n_target >= 2:
+            v = max(1, min(v, n_target - 1))
+        else:
+            v = 0  # se c'è un solo elemento, tutto in train
+
+        t = n_target - v
+
+        # Assegna
+        val_indices.extend(selected[:v].tolist())
+        train_indices.extend(selected[v:v + t].tolist())
+
+    # Shuffle globale
+    train_indices = np.array(train_indices)
+    val_indices = np.array(val_indices)
+    rng.shuffle(train_indices)
+    rng.shuffle(val_indices)
+
+    # Report
+    chosen_counts = []
+    for cls in unique_classes:
+        in_train = np.sum(labels[train_indices] == cls)
+        in_val = np.sum(labels[val_indices] == cls)
+        chosen_counts.append((cls, in_train, in_val))
+    print("Stratified proportional split per classe (train, val):", chosen_counts)
+    print(f"Total: {len(train_indices)} train, {len(val_indices)} val")
+
+    return Subset(dataset, train_indices.tolist()), Subset(dataset, val_indices.tolist())
+
 
 
 def split_dataset_balanced(

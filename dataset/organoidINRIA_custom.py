@@ -8,7 +8,7 @@ from torch.utils.data import Dataset
 from monai.transforms import Compose
 from monai.transforms import (
     RandFlip, RandRotate90, RandAffine, RandGaussianNoise,
-    RandAdjustContrast, RandShiftIntensity, RandZoom, RandGibbsNoise
+    RandAdjustContrast, RandShiftIntensity, RandZoom, RandGibbsNoise, EnsureChannelFirst
 )
 import tifffile as tiff
 # Dentro training/train.py
@@ -84,7 +84,7 @@ def get_train_transforms():
         RandFlip(spatial_axis=2, prob=0.5),  # width
         
         # Rotazioni 90° per 3D
-        RandRotate90(prob=0.5, max_k=3, spatial_axes=(0, 1)),  # Specifica gli assi
+        RandRotate90(prob=0.5, max_k=3, spatial_axes=(2, 3)),  # Specifica gli assi
         
         # # Affine per 3D (NON 4D)
         # RandAffine(
@@ -100,7 +100,7 @@ def get_train_transforms():
         # Intensity transforms (sempre safe)
         RandGaussianNoise(prob=0.2, mean=0.0, std=0.05),
         RandShiftIntensity(prob=0.2, offsets=0.1),
-        RandAdjustContrast(prob=0.2, gamma=(0.8, 1.2)),
+        RandAdjustContrast(prob=0.2, gamma=(0.8, 1.2))
     ])
 
 
@@ -203,6 +203,24 @@ class OrganoidsINRIA3D(Dataset):
         name = os.path.splitext(os.path.basename(p))[0]
 
         return {"vol": vol, "label": label, "name": name, "size": size, "path": p}
+
+import torch
+
+def selective_augmentation(data, transform, augmentation_ratio=0.5):
+    B = data.shape[0]
+    k = int(B * augmentation_ratio)
+    if k == 0 or transform is None:
+        return data
+
+    idx = torch.randperm(B, device=data.device)[:k]
+    out = data.clone()
+    aug_sub = transform(data.index_select(0, idx))  # [k, C, ...]
+    out.index_copy_(0, idx, aug_sub)
+    return out
+
+
+
+
 
 
 

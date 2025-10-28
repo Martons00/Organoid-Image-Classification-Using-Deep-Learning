@@ -43,15 +43,13 @@ DATASET:
   roi_z: 128
 
 AUGMENTATION:
-  RandFlipd_prob: 0.2
-  RandRotate90d_prob: 0.2
-  RandScaleIntensityd_prob: 0.1
-  RandShiftIntensityd_prob: 0.1
+  augmentation: true
 
 TRAINING:
-  max_epochs: 3
+  max_epochs: 4
   batch_size: 3
-  sw_batch_size: 4
+  patch_merging: true
+  sw_batch_size: 6
   val_every: 1
   folds: false
   k_folds: 5
@@ -63,7 +61,8 @@ TRAINING:
   debug: true
   debug_train_samples: 3
   debug_val_samples: 3
-  split_method: "balanced"  # "random" , "stratified" or "balanced"
+  
+  split_method: "percentage"  # "random" , "stratified" or "balanced" or "percentage"
   save_checkpoint: true
   noamp: false
   # Optimizer parameters
@@ -77,7 +76,7 @@ TRAINING:
 
 LOSS:
   loss_name: "FocalLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
-  similarity_loss: "contrastive"  # "contrastive" or "margin" or ""
+  similarity_loss: ""  # "contrastive" or "margin" or ""
   similarity_loss_weight: 10.0
 
 INFERENCE:

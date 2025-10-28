@@ -30,7 +30,7 @@ from .data_utils import send_alert
 from optimizers.early_stop import EarlyStopping  # Uncomment if used
 from tools.similarity import compute_similarity_matrix, plot_similarity_heatmap, plot_similarity_heatmap_new
 from tools.loss import similarity_margin_loss, supervised_contrastive_from_similarity
-from dataset import get_train_transforms
+from dataset import get_train_transforms,selective_augmentation
 
 def freeze_backbone_and_select_head_fixed_plus(model):
     """Freezing corretto - chiama SOLO UNA VOLTA all'inizio del training"""
@@ -38,15 +38,16 @@ def freeze_backbone_and_select_head_fixed_plus(model):
     trainable_params = 0
     
     for name, param in model.named_parameters():
-        if 'global_pool' in name or 'fc' in name or 'head' in name or "encoder10" in name:
+        if 'global_pool' in name or 'fc' in name or 'head' in name or "encoder10" in name or "swinViT.layers4.0.blocks.1." in name or "swinViT.layers4.0.downsample." in name  :
             param.requires_grad = True
             trainable_params += param.numel()
             print(f"✓ Unfrozen: {name} ({param.numel()} params)")
         else:
             param.requires_grad = False
+            #print(f"✗ Frozen: {name} ({param.numel()} params)")
             frozen_params += param.numel()
     
-    #print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
+    print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
     return model
 
 def freeze_backbone_and_select_head_fixed(model):
@@ -61,9 +62,10 @@ def freeze_backbone_and_select_head_fixed(model):
             print(f"✓ Unfrozen: {name} ({param.numel()} params)")
         else:
             param.requires_grad = False
+            #print(f"✗ Frozen : {name} ({param.numel()} params)")
             frozen_params += param.numel()
     
-    #print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
+    print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
     return model
 
 def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
@@ -103,11 +105,23 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
         else:
             data, target = batch_data["vol"], batch_data["label"]
         
+                # Calcola similarity matrices solo per epoche selezionate
+        should_compute_sim = (
+            (epoch == 0 or epoch == (args.max_epochs - 1) or epoch == int(args.max_epochs * 0.5)) 
+            and idx == 0 
+            and args.rank == 0
+        )
+        
         # ============================================
         # AUGMENTATION qui, on-the-fly
         # ============================================
         if train_transform is not None:
-            data = train_transform(data)
+            # Augmenta solo il 50% dei samples nel batch
+            data = selective_augmentation(
+                data, 
+                train_transform,
+                augmentation_ratio=0.5  # ← 50% originali, 50% augmentati
+            )
 
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
@@ -131,7 +145,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             patches, coords = extract_patches_5d_torch(
                 vol,
                 patch_size=(args.roi_z, args.roi_y, args.roi_x),
-                step=(args.roi_z // 2, args.roi_y // 2, args.roi_x // 2),  # 50% overlap
+                step=args.step,
                 pad_value=0
             )
             
@@ -188,18 +202,21 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
                 b_feats,
                 b_coords,
                 patch_size=(args.roi_z, args.roi_y, args.roi_x),
-                step=(args.roi_z // 2, args.roi_y // 2, args.roi_x // 2)
+                step=args.step
             )
             
-            hidden_tiled = tile_with_gaussian_blending(
-                b_hidden,
-                b_coords,
-                patch_size=(args.roi_z, args.roi_y, args.roi_x),
-                step=(args.roi_z // 2, args.roi_y // 2, args.roi_x // 2)
-            )
             
             feat_list_all.append(feats_tiled)
-            hidden_list_all.append(hidden_tiled)
+
+            if should_compute_sim:
+                hidden_tiled = tile_with_gaussian_blending(
+                    b_hidden,
+                    b_coords,
+                    patch_size=(args.roi_z, args.roi_y, args.roi_x),
+                    step=args.step
+                    )
+
+                hidden_list_all.append(hidden_tiled)
             
             # Classificazione: global_pool → flatten → fc
             pooled = model.global_pool(feats_tiled)
@@ -215,12 +232,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             start_idx = end_idx
 
         
-        # Calcola similarity matrices solo per epoche selezionate
-        should_compute_sim = (
-            (epoch == 0 or epoch == (args.max_epochs - 1) or epoch == int(args.max_epochs * 0.5)) 
-            and idx == 0 
-            and args.rank == 0
-        )
+
         
         sim = None
         if should_compute_sim or args.similarity_loss in ["contrastive", "margin"]:
@@ -235,6 +247,8 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
                     target, 
                     save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch}_iter{idx}.png")
                 )
+                
+
                 
                 hidden_concat = torch.cat(hidden_list_all, dim=0)
                 hidden_flat = hidden_concat.view(hidden_concat.shape[0], -1)
@@ -407,7 +421,12 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
         # AUGMENTATION qui, on-the-fly
         # ============================================
         if train_transform is not None:
-            data = train_transform(data)
+            # Augmenta solo il 50% dei samples nel batch
+            data = selective_augmentation(
+                data, 
+                train_transform,
+                augmentation_ratio=0.5  # ← 50% originali, 50% augmentati
+            )
 
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
@@ -865,7 +884,7 @@ def val_epoch_new(
                 patches, coords = extract_patches_5d_torch(
                     vol,
                     patch_size=(args.roi_z, args.roi_y, args.roi_x),
-                    step=(args.roi_z // 2, args.roi_y // 2, args.roi_x // 2),  # 50% overlap
+                    step=args.step,
                     pad_value=0
                 )
                 
@@ -914,7 +933,7 @@ def val_epoch_new(
                     b_feats,
                     b_coords,
                     patch_size=(args.roi_z, args.roi_y, args.roi_x),
-                    step=(args.roi_z // 2, args.roi_y // 2, args.roi_x // 2)
+                    step=args.step
                 )
                 
                 # Classificazione: global_pool → flatten → fc
@@ -1078,6 +1097,9 @@ def run_training(
     validation_accuracies = []
     validation_per_class_accuracies = []
     lr_history = []
+
+    # Inizializza lo step
+    args.step= (args.roi_z, int(args.roi_y * 2 // 3), int(args.roi_x * 2 // 3))
     
     # Setup directory output
     args.final_output_dir = final_output_dir
@@ -1105,7 +1127,7 @@ def run_training(
     should_save = is_main_process and args.final_output_dir is not None and args.save_checkpoint
     use_telegram = args.telegram_log if hasattr(args, 'telegram_log') else False
     
-    val_acc_max = 0.0
+    val_acc_max = args.best_acc if hasattr(args, 'best_acc') else 0.0
     last_cm = None
     last_metrics = None
 

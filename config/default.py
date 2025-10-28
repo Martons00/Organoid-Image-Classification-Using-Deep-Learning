@@ -52,9 +52,9 @@ _C.MODEL.resume_ckpt = False
 
 _C.MODEL.feature_size = 48
 
-_C.MODEL.in_channels = 4
+_C.MODEL.in_channels = 1
 
-_C.MODEL.out_channels = 3
+_C.MODEL.out_channels = 1
 
 _C.MODEL.spatial_dims = 3
 
@@ -116,7 +116,7 @@ _C.TRAINING.sw_batch_size = 1
 
 _C.TRAINING.val_every = 100
 
-_C.TRAINING.early_stopping = True
+_C.TRAINING.early_stopping = False
 
 _C.TRAINING.patience_val = 3
 

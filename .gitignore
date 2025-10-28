@@ -9,4 +9,7 @@ models/__pycache__/
 tools/__pycache__/
 swin_venv/
 *.pt
+*.tar
+*.pth
 /token/tlg_token.txt
+pretrained_models/resnet50/resnet_50.pth

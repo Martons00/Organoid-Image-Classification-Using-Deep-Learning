@@ -1,0 +1,86 @@
+# Default configuration for Organoids segmentation training
+
+SYSTEM:
+  seed: 304
+  distributed: false
+  world_size: 1
+  rank: 0
+  dist_url: "tcp://127.0.0.1:23456"
+  dist_backend: "nccl"
+  workers: 8
+  logs_dir: "./logs"
+  output_dir: "./outputs"
+  telegram_log: false
+  telegram_token: "./token/tlg_token.txt"
+  oar_id: 0
+
+MODEL:
+  pretrained_model_name: "model_swinvit.pt"
+  name: "swinunetr"
+  pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
+  encoder10_pth: ""
+  checkpoint: ""
+  resume_ckpt: false
+  feature_size: 48
+  in_channels: 4
+  out_channels: 3
+  spatial_dims: 3
+  norm_name: "instance"
+  dropout_rate: 0.0
+  dropout_path_rate: 0.0
+  use_checkpoint: false
+
+DATASET:
+  name: "OrganoidsINRIA"
+  data_dir: "/home/mraffael/martone_project/Organoids_Dataset/"
+  exact_class: false
+  ignore_label: 3
+  fold: 0
+  cache_dataset: false
+  roi_x: 128
+  roi_y: 128
+  roi_z: 128
+
+AUGMENTATION:
+  augmentation: false
+  RandFlipd_prob: 0.2
+  RandRotate90d_prob: 0.2
+  RandScaleIntensityd_prob: 0.1
+  RandShiftIntensityd_prob: 0.1
+
+TRAINING:
+  max_epochs: 300
+  batch_size: 1
+  patch_merging: false
+  sw_batch_size: 1
+  val_every: 100
+  early_stopping: true
+  patience_val: 3
+  min_delta_val: 0.001
+  patience_loss: 20
+  min_delta_loss: 0.001
+  folds: false
+  k_folds: 5
+  debug: false
+  debug_train_samples: 40
+  debug_val_samples: 10
+  split_method: "stratified"  # "random" or "stratified" , or "balanced"
+  save_checkpoint: false
+  noamp: false
+  optim_lr: 0.0001
+  optim_name: "adamw"
+  reg_weight: 0.00001
+  momentum: 0.99
+  lrschedule: ""
+  warmup_epochs: 50
+
+LOSS:
+  loss_name: "CE"  # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+  similarity_loss: ""  # "contrastive" or "margin" or ""
+  similarity_loss_weight: 0.0
+
+INFERENCE:
+  infer_overlap: 0.5
+
+LOGGING:
+  logdir: "test"
