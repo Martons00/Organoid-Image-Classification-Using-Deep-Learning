@@ -223,7 +223,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr":
+            elif args.model_name == "swinunetr" or args.model_name == "resnet50":
                 pooled = pooled.flatten(1)
             
             logits_b = model.fc(pooled)  # [1, num_classes]

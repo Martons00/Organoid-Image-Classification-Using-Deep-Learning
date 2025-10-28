@@ -366,7 +366,7 @@ def _setup_model(args, logger, log):
                 log("Skipping loading pretrained weights since checkpoint path is provided")
 
                 # Aggiungi classification head custom
-        if args.model_name == "swinunetr+ml_decoder":
+        if args.model_name == "resnet50+ml_decoder":
             try:
                 head = MLDecoder(
                     num_classes=3,
@@ -381,7 +381,7 @@ def _setup_model(args, logger, log):
             except NameError:
                 log("Warning: MLDecoder not imported, using default head", level="warning")
         
-        elif args.model_name == "swinunetr+noah":
+        elif args.model_name == "resnet50+noah":
             try:
                 head = NOAH(
                     inplanes=768,
@@ -398,7 +398,7 @@ def _setup_model(args, logger, log):
                 log("Warning: NOAH not imported, using default head", level="warning")
         else:
             model.global_pool = nn.AdaptiveAvgPool3d(1)  # Pool globale 3D per volumi
-            model.fc = nn.Linear(768, 3)  # Testa di classificazione
+            model.fc = nn.Linear(32, 3)  # Testa di classificazione
             log("Using SwinUNETR with Single Linear Classification Head")
         
     else:

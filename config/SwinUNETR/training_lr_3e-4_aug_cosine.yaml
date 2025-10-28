@@ -30,7 +30,7 @@ DATASET:
   roi_z: 128
 
 AUGMENTATION:
-  augmentation: false
+  augmentation: true
 
 TRAINING:
   max_epochs: 100
@@ -38,19 +38,19 @@ TRAINING:
   patch_merging: false
   sw_batch_size: 6
   val_every: 4
-  split_method: "percentage"  # "random" , "stratified" or "balanced" or "percentage"
+  split_method: "percentage"  # "random" , "stratified" or "balanced" "percentage"
   save_checkpoint: true
   noamp: false
   # Optimizer parameters
-  optim_lr: 1e-3
+  optim_lr: 3e-4
   optim_name: "adamw" # "adam", "adamw" or "sgd"
   reg_weight: 5e-5
   momentum: 0.99
   # Learning rate scheduler
-  lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
-  warmup_epochs: 4
+  lrschedule: "cosine_anneal" #  "cosine_anneal" or "warmup_cosine"
+  warmup_epochs: 8
 
 
 LOSS:
-  loss_name: "CombinedLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+  loss_name: "CE" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
 
