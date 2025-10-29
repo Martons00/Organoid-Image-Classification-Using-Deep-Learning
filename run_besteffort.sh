@@ -2,7 +2,7 @@
 
 #OAR -q besteffort
 #OAR -l gpu=1,walltime=12:00:00
-#OAR -p esterel40
+#OAR -p esterel35
 #OAR -O OAR_%jobid%.out
 #OAR -E OAR_%jobid%.err
 
@@ -14,5 +14,5 @@ pwd
 source models/SwinUNETR/BRATS21/swin_unetr_env/bin/activate
 
 # Avvia il training
-python train.py --cfg config/SwinUNETR/training_lr_3e-4_aug_warmup_focal_nice.yaml --oar_id $OAR_JOB_ID
+python train.py --cfg config/ResNet/training_lr_6e-4_warmup_focal.yaml --oar_id $OAR_JOB_ID
 exit
