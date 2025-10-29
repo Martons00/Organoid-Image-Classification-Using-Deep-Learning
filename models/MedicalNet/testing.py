@@ -4,7 +4,7 @@ Written by Whalechen
 '''
 
 from setting import parse_opts 
-from models.MedicalNet.model import generate_model
+from model import generate_model
 import torch
 import numpy as np
 from torch import nn
@@ -60,8 +60,12 @@ if __name__ == '__main__':
               .format(sets.resume_path, checkpoint['epoch']))
     
     print(model)
-    samples = torch.randn(1, 1, sets.input_D, sets.input_H, sets.input_W)
+    samples = torch.randn(3, 1, sets.input_D, sets.input_H, sets.input_W)
     out = model(samples)
     print(out.shape)
+    global_pool = nn.AdaptiveAvgPool3d(1)
+    out_2 = global_pool(out)
+    out_flatten = out_2.flatten(1)
+    print(f"Output shape: {out_flatten.shape}")
 
 

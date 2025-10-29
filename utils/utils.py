@@ -423,7 +423,6 @@ def tile_feature_patches(feats: torch.Tensor, coords) -> torch.Tensor:
     nX = len(unique_coords[0]['x'])
 
     N, C, fD, fH, fW = feats.shape
-    assert C == 768, f"Attesi 768 canali, trovato {C}"
     assert N == nZ * nY * nX, f"N non combacia con griglia: N={N} vs {nZ*nY*nX}"
     
     # [N, C, fD, fH, fW] -> [nZ, nY, nX, C, fD, fH, fW]

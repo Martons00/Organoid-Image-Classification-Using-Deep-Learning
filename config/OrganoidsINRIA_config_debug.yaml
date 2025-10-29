@@ -16,10 +16,10 @@ SYSTEM:
 
 MODEL:
   name: "resnet50" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah"
-  pretrained_model_name: "model_swinvit.pt"
-  pretrained_dir: "./pretrained_models/resnet50/resnet_50.pth"
+  pretrained_model_name: "resnet_50.pth"
+  pretrained_dir: "./pretrained_models/resnet50/"
   encoder10_pth: "" #"./pretrained_models/encode10/model.pt"
-  checkpoint: "./outputs/OrganoidsINRIA/swinunetr/2025-10-22-10-20/model_final.pt"
+  checkpoint: "" #"./outputs/OrganoidsINRIA/swinunetr/2025-10-22-10-20/model_final.pt"
   resume_ckpt: false
   feature_size: 48
   in_channels: 1
@@ -30,6 +30,7 @@ MODEL:
   dropout_path_rate: 0.0
   use_checkpoint: false
 
+DATASET:
 DATASET:
   name: "OrganoidsINRIA"
   data_dir: "/home/mraffael/martone_project/Organoids_Dataset/"
@@ -48,7 +49,7 @@ AUGMENTATION:
 TRAINING:
   max_epochs: 4
   batch_size: 3
-  patch_merging: true
+  patch_merging: false
   sw_batch_size: 6
   val_every: 1
   folds: false

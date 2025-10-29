@@ -58,7 +58,7 @@ import asyncio
 from models.ML_Decoder_main.src_files.ml_decoder.ml_decoder import MLDecoder
 from models.NOAH_main.modules.noah import NOAH
 from dataset import OrganoidsINRIA3D
-from models import SwinUNETREncoder,resnet
+from models import SwinUNETREncoder,resnet,ResNet50_3D
 
 # from datasets.base_dataset import AugmentedDataset
 from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR  # Uncomment if used
@@ -158,7 +158,9 @@ def main_worker(gpu, args, configs):
     )
     
     end = timeit.default_timer()
-    log(f"Total time spent: {end - start:.2f}s")
+    time_end = end - start
+    time_str = time.strftime("%H hours %M minutes %S seconds", time.gmtime(time_end))
+    log(f"Total time spent: {time_str}")
     
     writer_dict['writer'].close()
     torch.cuda.empty_cache()
@@ -330,7 +332,6 @@ def _setup_model(args, logger, log):
                 sample_input_D=args.roi_z,
                 num_seg_classes=1)
         
-        model.forward_features = model.forward
         
         # Carica pretrained weights
         pretrained_pth = os.path.join(args.pretrained_dir, args.pretrained_model_name)
@@ -354,6 +355,7 @@ def _setup_model(args, logger, log):
 
             
             missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
+            print(missing)
             
             if missing:
                 log(f"Missing keys when loading pretrained: {len(missing)}")
@@ -364,6 +366,8 @@ def _setup_model(args, logger, log):
                 log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
             else:
                 log("Skipping loading pretrained weights since checkpoint path is provided")
+
+        model = ResNet50_3D(model, num_classes=3)
 
                 # Aggiungi classification head custom
         if args.model_name == "resnet50+ml_decoder":
@@ -380,7 +384,7 @@ def _setup_model(args, logger, log):
                 log("Using SwinUNETR with ML-Decoder Classification Head")
             except NameError:
                 log("Warning: MLDecoder not imported, using default head", level="warning")
-        
+
         elif args.model_name == "resnet50+noah":
             try:
                 head = NOAH(
@@ -397,8 +401,6 @@ def _setup_model(args, logger, log):
             except NameError:
                 log("Warning: NOAH not imported, using default head", level="warning")
         else:
-            model.global_pool = nn.AdaptiveAvgPool3d(1)  # Pool globale 3D per volumi
-            model.fc = nn.Linear(32, 3)  # Testa di classificazione
             log("Using SwinUNETR with Single Linear Classification Head")
         
     else:

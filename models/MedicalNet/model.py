@@ -106,7 +106,7 @@ def generate_model(opt):
         ms = model.state_dict()
         ps = pretrain['state_dict']
         matched = [k for k in ps if k in ms and ms[k].shape == ps[k].shape]
-        print(len(matched), 'matched keys')
+        print(f"Matched keys: {len(matched)}/{len(ms)}")
 
 
          

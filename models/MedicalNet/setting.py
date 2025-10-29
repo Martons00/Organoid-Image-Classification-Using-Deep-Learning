@@ -19,7 +19,7 @@ def parse_opts():
         help='Path for image list file')
     parser.add_argument(
         '--n_seg_classes',
-        default=2,
+        default=1,
         type=int,
         help="Number of segmentation classes"
     )
@@ -50,17 +50,17 @@ def parse_opts():
         help='Number of total epochs to run')
     parser.add_argument(
         '--input_D',
-    default=56,
+    default=128,
         type=int,
         help='Input size of depth')
     parser.add_argument(
         '--input_H',
-        default=448,
+        default=128,
         type=int,
         help='Input size of height')
     parser.add_argument(
         '--input_W',
-        default=448,
+        default=128,
         type=int,
         help='Input size of width')
     parser.add_argument(
@@ -72,7 +72,7 @@ def parse_opts():
     )
     parser.add_argument(
         '--pretrain_path',
-        default='pretrain/resnet_50.pth',
+        default="/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/pretrained_models/resnet50/resnet_50.pth",
         type=str,
         help=
         'Path for pretrained model.'

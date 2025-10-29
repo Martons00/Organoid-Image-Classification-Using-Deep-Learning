@@ -32,13 +32,22 @@ from tools.similarity import compute_similarity_matrix, plot_similarity_heatmap,
 from tools.loss import similarity_margin_loss, supervised_contrastive_from_similarity
 from dataset import get_train_transforms,selective_augmentation
 
-def freeze_backbone_and_select_head_fixed_plus(model):
+def freeze_backbone_and_select_head_fixed_plus(model,args):
     """Freezing corretto - chiama SOLO UNA VOLTA all'inizio del training"""
     frozen_params = 0
     trainable_params = 0
-    
+    lists_of_names = []
+    if args.model_name == "resnet50":
+        lists_of_names = ["layer4","fc","global_pool"]
+    elif args.model_name == "swinunetr":
+        lists_of_names = ["encoder10","fc","global_pool","swinViT.layers4.0.blocks.1.","swinViT.layers4.0.downsample.","head"]
+    elif args.model_name == "swinunetr+ml_decoder":
+        lists_of_names = ["fc","global_pool","head"]
+    elif args.model_name == "swinunetr+noah":
+        lists_of_names = ["encoder10","fc","global_pool","head"]
+
     for name, param in model.named_parameters():
-        if 'global_pool' in name or 'fc' in name or 'head' in name or "encoder10" in name or "swinViT.layers4.0.blocks.1." in name or "swinViT.layers4.0.downsample." in name  :
+        if any(layer in name for layer in lists_of_names):
             param.requires_grad = True
             trainable_params += param.numel()
             print(f"✓ Unfrozen: {name} ({param.numel()} params)")
@@ -196,6 +205,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             b_feats = all_feats[start_idx:end_idx]  # [num_patches, Cf, fD, fH, fW]
             b_hidden = all_hidden[start_idx:end_idx]  # [num_patches, Ch, hD, hH, hW]
             b_coords = all_coords[start_idx:end_idx]
+            # print(f"Sample {b}: num_patches={num_patches}, b_feats shape={b_feats.shape}")
             
             # Ricostruisci con blending (invece di tiling rigido)
             feats_tiled = tile_with_gaussian_blending(
@@ -204,6 +214,9 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
                 patch_size=(args.roi_z, args.roi_y, args.roi_x),
                 step=args.step
             )
+
+            # print(f"Sample {b}: feats_tiled shape={feats_tiled.shape}")
+            
             
             
             feat_list_all.append(feats_tiled)
@@ -220,12 +233,14 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             # Classificazione: global_pool → flatten → fc
             pooled = model.global_pool(feats_tiled)
+            # print(f"Sample {b}: pooled shape={pooled.shape}")
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
             elif args.model_name == "swinunetr" or args.model_name == "resnet50":
                 pooled = pooled.flatten(1)
             
+            # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
             logits_b = model.fc(pooled)  # [1, num_classes]
             batch_logits.append(logits_b)
             
@@ -468,8 +483,12 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             # Concatena tutti i batch
             feats_cat = torch.cat(feat_list, dim=0)   # [N, Cf, fD, fH, fW]
             hidden_cat = torch.cat(hidden_list, dim=0) # [N, Ch, hD, hH, hW]
+            # print(f"Sample {b}: num_patches={patches.shape[0]}, feats_cat shape={feats_cat.shape}")
             
             feats_tiled = tile_feature_patches(feats_cat, coords=coords)
+
+            # print(f"Sample {b}: feats_tiled shape={feats_tiled.shape}")
+            
             hidden_tiled = tile_feature_patches(hidden_cat, coords=coords)
             
             feat_list_all.append(feats_tiled)
@@ -477,12 +496,14 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             # Classificazione: global_pool → flatten → fc
             pooled = model.global_pool(feats_tiled)
+            # print(f"Sample {b}: pooled shape={pooled.shape}")
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr":
+            elif args.model_name == "swinunetr" or args.model_name == "resnet50":
                 pooled = pooled.flatten(1)
             
+            # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
             logits_b = model.fc(pooled)  # [1,num_classes]
             batch_logits.append(logits_b)
         
@@ -715,7 +736,7 @@ def val_epoch(
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr":
+                elif args.model_name == "swinunetr" or args.model_name == "resnet50":
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1,num_classes]
@@ -941,7 +962,7 @@ def val_epoch_new(
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr":
+                elif args.model_name == "swinunetr" or args.model_name == "resnet50":
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1, num_classes]
@@ -1131,7 +1152,7 @@ def run_training(
     last_cm = None
     last_metrics = None
 
-    model = freeze_backbone_and_select_head_fixed_plus(model)
+    model = freeze_backbone_and_select_head_fixed_plus(model,args)
     
     # Freeze/unfreeze layers
     # if args.encoder10_pth is not None:
