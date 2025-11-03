@@ -152,6 +152,8 @@ _C.TRAINING.momentum = 0.99
 
 _C.TRAINING.lrschedule = ""
 
+_C.TRAINING.restart_T0 = 20
+
 _C.TRAINING.warmup_epochs = 50
 
 # Loss settings
@@ -309,6 +311,7 @@ def config_to_args(cfg):
     args.reg_weight = cfg.TRAINING.reg_weight
     args.momentum = cfg.TRAINING.momentum
     args.lrschedule = cfg.TRAINING.lrschedule
+    args.restart_T0 = cfg.TRAINING.restart_T0
     args.warmup_epochs = cfg.TRAINING.warmup_epochs
     
     # Loss

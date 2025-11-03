@@ -62,6 +62,12 @@ from models import SwinUNETREncoder,resnet,ResNet50_3D
 
 # from datasets.base_dataset import AugmentedDataset
 from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR  # Uncomment if used
+from torch.optim.lr_scheduler import (
+    CosineAnnealingLR,
+    CosineAnnealingWarmRestarts,
+    LinearLR,
+    SequentialLR,
+)
 
 def main():
     try:
@@ -402,7 +408,83 @@ def _setup_model(args, logger, log):
                 log("Warning: NOAH not imported, using default head", level="warning")
         else:
             log("Using SwinUNETR with Single Linear Classification Head")
+    elif "resnet18" in args.model_name.lower():
+        model = resnet.resnet18(
+                sample_input_W=args.roi_x,
+                sample_input_H=args.roi_y,
+                sample_input_D=args.roi_z,
+                num_seg_classes=1)
         
+        
+        # Carica pretrained weights
+        pretrained_pth = os.path.join(args.pretrained_dir, args.pretrained_model_name)
+
+
+        if os.path.exists(pretrained_pth) and args.checkpoint_path is None:
+            log("Using pretrained weights")
+            log(f"=> loading pretrained model '{pretrained_pth}'")
+            
+            checkpoint = torch.load(pretrained_pth, map_location="cpu", weights_only=False)
+            state_dict = checkpoint.get("state_dict", checkpoint)
+            state_dict = state_dict['model'] if 'model' in state_dict else state_dict
+            
+            # Rinomina chiavi per compatibilità
+            new_state_dict = {}
+            for k, v in state_dict.items():
+                new_key = k
+                if k.startswith('module.'):
+                    new_key = k[7:]
+                new_state_dict[new_key] = v
+
+            
+            missing, unexpected = model.load_state_dict(new_state_dict, strict=False)
+            print(missing)
+            
+            if missing:
+                log(f"Missing keys when loading pretrained: {len(missing)}")
+            if unexpected:
+                log(f"Unexpected keys when loading pretrained: {len(unexpected)}")
+        else:
+            if args.checkpoint_path is None:
+                log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+            else:
+                log("Skipping loading pretrained weights since checkpoint path is provided")
+
+        model = ResNet50_3D(model, num_classes=3)
+
+                # Aggiungi classification head custom
+        if args.model_name == "resnet18+ml_decoder":
+            try:
+                head = MLDecoder(
+                    num_classes=3,
+                    initial_num_features=1024,
+                    num_of_groups=1,
+                    decoder_embedding=768,
+                    zsl=0
+                )
+                model.global_pool = torch.nn.Identity()
+                model.fc = head
+                log("Using SwinUNETR with ML-Decoder Classification Head")
+            except NameError:
+                log("Warning: MLDecoder not imported, using default head", level="warning")
+
+        elif args.model_name == "resnet18+noah":
+            try:
+                head = NOAH(
+                    inplanes=768,
+                    outplanes=3,
+                    dropout=0.1,
+                    head_num=1,
+                    head_split=True,
+                    kv_split=False
+                )
+                model.global_pool = torch.nn.Identity()
+                model.fc = head
+                log("Using SwinUNETR with NOAH Classification Head")
+            except NameError:
+                log("Warning: NOAH not imported, using default head", level="warning")
+        else:
+            log("Using SwinUNETR with Single Linear Classification Head")
     else:
         raise ValueError(f"Unsupported model architecture: {args.model_name}")
     
@@ -458,15 +540,45 @@ def _setup_optimizer(model, args, logger, log):
 def _setup_scheduler(optimizer, args):
     """Setup learning rate scheduler."""
     if args.lrschedule == "warmup_cosine":
+        # se già usi una classe custom, lascia questa branch invariata
         return LinearWarmupCosineAnnealingLR(
             optimizer,
             warmup_epochs=args.warmup_epochs,
-            max_epochs=args.max_epochs
+            max_epochs=args.max_epochs,
         )
     elif args.lrschedule == "cosine_anneal":
-        return torch.optim.lr_scheduler.CosineAnnealingLR(
+        # una singola discesa coseno, senza restarts
+        return CosineAnnealingLR(
             optimizer,
-            T_max=args.max_epochs
+            T_max=args.max_epochs,
+            eta_min=getattr(args, "eta_min", 0.0),
+        )
+    elif args.lrschedule == "cosine_restarts":
+        # cosine con warm restarts SGDR
+        return CosineAnnealingWarmRestarts(
+            optimizer,
+            T_0=args.restart_T0,                 # lunghezza primo ciclo
+            T_mult=getattr(args, "restart_Tmult", 2),
+            eta_min=getattr(args, "eta_min", 0.0),
+        )
+    elif args.lrschedule == "warmup_cosine_restarts":
+        # warmup lineare -> poi cosine con restarts
+        warmup = LinearLR(
+            optimizer,
+            start_factor=getattr(args, "warmup_start_factor", 0.01),
+            end_factor=1.0,
+            total_iters=args.warmup_epochs,
+        )
+        cosine_wr = CosineAnnealingWarmRestarts(
+            optimizer,
+            T_0=args.restart_T0,
+            T_mult=getattr(args, "restart_Tmult", 2),
+            eta_min=getattr(args, "eta_min", 0.0),
+        )
+        return SequentialLR(
+            optimizer,
+            schedulers=[warmup, cosine_wr],
+            milestones=[args.warmup_epochs],
         )
     return None
 

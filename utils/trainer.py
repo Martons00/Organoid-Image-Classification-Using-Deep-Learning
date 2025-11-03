@@ -38,7 +38,11 @@ def freeze_backbone_and_select_head_fixed_plus(model,args):
     trainable_params = 0
     lists_of_names = []
     if args.model_name == "resnet50":
-        lists_of_names = ["layer4","fc","global_pool"]
+        lists_of_names = ["fc","global_pool"]
+        # lists_of_names = ["layer4.1","layer4.2","fc","global_pool"]
+    elif args.model_name == "resnet18":
+        lists_of_names = ["fc","global_pool"]
+        # lists_of_names = ["layer4.2","fc","global_pool"]
     elif args.model_name == "swinunetr":
         lists_of_names = ["encoder10","fc","global_pool","swinViT.layers4.0.blocks.1.","swinViT.layers4.0.downsample.","head"]
     elif args.model_name == "swinunetr+ml_decoder":
@@ -237,7 +241,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr" or args.model_name == "resnet50":
+            elif args.model_name == "swinunetr" or "resnet" in args.model_name:
                 pooled = pooled.flatten(1)
             
             # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
@@ -500,7 +504,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr" or args.model_name == "resnet50":
+            elif args.model_name == "swinunetr" or "resnet" in args.model_name:
                 pooled = pooled.flatten(1)
             
             # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
@@ -736,7 +740,7 @@ def val_epoch(
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or args.model_name == "resnet50":
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1,num_classes]
@@ -962,7 +966,7 @@ def val_epoch_new(
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or args.model_name == "resnet50":
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1, num_classes]

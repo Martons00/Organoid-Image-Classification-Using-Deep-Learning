@@ -34,7 +34,7 @@ DATASET:
 DATASET:
   name: "OrganoidsINRIA"
   data_dir: "/home/mraffael/martone_project/Organoids_Dataset/"
-  exact_class: true # if true, use only exact folders, if false use all folders_reduced
+  exact_class: false # if true, use only exact folders, if false use all folders_reduced
   ignore_label: 3
   fold: 0
   cache_dataset: false
@@ -59,7 +59,7 @@ TRAINING:
   min_delta_val: 0.02
   patience_loss: 30
   min_delta_loss: 0.01
-  debug: true
+  debug: false
   debug_train_samples: 3
   debug_val_samples: 3
   

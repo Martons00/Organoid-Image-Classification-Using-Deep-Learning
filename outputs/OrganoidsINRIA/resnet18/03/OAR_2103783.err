@@ -1,0 +1,5 @@
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/MedicalNet/models/resnet.py:173: FutureWarning: `nn.init.kaiming_normal` is now deprecated in favor of `nn.init.kaiming_normal_`.
+  m.weight = nn.init.kaiming_normal(m.weight, mode='fan_out')
+./run_besteffort_35.sh: line 18: JOB_ID: command not found
