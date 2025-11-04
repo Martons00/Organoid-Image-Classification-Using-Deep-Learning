@@ -1,3 +1,6 @@
+Alcuni esperimenti sono vecchi, quindi ad alcuni mancano i plot, le metriche, il salvataggio dei modelli, ad alcuni c'era un problema nel caricamento della backbone pretrainato
+**Nota:** Risoluzione dei problemi di caricamento della backbone pretrainato 2025-10-14
+
 ## Experiment Results outputs/OrganoidsINRIA_old/swinunetr
 | Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | ValAcc | Note |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -31,6 +34,3 @@
 | 2025-10-15 | 03 | swinunetr+noah | yes | yes | 128x128x128 | CombinedLoss | none | yes | no | 8 | 100 | 3 | 0.0005 | AdamW | 0.99 | warmup_cosine | yes | no | balanced | 62 | ... |
 | 2025-10-20 | 04 | swinunetr+noah | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 8 | 100 | 3 | 0.0005 | AdamW | 0.99 | warmup_cosine | yes | no | balanced | 59 | ... |
 
-
-Alcuni esperimenti sono vecchi, quindi ad alcuni mancano i plot, le metriche, il salvataggio dei modelli, ad alcuni c'era un problema nel caricamento della backbone pretrainato.
-**Nota:** Risoluzione dei problemi di caricamento della backbone pretrainato 2025-10-14

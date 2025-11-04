@@ -39,7 +39,7 @@ def fmt_roi(cfg: Dict[str, Any]) -> str:
     x, y, z = cfg.get("roi_x"), cfg.get("roi_y"), cfg.get("roi_z")
     if x and y and z:
         return f"{x}x{y}x{z}"
-    return "-"
+    return "*"
 
 def fmt_simloss(cfg: Dict[str, Any]) -> str:
     name = (cfg.get("similarity_loss") or "").strip() if isinstance(cfg.get("similarity_loss"), str) else cfg.get("similarity_loss")
@@ -66,7 +66,7 @@ def fmt_weight_decay(cfg: Dict[str, Any]) -> str:
     if wd is None:
         wd = cfg.get("weight_decay", None)
     if wd is None:
-        return "-"
+        return "*"
     try:
         return f"{float(wd):.6g}"
     except Exception:
@@ -74,7 +74,7 @@ def fmt_weight_decay(cfg: Dict[str, Any]) -> str:
 
 def canon_optim(name: Optional[str]) -> str:
     if not name:
-        return "-"
+        return "*"
     n = name.strip().lower()
     mapping = {"adamw": "AdamW", "adam": "Adam", "sgd": "SGD", "rmsprop": "RMSprop", "adagrad": "Adagrad"}
     return mapping.get(n, name)
@@ -171,33 +171,33 @@ def extract_date_from_log(log_path: str) -> str:
     try:
         return datetime.fromtimestamp(os.path.getmtime(log_path)).strftime("%Y-%m-%d")
     except Exception:
-        return "-"
+        return "*"
 
 def collect_row(run_idx: int, exp_name: str, cfg: Dict[str, Any], date_str: str) -> Dict[str, str]:
     row = {
-        "Date": date_str or "-",
+        "Date": date_str or "*",
         "Run": exp_name,
-        "Model": str(cfg.get("model_name", "-")),
+        "Model": str(cfg.get("model_name", "*")),
         "Aug": has_aug(cfg),
         "ExactClass": yesno(cfg.get("exact_class", False)),
         "ROI": fmt_roi(cfg),
-        "Loss": str(cfg.get("loss_name", "-")),
+        "Loss": str(cfg.get("loss_name", "*")),
         "SimLoss": fmt_simloss(cfg),
         "Checkpoint": "yes" if fmt_checkpoint(cfg) else "no",
         "Encoder10": "yes" if str(cfg.get("encoder10_pth", "")).strip() != "" else "no",
-        "Batch": str(cfg.get("batch_size", "-")),
-        "MaxEpochs": str(cfg.get("max_epochs", "-")),
-        "Warmup": str(cfg.get("warmup_epochs", "-")),
-        "LR": (f"{float(cfg['optim_lr']):.6g}" if cfg.get("optim_lr") is not None else "-"),
-        "Optim": canon_optim(cfg.get("optim_name", "-")),
-        "Momentum": (f"{float(cfg['momentum']):.6g}" if cfg.get("momentum") is not None else "-"),
-        "LRschedule": str(cfg.get("lrschedule", "-")),
+        "Batch": str(cfg.get("batch_size", "*")),
+        "MaxEpochs": str(cfg.get("max_epochs", "*")),
+        "Warmup": str(cfg.get("warmup_epochs", "*")),
+        "LR": (f"{float(cfg['optim_lr']):.6g}" if cfg.get("optim_lr") is not None else "*"),
+        "Optim": canon_optim(cfg.get("optim_name", "*")),
+        "Momentum": (f"{float(cfg['momentum']):.6g}" if cfg.get("momentum") is not None else "*"),
+        "LRschedule": str(cfg.get("lrschedule", "*")),
         "EarlyStop": yesno(cfg.get("early_stopping", False)),
         "PatchMerging": yesno(cfg.get("patch_merging", False)),
-        "SplitMethod": str(cfg.get("split_method", "-")),
-        "TrainAcc": "-", "TrainLoss": "-",
-        "ValAcc": "-", "W_ValF1": "-", "W_ValPrecision": "-", "W_ValRecall": "-", "W_Specificity": "-", 
-        "Note": "...",
+        "SplitMethod": str(cfg.get("split_method", "*")),
+        "TrainAcc": "*", "TrainLoss": "*",
+        "ValAcc": "*", "W_ValF1": "*", "W_ValPrecision": "*", "W_ValRecall": "*", "W_Specificity": "*", 
+        "Note": "*",
     }
     return row
 
@@ -206,7 +206,7 @@ def to_markdown(rows, header):
     sep = "| " + " | ".join("---" for _ in header) + " |"
     lines = [line, sep]
     for r in rows:
-        lines.append("| " + " | ".join(str(r.get(h, "-")) for h in header) + " |")
+        lines.append("| " + " | ".join(str(r.get(h, "*")) for h in header) + " |")
     return "\n".join(lines)
 
 def main():
