@@ -21,6 +21,7 @@
 | 2025-11-03 | 06 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 200 | 6 | 0.005 | AdamW | 0.99 | warmup_cosine_restarts | no | no | percentage | 3.42 | 61 | 56 | 56 | 57 | 56 | 76 | Questo restart ha poco senso, si avvicina a convergenza ma poi esplode, forse l'ho configurata male, LR è ancora troppo basso, si puo fare meglio sia con la loss che con il resto.  |
 | 2025-11-03 | 07 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 200 | 6 | 0.05 | AdamW | 0.99 | warmup_cosine_restarts | no | no | percentage | 2.50 | 73 | 46 | 46 | 48 | 46 | 72 | Restart poco sensato ancora, si tocca qualche minimo ma non si esplora mai bene la corvergenza.  |
 | 2025-11-03 | 08 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 200 | 8 | 0.01 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 2.0 | 71 | 58 | 59 | 82 | 58 | 88 | Continua ad avere una convergenza lenta, tentativo con LR ancora pià grande per vedere il limite.  |
+| 2025-11-04 | 09 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 200 | 8 | 0.05 | AdamW | 0.99 | warmup_cosine | no | no | percentage | * | * | * | * | * | * | * | * |
 
 
 
