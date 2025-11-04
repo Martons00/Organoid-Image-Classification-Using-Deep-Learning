@@ -7781,3 +7781,81 @@ class                  precision    recall   specificity      f1   support
 *========================================*
 Saving checkpoint outputs/OrganoidsINRIA/swinunetr/2025-11-03-23-17/model_final.pt
 0 Tue Nov  4 13:30:47 2025 Epoch: 148
+Epoch: 148/150 Iter: 0/28 loss: 0.5837 acc: 1.0000 time 14.89s
+Epoch: 148/150 Iter: 1/28 loss: 0.5404 acc: 0.7917 time 12.89s
+Epoch: 148/150 Iter: 2/28 loss: 0.8645 acc: 0.8056 time 10.98s
+Epoch: 148/150 Iter: 3/28 loss: 0.6980 acc: 0.8542 time 11.19s
+Epoch: 148/150 Iter: 4/28 loss: 0.6154 acc: 0.8833 time 10.86s
+Epoch: 148/150 Iter: 5/28 loss: 0.6279 acc: 0.9028 time 13.19s
+Epoch: 148/150 Iter: 6/28 loss: 0.5590 acc: 0.9167 time 10.96s
+Epoch: 148/150 Iter: 7/28 loss: 0.5764 acc: 0.9146 time 11.00s
+Epoch: 148/150 Iter: 8/28 loss: 0.6155 acc: 0.9241 time 10.99s
+Epoch: 148/150 Iter: 9/28 loss: 0.6238 acc: 0.9233 time 11.00s
+Epoch: 148/150 Iter: 10/28 loss: 1.4901 acc: 0.9152 time 13.12s
+Epoch: 148/150 Iter: 11/28 loss: 1.3973 acc: 0.9222 time 11.20s
+Epoch: 148/150 Iter: 12/28 loss: 1.3326 acc: 0.9282 time 10.90s
+Epoch: 148/150 Iter: 13/28 loss: 1.3315 acc: 0.9000 time 11.06s
+Epoch: 148/150 Iter: 14/28 loss: 1.2886 acc: 0.8956 time 12.93s
+Epoch: 148/150 Iter: 15/28 loss: 1.2454 acc: 0.9021 time 10.92s
+Epoch: 148/150 Iter: 16/28 loss: 1.2016 acc: 0.9078 time 12.87s
+Epoch: 148/150 Iter: 17/28 loss: 1.1439 acc: 0.9130 time 10.90s
+Epoch: 148/150 Iter: 18/28 loss: 1.0908 acc: 0.9175 time 10.90s
+Epoch: 148/150 Iter: 19/28 loss: 1.0437 acc: 0.9217 time 10.90s
+Epoch: 148/150 Iter: 20/28 loss: 1.2060 acc: 0.9095 time 12.91s
+Epoch: 148/150 Iter: 21/28 loss: 1.1832 acc: 0.9136 time 13.03s
+Epoch: 148/150 Iter: 22/28 loss: 1.1871 acc: 0.8957 time 10.96s
+Epoch: 148/150 Iter: 23/28 loss: 1.1489 acc: 0.9000 time 10.89s
+Epoch: 148/150 Iter: 24/28 loss: 1.1404 acc: 0.8973 time 10.92s
+Epoch: 148/150 Iter: 25/28 loss: 1.1036 acc: 0.9013 time 10.91s
+Epoch: 148/150 Iter: 26/28 loss: 1.1261 acc: 0.8802 time 10.92s
+Epoch: 148/150 Iter: 27/28 loss: 1.0970 acc: 0.8845 time 10.89s
+[Train epoch 148] avg_loss=1.0970 avg_acc=0.8845 | per-class [c0: 0.940, c1: 0.941, c2: 0.881]
+Final training 148/149, loss: 1.0970, time 325.13s, lr: 0.000000
+Accuracy: 0.917
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.926     0.940         0.950   0.933        67
+1                          0.889     0.941         0.970   0.914        34
+2                          0.922     0.881         0.950   0.901        67
+*----------------------------------------*
+0 Tue Nov  4 13:36:12 2025 Epoch: 149
+Epoch: 149/150 Iter: 0/28 loss: 0.5127 acc: 1.0000 sim_loss: 0.0000 time 18.81s
+Epoch: 149/150 Iter: 1/28 loss: 0.4851 acc: 1.0000 time 11.38s
+Epoch: 149/150 Iter: 2/28 loss: 0.5093 acc: 1.0000 time 10.98s
+Epoch: 149/150 Iter: 3/28 loss: 0.5708 acc: 1.0000 time 10.94s
+Epoch: 149/150 Iter: 4/28 loss: 0.5597 acc: 1.0000 time 11.00s
+Epoch: 149/150 Iter: 5/28 loss: 0.5745 acc: 0.9722 time 10.94s
+Epoch: 149/150 Iter: 6/28 loss: 0.6058 acc: 0.9583 time 10.93s
+Epoch: 149/150 Iter: 7/28 loss: 0.5658 acc: 0.9635 time 13.07s
+Epoch: 149/150 Iter: 8/28 loss: 0.5076 acc: 0.9676 time 10.94s
+Epoch: 149/150 Iter: 9/28 loss: 0.4894 acc: 0.9708 time 10.94s
+Epoch: 149/150 Iter: 10/28 loss: 0.5253 acc: 0.9583 time 13.05s
+Epoch: 149/150 Iter: 11/28 loss: 0.4842 acc: 0.9618 time 10.91s
+Epoch: 149/150 Iter: 12/28 loss: 0.5087 acc: 0.9571 time 10.89s
+Epoch: 149/150 Iter: 13/28 loss: 0.4984 acc: 0.9601 time 12.90s
+Epoch: 149/150 Iter: 14/28 loss: 0.4994 acc: 0.9628 time 12.96s
+Epoch: 149/150 Iter: 15/28 loss: 0.4838 acc: 0.9651 time 11.06s
+Epoch: 149/150 Iter: 16/28 loss: 0.4903 acc: 0.9672 time 10.88s
+Epoch: 149/150 Iter: 17/28 loss: 0.4873 acc: 0.9505 time 13.05s
+Epoch: 149/150 Iter: 18/28 loss: 0.4790 acc: 0.9531 time 10.91s
+Epoch: 149/150 Iter: 19/28 loss: 0.6079 acc: 0.9304 time 10.91s
+Epoch: 149/150 Iter: 20/28 loss: 0.6104 acc: 0.9139 time 11.19s
+Epoch: 149/150 Iter: 21/28 loss: 0.6052 acc: 0.9178 time 11.22s
+Epoch: 149/150 Iter: 22/28 loss: 0.6078 acc: 0.9214 time 10.93s
+Epoch: 149/150 Iter: 23/28 loss: 0.6131 acc: 0.9247 time 10.96s
+Epoch: 149/150 Iter: 24/28 loss: 0.6006 acc: 0.9277 time 10.93s
+Epoch: 149/150 Iter: 25/28 loss: 0.5925 acc: 0.9304 time 11.15s
+Epoch: 149/150 Iter: 26/28 loss: 0.5743 acc: 0.9330 time 10.89s
+Epoch: 149/150 Iter: 27/28 loss: 0.5706 acc: 0.9354 time 10.92s
+[Train epoch 149] avg_loss=0.5706 avg_acc=0.9354 | per-class [c0: 0.926, c1: 1.000, c2: 0.955]
+Final training 149/149, loss: 0.5706, time 325.66s, lr: 0.000000
+Accuracy: 0.952
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.969     0.926         0.980   0.947        68
+1                          0.944     1.000         0.985   0.971        34
+2                          0.940     0.955         0.961   0.947        66
+*----------------------------------------*
+Training Finished! Best Accuracy: 0.8372
+Saving plots to: outputs/OrganoidsINRIA/swinunetr/2025-11-03-23-17/plots
+Total time spent: 14 hours 24 minutes 09 seconds
