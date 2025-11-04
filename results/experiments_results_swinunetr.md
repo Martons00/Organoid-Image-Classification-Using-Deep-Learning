@@ -9,7 +9,7 @@
 | 2025-10-28 | 06 | swinunetr | yes | yes | 128x128x128 | CE | none | yes | no | 6 | 100 | 8 | 0.0003 | AdamW | 0.99 |  | no | no | percentage | 0,29 | 84 | 85 | 85 | 86 | 85 | 92 | Come sopra ma un tantino meglio, le migliori performance si raggiungono con la crossEntrompy. Loss converge ma non si perfeziona. forse LR troppo alto per quella perfezione.  |
 | 2025-10-28 | 07 | swinunetr | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 6 | 100 | 8 | 0.0003 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 0,6 | 88 | 79 | 79 | 80 | 79 | 89 | Stesso andamento di cui sopra, sembra trovata una quadra ma CE sembra meglio |
 | 2025-11-03 | 08 | swinunetr | yes | no | 128x128x128 | FocalLoss | none | yes | no | 6 | 150 | 8 | 0.0005 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 0,7 | 92 | 81 | 81 | 83 | 81 | 88 | Stesso di prima ma è stato killato alla epoca 124 quindi devo ripeterlo.  |
-| 2025-11-03 | 09 | swinunetr | yes | no | 128x128x128 | FocalLoss | none | yes | no | 6 | 150 | 8 | 0.0005 | AdamW | 0.99 | warmup_cosine | no | no | percentage | * | * | * | * | * | * | * | * |
+| 2025-11-03 | 09 | swinunetr | yes | no | 128x128x128 | FocalLoss | none | yes | no | 6 | 150 | 8 | 0.0005 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 0,57 | 93 | 84 | 84 | 85 | 84 | 89 | Dopo poche epoche raggiunge queste perfomance e ci rimane su quella scia non migliorando. La loss dopo un breve avvio si stagna, stessa cosa l'accuracy.   |
 
 
 ## Experiment Results outputs/OrganoidsINRIA/swinunetr/encoder10+fc
