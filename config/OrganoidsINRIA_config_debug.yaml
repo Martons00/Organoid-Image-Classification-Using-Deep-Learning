@@ -59,7 +59,7 @@ TRAINING:
   min_delta_val: 0.02
   patience_loss: 30
   min_delta_loss: 0.01
-  debug: false
+  debug: true
   debug_train_samples: 3
   debug_val_samples: 3
   

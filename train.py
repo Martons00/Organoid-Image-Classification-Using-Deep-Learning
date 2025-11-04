@@ -733,7 +733,7 @@ def _setup_data(args, logger, log):
     
     val_loader = DataLoader(
         val_set,
-        batch_size=1,
+        batch_size=args.batch_size,
         shuffle=False,
         pin_memory=True,
         drop_last=False,

@@ -705,7 +705,7 @@ def val_epoch(
             data = data.to(device, non_blocking=True)
             target = target.to(device, non_blocking=True)
             
-            # Forward a patch per volume
+             # Costruisci logits per l'intero batch
             batch_logits = []
             B = data.shape[0]
             
@@ -713,26 +713,32 @@ def val_epoch(
                 vol = data[b:b+1]  # [1,C,D,H,W]
                 vol = ensure_single_channel(vol, mode="first")  # [1,1,D,H,W]
                 
-                # Estrai patch
+                # Estrai patch dal volume
                 patches, coords = extract_patches_5d_torch(
-                    vol,
-                    patch_size=(args.roi_z, args.roi_y, args.roi_x),
-                    step=(args.roi_z, args.roi_y, args.roi_x),
+                    vol, 
+                    patch_size=(args.roi_z, args.roi_y, args.roi_x), 
+                    step=(args.roi_z, args.roi_y, args.roi_x), 
                     pad_value=0
                 )
                 
-                # Converti patches una volta sola
-                patches = patches.to(device).to(torch.float32)
-                
                 # Inferenza per ogni patch
-                feat_list = []
-                for i in range(patches.shape[0]):
-                    patch = patches[i:i+1]
-                    feats, _ = model.forward_features(patch)
-                    feat_list.append(feats)
+                patches = patches.to(device).to(torch.float32)  # Converti una volta sola
                 
-                # Ricostruisci volume features
-                feats_cat = torch.cat(feat_list, dim=0)
+                sw_batch_size = args.sw_batch_size if hasattr(args, 'sw_batch_size') else 4
+                feat_list = []
+
+                for i in range(0, patches.shape[0], sw_batch_size):
+                    end_idx = min(i + sw_batch_size, patches.shape[0])
+                    batch_patches = patches[i:end_idx]  # [sw_batch_size, 1, 128, 128, 128]
+                    
+                    feats, _ = model.forward_features(batch_patches)  # Forward su batch
+                    
+                    feat_list.append(feats)    # [sw_batch_size, Cf, fD, fH, fW]
+
+                # Concatena tutti i batch
+                feats_cat = torch.cat(feat_list, dim=0)   # [N, Cf, fD, fH, fW]
+                # print(f"Sample {b}: num_patches={patches.shape[0]}, feats_cat shape={feats_cat.shape}")
+                
                 feats_tiled = tile_feature_patches(feats_cat, coords=coords)
                 
                 # Classificazione
@@ -1305,25 +1311,25 @@ def run_training(
                         cm, 
                         class_names=class_names,
                         title=f'Confusion Matrix - Epoch {epoch}',
-                        save_path=os.path.join(cm_plots_dir, f"best_confusion_matrix_epoch{epoch}.png")
+                        save_path=os.path.join(cm_plots_dir, f"best_confusion_matrix.png")
                     )
                     plot_confusion_matrix(
                         train_cm,
                         class_names=class_names,
                         title=f'Confusion Matrix (Train) - Epoch {epoch} ',
-                        save_path=os.path.join(cm_plots_dir, f"best_confusion_train_matrix_epoch{epoch}.png")
+                        save_path=os.path.join(cm_plots_dir, f"best_confusion_train_matrix.png")
                     )
                     plot_metrics_table(
                         metrics,
                         class_names=class_names,
                         title=f'Metrics Table - Epoch {epoch}',
-                        save_path=os.path.join(metrics_plots_dir, f"best_metrics_table_epoch{epoch}.png")
+                        save_path=os.path.join(metrics_plots_dir, f"best_metrics_table.png")
                     )
                     plot_metrics_table(
                         train_metrics,
                         class_names=class_names,
                         title=f'Metrics Table (Train) - Epoch {epoch}',
-                        save_path=os.path.join(metrics_plots_dir, f"best_train_metrics_table_epoch{epoch}.png")
+                        save_path=os.path.join(metrics_plots_dir, f"best_train_metrics_table.png")
                     )
 
                 # Telegram notification
