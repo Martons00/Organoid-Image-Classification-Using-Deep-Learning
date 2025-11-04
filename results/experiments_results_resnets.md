@@ -1,5 +1,5 @@
 ## Experiment Results outputs/OrganoidsINRIA/resnet50
-| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainAcc | TrainLoss | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
+| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2025-10-29 | 01 | resnet50 | no | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 100 | 8 | 0.0006 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 0.005 | 1 | 39 | 22 | 15 | 39 | 60 | Overfitting totale, tutto libero per il FT dal layer 4 block 0 è troppo, troppi parametri, pochi dati.  |
 | 2025-10-28 | 02 | resnet50 | yes | yes | 128x128x128 | CE | none | yes | no | 4 | 100 | 8 | 0.0003 | AdamW | 0.99 | cosine_anneal | no | no | percentage | 0.22 | 92 | 46 | 37 | 48 | 46 | 65 | La loss è meno rumorosa, ma Overfitting quasi totale |
@@ -11,7 +11,7 @@
 
 
 ## Experiment Results outputs/OrganoidsINRIA/resnet18
-| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainAcc | TrainLoss | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
+| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2025-10-30 | 01 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 150 | 8 | 0.0001 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 4.5 | 49 | 41 | 27 | 55 | 41 | 62  | la loss è alta quindi non c'è overfitting ancora, si puo lavorare, train acc molto bass, loss in discesa e non stabile quindi si puo aumentare il learning rate |–
 | 2025-10-31 | 02 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 150 | 8 | 0.0004 | AdamW | 0.99 | warmup_cosine_restarts | no | no | percentage | 4.1 | 43 | 48 | 37 | 30 | 48 | 77 | la loss è super rumorosa, anche per via del restart, Forse non sempre il restart |

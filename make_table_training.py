@@ -13,7 +13,7 @@ HEADER = [
     "Run","Model","Aug","ExactClass","ROI","Loss","SimLoss","Checkpoint","Encoder10",
     "Batch","MaxEpochs","Warmup","LR","Optim","Momentum","LRschedule",
     "EarlyStop","PatchMerging","SplitMethod",
-        "TrainAcc", "TrainLoss",
+         "TrainLoss","TrainAcc",
         "ValAcc", 
         "W_ValF1", "W_ValPrecision", "W_ValRecall", "W_Specificity", 
         "Note"
@@ -195,7 +195,7 @@ def collect_row(run_idx: int, exp_name: str, cfg: Dict[str, Any], date_str: str)
         "EarlyStop": yesno(cfg.get("early_stopping", False)),
         "PatchMerging": yesno(cfg.get("patch_merging", False)),
         "SplitMethod": str(cfg.get("split_method", "*")),
-        "TrainAcc": "*", "TrainLoss": "*",
+        "TrainLoss": "*", "TrainAcc": "*",
         "ValAcc": "*", "W_ValF1": "*", "W_ValPrecision": "*", "W_ValRecall": "*", "W_Specificity": "*", 
         "Note": "*",
     }

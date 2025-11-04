@@ -1,5 +1,5 @@
 ## Experiment Results outputs/OrganoidsINRIA/swinunetr/layer4+encoder10+fc
-| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainAcc | TrainLoss | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
+| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2025-10-27 | 01 | swinunetr | yes | yes | 128x128x128 | CombinedLoss | none | yes | no | 6 | 100 | 4 | 0.001 | AdamW | 0.99 | cosine_anneal | no | no | balanced | 3,7 | 47 | 70 | 70 | 71 | 70 | 85 | loss alta e non migliora, accuracy rumorosa in training, in val si appiattisce. Ho smesso di usare la combinedLoss |
 | 2025-10-27 | 02 | swinunetr | yes | yes | 128x128x128 | CE | none | yes | no | 6 | 100 | 4 | 0.001 | AdamW | 0.99 | cosine_anneal | no | no | percentage | 0,6 | 65 | 73 | 73 | 73 | 73 | 85 | loss e accuracy in training molto rumorosa, quindi diminuire il LR, nel val accuracy dopo un po si appiattisce e non migliora più. |
@@ -12,7 +12,7 @@
 
 
 ## Experiment Results outputs/OrganoidsINRIA/swinunetr/encoder10+fc
-| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainAcc | TrainLoss | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
+| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2025-10-24 | 01 | swinunetr | yes | yes | 128x128x128 | CombinedLoss | none | yes | no | 8 | 100 | 4 | 0.001 | AdamW | 0.99 | warmup_cosine | no | no | balanced | 3.5 | 51 | 74 | 74 | 75 | 74 | 87 | Loss rumorosa, accuracy bassa sia intraining che in validation. Nelle prime 100 epoche molto lento a convergere, poi inizia ad andare meglio. |
 | 2025-10-24 | 02 | swinunetr | yes | yes | 128x128x128 | CombinedLoss | none | yes | no | 8 | 100 | 4 | 0.001 | AdamW | 0.99 | warmup_cosine | no | no | balanced | 4,2 | 50 | 74 | 74 | 74 | 74 | 87 | Stesso di cui sopra |
