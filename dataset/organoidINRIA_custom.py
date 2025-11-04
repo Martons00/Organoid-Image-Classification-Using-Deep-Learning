@@ -166,6 +166,11 @@ class OrganoidsINRIA3D(Dataset):
         # Caricamento lazy dell'immagine/volume
         vol_np = tiff.imread(p)
 
+
+        y = int(self.labels[idx])
+        label = torch.tensor(y, dtype=torch.long)
+        name = os.path.splitext(os.path.basename(p))[0]
+
         # Se 2D, alza a [1,H,W] per uniformare
         if vol_np.ndim == 2:
             vol_np = vol_np[None, ...]
@@ -182,25 +187,24 @@ class OrganoidsINRIA3D(Dataset):
         # Aggiunge dimensione canale in testa → [1, D, H, W] o [1, 1, H, W] se 2D
         vol_np = np.expand_dims(vol_np, axis=0)
         vol = torch.from_numpy(vol_np)
-        _, D, _, _ = vol.shape
-        max_D = 128
-        if D > max_D:
-            # Selezione equispaziata di esattamente max_D indici
-            idx_d = torch.linspace(10, D - 1, steps=max_D, device=vol.device).round().to(torch.long)
-            idx_d = torch.clamp(idx_d, 10, D - 1)
-            vol = vol.index_select(1, idx_d)  # [B,C,max_D,H,W]
-        else:
-            # Padding a 128 z
-            pad_z = max_D - D
-            pad_z_front = pad_z // 2
-            pad_z_back = pad_z - pad_z_front
-            vol = torch.nn.functional.pad(vol, (0, 0, 0, 0, pad_z_front, pad_z_back), mode='constant', value=0)
-        
+        try:
+            _, D, _, _ = vol.shape
+            max_D = 128
+            if D > max_D:
+                # Selezione equispaziata di esattamente max_D indici
+                idx_d = torch.linspace(10, D - 1, steps=max_D, device=vol.device).round().to(torch.long)
+                idx_d = torch.clamp(idx_d, 10, D - 1)
+                vol = vol.index_select(1, idx_d)  # [B,C,max_D,H,W]
+            else:
+                # Padding a 128 z
+                pad_z = max_D - D
+                pad_z_front = pad_z // 2
+                pad_z_back = pad_z - pad_z_front
+                vol = torch.nn.functional.pad(vol, (0, 0, 0, 0, pad_z_front, pad_z_back), mode='constant', value=0)
+        except ValueError:
+            print(f"Errore nella forma del volume: {name}")
+            print(f"Forma volume originale: {vol.shape}")
 
-
-        y = int(self.labels[idx])
-        label = torch.tensor(y, dtype=torch.long)
-        name = os.path.splitext(os.path.basename(p))[0]
 
         return {"vol": vol, "label": label, "name": name, "size": size, "path": p}
 
@@ -231,10 +235,12 @@ if __name__ == "__main__":
         exact_class_dir=False
     )
     dl = torch.utils.data.DataLoader(ds, batch_size=1, shuffle=True)
-    samples = [dl.dataset[i]['vol'].view(1, -1) for i in range(100)]
-    samples = torch.cat(samples, dim=0)  # [N,C*D*H*W]
-    print(samples.shape)
-    sim = compute_similarity_matrix(samples)
-    print(f"AVG SIMILARITY: {sim.mean()}")
-    plot_similarity_heatmap(sim, save_path="similarity_example.png")
-
+    count = 0
+    for batch in dl:
+        vols = batch["vol"]  # [B, C, D, H, W] o [B, C, H, W]
+        try:
+            _,_, D, _, _ = vols.shape
+            count += 1
+            print(f"Sample {count}/{len(dl)}")
+        except ValueError:
+            print(f"Errore nella forma del volume: {batch['path']}")
