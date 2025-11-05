@@ -33,12 +33,12 @@ AUGMENTATION:
   augmentation: true
 
 TRAINING:
-  max_epochs: 200
+  max_epochs: 50
   batch_size: 6
   patch_merging: false
   sw_batch_size: 6
   val_every: 4
-  split_method: "percentage"  # "random" , "stratified" or "balanced" "percentage"
+  split_method: "stratified"  # "random" , "stratified" or "balanced" "percentage"
   save_checkpoint: true
   noamp: false
   # Optimizer parameters

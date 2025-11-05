@@ -365,7 +365,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
         
         # Logging
         if is_main_process:
-            if sim is not None:
+            if sim_loss_value != 0.0:
                 print(
                     f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "
@@ -673,7 +673,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
         
         # Logging
         if is_main_process:
-            if sim is not None:
+            if sim_loss_value != 0.0:
                 print(
                     f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "
@@ -936,7 +936,7 @@ def train_epoch_old(model, loader, optimizer, epoch, loss_func, acc_func, args):
         
         # Logging
         if is_main_process:
-            if sim is not None:
+            if sim_loss_value != 0.0:
                 print(
                     f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "

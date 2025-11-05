@@ -143,11 +143,12 @@ if __name__ == "__main__":
         "swinunetr_layer4",
         "swinunetr_encoder10",
         "resnet18",
-        "resnet50"
+        "resnet50",
     ]
 
     SELECTED_COLUMNS = [
     "Run",
+    "Aug",
     "Loss",
     "MaxEpochs",
     "LR",

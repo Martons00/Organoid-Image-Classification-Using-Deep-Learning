@@ -64,3 +64,6 @@ Traceback (most recent call last):
   File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/telegram/request/_baserequest.py", line 375, in _request_wrapper
     raise exception
 telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 1440
+
+
+rm 2024.10.31_PARIS_Noyau_Org\ _12_cystic_J7_20X_8bit.tif 
