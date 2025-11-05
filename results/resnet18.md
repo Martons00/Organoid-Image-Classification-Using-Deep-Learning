@@ -1,15 +1,3 @@
-## Experiment Results outputs/OrganoidsINRIA/resnet50
-| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2025-10-29 | 01 | resnet50 | no | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 100 | 8 | 0.0006 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 0.005 | 1 | 39 | 22 | 15 | 39 | 60 | Overfitting totale, tutto libero per il FT dal layer 4 block 0 è troppo, troppi parametri, pochi dati.  |
-| 2025-10-28 | 02 | resnet50 | yes | yes | 128x128x128 | CE | none | yes | no | 4 | 100 | 8 | 0.0003 | AdamW | 0.99 | cosine_anneal | no | no | percentage | 0.22 | 92 | 46 | 37 | 48 | 46 | 65 | La loss è meno rumorosa, ma Overfitting quasi totale |
-| 2025-10-30 | 03 | resnet50 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 150 | 8 | 0.0001 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 4.8 | 36 | 46 | 41 | 37 | 46 | 65 | Seppur la loss è alta il job è stato ucciso prima di poter vedere le curve e capire se fosse utile cio che guardavo, con solo fc libero |
-| 2025-11-03 | 04 | resnet50 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 150 | 8 | 0.0003 | AdamW | 0.99 | warmup_cosine | no | no | balanced | 4.8 | 39 | 51 | 50 | 63 | 51 | 75 | Anche questo solo FC, nelle primissime epoche sembrava andare molto bene, forse ha senso aumentare il val every per vedere meglio l'andamento, la training acc è bassa, rumorosa e non migliora. La loss è rumorosissima |
-| 2025-10-29 | 05_fc | resnet50 | yes | yes | 128x128x128 | CombinedLoss | none | yes | no | 6 | 150 | 8 | 0.0005 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 4.6 | 38 | 44 | 35 | 47 | 44 | 67 | LR troppo basso, prima try, ha da migliorare |
-| 2025-10-29 | 06_layer_4_2_fc | resnet50 | yes | yes | 128x128x128 | CombinedLoss | none | yes | no | 4 | 150 | 8 | 0.0005 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 1.1 | 82 | 46 | 34 | 28 | 46 | 70 | Overfitting, troppi paramnetri, acc training alta ma nessun migliroamento in val |
-| 2025-10-29 | 07_layer4_fc | resnet50 | yes | yes | 128x128x128 | CombinedLoss | none | yes | no | 4 | 150 | 8 | 0.0005 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 0.58 | 96 | 55 | 53 | 66 | 55 | 82 | Overfitting, sembra capirci qualcosa ma quando acc sul training è alta, troppi parametri per trainare con cosi pochi dati |
-
-
 ## Experiment Results outputs/OrganoidsINRIA/resnet18
 | Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -22,6 +10,7 @@
 | 2025-11-03 | 07 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 200 | 6 | 0.05 | AdamW | 0.99 | warmup_cosine_restarts | no | no | percentage | 2.50 | 73 | 46 | 46 | 48 | 46 | 72 | Restart poco sensato ancora, si tocca qualche minimo ma non si esplora mai bene la corvergenza.  |
 | 2025-11-03 | 08 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 200 | 8 | 0.01 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 2.0 | 71 | 58 | 59 | 82 | 58 | 88 | Continua ad avere una convergenza lenta, tentativo con LR ancora pià grande per vedere il limite.  |
 | 2025-11-04 | 09 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 200 | 8 | 0.05 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 1,9 | 80 | 70 | 70 | 70 | 70 | 82 | L'andamento è migliorato ma sembra che il picco di accuracy sia stata solo una fortuna. La loss scende bene dopo un inizio rumoroso e anche l'accuracy nel training continua a migliorare ma non converge. LR ancora più alto per capire meglio. |
+| 2025-11-04 | 10 | resnet18 | yes | yes | 128x128x128 | CE | none | yes | no | 4 | 200 | 8 | 0.1 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 0,45 | 80 | 65 | 65 | 65 | 65 | 81 | Non converge, ci sono picchi di performance ma in realta è molto stupido, per le prime epoche si ha molto rumore, poi dopo 110 epoche la loss converge, la train acc invece migliora linearmente ma ancora non è perfezionata. |
 
 
 
