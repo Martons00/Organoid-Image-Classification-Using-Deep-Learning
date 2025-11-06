@@ -9,8 +9,8 @@ import signal
 import matplotlib.pyplot as plt
 
 
-PROBLEMATIC_FILE = "problematic_samples.txt"   # file for problematic samples
-GOOD_FILE        = "good_samples.txt"          # file for already reviewed good samples
+PROBLEMATIC_FILE = "C:\\Users\\zzyu\\Desktop\\Martone\\Organoid-Image-Classification-Using-Deep-Learning\\problematic_samples.txt"   # file for problematic samples
+GOOD_FILE        = "C:\\Users\\zzyu\\Desktop\\Martone\\Organoid-Image-Classification-Using-Deep-Learning\\good_samples.txt"          # file for already reviewed good samples
 
 
 def load_id_set(path: str) -> set:
@@ -70,7 +70,7 @@ def safe_to_numpy(t):
 def main():
     # TRAINING dataset with augmentation
     train_ds = OrganoidsINRIA3D(
-        root="'/Volumes/LaCie/Organoids/Organoids_Dataset'",
+        root="F:\\Organoids\\\Organoids_Dataset",
         exact_class_dir=False,
     )
 
@@ -90,7 +90,7 @@ def main():
     newly_good = []
 
     try:
-        for i in range(len(train_ds)):
+        for i in range(830,len(train_ds)):
             if interrupted["flag"]:
                 break
 
@@ -130,7 +130,7 @@ def main():
             plt.show()
 
             # User input
-            choice = input("Good sample? [Y/N] (q to quit): ").strip().lower()
+            choice = input("Good sample? [W/N] (x to quit): ").strip().lower()
 
             # Close the figure to free resources
             try:
@@ -138,7 +138,7 @@ def main():
             except Exception:
                 pass
 
-            if choice == "y":
+            if choice == "w":
                 if sample_id not in good_set:
                     append_id(GOOD_FILE, sample_id)
                     good_set.add(sample_id)
@@ -154,7 +154,7 @@ def main():
                     print(f"[MARKED] Added to problematic: {sample_id}")
                 else:
                     print(f"[INFO] Already present in problematic: {sample_id}")
-            elif choice in ("q", ""):
+            elif choice in ("n", ""):
                 break
             else:
                 print("[INFO] Unrecognized input, stopping.")

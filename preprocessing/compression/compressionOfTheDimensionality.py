@@ -76,8 +76,6 @@ def analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(5
             volume = io.imread(tif_path)
             volume = normalize_uint16_to_uint8(volume)
 
-            #CROPPING PHASE
-            volume = volume[:,300:750,300:750]
             
             if len(volume.shape) < 3:
                 print(f"SKIP: {relative_path} - Non è un volume 3D")
@@ -326,8 +324,8 @@ def _print_summary_statistics(df_stats, processing_errors, input_folder, output_
 if __name__ == "__main__":
     # Esempio di utilizzo
     
-    input_folder = 'F:\\Organoids\\Noyaux\\Cystiques\\Nice'
-    output_folder = 'F:\\Organoids\\Cystiques_Nice_Reduce'
+    input_folder = 'F:\\Organoids\\Organoids_Dataset'
+    output_folder = 'F:\\Organoids\\Organoids_Dataset_256'
     # MODIFICATO: Aggiunto parametro preserve_structure
-    analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(512, 512), preserve_structure=False)
+    analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(256, 256), preserve_structure=True)
 
