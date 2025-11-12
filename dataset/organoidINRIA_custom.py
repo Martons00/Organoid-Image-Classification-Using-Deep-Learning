@@ -231,10 +231,10 @@ def selective_augmentation(data, transform, augmentation_ratio=0.5):
 if __name__ == "__main__":
     # Matching per sottostringa: include solo i file che contengono una delle 3 classi nel percorso
     ds = OrganoidsINRIA3D(
-        root="/home/mraffael/martone_project/Organoids_Dataset",
+        root="/home/mraffael/martone_project/Organoids_Dataset_256",
         exact_class_dir=False
     )
-    dl = torch.utils.data.DataLoader(ds, batch_size=1, shuffle=True)
+    dl = torch.utils.data.DataLoader(ds, batch_size=1, shuffle=False)
     count = 0
     for batch in dl:
         vols = batch["vol"]  # [B, C, D, H, W] o [B, C, H, W]

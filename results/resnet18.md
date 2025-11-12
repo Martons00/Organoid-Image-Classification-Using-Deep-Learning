@@ -11,6 +11,7 @@
 | 2025-11-03 | 08 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 200 | 8 | 0.01 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 2.0 | 71 | 58 | 59 | 82 | 58 | 88 | Continua ad avere una convergenza lenta, tentativo con LR ancora pià grande per vedere il limite.  |
 | 2025-11-04 | 09 | resnet18 | yes | yes | 128x128x128 | FocalLoss | none | yes | no | 4 | 200 | 8 | 0.05 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 1,9 | 80 | 70 | 70 | 70 | 70 | 82 | L'andamento è migliorato ma sembra che il picco di accuracy sia stata solo una fortuna. La loss scende bene dopo un inizio rumoroso e anche l'accuracy nel training continua a migliorare ma non converge. LR ancora più alto per capire meglio. |
 | 2025-11-04 | 10 | resnet18 | yes | yes | 128x128x128 | CE | none | yes | no | 4 | 200 | 8 | 0.1 | AdamW | 0.99 | warmup_cosine | no | no | percentage | 0,45 | 80 | 65 | 65 | 65 | 65 | 81 | Non converge, ci sono picchi di performance ma in realta è molto stupido, per le prime epoche si ha molto rumore, poi dopo 110 epoche la loss converge, la train acc invece migliora linearmente ma ancora non è perfezionata. |
+| 2025-11-07 | 11 | resnet18 | yes | no | 128x128x128 | CE | none | yes | no | 4 | 100 | 5 | 0.1 | AdamW | 0.99 | warmup_cosine | no | no | stratified | 0.67 | 71 | 48 | 31 | 23 | 48 | 52 | Molto male, continua a non migliorare, cosi ho deviso di ripetere l'esperimento con un learning rate più alto e con layer precedente unfrozen. |
 
 
 

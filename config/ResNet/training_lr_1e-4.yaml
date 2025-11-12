@@ -1,0 +1,56 @@
+
+# BRATS Swin UNETR Segmentation Configuration
+SYSTEM:
+  seed: 3
+  distributed: false
+  world_size: 1
+  rank: 0
+  workers: 8
+  output_dir: "outputs/"
+  logs_dir: "logs/"
+  telegram_log: true
+  telegram_token: "./token/tlg_token.txt"
+  oar_id: 0
+
+MODEL:
+  name: "resnet50" # "swinunetr", "swinunetr+ml_decoder"
+  pretrained_model_name: "resnet_50.pth"
+  pretrained_dir: "./pretrained_models/resnet50/"
+  norm_name: "instance"
+  use_checkpoint: false
+
+DATASET:
+  name: "OrganoidsINRIA"
+  data_dir: "/home/mraffael/martone_project/Organoids_Dataset/"
+  exact_class: false # if true, use only exact folders, if false use all folders_reduced
+  ignore_label: 3
+  # ROI size
+  roi_x: 128
+  roi_y: 128
+  roi_z: 128
+
+AUGMENTATION:
+  augmentation: true
+
+TRAINING:
+  max_epochs: 100
+  batch_size: 4
+  patch_merging: false
+  sw_batch_size: 4
+  val_every: 4
+  split_method: "stratified"  # "random" , "stratified" or "balanced" "percentage"
+  save_checkpoint: true
+  noamp: false
+  # Optimizer parameters
+  optim_lr: 1e-4
+  optim_name: "adamw" # "adam", "adamw" or "sgd"
+  reg_weight: 5e-5
+  momentum: 0.99
+  # Learning rate scheduler
+  lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
+  warmup_epochs: 4
+
+
+LOSS:
+  loss_name: "CE" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+

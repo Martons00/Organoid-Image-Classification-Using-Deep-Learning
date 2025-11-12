@@ -22,7 +22,7 @@ MODEL:
 DATASET:
   name: "OrganoidsINRIA"
   data_dir: "/home/mraffael/martone_project/Organoids_Dataset/"
-  exact_class: true # if true, use only exact folders, if false use all folders_reduced
+  exact_class: false # if true, use only exact folders, if false use all folders_reduced
   ignore_label: 3
   # ROI size
   roi_x: 128
@@ -33,12 +33,12 @@ AUGMENTATION:
   augmentation: true
 
 TRAINING:
-  max_epochs: 100
+  max_epochs: 60
   batch_size: 6
   patch_merging: false
   sw_batch_size: 6
   val_every: 4
-  split_method: "percentage"  # "random" , "stratified" or "balanced" "percentage"
+  split_method: "stratified"  # "random" , "stratified" or "balanced" "percentage"
   save_checkpoint: true
   noamp: false
   # Optimizer parameters
@@ -48,7 +48,7 @@ TRAINING:
   momentum: 0.99
   # Learning rate scheduler
   lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
-  warmup_epochs: 8
+  warmup_epochs: 5
 
 
 LOSS:

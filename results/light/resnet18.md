@@ -12,3 +12,4 @@
 | 08 | yes | FocalLoss | 200 | 0.01 | AdamW | warmup_cosine | yes | percentage | 71 | 58 |
 | 09 | yes | FocalLoss | 200 | 0.05 | AdamW | warmup_cosine | yes | percentage | 80 | 70 |
 | 10 | yes | CE | 200 | 0.1 | AdamW | warmup_cosine | yes | percentage | 80 | 65 |
+| 11 | yes | CE | 100 | 0.1 | AdamW | warmup_cosine | no | stratified | 71 | 48 |

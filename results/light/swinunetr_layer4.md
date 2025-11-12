@@ -13,3 +13,5 @@
 | 09 | yes | FocalLoss | 150 | 0.0005 | AdamW | warmup_cosine | no | percentage | 93 | 84 |
 | 10 | yes | CE | 50 | 0.0003 | AdamW |  | no | stratified | 75 | 80 |
 | 11 | yes | CE | 50 | 0.0003 | AdamW |  | yes | stratified | 80 | 80 |
+| 12 | yes | CE | 60 | 0.0003 | AdamW | warmup_cosine | no | stratified | 82 | 86 |
+| 13 | yes | CE | 60 | 0.0003 | AdamW | warmup_cosine | no | stratified | * | * |

@@ -38,11 +38,9 @@ def freeze_backbone_and_select_head_fixed_plus(model,args):
     trainable_params = 0
     lists_of_names = []
     if args.model_name == "resnet50":
-        lists_of_names = ["fc","global_pool"]
-        # lists_of_names = ["layer4.1","layer4.2","fc","global_pool"]
+        lists_of_names = ["layer4.2","fc","global_pool"]
     elif args.model_name == "resnet18":
-        lists_of_names = ["fc","global_pool"]
-        # lists_of_names = ["layer4.2","fc","global_pool"]
+        lists_of_names = ["layer4","fc","global_pool"]
     elif args.model_name == "swinunetr":
         lists_of_names = ["encoder10","fc","global_pool","swinViT.layers4.0.blocks.1.","swinViT.layers4.0.downsample.","head"]
     elif args.model_name == "swinunetr+ml_decoder":
@@ -106,7 +104,10 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
     # Liste per confusion matrix
     all_preds = []
     all_targets = []
-    
+
+    # Liste per la visualizzazione degli errori
+    all_errors_paths = []
+
     # Cache per attributi args
     is_distributed = getattr(args, "distributed", False)
     is_main_process = getattr(args, "rank", 0) == 0
@@ -117,8 +118,10 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             data, target = batch_data
         else:
             data, target = batch_data["vol"], batch_data["label"]
+
+        paths = batch_data["path"] if "path" in batch_data else None
         
-                # Calcola similarity matrices solo per epoche selezionate
+        # Calcola similarity matrices solo per epoche selezionate
         should_compute_sim = (
             (epoch == 0 or epoch == (args.max_epochs - 1) or epoch == int(args.max_epochs * 0.5)) 
             and idx == 0 
@@ -299,6 +302,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             # Accuracy batch
             correct = (preds == target_eval).sum().item()
+            all_errors_paths.extend([(paths[i], preds[i], target_eval[i]) for i in range(len(paths)) if preds[i] != target_eval[i]])
             not_nans = target_eval.numel()
             
             if acc_func is not None:
@@ -396,7 +400,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
         print(f"[Train epoch {epoch}] avg_loss={run_loss.avg:.4f} avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
     
-    return run_loss.avg, float(run_acc.avg), per_class_acc, cm
+    return run_loss.avg, float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
 def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
     """
@@ -423,6 +427,9 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
     # Liste per confusion matrix
     all_preds = []
     all_targets = []
+
+    # Liste per la visualizzazione degli errori
+    all_errors_paths = []
     
     # Cache per attributi args
     is_distributed = getattr(args, "distributed", False)
@@ -434,8 +441,10 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             data, target = batch_data
         else:
             data, target = batch_data["vol"], batch_data["label"]
-        
-                # Calcola similarity matrices solo per epoche selezionate
+
+        paths = batch_data["path"] if "path" in batch_data else None
+
+        # Calcola similarity matrices solo per epoche selezionate
         should_compute_sim = (
             (epoch == 0 or epoch == (args.max_epochs - 1) or epoch == int(args.max_epochs * 0.5)) 
             and idx == 0 
@@ -607,6 +616,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             # Accuracy batch
             correct = (preds == target_eval).sum().item()
+            all_errors_paths.extend([(paths[i], preds[i], target_eval[i]) for i in range(len(paths)) if preds[i] != target_eval[i]])
             not_nans = target_eval.numel()
             
             if acc_func is not None:
@@ -704,7 +714,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
         print(f"[Train epoch {epoch}] avg_loss={run_loss.avg:.4f} avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
     
-    return run_loss.avg, float(run_acc.avg), per_class_acc, cm
+    return run_loss.avg, float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
 def train_epoch_old(model, loader, optimizer, epoch, loss_func, acc_func, args):
     """
@@ -991,7 +1001,10 @@ def val_epoch_old(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
     # Liste per confusion matrix
     all_preds = []
     all_targets = []
-    
+
+    # Liste per la visualizzazione degli errori
+    all_errors_paths = []
+
     # Cache per attributi args
     is_distributed = getattr(args, "distributed", False)
     is_main_process = getattr(args, "rank", 0) == 0
@@ -1003,6 +1016,8 @@ def val_epoch_old(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
                 data, target = batch_data
             else:
                 data, target = batch_data["vol"], batch_data["label"]
+
+            paths = batch_data["path"] if "path" in batch_data else None
             
             data = data.to(device, non_blocking=True)
             target = target.to(device, non_blocking=True)
@@ -1072,6 +1087,7 @@ def val_epoch_old(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
             
             # Accuracy batch
             correct = (preds == target_eval).sum().item()
+            all_errors_paths.extend([(paths[i], preds[i], target_eval[i]) for i in range(len(paths)) if preds[i] != target_eval[i]])
             not_nans = target_eval.numel()
             
             if acc_func is not None:
@@ -1151,8 +1167,8 @@ def val_epoch_old(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
     if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
         print(f"[Val epoch {epoch}] avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
-    
-    return float(run_acc.avg), per_class_acc, cm
+
+    return float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
 def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float, dict, np.ndarray]:
     """
@@ -1175,6 +1191,9 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
     # Liste per confusion matrix
     all_preds = []
     all_targets = []
+
+    # Liste per la visualizzazione degli errori
+    all_errors_paths = []
     
     # Cache per attributi args
     is_distributed = getattr(args, "distributed", False)
@@ -1189,6 +1208,8 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
             else:
                 data, target = batch_data["vol"], batch_data["label"]
             
+            paths = batch_data["path"] if "path" in batch_data else None
+
             data = data.to(device, non_blocking=True)
             target = target.to(device, non_blocking=True)
             
@@ -1298,6 +1319,7 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
             
             # Accuracy batch
             correct = (preds == target_eval).sum().item()
+            all_errors_paths.extend([(paths[i], preds[i], target_eval[i]) for i in range(len(paths)) if preds[i] != target_eval[i]])
             not_nans = target_eval.numel()
             
             if acc_func is not None:
@@ -1377,8 +1399,8 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
     if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
         print(f"[Val epoch {epoch}] avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
-    
-    return float(run_acc.avg), per_class_acc, cm
+
+    return float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
 def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float, dict, np.ndarray]:
     """
@@ -1401,6 +1423,9 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float
     # Liste per confusion matrix
     all_preds = []
     all_targets = []
+
+    # Liste per la visualizzazione degli errori
+    all_errors_paths = []
     
     # Cache per attributi args
     is_distributed = getattr(args, "distributed", False)
@@ -1414,6 +1439,8 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float
                 data, target = batch_data
             else:
                 data, target = batch_data["vol"], batch_data["label"]
+
+            paths = batch_data["path"] if "path" in batch_data else None
             
             data = data.to(device, non_blocking=True)
             target = target.to(device, non_blocking=True)
@@ -1519,6 +1546,7 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float
             
             # Accuracy batch
             correct = (preds == target_eval).sum().item()
+            all_errors_paths.extend([(paths[i], preds[i], target_eval[i]) for i in range(len(paths)) if preds[i] != target_eval[i]])
             not_nans = target_eval.numel()
             
             if acc_func is not None:
@@ -1598,8 +1626,8 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float
     if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
         print(f"[Val epoch {epoch}] avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
-    
-    return float(run_acc.avg), per_class_acc, cm
+
+    return float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
 
 
@@ -1662,12 +1690,14 @@ def run_training(
     sim_plots_dir = os.path.join(final_plots_dir, "similarity")
     cm_plots_dir = os.path.join(final_plots_dir, "confusion_matrix")
     metrics_plots_dir = os.path.join(final_plots_dir, "metrics_tables")
+    errors_log_dir = os.path.join(final_output_dir, "errors_logs")
     
     os.makedirs(final_plots_dir, exist_ok=True)
     os.makedirs(sim_plots_dir, exist_ok=True)
     os.makedirs(cm_plots_dir, exist_ok=True)
     os.makedirs(metrics_plots_dir, exist_ok=True)
-    
+    os.makedirs(errors_log_dir, exist_ok=True)
+
     args.final_plots_dir = final_plots_dir
     args.sim_plots_dir = sim_plots_dir
     
@@ -1725,11 +1755,11 @@ def run_training(
         # Training
         epoch_time = time.time()
         if args.patch_merging:
-            train_loss, train_acc, train_per_class_acc, train_cm = train_epoch_new(
+            train_loss, train_acc, train_per_class_acc, train_cm, train_errors_paths = train_epoch_new(
                 model, train_loader, optimizer, epoch=epoch, loss_func=loss_func, acc_func=acc_func, args=args
             )
         else:
-            train_loss, train_acc, train_per_class_acc, train_cm = train_epoch(
+            train_loss, train_acc, train_per_class_acc, train_cm, train_errors_paths = train_epoch(
                 model, train_loader, optimizer, epoch=epoch, loss_func=loss_func, acc_func=acc_func, args=args
             )
         training_losses.append(train_loss)
@@ -1741,6 +1771,13 @@ def run_training(
 
         training_accuracies.append(train_acc)
         training_per_class_accuracies.append(train_per_class_acc)
+
+        with open(os.path.join(errors_log_dir, f"training_errors.txt"), 'a') as f:
+            f.write(f"Epoch {epoch}:\n")
+            for path, pred, target in train_errors_paths:
+                f.write(f"{path}\tPred: {pred}\tTarget: {target}\n")
+            f.write(f"*" + "-"*40 + "*\n")
+            f.write("\n")
 
         # Learning rate attuale
         current_lr = optimizer.param_groups[0]["lr"]
@@ -1786,13 +1823,20 @@ def run_training(
             
             epoch_time = time.time()
             if args.patch_merging:
-                val_acc, val_per_class, cm = val_epoch_new(
+                val_acc, val_per_class, cm, val_errors_paths = val_epoch_new(
                     model, val_loader, epoch=epoch, acc_func=acc_func, args=args
                 )
             else:
-                val_acc, val_per_class, cm = val_epoch(
+                val_acc, val_per_class, cm, val_errors_paths = val_epoch(
                     model, val_loader, epoch=epoch, acc_func=acc_func, args=args
                 )
+
+            with open(os.path.join(errors_log_dir, f"validation_errors.txt"), 'a') as f:
+                f.write(f"Epoch {epoch}:\n")
+                for path, pred, target in val_errors_paths:
+                    f.write(f"{path}\tPred: {pred}\tTarget: {target}\n")
+                f.write(f"*" + "-"*40 + "*\n")
+                f.write("\n")
 
             last_cm = cm
             metrics = metrics_from_confusion_matrix(cm)
@@ -1849,6 +1893,12 @@ def run_training(
                         title=f'Metrics Table (Train) - Epoch {epoch}',
                         save_path=os.path.join(metrics_plots_dir, f"best_train_metrics_table.png")
                     )
+                    with open(os.path.join(errors_log_dir, f"best_validation_errors.txt"), 'w') as f:
+                        f.write(f"Epoch {epoch}:\n")
+                        for path, pred, target in val_errors_paths:
+                            f.write(f"{path}\tPred: {pred}\tTarget: {target}\n")
+                        f.write(f"*" + "-"*40 + "*\n")
+                        f.write("\n")
 
                 # Telegram notification
                 if use_telegram:
@@ -1870,12 +1920,12 @@ def run_training(
                 )
                 
                 if is_new_best:
-                    print("Copying best model to model.pt")
+                    print("Copying best model to best_model.pt")
                     if logger:
-                        logger.info("Copying best model to model.pt")
+                        logger.info("Copying best model to best_model.pt")
                     shutil.copyfile(
                         os.path.join(args.final_output_dir, "model_final.pt"),
-                        os.path.join(args.final_output_dir, "model.pt")
+                        os.path.join(args.final_output_dir, "best_model.pt")
                     )
             
             # Early stopping per validation

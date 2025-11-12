@@ -1,0 +1,25 @@
+Epoch 43:
+/home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs_Nice_Reduce/raw_202503_Nice_orga1_38.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs/20231207_Noyau_org3.tif	Pred: 1	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs/2024.07.18_PARIS_Noyau_Org_4_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/2025.02.14_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs/20230731_Noyau_org2.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs/2024.10.03_PARIS_Noyau_Org_5_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs_Nice_Reduce/raw_202502_Nice_orga0_6.tif	Pred: 1	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/20231006_Noyau_org3.tif	Pred: 1	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs_Nice_Reduce/raw_202502_Nice_orga0_8.tif	Pred: 1	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/2024.06.26_PARIS_Noyau_Org_10_cystic_J7_20X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Chouxfleurs/2024.06.26_PARIS_Noyau_Org_18_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/Compact/20231207_Noyau_org8.tif	Pred: 2	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/2024.06.26_PARIS_Noyau_Org_9_cystic_J7_20X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/20231004_Noyau_org2.tif	Pred: 1	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Compact/20230804_Noyau_org2.tif	Pred: 2	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/20240319_Noyau_org3.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques_Nice_Reduce/202407_Nice_orga3_12.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/2025.01.28_PARIS_Noyau_Org _13_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/20231114_Noyau_org17.tif	Pred: 1	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/2024.07.18_PARIS_Noyau_Org_8_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/20231005_Noyau_org10.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/Cystiques/2024.10.03_PARIS_Noyau_Org_16_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+*----------------------------------------*
+

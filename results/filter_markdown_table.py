@@ -141,9 +141,12 @@ if __name__ == "__main__":
 
     file_names = [
         "swinunetr_layer4",
+        "swinunetr_reduced",
         "swinunetr_encoder10",
         "resnet18",
+        "resnet18_reduced",
         "resnet50",
+        "resnet50_reduced",
     ]
 
     SELECTED_COLUMNS = [

@@ -9,3 +9,5 @@
 | 05_fc | yes | CombinedLoss | 150 | 0.0005 | AdamW | warmup_cosine | yes | percentage | 38 | 44 |
 | 06_layer_4_2_fc | yes | CombinedLoss | 150 | 0.0005 | AdamW | warmup_cosine | yes | percentage | 82 | 46 |
 | 07_layer4_fc | yes | CombinedLoss | 150 | 0.0005 | AdamW | warmup_cosine | yes | percentage | 96 | 55 |
+| 08 | yes | FocalLoss | 4 | 2e-05 | AdamW | warmup_cosine | no | percentage | * | * |
+| 09 | yes | CE | 100 | 0.0001 | AdamW | warmup_cosine | no | stratified | * | * |
