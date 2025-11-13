@@ -13,5 +13,5 @@ pwd
 source models/SwinUNETR/BRATS21/swin_unetr_env/bin/activate
 
 # Avvia il training
-python train.py --cfg config/SwinUNETR/training_lr_6e-4_aug_warmup_reduced.yaml --oar_id $OAR_JOB_ID
+python train.py --cfg config/SwinUNETR+NOAH/training_lr_6e-4_aug_warmup_reduced.yaml --oar_id $OAR_JOB_ID
 exit

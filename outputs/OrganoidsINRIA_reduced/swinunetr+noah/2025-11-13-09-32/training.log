@@ -1,0 +1,170 @@
+2025-11-13 09:32:45,111 INFO Log directory: outputs/OrganoidsINRIA_reduced/swinunetr+noah/2025-11-13-09-32
+2025-11-13 09:32:45,113 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 6,
+ 'cache_dataset': False,
+ 'checkpoint_path': None,
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_reduced',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': False,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.001,
+ 'model_name': 'swinunetr+noah',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2117930,
+ 'optim_lr': 0.0006,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 20,
+ 'patience_val': 3,
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model_swinvit.pt',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 6,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 4,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+2025-11-13 09:32:45,113 INFO 
+2025-11-13 09:32:45,117 INFO Saved configuration to: outputs/OrganoidsINRIA_reduced/swinunetr+noah/2025-11-13-09-32/config.txt
+2025-11-13 09:32:45,830 INFO Using GPU: 0
+2025-11-13 09:32:45,830 INFO 
+2025-11-13 09:32:45,830 INFO Model INFO:
+2025-11-13 09:32:45,830 INFO Model architecture: swinunetr+noah
+2025-11-13 09:32:46,267 INFO Using pretrained weights
+2025-11-13 09:32:46,267 INFO => loading pretrained model './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/model_swinvit.pt'
+2025-11-13 09:32:50,543 INFO Missing keys when loading pretrained: 33
+2025-11-13 09:32:50,544 INFO Unexpected keys when loading pretrained: 8
+2025-11-13 09:32:50,546 INFO Using SwinUNETR with NOAH Classification Head
+2025-11-13 09:32:50,547 INFO Total trainable parameters: 39,917,112
+2025-11-13 09:32:50,570 INFO 
+2025-11-13 09:32:50,570 INFO Optimizer INFO:
+2025-11-13 09:32:50,571 INFO Using optimizer: adamw with lr=0.0006, weight_decay=5e-05
+2025-11-13 09:32:50,571 INFO 
+2025-11-13 09:32:50,571 INFO Dataset INFO:
+2025-11-13 09:32:50,647 INFO Dataset length: 803
+2025-11-13 09:32:50,647 INFO Class distribution in entire dataset:
+2025-11-13 09:32:50,647 INFO   Class 0: 391
+2025-11-13 09:32:50,647 INFO   Class 1: 43
+2025-11-13 09:32:50,647 INFO   Class 2: 369
+2025-11-13 09:32:50,647 INFO 
+Using split method: stratified
+2025-11-13 09:32:50,658 INFO 
+Train set balance:
+2025-11-13 09:32:50,658 INFO 
+Val set balance:
+2025-11-13 09:32:50,658 INFO Training set length: 642
+2025-11-13 09:32:50,658 INFO Validation set length: 161
+2025-11-13 09:32:50,658 INFO 
+Using standard shuffle for training
+2025-11-13 09:32:50,658 INFO Training loader: 107 batches
+2025-11-13 09:32:50,658 INFO Validation loader: 27 batches
+2025-11-13 09:32:50,658 INFO 
+Class distribution in training set:
+2025-11-13 09:32:50,658 INFO   Class 0: 313 (48.8%)
+2025-11-13 09:32:50,658 INFO   Class 1: 34 (5.3%)
+2025-11-13 09:32:50,658 INFO   Class 2: 295 (46.0%)
+2025-11-13 09:32:50,658 INFO Class distribution in validation set:
+2025-11-13 09:32:50,658 INFO   Class 0: 78 (48.4%)
+2025-11-13 09:32:50,658 INFO   Class 1: 9 (5.6%)
+2025-11-13 09:32:50,658 INFO   Class 2: 74 (46.0%)
+2025-11-13 09:32:50,658 INFO **************************************************
+2025-11-13 09:32:50,797 INFO Class weights: [ 6.837  62.941  7.254]
+2025-11-13 09:32:50,797 INFO 
+2025-11-13 09:32:50,797 INFO Using loss function: CE
+2025-11-13 09:32:50,801 INFO **************************************************
+2025-11-13 09:32:50,801 INFO Starting training...
+2025-11-13 09:32:50,803 INFO 0 Thu Nov 13 09:32:50 2025 Epoch: 0
+2025-11-13 09:38:22,542 INFO Final training 0/149, loss: 18.0054, time 331.74s, lr: 0.000000
+Accuracy: 0.488
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.488     0.891         0.109   0.631       313
+1                          0.200     0.059         0.987   0.091        34
+2                          0.533     0.108         0.919   0.180       295
+*----------------------------------------*
+2025-11-13 09:38:22,977 INFO 0 Thu Nov 13 09:38:22 2025 Epoch: 1
+2025-11-13 09:43:36,216 INFO Final training 1/149, loss: 19.8643, time 313.24s, lr: 0.000150
+Accuracy: 0.460
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.546     0.476         0.623   0.509       313
+1                          0.083     0.265         0.836   0.126        34
+2                          0.527     0.464         0.646   0.494       295
+*----------------------------------------*
+2025-11-13 09:43:36,217 INFO 0 Thu Nov 13 09:43:36 2025 Epoch: 2
+2025-11-13 09:48:46,092 INFO Final training 2/149, loss: 13.4717, time 309.87s, lr: 0.000300
+Accuracy: 0.506
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.573     0.466         0.669   0.514       313
+1                          0.076     0.235         0.840   0.115        34
+2                          0.606     0.580         0.680   0.593       295
+*----------------------------------------*
+2025-11-13 09:48:46,092 INFO 0 Thu Nov 13 09:48:46 2025 Epoch: 3
+2025-11-13 09:54:04,823 INFO Final training 3/149, loss: 12.7337, time 318.73s, lr: 0.000450
+Accuracy: 0.519
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.608     0.495         0.696   0.546       313
+1                          0.081     0.265         0.832   0.124        34
+2                          0.612     0.573         0.692   0.592       295
+*----------------------------------------*
+2025-11-13 09:55:50,903 INFO Final validation 3/149, Val_acc: 0.4358, time 106.08sAccuracy: 0.435
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.468     0.833         0.108   0.599        78
+1                          0.227     0.556         0.888   0.323         9
+2                          0.000     0.000         1.000   0.000        74
+*========================================*
+2025-11-13 09:55:50,903 INFO New best (0.000000 --> 0.435818)
+2025-11-13 09:55:56,773 INFO Copying best model to best_model.pt
+2025-11-13 09:56:00,623 INFO 0 Thu Nov 13 09:56:00 2025 Epoch: 4

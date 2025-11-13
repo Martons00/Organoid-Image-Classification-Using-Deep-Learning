@@ -53,9 +53,12 @@ def freeze_backbone_and_select_head_fixed_plus(model,args):
             param.requires_grad = True
             trainable_params += param.numel()
             print(f"✓ Unfrozen: {name} ({param.numel()} params)")
+        elif args.model_name == "resnet18":
+            param.requires_grad = True
+            trainable_params += param.numel()
         else:
             param.requires_grad = False
-            #print(f"✗ Frozen: {name} ({param.numel()} params)")
+            print(f"✗ Frozen: {name} ({param.numel()} params)")
             frozen_params += param.numel()
     
     print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
@@ -132,11 +135,11 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
         # AUGMENTATION qui, on-the-fly
         # ============================================
         if train_transform is not None:
-            # Augmenta solo il 50% dei samples nel batch
+            # Augmenta solo il 60% dei samples nel batch
             data = selective_augmentation(
                 data, 
                 train_transform,
-                augmentation_ratio=0.5  # ← 50% originali, 50% augmentati
+                augmentation_ratio=0.7  # ← 30% originali, 70% augmentati
             )
 
         data = data.to(device, non_blocking=True)
@@ -459,7 +462,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             data = selective_augmentation(
                 data, 
                 train_transform,
-                augmentation_ratio=0.5  # ← 50% originali, 50% augmentati
+                augmentation_ratio=0.7  # ← 30% originali, 70% augmentati
             )
 
         data = data.to(device, non_blocking=True)

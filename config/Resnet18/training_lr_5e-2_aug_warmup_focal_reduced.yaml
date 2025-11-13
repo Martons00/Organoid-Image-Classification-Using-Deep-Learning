@@ -30,7 +30,7 @@ DATASET:
   roi_z: 128
 
 AUGMENTATION:
-  augmentation: false
+  augmentation: true
 
 TRAINING:
   max_epochs: 100

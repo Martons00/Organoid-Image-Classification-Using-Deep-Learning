@@ -8,7 +8,7 @@ from torch.utils.data import Dataset
 from monai.transforms import Compose
 from monai.transforms import (
     RandFlip, RandRotate90, RandAffine, RandGaussianNoise,
-    RandAdjustContrast, RandShiftIntensity, RandZoom, RandGibbsNoise, EnsureChannelFirst
+    RandAdjustContrast, RandShiftIntensity, RandZoom, OneOf, EnsureChannelFirst
 )
 import tifffile as tiff
 # Dentro training/train.py
@@ -85,22 +85,13 @@ def get_train_transforms():
         
         # Rotazioni 90° per 3D
         RandRotate90(prob=0.5, max_k=3, spatial_axes=(2, 3)),  # Specifica gli assi
-        
-        # # Affine per 3D (NON 4D)
-        # RandAffine(
-        #     prob=0.3,
-        #     rotate_range=(0.1, 0.1, 0.1),  # 3 valori per 3D
-        #     translate_range=(10, 10, 10),  # 3 valori per 3D
-        #     shear_range=(0.03, 0.03, 0.03),  # 3 valori per 3D
-        #     spatial_size=None,  # Lascia che MONAI deduca automaticamente
-        #     mode="bilinear",
-        #     padding_mode="border",
-        # ),
-        
-        # Intensity transforms (sempre safe)
-        RandGaussianNoise(prob=0.2, mean=0.0, std=0.05),
-        RandShiftIntensity(prob=0.2, offsets=0.1),
-        RandAdjustContrast(prob=0.2, gamma=(0.8, 1.2))
+
+        # intensità (one-of)
+        OneOf([
+            RandGaussianNoise(prob=1.0, std=0.03),
+            RandAdjustContrast(prob=1.0, gamma=(0.8, 1.25)),
+            RandShiftIntensity(prob=1.0, offsets=0.1),
+        ], weights=[0.4, 0.3, 0.3]),
     ])
 
 
