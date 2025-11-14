@@ -19,7 +19,7 @@ MODEL:
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
   encoder10_pth: "" #"./pretrained_models/encode10/model.pt"
-  checkpoint: "" #"./outputs/OrganoidsINRIA/swinunetr/2025-10-22-10-20/model_final.pt"
+  checkpoint: "./outputs/OrganoidsINRIA/swinunetr/2025-10-22-10-20/model_final.pt"
   resume_ckpt: false
   feature_size: 48
   in_channels: 1
@@ -30,7 +30,6 @@ MODEL:
   dropout_path_rate: 0.0
   use_checkpoint: false
 
-DATASET:
 DATASET:
   name: "OrganoidsINRIA"
   data_dir: "/home/mraffael/martone_project/Organoids_Dataset/"
@@ -48,9 +47,9 @@ AUGMENTATION:
 
 TRAINING:
   max_epochs: 4
-  batch_size: 8
+  batch_size: 3
   patch_merging: false
-  sw_batch_size: 6
+  sw_batch_size: 8
   val_every: 1
   folds: false
   k_folds: 5
@@ -59,11 +58,11 @@ TRAINING:
   min_delta_val: 0.02
   patience_loss: 30
   min_delta_loss: 0.01
-  debug: false
+  debug: true
   debug_train_samples: 3
   debug_val_samples: 3
   
-  split_method: "stratified"  # "random" , "stratified" or "balanced" or "percentage"
+  split_method: "percentage"  # "random" , "stratified" or "balanced" or "percentage"
   save_checkpoint: true
   noamp: false
   # Optimizer parameters
@@ -76,7 +75,7 @@ TRAINING:
   warmup_epochs: 3
 
 LOSS:
-  loss_name: "CE" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+  loss_name: "FocalLoss" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
   similarity_loss: ""  # "contrastive" or "margin" or ""
   similarity_loss_weight: 10.0
 

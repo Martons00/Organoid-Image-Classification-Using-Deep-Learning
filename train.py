@@ -33,7 +33,7 @@ from monai.networks.nets import SwinUNETR
 # ========== Project-Specific ==========
 from config import config, parse_args
 from utils.utils import create_logger
-from utils.trainer import run_training
+from utils.trainer import run_training, run_testing
 from utils.data_utils import (
     get_loader,
     split_dataset_balanced,
@@ -138,6 +138,8 @@ def main_worker(gpu, args, configs):
     
     # Setup dataset e dataloaders
     train_loader, val_loader, class_weights = _setup_data(args, logger, log)
+
+    test_loader = _setup_data_test(args, logger, log)
     
     # Setup loss function
     loss_func = _setup_loss(args, class_weights, log)
@@ -158,6 +160,16 @@ def main_worker(gpu, args, configs):
         args=args,
         scheduler=scheduler,
         start_epoch=args.start_epoch if args.start_epoch else 0,
+        writer_dict=writer_dict,
+        final_output_dir=final_output_dir,
+        logger=logger,
+    )
+
+    accuracy = run_testing(
+        model=model,
+        test_loader=test_loader,
+        acc_func=acc_metric,
+        args=args,
         writer_dict=writer_dict,
         final_output_dir=final_output_dir,
         logger=logger,
@@ -624,6 +636,54 @@ class BalancedBatchSampler(Sampler):
     def __len__(self):
         return self.num_batches
 
+def _setup_data_test(args, logger, log):
+    """Setup dataset di test e dataloader."""
+    log("")
+    log("Test Dataset INFO:")
+    
+    # Carica dataset di test
+    test_dataset = OrganoidsINRIA3D(args.data_dir + "/test_set", exact_class_dir=args.exact_class)
+    test_labels = test_dataset.labels
+    num_classes = 3
+    
+    log(f"Test Dataset length: {len(test_dataset)}")
+    
+    # Class distribution totale nel test set
+    test_counts = np.bincount(test_labels, minlength=num_classes)
+    log("Class distribution in test dataset:")
+    for c, n in enumerate(test_counts):
+        log(f"  Class {c}: {n}")
+    
+    # Crea dataloader di test
+    test_loader = DataLoader(
+        test_dataset,
+        batch_size=args.batch_size,
+        shuffle=False,
+        pin_memory=True,
+        drop_last=False,
+        num_workers=args.workers,
+    )
+
+    if args.debug:
+        log("\nDEBUG MODE ACTIVE - Test Set")
+        test_samples = 3
+        test_loader = DataLoader(
+            test_dataset,
+            batch_size=args.batch_size,
+            shuffle=False,
+            pin_memory=True,
+            drop_last=False,
+            num_workers=args.workers,
+            sampler=torch.utils.data.SubsetRandomSampler(
+                list(range(min(test_samples, len(test_dataset))))
+            )
+        )
+        log(f"DEBUG: using {min(test_samples, len(test_dataset))} test samples")
+    
+    log(f"Test loader: {len(test_loader)} batches")
+    log("*" * 50)
+    
+    return test_loader
 
 def _setup_data(args, logger, log):
     """Setup dataset, dataloaders e calcola class weights."""
@@ -631,7 +691,7 @@ def _setup_data(args, logger, log):
     log("Dataset INFO:")
     
     # Carica dataset
-    dataset = OrganoidsINRIA3D(args.data_dir, exact_class_dir=args.exact_class)
+    dataset = OrganoidsINRIA3D(args.data_dir + "/train_set", exact_class_dir=args.exact_class)
     labels = dataset.labels
     num_classes = 3
     

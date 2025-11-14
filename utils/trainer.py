@@ -1682,6 +1682,7 @@ def run_training(
     args.step= (args.roi_z, int(args.roi_y * 2 // 3), int(args.roi_x * 2 // 3))
     
     # Setup directory output
+    final_output_dir = final_output_dir + "/training"
     args.final_output_dir = final_output_dir
     if final_output_dir is None:
         time_str = time.strftime('%Y-%m-%d-%H-%M')
@@ -2029,6 +2030,152 @@ def run_training(
                 _send_telegram_plots(args, metrics_plots_dir, cm_plots_dir)
     
     return val_acc_max
+
+def run_testing(
+    model,
+    test_loader,
+    acc_func,
+    args,
+    writer_dict=None,
+    final_output_dir=None,
+    logger=None,
+) -> float:
+    """
+    Loop di training principale con validation, early stopping e logging.
+    
+    Returns:
+        float: Best validation accuracy raggiunta
+    """
+    # Setup logging e writer
+    writer = writer_dict.get("writer") if writer_dict is not None else None
+
+    # Inizializza lo step
+    args.step= (args.roi_z, int(args.roi_y * 2 // 3), int(args.roi_x * 2 // 3))
+    
+    # Setup directory output
+    final_output_dir = final_output_dir + "/testing"
+    args.final_output_dir = final_output_dir 
+    
+    if final_output_dir is None:
+        time_str = time.strftime('%Y-%m-%d-%H-%M')
+        name_file = f'{args.logdir}_{time_str}'
+        final_output_dir = os.path.join(args.output_dir, name_file)
+    
+    # Crea struttura directory
+    final_plots_dir = os.path.join(final_output_dir, "plots")
+    cm_plots_dir = os.path.join(final_plots_dir, "confusion_matrix")
+    metrics_plots_dir = os.path.join(final_plots_dir, "metrics_tables")
+    errors_log_dir = os.path.join(final_output_dir, "errors_logs")
+    
+    os.makedirs(final_plots_dir, exist_ok=True)
+    os.makedirs(cm_plots_dir, exist_ok=True)
+    os.makedirs(metrics_plots_dir, exist_ok=True)
+    os.makedirs(errors_log_dir, exist_ok=True)
+
+    args.final_plots_dir = final_plots_dir
+    
+    # Cache attributi comuni
+    is_main_process = args.rank == 0
+    should_save = is_main_process and args.final_output_dir is not None and args.save_checkpoint
+    use_telegram = args.telegram_log if hasattr(args, 'telegram_log') else False
+    
+    Test_acc_max = args.best_acc if hasattr(args, 'best_acc') else 0.0
+    last_cm = None
+    last_metrics = None
+
+
+    if args.distributed:
+        torch.distributed.barrier()
+    
+    epoch_time = time.time()
+    if args.patch_merging:
+        test_acc, test_per_class, cm, test_errors_paths = val_epoch_new(
+            model, test_loader, epoch=0, acc_func=acc_func, args=args
+        )
+    else:
+        test_acc, test_per_class, cm, test_errors_paths = val_epoch(
+            model, test_loader, epoch=0, acc_func=acc_func, args=args
+        )
+
+    with open(os.path.join(errors_log_dir, f"testing_errors.txt"), 'a') as f:
+        f.write(f"Epoch 0:\n")
+        for path, pred, target in test_errors_paths:
+            f.write(f"{path}\tPred: {pred}\tTarget: {target}\n")
+        f.write(f"*" + "-"*40 + "*\n")
+        f.write("\n")
+
+    last_cm = cm
+    metrics = metrics_from_confusion_matrix(cm)
+    last_metrics = metrics
+    metrics_str = format_print_metrics(metrics)
+    
+    
+    if is_main_process:
+        val_time = time.time() - epoch_time
+        msg = (
+            f"Final testing , "
+            f"Test_acc: {test_acc:.4f}, time {val_time:.2f}s"
+            f"{metrics_str}\n"
+            f"*========================================*"
+        )
+        print(msg)
+        if logger:
+            logger.info(msg)
+        
+        # Telegram notification
+        if use_telegram:
+            telegram_msg = (
+                f"*✅ Testing - Epoch 0*\n"
+                f"Test Acc: {test_acc:.4f}\n"
+            )
+            _send_telegram_safe(args, telegram_msg)
+            
+
+
+    
+    # Fine training
+    if is_main_process:
+        print(f"Testing Finished! Best Accuracy: {test_acc:.4f}")
+        if logger:
+            logger.info(f"Testing Finished! Best Accuracy: {test_acc:.4f}")
+            logger.info("=" * 100)
+        
+        if use_telegram:
+            time_str = time.strftime('%Y/%m/%d %H:%M')
+            telegram_msg = (
+                f"*🏆 Testing Finished!*\n"
+                f"{time_str}\n"
+                f"Best Test Acc: {test_acc:.4f}"
+            )
+            _send_telegram_safe(args, telegram_msg)
+        
+        # Salva plot finali
+        if last_cm is not None and last_metrics is not None:
+            print(f"Saving plots to: {final_plots_dir}")
+            
+            class_names = [f"class {i}" for i in range(last_cm.shape[0])]
+            
+            # Confusion matrix e metrics
+            plot_confusion_matrix(
+                last_cm,
+                class_names=class_names,
+                title='Confusion Matrix - Final Epoch',
+                save_path=os.path.join(cm_plots_dir, "final_confusion_matrix.png")
+            )
+
+            plot_metrics_table(
+                last_metrics,
+                class_names=class_names,
+                title='Metrics Table - Final Epoch',
+                save_path=os.path.join(metrics_plots_dir, "final_metrics_table.png")
+            )
+            
+            # Telegram plot notifications
+            if use_telegram:
+                _send_telegram_plots(args, metrics_plots_dir, cm_plots_dir)
+    
+    return test_acc
+
 
 
 def _send_telegram_safe(args, message):
