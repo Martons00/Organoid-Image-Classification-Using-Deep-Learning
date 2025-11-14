@@ -15,11 +15,9 @@ SYSTEM:
   oar_id: 0
 
 MODEL:
-  name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder" or "swinunetr+noah"
-  pretrained_model_name: "model_swinvit.pt"
-  pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
-  encoder10_pth: "" #"./pretrained_models/encode10/model.pt"
-  checkpoint: "./outputs/OrganoidsINRIA/swinunetr/2025-10-22-10-20/model_final.pt"
+  name: "resnet18" # "swinunetr", "swinunetr+ml_decoder"
+  pretrained_model_name: "resnet_18.pth"
+  pretrained_dir: "./pretrained_models/resnet18/"
   resume_ckpt: false
   feature_size: 48
   in_channels: 1
@@ -31,8 +29,8 @@ MODEL:
   use_checkpoint: false
 
 DATASET:
-  name: "OrganoidsINRIA"
-  data_dir: "/home/mraffael/martone_project/Organoids_Dataset/"
+  name: "OrganoidsINRIA_reduced"
+  data_dir: "/home/mraffael/martone_project/Organoids_Dataset_256/"
   exact_class: false # if true, use only exact folders, if false use all folders_reduced
   ignore_label: 3
   fold: 0
@@ -46,21 +44,21 @@ AUGMENTATION:
   augmentation: true
 
 TRAINING:
-  max_epochs: 4
-  batch_size: 3
+  max_epochs: 3
+  batch_size: 6
   patch_merging: false
   sw_batch_size: 8
   val_every: 1
+  early_stopping: true
+  patience_val: 2
+  min_delta_val: 0.01
+  patience_loss: 2
+  min_delta_loss: 0.001
   folds: false
   k_folds: 5
-  early_stopping: true
-  patience_val: 10
-  min_delta_val: 0.02
-  patience_loss: 30
-  min_delta_loss: 0.01
   debug: true
-  debug_train_samples: 3
-  debug_val_samples: 3
+  debug_train_samples: 6
+  debug_val_samples: 6 
   
   split_method: "percentage"  # "random" , "stratified" or "balanced" or "percentage"
   save_checkpoint: true

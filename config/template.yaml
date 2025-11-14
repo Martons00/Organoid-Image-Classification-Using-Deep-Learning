@@ -55,9 +55,9 @@ TRAINING:
   sw_batch_size: 1
   val_every: 100
   early_stopping: true
-  patience_val: 3
-  min_delta_val: 0.001
-  patience_loss: 20
+  patience_val: 40
+  min_delta_val: 0.01
+  patience_loss: 40
   min_delta_loss: 0.001
   folds: false
   k_folds: 5

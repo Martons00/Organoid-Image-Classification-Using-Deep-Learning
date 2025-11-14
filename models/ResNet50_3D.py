@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-class ResNet50_3D(nn.Module):
+class ResNet_3D(nn.Module):
     def __init__(self, original_model: nn.Module, num_classes: int = 3, num_features: int = 2048):
         super().__init__()
         # Copia backbone 3D

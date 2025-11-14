@@ -47,9 +47,8 @@ class DenseNet_3D(nn.Module):
 
     def forward_features(self, x: torch.Tensor) -> torch.Tensor:
         # Path backbone puro fino a layer4
-        x2=0
         x = self.features(x)     # [B,C,D,H,W] -> conv [web:172]
-        return x,x2
+        return x,x
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         feats = self.forward_features(x)               # N×C×D×H×W [web:172]

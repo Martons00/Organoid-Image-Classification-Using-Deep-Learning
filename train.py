@@ -28,7 +28,7 @@ from torch.utils.data import DataLoader
 from torchmetrics.classification import MulticlassAccuracy
 
 # ========== MONAI ==========
-from monai.networks.nets import SwinUNETR
+from monai.networks.nets import SwinUNETR,DenseNet201
 
 # ========== Project-Specific ==========
 from config import config, parse_args
@@ -58,7 +58,7 @@ import asyncio
 from models.ML_Decoder_main.src_files.ml_decoder.ml_decoder import MLDecoder
 from models.NOAH_main.modules.noah import NOAH
 from dataset import OrganoidsINRIA3D
-from models import SwinUNETREncoder,resnet,ResNet50_3D
+from models import SwinUNETREncoder,resnet,ResNet_3D,DenseNet_3D
 
 # from datasets.base_dataset import AugmentedDataset
 from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR  # Uncomment if used
@@ -128,9 +128,15 @@ def main_worker(gpu, args, configs):
         _send_telegram_safe(args, message)
     
     log(f"Using GPU: {args.gpu}")
-    
+
+    # device = torch.device("cuda:0")
+    # torch.cuda.empty_cache()
+    # torch.cuda.reset_peak_memory_stats(device)
+    # baseline = torch.cuda.memory_allocated(device)
     # Setup model
     model = _setup_model(args, logger, log)
+    # after = torch.cuda.memory_allocated(device)
+    # print(f"Model on-GPU: {(after - baseline)/1024**2:.2f} MB")
     
     # Setup optimizer e scheduler
     optimizer = _setup_optimizer(model, args, logger, log)
@@ -169,6 +175,7 @@ def main_worker(gpu, args, configs):
         model=model,
         test_loader=test_loader,
         acc_func=acc_metric,
+        loss_func=loss_func,
         args=args,
         writer_dict=writer_dict,
         final_output_dir=final_output_dir,
@@ -215,7 +222,7 @@ def _setup_logging_and_device(args):
     args.test_mode = False
 
 
-def _setup_model(args, logger, log):
+def _setup_model_old(args, logger, log):
     """Setup e caricamento del modello."""
     log("")
     log("Model INFO:")
@@ -385,7 +392,7 @@ def _setup_model(args, logger, log):
             else:
                 log("Skipping loading pretrained weights since checkpoint path is provided")
 
-        model = ResNet50_3D(model, num_classes=3)
+        model = ResNet_3D(model, num_classes=3)
 
                 # Aggiungi classification head custom
         if args.model_name == "resnet50+ml_decoder":
@@ -462,7 +469,7 @@ def _setup_model(args, logger, log):
             else:
                 log("Skipping loading pretrained weights since checkpoint path is provided")
 
-        model = ResNet50_3D(model, num_classes=3)
+        model = ResNet_3D(model, num_classes=3)
 
                 # Aggiungi classification head custom
         if args.model_name == "resnet18+ml_decoder":
@@ -513,6 +520,318 @@ def _setup_model(args, logger, log):
             output_device=args.gpu
         )
     
+    return model
+
+import os
+import torch
+from pathlib import Path
+
+def _load_checkpoint_dict(path):
+    # Carica un checkpoint flessibilmente (state_dict o modello diretto)
+    ckpt = torch.load(path, map_location="cpu", weights_only=False)
+    sd = ckpt.get("state_dict", ckpt)
+    if "model" in sd and isinstance(sd["model"], dict):
+        sd = sd["model"]
+    return sd, ckpt
+
+def _remap_keys_for_swinunetr(sd, log, skip_patterns=None):
+    # Rinomina chiavi per compatibilità e salta quelle indesiderate
+    skip_patterns = skip_patterns or ['out.conv.conv.weight', 'out.conv.conv.bias']
+    new_sd = {}
+    for k, v in sd.items():
+        if any(pat in k for pat in skip_patterns):
+            log(f"Skipping layer {k} due to skip pattern")
+            continue
+        if k.startswith("module."):
+            new_key = "swinViT." + k[len("module."):]
+            new_key = new_key.replace("fc", "linear")
+        else:
+            new_key = k
+        new_sd[new_key] = v
+    return new_sd
+
+def _remap_keys_strip_module(sd):
+    # Rimuovi prefisso 'module.' per modelli DataParallel
+    new_sd = {}
+    for k, v in sd.items():
+        new_sd[k[7:]] = v if k.startswith("module.") else v
+    return new_sd
+
+def _maybe_load_pretrained(model, path, remap_fn=None, log=lambda *a, **k: None, strict=False):
+    if not path or not os.path.exists(path):
+        return [], []
+    log(f"=> loading pretrained model '{path}'")
+    sd, _ = _load_checkpoint_dict(path)
+    if remap_fn:
+        sd = remap_fn(sd)
+    missing, unexpected = model.load_state_dict(sd, strict=strict)
+    if missing:
+        log(f"Missing keys when loading pretrained: {len(missing)}")
+    if unexpected:
+        log(f"Unexpected keys when loading pretrained: {len(unexpected)}")
+    return missing, unexpected
+
+def _maybe_load_checkpoint(model, path, log=lambda *a, **k: None, strict=False, args=None):
+    if not path or not os.path.exists(path):
+        return
+    log(f"=> loading checkpoint '{path}'")
+    sd, ckpt = _load_checkpoint_dict(path)
+    incompatible = model.load_state_dict(sd, strict=strict)
+    if args is not None:
+        if "epoch" in ckpt:
+            args.start_epoch = ckpt["epoch"]
+        if "best_acc" in ckpt:
+            args.best_acc = ckpt["best_acc"]
+    loaded_keys = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
+    log(f"Loaded {loaded_keys} keys from checkpoint")
+
+def _build_swinunetr_base(args):
+    # Costruzione base del backbone SwinUNETR (MONAI)
+    model = SwinUNETR(
+        img_size=(args.roi_x, args.roi_y, args.roi_z),
+        in_channels=args.in_channels,
+        out_channels=args.out_channels,
+        feature_size=48,
+        use_checkpoint=False,
+    )
+    return model
+
+def _attach_classification_head(model, args, log):
+    # Imposta encoder + classification head secondo il nome modello
+    model = SwinUNETREncoder(model, num_classes=3, num_features=768)
+    name = args.model_name.lower()
+    if name == "swinunetr+ml_decoder":
+        try:
+            head = MLDecoder(
+                num_classes=3,
+                initial_num_features=1024,
+                num_of_groups=1,
+                decoder_embedding=768,
+                zsl=0
+            )
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            log("Using SwinUNETR with ML-Decoder Classification Head")
+        except NameError:
+            log("Warning: MLDecoder not imported, using default head", level="warning")
+    elif name == "swinunetr+noah":
+        try:
+            head = NOAH(
+                inplanes=768,
+                outplanes=3,
+                dropout=0.1,
+                head_num=1,
+                head_split=True,
+                kv_split=False
+            )
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            log("Using SwinUNETR with NOAH Classification Head")
+        except NameError:
+            log("Warning: NOAH not imported, using default head", level="warning")
+    else:
+        log("Using SwinUNETR with Single Linear Classification Head")
+    return model
+
+def _build_resnet_base(args, depth):
+    if depth == 50:
+        backbone = resnet.resnet50(
+            sample_input_W=args.roi_x, sample_input_H=args.roi_y,
+            sample_input_D=args.roi_z, num_seg_classes=1
+        )
+        wrapped = ResNet_3D(backbone, num_classes=3)
+    elif depth == 18:
+        backbone = resnet.resnet18(
+            sample_input_W=args.roi_x, sample_input_H=args.roi_y,
+            sample_input_D=args.roi_z, num_seg_classes=1
+        )
+        # Usa wrapper specifico se presente, altrimenti fallback
+        if "ResNet18_3D" in globals():
+            wrapped = ResNet_3D(backbone, num_classes=3)
+        else:
+            wrapped = ResNet_3D(backbone, num_classes=3)
+    else:
+        raise ValueError(f"Unsupported ResNet depth: {depth}")
+    return wrapped
+
+def _attach_resnet_head(model, args, log):
+    name = args.model_name.lower()
+    if name.endswith("+ml_decoder"):
+        try:
+            head = MLDecoder(
+                num_classes=3,
+                initial_num_features=1024,
+                num_of_groups=1,
+                decoder_embedding=768,
+                zsl=0
+            )
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            log("Using ResNet with ML-Decoder Classification Head")
+        except NameError:
+            log("Warning: MLDecoder not imported, using default head", level="warning")
+    elif name.endswith("+noah"):
+        try:
+            head = NOAH(
+                inplanes=768,
+                outplanes=3,
+                dropout=0.1,
+                head_num=1,
+                head_split=True,
+                kv_split=False
+            )
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            log("Using ResNet with NOAH Classification Head")
+        except NameError:
+            log("Warning: NOAH not imported, using default head", level="warning")
+    else:
+        log("Using ResNet with Single Linear Classification Head")
+    return model
+
+def _attach_densenet_head(model, args, log):
+    name = args.model_name.lower()
+    if name.endswith("+ml_decoder"):
+        try:
+            head = MLDecoder(
+                num_classes=3,
+                initial_num_features=1024,
+                num_of_groups=1,
+                decoder_embedding=768,
+                zsl=0
+            )
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            log("Using DenseNet with ML-Decoder Classification Head")
+        except NameError:
+            log("Warning: MLDecoder not imported, using default head", level="warning")
+    elif name.endswith("+noah"):
+        try:
+            head = NOAH(
+                inplanes=768,
+                outplanes=3,
+                dropout=0.1,
+                head_num=1,
+                head_split=True,
+                kv_split=False
+            )
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            log("Using DenseNet with NOAH Classification Head")
+        except NameError:
+            log("Warning: NOAH not imported, using default head", level="warning")
+    else:
+        log("Using DenseNet with Single Linear Classification Head")
+    return model
+
+def _setup_model(args, logger, log):
+    """Setup e caricamento del modello."""
+    log("")
+    log("Model INFO:")
+    log(f"Model architecture: {args.model_name}")
+
+    name = args.model_name.lower()
+    pretrained_pth = os.path.join(args.pretrained_dir, args.pretrained_model_name) if getattr(args, "pretrained_dir", None) else None
+
+    if "swinunetr" in name:
+        # Backbone
+        model = _build_swinunetr_base(args)
+        # Pretrained (se presente e se non si è passato un checkpoint completo)
+        if pretrained_pth and os.path.exists(pretrained_pth) and args.checkpoint_path is None:
+            log("Using pretrained weights")
+            _maybe_load_pretrained(
+                model, pretrained_pth,
+                remap_fn=lambda sd: _remap_keys_for_swinunetr(sd, log),
+                log=log, strict=False
+            )
+        else:
+            if args.checkpoint_path is None:
+                log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+            else:
+                log("Skipping loading pretrained weights since checkpoint path is provided")
+
+        # Encoder dedicato (se fornito) prima della testa
+        if getattr(args, "encoder10_pth", None) and os.path.exists(args.encoder10_pth) and args.checkpoint_path is None:
+            log(f"=> loading encoder '{args.encoder10_pth}'")
+            sd, _ = _load_checkpoint_dict(args.encoder10_pth)
+            enc_sd = {k: v for k, v in sd.items() if k.startswith("encoder10.")}
+            incompatible = model.load_state_dict(enc_sd, strict=False)
+            loaded = len(model.state_dict().keys()) - len(getattr(incompatible, "missing_keys", []))
+            log(f"Loaded {loaded} keys from encoder10 checkpoint")
+
+        # Classification head
+        model = _attach_classification_head(model, args, log)
+
+        # Checkpoint di fine-tuning (se specificato)
+        if getattr(args, "checkpoint_path", None) and os.path.exists(args.checkpoint_path):
+            _maybe_load_checkpoint(model, args.checkpoint_path, log=log, strict=False, args=args)
+    
+    elif "densenet" in name:
+        net = DenseNet201(spatial_dims=3, in_channels=1, out_channels=1)   
+
+        model = DenseNet_3D(original_model=net, num_classes=3)
+
+
+    elif "resnet50" in name or "resnet18" in name:
+        depth = 50 if "resnet50" in name else 18
+        # Backbone + wrapper 3D
+        # Carica backbone prima per sfruttare eventuali pesi pre-addestrati
+        backbone = resnet.resnet50 if depth == 50 else resnet.resnet18
+        net = backbone(
+            sample_input_W=args.roi_x, sample_input_H=args.roi_y,
+            sample_input_D=args.roi_z, num_seg_classes=1
+        )
+
+        if pretrained_pth and os.path.exists(pretrained_pth) and args.checkpoint_path is None:
+            log("Using pretrained weights")
+            log(f"=> loading pretrained model '{pretrained_pth}'")
+            sd, _ = _load_checkpoint_dict(pretrained_pth)
+            sd = _remap_keys_strip_module(sd)
+            missing, unexpected = net.load_state_dict(sd, strict=False)
+            if missing:
+                log(f"Missing keys when loading pretrained: {len(missing)}")
+            if unexpected:
+                log(f"Unexpected keys when loading pretrained: {len(unexpected)}")
+        else:
+            if args.checkpoint_path is None:
+                log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+            else:
+                log("Skipping loading pretrained weights since checkpoint path is provided")
+
+        # Wrap 3D + head
+        if depth == 50:
+            model = ResNet_3D(net, num_classes=3)
+        else:
+            if "ResNet18_3D" in globals():
+                model = ResNet_3D(net, num_classes=3)
+            else:
+                model = ResNet_3D(net, num_classes=3)
+                log("Warning: ResNet18_3D not found, using ResNet50_3D wrapper as fallback", level="warning")
+
+        model = _attach_resnet_head(model, args, log)
+
+        # Checkpoint di fine-tuning (se specificato)
+        if getattr(args, "checkpoint_path", None) and os.path.exists(args.checkpoint_path):
+            _maybe_load_checkpoint(model, args.checkpoint_path, log=log, strict=False, args=args)
+
+    else:
+        raise ValueError(f"Unsupported model architecture: {args.model_name}")
+
+    # Conta parametri
+    total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    log(f"Total trainable parameters: {total_params:,}")
+
+    # Sposta su GPU
+    model = model.cuda(args.gpu)
+
+    # Distributed: converti BN -> SyncBN prima del DDP, poi avvolgi in DDP
+    if getattr(args, "distributed", False):
+        if getattr(args, "norm_name", "") == "batch":
+            model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
+        model = torch.nn.parallel.DistributedDataParallel(
+            model, device_ids=[args.gpu], output_device=args.gpu
+        )
+
     return model
 
 

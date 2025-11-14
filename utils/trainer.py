@@ -47,6 +47,8 @@ def freeze_backbone_and_select_head_fixed_plus(model,args):
         lists_of_names = ["fc","global_pool","head"]
     elif args.model_name == "swinunetr+noah":
         lists_of_names = ["encoder10","fc","global_pool","head"]
+    elif args.model_name == "densenet":
+        lists_of_names = ["features","fc","global_pool"]
 
     for name, param in model.named_parameters():
         if any(layer in name for layer in lists_of_names):
@@ -247,7 +249,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr" or "resnet" in args.model_name:
+            elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
                 pooled = pooled.flatten(1)
             
             # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
@@ -270,7 +272,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
                 plot_similarity_heatmap_new(
                     sim_np, 
                     target, 
-                    save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch}_iter{idx}.png")
+                    save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch+1}_iter{idx}.png")
                 )
                 
 
@@ -281,7 +283,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
                 plot_similarity_heatmap_new(
                     sim_hidden, 
                     target, 
-                    save_path=os.path.join(args.sim_plots_dir, f"similarity_hidden_epoch{epoch}_iter{idx}.png")
+                    save_path=os.path.join(args.sim_plots_dir, f"similarity_hidden_epoch{epoch+1}_iter{idx}.png")
                 )
         
         # Calcola loss
@@ -374,14 +376,14 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
         if is_main_process:
             if sim_loss_value != 0.0:
                 print(
-                    f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
+                    f"Epoch: {epoch+1}/{args.max_epochs} Iter: {idx+1}/{len(loader)} "
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "
                     f"sim_loss: {sim_loss_value:.4f} "
                     f"time {time.time() - start_time:.2f}s"
                 )
             else:
                 print(
-                    f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
+                    f"Epoch: {epoch+1}/{args.max_epochs} Iter: {idx+1}/{len(loader)} "
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "
                     f"time {time.time() - start_time:.2f}s"
                 )
@@ -401,7 +403,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
     # Stampa riassunto
     if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
-        print(f"[Train epoch {epoch}] avg_loss={run_loss.avg:.4f} avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
+        print(f"[Train epoch {epoch+1}] avg_loss={run_loss.avg:.4f} avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
     
     return run_loss.avg, float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
@@ -437,6 +439,11 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
     # Cache per attributi args
     is_distributed = getattr(args, "distributed", False)
     is_main_process = getattr(args, "rank", 0) == 0
+    # device = torch.device("cuda:0")
+    # torch.cuda.empty_cache()
+    
+    # baseline = torch.cuda.memory_allocated(device)
+    # print(f"Baseline GPU memory: {baseline/1024**2:.2f} MB")
     
     for idx, batch_data in enumerate(loader):
         # Estrai data e target
@@ -467,6 +474,9 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
 
         data = data.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)
+
+        # after = torch.cuda.memory_allocated(device)
+        # print(f"Data on-GPU: {(after - baseline)/1024**2:.2f} MB")
         
         # Assicura single channel per tutto il batch
         data = ensure_single_channel(data, mode="first")  # [B,1,D,H,W]
@@ -510,14 +520,28 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
         all_hidden = []
         
         # Processa le patch in batch invece che una alla volta
+
+        # device = torch.device("cuda:0")
+        # torch.cuda.empty_cache()
+        
+        # baseline = torch.cuda.memory_allocated(device)
+        # baseline_reserved = torch.cuda.memory_reserved(device)
+        # print(f"Before forward_features on-GPU: {(baseline)/1024**2:.2f} MB (allocated), {(baseline_reserved)/1024**2:.2f} MB (reserved)")
         for i in range(0, total_patches, sw_batch_size):
             end_idx = min(i + sw_batch_size, total_patches)
             batch_patches = all_patches[i:end_idx]  # [sw_batch_size, 1, D, H, W]
-            
             # Forward pass su batch di patch
+
             feats, hidden = model.forward_features(batch_patches)
             all_feats.append(feats)
             all_hidden.append(hidden)
+        #     after = torch.cuda.memory_allocated(device)
+        #     after_reserved = torch.cuda.memory_reserved(device)
+        #     print(f"After forward_features on-GPU: {(after - baseline)/1024**2:.2f} MB (allocated), {(after_reserved - baseline_reserved)/1024**2:.2f} MB (reserved)")
+
+        # after = torch.cuda.memory_allocated(device)
+        # after_reserved = torch.cuda.memory_reserved(device)
+        # print(f"FINAL After forward_features on-GPU: {(after - baseline)/1024**2:.2f} MB (allocated), {(after_reserved - baseline_reserved)/1024**2:.2f} MB (reserved)")
         
         # Concatena tutti i risultati
         all_feats = torch.cat(all_feats, dim=0)  # [Total_N, Cf, fD, fH, fW]
@@ -561,7 +585,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr" or "resnet" in args.model_name:
+            elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
                 pooled = pooled.flatten(1)
             
             # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
@@ -584,7 +608,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
                 plot_similarity_heatmap_new(
                     sim_np, 
                     target, 
-                    save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch}_iter{idx}.png")
+                    save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch+1}_iter{idx}.png")
                 )
                 
 
@@ -595,7 +619,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
                 plot_similarity_heatmap_new(
                     sim_hidden, 
                     target, 
-                    save_path=os.path.join(args.sim_plots_dir, f"similarity_hidden_epoch{epoch}_iter{idx}.png")
+                    save_path=os.path.join(args.sim_plots_dir, f"similarity_hidden_epoch{epoch+1}_iter{idx}.png")
                 )
         
         # Calcola loss
@@ -688,14 +712,14 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
         if is_main_process:
             if sim_loss_value != 0.0:
                 print(
-                    f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
+                    f"Epoch: {epoch+1}/{args.max_epochs} Iter: {idx+1}/{len(loader)} "
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "
                     f"sim_loss: {sim_loss_value:.4f} "
                     f"time {time.time() - start_time:.2f}s"
                 )
             else:
                 print(
-                    f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
+                    f"Epoch: {epoch+1}/{args.max_epochs} Iter: {idx+1}/{len(loader)} "
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "
                     f"time {time.time() - start_time:.2f}s"
                 )
@@ -715,7 +739,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
     # Stampa riassunto
     if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
-        print(f"[Train epoch {epoch}] avg_loss={run_loss.avg:.4f} avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
+        print(f"[Train epoch {epoch+1}] avg_loss={run_loss.avg:.4f} avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
     
     return run_loss.avg, float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
@@ -825,7 +849,7 @@ def train_epoch_old(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr" or "resnet" in args.model_name:
+            elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
                 pooled = pooled.flatten(1)
             
             # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
@@ -850,7 +874,7 @@ def train_epoch_old(model, loader, optimizer, epoch, loss_func, acc_func, args):
                 plot_similarity_heatmap_new(
                     sim_np, 
                     target, 
-                    save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch}_iter{idx}.png")
+                    save_path=os.path.join(args.sim_plots_dir, f"similarity_epoch{epoch+1}_iter{idx}.png")
                 )
                 
                 hidden_concat = torch.cat(hidden_list_all, dim=0)
@@ -859,7 +883,7 @@ def train_epoch_old(model, loader, optimizer, epoch, loss_func, acc_func, args):
                 plot_similarity_heatmap_new(
                     sim_hidden, 
                     target, 
-                    save_path=os.path.join(args.sim_plots_dir, f"similarity_hidden_epoch{epoch}_iter{idx}.png")
+                    save_path=os.path.join(args.sim_plots_dir, f"similarity_hidden_epoch{epoch+1}_iter{idx}.png")
                 )
         
         # Calcola loss
@@ -951,14 +975,14 @@ def train_epoch_old(model, loader, optimizer, epoch, loss_func, acc_func, args):
         if is_main_process:
             if sim_loss_value != 0.0:
                 print(
-                    f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
+                    f"Epoch: {epoch+1}/{args.max_epochs} Iter: {idx+1}/{len(loader)} "
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "
                     f"sim_loss: {sim_loss_value:.4f} "
                     f"time {time.time() - start_time:.2f}s"
                 )
             else:
                 print(
-                    f"Epoch: {epoch}/{args.max_epochs} Iter: {idx}/{len(loader)} "
+                    f"Epoch: {epoch+1}/{args.max_epochs} Iter: {idx+1}/{len(loader)} "
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "
                     f"time {time.time() - start_time:.2f}s"
                 )
@@ -978,7 +1002,7 @@ def train_epoch_old(model, loader, optimizer, epoch, loss_func, acc_func, args):
     # Stampa riassunto
     if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
-        print(f"[Train epoch {epoch}] avg_loss={run_loss.avg:.4f} avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
+        print(f"[Train epoch {epoch+1}] avg_loss={run_loss.avg:.4f} avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
     
     return run_loss.avg, float(run_acc.avg), per_class_acc, cm
 
@@ -1066,7 +1090,7 @@ def val_epoch_old(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or "resnet" in args.model_name:
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1,num_classes]
@@ -1146,7 +1170,7 @@ def val_epoch_old(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
             # Logging
             if is_main_process:
                 print(
-                    f"Val {epoch}/{args.max_epochs} {idx}/{len(loader)}, "
+                    f"Val {epoch+1}/{args.max_epochs} {idx+1}/{len(loader)}, "
                     f"Acc: {run_acc.avg:.4f}, time {time.time() - start_time:.2f}s"
                 )
             start_time = time.time()
@@ -1169,11 +1193,11 @@ def val_epoch_old(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
     # Stampa riassunto
     if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
-        print(f"[Val epoch {epoch}] avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
+        print(f"[Val epoch {epoch+1}] avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
 
     return float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
-def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float, dict, np.ndarray]:
+def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,loss_func,args,) -> tuple[float, dict, np.ndarray]:
     """
     Validazione con pipeline di inferenza a patch ottimizzata.
     
@@ -1185,6 +1209,7 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
     
     start_time = time.time()
     run_acc = AverageMeter()
+    run_loss = AverageMeter()
     
     # Contatori per classe
     num_classes = None
@@ -1292,7 +1317,7 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or "resnet" in args.model_name:
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1, num_classes]
@@ -1301,6 +1326,7 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
                 start_idx = end_idx
             
             logits = torch.cat(batch_logits, dim=0)  # [B, num_classes]
+            loss = loss_func(logits, target_eval)
             
             # ============================================
             # STEP 4: Calcola metriche
@@ -1374,12 +1400,13 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
                 per_class_correct += batch_correct
                 per_class_total += batch_total
                 run_acc.update(acc, n=not_nans)
+                run_loss.update(loss.item(), n=not_nans)
             
             # Logging
             if is_main_process:
                 print(
-                    f"Val {epoch}/{args.max_epochs} {idx}/{len(loader)}, "
-                    f"Acc: {run_acc.avg:.4f}, time {time.time() - start_time:.2f}s"
+                    f"Val {epoch+1}/{args.max_epochs} {idx+1}/{len(loader)}, "
+                    f"Acc: {run_acc.avg:.4f}, Loss: {run_loss.avg:.4f}, time {time.time() - start_time:.2f}s"
                 )
             start_time = time.time()
     
@@ -1401,11 +1428,11 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
     # Stampa riassunto
     if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
-        print(f"[Val epoch {epoch}] avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
+        print(f"[Val epoch {epoch+1}] avg_acc={run_acc.avg:.4f} | avg_loss={run_loss.avg:.4f} | per-class [{summary}]")
 
-    return float(run_acc.avg), per_class_acc, cm, all_errors_paths
+    return float(run_loss.avg), float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
-def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float, dict, np.ndarray]:
+def val_epoch(model,loader: DataLoader,epoch: int,acc_func,loss_func,args,) -> tuple[float, dict, np.ndarray]:
     """
     Validazione con pipeline di inferenza a patch ottimizzata.
     
@@ -1417,6 +1444,7 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float
     
     start_time = time.time()
     run_acc = AverageMeter()
+    run_loss = AverageMeter()
     
     # Contatori per classe
     num_classes = None
@@ -1519,7 +1547,7 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or "resnet" in args.model_name:
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1, num_classes]
@@ -1528,6 +1556,7 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float
                 start_idx = end_idx
             
             logits = torch.cat(batch_logits, dim=0)  # [B, num_classes]
+            loss = loss_func(logits, target)
             
             # ============================================
             # STEP 4: Calcola metriche
@@ -1601,12 +1630,13 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float
                 per_class_correct += batch_correct
                 per_class_total += batch_total
                 run_acc.update(acc, n=not_nans)
+                run_loss.update(loss.item(), n=not_nans)
             
             # Logging
             if is_main_process:
                 print(
-                    f"Val {epoch}/{args.max_epochs} {idx}/{len(loader)}, "
-                    f"Acc: {run_acc.avg:.4f}, time {time.time() - start_time:.2f}s"
+                    f"Val {epoch+1}/{args.max_epochs} {idx+1}/{len(loader)}, "
+                    f"Acc: {run_acc.avg:.4f}, Loss: {run_loss.avg:.4f}, time {time.time() - start_time:.2f}s"
                 )
             start_time = time.time()
     
@@ -1628,9 +1658,9 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[float
     # Stampa riassunto
     if is_main_process:
         summary = ", ".join([f"c{c}: {per_class_acc[c]:.3f}" for c in range(num_classes)])
-        print(f"[Val epoch {epoch}] avg_acc={run_acc.avg:.4f} | per-class [{summary}]")
+        print(f"[Val epoch {epoch+1}] avg_acc={run_acc.avg:.4f} | avg_loss={run_loss.avg:.4f} | per-class [{summary}]")
 
-    return float(run_acc.avg), per_class_acc, cm, all_errors_paths
+    return float(run_loss.avg), float(run_acc.avg), per_class_acc, cm, all_errors_paths
 
 
 
@@ -1752,12 +1782,17 @@ def run_training(
             torch.distributed.barrier()
         
         if is_main_process:
-            print(f"{args.rank} {time.ctime()} Epoch: {epoch}")
+            print(f"{args.rank} {time.ctime()} Epoch: {epoch+1}")
             if logger:
-                logger.info(f"{args.rank} {time.ctime()} Epoch: {epoch}")
+                logger.info(f"{args.rank} {time.ctime()} Epoch: {epoch+1}")
         
         # Training
         epoch_time = time.time()
+        # device = torch.device("cuda:0")
+        # torch.cuda.empty_cache()
+        
+        # baseline = torch.cuda.memory_allocated(device)  
+        # print(f"Baseline GPU memory: {baseline/1024**2:.2f} MB")
         if args.patch_merging:
             train_loss, train_acc, train_per_class_acc, train_cm, train_errors_paths = train_epoch_new(
                 model, train_loader, optimizer, epoch=epoch, loss_func=loss_func, acc_func=acc_func, args=args
@@ -1766,6 +1801,8 @@ def run_training(
             train_loss, train_acc, train_per_class_acc, train_cm, train_errors_paths = train_epoch(
                 model, train_loader, optimizer, epoch=epoch, loss_func=loss_func, acc_func=acc_func, args=args
             )
+        # after = torch.cuda.memory_allocated(device)
+        # print(f"Training on-GPU: {(after - baseline)/1024**2:.2f} MB")
         training_losses.append(train_loss)
 
         last_train_cm = train_cm
@@ -1777,7 +1814,7 @@ def run_training(
         training_per_class_accuracies.append(train_per_class_acc)
 
         with open(os.path.join(errors_log_dir, f"training_errors.txt"), 'a') as f:
-            f.write(f"Epoch {epoch}:\n")
+            f.write(f"Epoch {epoch+1}:\n")
             for path, pred, target in train_errors_paths:
                 f.write(f"{path}\tPred: {pred}\tTarget: {target}\n")
             f.write(f"*" + "-"*40 + "*\n")
@@ -1790,7 +1827,7 @@ def run_training(
         if is_main_process:
             train_time = time.time() - epoch_time
             msg = (
-                f"Final training {epoch}/{args.max_epochs - 1}, "
+                f"Final training {epoch+1}/{args.max_epochs}, "
                 f"loss: {train_loss:.4f}, time {train_time:.2f}s, lr: {current_lr:.6f}"
                 f"\n{train_metrics_str}\n"
                 f"*----------------------------------------*"
@@ -1802,22 +1839,14 @@ def run_training(
             # Telegram notification ogni 10 epoche
             if use_telegram and epoch % 10 == 0:
                 telegram_msg = (
-                    f"*🏋 Training - Epoch {epoch}/{args.max_epochs - 1}*\n"
+                    f"*🏋 Training - Epoch {epoch+1}/{args.max_epochs}*\n"
                     f"Train Loss: {train_loss:.4f}\n"
                     f"Train Acc: {train_acc:.4f}\n"
                     f"Best Val Acc: {val_acc_max:.4f}\n"
                     f"LR: {current_lr:.6f}\n"
                 )
                 _send_telegram_safe(args, telegram_msg)
-            
-            # Early stopping per loss
-            if early_stopping_loss and early_stopping_loss.step(train_loss, model):
-                print(f"[EarlyStopping] Stopping training for loss at epoch {epoch}")
-                if logger:
-                    logger.info(f"[EarlyStopping] Stopping training for loss at epoch {epoch}")
-                if use_telegram:
-                    _send_telegram_safe(args, f"*🛑 Early Stopping (Loss) at Epoch {epoch}*")
-                break
+        
         
         # Validation
         is_new_best = False
@@ -1827,16 +1856,16 @@ def run_training(
             
             epoch_time = time.time()
             if args.patch_merging:
-                val_acc, val_per_class, cm, val_errors_paths = val_epoch_new(
-                    model, val_loader, epoch=epoch, acc_func=acc_func, args=args
+                val_loss,val_acc, val_per_class, cm, val_errors_paths = val_epoch_new(
+                    model, val_loader, epoch=epoch, acc_func=acc_func,loss_func=loss_func, args=args
                 )
             else:
-                val_acc, val_per_class, cm, val_errors_paths = val_epoch(
-                    model, val_loader, epoch=epoch, acc_func=acc_func, args=args
+                val_loss,val_acc, val_per_class, cm, val_errors_paths = val_epoch(
+                    model, val_loader, epoch=epoch, acc_func=acc_func,loss_func=loss_func, args=args
                 )
 
             with open(os.path.join(errors_log_dir, f"validation_errors.txt"), 'a') as f:
-                f.write(f"Epoch {epoch}:\n")
+                f.write(f"Epoch {epoch+1}:\n")
                 for path, pred, target in val_errors_paths:
                     f.write(f"{path}\tPred: {pred}\tTarget: {target}\n")
                 f.write(f"*" + "-"*40 + "*\n")
@@ -1853,7 +1882,7 @@ def run_training(
             if is_main_process:
                 val_time = time.time() - epoch_time
                 msg = (
-                    f"Final validation {epoch}/{args.max_epochs - 1}, "
+                    f"Final validation {epoch+1}/{args.max_epochs}, "
                     f"Val_acc: {val_acc:.4f}, time {val_time:.2f}s"
                     f"{metrics_str}\n"
                     f"*========================================*"
@@ -1876,29 +1905,29 @@ def run_training(
                     plot_confusion_matrix(
                         cm, 
                         class_names=class_names,
-                        title=f'Confusion Matrix - Epoch {epoch}',
+                        title=f'Confusion Matrix - Epoch {epoch+1}',
                         save_path=os.path.join(cm_plots_dir, f"best_confusion_matrix.png")
                     )
                     plot_confusion_matrix(
                         train_cm,
                         class_names=class_names,
-                        title=f'Confusion Matrix (Train) - Epoch {epoch} ',
+                        title=f'Confusion Matrix (Train) - Epoch {epoch+1} ',
                         save_path=os.path.join(cm_plots_dir, f"best_confusion_train_matrix.png")
                     )
                     plot_metrics_table(
                         metrics,
                         class_names=class_names,
-                        title=f'Metrics Table - Epoch {epoch}',
+                        title=f'Metrics Table - Epoch {epoch+1}',
                         save_path=os.path.join(metrics_plots_dir, f"best_metrics_table.png")
                     )
                     plot_metrics_table(
                         train_metrics,
                         class_names=class_names,
-                        title=f'Metrics Table (Train) - Epoch {epoch}',
+                        title=f'Metrics Table (Train) - Epoch {epoch+1}',
                         save_path=os.path.join(metrics_plots_dir, f"best_train_metrics_table.png")
                     )
                     with open(os.path.join(errors_log_dir, f"best_validation_errors.txt"), 'w') as f:
-                        f.write(f"Epoch {epoch}:\n")
+                        f.write(f"Epoch {epoch+1}:\n")
                         for path, pred, target in val_errors_paths:
                             f.write(f"{path}\tPred: {pred}\tTarget: {target}\n")
                         f.write(f"*" + "-"*40 + "*\n")
@@ -1907,7 +1936,7 @@ def run_training(
                 # Telegram notification
                 if use_telegram:
                     telegram_msg = (
-                        f"*✅ Validation - Epoch {epoch}/{args.max_epochs - 1}*\n"
+                        f"*✅ Validation - Epoch {epoch+1}/{args.max_epochs}*\n"
                         f"Val Acc: {val_acc:.4f}\n"
                         f"Best Val Acc: {val_acc_max:.4f}"
                     )
@@ -1934,11 +1963,19 @@ def run_training(
             
             # Early stopping per validation
             if early_stopping_val and early_stopping_val.step(val_acc, model):
-                print(f"[EarlyStopping] Stopping training for val accuracy at epoch {epoch}")
+                print(f"[EarlyStopping] Stopping training for val accuracy at epoch {epoch+1}")
                 if logger:
-                    logger.info(f"[EarlyStopping] Stopping training for val accuracy at epoch {epoch}")
+                    logger.info(f"[EarlyStopping] Stopping training for val accuracy at epoch {epoch+1}")
                 if use_telegram:
-                    _send_telegram_safe(args, f"*🛑 Early Stopping (Validation) at Epoch {epoch}*")
+                    _send_telegram_safe(args, f"*🛑 Early Stopping (Validation) at Epoch {epoch+1}*")
+                break
+                        # Early stopping per loss
+            if early_stopping_loss and early_stopping_loss.step(val_loss, model):
+                print(f"[EarlyStopping] Stopping Validation for loss at epoch {epoch+1}")
+                if logger:
+                    logger.info(f"[EarlyStopping] Stopping Validation for loss at epoch {epoch+1}")
+                if use_telegram:
+                    _send_telegram_safe(args, f"*🛑 Early Stopping (Loss) at Epoch {epoch+1}*")
                 break
         
         # Step scheduler
@@ -1948,9 +1985,12 @@ def run_training(
     # Fine training
     if is_main_process:
         print(f"Training Finished! Best Accuracy: {val_acc_max:.4f}")
+        print("=" * 100)
+        print()
         if logger:
             logger.info(f"Training Finished! Best Accuracy: {val_acc_max:.4f}")
             logger.info("=" * 100)
+            logger.info("")
         
         if use_telegram:
             time_str = time.strftime('%Y/%m/%d %H:%M')
@@ -2035,6 +2075,7 @@ def run_testing(
     model,
     test_loader,
     acc_func,
+    loss_func,
     args,
     writer_dict=None,
     final_output_dir=None,
@@ -2089,12 +2130,12 @@ def run_testing(
     
     epoch_time = time.time()
     if args.patch_merging:
-        test_acc, test_per_class, cm, test_errors_paths = val_epoch_new(
-            model, test_loader, epoch=0, acc_func=acc_func, args=args
+        _,test_acc, test_per_class, cm, test_errors_paths = val_epoch_new(
+            model, test_loader, epoch=0, acc_func=acc_func,loss_func=loss_func, args=args
         )
     else:
-        test_acc, test_per_class, cm, test_errors_paths = val_epoch(
-            model, test_loader, epoch=0, acc_func=acc_func, args=args
+        _,test_acc, test_per_class, cm, test_errors_paths = val_epoch(
+            model, test_loader, epoch=0, acc_func=acc_func,loss_func=loss_func, args=args
         )
 
     with open(os.path.join(errors_log_dir, f"testing_errors.txt"), 'a') as f:
