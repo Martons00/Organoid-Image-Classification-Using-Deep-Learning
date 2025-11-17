@@ -1,0 +1,45 @@
+Epoch 0:
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.06.26_PARIS_Noyau_Org_13_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.06.26_PARIS_Noyau_Org_20_cauliflower_J7_40X_8bit.tif	Pred: 1	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.07.18_PARIS_Noyau_Org_13_cauliflower_J7_40X_8bit.tif	Pred: 1	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.07.18_PARIS_Noyau_Org_7_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.07.24_PARIS_Noyau_Org_2_cauliflower_J7_40X_8bit.tif	Pred: 1	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.08.20_PARIS_Noyau_Org_11_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.08.20_PARIS_Noyau_Org_14_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.09.10_PARIS_Noyau_Org_27_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.09.10_PARIS_Noyau_Org_28_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.09.10_PARIS_Noyau_Org_32_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.09.10_PARIS_Noyau_Org_3_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.10.03_PARIS_Noyau_Org_17_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Chouxfleurs/2024.10.03_PARIS_Noyau_Org_1_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Compact/20231005_Noyau_org6.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Compact/20231114_Noyau_org10.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Compact/20231114_Noyau_org5.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Compact/20231114_Noyau_org6.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Compact/20231212_Noyau_org15.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/20230731_Noyau_org11.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/20230731_Noyau_org4.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/20240402_Noyau_org6.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/20240402_Noyau_org9.tif	Pred: 1	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/20240409_Noyau_org8.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/20240423_Noyau_org12.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/202407_Nice_orga2_0.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/202407_Nice_orga3_11.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/202407_Nice_orga3_13.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/202407_Nice_orga4_12.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques/2025.02.14_PARIS_Noyau_Org _3_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202407_Nice_orga0_4.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org103.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org109.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org5.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org50.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org54.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org62.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org69.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org76.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org78.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org84.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org85.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/test_set/Cystiques_Nice_Reduce/202409_Nice_org86.tif	Pred: 0	Target: 2
+*----------------------------------------*
+

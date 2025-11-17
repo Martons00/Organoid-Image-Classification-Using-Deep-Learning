@@ -1,10 +1,10 @@
-python table_training.py outputs/OrganoidsINRIA_reduced/swinunetr > swinunetr_reduced_result.md
-python table_training.py outputs/OrganoidsINRIA/swinunetr/layer4+encoder10+fc > swinunetr_result.md
-python table_training.py outputs/OrganoidsINRIA_reduced/resnet50 > resnet50_reduced_result.md
-python table_training.py outputs/OrganoidsINRIA_reduced/resnet18 > resnet18_reduced_result.md
+python table_training.py outputs/OrganoidsINRIA_reduced/swinunetr > tables/results_testing/swinunetr_reduced_result.md.md
+python table_training.py outputs/OrganoidsINRIA_reduced/resnet50 > tables/results_testing/resnet50_reduced_result.md
+python table_training.py outputs/OrganoidsINRIA_reduced/resnet18 > tables/results_testing/resnet18_reduced_result.md
+python table_training.py outputs/OrganoidsINRIA_reduced/densenet > tables/results_testing/densenet_reduced_result.md
 
-# BASE="/home/mraffael/martone_project/Organoids_Dataset_256"
-# DEST="$BASE/removed"
-# LIST="/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/problematic_samples.txt"   # ogni riga: Cystiques_Nice_Reduce/202407_Nice_orga3_3.tif
 
-# cd "$BASE" && rsync -aR --files-from="$LIST" ./ "$DEST"/ --remove-source-files
+python table_training.py outputs/OrganoidsINRIA/swinunetr > tables/results_testing/swinunetr_result.md.md
+python table_training.py outputs/OrganoidsINRIA/resnet50 > tables/results_testing/resnet50_result.md
+python table_training.py outputs/OrganoidsINRIA/resnet18 > tables/results_testing/resnet18_result.md
+python table_training.py outputs/OrganoidsINRIA/densenet > tables/results_testing/densenet_result.md

@@ -1,9 +1,0 @@
-## Experiment Results outputs/OrganoidsINRIA_reduced/swinunetr
-| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2025-11-07 | 01 | swinunetr | yes | no | 128x128x128 | CE | none | yes | no | 6 | 60 | 5 | 0.0003 | AdamW | 0.99 | warmup_cosine | no | no | stratified | 0.2 | 90 | 88 | 88 | 89 | 88 | 91 | Molto bene, migliora rispetto a samples con risuluzioone più alta ma la convergenza è lenta, sarebbe appropriato aumentare il LR, anche la TrainACC è molto lenta. Forse un tantino in più potrebbe aiutare.  |
-| 2025-11-10 | 02 | swinunetr | yes | no | 128x128x128 | CE | none | yes | no | 6 | 60 | 5 | 0.0006 | AdamW | 0.99 | warmup_cosine | no | no | stratified | 0,26 | 89 | 87 | 87 | 88 | 87 | 90 | Buone performance, forse deve trainare un tantino in più ma fatto sta che si comporta molto bene. |
-| 2025-11-11 | 03 | swinunetr | yes | no | 128x128x128 | CE | none | yes | no | 6 | 60 | 5 | 0.0006 | AdamW | 0.99 | warmup_cosine | no | no | stratified | 0,28 | 86 | 88 | 88 | 88 | 88 | 92 | Molto bene anche questo, performance simili, quindi conferma che non è un caso questa performance. Si tenta di aumentare la loss per avere una convergenza pià rapida. |
-| 2025-11-11 | 04 | swinunetr | yes | no | 128x128x128 | CE | none | yes | no | 6 | 60 | 5 | 0.001 | AdamW | 0.99 | warmup_cosine | no | no | stratified | 0,33 | 87 | 84 | 85 | 85 | 85 | 90 | Stranamente con la loss più alta converge pià lentamente. Forse sarebbe meglio farlo allenare per più tempo per capire le vere performance. |
-
-

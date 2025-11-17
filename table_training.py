@@ -10,12 +10,16 @@ from typing import Any, Dict, Optional
 
 HEADER = [
     "Date",
-    "Run","Model","Aug","ExactClass","ROI","Loss","SimLoss","Checkpoint","Encoder10",
+    "Run","Model","Aug",
+    "ExactClass",
+    "ROI","Loss",
+    "SimLoss","Checkpoint","Encoder10",
     "Batch","MaxEpochs","Warmup","LR","Optim","Momentum","LRschedule",
-    "EarlyStop","PatchMerging","SplitMethod",
-         "TrainLoss","TrainAcc",
-        "ValAcc", 
-        "W_ValF1", "W_ValPrecision", "W_ValRecall", "W_Specificity", 
+    "EarlyStop","PatchMerging",
+    "SplitMethod",
+        "TrainLoss","TrainAcc",
+        "ValAcc", "W_ValF1", "W_ValPrecision", "W_ValRecall", "W_Specificity",
+        "TestAcc","W_TestF1", "W_TestPrecision", "W_TestRecall", "W_TestSpecificity",
         "Note"
 ]
 
@@ -186,7 +190,7 @@ def collect_row(run_idx: int, exp_name: str, cfg: Dict[str, Any], date_str: str)
         "Checkpoint": "yes" if fmt_checkpoint(cfg) else "no",
         "Encoder10": "yes" if str(cfg.get("encoder10_pth", "")).strip() != "" else "no",
         "Batch": str(cfg.get("batch_size", "*")),
-        "MaxEpochs": str(cfg.get("max_epochs", "*")),
+        "MaxEpochs": "*/" + str(cfg.get("max_epochs", "*")),
         "Warmup": str(cfg.get("warmup_epochs", "*")),
         "LR": (f"{float(cfg['optim_lr']):.6g}" if cfg.get("optim_lr") is not None else "*"),
         "Optim": canon_optim(cfg.get("optim_name", "*")),
@@ -196,7 +200,8 @@ def collect_row(run_idx: int, exp_name: str, cfg: Dict[str, Any], date_str: str)
         "PatchMerging": yesno(cfg.get("patch_merging", False)),
         "SplitMethod": str(cfg.get("split_method", "*")),
         "TrainLoss": "*", "TrainAcc": "*",
-        "ValAcc": "*", "W_ValF1": "*", "W_ValPrecision": "*", "W_ValRecall": "*", "W_Specificity": "*", 
+        "ValAcc": "*", "W_ValF1": "*", "W_ValPrecision": "*", "W_ValRecall": "*", "W_Specificity": "*",
+        "TestAcc": "*", "W_TestF1": "*", "W_TestPrecision": "*", "W_TestRecall": "*", "W_TestSpecificity": "*", 
         "Note": "*",
     }
     return row

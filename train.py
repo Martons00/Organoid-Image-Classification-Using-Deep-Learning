@@ -156,7 +156,7 @@ def main_worker(gpu, args, configs):
     log("Starting training...")
     
     start = timeit.default_timer()
-    accuracy = run_training(
+    train_loss,train_acc,val_acc_max, best_metrics_training = run_training(
         model=model,
         train_loader=train_loader,
         val_loader=val_loader,
@@ -171,7 +171,7 @@ def main_worker(gpu, args, configs):
         logger=logger,
     )
 
-    accuracy = run_testing(
+    test_acc,test_metrics = run_testing(
         model=model,
         test_loader=test_loader,
         acc_func=acc_metric,
@@ -186,7 +186,29 @@ def main_worker(gpu, args, configs):
     time_end = end - start
     time_str = time.strftime("%H hours %M minutes %S seconds", time.gmtime(time_end))
     log(f"Total time spent: {time_str}")
+    log("")
+    log("Final Results Summary:")
+    log("| TrainAcc | ValAccMax | W_TrainF1 | W_TrainPrecision | W_TrainRecall | W_TrainSpecificity |")
+    wa = best_metrics_training.get("weighted_avg", {})
+    log("| {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} |".format(
+        train_acc,
+        val_acc_max,
+        wa.get("f1", 0.0),
+        wa.get("precision", 0.0),
+        wa.get("recall", 0.0),
+        wa.get("specificity", 0.0)
+    ))
     
+    log("| TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |")
+    t_wa = test_metrics.get("weighted_avg", {})
+    log("| {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} |".format(
+        test_acc,
+        t_wa.get("f1", 0.0),
+        t_wa.get("precision", 0.0),
+        t_wa.get("recall", 0.0),
+        t_wa.get("specificity", 0.0)
+    ))
+
     writer_dict['writer'].close()
     torch.cuda.empty_cache()
     

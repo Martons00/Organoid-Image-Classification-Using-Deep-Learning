@@ -1,0 +1,51 @@
+Epoch 14:
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Compact/2024.07.18_PARIS_Noyau_Org_11_compact_J7_40X_8bit.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org46.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga0_14.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga3_0.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Compact/20231207_Noyau_org8.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/20231114_Noyau_org10.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit_raw_2025_03_20_PARIS_Noyau_Org _29_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga3_4.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org63.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga3_21.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org91.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga4_12.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/20240402_Noyau_org10.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org92.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/20231006_Noyau_org4.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org21.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga0_1.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org27.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga0_20.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Compact/20231120_Noyau_org6.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/20231114_Noyau_org19.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org10.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Compact/20231120_Noyau_org4.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Compact/20231010_Noyau_org2.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/2025.02.14_PARIS_Noyau_Org _6_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org36.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Chouxfleurs_Nice_Reduce/raw_202502_Nice_orga1_21.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org113.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/202407_Nice_orga3_14.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Compact/20231004_Noyau_org3.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org111.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/2024.03.12_PARIS_Noyau_org_3_(8-bits).tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga5_6.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org94.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Chouxfleurs/2024.10.03_PARIS_Noyau_Org_7_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org64.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/2024.10.03_PARIS_Noyau_Org_14_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga3_20.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org110.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org39.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/20231004_Noyau_org5.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/20231005_Noyau_org10.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org55.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202409_Nice_org114.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Compact/20230804_Noyau_org1.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques/20231114_Noyau_org15.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Cystiques_Nice_Reduce/202407_Nice_orga3_9.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Compact/20231006_Noyau_org1.tif	Pred: 0	Target: 1
+*----------------------------------------*
+

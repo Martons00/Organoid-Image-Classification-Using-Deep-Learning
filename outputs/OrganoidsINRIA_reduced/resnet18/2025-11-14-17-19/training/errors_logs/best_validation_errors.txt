@@ -1,7 +1,0 @@
-Epoch 1:
-/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Chouxfleurs_Nice_Reduce/raw_202502_Nice_orga2_40.tif	Pred: 2	Target: 0
-/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Compact/20231006_Noyau_org1.tif	Pred: 2	Target: 1
-/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Chouxfleurs_Nice_Reduce/raw_202503_Nice_orga0_125.tif	Pred: 2	Target: 0
-/home/mraffael/martone_project/Organoids_Dataset_256/train_set/Chouxfleurs/20231207_Noyau_org3.tif	Pred: 2	Target: 0
-*----------------------------------------*
-
