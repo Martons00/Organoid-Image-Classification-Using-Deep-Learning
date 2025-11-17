@@ -1,4 +1,4 @@
-## Experiment Results outputs/OrganoidsINRIA/swinunetr/layer4+encoder10+fc
+## Experiment Results outputs_validation/OrganoidsINRIA
 
 | Run | Model | Aug | Loss | MaxEpochs | LR | Optim | LRschedule | ExactClass | SplitMethod | TrainAcc | ValAcc |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

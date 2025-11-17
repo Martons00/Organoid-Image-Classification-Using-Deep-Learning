@@ -1,4 +1,4 @@
-## Experiment Results outputs/OrganoidsINRIA_reduced/resnet18
+## Experiment Results outputs_validation/OrganoidsINRIA_reduced
 
 | Run | Model | Aug | Loss | MaxEpochs | LR | Optim | LRschedule | ExactClass | SplitMethod | TrainAcc | ValAcc |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

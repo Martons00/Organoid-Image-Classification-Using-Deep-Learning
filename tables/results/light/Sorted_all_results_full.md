@@ -1,4 +1,4 @@
-## Experiment Results outputs/OrganoidsINRIA/densenet
+## Experiment Results outputs/OrganoidsINRIA
 
 | Run | Model | Aug | PatchMerging | Loss | MaxEpochs | LR | Optim | LRschedule | TrainAcc | ValAcc | TestAcc |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
