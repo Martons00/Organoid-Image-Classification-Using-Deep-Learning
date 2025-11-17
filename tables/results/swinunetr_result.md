@@ -1,0 +1,6 @@
+## Experiment Results outputs/OrganoidsINRIA/swinunetr
+| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2025-11-14 | 01 | swinunetr | yes | no | 128x128x128 | CE | none | yes | no | 6 | 118/150 | 5 | 0.0006 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0,28 | 85 | 82 | 82 | 82 | 82 | 88 | 90 | 90 | 90 | 90 | 94 | Miglior modello per il momento. La curva della loss scende bene, l’accuracy in training non si converte in overfitting ma anzi sembra diventi conoscenza. Però sembra che non riesca più a migliorare dopo alcune epoche. Ha un po di problemi confondendo la classe 0 e classe 2 e alcuni problemi con la data imbalanced su classe 1. |
+
+

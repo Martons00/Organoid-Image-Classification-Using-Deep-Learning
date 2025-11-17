@@ -1,0 +1,6 @@
+## Experiment Results outputs/OrganoidsINRIA/densenet
+| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2025-11-16 | 01 | densenet | no | no | 128x128x128 | CE | none | yes | no | 2 | 88/150 | 5 | 0.05 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 1,01 | 47 | 50 | 34 | 69 | 50 | 52 | 53 | 41 | 70 | 53 | 55 | Non migliora ,è stupido, predice sempre e solo una classe. Capisce un po nel testing ma nel validation non capisce niente.  |
+
+

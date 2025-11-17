@@ -1,0 +1,8 @@
+## Experiment Results outputs/OrganoidsINRIA_reduced/resnet18
+| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2025-11-07 | 01 | resnet18 | yes | no | 128x128x128 | CE | none | yes | no | 4 | 100 | 5 | 0.1 | AdamW | 0.99 | warmup_cosine | no | no | stratified | 0.71 | 66 | 52 | 50 | 49 | 52 | 57 | (SOLO FC) Già a differenza di quello con 512x512, questo modello sembra capire di più cosa stia succedendo e anche se le performance non sono eccelse, non predice sempre e solo un unica classe. La loss sembra convergere ma forse e meglio aumentare un tantino il lr, e farlo allenare per più epoche. |
+| 2025-11-10 | 02 | resnet18 | yes | no | 128x128x128 | CE | none | yes | no | 4 | 100 | 5 | 0.05 | AdamW | 0.99 | warmup_cosine | no | no | stratified | 0,06 | 96 | 52 | 45 | 55 | 52 | 56 | (LAYER 4) Overfitting totale, Accuracy molto bassa, male male. La loss converge bene ma non trasporta questa conoscenza nel validation |
+| 2025-11-11 | 03 | resnet18 | yes | no | 128x128x128 | CE | none | yes | no | 4 | 100 | 5 | 0.01 | AdamW | 0.99 | warmup_cosine | no | no | stratified | 0,67 | 66 | 38 | 38 | 40 | 38 | 53 | (SOLO FC) Conoscenza continua a non trasformarsi in performance nel validation |
+
+

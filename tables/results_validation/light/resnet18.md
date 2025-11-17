@@ -1,0 +1,15 @@
+## Experiment Results outputs/OrganoidsINRIA/resnet18
+
+| Run | Model | Aug | Loss | MaxEpochs | LR | Optim | LRschedule | ExactClass | SplitMethod | TrainAcc | ValAcc |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 01 | resnet18 | yes | FocalLoss | 150 | 0.0001 | AdamW | warmup_cosine | yes | percentage | 49 | 41 |
+| 02 | resnet18 | yes | FocalLoss | 150 | 0.0004 | AdamW | warmup_cosine_restarts | yes | percentage | 43 | 48 |
+| 03 | resnet18 | yes | FocalLoss | 200 | 0.0005 | AdamW | warmup_cosine | yes | percentage | 59 | 53 |
+| 04 | resnet18 | yes | FocalLoss | 200 | 0.0005 | AdamW | warmup_cosine_restarts | yes | percentage | 49 | 51 |
+| 05 | resnet18 | yes | FocalLoss | 200 | 0.005 | AdamW | warmup_cosine | yes | percentage | 61 | 51 |
+| 06 | resnet18 | yes | FocalLoss | 200 | 0.005 | AdamW | warmup_cosine_restarts | yes | percentage | 61 | 56 |
+| 07 | resnet18 | yes | FocalLoss | 200 | 0.05 | AdamW | warmup_cosine_restarts | yes | percentage | 73 | 46 |
+| 08 | resnet18 | yes | FocalLoss | 200 | 0.01 | AdamW | warmup_cosine | yes | percentage | 71 | 58 |
+| 09 | resnet18 | yes | FocalLoss | 200 | 0.05 | AdamW | warmup_cosine | yes | percentage | 80 | 70 |
+| 10 | resnet18 | yes | CE | 200 | 0.1 | AdamW | warmup_cosine | yes | percentage | 80 | 65 |
+| 11 | resnet18 | yes | CE | 100 | 0.1 | AdamW | warmup_cosine | no | stratified | 71 | 48 |
