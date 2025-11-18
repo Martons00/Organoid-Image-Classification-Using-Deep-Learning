@@ -16,6 +16,7 @@ MODEL:
   name: "swinunetr+noah" # "swinunetr", "swinunetr+ml_decoder"
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
+  checkpoint: "./outputs/OrganoidsINRIA_reduced/swinunetr+noah/2025-11-17-09-45/training/model_final.pt"
   norm_name: "instance"
   use_checkpoint: false
 
@@ -47,13 +48,13 @@ TRAINING:
   save_checkpoint: true
   noamp: false
   # Optimizer parameters
-  optim_lr: 3e-4
+  optim_lr: 1e-4
   optim_name: "adamw" # "adam", "adamw" or "sgd"
   reg_weight: 5e-5
   momentum: 0.99
   # Learning rate scheduler
   lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
-  warmup_epochs: 5
+  warmup_epochs: 0
 
 
 LOSS:

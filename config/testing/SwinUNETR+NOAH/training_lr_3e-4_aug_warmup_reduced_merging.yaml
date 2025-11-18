@@ -6,7 +6,7 @@ SYSTEM:
   world_size: 1
   rank: 0
   workers: 8
-  output_dir: "outputs_testing/"
+  output_dir: "outputs/"
   logs_dir: "logs/"
   telegram_log: true
   telegram_token: "./token/tlg_token.txt"

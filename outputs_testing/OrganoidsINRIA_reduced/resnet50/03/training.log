@@ -1,0 +1,143 @@
+2025-11-18 10:34:25,949 INFO Log directory: outputs/OrganoidsINRIA_reduced/resnet50/2025-11-18-10-34
+2025-11-18 10:34:25,951 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 4,
+ 'cache_dataset': False,
+ 'checkpoint_path': './outputs/OrganoidsINRIA_reduced/resnet50/03/training/best_model.pt',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_reduced',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'resnet50',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2123865,
+ 'optim_lr': 0.001,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': './pretrained_models/resnet50/',
+ 'pretrained_model_name': 'resnet_50.pth',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 4,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 4,
+ 'workers': 8,
+ 'world_size': 1}
+2025-11-18 10:34:25,951 INFO 
+2025-11-18 10:34:25,955 INFO Saved configuration to: outputs/OrganoidsINRIA_reduced/resnet50/2025-11-18-10-34/config.txt
+2025-11-18 10:34:26,411 INFO Using GPU: 0
+2025-11-18 10:34:26,411 INFO 
+2025-11-18 10:34:26,411 INFO Model INFO:
+2025-11-18 10:34:26,411 INFO Model architecture: resnet50
+2025-11-18 10:34:26,773 INFO Skipping loading pretrained weights since checkpoint path is provided
+2025-11-18 10:34:26,774 INFO Using ResNet with Single Linear Classification Head
+2025-11-18 10:34:26,774 INFO => loading checkpoint './outputs/OrganoidsINRIA_reduced/resnet50/03/training/best_model.pt'
+2025-11-18 10:34:29,120 INFO Loaded 334 keys from checkpoint
+2025-11-18 10:34:29,125 INFO Total trainable parameters: 46,713,347
+2025-11-18 10:34:29,152 INFO 
+2025-11-18 10:34:29,152 INFO Dataset INFO:
+2025-11-18 10:34:29,160 INFO Dataset length: 721
+2025-11-18 10:34:29,160 INFO Class distribution in entire dataset:
+2025-11-18 10:34:29,160 INFO   Class 0: 351
+2025-11-18 10:34:29,160 INFO   Class 1: 38
+2025-11-18 10:34:29,160 INFO   Class 2: 332
+2025-11-18 10:34:29,160 INFO 
+Using split method: stratified
+2025-11-18 10:34:29,162 INFO 
+Train set balance:
+2025-11-18 10:34:29,162 INFO 
+Val set balance:
+2025-11-18 10:34:29,162 INFO Training set length: 577
+2025-11-18 10:34:29,162 INFO Validation set length: 144
+2025-11-18 10:34:29,162 INFO 
+Using standard shuffle for training
+2025-11-18 10:34:29,163 INFO Training loader: 144 batches
+2025-11-18 10:34:29,163 INFO Validation loader: 36 batches
+2025-11-18 10:34:29,163 INFO 
+Class distribution in training set:
+2025-11-18 10:34:29,163 INFO   Class 0: 281 (48.7%)
+2025-11-18 10:34:29,163 INFO   Class 1: 30 (5.2%)
+2025-11-18 10:34:29,163 INFO   Class 2: 266 (46.1%)
+2025-11-18 10:34:29,163 INFO Class distribution in validation set:
+2025-11-18 10:34:29,163 INFO   Class 0: 70 (48.6%)
+2025-11-18 10:34:29,163 INFO   Class 1: 8 (5.6%)
+2025-11-18 10:34:29,163 INFO   Class 2: 66 (45.8%)
+2025-11-18 10:34:29,163 INFO **************************************************
+2025-11-18 10:34:29,171 INFO Class weights: [ 6.845  64.111  7.231]
+2025-11-18 10:34:29,172 INFO 
+2025-11-18 10:34:29,172 INFO Test Dataset INFO:
+2025-11-18 10:34:29,175 INFO Test Dataset length: 82
+2025-11-18 10:34:29,175 INFO Class distribution in test dataset:
+2025-11-18 10:34:29,175 INFO   Class 0: 40
+2025-11-18 10:34:29,175 INFO   Class 1: 5
+2025-11-18 10:34:29,175 INFO   Class 2: 37
+2025-11-18 10:34:29,175 INFO Test loader: 21 batches
+2025-11-18 10:34:29,176 INFO **************************************************
+2025-11-18 10:34:29,176 INFO 
+2025-11-18 10:34:29,176 INFO Using loss function: CE
+2025-11-18 10:34:29,179 INFO **************************************************
+2025-11-18 10:34:29,179 INFO Starting testing...
+2025-11-18 10:34:40,013 INFO Final testing , Test_acc: 0.4871, time 10.83sAccuracy: 0.585
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.585     0.600         0.595   0.593        40
+1                          0.000     0.000         0.961   0.000         5
+2                          0.632     0.649         0.689   0.640        37
+*========================================*
+2025-11-18 10:34:40,491 INFO Testing Finished! Best Accuracy: 0.4871
+2025-11-18 10:34:40,491 INFO ====================================================================================================
+2025-11-18 10:34:43,297 INFO Total time spent: 00 hours 00 minutes 14 seconds
+2025-11-18 10:34:43,297 INFO 
+2025-11-18 10:34:43,297 INFO Final Test Metrics:
+2025-11-18 10:34:43,297 INFO | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
+2025-11-18 10:34:43,297 INFO | 0.4871 | 0.5779 | 0.5705 | 0.5854 | 0.6598 |

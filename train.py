@@ -171,6 +171,10 @@ def main_worker(gpu, args, configs):
         logger=logger,
     )
 
+    checkpoint = final_output_dir + "/training/best_model.pt"
+
+    _maybe_load_checkpoint(model, checkpoint, log=log, strict=False, args=args)
+
     test_acc,test_metrics = run_testing(
         model=model,
         test_loader=test_loader,
@@ -188,11 +192,13 @@ def main_worker(gpu, args, configs):
     log(f"Total time spent: {time_str}")
     log("")
     log("Final Results Summary:")
-    log("| TrainAcc | ValAccMax | W_TrainF1 | W_TrainPrecision | W_TrainRecall | W_TrainSpecificity |")
+    log("| TrainLoss | TrainAcc | ValAccMax | W_TrainF1 | W_TrainPrecision | W_TrainRecall | W_TrainSpecificity |")
     wa = best_metrics_training.get("weighted_avg", {})
+    accuracy = best_metrics_training.get("accuracy", 0.0)
     log("| {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} |".format(
+        train_loss,
         train_acc,
-        val_acc_max,
+        accuracy,
         wa.get("f1", 0.0),
         wa.get("precision", 0.0),
         wa.get("recall", 0.0),
@@ -201,8 +207,9 @@ def main_worker(gpu, args, configs):
     
     log("| TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |")
     t_wa = test_metrics.get("weighted_avg", {})
+    accuracy = test_metrics.get("accuracy", 0.0)
     log("| {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} |".format(
-        test_acc,
+        accuracy,
         t_wa.get("f1", 0.0),
         t_wa.get("precision", 0.0),
         t_wa.get("recall", 0.0),

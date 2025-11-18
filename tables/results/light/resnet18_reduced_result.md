@@ -4,3 +4,4 @@
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01 | resnet18 | yes | no | CE | 132/150 | 0.05 | AdamW | warmup_cosine | 94 | 92 | 92 |
 | 02 | resnet18 | yes | yes | CE | 106/150 | 0.05 | AdamW | warmup_cosine | 93 | 88 | 89 |
+| 03 | resnet18 | yes | no | CE | 128/150 | 0.08 | AdamW | warmup_cosine | 94 | 89 | 94 |

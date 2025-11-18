@@ -16,7 +16,6 @@ MODEL:
   name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder"
   pretrained_model_name: "model_swinvit.pt"
   pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
-  checkpoint: "./outputs/OrganoidsINRIA_reduced/swinunetr/2025-11-15-13-20/training/model_final.pt"
   norm_name: "instance"
   use_checkpoint: false
 

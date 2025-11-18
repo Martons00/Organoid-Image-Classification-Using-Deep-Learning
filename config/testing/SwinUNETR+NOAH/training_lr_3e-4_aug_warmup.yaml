@@ -6,7 +6,7 @@ SYSTEM:
   world_size: 1
   rank: 0
   workers: 8
-  output_dir: "outputs_testing/"
+  output_dir: "outputs/"
   logs_dir: "logs/"
   telegram_log: true
   telegram_token: "./token/tlg_token.txt"
@@ -36,7 +36,7 @@ TRAINING:
   max_epochs: 150
   batch_size: 6
   patch_merging: false
-  sw_batch_size: 8
+  sw_batch_size: 6
   val_every: 2
   early_stopping: true
   patience_val: 40

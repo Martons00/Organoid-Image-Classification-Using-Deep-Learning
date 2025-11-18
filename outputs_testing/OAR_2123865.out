@@ -1,0 +1,957 @@
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Byte Order:                              Little Endian
+Address sizes:                           48 bits physical, 48 bits virtual
+CPU(s):                                  64
+On-line CPU(s) list:                     0-63
+Thread(s) per core:                      2
+Core(s) per socket:                      16
+Socket(s):                               2
+NUMA node(s):                            8
+Vendor ID:                               AuthenticAMD
+CPU family:                              25
+Model:                                   1
+Model name:                              AMD EPYC 7313 16-Core Processor
+Stepping:                                1
+Frequency boost:                         enabled
+CPU MHz:                                 2913.647
+CPU max MHz:                             3000.0000
+CPU min MHz:                             1500.0000
+BogoMIPS:                                5988.46
+Virtualization:                          AMD-V
+L1d cache:                               1 MiB
+L1i cache:                               1 MiB
+L2 cache:                                16 MiB
+L3 cache:                                256 MiB
+NUMA node0 CPU(s):                       0-3,32-35
+NUMA node1 CPU(s):                       4-7,36-39
+NUMA node2 CPU(s):                       8-11,40-43
+NUMA node3 CPU(s):                       12-15,44-47
+NUMA node4 CPU(s):                       16-19,48-51
+NUMA node5 CPU(s):                       20-23,52-55
+NUMA node6 CPU(s):                       24-27,56-59
+NUMA node7 CPU(s):                       28-31,60-63
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Mitigation; safe RET
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines, IBPB conditional, IBRS_FW, STIBP always-on, RSB filling, PBRSB-eIBRS Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Mitigation; Clear CPU buffers
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 invpcid_single hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local clzero irperf xsaveerptr rdpru wbnoinvd amd_ppin arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm ibpb_exit_to_user
+Tue Nov 18 10:31:57 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.183.06             Driver Version: 535.183.06   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A40                     On  | 00000000:C3:00.0 Off |                    0 |
+|  0%   31C    P8              31W / 300W |      0MiB / 46068MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning
+{'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 2,
+ 'cache_dataset': False,
+ 'checkpoint_path': './outputs/OrganoidsINRIA_reduced/densenet/03/training/best_model.pt',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_reduced',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'densenet',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2123865,
+ 'optim_lr': 0.05,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': '',
+ 'pretrained_model_name': '',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 8,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+
+Saved configuration to: outputs/OrganoidsINRIA_reduced/densenet/2025-11-18-10-32/config.txt
+Using GPU: 0
+
+Model INFO:
+Model architecture: densenet
+BatchNorm3d(1920, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+=> loading checkpoint './outputs/OrganoidsINRIA_reduced/densenet/03/training/best_model.pt'
+Loaded 1207 keys from checkpoint
+Total trainable parameters: 25,336,579
+
+Dataset INFO:
+Dataset length: 721
+Class distribution in entire dataset:
+  Class 0: 351
+  Class 1: 38
+  Class 2: 332
+
+Using split method: stratified
+
+Train set balance:
+Class distribution:
+  Class 0: 281 samples
+  Class 1: 30 samples
+  Class 2: 266 samples
+
+Val set balance:
+Class distribution:
+  Class 0: 70 samples
+  Class 1: 8 samples
+  Class 2: 66 samples
+Training set length: 577
+Validation set length: 144
+
+Using standard shuffle for training
+Training loader: 288 batches
+Validation loader: 72 batches
+
+Class distribution in training set:
+  Class 0: 281 (48.7%)
+  Class 1: 30 (5.2%)
+  Class 2: 266 (46.1%)
+Class distribution in validation set:
+  Class 0: 70 (48.6%)
+  Class 1: 8 (5.6%)
+  Class 2: 66 (45.8%)
+**************************************************
+Class weights: [ 6.845  64.111  7.231]
+
+Test Dataset INFO:
+Test Dataset length: 82
+Class distribution in test dataset:
+  Class 0: 40
+  Class 1: 5
+  Class 2: 37
+Test loader: 41 batches
+**************************************************
+
+Using loss function: CE
+**************************************************
+Starting testing...
+Testing 1/41, Acc: 0.2500, Loss: 1.5759, time 15.15s
+Testing 2/41, Acc: 0.6250, Loss: 0.8860, time 0.10s
+Testing 3/41, Acc: 0.7500, Loss: 0.6655, time 0.09s
+Testing 4/41, Acc: 0.6250, Loss: 0.6702, time 0.10s
+Testing 5/41, Acc: 0.7000, Loss: 0.5425, time 0.10s
+Testing 6/41, Acc: 0.7500, Loss: 0.5004, time 0.09s
+Testing 7/41, Acc: 0.6786, Loss: 0.6134, time 0.09s
+Testing 8/41, Acc: 0.7188, Loss: 0.5430, time 0.09s
+Testing 9/41, Acc: 0.7500, Loss: 0.4987, time 0.09s
+Testing 10/41, Acc: 0.7000, Loss: 0.5896, time 0.09s
+Testing 11/41, Acc: 0.7273, Loss: 0.5652, time 0.09s
+Testing 12/41, Acc: 0.6875, Loss: 0.5914, time 0.09s
+Testing 13/41, Acc: 0.7115, Loss: 0.5472, time 0.09s
+Testing 14/41, Acc: 0.7321, Loss: 0.5113, time 0.09s
+Testing 15/41, Acc: 0.7500, Loss: 0.5004, time 0.09s
+Testing 16/41, Acc: 0.7656, Loss: 0.4787, time 0.09s
+Testing 17/41, Acc: 0.7794, Loss: 0.4525, time 0.09s
+Testing 18/41, Acc: 0.7500, Loss: 0.4818, time 0.09s
+Testing 19/41, Acc: 0.7237, Loss: 0.4930, time 0.09s
+Testing 20/41, Acc: 0.7375, Loss: 0.4971, time 0.09s
+Testing 21/41, Acc: 0.7500, Loss: 0.4755, time 0.09s
+Testing 22/41, Acc: 0.7614, Loss: 0.4592, time 0.09s
+Testing 23/41, Acc: 0.7500, Loss: 0.4645, time 0.09s
+Testing 24/41, Acc: 0.7604, Loss: 0.4528, time 0.93s
+Testing 25/41, Acc: 0.7700, Loss: 0.4398, time 1.93s
+Testing 26/41, Acc: 0.7788, Loss: 0.4303, time 0.09s
+Testing 27/41, Acc: 0.7870, Loss: 0.4232, time 0.09s
+Testing 28/41, Acc: 0.7946, Loss: 0.4094, time 0.09s
+Testing 29/41, Acc: 0.8017, Loss: 0.4122, time 0.09s
+Testing 30/41, Acc: 0.7750, Loss: 0.4367, time 0.09s
+Testing 31/41, Acc: 0.7823, Loss: 0.4247, time 0.09s
+Testing 32/41, Acc: 0.7891, Loss: 0.4123, time 0.59s
+Testing 33/41, Acc: 0.7955, Loss: 0.4018, time 0.57s
+Testing 34/41, Acc: 0.8015, Loss: 0.3909, time 0.09s
+Testing 35/41, Acc: 0.8071, Loss: 0.3839, time 0.09s
+Testing 36/41, Acc: 0.7917, Loss: 0.3874, time 0.09s
+Testing 37/41, Acc: 0.7973, Loss: 0.3818, time 0.09s
+Testing 38/41, Acc: 0.8026, Loss: 0.3775, time 0.09s
+Testing 39/41, Acc: 0.8077, Loss: 0.3711, time 0.09s
+Testing 40/41, Acc: 0.8125, Loss: 0.3665, time 0.09s
+Testing 41/41, Acc: 0.8171, Loss: 0.3628, time 0.09s
+[Testing] avg_acc=0.8171 | avg_loss=0.3628 | per-class [c0: 0.825, c1: 1.000, c2: 0.892]
+Final testing , Test_acc: 0.8171, time 22.42sAccuracy: 0.866
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.971     0.825         0.976   0.892        40
+1                          0.500     1.000         0.935   0.667         5
+2                          0.868     0.892         0.889   0.880        37
+*========================================*
+Testing Finished! Best Accuracy: 0.8171
+Saving plots to: outputs/OrganoidsINRIA_reduced/densenet/2025-11-18-10-32/testing/plots
+Total time spent: 00 hours 00 minutes 25 seconds
+
+Final Test Metrics:
+| TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
+| 0.8171 | 0.8728 | 0.8958 | 0.8659 | 0.9343 |
+{'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 2,
+ 'cache_dataset': False,
+ 'checkpoint_path': './outputs/OrganoidsINRIA/densenet/02/training/best_model.pt',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset/',
+ 'dataset_name': 'OrganoidsINRIA',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'densenet',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2123865,
+ 'optim_lr': 0.05,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': '',
+ 'pretrained_model_name': '',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 8,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+
+Saved configuration to: outputs/OrganoidsINRIA/densenet/2025-11-18-10-32/config.txt
+Using GPU: 0
+
+Model INFO:
+Model architecture: densenet
+BatchNorm3d(1920, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+=> loading checkpoint './outputs/OrganoidsINRIA/densenet/02/training/best_model.pt'
+Loaded 1207 keys from checkpoint
+Total trainable parameters: 25,336,579
+
+Dataset INFO:
+Dataset length: 721
+Class distribution in entire dataset:
+  Class 0: 351
+  Class 1: 38
+  Class 2: 332
+
+Using split method: stratified
+
+Train set balance:
+Class distribution:
+  Class 0: 281 samples
+  Class 1: 30 samples
+  Class 2: 266 samples
+
+Val set balance:
+Class distribution:
+  Class 0: 70 samples
+  Class 1: 8 samples
+  Class 2: 66 samples
+Training set length: 577
+Validation set length: 144
+
+Using standard shuffle for training
+Training loader: 288 batches
+Validation loader: 72 batches
+
+Class distribution in training set:
+  Class 0: 281 (48.7%)
+  Class 1: 30 (5.2%)
+  Class 2: 266 (46.1%)
+Class distribution in validation set:
+  Class 0: 70 (48.6%)
+  Class 1: 8 (5.6%)
+  Class 2: 66 (45.8%)
+**************************************************
+Class weights: [ 6.845  64.111  7.231]
+
+Test Dataset INFO:
+Test Dataset length: 82
+Class distribution in test dataset:
+  Class 0: 40
+  Class 1: 5
+  Class 2: 37
+Test loader: 41 batches
+**************************************************
+
+Using loss function: CE
+**************************************************
+Starting testing...
+Testing 1/41, Acc: 1.0000, Loss: 0.0056, time 19.01s
+Testing 2/41, Acc: 1.0000, Loss: 0.0056, time 0.37s
+Testing 3/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 4/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 5/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 6/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 7/41, Acc: 1.0000, Loss: 0.0056, time 0.35s
+Testing 8/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 9/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 10/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 11/41, Acc: 1.0000, Loss: 0.0056, time 0.64s
+Testing 12/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 13/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 14/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 15/41, Acc: 1.0000, Loss: 0.0056, time 0.71s
+Testing 16/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 17/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 18/41, Acc: 1.0000, Loss: 0.0056, time 5.15s
+Testing 19/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 20/41, Acc: 1.0000, Loss: 0.0056, time 0.34s
+Testing 21/41, Acc: 0.9524, Loss: 1.6774, time 0.34s
+Testing 22/41, Acc: 0.9091, Loss: 3.1972, time 0.34s
+Testing 23/41, Acc: 0.8696, Loss: 4.4529, time 0.34s
+Testing 24/41, Acc: 0.8333, Loss: 4.4832, time 0.34s
+Testing 25/41, Acc: 0.8000, Loss: 4.5111, time 9.61s
+Testing 26/41, Acc: 0.7692, Loss: 4.5368, time 0.34s
+Testing 27/41, Acc: 0.7407, Loss: 4.5607, time 0.34s
+Testing 28/41, Acc: 0.7143, Loss: 4.5828, time 0.34s
+Testing 29/41, Acc: 0.7241, Loss: 4.4247, time 3.56s
+Testing 30/41, Acc: 0.7333, Loss: 4.2773, time 0.34s
+Testing 31/41, Acc: 0.7097, Loss: 4.3064, time 0.34s
+Testing 32/41, Acc: 0.6875, Loss: 4.3337, time 0.34s
+Testing 33/41, Acc: 0.6667, Loss: 4.3593, time 2.63s
+Testing 34/41, Acc: 0.6471, Loss: 4.3835, time 0.39s
+Testing 35/41, Acc: 0.6286, Loss: 4.4062, time 0.34s
+Testing 36/41, Acc: 0.6111, Loss: 4.4277, time 0.34s
+Testing 37/41, Acc: 0.5946, Loss: 4.4481, time 0.34s
+Testing 38/41, Acc: 0.5789, Loss: 4.4673, time 0.34s
+Testing 39/41, Acc: 0.5641, Loss: 4.4856, time 0.34s
+Testing 40/41, Acc: 0.5500, Loss: 4.5030, time 0.34s
+Testing 41/41, Acc: 0.5366, Loss: 4.5195, time 0.34s
+[Testing] avg_acc=0.5366 | avg_loss=4.5195 | per-class [c0: 1.000, c1: 0.000, c2: 0.108]
+Final testing , Test_acc: 0.5366, time 53.03sAccuracy: 0.537
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.513     1.000         0.095   0.678        40
+1                          0.000     0.000         1.000   0.000         5
+2                          1.000     0.108         1.000   0.195        37
+*========================================*
+Testing Finished! Best Accuracy: 0.5366
+Saving plots to: outputs/OrganoidsINRIA/densenet/2025-11-18-10-32/testing/plots
+Total time spent: 00 hours 00 minutes 55 seconds
+
+Final Test Metrics:
+| TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
+| 0.5366 | 0.4188 | 0.7014 | 0.5366 | 0.5587 |
+{'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 6,
+ 'cache_dataset': False,
+ 'checkpoint_path': './outputs/OrganoidsINRIA_reduced/resnet18/03/training/best_model.pt',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_reduced',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'resnet18',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2123865,
+ 'optim_lr': 0.08,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': './pretrained_models/resnet18/',
+ 'pretrained_model_name': 'resnet_18.pth',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 8,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+
+Saved configuration to: outputs/OrganoidsINRIA_reduced/resnet18/2025-11-18-10-34/config.txt
+Using GPU: 0
+
+Model INFO:
+Model architecture: resnet18
+Skipping loading pretrained weights since checkpoint path is provided
+Warning: ResNet18_3D not found, using ResNet50_3D wrapper as fallback
+Using ResNet with Single Linear Classification Head
+=> loading checkpoint './outputs/OrganoidsINRIA_reduced/resnet18/03/training/best_model.pt'
+Loaded 136 keys from checkpoint
+Total trainable parameters: 33,320,451
+
+Dataset INFO:
+Dataset length: 721
+Class distribution in entire dataset:
+  Class 0: 351
+  Class 1: 38
+  Class 2: 332
+
+Using split method: stratified
+
+Train set balance:
+Class distribution:
+  Class 0: 281 samples
+  Class 1: 30 samples
+  Class 2: 266 samples
+
+Val set balance:
+Class distribution:
+  Class 0: 70 samples
+  Class 1: 8 samples
+  Class 2: 66 samples
+Training set length: 577
+Validation set length: 144
+
+Using standard shuffle for training
+Training loader: 96 batches
+Validation loader: 24 batches
+
+Class distribution in training set:
+  Class 0: 281 (48.7%)
+  Class 1: 30 (5.2%)
+  Class 2: 266 (46.1%)
+Class distribution in validation set:
+  Class 0: 70 (48.6%)
+  Class 1: 8 (5.6%)
+  Class 2: 66 (45.8%)
+**************************************************
+Class weights: [ 6.845  64.111  7.231]
+
+Test Dataset INFO:
+Test Dataset length: 82
+Class distribution in test dataset:
+  Class 0: 40
+  Class 1: 5
+  Class 2: 37
+Test loader: 14 batches
+**************************************************
+
+Using loss function: CE
+**************************************************
+Starting testing...
+Testing 1/14, Acc: 1.0000, Loss: 0.0003, time 4.39s
+Testing 2/14, Acc: 1.0000, Loss: 0.0002, time 0.20s
+Testing 3/14, Acc: 0.8056, Loss: 0.1262, time 0.20s
+Testing 4/14, Acc: 0.7083, Loss: 0.3361, time 0.20s
+Testing 5/14, Acc: 0.7667, Loss: 0.2690, time 0.20s
+Testing 6/14, Acc: 0.8056, Loss: 0.2297, time 0.20s
+Testing 7/14, Acc: 0.8333, Loss: 0.2055, time 0.20s
+Testing 8/14, Acc: 0.8125, Loss: 0.2595, time 0.20s
+Testing 9/14, Acc: 0.7685, Loss: 0.2612, time 0.20s
+Testing 10/14, Acc: 0.7917, Loss: 0.2449, time 0.20s
+Testing 11/14, Acc: 0.8106, Loss: 0.2255, time 0.20s
+Testing 12/14, Acc: 0.8264, Loss: 0.2092, time 0.20s
+Testing 13/14, Acc: 0.8397, Loss: 0.1979, time 0.20s
+Testing 14/14, Acc: 0.8476, Loss: 0.1892, time 0.13s
+[Testing] avg_acc=0.8476 | avg_loss=0.1892 | per-class [c0: 0.950, c1: 0.800, c2: 0.946]
+Final testing , Test_acc: 0.8476, time 6.98sAccuracy: 0.939
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          1.000     0.950         1.000   0.974        40
+1                          0.667     0.800         0.974   0.727         5
+2                          0.921     0.946         0.933   0.933        37
+*========================================*
+Testing Finished! Best Accuracy: 0.8476
+Saving plots to: outputs/OrganoidsINRIA_reduced/resnet18/2025-11-18-10-34/testing/plots
+Total time spent: 00 hours 00 minutes 10 seconds
+
+Final Test Metrics:
+| TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
+| 0.8476 | 0.9408 | 0.9441 | 0.9390 | 0.9683 |
+{'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 4,
+ 'cache_dataset': False,
+ 'checkpoint_path': './outputs/OrganoidsINRIA_reduced/resnet50/03/training/best_model.pt',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_reduced',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'resnet50',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2123865,
+ 'optim_lr': 0.001,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': './pretrained_models/resnet50/',
+ 'pretrained_model_name': 'resnet_50.pth',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 4,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 4,
+ 'workers': 8,
+ 'world_size': 1}
+
+Saved configuration to: outputs/OrganoidsINRIA_reduced/resnet50/2025-11-18-10-34/config.txt
+Using GPU: 0
+
+Model INFO:
+Model architecture: resnet50
+Skipping loading pretrained weights since checkpoint path is provided
+Using ResNet with Single Linear Classification Head
+=> loading checkpoint './outputs/OrganoidsINRIA_reduced/resnet50/03/training/best_model.pt'
+Loaded 334 keys from checkpoint
+Total trainable parameters: 46,713,347
+
+Dataset INFO:
+Dataset length: 721
+Class distribution in entire dataset:
+  Class 0: 351
+  Class 1: 38
+  Class 2: 332
+
+Using split method: stratified
+
+Train set balance:
+Class distribution:
+  Class 0: 281 samples
+  Class 1: 30 samples
+  Class 2: 266 samples
+
+Val set balance:
+Class distribution:
+  Class 0: 70 samples
+  Class 1: 8 samples
+  Class 2: 66 samples
+Training set length: 577
+Validation set length: 144
+
+Using standard shuffle for training
+Training loader: 144 batches
+Validation loader: 36 batches
+
+Class distribution in training set:
+  Class 0: 281 (48.7%)
+  Class 1: 30 (5.2%)
+  Class 2: 266 (46.1%)
+Class distribution in validation set:
+  Class 0: 70 (48.6%)
+  Class 1: 8 (5.6%)
+  Class 2: 66 (45.8%)
+**************************************************
+Class weights: [ 6.845  64.111  7.231]
+
+Test Dataset INFO:
+Test Dataset length: 82
+Class distribution in test dataset:
+  Class 0: 40
+  Class 1: 5
+  Class 2: 37
+Test loader: 21 batches
+**************************************************
+
+Using loss function: CE
+**************************************************
+Starting testing...
+Testing 1/21, Acc: 0.1250, Loss: 3.2190, time 5.40s
+Testing 2/21, Acc: 0.0625, Loss: 3.5860, time 0.29s
+Testing 3/21, Acc: 0.0417, Loss: 5.8601, time 0.29s
+Testing 4/21, Acc: 0.0938, Loss: 5.3004, time 0.28s
+Testing 5/21, Acc: 0.2750, Loss: 4.2888, time 0.31s
+Testing 6/21, Acc: 0.3958, Loss: 3.6260, time 0.27s
+Testing 7/21, Acc: 0.3750, Loss: 3.1988, time 0.27s
+Testing 8/21, Acc: 0.4531, Loss: 2.8253, time 0.27s
+Testing 9/21, Acc: 0.5139, Loss: 2.5196, time 0.27s
+Testing 10/21, Acc: 0.5000, Loss: 2.3951, time 0.27s
+Testing 11/21, Acc: 0.4545, Loss: 2.4674, time 0.27s
+Testing 12/21, Acc: 0.4259, Loss: 2.4690, time 0.27s
+Testing 13/21, Acc: 0.4701, Loss: 2.2846, time 0.27s
+Testing 14/21, Acc: 0.4365, Loss: 2.3858, time 0.27s
+Testing 15/21, Acc: 0.4074, Loss: 2.4049, time 0.27s
+Testing 16/21, Acc: 0.4444, Loss: 2.2562, time 0.27s
+Testing 17/21, Acc: 0.4404, Loss: 2.1537, time 0.27s
+Testing 18/21, Acc: 0.4715, Loss: 2.0387, time 0.27s
+Testing 19/21, Acc: 0.4664, Loss: 1.9502, time 0.27s
+Testing 20/21, Acc: 0.4931, Loss: 1.8610, time 0.27s
+Testing 21/21, Acc: 0.4871, Loss: 1.8372, time 0.14s
+[Testing] avg_acc=0.4871 | avg_loss=1.8372 | per-class [c0: 0.600, c1: 0.000, c2: 0.649]
+Final testing , Test_acc: 0.4871, time 10.83sAccuracy: 0.585
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.585     0.600         0.595   0.593        40
+1                          0.000     0.000         0.961   0.000         5
+2                          0.632     0.649         0.689   0.640        37
+*========================================*
+Testing Finished! Best Accuracy: 0.4871
+Saving plots to: outputs/OrganoidsINRIA_reduced/resnet50/2025-11-18-10-34/testing/plots
+Total time spent: 00 hours 00 minutes 14 seconds
+
+Final Test Metrics:
+| TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
+| 0.4871 | 0.5779 | 0.5705 | 0.5854 | 0.6598 |
+{'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 6,
+ 'cache_dataset': False,
+ 'checkpoint_path': './outputs/OrganoidsINRIA_reduced/swinunetr+noah/02/training/best_model.pt',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_reduced',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'swinunetr+noah',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2123865,
+ 'optim_lr': 0.0006,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model_swinvit.pt',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 8,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+
+Saved configuration to: outputs/OrganoidsINRIA_reduced/swinunetr+noah/2025-11-18-10-34/config.txt
+Using GPU: 0
+
+Model INFO:
+Model architecture: swinunetr+noah
+Skipping loading pretrained weights since checkpoint path is provided
+Using SwinUNETR with NOAH Classification Head
+=> loading checkpoint './outputs/OrganoidsINRIA_reduced/swinunetr+noah/02/training/best_model.pt'
+Loaded 132 keys from checkpoint
+Total trainable parameters: 39,917,112
+
+Dataset INFO:
+Dataset length: 721
+Class distribution in entire dataset:
+  Class 0: 351
+  Class 1: 38
+  Class 2: 332
+
+Using split method: stratified
+
+Train set balance:
+Class distribution:
+  Class 0: 281 samples
+  Class 1: 30 samples
+  Class 2: 266 samples
+
+Val set balance:
+Class distribution:
+  Class 0: 70 samples
+  Class 1: 8 samples
+  Class 2: 66 samples
+Training set length: 577
+Validation set length: 144
+
+Using standard shuffle for training
+Training loader: 96 batches
+Validation loader: 24 batches
+
+Class distribution in training set:
+  Class 0: 281 (48.7%)
+  Class 1: 30 (5.2%)
+  Class 2: 266 (46.1%)
+Class distribution in validation set:
+  Class 0: 70 (48.6%)
+  Class 1: 8 (5.6%)
+  Class 2: 66 (45.8%)
+**************************************************
+Class weights: [ 6.845  64.111  7.231]
+
+Test Dataset INFO:
+Test Dataset length: 82
+Class distribution in test dataset:
+  Class 0: 40
+  Class 1: 5
+  Class 2: 37
+Test loader: 14 batches
+**************************************************
+
+Using loss function: CE
+**************************************************
+Starting testing...
+Testing 1/14, Acc: 0.4167, Loss: 0.6575, time 7.28s
+Testing 2/14, Acc: 0.4167, Loss: 0.5733, time 3.12s
+Testing 3/14, Acc: 0.3611, Loss: 0.7608, time 2.55s
+Testing 4/14, Acc: 0.3333, Loss: 0.9094, time 2.55s
+Testing 5/14, Acc: 0.4667, Loss: 0.7471, time 2.55s
+Testing 6/14, Acc: 0.4583, Loss: 0.7139, time 2.55s
+Testing 7/14, Acc: 0.4643, Loss: 0.7389, time 2.55s
+Testing 8/14, Acc: 0.4896, Loss: 0.7559, time 2.55s
+Testing 9/14, Acc: 0.4815, Loss: 0.6989, time 2.55s
+Testing 10/14, Acc: 0.5333, Loss: 0.6437, time 2.55s
+Testing 11/14, Acc: 0.5758, Loss: 0.5893, time 2.55s
+Testing 12/14, Acc: 0.6111, Loss: 0.5441, time 2.55s
+Testing 13/14, Acc: 0.6410, Loss: 0.5112, time 2.55s
+Testing 14/14, Acc: 0.6585, Loss: 0.4897, time 1.70s
+[Testing] avg_acc=0.6585 | avg_loss=0.4897 | per-class [c0: 0.775, c1: 0.400, c2: 0.973]
+Final testing , Test_acc: 0.6585, time 40.20sAccuracy: 0.841
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.969     0.775         0.976   0.861        40
+1                          0.667     0.400         0.987   0.500         5
+2                          0.766     0.973         0.756   0.857        37
+*========================================*
+Testing Finished! Best Accuracy: 0.6585
+Saving plots to: outputs/OrganoidsINRIA_reduced/swinunetr+noah/2025-11-18-10-34/testing/plots
+Total time spent: 00 hours 00 minutes 43 seconds
+
+Final Test Metrics:
+| TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
+| 0.6585 | 0.8373 | 0.8588 | 0.8415 | 0.8773 |

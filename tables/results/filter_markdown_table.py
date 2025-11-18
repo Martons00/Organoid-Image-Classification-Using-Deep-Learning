@@ -135,19 +135,27 @@ def process_markdown_table(input_file: str, output_file: str,
     print(f"  - Colonne selezionate: {len(selected_columns)}")
     print(f"  - Righe selezionate: {len(selected_rows) if selected_rows else len(rows)}")
 
+    # Restituisci a partire dalla 4ª riga (indice 3)
+    lines = filtered_md.splitlines()
+    result = "\n".join(lines[4:]) if len(lines) > 3 else ""
+    return result
+
 
 # Esempio di utilizzo
 if __name__ == "__main__":
 
-    file_names = [
-        "swinunetr_result",
+    file_names_full = [
+        "swinunetr_full_result",
+        "resnet18_full_result",
+        "resnet50_full_result",
+        "densenet_full_result",
+    ]
+    file_names_reduced = [
         "swinunetr_reduced_result",
-        "resnet18_result",
         "resnet18_reduced_result",
-        "resnet50_result",
         "resnet50_reduced_result",
-        "densenet_result",
         "densenet_reduced_result",
+        "swinunetr+noah_reduced_result",
     ]
 
     SELECTED_COLUMNS = [
@@ -173,14 +181,45 @@ if __name__ == "__main__":
     #   [2, 5, 8]             -> righe specifiche
     SELECTED_ROWS = None  # Tutte le righe
 
-
-    for file_name in file_names:
-        INPUT_FILE = file_name + ".md"
+    row_full = []
+    for file_name in file_names_full:
+        INPUT_FILE = "full/" + file_name + ".md"
         OUTPUT_FILE = "light/" + file_name + ".md"
 
         try:
-            process_markdown_table(INPUT_FILE, OUTPUT_FILE, SELECTED_COLUMNS, SELECTED_ROWS)
+            row = process_markdown_table(INPUT_FILE, OUTPUT_FILE, SELECTED_COLUMNS, SELECTED_ROWS)
+            row_full.append(row[:-1])  # Rimuovi newline finale
         except FileNotFoundError:
             print(f"✗ Errore: File '{INPUT_FILE}' non trovato")
         except Exception as e:
             print(f"✗ Errore: {e}")
+    
+    header = "| " + " | ".join(SELECTED_COLUMNS) + " |"
+    separator = "| " + " | ".join(["---"] * len(SELECTED_COLUMNS)) + " |"
+    with open("./light/00_full_results.md", 'w', encoding='utf-8') as f:
+        f.write("## Full Results\n\n")
+        f.write(header + "\n")
+        f.write(separator + "\n")
+        for row in row_full:
+            f.write(row + "\n")
+    
+    row_reduced = []
+    
+    for file_name in file_names_reduced:
+        INPUT_FILE = "full/" + file_name + ".md"
+        OUTPUT_FILE = "light/" + file_name + ".md"
+
+        try:
+            row = process_markdown_table(INPUT_FILE, OUTPUT_FILE, SELECTED_COLUMNS, SELECTED_ROWS)
+            row_reduced.append(row[:-1])  # Rimuovi newline finale
+        except FileNotFoundError:
+            print(f"✗ Errore: File '{INPUT_FILE}' non trovato")
+        except Exception as e:
+            print(f"✗ Errore: {e}")
+    with open("./light/00_reduced_results.md", 'w', encoding='utf-8') as f:
+        f.write("## Reduced Results\n\n")
+        f.write(header + "\n")
+        f.write(separator + "\n")
+        for row in row_reduced:
+            f.write(row + "\n")
+
