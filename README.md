@@ -114,8 +114,8 @@ Organize your dataset in the following structure:
 data/
 ├── train_set/
 │   ├── class_0/
-│   │   ├── sample_001.nii.gz
-│   │   ├── sample_002.nii.gz
+│   │   ├── sample_001.tif
+│   │   ├── sample_002.tif
 │   │   └── ...
 │   ├── class_1/
 │   └── class_2/
@@ -175,15 +175,6 @@ Then run:
 python train.py --cfg config/training/your_config.yaml
 ```
 
-#### Distributed Training (Multi-GPU)
-
-```bash
-python train.py \
-    --cfg config/training/your_config.yaml \
-    --distributed \
-    --world_size 4 \
-    --dist_url 'tcp://127.0.0.1:23456'
-```
 
 ### Testing
 
