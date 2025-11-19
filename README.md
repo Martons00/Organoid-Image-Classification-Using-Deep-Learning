@@ -313,18 +313,18 @@ python train.py --telegram_log --oar_id YOUR_JOB_ID --token path/to/token.txt
 
 ```
 outputs/
+|   config.txt               # Saved configuration
+|   trainging.log            # Training log file
+├── tensorboard/
 ├── training/
 │   ├── best_model.pt          # Best model checkpoint
-│   ├── checkpoint.pt          # Latest checkpoint
-│   ├── metrics.json           # Training metrics
-│   └── confusion_matrix.png   # Confusion matrix
-│
-├── validation/
-│   └── predictions/           # Validation predictions
+│   ├── model_final.pt         # Latest checkpoint
+│   ├── errors_logs/           #  logs
+│   └──  plots/                # Training metrics
 │
 └── testing/
-    ├── test_metrics.json      # Test set metrics
-    └── predictions/           # Test predictions
+│     ├── errors_logs/           #  logs
+│     └──  plots/                # Training metrics
 ```
 
 ### Checkpoint Format
@@ -357,52 +357,11 @@ See `config/default.py` for all available parameters.
 
 ---
 
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**CUDA Out of Memory**
-- Reduce batch size: `--batch_size 2`
-- Enable mixed precision: `--amp`
-- Reduce input size: `--roi_x 64 --roi_y 64 --roi_z 64`
-
-**Class Imbalance**
-- Use balanced sampling: `--split_method balanced`
-- Try Focal Loss: `--loss_name FocalLoss`
-- Enable class-weighted loss (automatic)
-
-**Slow Training**
-- Increase num_workers: `--workers 8`
-- Enable pin_memory (automatic on GPU)
-- Use distributed training for multi-GPU
-
----
-
 ## 📚 Citation
 
 If you use this code in your research, please cite:
 
-```bibtex
-@mastersthesis{martone2025organoid,
-  author = {Raffaele Martone},
-  title = {Organoid Image Classification Using Deep Learning},
-  school = {Politecnico di Milano},
-  year = {2025},
-  institution = {Inria Sophia Antipolis}
-}
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+[...]
 
 ---
 
