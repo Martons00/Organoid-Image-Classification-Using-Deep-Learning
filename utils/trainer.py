@@ -49,6 +49,8 @@ def freeze_backbone_and_select_head_fixed_plus(model,args):
         lists_of_names = ["encoder10","fc","global_pool","swinViT.layers4.0.blocks.1.","swinViT.layers4.0.downsample.","head"]
     elif args.model_name == "densenet":
         lists_of_names = ["features","fc","global_pool"]
+    elif args.model_name == "swinvit":
+        lists_of_names = ["layers4","fc","global_pool","head"]
 
     for name, param in model.named_parameters():
         if any(layer in name for layer in lists_of_names):
@@ -249,7 +251,7 @@ def train_epoch_new(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
+            elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name or "swinvit" in args.model_name:
                 pooled = pooled.flatten(1)
             
             # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
@@ -533,6 +535,7 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             # Forward pass su batch di patch
 
             feats, hidden = model.forward_features(batch_patches)
+            #print(f"Processed patches {i} to {end_idx}, feats shape: {feats.shape}, hidden shape: {hidden.shape}")
             all_feats.append(feats)
             all_hidden.append(hidden)
         #     after = torch.cuda.memory_allocated(device)
@@ -581,14 +584,14 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             # Classificazione: global_pool → flatten → fc
             pooled = model.global_pool(feats_tiled)
-            # print(f"Sample {b}: pooled shape={pooled.shape}")
+            #print(f"Sample {b}: pooled shape={pooled.shape}")
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
+            elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name or args.model_name == "swinvit":
                 pooled = pooled.flatten(1)
             
-            # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
+            #print(f"Sample {b}: flattened pooled shape={pooled.shape}")
             logits_b = model.fc(pooled)  # [1, num_classes]
             batch_logits.append(logits_b)
             
@@ -849,7 +852,7 @@ def train_epoch_old(model, loader, optimizer, epoch, loss_func, acc_func, args):
             
             if args.model_name == "swinunetr+ml_decoder":
                 pooled = pooled.flatten(2)
-            elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
+            elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name or "swinvit" in args.model_name:
                 pooled = pooled.flatten(1)
             
             # print(f"Sample {b}: flattened pooled shape={pooled.shape}")
@@ -1090,7 +1093,7 @@ def val_epoch_old(model,loader: DataLoader,epoch: int,acc_func,args,) -> tuple[f
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name or "swinvit" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1,num_classes]
@@ -1317,7 +1320,7 @@ def val_epoch_new(model,loader: DataLoader,epoch: int,acc_func,loss_func,args,) 
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name or "swinvit" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1, num_classes]
@@ -1547,7 +1550,7 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,loss_func,args,) -> t
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name or "swinvit" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1, num_classes]
@@ -1782,7 +1785,7 @@ def test_epoch_new(model,loader: DataLoader,epoch: int,acc_func,loss_func,args,)
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name or "swinvit" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1, num_classes]
@@ -2012,7 +2015,7 @@ def test_epoch(model,loader: DataLoader,epoch: int,acc_func,loss_func,args,) -> 
                 
                 if args.model_name == "swinunetr+ml_decoder":
                     pooled = pooled.flatten(2)
-                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name:
+                elif args.model_name == "swinunetr" or "resnet" in args.model_name or  "densenet" in args.model_name or "swinvit" in args.model_name:
                     pooled = pooled.flatten(1)
                 
                 logits_b = model.fc(pooled)  # [1, num_classes]

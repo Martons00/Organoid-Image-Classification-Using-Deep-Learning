@@ -58,7 +58,7 @@ import asyncio
 from models.ML_Decoder_main.src_files.ml_decoder.ml_decoder import MLDecoder
 from models.NOAH_main.modules.noah import NOAH
 from dataset import OrganoidsINRIA3D
-from models import SwinUNETREncoder,resnet,ResNet_3D,DenseNet_3D
+from models import SwinUNETREncoder,resnet,ResNet_3D,DenseNet_3D,SwinVit_3D
 
 # from datasets.base_dataset import AugmentedDataset
 from optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR  # Uncomment if used
@@ -625,6 +625,44 @@ def _build_swinunetr_base(args):
     )
     return model
 
+def _attach_classification_head_vit(model, args, log):
+    # Imposta encoder + classification head secondo il nome modello
+    model = SwinVit_3D(model, num_classes=3, num_features=768)
+    name = args.model_name.lower()
+    if name == "swinvit+ml_decoder":
+        try:
+            head = MLDecoder(
+                num_classes=3,
+                initial_num_features=1024,
+                num_of_groups=1,
+                decoder_embedding=768,
+                zsl=0
+            )
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            log("Using SwinViT with ML-Decoder Classification Head")
+        except NameError:
+            log("Warning: MLDecoder not imported, using default head", level="warning")
+    elif name == "swinvit+noah":
+        try:
+            head = NOAH(
+                inplanes=384,
+                outplanes=3,
+                dropout=0.1,
+                head_num=1,
+                head_split=True,
+                kv_split=False
+            )
+            model.global_pool = torch.nn.Identity()
+            model.fc = head
+            log("Using SwinViT with NOAH Classification Head")
+        except NameError:
+            log("Warning: NOAH not imported, using default head", level="warning")
+    else:
+        log("Using SwinViT with Single Linear Classification Head")
+        
+    return model
+
 def _attach_classification_head(model, args, log):
     # Imposta encoder + classification head secondo il nome modello
     model = SwinUNETREncoder(model, num_classes=3, num_features=768)
@@ -795,11 +833,35 @@ def _setup_model(args, logger, log):
         if getattr(args, "checkpoint_path", None) and os.path.exists(args.checkpoint_path):
             _maybe_load_checkpoint(model, args.checkpoint_path, log=log, strict=False, args=args)
     
+    elif "swinvit" in name:
+        # Backbone
+        model = _build_swinunetr_base(args)
+        print("swinvit")
+        # Pretrained (se presente e se non si è passato un checkpoint completo)
+        if pretrained_pth and os.path.exists(pretrained_pth) and args.checkpoint_path is None:
+            log("Using pretrained weights")
+            _maybe_load_pretrained(
+                model, pretrained_pth,
+                remap_fn=lambda sd: _remap_keys_for_swinunetr(sd, log),
+                log=log, strict=False
+            )
+        else:
+            if args.checkpoint_path is None:
+                log(f"Warning: pretrained model not found at '{pretrained_pth}'", level="warning")
+            else:
+                log("Skipping loading pretrained weights since checkpoint path is provided")
+
+        # Classification head
+        model = _attach_classification_head_vit(model, args, log)
+
+        # Checkpoint di fine-tuning (se specificato)
+        if getattr(args, "checkpoint_path", None) and os.path.exists(args.checkpoint_path):
+            _maybe_load_checkpoint(model, args.checkpoint_path, log=log, strict=False, args=args)
+
     elif "densenet" in name:
         net = DenseNet201(spatial_dims=3, in_channels=1, out_channels=1)   
 
         model = DenseNet_3D(original_model=net, num_classes=3)
-
 
     elif "resnet50" in name or "resnet18" in name:
         depth = 50 if "resnet50" in name else 18

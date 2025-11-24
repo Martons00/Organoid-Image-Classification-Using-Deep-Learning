@@ -28,7 +28,6 @@ class SwinUNETREncoder(nn.Module):
         # Usa solo le feature finali dal layer più profondo
         enc_hidden = self.encoder10(hidden_states_out[4])
         # enc_hidden dovrebbe avere forma [B, 384, D, H, W]
-        
         return enc_hidden , hidden_states_out[4]
         
     def forward_all_features(self, x):
