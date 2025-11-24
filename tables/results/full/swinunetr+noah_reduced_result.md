@@ -1,7 +1,0 @@
-## Experiment Results outputs/OrganoidsINRIA_reduced/swinunetr+noah
-| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity | Note |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2025-11-16 | 01 | swinunetr+noah | yes | no | 128x128x128 | CE | none | yes | no | 6 | 150/150 | 5 | 0.0003 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0,32 | 86 | 87 | 87 | 87 | 87 | 90 | 86 | 86 | 88 | 86 | 90 | L’accuracy nel training migliorava in maniera lineare, ne validation è molto rumorosa. La loss invece diventa un platto, una linea piatta dopo un po di epoche. E’ l’unico modello che non è finito per Early stop, anzi continuava a migliorare. Forse con un LR pià piccolo può essere più accurato nella discesa.  |
-| 2025-11-17 | 02 | swinunetr+noah | yes | no | 128x128x128 | CE | none | yes | no | 6 | 150/150 | 5 | 0.0006 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0,28 | 85 | 83 | 82 | 84 | 83 | 85 | 84 | 84 | 86 | 84 | 88 | L’accuracy rimane rumorosa nel validation ma continua a crescere, forse puo andare avanti per pià epoche ma la loss mi sembra già molto bassa e arrivata al suo limite. |
-
-

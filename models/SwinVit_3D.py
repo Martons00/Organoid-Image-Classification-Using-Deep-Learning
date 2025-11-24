@@ -1,3 +1,4 @@
+from email.policy import strict
 import torch
 import torch.nn as nn
 
@@ -74,23 +75,49 @@ class SwinVit_3D(nn.Module):
         
 if __name__ == "__main__":
     from monai.networks.nets import SwinUNETR
-    
+    import torch
+
     # Crea il modello originale per volumi 3D
-    original_model = SwinUNETR(
-        img_size=(128, 128, 128),
-        in_channels=1,          # Canali input (es. modalità MRI)
-        out_channels=3,         # Classi output
-    )
-    
+    original_model  = SwinUNETR(
+            img_size=(128, 128, 128),
+            in_channels=1,
+            out_channels=3,
+            feature_size=48,
+            use_checkpoint=False
+        )
+        
+
     print("Modello originale SwinUNETR:")
-    print(original_model)
-    
+
+    path = "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/model_swinvit.pt"
+
+    checkpoint = torch.load(path, map_location="cpu")
+
+    sd = checkpoint['state_dict']
+    print(sd.keys())
+    new_sd = {}
+    for k, v in sd.items():
+        if k.startswith("module."):
+            new_key = "swinViT." + k[len("module."):]
+            new_key = new_key.replace("fc", "linear")
+        else:
+            new_key = k
+        new_sd[new_key] = v
+
+    print(new_sd.keys())
+
+    original_model.load_state_dict(new_sd, strict=False)
+
+
+
     # Crea l'encoder adattato
     encoder_model = SwinVit_3D(
-        original_model, 
-        num_classes=3, 
-        num_features=384  # Verifica che questo corrisponda all'output dell'encoder10
+        original_model,
+        num_classes=3,
+        num_features=384
     )
+
+    encoder_model.eval()
     
     print("\nModello encoder adattato:")
     print(encoder_model)

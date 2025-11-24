@@ -1,6 +1,0 @@
-## Experiment Results outputs/OrganoidsINRIA_reduced/swinunetr+noah
-
-| Run | Model | Aug | PatchMerging | Loss | MaxEpochs | LR | Optim | LRschedule | TrainAcc | ValAcc | TestAcc |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 01 | swinunetr+noah | yes | no | CE | 150/150 | 0.0003 | AdamW | warmup_cosine | 86 | 87 | 86 |
-| 02 | swinunetr+noah | yes | no | CE | 150/150 | 0.0006 | AdamW | warmup_cosine | 85 | 83 | 84 |

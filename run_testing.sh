@@ -5,6 +5,7 @@
 #OAR -O OAR_%jobid%.out
 #OAR -E OAR_%jobid%.err
 
+
 set -euo pipefail
 lscpu
 nvidia-smi

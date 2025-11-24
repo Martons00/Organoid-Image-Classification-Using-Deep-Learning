@@ -192,24 +192,20 @@ def main_worker(gpu, args, configs):
     log(f"Total time spent: {time_str}")
     log("")
     log("Final Results Summary:")
-    log("| TrainLoss | TrainAcc | ValAccMax | W_TrainF1 | W_TrainPrecision | W_TrainRecall | W_TrainSpecificity |")
     wa = best_metrics_training.get("weighted_avg", {})
     accuracy = best_metrics_training.get("accuracy", 0.0)
-    log("| {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} |".format(
+    log("| TrainLoss | TrainAcc | ValAccMax | W_TrainF1 | W_TrainPrecision | W_TrainRecall | W_TrainSpecificity | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |")
+    t_wa = test_metrics.get("weighted_avg", {})
+    t_accuracy = test_metrics.get("accuracy", 0.0)
+    log("| {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} |".format(
         train_loss,
         train_acc,
         accuracy,
         wa.get("f1", 0.0),
         wa.get("precision", 0.0),
         wa.get("recall", 0.0),
-        wa.get("specificity", 0.0)
-    ))
-    
-    log("| TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |")
-    t_wa = test_metrics.get("weighted_avg", {})
-    accuracy = test_metrics.get("accuracy", 0.0)
-    log("| {:.4f} | {:.4f} | {:.4f} | {:.4f} | {:.4f} |".format(
-        accuracy,
+        wa.get("specificity", 0.0),
+        t_accuracy,
         t_wa.get("f1", 0.0),
         t_wa.get("precision", 0.0),
         t_wa.get("recall", 0.0),

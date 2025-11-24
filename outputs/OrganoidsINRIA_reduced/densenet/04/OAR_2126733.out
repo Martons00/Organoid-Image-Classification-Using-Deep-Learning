@@ -30073,6 +30073,6 @@ Total time spent: 04 hours 44 minutes 09 seconds
 
 Final Results Summary:
 | TrainLoss | TrainAcc | ValAccMax | W_TrainF1 | W_TrainPrecision | W_TrainRecall | W_TrainSpecificity |
-| 1.4360 | 0.4531 | 0.7708 | 0.7461 | 0.7311 | 0.7708 |
+| 1.4360 | 0.4531 | 0.7708 | 0.7461 | 0.7311 | 0.7708 | 0.7920 |
 | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
 | 0.8049 | 0.7791 | 0.7553 | 0.8049 | 0.8269 |

@@ -1,8 +1,0 @@
-## Experiment Results outputs/OrganoidsINRIA_reduced/resnet18
-| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity | Note |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2025-11-15 | 01 | resnet18 | yes | no | 128x128x128 | CE | none | yes | no | 6 | 132/150 | 5 | 0.05 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0,1 | 94 | 92 | 92 | 92 | 92 | 95 | 92 | 92 | 93 | 93 | 95 | Il modello si comporta somprendentemente molto bene. Forse si potrebbe usare un LR più alto ma le performance sono già abbastanza buoni, curve nella norma, accuracy anche, molto bene. |
-| 2025-11-15 | 02 | resnet18 | yes | no | 128x128x128 | CE | none | yes | no | 6 | 106/150 | 5 | 0.05 | AdamW | 0.99 | warmup_cosine | yes | yes | stratified | 0,1 | 93 | 88 | 88 | 89 | 88 | 92 | 89 | 89 | 89 | 89 | 92 | Il primo modello che lavora bene anche con il patch merging, Le curve hanno un ottima andamento. Penso sia il migliore andamento possibile e accettabile. |
-| 2025-11-17 | 03 | resnet18 | yes | no | 128x128x128 | CE | none | yes | no | 6 | 128/150 | 5 | 0.08 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0,1 | 94 | 89 | 89 | 90 | 89 | 92 | 94 | 94 | 94 | 94 | 97 | Le curve sono buone , sono le migliori performance raggiungibili. Infatti è il migliore in termini di performance e accuratezza. |
-
-

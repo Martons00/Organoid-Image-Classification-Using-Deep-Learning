@@ -1,8 +1,0 @@
-## Experiment Results outputs/OrganoidsINRIA_reduced/resnet50
-| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity | Note |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2025-11-15 | 01 | resnet50 | yes | no | 128x128x128 | CE | none | yes | no | 4 | 82/150 | 4 | 0.0005 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0,39 | 80 | 60 | 53 | 70 | 60 | 62 | 65 | 62 | 62 | 66 | 68 | Stesso andamento del full, lenta discesa. Val rumorosa ma sembra iniziare a capire qualcosa rispetto al niente assoluto che sia ha con quello full.  |
-| 2025-11-16 | 02 | resnet50 | yes | no | 128x128x128 | CE | none | yes | no | 4 | 82/150 | 4 | 0.0005 | AdamW | 0.99 | warmup_cosine | yes | yes | stratified | 0,44 | 78 | 78 | 78 | 80 | 80 | 85 | 74 | 74 | 74 | 74 | 80 | Stesso identico comportamento del precedente. Meglio provare con un LR più alto.  |
-| 2025-11-17 | 03 | resnet50 | yes | no | 128x128x128 | CE | none | yes | no | 4 | 90/150 | 4 | 0.001 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0,33 | 82 | 66 | 67 | 66 | 66 | 71 | 59 | 58 | 57 | 59 | 66 | Stesso andamento del full, lenta discesa. Val rumorosa ma sembra iniziare a capire qualcosa rispetto al niente assoluto che sia ha con quello full.  |
-
-
