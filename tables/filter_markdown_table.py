@@ -154,8 +154,8 @@ if __name__ == "__main__":
         "resnet18/",
         "resnet50/",
         "swinunetr/",
-        #"swinunetr+noah/",
-        #"swinvit/",
+        "swinunetr+noah/",
+        "swinvit/",
     ]
 
     SELECTED_COLUMNS = [

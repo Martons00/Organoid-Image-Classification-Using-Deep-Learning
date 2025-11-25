@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#OAR -l gpu=1,walltime=30:00:00
+#OAR -l gpu=1,walltime=10:00:00
 #OAR -p esterel39
 #OAR -O OAR_%jobid%.out
 #OAR -E OAR_%jobid%.err
@@ -13,5 +13,5 @@ pwd
 source models/SwinUNETR/BRATS21/swin_unetr_env/bin/activate
 
 # Avvia il training
-python train.py --cfg config/training/SwinUNETR+NOAH/training_lr_6e-4_aug_warmup.yaml --oar_id $OAR_JOB_ID
+python train.py --cfg config/training/Resnet18/training_lr_8e-2_scratch_reduced.yaml --oar_id $OAR_JOB_ID
 exit

@@ -68,20 +68,14 @@ def freeze_backbone_and_select_head_fixed_plus(model,args):
     print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
     return model
 
-def freeze_backbone_and_select_head_fixed(model):
-    """Freezing corretto - chiama SOLO UNA VOLTA all'inizio del training"""
+def unfreeze_model(model,args):
     frozen_params = 0
     trainable_params = 0
     
     for name, param in model.named_parameters():
-        if 'global_pool' in name or 'fc' in name or 'head' in name:
-            param.requires_grad = True
-            trainable_params += param.numel()
-            print(f"✓ Unfrozen: {name} ({param.numel()} params)")
-        else:
-            param.requires_grad = False
-            #print(f"✗ Frozen : {name} ({param.numel()} params)")
-            frozen_params += param.numel()
+        param.requires_grad = True
+        trainable_params += param.numel()
+        print(f"✓ Unfrozen: {name} ({param.numel()} params)")
     
     print(f"Total frozen: {frozen_params}, trainable: {trainable_params}")
     return model
@@ -2212,17 +2206,11 @@ def run_training(
     last_metrics = None
     best_metrics = None
 
-    model = freeze_backbone_and_select_head_fixed_plus(model,args)
-    
-    # Freeze/unfreeze layers
-    # if args.encoder10_pth is not None:
-    #     model = freeze_backbone_and_select_head_fixed_plus(model)
-    # else:
-    #     model = freeze_backbone_and_select_head_fixed(model)
-    #     if is_main_process:
-    #         print("Loaded from checkpoint, layers unfrozen for fine-tuning")
-    #         if logger:
-    #             logger.info("Loaded from checkpoint, layers unfrozen for fine-tuning")
+    if args.pretrained_model_name is None:
+        model = unfreeze_model(model,args)
+    else:
+        model = freeze_backbone_and_select_head_fixed_plus(model,args)
+
     
     # Setup early stopping
     early_stopping_val = None

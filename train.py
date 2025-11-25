@@ -926,7 +926,8 @@ def _setup_optimizer(model, args, logger, log):
     """Setup optimizer."""
     log("")
     log("Optimizer INFO:")
-    
+
+    # Istanzia l’optimizer PRIMA, in ogni caso!
     if args.optim_name == "adam":
         optimizer = torch.optim.Adam(
             model.parameters(),
@@ -949,38 +950,44 @@ def _setup_optimizer(model, args, logger, log):
         )
     else:
         raise ValueError(f"Unsupported optimizer: {args.optim_name}")
-    
+
     log(f"Using optimizer: {args.optim_name} with lr={args.optim_lr}, weight_decay={args.reg_weight}")
-    
+
+    # Solo DOPO istanziazione puoi caricare lo stato, se serve
+    if args.checkpoint_path is not None:
+        log(f"Resuming optimizer state from checkpoint: {args.checkpoint_path}")
+        checkpoint = torch.load(args.checkpoint_path, map_location="cpu")
+        if 'optimizer' in checkpoint:
+            optimizer.load_state_dict(checkpoint['optimizer'])
+
     return optimizer
+
 
 
 def _setup_scheduler(optimizer, args):
     """Setup learning rate scheduler."""
+
+    # 1. Istanzia lo scheduler con i parametri giusti
     if args.lrschedule == "warmup_cosine":
-        # se già usi una classe custom, lascia questa branch invariata
-        return LinearWarmupCosineAnnealingLR(
+        scheduler = LinearWarmupCosineAnnealingLR(
             optimizer,
             warmup_epochs=args.warmup_epochs,
             max_epochs=args.max_epochs,
         )
     elif args.lrschedule == "cosine_anneal":
-        # una singola discesa coseno, senza restarts
-        return CosineAnnealingLR(
+        scheduler = CosineAnnealingLR(
             optimizer,
             T_max=args.max_epochs,
             eta_min=getattr(args, "eta_min", 0.0),
         )
     elif args.lrschedule == "cosine_restarts":
-        # cosine con warm restarts SGDR
-        return CosineAnnealingWarmRestarts(
+        scheduler = CosineAnnealingWarmRestarts(
             optimizer,
-            T_0=args.restart_T0,                 # lunghezza primo ciclo
+            T_0=args.restart_T0,
             T_mult=getattr(args, "restart_Tmult", 2),
             eta_min=getattr(args, "eta_min", 0.0),
         )
     elif args.lrschedule == "warmup_cosine_restarts":
-        # warmup lineare -> poi cosine con restarts
         warmup = LinearLR(
             optimizer,
             start_factor=getattr(args, "warmup_start_factor", 0.01),
@@ -993,12 +1000,23 @@ def _setup_scheduler(optimizer, args):
             T_mult=getattr(args, "restart_Tmult", 2),
             eta_min=getattr(args, "eta_min", 0.0),
         )
-        return SequentialLR(
+        scheduler = SequentialLR(
             optimizer,
             schedulers=[warmup, cosine_wr],
             milestones=[args.warmup_epochs],
         )
-    return None
+    else:
+        # Nessuna scheduler selezionata
+        scheduler = None
+
+    # 2. Se c'è il checkpoint, carica lo stato DOPO la creazione dello scheduler
+    if args.checkpoint_path is not None:
+        checkpoint = torch.load(args.checkpoint_path, map_location="cpu")
+        if 'scheduler' in checkpoint and scheduler is not None:
+            scheduler.load_state_dict(checkpoint['scheduler'])
+
+    return scheduler
+
 
 
 from torch.utils.data import Sampler

@@ -93,7 +93,13 @@ if __name__ == "__main__":
 
     checkpoint = torch.load(path, map_location="cpu")
 
+    print(checkpoint.keys())
+
+     # Adatta le chiavi del state_dict
+
     sd = checkpoint['state_dict']
+    op = checkpoint['optimizer']
+    sch = checkpoint['scheduler']
     print(sd.keys())
     new_sd = {}
     for k, v in sd.items():
