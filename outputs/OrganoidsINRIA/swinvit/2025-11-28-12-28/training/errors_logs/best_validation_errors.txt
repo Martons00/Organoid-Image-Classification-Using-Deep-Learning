@@ -1,0 +1,32 @@
+Epoch 84:
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques/2025.02.14_PARIS_Noyau_Org _4_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Compact/2024.07.18_PARIS_Noyau_Org_11_compact_J7_40X_8bit.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs/20231212_Noyau_org6.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202407_Nice_orga0_14.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs/2024.09.10_PARIS_Noyau_Org_24_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Compact/20231207_Noyau_org13.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs/2024.09.10_PARIS_Noyau_Org_31_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202407_Nice_orga3_4.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202407_Nice_orga5_12.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Compact/20231120_Noyau_org5.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202409_Nice_org100.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Compact/20231120_Noyau_org3.tif	Pred: 2	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202409_Nice_org12.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs_Nice_Reduce/raw_202503_Nice_orga1_0.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Compact/20231005_Noyau_org5.tif	Pred: 0	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202409_Nice_org114.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202407_Nice_orga5_7.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs_Nice_Reduce/raw_202502_Nice_orga1_11.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs/2024.10.03_PARIS_Noyau_Org_7_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202409_Nice_org69.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs/2024.06.26_PARIS_Noyau_Org_3_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202409_Nice_org50.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs/2024.10.03_PARIS_Noyau_Org_5_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques/20231004_Noyau_org5.tif	Pred: 1	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs/2024.09.10_PARIS_Noyau_Org_39_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques/20231005_Noyau_org10.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Cystiques_Nice_Reduce/202409_Nice_org61.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Compact/20230804_Noyau_org2.tif	Pred: 2	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset/train_set/Chouxfleurs_Nice_Reduce/raw_202502_Nice_orga1_4.tif	Pred: 2	Target: 0
+*----------------------------------------*
+

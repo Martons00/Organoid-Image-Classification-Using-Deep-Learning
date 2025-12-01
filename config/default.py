@@ -38,11 +38,11 @@ _C.SYSTEM.oar_id = 0
 
 _C.MODEL = CN()
 
-_C.MODEL.pretrained_model_name = "model_swinvit.pt"
+_C.MODEL.pretrained_model_name = None
 
 _C.MODEL.name = "swinunetr"
 
-_C.MODEL.pretrained_dir = "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
+_C.MODEL.pretrained_dir = None
 
 _C.MODEL.encoder10_pth = ""
 

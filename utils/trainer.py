@@ -39,8 +39,6 @@ def freeze_backbone_and_select_head_fixed_plus(model,args):
     lists_of_names = []
     if args.model_name == "resnet50":
         lists_of_names = ["layer4.2","fc","global_pool"]
-    elif args.model_name == "resnet18":
-        lists_of_names = ["layer4","fc","global_pool"]
     elif args.model_name == "swinunetr":
         lists_of_names = ["encoder10","fc","global_pool","swinViT.layers4.0.blocks.1.","swinViT.layers4.0.downsample.","head"]
     elif args.model_name == "swinunetr+ml_decoder":
@@ -532,9 +530,9 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
             #print(f"Processed patches {i} to {end_idx}, feats shape: {feats.shape}, hidden shape: {hidden.shape}")
             all_feats.append(feats)
             all_hidden.append(hidden)
-        #     after = torch.cuda.memory_allocated(device)
-        #     after_reserved = torch.cuda.memory_reserved(device)
-        #     print(f"After forward_features on-GPU: {(after - baseline)/1024**2:.2f} MB (allocated), {(after_reserved - baseline_reserved)/1024**2:.2f} MB (reserved)")
+            # after = torch.cuda.memory_allocated(device)
+            # after_reserved = torch.cuda.memory_reserved(device)
+            # print(f"After forward_features on-GPU: {(after - baseline)/1024**2:.2f} MB (allocated), {(after_reserved - baseline_reserved)/1024**2:.2f} MB (reserved)")
 
         # after = torch.cuda.memory_allocated(device)
         # after_reserved = torch.cuda.memory_reserved(device)

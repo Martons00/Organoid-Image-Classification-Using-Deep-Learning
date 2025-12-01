@@ -39,9 +39,9 @@ TRAINING:
   sw_batch_size: 6
   val_every: 2
   early_stopping: true
-  patience_val: 40
+  patience_val: 30
   min_delta_val: 0.01
-  patience_loss: 40
+  patience_loss: 30
   min_delta_loss: 0.001
   split_method: "stratified"  # "random" , "stratified" or "balanced" "percentage"
   save_checkpoint: true
