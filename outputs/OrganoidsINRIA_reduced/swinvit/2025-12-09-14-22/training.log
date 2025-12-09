@@ -1321,3 +1321,12 @@ class                  precision    recall   specificity      f1   support
 2025-12-09 23:15:32,540 INFO New best (0.671644 --> 0.693056)
 2025-12-09 23:15:35,531 INFO Copying best model to best_model.pt
 2025-12-09 23:15:36,381 INFO 0 Tue Dec  9 23:15:36 2025 Epoch: 95
+2025-12-09 23:20:44,364 INFO Final training 95/300, loss: 1.9203, time 307.98s, lr: 0.039587
+Accuracy: 0.569
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.662     0.537         0.739   0.593       281
+1                          0.063     0.200         0.837   0.096        30
+2                          0.676     0.645         0.736   0.660       265
+*----------------------------------------*
+2025-12-09 23:20:44,365 INFO 0 Tue Dec  9 23:20:44 2025 Epoch: 96

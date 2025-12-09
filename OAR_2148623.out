@@ -11813,3 +11813,252 @@ class                  precision    recall   specificity      f1   support
 2                          0.678     0.673         0.726   0.675       266
 *----------------------------------------*
 0 Tue Dec  9 23:09:22 2025 Epoch: 94
+Epoch: 94/300 Iter: 1/96 loss: 1.1226 acc: 0.5000 time 4.89s
+Epoch: 94/300 Iter: 2/96 loss: 1.0884 acc: 0.6250 time 3.56s
+Epoch: 94/300 Iter: 3/96 loss: 1.0387 acc: 0.4722 time 3.55s
+Epoch: 94/300 Iter: 4/96 loss: 1.0307 acc: 0.4375 time 3.01s
+Epoch: 94/300 Iter: 5/96 loss: 0.9198 acc: 0.4667 time 3.51s
+Epoch: 94/300 Iter: 6/96 loss: 0.8713 acc: 0.4815 time 2.83s
+Epoch: 94/300 Iter: 7/96 loss: 0.9916 acc: 0.4444 time 2.87s
+Epoch: 94/300 Iter: 8/96 loss: 0.9701 acc: 0.4583 time 2.84s
+Epoch: 94/300 Iter: 9/96 loss: 0.9395 acc: 0.4815 time 2.84s
+Epoch: 94/300 Iter: 10/96 loss: 0.9761 acc: 0.4556 time 3.60s
+Epoch: 94/300 Iter: 11/96 loss: 0.9415 acc: 0.4747 time 3.60s
+Epoch: 94/300 Iter: 12/96 loss: 0.9250 acc: 0.4907 time 2.88s
+Epoch: 94/300 Iter: 13/96 loss: 0.9457 acc: 0.4658 time 2.88s
+Epoch: 94/300 Iter: 14/96 loss: 0.9449 acc: 0.4593 time 3.57s
+Epoch: 94/300 Iter: 15/96 loss: 0.9044 acc: 0.4887 time 2.89s
+Epoch: 94/300 Iter: 16/96 loss: 0.8782 acc: 0.5102 time 3.51s
+Epoch: 94/300 Iter: 17/96 loss: 0.8391 acc: 0.5391 time 2.98s
+Epoch: 94/300 Iter: 18/96 loss: 0.8358 acc: 0.5369 time 2.86s
+Epoch: 94/300 Iter: 19/96 loss: 0.8117 acc: 0.5613 time 3.59s
+Epoch: 94/300 Iter: 20/96 loss: 0.7939 acc: 0.5644 time 3.57s
+Epoch: 94/300 Iter: 21/96 loss: 0.7627 acc: 0.5852 time 2.99s
+Epoch: 94/300 Iter: 22/96 loss: 0.7538 acc: 0.5870 time 2.98s
+Epoch: 94/300 Iter: 23/96 loss: 0.7319 acc: 0.6050 time 2.92s
+Epoch: 94/300 Iter: 24/96 loss: 0.7185 acc: 0.6162 time 3.51s
+Epoch: 94/300 Iter: 25/96 loss: 0.6992 acc: 0.6316 time 2.84s
+Epoch: 94/300 Iter: 26/96 loss: 0.7255 acc: 0.6342 time 2.84s
+Epoch: 94/300 Iter: 27/96 loss: 0.7133 acc: 0.6292 time 2.84s
+Epoch: 94/300 Iter: 28/96 loss: 0.6974 acc: 0.6365 time 2.82s
+Epoch: 94/300 Iter: 29/96 loss: 0.6771 acc: 0.6490 time 3.48s
+Epoch: 94/300 Iter: 30/96 loss: 0.6650 acc: 0.6574 time 3.50s
+Epoch: 94/300 Iter: 31/96 loss: 0.6629 acc: 0.6644 time 2.97s
+Epoch: 94/300 Iter: 32/96 loss: 0.8219 acc: 0.6576 time 2.94s
+Epoch: 94/300 Iter: 33/96 loss: 0.9484 acc: 0.6528 time 2.85s
+Epoch: 94/300 Iter: 34/96 loss: 1.0524 acc: 0.6507 time 3.54s
+Epoch: 94/300 Iter: 35/96 loss: 1.0402 acc: 0.6500 time 3.02s
+Epoch: 94/300 Iter: 36/96 loss: 1.0251 acc: 0.6563 time 3.00s
+Epoch: 94/300 Iter: 37/96 loss: 1.0039 acc: 0.6655 time 3.05s
+Epoch: 94/300 Iter: 38/96 loss: 0.9993 acc: 0.6579 time 2.87s
+Epoch: 94/300 Iter: 39/96 loss: 0.9869 acc: 0.6581 time 3.53s
+Epoch: 94/300 Iter: 40/96 loss: 0.9947 acc: 0.6444 time 2.98s
+Epoch: 94/300 Iter: 41/96 loss: 0.9854 acc: 0.6430 time 3.56s
+Epoch: 94/300 Iter: 42/96 loss: 0.9839 acc: 0.6396 time 2.85s
+Epoch: 94/300 Iter: 43/96 loss: 1.0135 acc: 0.6286 time 2.92s
+Epoch: 94/300 Iter: 44/96 loss: 1.0372 acc: 0.6193 time 2.94s
+Epoch: 94/300 Iter: 45/96 loss: 1.0441 acc: 0.6130 time 3.52s
+Epoch: 94/300 Iter: 46/96 loss: 1.0273 acc: 0.6105 time 3.01s
+Epoch: 94/300 Iter: 47/96 loss: 1.0506 acc: 0.6117 time 3.56s
+Epoch: 94/300 Iter: 48/96 loss: 1.0653 acc: 0.6128 time 2.90s
+Epoch: 94/300 Iter: 49/96 loss: 1.0479 acc: 0.6207 time 3.56s
+Epoch: 94/300 Iter: 50/96 loss: 1.0619 acc: 0.6217 time 2.88s
+Epoch: 94/300 Iter: 51/96 loss: 1.0486 acc: 0.6176 time 3.03s
+Epoch: 94/300 Iter: 52/96 loss: 1.0378 acc: 0.6226 time 2.88s
+Epoch: 94/300 Iter: 53/96 loss: 1.0276 acc: 0.6250 time 2.86s
+Epoch: 94/300 Iter: 54/96 loss: 1.0185 acc: 0.6273 time 3.54s
+Epoch: 94/300 Iter: 55/96 loss: 1.0242 acc: 0.6250 time 2.94s
+Epoch: 94/300 Iter: 56/96 loss: 1.0137 acc: 0.6287 time 2.82s
+Epoch: 94/300 Iter: 57/96 loss: 1.0064 acc: 0.6335 time 2.91s
+Epoch: 94/300 Iter: 58/96 loss: 0.9998 acc: 0.6355 time 2.87s
+Epoch: 94/300 Iter: 59/96 loss: 0.9858 acc: 0.6417 time 3.56s
+Epoch: 94/300 Iter: 60/96 loss: 1.0039 acc: 0.6351 time 2.92s
+Epoch: 94/300 Iter: 61/96 loss: 1.0257 acc: 0.6338 time 3.02s
+Epoch: 94/300 Iter: 62/96 loss: 1.0294 acc: 0.6326 time 3.59s
+Epoch: 94/300 Iter: 63/96 loss: 1.0259 acc: 0.6278 time 2.90s
+Epoch: 94/300 Iter: 64/96 loss: 1.0203 acc: 0.6232 time 2.89s
+Epoch: 94/300 Iter: 65/96 loss: 1.0292 acc: 0.6188 time 3.57s
+Epoch: 94/300 Iter: 66/96 loss: 1.0214 acc: 0.6182 time 2.90s
+Epoch: 94/300 Iter: 67/96 loss: 1.0385 acc: 0.6102 time 3.59s
+Epoch: 94/300 Iter: 68/96 loss: 1.0434 acc: 0.6086 time 3.58s
+Epoch: 94/300 Iter: 69/96 loss: 1.0421 acc: 0.6030 time 3.59s
+Epoch: 94/300 Iter: 70/96 loss: 1.0434 acc: 0.5956 time 2.90s
+Epoch: 94/300 Iter: 71/96 loss: 1.0432 acc: 0.5919 time 2.96s
+Epoch: 94/300 Iter: 72/96 loss: 1.0343 acc: 0.5976 time 2.88s
+Epoch: 94/300 Iter: 73/96 loss: 1.0245 acc: 0.6031 time 3.59s
+Epoch: 94/300 Iter: 74/96 loss: 1.0157 acc: 0.6006 time 2.99s
+Epoch: 94/300 Iter: 75/96 loss: 1.0053 acc: 0.5992 time 3.02s
+Epoch: 94/300 Iter: 76/96 loss: 0.9980 acc: 0.5979 time 3.57s
+Epoch: 94/300 Iter: 77/96 loss: 0.9927 acc: 0.5983 time 3.55s
+Epoch: 94/300 Iter: 78/96 loss: 0.9935 acc: 0.5986 time 3.56s
+Epoch: 94/300 Iter: 79/96 loss: 0.9892 acc: 0.5995 time 2.98s
+Epoch: 94/300 Iter: 80/96 loss: 0.9794 acc: 0.6045 time 3.01s
+Epoch: 94/300 Iter: 81/96 loss: 0.9777 acc: 0.6032 time 2.80s
+Epoch: 94/300 Iter: 82/96 loss: 0.9670 acc: 0.6080 time 2.90s
+Epoch: 94/300 Iter: 83/96 loss: 1.0152 acc: 0.6087 time 2.79s
+Epoch: 94/300 Iter: 84/96 loss: 1.0557 acc: 0.6055 time 2.88s
+Epoch: 94/300 Iter: 85/96 loss: 1.0574 acc: 0.6042 time 2.91s
+Epoch: 94/300 Iter: 86/96 loss: 1.0749 acc: 0.6049 time 3.53s
+Epoch: 94/300 Iter: 87/96 loss: 1.0862 acc: 0.6023 time 2.78s
+Epoch: 94/300 Iter: 88/96 loss: 1.0826 acc: 0.5983 time 3.48s
+Epoch: 94/300 Iter: 89/96 loss: 1.0774 acc: 0.6009 time 2.81s
+Epoch: 94/300 Iter: 90/96 loss: 1.0853 acc: 0.6017 time 2.79s
+Epoch: 94/300 Iter: 91/96 loss: 1.0854 acc: 0.5987 time 3.52s
+Epoch: 94/300 Iter: 92/96 loss: 1.0851 acc: 0.5958 time 3.50s
+Epoch: 94/300 Iter: 93/96 loss: 1.0887 acc: 0.5894 time 2.85s
+Epoch: 94/300 Iter: 94/96 loss: 1.0933 acc: 0.5832 time 2.79s
+Epoch: 94/300 Iter: 95/96 loss: 1.0992 acc: 0.5836 time 3.49s
+Epoch: 94/300 Iter: 96/96 loss: 1.0948 acc: 0.5853 time 3.53s
+[Train epoch 94] avg_loss=1.0948 avg_acc=0.5853 | per-class [c0: 0.580, c1: 0.400, c2: 0.709]
+Final training 94/300, loss: 1.0948, time 303.43s, lr: 0.039802
+Accuracy: 0.630
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.709     0.580         0.773   0.638       281
+1                          0.125     0.400         0.846   0.190        30
+2                          0.752     0.709         0.801   0.730       265
+*----------------------------------------*
+Val 94/300 1/24, Acc: 0.5556, Loss: 1.6804, time 2.76s
+Val 94/300 2/24, Acc: 0.6944, Loss: 1.0418, time 2.79s
+Val 94/300 3/24, Acc: 0.6481, Loss: 1.4215, time 2.77s
+Val 94/300 4/24, Acc: 0.7361, Loss: 1.1370, time 2.77s
+Val 94/300 5/24, Acc: 0.7639, Loss: 0.9779, time 2.83s
+Val 94/300 6/24, Acc: 0.7616, Loss: 0.8844, time 2.83s
+Val 94/300 7/24, Acc: 0.7778, Loss: 0.8414, time 2.78s
+Val 94/300 8/24, Acc: 0.7899, Loss: 0.8179, time 2.77s
+Val 94/300 9/24, Acc: 0.7392, Loss: 0.8899, time 2.77s
+Val 94/300 10/24, Acc: 0.7353, Loss: 0.8998, time 2.86s
+Val 94/300 11/24, Acc: 0.7290, Loss: 0.9842, time 2.76s
+Val 94/300 12/24, Acc: 0.7030, Loss: 0.9458, time 2.81s
+Val 94/300 13/24, Acc: 0.7259, Loss: 0.8941, time 2.81s
+Val 94/300 14/24, Acc: 0.7276, Loss: 0.8693, time 2.79s
+Val 94/300 15/24, Acc: 0.7124, Loss: 0.9144, time 2.76s
+Val 94/300 16/24, Acc: 0.7241, Loss: 0.8974, time 2.78s
+Val 94/300 17/24, Acc: 0.7404, Loss: 0.8609, time 2.82s
+Val 94/300 18/24, Acc: 0.7548, Loss: 0.8414, time 2.78s
+Val 94/300 19/24, Acc: 0.7256, Loss: 0.8445, time 2.78s
+Val 94/300 20/24, Acc: 0.7060, Loss: 0.8643, time 2.81s
+Val 94/300 21/24, Acc: 0.7021, Loss: 0.8491, time 2.79s
+Val 94/300 22/24, Acc: 0.7081, Loss: 0.8323, time 2.87s
+Val 94/300 23/24, Acc: 0.6990, Loss: 0.9105, time 2.73s
+Val 94/300 24/24, Acc: 0.6931, Loss: 0.9335, time 2.75s
+[Val epoch 94] avg_acc=0.6931 | avg_loss=0.9335 | per-class [c0: 0.743, c1: 0.000, c2: 0.833]
+Final validation 94/300, Val_acc: 0.6931, time 66.97sAccuracy: 0.743
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.754     0.743         0.770   0.748        70
+1                          0.000     0.000         1.000   0.000         8
+2                          0.733     0.833         0.744   0.780        66
+*========================================*
+New best (0.671644 --> 0.693056)
+Saving checkpoint outputs/OrganoidsINRIA_reduced/swinvit/2025-12-09-14-22/training/model_final.pt
+Copying best model to best_model.pt
+[EarlyStopping] improved to 0.693056
+[EarlyStopping] no improve (1/40)
+0 Tue Dec  9 23:15:36 2025 Epoch: 95
+Epoch: 95/300 Iter: 1/96 loss: 0.8085 acc: 0.6000 time 4.20s
+Epoch: 95/300 Iter: 2/96 loss: 0.5912 acc: 0.6750 time 3.52s
+Epoch: 95/300 Iter: 3/96 loss: 0.4754 acc: 0.7833 time 3.51s
+Epoch: 95/300 Iter: 4/96 loss: 0.5666 acc: 0.7875 time 2.85s
+Epoch: 95/300 Iter: 5/96 loss: 0.4965 acc: 0.8300 time 2.96s
+Epoch: 95/300 Iter: 6/96 loss: 0.4573 acc: 0.8583 time 3.55s
+Epoch: 95/300 Iter: 7/96 loss: 0.4337 acc: 0.8786 time 3.56s
+Epoch: 95/300 Iter: 8/96 loss: 0.4342 acc: 0.8781 time 2.90s
+Epoch: 95/300 Iter: 9/96 loss: 0.4117 acc: 0.8778 time 3.00s
+Epoch: 95/300 Iter: 10/96 loss: 0.4177 acc: 0.8775 time 3.55s
+Epoch: 95/300 Iter: 11/96 loss: 1.1169 acc: 0.8432 time 3.53s
+Epoch: 95/300 Iter: 12/96 loss: 1.7564 acc: 0.8146 time 2.85s
+Epoch: 95/300 Iter: 13/96 loss: 1.6837 acc: 0.7904 time 3.51s
+Epoch: 95/300 Iter: 14/96 loss: 1.6178 acc: 0.7518 time 3.50s
+Epoch: 95/300 Iter: 15/96 loss: 1.7215 acc: 0.7350 time 2.86s
+Epoch: 95/300 Iter: 16/96 loss: 1.7235 acc: 0.7203 time 3.52s
+Epoch: 95/300 Iter: 17/96 loss: 1.6957 acc: 0.6975 time 3.53s
+Epoch: 95/300 Iter: 18/96 loss: 1.6636 acc: 0.6958 time 2.88s
+Epoch: 95/300 Iter: 19/96 loss: 1.6264 acc: 0.6768 time 3.54s
+Epoch: 95/300 Iter: 20/96 loss: 1.6776 acc: 0.6463 time 3.52s
+Epoch: 95/300 Iter: 21/96 loss: 1.6538 acc: 0.6313 time 2.89s
+Epoch: 95/300 Iter: 22/96 loss: 1.6230 acc: 0.6311 time 3.53s
+Epoch: 95/300 Iter: 23/96 loss: 1.5656 acc: 0.6362 time 3.00s
+Epoch: 95/300 Iter: 24/96 loss: 1.8737 acc: 0.6375 time 3.03s
+Epoch: 95/300 Iter: 25/96 loss: 1.8241 acc: 0.6453 time 3.57s
+Epoch: 95/300 Iter: 26/96 loss: 1.7752 acc: 0.6321 time 2.92s
+Epoch: 95/300 Iter: 27/96 loss: 2.0816 acc: 0.6210 time 2.86s
+Epoch: 95/300 Iter: 28/96 loss: 2.3028 acc: 0.6167 time 3.52s
+Epoch: 95/300 Iter: 29/96 loss: 2.2697 acc: 0.6184 time 2.86s
+Epoch: 95/300 Iter: 30/96 loss: 2.2490 acc: 0.6144 time 3.57s
+Epoch: 95/300 Iter: 31/96 loss: 2.2146 acc: 0.6161 time 3.53s
+Epoch: 95/300 Iter: 32/96 loss: 2.2617 acc: 0.5969 time 2.82s
+Epoch: 95/300 Iter: 33/96 loss: 2.2870 acc: 0.5788 time 3.55s
+Epoch: 95/300 Iter: 34/96 loss: 2.2727 acc: 0.5618 time 3.56s
+Epoch: 95/300 Iter: 35/96 loss: 2.2534 acc: 0.5636 time 3.01s
+Epoch: 95/300 Iter: 36/96 loss: 2.2166 acc: 0.5664 time 3.02s
+Epoch: 95/300 Iter: 37/96 loss: 2.1734 acc: 0.5736 time 2.91s
+Epoch: 95/300 Iter: 38/96 loss: 2.2430 acc: 0.5673 time 3.02s
+Epoch: 95/300 Iter: 39/96 loss: 2.1904 acc: 0.5784 time 3.48s
+Epoch: 95/300 Iter: 40/96 loss: 2.1436 acc: 0.5858 time 2.90s
+Epoch: 95/300 Iter: 41/96 loss: 2.1041 acc: 0.5878 time 2.86s
+Epoch: 95/300 Iter: 42/96 loss: 2.0679 acc: 0.5887 time 2.84s
+Epoch: 95/300 Iter: 43/96 loss: 2.1398 acc: 0.5905 time 3.52s
+Epoch: 95/300 Iter: 44/96 loss: 2.1006 acc: 0.5960 time 2.88s
+Epoch: 95/300 Iter: 45/96 loss: 2.0692 acc: 0.5976 time 2.88s
+Epoch: 95/300 Iter: 46/96 loss: 2.0637 acc: 0.5918 time 3.58s
+Epoch: 95/300 Iter: 47/96 loss: 2.0801 acc: 0.5828 time 2.99s
+Epoch: 95/300 Iter: 48/96 loss: 2.0844 acc: 0.5707 time 3.54s
+Epoch: 95/300 Iter: 49/96 loss: 2.0758 acc: 0.5692 time 2.92s
+Epoch: 95/300 Iter: 50/96 loss: 2.0469 acc: 0.5745 time 2.87s
+Epoch: 95/300 Iter: 51/96 loss: 2.0097 acc: 0.5828 time 2.90s
+Epoch: 95/300 Iter: 52/96 loss: 1.9797 acc: 0.5861 time 2.92s
+Epoch: 95/300 Iter: 53/96 loss: 1.9592 acc: 0.5844 time 3.56s
+Epoch: 95/300 Iter: 54/96 loss: 1.9450 acc: 0.5884 time 3.50s
+Epoch: 95/300 Iter: 55/96 loss: 1.9201 acc: 0.5929 time 2.95s
+Epoch: 95/300 Iter: 56/96 loss: 2.0266 acc: 0.5892 time 3.52s
+Epoch: 95/300 Iter: 57/96 loss: 1.9926 acc: 0.5964 time 3.54s
+Epoch: 95/300 Iter: 58/96 loss: 1.9684 acc: 0.5926 time 2.92s
+Epoch: 95/300 Iter: 59/96 loss: 1.9443 acc: 0.5932 time 3.57s
+Epoch: 95/300 Iter: 60/96 loss: 1.9194 acc: 0.5958 time 3.54s
+Epoch: 95/300 Iter: 61/96 loss: 1.8980 acc: 0.5991 time 2.86s
+Epoch: 95/300 Iter: 62/96 loss: 1.8789 acc: 0.5996 time 2.89s
+Epoch: 95/300 Iter: 63/96 loss: 1.8630 acc: 0.6006 time 2.97s
+Epoch: 95/300 Iter: 64/96 loss: 1.8399 acc: 0.6043 time 2.98s
+Epoch: 95/300 Iter: 65/96 loss: 1.8227 acc: 0.6026 time 2.89s
+Epoch: 95/300 Iter: 66/96 loss: 1.8000 acc: 0.6061 time 3.02s
+Epoch: 95/300 Iter: 67/96 loss: 1.7772 acc: 0.6120 time 3.00s
+Epoch: 95/300 Iter: 68/96 loss: 1.8380 acc: 0.6104 time 3.52s
+Epoch: 95/300 Iter: 69/96 loss: 1.8868 acc: 0.6064 time 3.55s
+Epoch: 95/300 Iter: 70/96 loss: 1.9232 acc: 0.6025 time 3.57s
+Epoch: 95/300 Iter: 71/96 loss: 1.8997 acc: 0.6081 time 3.53s
+Epoch: 95/300 Iter: 72/96 loss: 1.9032 acc: 0.6073 time 2.88s
+Epoch: 95/300 Iter: 73/96 loss: 1.8945 acc: 0.6013 time 3.58s
+Epoch: 95/300 Iter: 74/96 loss: 1.8846 acc: 0.5977 time 3.52s
+Epoch: 95/300 Iter: 75/96 loss: 1.9397 acc: 0.5897 time 2.97s
+Epoch: 95/300 Iter: 76/96 loss: 1.9845 acc: 0.5819 time 2.93s
+Epoch: 95/300 Iter: 77/96 loss: 2.0008 acc: 0.5744 time 2.99s
+Epoch: 95/300 Iter: 78/96 loss: 2.0058 acc: 0.5734 time 3.01s
+Epoch: 95/300 Iter: 79/96 loss: 2.0407 acc: 0.5725 time 3.52s
+Epoch: 95/300 Iter: 80/96 loss: 2.0533 acc: 0.5695 time 3.54s
+Epoch: 95/300 Iter: 81/96 loss: 2.0378 acc: 0.5707 time 2.86s
+Epoch: 95/300 Iter: 82/96 loss: 2.0318 acc: 0.5699 time 3.51s
+Epoch: 95/300 Iter: 83/96 loss: 2.0231 acc: 0.5670 time 2.79s
+Epoch: 95/300 Iter: 84/96 loss: 2.0151 acc: 0.5632 time 3.02s
+Epoch: 95/300 Iter: 85/96 loss: 2.0137 acc: 0.5595 time 2.82s
+Epoch: 95/300 Iter: 86/96 loss: 1.9980 acc: 0.5608 time 3.48s
+Epoch: 95/300 Iter: 87/96 loss: 1.9857 acc: 0.5574 time 3.48s
+Epoch: 95/300 Iter: 88/96 loss: 1.9784 acc: 0.5549 time 3.47s
+Epoch: 95/300 Iter: 89/96 loss: 1.9634 acc: 0.5514 time 3.48s
+Epoch: 95/300 Iter: 90/96 loss: 1.9834 acc: 0.5490 time 3.46s
+Epoch: 95/300 Iter: 91/96 loss: 1.9819 acc: 0.5485 time 2.81s
+Epoch: 95/300 Iter: 92/96 loss: 1.9840 acc: 0.5461 time 2.80s
+Epoch: 95/300 Iter: 93/96 loss: 1.9662 acc: 0.5474 time 2.81s
+Epoch: 95/300 Iter: 94/96 loss: 1.9520 acc: 0.5487 time 2.86s
+Epoch: 95/300 Iter: 95/96 loss: 1.9383 acc: 0.5508 time 3.46s
+Epoch: 95/300 Iter: 96/96 loss: 1.9203 acc: 0.5529 time 2.86s
+[Train epoch 95] avg_loss=1.9203 avg_acc=0.5529 | per-class [c0: 0.537, c1: 0.200, c2: 0.645]
+Final training 95/300, loss: 1.9203, time 307.98s, lr: 0.039587
+Accuracy: 0.569
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.662     0.537         0.739   0.593       281
+1                          0.063     0.200         0.837   0.096        30
+2                          0.676     0.645         0.736   0.660       265
+*----------------------------------------*
+0 Tue Dec  9 23:20:44 2025 Epoch: 96
