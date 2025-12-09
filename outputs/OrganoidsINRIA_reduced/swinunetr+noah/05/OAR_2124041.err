@@ -1,4 +1,0 @@
-/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
-/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
-/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/tools/plots.py:264: UserWarning: Data has no positive values, and therefore cannot be log-scaled.
-  fig.tight_layout()

@@ -4,3 +4,4 @@
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01 | swinunetr+noah | yes | 128x128x128 | no | CE | 150/150 | 0.0003 | AdamW | warmup_cosine | 86 | 87 | 86 |
 | 02 | swinunetr+noah | yes | 128x128x128 | no | CE | 150/150 | 0.0006 | AdamW | warmup_cosine | 85 | 83 | 84 |
+| 04 | swinunetr+noah | yes | 128x128x128 | no | CE | 88/150 | 0.005 | AdamW | warmup_cosine | 50 | 68 | 53 |

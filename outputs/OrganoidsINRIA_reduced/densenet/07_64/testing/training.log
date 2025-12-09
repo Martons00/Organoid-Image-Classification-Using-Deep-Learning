@@ -1,0 +1,141 @@
+2025-12-03 14:28:44,134 INFO Log directory: outputs/OrganoidsINRIA_reduced/densenet/2025-12-03-14-28
+2025-12-03 14:28:44,136 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 2,
+ 'cache_dataset': False,
+ 'checkpoint_path': './outputs/OrganoidsINRIA_reduced/densenet/07_64/training/best_model.pt',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_reduced',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'densenet',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2137440,
+ 'optim_lr': 0.05,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': '',
+ 'pretrained_model_name': '',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 64,
+ 'roi_y': 64,
+ 'roi_z': 64,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 8,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+2025-12-03 14:28:44,136 INFO 
+2025-12-03 14:28:44,140 INFO Saved configuration to: outputs/OrganoidsINRIA_reduced/densenet/2025-12-03-14-28/config.txt
+2025-12-03 14:28:45,223 INFO Using GPU: 0
+2025-12-03 14:28:45,223 INFO 
+2025-12-03 14:28:45,223 INFO Model INFO:
+2025-12-03 14:28:45,223 INFO Model architecture: densenet
+2025-12-03 14:28:45,533 INFO => loading checkpoint './outputs/OrganoidsINRIA_reduced/densenet/07_64/training/best_model.pt'
+2025-12-03 14:28:48,867 INFO Loaded 1207 keys from checkpoint
+2025-12-03 14:28:48,874 INFO Total trainable parameters: 25,336,579
+2025-12-03 14:28:48,918 INFO 
+2025-12-03 14:28:48,918 INFO Dataset INFO:
+2025-12-03 14:28:48,957 INFO Dataset length: 721
+2025-12-03 14:28:48,957 INFO Class distribution in entire dataset:
+2025-12-03 14:28:48,957 INFO   Class 0: 351
+2025-12-03 14:28:48,957 INFO   Class 1: 38
+2025-12-03 14:28:48,957 INFO   Class 2: 332
+2025-12-03 14:28:48,957 INFO 
+Using split method: stratified
+2025-12-03 14:28:48,970 INFO 
+Train set balance:
+2025-12-03 14:28:48,970 INFO 
+Val set balance:
+2025-12-03 14:28:48,970 INFO Training set length: 577
+2025-12-03 14:28:48,970 INFO Validation set length: 144
+2025-12-03 14:28:48,970 INFO 
+Using standard shuffle for training
+2025-12-03 14:28:48,970 INFO Training loader: 288 batches
+2025-12-03 14:28:48,970 INFO Validation loader: 72 batches
+2025-12-03 14:28:48,970 INFO 
+Class distribution in training set:
+2025-12-03 14:28:48,970 INFO   Class 0: 281 (48.7%)
+2025-12-03 14:28:48,970 INFO   Class 1: 30 (5.2%)
+2025-12-03 14:28:48,970 INFO   Class 2: 266 (46.1%)
+2025-12-03 14:28:48,970 INFO Class distribution in validation set:
+2025-12-03 14:28:48,970 INFO   Class 0: 70 (48.6%)
+2025-12-03 14:28:48,970 INFO   Class 1: 8 (5.6%)
+2025-12-03 14:28:48,970 INFO   Class 2: 66 (45.8%)
+2025-12-03 14:28:48,970 INFO **************************************************
+2025-12-03 14:28:49,160 INFO Class weights: [ 6.845  64.111  7.231]
+2025-12-03 14:28:49,160 INFO 
+2025-12-03 14:28:49,160 INFO Test Dataset INFO:
+2025-12-03 14:28:49,167 INFO Test Dataset length: 82
+2025-12-03 14:28:49,167 INFO Class distribution in test dataset:
+2025-12-03 14:28:49,167 INFO   Class 0: 40
+2025-12-03 14:28:49,167 INFO   Class 1: 5
+2025-12-03 14:28:49,167 INFO   Class 2: 37
+2025-12-03 14:28:49,167 INFO Test loader: 41 batches
+2025-12-03 14:28:49,167 INFO **************************************************
+2025-12-03 14:28:49,167 INFO 
+2025-12-03 14:28:49,167 INFO Using loss function: CE
+2025-12-03 14:28:49,170 INFO **************************************************
+2025-12-03 14:28:49,170 INFO Starting testing...
+2025-12-03 14:29:13,132 INFO Final testing , Test_acc: 0.8293, time 23.96sAccuracy: 0.866
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.946     0.875         0.952   0.909        40
+1                          0.000     0.000         1.000   0.000         5
+2                          0.800     0.973         0.800   0.878        37
+*========================================*
+2025-12-03 14:29:13,535 INFO Testing Finished! Best Accuracy: 0.8293
+2025-12-03 14:29:13,535 INFO ====================================================================================================
+2025-12-03 14:29:16,494 INFO Total time spent: 00 hours 00 minutes 27 seconds
+2025-12-03 14:29:16,494 INFO 
+2025-12-03 14:29:16,494 INFO Final Test Metrics:
+2025-12-03 14:29:16,494 INFO | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
+2025-12-03 14:29:16,494 INFO | 0.8293 | 0.8397 | 0.8224 | 0.8659 | 0.8865 |

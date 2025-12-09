@@ -75,4 +75,4 @@ TRAINING:
   split_method: stratified
   sw_batch_size: 6
   val_every: 2
-  warmup_epochs: 0
+  warmup_epochs: 5

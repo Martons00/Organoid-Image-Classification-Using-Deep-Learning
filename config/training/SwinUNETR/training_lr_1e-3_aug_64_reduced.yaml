@@ -1,0 +1,61 @@
+
+# BRATS Swin UNETR Segmentation Configuration
+SYSTEM:
+  seed: 3
+  distributed: false
+  world_size: 1
+  rank: 0
+  workers: 8
+  output_dir: "outputs/"
+  logs_dir: "logs/"
+  telegram_log: true
+  telegram_token: "./token/tlg_token.txt"
+  oar_id: 0
+
+MODEL:
+  name: "swinunetr" # "swinunetr", "swinunetr+ml_decoder"
+  pretrained_model_name: "model_swinvit.pt"
+  pretrained_dir: "./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/"
+  norm_name: "instance"
+  use_checkpoint: false
+
+DATASET:
+  name: "OrganoidsINRIA_reduced_64"
+  data_dir: "/home/mraffael/martone_project/Organoids_Dataset_256/"
+  exact_class: false # if true, use only exact folders, if false use all folders_reduced
+  ignore_label: 3
+  # ROI size
+  roi_x: 64
+  roi_y: 64
+  roi_z: 64
+
+AUGMENTATION:
+  augmentation: true
+
+TRAINING:
+  max_epochs: 150
+  batch_size: 6
+  patch_merging: false
+  sw_batch_size: 8
+  val_every: 2
+  early_stopping: true
+  patience_val: 40
+  min_delta_val: 0.01
+  patience_loss: 40
+  min_delta_loss: 0.001
+  split_method: "stratified"  # "random" , "stratified" or "balanced" "percentage"
+  save_checkpoint: true
+  noamp: false
+  # Optimizer parameters
+  optim_lr: 1e-3
+  optim_name: "adamw" # "adam", "adamw" or "sgd"
+  reg_weight: 5e-5
+  momentum: 0.99
+  # Learning rate scheduler
+  lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
+  warmup_epochs: 5
+
+
+LOSS:
+  loss_name: "CE" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
+
