@@ -1,42 +1,42 @@
 ## Full Results
 
-| Run | Model | Aug | ROI | PatchMerging | Loss | MaxEpochs | LR | Optim | LRschedule | TrainAcc | ValAcc | TestAcc |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 03 | resnet18 | yes | 128x128x128 | no | CE | 128/150 | 0.08 | AdamW | warmup_cosine | 94 | 89 | 94 |
-| 01 | resnet18 | yes | 128x128x128 | no | CE | 132/150 | 0.05 | AdamW | warmup_cosine | 94 | 92 | 92 |
-| 01 | swinunetr | yes | 128x128x128 | no | CE | 142/150 | 0.0006 | AdamW | warmup_cosine | 91 | 86 | 90 |
-| 05_scratch | swinunetr | yes | 128x128x128 | no | CE | 150/150 | 0.0001 | AdamW | warmup_cosine | 100 | 90 | 90 |
-| 06_64 | swinunetr | yes | 64x64x64 | no | CE | 150/150 | 0.001 | AdamW | warmup_cosine | 84 | 88 | 90 |
-| 08 | swinvit | yes | 128x128x128 | no | CE | 98/300 | 0.05 | AdamW | warmup_cosine | 100 | 90 | 90 |
-| 01 | densenet | no | 128x128x128 | no | CE | 108/150 | 0.05 | AdamW | warmup_cosine | 66 | 93 | 89 |
-| 02 | resnet18 | yes | 128x128x128 | yes | CE | 106/150 | 0.05 | AdamW | warmup_cosine | 93 | 88 | 89 |
-| 03 | swinunetr | yes | 64x64x64 | no | CE | 142/150 | 0.0006 | AdamW | warmup_cosine | 89 | 90 | 88 |
-| 02 | swinvit | yes | 128x128x128 | no | CE | */150 | 0.006 | AdamW | warmup_cosine | 84 | 88 | 87 |
-| 06_64 | swinvit | yes | 64x64x64 | no | CE | 224/300 | 0.003 | AdamW | warmup_cosine | 80 | 83 | 87 |
-| 03 | densenet | yes | 128x128x128 | no | CE | 150/150 | 0.05 | AdamW | warmup_cosine | 60 | 89 | 86 |
-| 07_64 | densenet | yes | 64x64x64 | no | CE | 97/150 | 0.05 | AdamW | warmup_cosine | 50 | 85 | 86 |
-| 02 | swinunetr | yes | 128x128x128 | yes | CE | 142*/150 | 0.0006 | AdamW | warmup_cosine | 86 | 87 | 86 |
-| 01 | swinunetr+noah | yes | 128x128x128 | no | CE | 150/150 | 0.0003 | AdamW | warmup_cosine | 86 | 87 | 86 |
-| 04_scratch | swinunetr | yes | 128x128x128 | no | CE | 84/150 | 0.0006 | AdamW | warmup_cosine | 49 | 84 | 84 |
-| 02 | swinunetr+noah | yes | 128x128x128 | no | CE | 150/150 | 0.0006 | AdamW | warmup_cosine | 85 | 83 | 84 |
-| 01 | swinvit | yes | 128x128x128 | no | CE | */150 | 0.001 | AdamW | warmup_cosine | 81 | 83 | 84 |
-| 07_scratch | resnet18 | yes | 128x128x128 | no | CE | 118/150 | 0.08 | AdamW | warmup_cosine | 45 | 83 | 83 |
-| 05 | densenet | yes | 64x64x64 | no | CE | 110/150 | 0.005 | AdamW | warmup_cosine | 45 | 81 | 82 |
-| 04 | densenet | yes | 64x64x64 | no | CE | 86/150 | 0.05 | AdamW | warmup_cosine | 45 | 77 | 80 |
-| 03 | swinvit | yes | 128x128x128 | no | CE | 218/300 | 0.01 | AdamW | warmup_cosine | 80 | 83 | 80 |
-| 02 | densenet | no | 128x128x128 | yes | CE | 92/150 | 0.05 | AdamW | warmup_cosine | 99 | 75 | 79 |
-| 09_64 | resnet18 | yes | 64x64x64 | no | CE | 88/150 | 0.1 | AdamW | warmup_cosine | 90 | 72 | 78 |
-| 04 | resnet18 | yes | 64x64x64 | no | CE | 84/150 | 0.08 | AdamW | warmup_cosine | 87 | 73 | 74 |
-| 02 | resnet50 | yes | 128x128x128 | yes | CE | 82/150 | 0.0005 | AdamW | warmup_cosine | 78 | 78 | 74 |
-| 10_64 | resnet18 | yes | 64x64x64 | no | CE | 90/150 | 0.05 | AdamW | warmup_cosine | 94 | 73 | 68 |
-| 08_64 | densenet | yes | 64x64x64 | no | CE | 90/150 | 0.01 | AdamW | warmup_cosine | 49 | 77 | 66 |
-| 05 | resnet18 | yes | 64x64x64 | no | CE | 82/150 | 0.1 | AdamW | warmup_cosine | 60 | 51 | 65 |
-| 01 | resnet50 | yes | 128x128x128 | no | CE | 82/150 | 0.0005 | AdamW | warmup_cosine | 80 | 60 | 65 |
-| 06 | resnet18 | yes | 64x64x64 | no | CE | 92/150 | 0.01 | AdamW | warmup_cosine | 99 | 65 | 62 |
-| 08_scratch | resnet18 | yes | 128x128x128 | no | CE | 90/300 | 0.001 | AdamW | warmup_cosine | 99 | 65 | 60 |
-| 03 | resnet50 | yes | 128x128x128 | no | CE | 90/150 | 0.001 | AdamW | warmup_cosine | 82 | 66 | 59 |
-| 04 | swinunetr+noah | yes | 128x128x128 | no | CE | 88/150 | 0.005 | AdamW | warmup_cosine | 50 | 68 | 53 |
-| 05_64 | swinvit | yes | 64x64x64 | no | CE | 82/300 | 0.006 | AdamW | warmup_cosine | 42 | 49 | 49 |
-| 07_scratch | swinvit | yes | 128x128x128 | no | CE | 84/300 | 0.005 | AdamW | warmup_cosine | 50 | 49 | 49 |
-| 04_scratch | swinvit | yes | 64x64x64 | no | CE | 82/300 | 0.006 | AdamW | warmup_cosine | 45 | 48 | 48 |
-| 06 | densenet | yes | 64x64x64 | no | CE | 114/150 | 0.0005 | AdamW | warmup_cosine | 48 | 56 | 46 |
+| Rank | Run | Model | Aug | ROI | PatchMerging | Loss | MaxEpochs | LR | Optim | LRschedule | TrainAcc | ValAcc | TestAcc |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 03 | resnet18 | yes | 128x128x128 | no | CE | 128/150 | 0.08 | AdamW | warmup_cosine | 94 | 89 | 94 |
+| 2 | 01 | resnet18 | yes | 128x128x128 | no | CE | 132/150 | 0.05 | AdamW | warmup_cosine | 94 | 92 | 92 |
+| 3 | 01 | swinunetr | yes | 128x128x128 | no | CE | 142/150 | 0.0006 | AdamW | warmup_cosine | 91 | 86 | 90 |
+| 4 | 05_scratch | swinunetr | yes | 128x128x128 | no | CE | 150/150 | 0.0001 | AdamW | warmup_cosine | 100 | 90 | 90 |
+| 5 | 06_64 | swinunetr | yes | 64x64x64 | no | CE | 150/150 | 0.001 | AdamW | warmup_cosine | 84 | 88 | 90 |
+| 6 | 08 | swinvit | yes | 128x128x128 | no | CE | 98/300 | 0.05 | AdamW | warmup_cosine | 100 | 90 | 90 |
+| 7 | 01 | densenet | no | 128x128x128 | no | CE | 108/150 | 0.05 | AdamW | warmup_cosine | 66 | 93 | 89 |
+| 8 | 02 | resnet18 | yes | 128x128x128 | yes | CE | 106/150 | 0.05 | AdamW | warmup_cosine | 93 | 88 | 89 |
+| 9 | 03 | swinunetr | yes | 64x64x64 | no | CE | 142/150 | 0.0006 | AdamW | warmup_cosine | 89 | 90 | 88 |
+| 10 | 02 | swinvit | yes | 128x128x128 | no | CE | */150 | 0.006 | AdamW | warmup_cosine | 84 | 88 | 87 |
+| 11 | 06_64 | swinvit | yes | 64x64x64 | no | CE | 224/300 | 0.003 | AdamW | warmup_cosine | 80 | 83 | 87 |
+| 12 | 03 | densenet | yes | 128x128x128 | no | CE | 150/150 | 0.05 | AdamW | warmup_cosine | 60 | 89 | 86 |
+| 13 | 07_64 | densenet | yes | 64x64x64 | no | CE | 97/150 | 0.05 | AdamW | warmup_cosine | 50 | 85 | 86 |
+| 14 | 02 | swinunetr | yes | 128x128x128 | yes | CE | 142*/150 | 0.0006 | AdamW | warmup_cosine | 86 | 87 | 86 |
+| 15 | 01 | swinunetr+noah | yes | 128x128x128 | no | CE | 150/150 | 0.0003 | AdamW | warmup_cosine | 86 | 87 | 86 |
+| 16 | 04_scratch | swinunetr | yes | 128x128x128 | no | CE | 84/150 | 0.0006 | AdamW | warmup_cosine | 49 | 84 | 84 |
+| 17 | 02 | swinunetr+noah | yes | 128x128x128 | no | CE | 150/150 | 0.0006 | AdamW | warmup_cosine | 85 | 83 | 84 |
+| 18 | 01 | swinvit | yes | 128x128x128 | no | CE | */150 | 0.001 | AdamW | warmup_cosine | 81 | 83 | 84 |
+| 19 | 07_scratch | resnet18 | yes | 128x128x128 | no | CE | 118/150 | 0.08 | AdamW | warmup_cosine | 45 | 83 | 83 |
+| 20 | 05 | densenet | yes | 64x64x64 | no | CE | 110/150 | 0.005 | AdamW | warmup_cosine | 45 | 81 | 82 |
+| 21 | 04 | densenet | yes | 64x64x64 | no | CE | 86/150 | 0.05 | AdamW | warmup_cosine | 45 | 77 | 80 |
+| 22 | 03 | swinvit | yes | 128x128x128 | no | CE | 218/300 | 0.01 | AdamW | warmup_cosine | 80 | 83 | 80 |
+| 23 | 02 | densenet | no | 128x128x128 | yes | CE | 92/150 | 0.05 | AdamW | warmup_cosine | 99 | 75 | 79 |
+| 24 | 09_64 | resnet18 | yes | 64x64x64 | no | CE | 88/150 | 0.1 | AdamW | warmup_cosine | 90 | 72 | 78 |
+| 25 | 04 | resnet18 | yes | 64x64x64 | no | CE | 84/150 | 0.08 | AdamW | warmup_cosine | 87 | 73 | 74 |
+| 26 | 02 | resnet50 | yes | 128x128x128 | yes | CE | 82/150 | 0.0005 | AdamW | warmup_cosine | 78 | 78 | 74 |
+| 27 | 10_64 | resnet18 | yes | 64x64x64 | no | CE | 90/150 | 0.05 | AdamW | warmup_cosine | 94 | 73 | 68 |
+| 28 | 08_64 | densenet | yes | 64x64x64 | no | CE | 90/150 | 0.01 | AdamW | warmup_cosine | 49 | 77 | 66 |
+| 29 | 05 | resnet18 | yes | 64x64x64 | no | CE | 82/150 | 0.1 | AdamW | warmup_cosine | 60 | 51 | 65 |
+| 30 | 01 | resnet50 | yes | 128x128x128 | no | CE | 82/150 | 0.0005 | AdamW | warmup_cosine | 80 | 60 | 65 |
+| 31 | 06 | resnet18 | yes | 64x64x64 | no | CE | 92/150 | 0.01 | AdamW | warmup_cosine | 99 | 65 | 62 |
+| 32 | 08_scratch | resnet18 | yes | 128x128x128 | no | CE | 90/300 | 0.001 | AdamW | warmup_cosine | 99 | 65 | 60 |
+| 33 | 03 | resnet50 | yes | 128x128x128 | no | CE | 90/150 | 0.001 | AdamW | warmup_cosine | 82 | 66 | 59 |
+| 34 | 04 | swinunetr+noah | yes | 128x128x128 | no | CE | 88/150 | 0.005 | AdamW | warmup_cosine | 50 | 68 | 53 |
+| 35 | 05_64 | swinvit | yes | 64x64x64 | no | CE | 82/300 | 0.006 | AdamW | warmup_cosine | 42 | 49 | 49 |
+| 36 | 07_scratch | swinvit | yes | 128x128x128 | no | CE | 84/300 | 0.005 | AdamW | warmup_cosine | 50 | 49 | 49 |
+| 37 | 04_scratch | swinvit | yes | 64x64x64 | no | CE | 82/300 | 0.006 | AdamW | warmup_cosine | 45 | 48 | 48 |
+| 38 | 06 | densenet | yes | 64x64x64 | no | CE | 114/150 | 0.0005 | AdamW | warmup_cosine | 48 | 56 | 46 |

@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
 import argparse
 from typing import List, Tuple
+
 
 def split_md_row(line: str) -> List[str]:
     # Rimuove bordi '|' e spazi, poi separa per pipe
     return [c.strip() for c in line.strip().strip("|").split("|")]
 
+
 def join_md_row(cells: List[str]) -> str:
     return "| " + " | ".join(cells) + " |"
+
 
 def parse_md_table(lines: List[str]) -> Tuple[int, int, List[str], List[List[str]]]:
     """
@@ -40,6 +44,7 @@ def parse_md_table(lines: List[str]) -> Tuple[int, int, List[str], List[List[str
 
     return start, end, header_cells, data_rows
 
+
 def to_number(x: str):
     try:
         if x.isdigit() or (x.startswith("-") and x[1:].isdigit()):
@@ -47,6 +52,7 @@ def to_number(x: str):
         return float(x.replace(",", "."))  # supporto decimali con virgola
     except Exception:
         return x  # lascia come stringa se non numerico
+
 
 def sort_table_by_key(header: List[str], rows: List[List[str]], key: str, desc: bool) -> List[List[str]]:
     # Mappa nome colonna -> indice
@@ -58,11 +64,25 @@ def sort_table_by_key(header: List[str], rows: List[List[str]], key: str, desc: 
     # Ordina convertendo la chiave in numero quando possibile
     return sorted(rows, key=lambda r: (to_number(r[k]),), reverse=desc)
 
+
 def rebuild_table(header: List[str], rows: List[List[str]]) -> List[str]:
     header_line = join_md_row(header)
     sep_line = "| " + " | ".join("---" for _ in header) + " |"
     body_lines = [join_md_row(r) for r in rows]
     return [header_line, sep_line, *body_lines]
+
+
+def add_rank_column(header: List[str], rows: List[List[str]]) -> Tuple[List[str], List[List[str]]]:
+    """
+    Aggiunge 'Rank' come prima colonna e assegna rank 1..N
+    in base all'ordine corrente delle righe.
+    """
+    new_header = ["Rank"] + header
+    new_rows = []
+    for i, row in enumerate(rows, start=1):
+        new_rows.append([str(i)] + row)
+    return new_header, new_rows
+
 
 def main():
     ap = argparse.ArgumentParser(description="Ordina una tabella Markdown per colonna.")
@@ -77,9 +97,17 @@ def main():
         lines = f.read().splitlines()
 
     start, end, header, data_rows = parse_md_table(lines)
-    sorted_rows = sort_table_by_key(header, data_rows, args.key, args.desc)
-    new_table_lines = rebuild_table(header, sorted_rows)
 
+    # Ordina
+    sorted_rows = sort_table_by_key(header, data_rows, args.key, args.desc)
+
+    # Aggiungi colonna Rank *dopo* l'ordinamento
+    header_with_rank, rows_with_rank = add_rank_column(header, sorted_rows)
+
+    # Ricostruisci tabella
+    new_table_lines = rebuild_table(header_with_rank, rows_with_rank)
+
+    # Rimpiazza nel file
     new_lines = lines[:start] + new_table_lines + lines[end:]
 
     if args.inplace:
@@ -90,10 +118,8 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n".join(new_lines) + "\n")
 
-    print(f"Tabella ordinata per '{args.key}' ({'desc' if args.desc else 'asc'}) salvata in: {out_path}")
+    print(f"Tabella ordinata per '{args.key}' ({'desc' if args.desc else 'asc'}) con colonna Rank salvata in: {out_path}")
+
 
 if __name__ == "__main__":
     main()
-
-
-#python sort_md_table.py runs.md --key ValAcc --desc --output 
