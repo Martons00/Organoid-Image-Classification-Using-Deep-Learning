@@ -1,0 +1,4 @@
+## Experiment Results outputs/OrganoidsINRIA_reduced_128/swinunetr
+| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2025-12-12 | 01_L | swinunetr | yes | no | 128x128x128 | CE | none | yes | no | 6 | */150 | 5 | 0.001 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0.2844 | 87 | 83 | 84 | 84 | 83 | 89 | 88 | 88 | 89 | 88 | 91 | * |

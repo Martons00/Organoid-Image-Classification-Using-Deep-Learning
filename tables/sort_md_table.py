@@ -96,7 +96,12 @@ def main():
     with open(args.input, "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
 
-    start, end, header, data_rows = parse_md_table(lines)
+    try:
+        start, end, header, data_rows = parse_md_table(lines)
+    except RuntimeError as e:
+        print(f"Errore: {e}")
+        print(f"Nessun file di nome '{args.input}' modificato.")
+        return
 
     # Ordina
     sorted_rows = sort_table_by_key(header, data_rows, args.key, args.desc)

@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 from typing import List, Dict, Tuple
 
+
 def parse_markdown_table(content: str) -> Tuple[str, List[str], List[Dict[str, str]]]:
     """
     Parsa una tabella Markdown e ritorna l'intestazione, i nomi delle colonne e i dati.
@@ -102,7 +103,7 @@ def filter_table(title: str, columns: List[str], rows: List[Dict[str, str]],
 
 def process_markdown_table(input_file: str, output_file: str, 
                           selected_columns: List[str], 
-                          selected_rows: List[int] = None):
+                          selected_rows: List[int] = None) -> str:
     """
     Legge un file markdown, filtra la tabella e salva il risultato.
 
@@ -111,6 +112,9 @@ def process_markdown_table(input_file: str, output_file: str,
         output_file: Percorso del file markdown di output
         selected_columns: Colonne da mantenere
         selected_rows: Indici delle righe da mantenere (None = tutte)
+    
+    Returns:
+        Stringa con le righe filtrate (senza header)
     """
     # Leggi il file
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -147,6 +151,7 @@ if __name__ == "__main__":
     file_names_full = [
         "H_resolution_results.md",
         "R_resolution_results.md",
+        "L_resolution_results.md",
     ]
 
     folders = [
@@ -159,25 +164,29 @@ if __name__ == "__main__":
     ]
 
     SELECTED_COLUMNS = [
-    "Run",
-    "Model",
-    "Aug",
-    "ROI",
-    "PatchMerging",
-    "Loss",
-    "MaxEpochs",
-    "LR",
-    "Optim",
-    "LRschedule",
-    "TrainAcc",
-    "ValAcc",
-    "TestAcc",
+        "Run",
+        "Model",
+        "Aug",
+        "ROI",
+        "PatchMerging",
+        "Loss",
+        "MaxEpochs",
+        "LR",
+        "Optim",
+        "LRschedule",
+        "TrainAcc",
+        "ValAcc",
+        "TestAcc",
     ]
 
     SELECTED_ROWS = None  # Tutte le righe
 
+    # ==================== PROCESSAMENTO H_resolution ====================
     row_full = []
-    complete = []
+    complete_h = []
+    header_h = ""
+    separator_h = ""
+    
     for fold in folders:
         INPUT_FILE = "results/complete/" + fold + file_names_full[0]
         OUTPUT_FOLDER = "results/light/" + fold 
@@ -185,17 +194,24 @@ if __name__ == "__main__":
         OUTPUT_FILE = OUTPUT_FOLDER + file_names_full[0]
 
         with open(INPUT_FILE, 'r', encoding='utf-8') as f:
-            lines = f.read().splitlines()
-        complete.extend(lines[3:])
+            lines_h = f.read().splitlines()
+        
+        # Salva header dalla PRIMA iterazione
+        if header_h == "":
+            header_h = lines_h[1]
+            separator_h = lines_h[2]
+        
+        complete_h.extend(lines_h[3:])
 
         try:
             row = process_markdown_table(INPUT_FILE, OUTPUT_FILE, SELECTED_COLUMNS, SELECTED_ROWS)
-            row_full.append(row[:-1])  # Rimuovi newline finale
+            row_full.append(row)  # ✅ Rimuove il [:-1] per non perdere dati
         except FileNotFoundError:
             print(f"✗ Errore: File '{INPUT_FILE}' non trovato")
         except Exception as e:
             print(f"✗ Errore: {e}")
     
+    # Scrivi risultati H light
     header = "| " + " | ".join(SELECTED_COLUMNS) + " |"
     separator = "| " + " | ".join(["---"] * len(SELECTED_COLUMNS)) + " |"
     with open("results/light/H_results.md", 'w', encoding='utf-8') as f:
@@ -205,16 +221,20 @@ if __name__ == "__main__":
         for row in row_full:
             f.write(row + "\n")
     
+    # Scrivi risultati H complete
     with open("results/complete/H_results.md", 'w', encoding='utf-8') as f:
         f.write("## Complete Results\n\n")
-        f.write(lines[0] + "\n")
-        f.write(lines[1] + "\n")
-        f.write(lines[2] + "\n")
-        for content in complete:
+        f.write(header_h + "\n")
+        f.write(separator_h + "\n")
+        for content in complete_h:
             f.write(content + "\n")
     
+    # ==================== PROCESSAMENTO R_resolution ====================
     row_reduced = []
-    complete_reduced = []
+    complete_r = []
+    header_r = ""
+    separator_r = ""
+    
     for fold in folders:
         INPUT_FILE = "results/complete/" + fold + file_names_full[1]
         OUTPUT_FOLDER = "results/light/" + fold 
@@ -222,19 +242,24 @@ if __name__ == "__main__":
         OUTPUT_FILE = OUTPUT_FOLDER + file_names_full[1]
 
         with open(INPUT_FILE, 'r', encoding='utf-8') as f:
-            lines = f.read().splitlines()
-        complete_reduced.extend(lines[3:])
+            lines_r = f.read().splitlines()
+        
+        # Salva header dalla PRIMA iterazione
+        if header_r == "":
+            header_r = lines_r[1]
+            separator_r = lines_r[2]
+        
+        complete_r.extend(lines_r[3:])
 
         try:
             row = process_markdown_table(INPUT_FILE, OUTPUT_FILE, SELECTED_COLUMNS, SELECTED_ROWS)
-            row_reduced.append(row[:-1])  # Rimuovi newline finale
+            row_reduced.append(row)  # ✅ Rimuove il [:-1]
         except FileNotFoundError:
             print(f"✗ Errore: File '{INPUT_FILE}' non trovato")
         except Exception as e:
             print(f"✗ Errore: {e}")
     
-    header = "| " + " | ".join(SELECTED_COLUMNS) + " |"
-    separator = "| " + " | ".join(["---"] * len(SELECTED_COLUMNS)) + " |"
+    # Scrivi risultati R light
     with open("results/light/R_results.md", 'w', encoding='utf-8') as f:
         f.write("## Full Results\n\n")
         f.write(header + "\n")
@@ -242,11 +267,83 @@ if __name__ == "__main__":
         for row in row_reduced:
             f.write(row + "\n")
 
+    # Scrivi risultati R complete
     with open("results/complete/R_results.md", 'w', encoding='utf-8') as f:
         f.write("## Complete Results\n\n")
-        f.write(lines[0] + "\n")
-        f.write(lines[1] + "\n")
-        f.write(lines[2] + "\n")
-        for content in complete_reduced:
+        f.write(header_r + "\n")
+        f.write(separator_r + "\n")
+        for content in complete_r:
             f.write(content + "\n")
 
+    # ==================== PROCESSAMENTO L_resolution ====================
+    row_low = []
+    complete_l = []  # ✅ NOME CORRETTO
+    header_l = ""
+    separator_l = ""
+    
+    for fold in folders:
+        INPUT_FILE = "results/complete/" + fold + file_names_full[2]
+        OUTPUT_FOLDER = "results/light/" + fold 
+        Path(OUTPUT_FOLDER).mkdir(parents=True, exist_ok=True)
+        OUTPUT_FILE = OUTPUT_FOLDER + file_names_full[2]
+
+        with open(INPUT_FILE, 'r', encoding='utf-8') as f:
+            lines_l = f.read().splitlines()
+        
+        # Salva header dalla PRIMA iterazione
+        if header_l == "":
+            header_l = lines_l[1]
+            separator_l = lines_l[2]
+        
+        complete_l.extend(lines_l[3:])  # ✅ USA complete_l CORRETTO
+
+        try:
+            row = process_markdown_table(INPUT_FILE, OUTPUT_FILE, SELECTED_COLUMNS, SELECTED_ROWS)
+            row_low.append(row)  # ✅ Rimuove il [:-1]
+        except FileNotFoundError:
+            print(f"✗ Errore: File '{INPUT_FILE}' non trovato")
+        except Exception as e:
+            print(f"✗ Errore: {e}")
+
+    # Scrivi risultati L light
+    with open("results/light/L_results.md", 'w', encoding='utf-8') as f:
+        f.write("## Full Results\n\n")
+        f.write(header + "\n")
+        f.write(separator + "\n")
+        for row in row_low:
+            f.write(row + "\n")
+
+    # Scrivi risultati L complete
+    with open("results/complete/L_results.md", 'w', encoding='utf-8') as f:
+        f.write("## Complete Results\n\n")
+        f.write(header_l + "\n")
+        f.write(separator_l + "\n")
+        for content in complete_l:
+            f.write(content + "\n")
+
+    # ==================== AGGREGAZIONE FINALE ====================
+    # all_results.md - complete (ordine logico: H, R, L)
+    with open("results/complete/all_results.md", 'w', encoding='utf-8') as f:
+        f.write("## Complete Results\n\n")
+        f.write(header_h + "\n")
+        f.write(separator_h + "\n")
+        for content in complete_h:
+            f.write(content + "\n")
+        for content in complete_r:
+            f.write(content + "\n")
+        for content in complete_l:
+            f.write(content + "\n")
+
+    # all_results.md - light (ordine logico: H, R, L)
+    with open("results/light/all_results.md", 'w', encoding='utf-8') as f:
+        f.write("## Full Results\n\n")
+        f.write(header + "\n")
+        f.write(separator + "\n")
+        for row in row_full:
+            f.write(row + "\n")
+        for row in row_reduced:
+            f.write(row + "\n")
+        for row in row_low:
+            f.write(row + "\n")
+
+    print("\n✅ Elaborazione completata!")

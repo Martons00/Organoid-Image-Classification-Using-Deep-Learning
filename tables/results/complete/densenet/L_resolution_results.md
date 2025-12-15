@@ -1,0 +1,4 @@
+## Experiment Results outputs/OrganoidsINRIA_reduced_128/densenet
+| Date | Run | Model | Aug | ExactClass | ROI | Loss | SimLoss | Checkpoint | Encoder10 | Batch | MaxEpochs | Warmup | LR | Optim | Momentum | LRschedule | EarlyStop | PatchMerging | SplitMethod | TrainLoss | TrainAcc | ValAcc | W_ValF1 | W_ValPrecision | W_ValRecall | W_Specificity | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2025-12-11 | 01_L | densenet | yes | no | 128x128x128 | CE | none | yes | no | 2 | */150 | 5 | 0.01 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0.4342 | 64 | 91 | 91 | 91 | 91 | 94 | 89 | 89 | 90 | 89 | 94 | * |

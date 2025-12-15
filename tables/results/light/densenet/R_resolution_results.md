@@ -10,3 +10,5 @@
 | 06 | densenet | yes | 64x64x64 | no | CE | 114/150 | 0.0005 | AdamW | warmup_cosine | 48 | 56 | 46 |
 | 07_64 | densenet | yes | 64x64x64 | no | CE | 97/150 | 0.05 | AdamW | warmup_cosine | 50 | 85 | 86 |
 | 08_64 | densenet | yes | 64x64x64 | no | CE | 90/150 | 0.01 | AdamW | warmup_cosine | 49 | 77 | 66 |
+| 09_64 | densenet | yes | 64x64x64 | no | CE | */150 | 0.01 | AdamW | warmup_cosine | 51 | 78 | 78 |
+| 10_64 | densenet | yes | 64x64x64 | no | CE | */150 | 0.01 | AdamW | warmup_cosine | 50 | 75 | 77 |

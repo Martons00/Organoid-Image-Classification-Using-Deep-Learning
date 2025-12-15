@@ -324,8 +324,8 @@ def _print_summary_statistics(df_stats, processing_errors, input_folder, output_
 if __name__ == "__main__":
     # Esempio di utilizzo
     
-    input_folder = '/home/mraffael/martone_project/Organoids_Dataset'
-    output_folder = '/home/mraffael/martone_project/Organoids_Dataset_resized'
+    input_folder = '/home/mraffael/martone_project/Organoids_Dataset_256/train_set'
+    output_folder = '/home/mraffael/martone_project/Organoids_Dataset_128/train_set'
     # MODIFICATO: Aggiunto parametro preserve_structure
-    analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(256, 256), preserve_structure=True)
+    analyze_and_resize_tiff_volumes(input_folder, output_folder, target_shape=(128, 128), preserve_structure=True)
 
