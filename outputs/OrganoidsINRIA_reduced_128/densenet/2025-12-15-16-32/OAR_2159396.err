@@ -1,0 +1,52 @@
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+Traceback (most recent call last):
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train_kfold.py", line 381, in <module>
+    main()
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train_kfold.py", line 76, in main
+    raise e
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train_kfold.py", line 68, in main
+    main_worker_kfold(gpu=0, args=args, configs=cfgs)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train_kfold.py", line 231, in main_worker_kfold
+    train_loss, train_acc, val_acc_max, best_metrics_training = run_training(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/utils/trainer.py", line 2255, in run_training
+    train_loss, train_acc, train_per_class_acc, train_cm, train_errors_paths = train_epoch(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/utils/trainer.py", line 417, in train_epoch
+    train_transform = get_train_transforms()
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 80, in get_train_transforms
+    return Compose([
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/monai/transforms/compose.py", line 129, in __init__
+    self.set_random_state(seed=get_seed())
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 58, in safe_compose_set_random_state
+    return original_compose_set_random_state(self, seed=seed, state=state)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 58, in safe_compose_set_random_state
+    return original_compose_set_random_state(self, seed=seed, state=state)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 58, in safe_compose_set_random_state
+    return original_compose_set_random_state(self, seed=seed, state=state)
+  [Previous line repeated 325 more times]
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/monai/transforms/compose.py", line 136, in set_random_state
+    _transform.set_random_state(seed=self.R.randint(MAX_SEED, dtype="uint32"))
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 58, in safe_compose_set_random_state
+    return original_compose_set_random_state(self, seed=seed, state=state)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 58, in safe_compose_set_random_state
+    return original_compose_set_random_state(self, seed=seed, state=state)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 58, in safe_compose_set_random_state
+    return original_compose_set_random_state(self, seed=seed, state=state)
+  [Previous line repeated 325 more times]
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/monai/transforms/compose.py", line 132, in set_random_state
+    super().set_random_state(seed=seed, state=state)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 68, in safe_randomizable_set_random_state
+    return original_randomizable_set_random_state(self, seed=seed, state=state)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 68, in safe_randomizable_set_random_state
+    return original_randomizable_set_random_state(self, seed=seed, state=state)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/dataset/organoidINRIA_custom.py", line 68, in safe_randomizable_set_random_state
+    return original_randomizable_set_random_state(self, seed=seed, state=state)
+  [Previous line repeated 325 more times]
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/monai/transforms/transform.py", line 165, in set_random_state
+    self.R = np.random.RandomState(_seed)
+  File "numpy/random/mtrand.pyx", line 185, in numpy.random.mtrand.RandomState.__init__
+  File "_mt19937.pyx", line 131, in numpy.random._mt19937.MT19937.__init__
+  File "bit_generator.pyx", line 534, in numpy.random.bit_generator.BitGenerator.__init__
+  File "/usr/lib/python3.9/abc.py", line 98, in __instancecheck__
+    return _abc_instancecheck(cls, instance)
+RecursionError: maximum recursion depth exceeded while calling a Python object

@@ -255,6 +255,7 @@ def config_to_args(cfg):
 
     # Model
     args.model_name = cfg.MODEL.name
+    args.gpu = 0
     args.pretrained_model_name = cfg.MODEL.pretrained_model_name
     args.pretrained_dir = cfg.MODEL.pretrained_dir
     args.encoder10_pth = cfg.MODEL.encoder10_pth
