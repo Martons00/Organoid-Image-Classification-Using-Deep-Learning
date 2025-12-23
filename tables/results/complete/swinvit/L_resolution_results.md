@@ -3,3 +3,6 @@
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2025-12-12 | 01_L | swinvit | yes | no | 128x128x128 | CE | none | yes | no | 6 | */300 | 5 | 0.05 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 1.5085 | 39 | 49 | 32 | 24 | 49 | 51 | 49 | 32 | 24 | 49 | 51 | * |
 | 2025-12-12 | 02_L | swinvit | yes | no | 128x128x128 | CE | none | yes | no | 6 | */300 | 5 | 0.5 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 4.9455 | 38 | 49 | 32 | 24 | 49 | 51 | 49 | 32 | 24 | 49 | 51 | * |
+| 2025-12-15 | 03_L | swinvit | yes | no | 128x128x128 | CE | none | yes | no | 6 | */300 | 5 | 0.005 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0.2523 | 86 | 83 | 83 | 83 | 83 | 86 | 83 | 83 | 85 | 83 | 88 | * |
+| 2025-12-16 | 04_L | swinvit | yes | no | 128x128x128 | CE | none | yes | no | 6 | */300 | 5 | 0.001 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 0.2629 | 86 | 85 | 85 | 85 | 85 | 88 | 84 | 84 | 85 | 84 | 89 | * |
+| 2025-12-22 | 05_L | swinvit | yes | no | 128x128x128 | CE | none | yes | no | 6 | */300 | 5 | 0.01 | AdamW | 0.99 | warmup_cosine | yes | no | stratified | 1.1023 | 44 | 49 | 32 | 24 | 49 | 51 | 49 | 32 | 24 | 49 | 51 | * |

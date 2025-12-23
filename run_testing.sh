@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #OAR -q besteffort
-#OAR -l gpu=1,walltime=00:30:00
+#OAR -l cpu=1,walltime=24:00:00
 #OAR -p esterel40
 #OAR -O OAR_%jobid%.out
 #OAR -E OAR_%jobid%.err
@@ -14,6 +14,6 @@ pwd
 source models/SwinUNETR/BRATS21/swin_unetr_env/bin/activate
 
 # Avvia il training
-python testing.py --cfg config/training/DenseNet/training_lr_5e-2_64_reduced.yaml --oar_id $OAR_JOB_ID
+python train.py --cfg config/training/SwinUNETR/training_lr_5e-3_128.yaml --oar_id $OAR_JOB_ID
 
 exit

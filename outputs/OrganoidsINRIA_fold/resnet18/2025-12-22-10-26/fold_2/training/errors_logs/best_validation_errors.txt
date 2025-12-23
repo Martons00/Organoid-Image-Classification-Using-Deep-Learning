@@ -1,0 +1,10 @@
+Epoch 84:
+/home/mraffael/martone_project/Organoids_Dataset_128/train_set/Chouxfleurs/20230731_Noyau_org1.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_128/train_set/Chouxfleurs/20231004_Noyau_org2.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_128/train_set/Chouxfleurs/20231004_Noyau_org5.tif	Pred: 1	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_128/train_set/Chouxfleurs_Nice_Reduce/raw_202503_Nice_orga1_33.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_128/train_set/Chouxfleurs_Nice_Reduce/raw_202503_Nice_orga1_37.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_128/train_set/Chouxfleurs_Nice_Reduce/raw_202503_Nice_orga1_38.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_128/train_set/Cystiques/20240404_Noyau_org1.tif	Pred: 0	Target: 2
+*----------------------------------------*
+

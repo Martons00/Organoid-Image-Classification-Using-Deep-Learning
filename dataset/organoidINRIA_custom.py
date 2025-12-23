@@ -29,54 +29,65 @@ CLASSES = {
     "compact": 1,
     "cystiques": 2,
 }
+# ============================================
+import monai
+import monai.transforms.compose
+import monai.transforms.transform
+import numpy as np
+# ============================================
+# PATCH MONAI - ESEGUITO UNA SOLA VOLTA AL MODULO IMPORT
+# ============================================
+
+# 1. Patch per monai.utils.get_seed
+_original_get_seed = monai.utils.get_seed
+
+def _safe_get_seed():
+    seed = _original_get_seed()
+    return seed % (2**31 - 1) if seed is not None else None
+
+monai.utils.get_seed = _safe_get_seed
+
+# 2. Patch per Compose.set_random_state
+_original_compose_set_random_state = monai.transforms.compose.Compose.set_random_state
+
+def _safe_compose_set_random_state(self, seed=None, state=None):
+    """Wrapper sicuro che evita overflow nel seed"""
+    if seed is not None:
+        seed = int(seed) % (2**31 - 1)
+    # Chiama il metodo ORIGINALE SALVATO, non il wrapper
+    return _original_compose_set_random_state(self, seed=seed, state=state)
+
+monai.transforms.compose.Compose.set_random_state = _safe_compose_set_random_state
+
+# 3. Patch per Randomizable.set_random_state
+_original_randomizable_set_random_state = monai.transforms.transform.Randomizable.set_random_state
+
+def _safe_randomizable_set_random_state(self, seed=None, state=None):
+    """Wrapper sicuro che evita overflow nel seed"""
+    if seed is not None:
+        if not isinstance(seed, (int, np.integer)):
+            seed = int(seed)
+        seed = seed % (2**31 - 1)
+    # Chiama il metodo ORIGINALE SALVATO, non il wrapper
+    return _original_randomizable_set_random_state(self, seed=seed, state=state)
+
+monai.transforms.transform.Randomizable.set_random_state = _safe_randomizable_set_random_state
+
+# 4. Patch per il MAX_SEED stesso (se esiste)
+if hasattr(monai.transforms.transform, 'MAX_SEED'):
+    monai.transforms.transform.MAX_SEED = 2**31 - 1
+
+# ============================================
+# FUNZIONE - SENZA PATCH (Già fatto sopra!)
+# ============================================
 
 def get_train_transforms():
     """
-    Augmentation pipeline per TRAINING con patch completo per MONAI overflow
+    Augmentation pipeline per TRAINING.
+    
+    ✅ Il monkey-patching è stato fatto UNA SOLA VOLTA al module import,
+       quindi non c'è ricorsione infinita.
     """
-    import monai
-    import monai.transforms.compose
-    import monai.transforms.transform
-    import numpy as np
-    
-    # ============================================
-    # PATCH COMPLETO per overflow MONAI
-    # ============================================
-    
-    # 1. Patch per monai.utils.get_seed
-    original_get_seed = monai.utils.get_seed
-    def safe_get_seed():
-        seed = original_get_seed()
-        return seed % (2**31 - 1) if seed is not None else None
-    monai.utils.get_seed = safe_get_seed
-    
-    # 2. Patch per Compose.set_random_state
-    original_compose_set_random_state = monai.transforms.compose.Compose.set_random_state
-    def safe_compose_set_random_state(self, seed=None, state=None):
-        if seed is not None:
-            seed = int(seed) % (2**31 - 1)
-        return original_compose_set_random_state(self, seed=seed, state=state)
-    monai.transforms.compose.Compose.set_random_state = safe_compose_set_random_state
-    
-    # 3. Patch per Randomizable.set_random_state  
-    original_randomizable_set_random_state = monai.transforms.transform.Randomizable.set_random_state
-    def safe_randomizable_set_random_state(self, seed=None, state=None):
-        if seed is not None:
-            if not isinstance(seed, (int, np.integer)):
-                seed = int(seed)
-            seed = seed % (2**31 - 1)
-        return original_randomizable_set_random_state(self, seed=seed, state=state)
-    monai.transforms.transform.Randomizable.set_random_state = safe_randomizable_set_random_state
-    
-    # 4. Patch per il MAX_SEED stesso
-    if hasattr(monai.transforms.transform, 'MAX_SEED'):
-        original_max_seed = monai.transforms.transform.MAX_SEED
-        monai.transforms.transform.MAX_SEED = 2**31 - 1
-    
-    # ============================================
-    # Transforms sicure (senza dimensioni variabili)
-    # ============================================
-    
     return Compose([
         # Flip 3D (specifica gli assi spaziali, non i canali)
         RandFlip(spatial_axis=0, prob=0.5),  # depth
@@ -85,8 +96,8 @@ def get_train_transforms():
         
         # Rotazioni 90° per 3D
         RandRotate90(prob=0.5, max_k=3, spatial_axes=(2, 3)),  # Specifica gli assi
-
-        # intensità (one-of)
+        
+        # Intensità (one-of)
         OneOf([
             RandGaussianNoise(prob=1.0, std=0.03),
             RandAdjustContrast(prob=1.0, gamma=(0.8, 1.25)),

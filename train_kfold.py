@@ -155,52 +155,48 @@ def main_worker_kfold(gpu, args, configs):
     
     start_total = timeit.default_timer()
     
-    for fold_idx, (train_set, val_set) in enumerate(fold_splits):
+    # ✅ CORRETTO - train_set e val_set sono già tuple di indici da StratifiedKFold
+    for fold_idx, (train_indices, val_indices) in enumerate(fold_splits):
         
         log(f"\n{'='*50}")
         log(f"FOLD {fold_idx + 1}/{args.n_splits}")
         log(f"{'='*50}")
+
+        # Crea directory per questo fold 
+        fold_output_dir = os.path.join(final_output_dir, f"fold_{fold_idx}") 
+        os.makedirs(fold_output_dir, exist_ok=True)  
+        fold_tb_dir = os.path.join(fold_output_dir, "tensorboard") 
+        os.makedirs(fold_tb_dir, exist_ok=True)  
         
-        # Crea directory per questo fold
-        fold_output_dir = os.path.join(final_output_dir, f"fold_{fold_idx}")
-        os.makedirs(fold_output_dir, exist_ok=True)
+        writer_dict = { 'writer': SummaryWriter(fold_tb_dir), 'train_global_steps': 0, 'valid_global_steps': 0, }
         
-        fold_tb_dir = os.path.join(fold_output_dir, "tensorboard")
-        os.makedirs(fold_tb_dir, exist_ok=True)
-        
-        writer_dict = {
-            'writer': SummaryWriter(fold_tb_dir),
-            'train_global_steps': 0,
-            'valid_global_steps': 0,
-        }
-        
-        # Verifica balance nei fold
-        log(f"\nFold {fold_idx} - Train set ({len(train_set)} samples):")
-        train_indices = _get_indices(train_set, len(train_set))
-        train_labels_fold = labels[train_indices]
+        # Verifica balance nei fold - USA DIRETTAMENTE gli indici!
+        log(f"\nFold {fold_idx} - Train set ({len(train_indices)} samples):")
+        train_labels_fold = labels[train_indices]  # ✅ Accesso DIRETTO agli indici
         train_counts = np.bincount(train_labels_fold, minlength=num_classes)
         for c, n in enumerate(train_counts):
-            pct = (n / len(train_set)) * 100
+            pct = (n / len(train_indices)) * 100
             log(f"  Class {c}: {n} ({pct:.1f}%)")
         
-        log(f"\nFold {fold_idx} - Val set ({len(val_set)} samples):")
-        val_indices = _get_indices(val_set, len(val_set))
-        val_labels_fold = labels[val_indices]
+        log(f"\nFold {fold_idx} - Val set ({len(val_indices)} samples):")
+        val_labels_fold = labels[val_indices]  # ✅ Accesso DIRETTO agli indici
         val_counts = np.bincount(val_labels_fold, minlength=num_classes)
         for c, n in enumerate(val_counts):
-            pct = (n / len(val_set)) * 100
+            pct = (n / len(val_indices)) * 100
             log(f"  Class {c}: {n} ({pct:.1f}%)")
         
         # Crea dataloaders per questo fold
         log(f"\nCreating dataloaders for fold {fold_idx}...")
-            # Dataloader per questo fold
         train_loader, val_loader = create_fold_dataloaders(
             dataset=full_dataset,
-            train_idx=train_set,
-            val_idx=val_set,
+            train_idx=train_indices,  # ✅ Passa direttamente gli indici
+            val_idx=val_indices,      # ✅ Passa direttamente gli indici
             batch_size=args.batch_size,
             num_workers=args.workers,
         )
+        
+        # ... resto del training ...
+
         
         log(f"Train loader: {len(train_loader)} batches")
         log(f"Val loader: {len(val_loader)} batches")

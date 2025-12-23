@@ -33,7 +33,7 @@ AUGMENTATION:
   augmentation: true
 
 TRAINING:
-  max_epochs: 150
+  max_epochs: 300
   batch_size: 6
   patch_merging: false
   sw_batch_size: 8
