@@ -51,6 +51,7 @@
 | 07_scratch | swinvit | yes | 128x128x128 | no | CE | 84/300 | 0.005 | AdamW | warmup_cosine | 50 | 49 | 49 |
 | 08 | swinvit | yes | 128x128x128 | no | CE | */300 | 0.05 | AdamW | warmup_cosine | 56 | 75 | 71 |
 | 09_scratch | swinvit | yes | 128x128x128 | no | CE | */300 | 0.0005 | AdamW | warmup_cosine | 45 | 83 | 83 |
+| 10 | swinvit | yes | 128x128x128 | no | CE | */300 | 0.006 | AdamW | warmup_cosine | 90 | 88 | 88 |
 | 01_L | densenet | yes | 128x128x128 | no | CE | */150 | 0.01 | AdamW | warmup_cosine | 64 | 91 | 89 |
 | 01_L | resnet18 | yes | 128x128x128 | no | CE | */150 | 0.05 | AdamW | warmup_cosine | 97 | 93 | 94 |
 | 01_L | swinunetr | yes | 128x128x128 | no | CE | */150 | 0.001 | AdamW | warmup_cosine | 87 | 83 | 88 |

@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 
 class SwinVit_3D(nn.Module):
-    def __init__(self, original_model, num_classes=3, num_features=384):
+    def __init__(self, original_model, num_classes=3, num_features=384, dropout_p=0.0):
         super(SwinVit_3D, self).__init__()
         
         # Copiamo le componenti dell'encoder dal modello originale
@@ -15,6 +15,8 @@ class SwinVit_3D(nn.Module):
         # Attributi richiesti da add_ml_decoder_head
         self.num_classes = num_classes
         self.num_features = num_features
+
+        self.dropout_head = nn.Dropout(p=dropout_p)
         
         # Pattern ResNet50: global_pool + fc (ADATTATO PER 3D)
         self.global_pool = nn.AdaptiveAvgPool3d(1)  # Pool globale 3D per volumi

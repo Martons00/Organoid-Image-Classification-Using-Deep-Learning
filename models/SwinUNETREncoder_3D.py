@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 class SwinUNETREncoder(nn.Module):
-    def __init__(self, original_model, num_classes=3, num_features=384):
+    def __init__(self, original_model, num_classes=3, num_features=384, dropout_p=0.0):
         super(SwinUNETREncoder, self).__init__()
         
         # Copiamo le componenti dell'encoder dal modello originale
@@ -17,6 +17,7 @@ class SwinUNETREncoder(nn.Module):
         self.num_features = num_features
         
         # Pattern ResNet50: global_pool + fc (ADATTATO PER 3D)
+        self.dropout_head = nn.Dropout(p=dropout_p)
         self.global_pool = nn.AdaptiveAvgPool3d(1)  # Pool globale 3D per volumi
         self.fc = nn.Linear(num_features, num_classes)  # Testa di classificazione
         

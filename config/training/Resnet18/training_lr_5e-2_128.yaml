@@ -1,61 +1,78 @@
-
-# BRATS Swin UNETR Segmentation Configuration
-SYSTEM:
-  seed: 3
-  distributed: false
-  world_size: 1
-  rank: 0
-  workers: 8
-  output_dir: "outputs/"
-  logs_dir: "logs/"
-  telegram_log: true
-  telegram_token: "./token/tlg_token.txt"
-  oar_id: 0
-
-MODEL:
-  name: "resnet18" # "swinunetr", "swinunetr+ml_decoder"
-  pretrained_model_name: "resnet_18.pth"
-  pretrained_dir: "./pretrained_models/resnet18/"
-  norm_name: "instance"
-  use_checkpoint: false
-
+AUGMENTATION:
+  RandFlipd_prob: 0.2
+  RandRotate90d_prob: 0.2
+  RandScaleIntensityd_prob: 0.1
+  RandShiftIntensityd_prob: 0.1
+  augmentation: true
 DATASET:
-  name: "OrganoidsINRIA_reduced_128"
-  data_dir: "/home/mraffael/martone_project/Organoids_Dataset_128/"
-  exact_class: false # if true, use only exact folders, if false use all folders_reduced
+  cache_dataset: false
+  data_dir: /home/mraffael/martone_project/Organoids_Dataset_128/
+  exact_class: false
+  fold: 0
   ignore_label: 3
-  # ROI size
+  name: OrganoidsINRIA_MC
   roi_x: 128
   roi_y: 128
   roi_z: 128
-
-AUGMENTATION:
-  augmentation: true
-
+INFERENCE:
+  infer_overlap: 0.5
+LOGGING:
+  logdir: test
+LOSS:
+  loss_name: CE
+  similarity_loss: ''
+  similarity_loss_weight: 0.0
+MODEL:
+  checkpoint: './outputs/OrganoidsINRIA_fold/resnet18/2025-12-22-10-26/fold_0/training/best_model.pt'
+  dropout_path_rate: 0.0
+  dropout_rate: 0.2
+  encoder10_pth: ''
+  feature_size: 48
+  in_channels: 1
+  name: resnet18
+  norm_name: instance
+  out_channels: 1
+  pretrained_dir: ./pretrained_models/resnet18/
+  pretrained_model_name: resnet_18.pth
+  resume_ckpt: false
+  spatial_dims: 3
+  use_checkpoint: false
+SYSTEM:
+  dist_backend: nccl
+  dist_url: tcp://127.0.0.1:23456
+  distributed: false
+  logs_dir: logs/
+  oar_id: 0
+  output_dir: outputs/
+  rank: 0
+  seed: 3
+  telegram_log: true
+  telegram_token: ./token/tlg_token.txt
+  workers: 8
+  world_size: 1
 TRAINING:
-  max_epochs: 150
   batch_size: 6
+  debug: false
+  debug_train_samples: 40
+  debug_val_samples: 10
+  early_stopping: true
+  folds: false
+  k_folds: 5
+  lrschedule: warmup_cosine
+  max_epochs: 150
+  min_delta_loss: 0.001
+  min_delta_val: 0.01
+  momentum: 0.99
+  noamp: false
+  optim_lr: 0.05
+  optim_name: adamw
   patch_merging: false
+  patience_loss: 40
+  patience_val: 40
+  reg_weight: 5.0e-05
+  restart_T0: 20
+  save_checkpoint: true
+  split_method: stratified
   sw_batch_size: 8
   val_every: 2
-  early_stopping: true
-  patience_val: 40
-  min_delta_val: 0.01
-  patience_loss: 40
-  min_delta_loss: 0.001
-  split_method: "stratified"  # "random" , "stratified" or "balanced" "percentage"
-  save_checkpoint: true
-  noamp: false
-  # Optimizer parameters
-  optim_lr: 5e-2
-  optim_name: "adamw" # "adam", "adamw" or "sgd"
-  reg_weight: 5e-5
-  momentum: 0.99
-  # Learning rate scheduler
-  lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"
   warmup_epochs: 5
-
-
-LOSS:
-  loss_name: "CE" # "CE", "FocalLoss", "LabelSmoothingLoss", "DiversityLoss", "CombinedLoss", "CenterLoss"
-

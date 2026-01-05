@@ -43,3 +43,4 @@
 | 07_scratch | swinvit | yes | 128x128x128 | no | CE | 84/300 | 0.005 | AdamW | warmup_cosine | 50 | 49 | 49 |
 | 08 | swinvit | yes | 128x128x128 | no | CE | */300 | 0.05 | AdamW | warmup_cosine | 56 | 75 | 71 |
 | 09_scratch | swinvit | yes | 128x128x128 | no | CE | */300 | 0.0005 | AdamW | warmup_cosine | 45 | 83 | 83 |
+| 10 | swinvit | yes | 128x128x128 | no | CE | */300 | 0.006 | AdamW | warmup_cosine | 90 | 88 | 88 |

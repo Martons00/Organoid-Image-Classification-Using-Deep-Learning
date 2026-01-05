@@ -18,9 +18,11 @@ MODEL:
   pretrained_dir: ""
   norm_name: "instance"
   use_checkpoint: false
+  dropout_rate: 0.2
+  checkpoint: "./outputs/OrganoidsINRIA_fold/densenet/2025-12-16-10-14/fold_2/training/best_model.pt"
 
 DATASET:
-  name: "OrganoidsINRIA_reduced_128"
+  name: "OrganoidsINRIA_MC"
   data_dir: "/home/mraffael/martone_project/Organoids_Dataset_128/"
   exact_class: false # if true, use only exact folders, if false use all folders_reduced
   ignore_label: 3

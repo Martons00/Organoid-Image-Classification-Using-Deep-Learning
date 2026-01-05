@@ -49,7 +49,7 @@ TRAINING:
   # Optimizer parameters
   optim_lr: 5e-3
   optim_name: "adamw" # "adam", "adamw" or "sgd"
-  reg_weight: 5e-5
+  reg_weight: 8e-5
   momentum: 0.99
   # Learning rate scheduler
   lrschedule: "warmup_cosine" #  "cosine_anneal" or "warmup_cosine"

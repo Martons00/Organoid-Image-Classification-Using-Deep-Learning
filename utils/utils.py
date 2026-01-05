@@ -42,6 +42,10 @@ from typing import Sequence, Dict, List, Union
 import matplotlib.pyplot as plt
 import numpy as np
 
+import math
+import torch
+import torch.nn.functional as F
+
 class FullModel(nn.Module):
 
   def __init__(self, model, sem_loss, bd_loss):
@@ -85,7 +89,6 @@ class FullModel(nn.Module):
     loss = loss_s + loss_b + loss_sb
 
     return torch.unsqueeze(loss,0), outputs[:-1], acc, [loss_s, loss_b]
-
 
 class AverageMeter(object):
     """Computes and stores the average and current value"""
@@ -199,8 +202,6 @@ def suppress_stdout():
         finally:
             sys.stdout = old_stdout
             
-
-
 def denormalize(tensor, mean, std):
   for i in range(len(mean)):
     tensor[i] = tensor[i]*std[i] + mean[i]
@@ -229,8 +230,6 @@ def visualize_images(image_tensor):
     else:
         raise ValueError(f"Unexpected tensor dimensions: {image_tensor.dim()}")
 
-
-  
 def visualize_segmentation(segmentation_tensor):
     # Sposta il tensor sulla CPU e converti in numpy array
     seg_map = segmentation_tensor.cpu().numpy()
@@ -263,7 +262,6 @@ def visualize_segmentation(segmentation_tensor):
     plt.axis('off')
     plt.show()
 
-
 def dice(x, y):
     intersect = np.sum(np.sum(np.sum(x * y)))
     y_sum = np.sum(np.sum(np.sum(y)))
@@ -271,7 +269,6 @@ def dice(x, y):
         return 0.0
     x_sum = np.sum(np.sum(np.sum(x)))
     return 2 * intersect / (x_sum + y_sum)
-
 
 class AverageMeter(object):
     def __init__(self):
@@ -288,7 +285,6 @@ class AverageMeter(object):
         self.sum += val * n
         self.count += n
         self.avg = np.where(self.count > 0, self.sum / self.count, self.sum)
-
 
 def distributed_all_gather(
     tensor_list, valid_batch_size=None, out_numpy=False, world_size=None, no_barrier=False, is_valid=None
@@ -318,7 +314,6 @@ def distributed_all_gather(
                 gather_list = [t.cpu().numpy() for t in gather_list]
             tensor_list_out.append(gather_list)
     return tensor_list_out
-
 
 # feats: [N, 768, fD, fH, fW] in ordine (z major -> y -> x) come nell’estrazione
 def tile_feature_patches(feats: torch.Tensor, coords) -> torch.Tensor:
@@ -353,7 +348,6 @@ def tile_feature_patches(feats: torch.Tensor, coords) -> torch.Tensor:
     
     # Aggiungi dimensione batch: [1, C, nZ*fD, nY*fH, nX*fW]
     return vol.unsqueeze(0)
-
 
 def ensure_single_channel(x, mode="first"):
     # x: [B,C,D,H,W] oppure [B,D,H,W]
@@ -404,7 +398,6 @@ def extract_patches_5d_torch(x, patch_size=(128,256,256), step=(128,256,256), pa
     patches = torch.cat(patches, dim=0)  # [N,1,pd,ph,pw]
     return patches, coords
 
-
 # feats: [N, 768, fD, fH, fW] in ordine (z major -> y -> x) come nell’estrazione
 def tile_feature_patches(feats: torch.Tensor, coords) -> torch.Tensor:
     # feats: [N, C, fD, fH, fW] dove N = nZ*nY*nX patch in ordine z->y->x
@@ -437,7 +430,6 @@ def tile_feature_patches(feats: torch.Tensor, coords) -> torch.Tensor:
     # Aggiungi dimensione batch: [1, C, nZ*fD, nY*fH, nX*fW]
     return vol.unsqueeze(0)
 
-
 def ensure_single_channel(x, mode="first"):
     # x: [B,C,D,H,W] oppure [B,D,H,W]
     if x.dim() == 4:
@@ -458,10 +450,6 @@ def _starts(size, patch, step):
     if s[-1] != size - patch:
         s.append(size - patch)
     return s
-
-import math
-import torch
-import torch.nn.functional as F
 
 def extract_patches_5d_torch(
     x,

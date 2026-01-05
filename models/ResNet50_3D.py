@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 class ResNet_3D(nn.Module):
-    def __init__(self, original_model: nn.Module, num_classes: int = 3, num_features: int = 2048):
+    def __init__(self, original_model: nn.Module, num_classes: int = 3, num_features: int = 2048, dropout_p: float = 0.0):
         super().__init__()
         # Copia backbone 3D
         self.conv1   = original_model.conv1
@@ -13,6 +13,7 @@ class ResNet_3D(nn.Module):
         self.layer2  = original_model.layer2
         self.layer3  = original_model.layer3
         self.layer4  = original_model.layer4
+        self.dropout_head = nn.Dropout(p=dropout_p)
 
         # Mantieni la testa di segmentazione solo se ti serve altrove (non usata per la classificazione)
         self.has_seg_head = hasattr(original_model, "conv_seg")

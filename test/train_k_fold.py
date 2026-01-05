@@ -32,7 +32,7 @@ from monai.networks.nets import SwinUNETR
 
 # ========== Project-Specific ==========
 from config import config, parse_args
-from utils.utils_old import create_logger
+from utils.old.utils_old import create_logger
 from utils.trainer import run_training, run_training_k_folds
 from utils.data_utils import (
     get_loader,

@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 
 class DenseNet_3D(nn.Module):
-    def __init__(self, original_model: nn.Module, num_classes: int = 3, num_features: int = 2048):
+    def __init__(self, original_model: nn.Module, num_classes: int = 3, num_features: int = 2048, dropout_p: float = 0.0):
         super().__init__()
         # Copia backbone 3D
         self.features   = original_model.features
@@ -17,6 +17,7 @@ class DenseNet_3D(nn.Module):
         self.global_pool = nn.AdaptiveAvgPool3d(1)  # N×C×D×H×W -> N×C×1×1×1 [web:155]
         out_channels = self._infer_out_channels_from_layer4()  # C finale [web:172]
         self.fc = nn.Linear(out_channels, num_classes)         # N×C -> N×K [web:172]
+        self.dropout_head = nn.Dropout(p=dropout_p)
 
     def _infer_out_channels_from_layer4(self) -> int:
         last = self.features[-1]

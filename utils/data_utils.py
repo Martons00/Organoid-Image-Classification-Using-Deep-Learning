@@ -1,25 +1,17 @@
-# Copyright 2020 - 2022 MONAI Consortium
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#     http://www.apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
+# Standard library
 import json
 import math
 import os
+from collections import Counter
+from typing import Dict, List, Sequence, Tuple, Union
 
-from typing import Dict, Sequence, Tuple, Union, Optional
+# Third-party libraries
 import numpy as np
 import torch
-from torch.utils.data import Dataset, Subset, random_split
-from sklearn.model_selection import train_test_split
-
+from torch.utils.data import DataLoader, Dataset, Subset, random_split
+from sklearn.model_selection import StratifiedKFold, train_test_split
 from monai import data, transforms
+
 
 
 class Sampler(torch.utils.data.Sampler):
@@ -68,7 +60,6 @@ class Sampler(torch.utils.data.Sampler):
     def set_epoch(self, epoch):
         self.epoch = epoch
 
-
 def datafold_read(datalist, basedir, fold=0, key="training"):
     with open(datalist) as f:
         json_data = json.load(f)
@@ -91,7 +82,6 @@ def datafold_read(datalist, basedir, fold=0, key="training"):
             tr.append(d)
 
     return tr, val
-
 
 def get_loader(args):
     data_dir = args.data_dir
@@ -162,10 +152,6 @@ def get_loader(args):
         loader = [train_loader, val_loader]
 
     return loader
-
-from typing import Sequence, Dict, Union, Tuple
-import numpy as np
-from torch.utils.data import Dataset, Subset
 
 def split_dataset_percentage(
     dataset: Dataset,
@@ -289,8 +275,6 @@ def split_dataset_percentage(
 
     return Subset(dataset, train_indices.tolist()), Subset(dataset, val_indices.tolist())
 
-
-
 def split_dataset_balanced(
     dataset: Dataset,
     val_size: Union[int, float] = 0.2,
@@ -409,7 +393,6 @@ def verify_balance(subset: Subset, original_labels: np.ndarray) -> None:
     for cls, count in zip(unique_classes, class_counts):
         print(f"  Class {cls}: {count} samples")
 
-
 def split_dataset_random(
     dataset: Dataset,
     val_size: Union[int, float] = 0.2,
@@ -431,12 +414,6 @@ def split_dataset_random(
     g = torch.Generator().manual_seed(seed)
     train_subset, val_subset = random_split(dataset, [train_len, val_len], generator=g)
     return train_subset, val_subset
-
-from typing import Tuple, Union, Optional, List
-import numpy as np
-import torch
-from torch.utils.data import Dataset, Subset, DataLoader
-from sklearn.model_selection import train_test_split
 
 def split_dataset_stratified(
     dataset: Dataset,
@@ -528,69 +505,6 @@ def create_stratified_debug_subset(
     original_indices = [dataset_subset.indices[i] for i in debug_indices]
     return Subset(dataset_subset.dataset, original_indices)
 
-
-
-from telegram.ext import ApplicationBuilder
-from telegram import InputFile
-from telegram.constants import ParseMode
-
-async def send_alert(oar_id: int, message: str, token_file: str, image_path: Optional[str] = None):
-    """
-    Invia un messaggio di testo e un file PNG su Telegram.
-
-    Args:
-        message: testo da inviare.
-        token_file: percorso del file contenente prima il token e poi la chat_id su due righe.
-        image_path: percorso del file .png da inviare (opzionale).
-    """
-    # Leggi token e chat_id dal file
-    with open(token_file, "r") as f:
-        token = f.readline().strip()
-        chat_id = f.readline().strip()
-
-    # Crea l'applicazione del bot
-    application = ApplicationBuilder().token(token).build()
-
-    # Invia il messaggio testuale
-    message = f"🆔 *OAR ID:* {oar_id}\n{message}"
-    await application.bot.send_message(chat_id=chat_id, text=message, parse_mode=ParseMode.MARKDOWN)
-
-
-    # Invia l'immagine PNG se fornita e il file esiste
-    if image_path is not None and os.path.isfile(image_path):
-        with open(image_path, "rb") as img:
-            png_file = InputFile(img, filename=os.path.basename(image_path))
-            await application.bot.send_photo(chat_id=chat_id, photo=png_file)
-
-from datetime import datetime
-
-def build_training_message(args):
-    time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    # Riepilogo compatto dei parametri principali
-    desc = (
-        f"Model: *{args.model_name}* \nDataset: *{args.dataset_name}*\nSplit Method: *{args.split_method}* \n"
-        f"Epochs: *{args.max_epochs}* \nBatch: *{args.batch_size}* \nLR: *{args.optim_lr}*\n"
-        + (f"Loss: *{args.loss_name}* \n" if args.loss_name else "")
-        + (f"Similarity Loss: *{args.similarity_loss}* \n" if args.similarity_loss else "")
-        + (f"Folds: *{args.folds}* | K: *{args.k_folds}*\n" if args.folds else "")
-        + (f"DEBUG TRN: *{args.debug_train_samples} training samples*\n" if args.debug else "")
-        + (f"DEBUG VAL: *{args.debug_val_samples} val samples*\n" if args.debug else "")
-        + f"ROI: *{args.roi_x}x{args.roi_y}x{args.roi_z}*\n"
-        + f"Optim: *{args.optim_name}* \nSched: *{args.lrschedule}*"
-    )
-
-    header = "🔔 *TRAINING START*"
-    footer = f"⏱️ Start: *{time_str}* \nGPU: *{args.gpu}* | Workers: *{args.workers}*"
-    bar = "─" * 10
-
-    message = f"{header}\n{footer}\n{bar}\n{desc}\n{bar}"
-    return message
-
-
-from sklearn.model_selection import StratifiedKFold
-from collections import Counter
-
 def create_kfold_splits_stratified(dataset, n_splits=5, random_state=42, shuffle=True):
     """
     Crea splits K-Fold stratificati per il dataset
@@ -641,7 +555,6 @@ def create_kfold_splits_stratified(dataset, n_splits=5, random_state=42, shuffle
         folds.append((train_idx, val_idx))
     
     return folds
-
 
 def create_kfold_splits_balanced(
     dataset: Dataset,
@@ -735,7 +648,6 @@ def create_fold_dataloaders(dataset, train_idx, val_idx, batch_size=1, num_worke
     )
     
     return train_loader, val_loader
-
 
 def create_kfold_splits_random(
     dataset: Dataset,

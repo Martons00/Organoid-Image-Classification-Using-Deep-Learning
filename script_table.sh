@@ -6,8 +6,7 @@
 # python table_training.py outputs/OrganoidsINRIA_reduced/swinunetr+noah > tables/results_testing/swinunetr+noah_reduced_result.md
 
 # python table_training.py outputs/OrganoidsINRIA_reduced_128/swinunetr > tables/results_testing/swinunetr_reduced_128_result.md
-# 
-python table_training.py outputs/OrganoidsINRIA_reduced_128/swinvit > tables/results_testing/swinvit_reduced_128_result.md
+# python table_training.py outputs/OrganoidsINRIA_reduced_128/swinvit > tables/results_testing/swinvit_reduced_128_result.md
 # python table_training.py outputs/OrganoidsINRIA_reduced_128/resnet18 > tables/results_testing/resnet18_reduced_128_result.md
 # python table_training.py outputs/OrganoidsINRIA_reduced_128/densenet > tables/results_testing/densenet_reduced_128_result.md
 # python table_training.py outputs/OrganoidsINRIA_reduced_128/swinunetr+noah > tables/results_testing/swinunetr+noah_reduced_128_result.md
@@ -19,3 +18,12 @@ python table_training.py outputs/OrganoidsINRIA_reduced_128/swinvit > tables/res
 # python table_training.py outputs/OrganoidsINRIA/densenet > tables/results_testing/densenet_full_result.md
 # python table_training.py outputs/OrganoidsINRIA/swinunetr+noah > tables/results_testing/swinunetr+noah_full_result.md
 # python table_training.py outputs/OrganoidsINRIA/swinvit > tables/results_testing/swinvit_full_result.md
+
+# 
+python table_training.py outputs/OrganoidsINRIA_MC/swinunetr > tables/results_testing/swinunetr_MC_result.md
+# python table_training.py outputs/OrganoidsINRIA_MC/swinvit > tables/results_testing/swinvit_MC_result.md
+# 
+python table_training.py outputs/OrganoidsINRIA_MC/resnet18 > tables/results_testing/resnet18_MC_result.md
+# 
+python table_training.py outputs/OrganoidsINRIA_MC/densenet > tables/results_testing/densenet_MC_result.md
+# python table_training.py outputs/OrganoidsINRIA_MC/swinunetr+noah > tables/results_testing/swinunetr+noah_MC_result.md
