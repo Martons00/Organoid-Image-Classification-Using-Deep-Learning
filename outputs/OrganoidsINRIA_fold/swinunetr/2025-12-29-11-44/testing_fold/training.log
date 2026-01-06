@@ -1,0 +1,147 @@
+2026-01-06 11:38:18,177 INFO Log directory: outputs/OrganoidsINRIA_MC/swinunetr/2026-01-06-11-38
+2026-01-06 11:38:18,180 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 6,
+ 'cache_dataset': False,
+ 'checkpoint_path': './outputs/OrganoidsINRIA_fold/swinunetr/2025-12-29-11-44/fold_1/training/best_model.pt',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_MC',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.2,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'swinunetr',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2178573,
+ 'optim_lr': 0.0006,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model_swinvit.pt',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 8,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+2026-01-06 11:38:18,180 INFO 
+2026-01-06 11:38:18,184 INFO Saved configuration to: outputs/OrganoidsINRIA_MC/swinunetr/2026-01-06-11-38/config.txt
+2026-01-06 11:38:18,678 INFO Using GPU: 0
+2026-01-06 11:38:18,678 INFO 
+2026-01-06 11:38:18,678 INFO Model INFO:
+2026-01-06 11:38:18,678 INFO Model architecture: swinunetr
+2026-01-06 11:38:19,036 INFO Skipping loading pretrained weights since checkpoint path is provided
+2026-01-06 11:38:19,036 INFO Using SwinUNETR with Single Linear Classification Head
+2026-01-06 11:38:19,039 INFO => loading checkpoint './outputs/OrganoidsINRIA_fold/swinunetr/2025-12-29-11-44/fold_1/training/best_model.pt'
+2026-01-06 11:38:22,938 INFO Loaded 130 keys from checkpoint
+2026-01-06 11:38:22,944 INFO Total trainable parameters: 39,914,805
+2026-01-06 11:38:22,960 INFO 
+2026-01-06 11:38:22,961 INFO Optimizer INFO:
+2026-01-06 11:38:22,961 INFO Using optimizer: adamw with lr=0.0006, weight_decay=5e-05
+2026-01-06 11:38:22,961 INFO Resuming optimizer state from checkpoint: ./outputs/OrganoidsINRIA_fold/swinunetr/2025-12-29-11-44/fold_1/training/best_model.pt
+2026-01-06 11:38:23,190 INFO 
+2026-01-06 11:38:23,190 INFO Dataset INFO:
+2026-01-06 11:38:23,211 INFO Dataset length: 721
+2026-01-06 11:38:23,211 INFO Class distribution in entire dataset:
+2026-01-06 11:38:23,211 INFO   Class 0: 351
+2026-01-06 11:38:23,211 INFO   Class 1: 38
+2026-01-06 11:38:23,211 INFO   Class 2: 332
+2026-01-06 11:38:23,211 INFO 
+Using split method: stratified
+2026-01-06 11:38:23,213 INFO 
+Train set balance:
+2026-01-06 11:38:23,213 INFO 
+Val set balance:
+2026-01-06 11:38:23,213 INFO Training set length: 577
+2026-01-06 11:38:23,213 INFO Validation set length: 144
+2026-01-06 11:38:23,213 INFO 
+Using standard shuffle for training
+2026-01-06 11:38:23,213 INFO Training loader: 96 batches
+2026-01-06 11:38:23,213 INFO Validation loader: 24 batches
+2026-01-06 11:38:23,213 INFO 
+Class distribution in training set:
+2026-01-06 11:38:23,213 INFO   Class 0: 281 (48.7%)
+2026-01-06 11:38:23,213 INFO   Class 1: 30 (5.2%)
+2026-01-06 11:38:23,214 INFO   Class 2: 266 (46.1%)
+2026-01-06 11:38:23,214 INFO Class distribution in validation set:
+2026-01-06 11:38:23,214 INFO   Class 0: 70 (48.6%)
+2026-01-06 11:38:23,214 INFO   Class 1: 8 (5.6%)
+2026-01-06 11:38:23,214 INFO   Class 2: 66 (45.8%)
+2026-01-06 11:38:23,214 INFO **************************************************
+2026-01-06 11:38:23,223 INFO Class weights: [ 6.845  64.111  7.231]
+2026-01-06 11:38:23,223 INFO 
+2026-01-06 11:38:23,223 INFO Test Dataset INFO:
+2026-01-06 11:38:23,231 INFO Test Dataset length: 82
+2026-01-06 11:38:23,231 INFO Class distribution in test dataset:
+2026-01-06 11:38:23,231 INFO   Class 0: 40
+2026-01-06 11:38:23,231 INFO   Class 1: 5
+2026-01-06 11:38:23,231 INFO   Class 2: 37
+2026-01-06 11:38:23,231 INFO Test loader: 14 batches
+2026-01-06 11:38:23,231 INFO **************************************************
+2026-01-06 11:38:23,231 INFO 
+2026-01-06 11:38:23,231 INFO Using loss function: CE
+2026-01-06 11:38:23,234 INFO **************************************************
+2026-01-06 11:38:23,234 INFO Starting testing...
+2026-01-06 11:39:11,367 INFO Final testing , Test_acc: 0.7114, time 48.13sAccuracy: 0.878
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.972     0.875         0.976   0.921        40
+1                          0.571     0.800         0.961   0.667         5
+2                          0.846     0.892         0.867   0.868        37
+*========================================*
+2026-01-06 11:39:11,844 INFO Testing Finished! Best Accuracy: 0.7114
+2026-01-06 11:39:11,844 INFO ====================================================================================================
+2026-01-06 11:39:14,250 INFO Total time spent: 00 hours 00 minutes 51 seconds
+2026-01-06 11:39:14,250 INFO 
+2026-01-06 11:39:14,250 INFO Final Results Summary:
+2026-01-06 11:39:14,250 INFO | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
+2026-01-06 11:39:14,250 INFO | 0.8780 | 0.8818 | 0.8909 | 0.8780 | 0.9258 | 
