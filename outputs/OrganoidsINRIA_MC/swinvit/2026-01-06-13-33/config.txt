@@ -23,9 +23,9 @@ LOSS:
   similarity_loss: ''
   similarity_loss_weight: 0.0
 MODEL:
-  checkpoint: './outputs/OrganoidsINRIA_fold/swinvit/2025-12-29-11-51/fold_1/training/best_model.pt'
+  checkpoint: ./outputs/OrganoidsINRIA_fold/swinvit/2025-12-29-11-51/fold_2/training/best_model.pt
   dropout_path_rate: 0.0
-  dropout_rate: 0.0
+  dropout_rate: 0.2
   encoder10_pth: ''
   feature_size: 48
   in_channels: 1
