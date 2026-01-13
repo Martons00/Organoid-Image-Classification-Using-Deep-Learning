@@ -555,6 +555,9 @@ def _setup_model(args, logger, log):
     elif "densenet" in name:
         net = DenseNet201(spatial_dims=3, in_channels=1, out_channels=1)   
         model = DenseNet_3D(original_model=net, num_classes=3,dropout_p=args.dropout_rate)
+        # Checkpoint di fine-tuning (se specificato)
+        if getattr(args, "checkpoint_path", None) and os.path.exists(args.checkpoint_path):
+            _maybe_load_checkpoint(model, args.checkpoint_path, log=log, strict=False, args=args)
 
     elif "resnet50" in name or "resnet18" in name:
         depth = 50 if "resnet50" in name else 18

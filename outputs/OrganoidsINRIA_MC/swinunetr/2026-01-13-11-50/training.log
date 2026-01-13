@@ -1,0 +1,311 @@
+2026-01-13 11:50:39,812 INFO Log directory: outputs/OrganoidsINRIA_MC/swinunetr/2026-01-13-11-50
+2026-01-13 11:50:39,814 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 6,
+ 'cache_dataset': False,
+ 'checkpoint_path': './outputs/OrganoidsINRIA_MC/swinunetr/2026-01-03-12-00/training/best_model.pt',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_MC',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.2,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 150,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'swinunetr',
+ 'momentum': 0.99,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2193193,
+ 'optim_lr': 0.0006,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model_swinvit.pt',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 128,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 8,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+2026-01-13 11:50:39,814 INFO 
+2026-01-13 11:50:39,819 INFO Saved configuration to: outputs/OrganoidsINRIA_MC/swinunetr/2026-01-13-11-50/config.txt
+2026-01-13 11:50:40,366 INFO Using GPU: 0
+2026-01-13 11:50:40,366 INFO 
+2026-01-13 11:50:40,366 INFO Model INFO:
+2026-01-13 11:50:40,366 INFO Model architecture: swinunetr
+2026-01-13 11:50:40,754 INFO Skipping loading pretrained weights since checkpoint path is provided
+2026-01-13 11:50:40,755 INFO Using SwinUNETR with Single Linear Classification Head
+2026-01-13 11:50:40,757 INFO => loading checkpoint './outputs/OrganoidsINRIA_MC/swinunetr/2026-01-03-12-00/training/best_model.pt'
+2026-01-13 11:50:44,738 INFO Loaded 130 keys from checkpoint
+2026-01-13 11:50:44,744 INFO Total trainable parameters: 39,914,805
+2026-01-13 11:50:44,765 INFO 
+2026-01-13 11:50:44,766 INFO Optimizer INFO:
+2026-01-13 11:50:44,766 INFO Using optimizer: adamw with lr=0.0006, weight_decay=5e-05
+2026-01-13 11:50:44,766 INFO Resuming optimizer state from checkpoint: ./outputs/OrganoidsINRIA_MC/swinunetr/2026-01-03-12-00/training/best_model.pt
+2026-01-13 11:50:45,000 INFO 
+2026-01-13 11:50:45,000 INFO Dataset INFO:
+2026-01-13 11:50:45,020 INFO Dataset length: 721
+2026-01-13 11:50:45,020 INFO Class distribution in entire dataset:
+2026-01-13 11:50:45,020 INFO   Class 0: 351
+2026-01-13 11:50:45,020 INFO   Class 1: 38
+2026-01-13 11:50:45,020 INFO   Class 2: 332
+2026-01-13 11:50:45,020 INFO 
+Using split method: stratified
+2026-01-13 11:50:45,032 INFO 
+Train set balance:
+2026-01-13 11:50:45,032 INFO 
+Val set balance:
+2026-01-13 11:50:45,032 INFO Training set length: 577
+2026-01-13 11:50:45,032 INFO Validation set length: 144
+2026-01-13 11:50:45,032 INFO 
+Using standard shuffle for training
+2026-01-13 11:50:45,032 INFO Training loader: 96 batches
+2026-01-13 11:50:45,032 INFO Validation loader: 24 batches
+2026-01-13 11:50:45,032 INFO 
+Class distribution in training set:
+2026-01-13 11:50:45,032 INFO   Class 0: 281 (48.7%)
+2026-01-13 11:50:45,032 INFO   Class 1: 30 (5.2%)
+2026-01-13 11:50:45,032 INFO   Class 2: 266 (46.1%)
+2026-01-13 11:50:45,032 INFO Class distribution in validation set:
+2026-01-13 11:50:45,032 INFO   Class 0: 70 (48.6%)
+2026-01-13 11:50:45,032 INFO   Class 1: 8 (5.6%)
+2026-01-13 11:50:45,032 INFO   Class 2: 66 (45.8%)
+2026-01-13 11:50:45,032 INFO **************************************************
+2026-01-13 11:50:45,063 INFO Class weights: [ 6.845  64.111  7.231]
+2026-01-13 11:50:45,063 INFO 
+2026-01-13 11:50:45,063 INFO Test Dataset INFO:
+2026-01-13 11:50:45,069 INFO Test Dataset length: 82
+2026-01-13 11:50:45,069 INFO Class distribution in test dataset:
+2026-01-13 11:50:45,069 INFO   Class 0: 40
+2026-01-13 11:50:45,069 INFO   Class 1: 5
+2026-01-13 11:50:45,069 INFO   Class 2: 37
+2026-01-13 11:50:45,069 INFO Test loader: 14 batches
+2026-01-13 11:50:45,069 INFO **************************************************
+2026-01-13 11:50:45,069 INFO 
+2026-01-13 11:50:45,069 INFO Using loss function: CE
+2026-01-13 11:50:45,073 INFO **************************************************
+2026-01-13 11:51:36,643 INFO Final testing , Test_acc: 0.7927, time 51.57sAccuracy: 0.902
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          1.000     0.850         1.000   0.919        40
+1                          0.800     0.800         0.987   0.800         5
+2                          0.837     0.973         0.844   0.900        37
+*========================================*
+2026-01-13 11:51:37,043 INFO Testing Finished! Best Accuracy: 0.7927
+2026-01-13 11:51:37,044 INFO ====================================================================================================
+2026-01-13 11:51:39,367 INFO Starting MC-Dropout Testing...
+2026-01-13 11:53:02,895 INFO 
+2026-01-13 11:53:02,895 INFO ================================================================================
+2026-01-13 11:53:02,895 INFO MC-DROPOUT UNCERTAINTY ANALYSIS - PREDICTIVE ENTROPY
+2026-01-13 11:53:02,895 INFO ================================================================================
+2026-01-13 11:53:02,896 INFO 
+Correct predictions:   0.2881 ± 0.2409
+2026-01-13 11:53:02,896 INFO Incorrect predictions: 0.5185 ± 0.1537
+2026-01-13 11:53:02,896 INFO Uncertainty gap:       0.2303
+2026-01-13 11:53:02,896 INFO 
+Per-class uncertainty:
+2026-01-13 11:53:02,896 INFO   Class 0: 0.2020 ± 0.2135 (n=40)
+2026-01-13 11:53:02,896 INFO   Class 1: 0.5309 ± 0.2064 (n=5)
+2026-01-13 11:53:02,896 INFO   Class 2: 0.3983 ± 0.2225 (n=37)
+2026-01-13 11:53:02,896 INFO 
+Selective prediction (rejection thresholds):
+2026-01-13 11:53:02,906 INFO   Reject top 50% (>0.2605): keep 41/82, acc=1.0000
+2026-01-13 11:53:02,906 INFO   Reject top 25% (>0.4677): keep 61/82, acc=0.9508
+2026-01-13 11:53:02,907 INFO   Reject top 10% (>0.6761): keep 73/82, acc=0.9178
+2026-01-13 11:53:02,907 INFO   Reject top 5% (>0.7253): keep 77/82, acc=0.9091
+2026-01-13 11:53:02,907 INFO 
+Calibration (accuracy by uncertainty bin):
+2026-01-13 11:53:02,907 INFO   Low (0-25%)          [0.0014, 0.0997): acc=1.0000, n=21
+2026-01-13 11:53:02,907 INFO   Medium (25-50%)      [0.0997, 0.2605): acc=1.0000, n=20
+2026-01-13 11:53:02,907 INFO   High (50-75%)        [0.2605, 0.4677): acc=0.8500, n=20
+2026-01-13 11:53:02,907 INFO   Very High (75-100%)  [0.4677, 1.0677): acc=0.7500, n=20
+2026-01-13 11:53:02,907 INFO 
+Top 10 most uncertain samples:
+2026-01-13 11:53:02,921 INFO   1. Sample 71: unc=1.0677, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:02,921 INFO   2. Sample 59: unc=0.8416, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:02,921 INFO   3. Sample 81: unc=0.7686, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:02,921 INFO   4. Sample 42: unc=0.7301, pred=1, true=1, ✓ CORRECT
+2026-01-13 11:53:02,921 INFO   5. Sample 0: unc=0.7259, pred=1, true=0, ✗ WRONG
+2026-01-13 11:53:02,922 INFO   6. Sample 43: unc=0.7134, pred=2, true=1, ✗ WRONG
+2026-01-13 11:53:02,922 INFO   7. Sample 60: unc=0.7084, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:02,922 INFO   8. Sample 57: unc=0.6927, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:02,922 INFO   9. Sample 58: unc=0.6783, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:02,922 INFO   10. Sample 13: unc=0.6563, pred=0, true=0, ✓ CORRECT
+2026-01-13 11:53:02,922 INFO ================================================================================
+
+2026-01-13 11:53:03,900 INFO 
+2026-01-13 11:53:03,900 INFO ================================================================================
+2026-01-13 11:53:03,900 INFO MC-DROPOUT UNCERTAINTY ANALYSIS - BALD
+2026-01-13 11:53:03,900 INFO ================================================================================
+2026-01-13 11:53:03,901 INFO 
+Correct predictions:   0.0047 ± 0.0046
+2026-01-13 11:53:03,901 INFO Incorrect predictions: 0.0071 ± 0.0028
+2026-01-13 11:53:03,901 INFO Uncertainty gap:       0.0024
+2026-01-13 11:53:03,901 INFO 
+Per-class uncertainty:
+2026-01-13 11:53:03,901 INFO   Class 0: 0.0039 ± 0.0042 (n=40)
+2026-01-13 11:53:03,901 INFO   Class 1: 0.0072 ± 0.0042 (n=5)
+2026-01-13 11:53:03,901 INFO   Class 2: 0.0057 ± 0.0046 (n=37)
+2026-01-13 11:53:03,901 INFO 
+Selective prediction (rejection thresholds):
+2026-01-13 11:53:03,901 INFO   Reject top 50% (>0.0036): keep 41/82, acc=1.0000
+2026-01-13 11:53:03,901 INFO   Reject top 25% (>0.0068): keep 61/82, acc=0.9180
+2026-01-13 11:53:03,902 INFO   Reject top 10% (>0.0114): keep 73/82, acc=0.9041
+2026-01-13 11:53:03,902 INFO   Reject top 5% (>0.0156): keep 77/82, acc=0.8961
+2026-01-13 11:53:03,902 INFO 
+Calibration (accuracy by uncertainty bin):
+2026-01-13 11:53:03,902 INFO   Low (0-25%)          [0.0000, 0.0016): acc=1.0000, n=21
+2026-01-13 11:53:03,902 INFO   Medium (25-50%)      [0.0016, 0.0036): acc=1.0000, n=20
+2026-01-13 11:53:03,902 INFO   High (50-75%)        [0.0036, 0.0068): acc=0.7500, n=20
+2026-01-13 11:53:03,902 INFO   Very High (75-100%)  [0.0068, 0.0188): acc=0.8500, n=20
+2026-01-13 11:53:03,902 INFO 
+Top 10 most uncertain samples:
+2026-01-13 11:53:03,902 INFO   1. Sample 71: unc=0.0188, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:03,902 INFO   2. Sample 13: unc=0.0174, pred=0, true=0, ✓ CORRECT
+2026-01-13 11:53:03,902 INFO   3. Sample 59: unc=0.0174, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:03,902 INFO   4. Sample 60: unc=0.0162, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:03,902 INFO   5. Sample 1: unc=0.0157, pred=0, true=0, ✓ CORRECT
+2026-01-13 11:53:03,902 INFO   6. Sample 81: unc=0.0141, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:03,902 INFO   7. Sample 8: unc=0.0130, pred=0, true=0, ✓ CORRECT
+2026-01-13 11:53:03,902 INFO   8. Sample 43: unc=0.0129, pred=2, true=1, ✗ WRONG
+2026-01-13 11:53:03,902 INFO   9. Sample 76: unc=0.0115, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:03,902 INFO   10. Sample 57: unc=0.0104, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:03,902 INFO ================================================================================
+
+2026-01-13 11:53:04,624 INFO 
+2026-01-13 11:53:04,625 INFO ================================================================================
+2026-01-13 11:53:04,625 INFO MC-DROPOUT UNCERTAINTY ANALYSIS - MEAN VARIANCE
+2026-01-13 11:53:04,625 INFO ================================================================================
+2026-01-13 11:53:04,625 INFO 
+Correct predictions:   0.0007 ± 0.0013
+2026-01-13 11:53:04,625 INFO Incorrect predictions: 0.0013 ± 0.0010
+2026-01-13 11:53:04,625 INFO Uncertainty gap:       0.0006
+2026-01-13 11:53:04,625 INFO 
+Per-class uncertainty:
+2026-01-13 11:53:04,625 INFO   Class 0: 0.0006 ± 0.0011 (n=40)
+2026-01-13 11:53:04,625 INFO   Class 1: 0.0018 ± 0.0014 (n=5)
+2026-01-13 11:53:04,625 INFO   Class 2: 0.0009 ± 0.0013 (n=37)
+2026-01-13 11:53:04,625 INFO 
+Selective prediction (rejection thresholds):
+2026-01-13 11:53:04,625 INFO   Reject top 50% (>0.0002): keep 41/82, acc=1.0000
+2026-01-13 11:53:04,625 INFO   Reject top 25% (>0.0008): keep 61/82, acc=0.9344
+2026-01-13 11:53:04,626 INFO   Reject top 10% (>0.0026): keep 73/82, acc=0.9041
+2026-01-13 11:53:04,626 INFO   Reject top 5% (>0.0041): keep 77/82, acc=0.8961
+2026-01-13 11:53:04,626 INFO 
+Calibration (accuracy by uncertainty bin):
+2026-01-13 11:53:04,626 INFO   Low (0-25%)          [0.0000, 0.0000): acc=1.0000, n=21
+2026-01-13 11:53:04,626 INFO   Medium (25-50%)      [0.0000, 0.0002): acc=1.0000, n=20
+2026-01-13 11:53:04,626 INFO   High (50-75%)        [0.0002, 0.0008): acc=0.8000, n=20
+2026-01-13 11:53:04,626 INFO   Very High (75-100%)  [0.0008, 0.0053): acc=0.8000, n=20
+2026-01-13 11:53:04,626 INFO 
+Top 10 most uncertain samples:
+2026-01-13 11:53:04,626 INFO   1. Sample 13: unc=0.0053, pred=0, true=0, ✓ CORRECT
+2026-01-13 11:53:04,626 INFO   2. Sample 60: unc=0.0053, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:04,626 INFO   3. Sample 71: unc=0.0043, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:04,626 INFO   4. Sample 1: unc=0.0041, pred=0, true=0, ✓ CORRECT
+2026-01-13 11:53:04,626 INFO   5. Sample 59: unc=0.0041, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:04,626 INFO   6. Sample 43: unc=0.0034, pred=2, true=1, ✗ WRONG
+2026-01-13 11:53:04,626 INFO   7. Sample 42: unc=0.0031, pred=1, true=1, ✓ CORRECT
+2026-01-13 11:53:04,626 INFO   8. Sample 8: unc=0.0030, pred=0, true=0, ✓ CORRECT
+2026-01-13 11:53:04,626 INFO   9. Sample 48: unc=0.0027, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:04,626 INFO   10. Sample 81: unc=0.0022, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:04,626 INFO ================================================================================
+
+2026-01-13 11:53:05,348 INFO 
+2026-01-13 11:53:05,348 INFO ================================================================================
+2026-01-13 11:53:05,348 INFO MC-DROPOUT UNCERTAINTY ANALYSIS - VARIATION RATIO
+2026-01-13 11:53:05,348 INFO ================================================================================
+2026-01-13 11:53:05,348 INFO 
+Correct predictions:   0.0097 ± 0.0477
+2026-01-13 11:53:05,348 INFO Incorrect predictions: 0.0000 ± 0.0000
+2026-01-13 11:53:05,348 INFO Uncertainty gap:       -0.0097
+2026-01-13 11:53:05,348 INFO 
+Per-class uncertainty:
+2026-01-13 11:53:05,348 INFO   Class 0: 0.0020 ± 0.0125 (n=40)
+2026-01-13 11:53:05,348 INFO   Class 1: 0.0160 ± 0.0320 (n=5)
+2026-01-13 11:53:05,348 INFO   Class 2: 0.0151 ± 0.0645 (n=37)
+2026-01-13 11:53:05,349 INFO 
+Selective prediction (rejection thresholds):
+2026-01-13 11:53:05,349 INFO   Reject top 50% (>0.0000): keep 77/82, acc=0.8961
+2026-01-13 11:53:05,349 INFO   Reject top 25% (>0.0000): keep 77/82, acc=0.8961
+2026-01-13 11:53:05,349 INFO   Reject top 10% (>0.0000): keep 77/82, acc=0.8961
+2026-01-13 11:53:05,349 INFO   Reject top 5% (>0.0190): keep 77/82, acc=0.8961
+2026-01-13 11:53:05,349 INFO 
+Calibration (accuracy by uncertainty bin):
+2026-01-13 11:53:05,349 INFO   Very High (75-100%)  [0.0000, 0.3600): acc=0.9012, n=81
+2026-01-13 11:53:05,349 INFO 
+Top 10 most uncertain samples:
+2026-01-13 11:53:05,349 INFO   1. Sample 60: unc=0.3600, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:05,349 INFO   2. Sample 71: unc=0.1800, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:05,349 INFO   3. Sample 42: unc=0.0800, pred=1, true=1, ✓ CORRECT
+2026-01-13 11:53:05,349 INFO   4. Sample 13: unc=0.0800, pred=0, true=0, ✓ CORRECT
+2026-01-13 11:53:05,349 INFO   5. Sample 59: unc=0.0200, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:05,349 INFO   6. Sample 78: unc=0.0000, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:05,349 INFO   7. Sample 80: unc=0.0000, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:05,349 INFO   8. Sample 79: unc=0.0000, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:05,350 INFO   9. Sample 77: unc=0.0000, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:05,350 INFO   10. Sample 76: unc=0.0000, pred=2, true=2, ✓ CORRECT
+2026-01-13 11:53:05,350 INFO ================================================================================
+
+2026-01-13 11:53:06,058 INFO Total time spent: 00 hours 02 minutes 20 seconds
+2026-01-13 11:53:06,058 INFO 
+2026-01-13 11:53:06,058 INFO Final Results Summary:
+2026-01-13 11:53:06,058 INFO | TestAcc | W_TestF1 | W_TestPrecision | W_TestRecall | W_TestSpecificity |
+2026-01-13 11:53:06,058 INFO | 0.9024 | 0.9031 | 0.9144 | 0.9024 | 0.9290 | 
+2026-01-13 11:53:06,058 INFO 
+2026-01-13 11:53:06,058 INFO | Detailed Test MC Metrics |
+2026-01-13 11:53:06,058 INFO MC Accuracy: 0.9024
+2026-01-13 11:53:06,058 INFO Per-class metrics (MC):
+2026-01-13 11:53:06,058 INFO class | precision | recall | specificity | f1 | support
+2026-01-13 11:53:06,059 INFO     0 | 1.0000 | 0.8500 | 1.0000 | 0.9189 |      40
+2026-01-13 11:53:06,059 INFO     1 | 0.6667 | 0.8000 | 0.9740 | 0.7273 |       5
+2026-01-13 11:53:06,059 INFO     2 | 0.8571 | 0.9730 | 0.8667 | 0.9114 |      37
+2026-01-13 11:53:06,059 INFO Macro avg (MC): precision=0.8413, recall=0.8743, specificity=0.9469, f1=0.8525
+2026-01-13 11:53:06,059 INFO Weighted avg (MC): precision=0.9152, recall=0.9024, specificity=0.9383, f1=0.9038
+2026-01-13 11:53:06,059 INFO Micro avg (MC): precision=0.9024, recall=0.9024, specificity=0.9512, f1=0.9024

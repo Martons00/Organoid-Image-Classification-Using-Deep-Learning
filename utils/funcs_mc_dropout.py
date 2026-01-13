@@ -7,6 +7,12 @@ from sklearn.metrics import confusion_matrix
 import os
 import time
 
+
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+from typing import Optional, List, Tuple
+
 # Third-party libraries
 import numpy as np
 import torch
@@ -207,6 +213,157 @@ def mc_dropout_batch_inference(
     
     return mean_probs_all, std_probs_all, uncertainty_all
 
+
+def plot_acceptance_rejection_curve(
+    all_uncertainties: np.ndarray,
+    all_preds: np.ndarray,
+    all_targets: np.ndarray,
+    save_path: str = "acceptance_rejection_curve.png",
+    reference_percentiles: List[int] = [25, 50, 75, 90, 95],
+    figsize: Tuple[int, int] = (10, 6),
+    dpi: int = 300,
+    show_plot: bool = True,
+    title: Optional[str] = None,
+):
+    """
+    Plot acceptance–rejection curve (accuracy vs coverage) for selective prediction.
+
+    Args:
+        all_uncertainties: Array of uncertainty scores for each prediction.
+        all_preds: Array of model predictions.
+        all_targets: Array of ground truth labels.
+        save_path: Path where the figure will be saved (file or directory).
+        reference_percentiles: Percentiles of uncertainty to highlight.
+        figsize: Matplotlib figure size.
+        dpi: Resolution of saved figure.
+        show_plot: Whether to show the plot.
+        title: Custom title (optional).
+
+    Returns:
+        coverage (np.ndarray): Coverage values in [0, 1].
+        accuracies (np.ndarray): Accuracy at each coverage level.
+    """
+    assert len(all_uncertainties) == len(all_preds) == len(all_targets), \
+        "all_uncertainties, all_preds and all_targets must have same length"
+
+    # Compute thresholds over percentiles of uncertainty
+    percentiles = np.arange(0, 101, 1)
+    thresholds = [np.percentile(all_uncertainties, p) for p in percentiles]
+    accuracies = []
+    coverage = []
+
+    for thresh in thresholds:
+        keep_mask = all_uncertainties <= thresh
+        if keep_mask.sum() > 0:
+            remaining_acc = (all_preds[keep_mask] == all_targets[keep_mask]).mean()
+            coverage_pct = keep_mask.sum() / len(all_preds)
+            accuracies.append(remaining_acc)
+            coverage.append(coverage_pct)
+        else:
+            accuracies.append(0.0)
+            coverage.append(0.0)
+
+    accuracies = np.array(accuracies)
+    coverage = np.array(coverage)
+
+    # Plot
+    fig, ax1 = plt.subplots(figsize=figsize)
+
+    color1 = "tab:blue"
+    ax1.set_xlabel("Coverage (%)", fontsize=12, fontweight="bold")
+    ax1.set_ylabel("Accuracy", color=color1, fontsize=12, fontweight="bold")
+    ax1.plot(
+        coverage * 100,
+        accuracies,
+        color=color1,
+        linewidth=2.5,
+        label="Accuracy",
+        marker="o",
+        markersize=3,
+        markevery=5,
+    )
+    ax1.tick_params(axis="y", labelcolor=color1)
+    ax1.grid(True, alpha=0.3, linestyle="--")
+    
+    # Dynamic y-axis limits based on data
+    y_min = max(0, accuracies.min() - 0.05)  # Don't go below 0
+    ax1.set_ylim([y_min, 1.05])
+    ax1.set_xlim([0, 105])
+
+    # Vertical lines for selected percentiles
+    y_range = 1.05 - y_min
+    for percentile in reference_percentiles:
+        if 0 <= percentile < len(coverage):
+            idx = percentile
+            x_val = coverage[idx] * 100
+            ax1.axvline(
+                x=x_val,
+                color="red",
+                linestyle="--",
+                alpha=0.5,
+                linewidth=1.5,
+            )
+            # Dynamic text positioning based on y-axis range
+            acc_normalized = (accuracies[idx] - y_min) / y_range
+            if acc_normalized > 0.5:
+                y_pos = y_min + 0.05 * y_range
+            else:
+                y_pos = accuracies[idx] + 0.1 * y_range
+            
+            ax1.text(
+                x_val,
+                y_pos,
+                f"{percentile}%",
+                fontsize=9,
+                ha="center",
+                color="red",
+                bbox=dict(
+                    boxstyle="round,pad=0.3",
+                    facecolor="white",
+                    edgecolor="red",
+                    alpha=0.7,
+                ),
+            )
+
+    # Title and baseline info
+    plot_title = title or "Selective Prediction: Acceptance–Rejection Curve"
+    ax1.set_title(plot_title, fontsize=14, fontweight="bold", pad=20)
+
+    total_samples = len(all_preds)
+    baseline_acc = (all_preds == all_targets).mean()
+    info_text = f"Total samples: {total_samples}\nBaseline accuracy: {baseline_acc:.4f}"
+    ax1.text(
+        0.02,
+        0.98,
+        info_text,
+        transform=ax1.transAxes,
+        fontsize=9,
+        va="top",
+        bbox=dict(boxstyle="round", facecolor="wheat", alpha=0.5),
+    )
+
+    ax1.legend(loc="lower right", fontsize=11, framealpha=0.9)
+
+    plt.tight_layout()
+    
+    # Handle save path - check if it's a directory or a file path
+    if os.path.isdir(save_path):
+        full_path = os.path.join(save_path, 'acceptance_rejection_curve.png')
+    else:
+        full_path = save_path
+        os.makedirs(os.path.dirname(full_path), exist_ok=True) if os.path.dirname(full_path) else None
+    
+    plt.savefig(full_path, dpi=dpi, bbox_inches="tight")
+    print(f"Acceptance–rejection curve saved as '{full_path}'")
+
+    if show_plot:
+        plt.show()
+    else:
+        plt.close()
+
+    return coverage, accuracies
+
+
 def plot_uncertainty_analysis(
     uncertainties: np.ndarray,
     targets: np.ndarray,
@@ -261,13 +418,13 @@ def test_epoch_mc_dropout(
     args,
     num_mc_samples: int = 20,
     logger=None,
-) -> tuple[float, dict, np.ndarray, np.ndarray, np.ndarray]:
+) -> tuple[float, float, dict, np.ndarray, np.ndarray]:
     """
     Testing con MC-Dropout per stimare incertezza.
     
     Returns:
         tuple: (avg_loss, avg_accuracy, per_class_accuracy_dict, 
-                confusion_matrix, uncertainties)
+                confusion_matrix, uncertainties [N, 4])
     """
     
     model.eval()
@@ -282,10 +439,10 @@ def test_epoch_mc_dropout(
     per_class_correct = None
     per_class_total = None
     
-    # Liste per confusion matrix e incertezze
+    # Liste globali per raccogliere TUTTI i batch
     all_preds = []
     all_targets = []
-    all_uncertainties = []
+    all_uncertainties = []  # Lista di tensori [B, 4]
     all_confidences = []
     
     # Cache per attributi args
@@ -295,6 +452,9 @@ def test_epoch_mc_dropout(
     # Riattiva MC-Dropout
     enable_mc_dropout(model)
     
+    # ========================================
+    # LOOP PRINCIPALE SUI BATCH
+    # ========================================
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
             # Estrai data e target
@@ -368,10 +528,10 @@ def test_epoch_mc_dropout(
                     step=args.step
                 )
                 
-                # MC-Dropout: forward multipli
+                # ========== MC-Dropout: forward multipli ==========
                 all_probs = []
                 
-                for _ in range(num_mc_samples):
+                for mc_iter in range(num_mc_samples):
                     pooled = model.global_pool(feats_tiled)
                     
                     if args.model_name == "swinunetr+ml_decoder":
@@ -382,35 +542,77 @@ def test_epoch_mc_dropout(
                     # ✅ Dropout attivo (forzato)
                     pooled = model.dropout_head(pooled)
                     logits = model.fc(pooled)  # [1, num_classes]
-                    probs = torch.softmax(logits, dim=1)
+                    probs = torch.softmax(logits, dim=1)  # [1, num_classes]
                     all_probs.append(probs)
                 
-                # Statistiche MC-Dropout
-                all_probs = torch.stack(all_probs, dim=0)  # [num_samples, 1, num_classes]
+                # Stack delle predizioni MC: [T, 1, num_classes]
+                all_probs = torch.stack(all_probs, dim=0)  # [num_mc_samples, 1, num_classes]
+                
+                # ========== CALCOLO METRICHE DI INCERTEZZA ==========
+                
+                # 1. Mean prediction (predictive mean)
                 mean_probs = all_probs.mean(dim=0)  # [1, num_classes]
-                std_probs = all_probs.std(dim=0)    # [1, num_classes]
                 
-                # Logits dalla media
-                mean_logits = torch.log(mean_probs + 1e-8)
+                # 2. Predictive Entropy (entropia della media)
+                # H[p(y|x,D)] = -Σ_c p̄_c log(p̄_c)
+                predictive_entropy = -torch.sum(
+                    mean_probs * torch.log(mean_probs + 1e-10), 
+                    dim=1
+                )  # [1]
                 
-                # Incertezza: entropia o std media
-                uncertainty = std_probs.mean(dim=1)  # [1]
+                # 3. Expected Entropy (media delle entropie per sample)
+                # E[H[p(y|x,θ)]] = (1/T) Σ_t H[p_t]
+                per_sample_entropy = -torch.sum(
+                    all_probs * torch.log(all_probs + 1e-10),
+                    dim=2
+                )  # [num_mc_samples, 1]
+                expected_entropy = per_sample_entropy.mean(dim=0)  # [1]
+                
+                # 4. BALD (Mutual Information)
+                # I[y,θ|x,D] = H[p(y|x,D)] - E[H[p(y|x,θ)]]
+                mutual_information = predictive_entropy - expected_entropy  # [1]
+                
+                # 5. Mean Variance (varianza predittiva media)
+                # Var[p(y|x)] = E[p²] - E[p]²
+                predictive_variance = all_probs.var(dim=0)  # [1, num_classes]
+                mean_variance = predictive_variance.mean(dim=1)  # [1]
+                
+                # 6. Variation Ratio (disaccordo sulla classe predetta)
+                # 1 - (freq_moda / T)
+                pred_classes = all_probs.argmax(dim=2)  # [num_mc_samples, 1]
+                mode_class = torch.mode(pred_classes, dim=0)[0]  # [1]
+                variation_ratio = 1.0 - (pred_classes == mode_class).float().mean(dim=0)  # [1]
+                
+                # ========== STACK DI TUTTE LE METRICHE ==========
+                # Shape finale: [1, 4]
+                uncertainty_vector = torch.stack([
+                    predictive_entropy,      # [1]
+                    mutual_information,      # [1]
+                    mean_variance,           # [1]
+                    variation_ratio          # [1]
+                ], dim=1)  # [1, 4]
+                
+                # Confidence (max probability)
                 confidence = mean_probs.max(dim=1)[0]  # [1]
                 
+                # Logits dalla media (per loss)
+                mean_logits = torch.log(mean_probs + 1e-10)  # [1, num_classes]
+                
                 batch_logits.append(mean_logits)
-                batch_uncertainties.append(uncertainty)
+                batch_uncertainties.append(uncertainty_vector)
                 batch_confidences.append(confidence)
                 
                 start_idx = end_idx
             
+            # ========== CONCATENA IL BATCH ==========
             logits = torch.cat(batch_logits, dim=0)  # [B, num_classes]
-            uncertainties = torch.cat(batch_uncertainties, dim=0)  # [B]
+            uncertainties = torch.cat(batch_uncertainties, dim=0)  # [B, 4]
             confidences = torch.cat(batch_confidences, dim=0)  # [B]
             
             loss = loss_func(logits, target)
             
             # ============================================
-            # STEP 4: Metriche
+            # STEP 4: Metriche di accuracy
             # ============================================
             
             if num_classes is None:
@@ -423,9 +625,10 @@ def test_epoch_mc_dropout(
             preds = probs.argmax(dim=1)
             target_eval = target.view(-1) if target.ndim > 1 else target
             
+            # ========== APPENDERE AI DATI GLOBALI ==========
             all_preds.append(preds.cpu())
             all_targets.append(target_eval.cpu())
-            all_uncertainties.append(uncertainties.cpu())
+            all_uncertainties.append(uncertainties.cpu())  # [B, 4]
             all_confidences.append(confidences.cpu())
             
             # Accuracy
@@ -449,7 +652,7 @@ def test_epoch_mc_dropout(
             run_acc.update(acc, n=not_nans)
             run_loss.update(loss.item(), n=not_nans)
             
-            # Logging
+            # Logging durante il test
             if is_main_process:
                 print(
                     f"MC-Dropout Testing {idx+1}/{len(loader)}, "
@@ -458,12 +661,22 @@ def test_epoch_mc_dropout(
                 )
             start_time = time.time()
     
-    # Disattiva MC-Dropout
+    # ========================================
+    # FINE LOOP PRINCIPALE - DISATTIVA MC-DROPOUT
+    # ========================================
     disable_mc_dropout(model)
     
     # Gestisci caso senza batch
     if num_classes is None:
-        return float('nan'), {}, np.array([]), np.array([])
+        return float('nan'), float('nan'), {}, np.array([]), np.array([])
+    
+    # ========================================
+    # CONCATENA TUTTI I BATCH
+    # ========================================
+    all_preds = torch.cat(all_preds, dim=0).numpy()  # [N]
+    all_targets = torch.cat(all_targets, dim=0).numpy()  # [N]
+    all_uncertainties = torch.cat(all_uncertainties, dim=0).numpy()  # [N, 4]
+    all_confidences = torch.cat(all_confidences, dim=0).numpy()  # [N]
     
     # Calcola accuracy per classe
     per_class_acc = {
@@ -472,85 +685,96 @@ def test_epoch_mc_dropout(
     }
     
     # Confusion matrix
-    all_preds = torch.cat(all_preds, dim=0).numpy()
-    all_targets = torch.cat(all_targets, dim=0).numpy()
-    all_uncertainties = torch.cat(all_uncertainties, dim=0).numpy()
-    
     cm = confusion_matrix(all_targets, all_preds, labels=np.arange(num_classes))
-
-    plot_uncertainty_analysis(
-        uncertainties=all_uncertainties,
-        targets=all_targets,
-        preds=all_preds,
-        save_dir=args.final_output_dir 
-    )
     
-    # Stampa riassunto
-    if is_main_process:
-        if logger:
+    # ========================================
+    # LOGGING E PLOTTING PER OGNI METRICA
+    # ========================================
+    metric_names = ['Predictive Entropy', 'BALD', 'Mean Variance', 'Variation Ratio']
+    
+    for metric_idx, metric_name in enumerate(metric_names):
+        uncertainties_metric = all_uncertainties[:, metric_idx]  # [N]
+        
+        # ========== LOGGING ==========
+        if is_main_process and logger:
+            correct_mask = (all_preds == all_targets)
+            correct_unc = uncertainties_metric[correct_mask]
+            incorrect_unc = uncertainties_metric[~correct_mask]
+            
             logger.info("")
             logger.info("=" * 80)
-            logger.info("MC-DROPOUT UNCERTAINTY ANALYSIS")
+            logger.info(f"MC-DROPOUT UNCERTAINTY ANALYSIS - {metric_name.upper()}")
             logger.info("=" * 80)
             
             # 1. Correttezza vs Incertezza
-            correct_mask = (all_preds == all_targets)
-            correct_unc = all_uncertainties[correct_mask]
-            incorrect_unc = all_uncertainties[~correct_mask]
-            
-            logger.info(f"Correct predictions:   mean_unc={correct_unc.mean():.4f} ± {correct_unc.std():.4f}")
-            logger.info(f"Incorrect predictions: mean_unc={incorrect_unc.mean():.4f} ± {incorrect_unc.std():.4f}")
+            logger.info(f"\nCorrect predictions:   {correct_unc.mean():.4f} ± {correct_unc.std():.4f}")
+            logger.info(f"Incorrect predictions: {incorrect_unc.mean():.4f} ± {incorrect_unc.std():.4f}")
             logger.info(f"Uncertainty gap:       {incorrect_unc.mean() - correct_unc.mean():.4f}")
-            logger.info("")
             
             # 2. Incertezza per classe
-            logger.info("Per-class uncertainty:")
+            logger.info(f"\nPer-class uncertainty:")
             for c in range(num_classes):
                 mask = (all_targets == c)
                 if mask.sum() > 0:
-                    class_unc = all_uncertainties[mask]
+                    class_unc = uncertainties_metric[mask]
                     logger.info(f"  Class {c}: {class_unc.mean():.4f} ± {class_unc.std():.4f} (n={mask.sum()})")
-            logger.info("")
             
             # 3. Rejection analysis
-            logger.info("Selective prediction (rejection thresholds):")
+            logger.info(f"\nSelective prediction (rejection thresholds):")
             for percentile in [50, 75, 90, 95]:
-                thresh = np.percentile(all_uncertainties, percentile)
-                keep_mask = all_uncertainties <= thresh
+                thresh = np.percentile(uncertainties_metric, percentile)
+                keep_mask = uncertainties_metric <= thresh
                 if keep_mask.sum() > 0:
                     remaining_acc = (all_preds[keep_mask] == all_targets[keep_mask]).mean()
                     rejected = (~keep_mask).sum()
                     logger.info(f"  Reject top {100-percentile}% (>{thresh:.4f}): "
-                        f"keep {keep_mask.sum()}/{len(all_preds)} samples, acc={remaining_acc:.4f}")
-            logger.info("")
+                        f"keep {keep_mask.sum()}/{len(all_preds)}, acc={remaining_acc:.4f}")
             
             # 4. Calibration bins
-            logger.info("Calibration (accuracy by uncertainty bin):")
-            bins = np.percentile(all_uncertainties, [0, 25, 50, 75, 100])
+            logger.info(f"\nCalibration (accuracy by uncertainty bin):")
+            bins = np.percentile(uncertainties_metric, [0, 25, 50, 75, 100])
             bin_labels = ['Low (0-25%)', 'Medium (25-50%)', 'High (50-75%)', 'Very High (75-100%)']
             
             for i in range(len(bins) - 1):
-                mask = (all_uncertainties >= bins[i]) & (all_uncertainties < bins[i+1])
+                mask = (uncertainties_metric >= bins[i]) & (uncertainties_metric < bins[i+1])
                 if mask.sum() > 0:
                     bin_acc = (all_preds[mask] == all_targets[mask]).mean()
                     logger.info(f"  {bin_labels[i]:20} [{bins[i]:.4f}, {bins[i+1]:.4f}): "
                         f"acc={bin_acc:.4f}, n={mask.sum()}")
-            logger.info("")
             
             # 5. Hard cases (top-10 più incerti)
-            logger.info("Top 10 most uncertain samples:")
-            top_uncertain_idx = np.argsort(all_uncertainties)[-10:]
+            logger.info(f"\nTop 10 most uncertain samples:")
+            top_uncertain_idx = np.argsort(uncertainties_metric)[-10:]
             for rank, idx in enumerate(top_uncertain_idx[::-1], 1):
-                logger.info(f"  {rank}. Sample {idx}: unc={all_uncertainties[idx]:.4f}, "
+                is_correct = all_preds[idx] == all_targets[idx]
+                logger.info(f"  {rank}. Sample {idx}: unc={uncertainties_metric[idx]:.4f}, "
                     f"pred={all_preds[idx]}, true={all_targets[idx]}, "
-                    f"{'✓' if all_preds[idx] == all_targets[idx] else '✗'}")
+                    f"{'✓ CORRECT' if is_correct else '✗ WRONG'}")
             
-            logger.info("=" * 80)
-            logger.info("")
-
-
-
-
+            logger.info("=" * 80 + "\n")
+        
+        # ========== PLOTTING ==========
+        save_dir = os.path.join(
+            args.final_output_dir,
+            f"uncertainty_{metric_name.replace(' ', '_').lower()}"
+        )
+        os.makedirs(save_dir, exist_ok=True)
+        
+        plot_uncertainty_analysis(
+            uncertainties=uncertainties_metric,
+            targets=all_targets,
+            preds=all_preds,
+            save_dir=save_dir,
+        )
+        
+        # Acceptance-rejection curve
+        plot_acceptance_rejection_curve(
+            all_uncertainties=uncertainties_metric,
+            all_preds=all_preds,
+            all_targets=all_targets,
+            save_path=save_dir,
+        )
+    
     return float(run_loss.avg), float(run_acc.avg), per_class_acc, cm, all_uncertainties
 
 # ============================================

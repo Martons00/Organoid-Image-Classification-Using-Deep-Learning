@@ -14,6 +14,9 @@ pwd
 source models/SwinUNETR/BRATS21/swin_unetr_env/bin/activate
 
 # Avvia il training
-python train.py --cfg config/training/SwinVit/trainig_kfold.yaml --oar_id $OAR_JOB_ID
+python testing_MC.py --cfg config/training/SwinUNETR/testing_MC.yaml --oar_id $OAR_JOB_ID
+python testing_MC.py --cfg config/training/DenseNet/testing_MC.yaml --oar_id $OAR_JOB_ID
+python testing_MC.py --cfg config/training/SwinVit/testing_MC.yaml --oar_id $OAR_JOB_ID
+python testing_MC.py --cfg config/training/Resnet18/testing_MC.yaml --oar_id $OAR_JOB_ID
 
 exit
