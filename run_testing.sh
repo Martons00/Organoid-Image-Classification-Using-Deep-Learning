@@ -1,19 +1,14 @@
 #!/bin/bash
 
-#OAR -q besteffort
-#OAR -l cpu=1,walltime=24:00:00
-#OAR -p esterel40
-#OAR -O OAR_%jobid%.out
-#OAR -E OAR_%jobid%.err
-
-set -euo pipefail
-lscpu
-nvidia-smi
-pwd
-# Attiva l'ambiente Python
 source models/SwinUNETR/BRATS21/swin_unetr_env/bin/activate
 
-# Avvia il training
-python train.py --cfg config/training/SwinUNETR/training_lr_5e-3_128.yaml --oar_id $OAR_JOB_ID
 
-exit
+# Test con 5 campioni, selezionando 32 slice
+python preprocessing/sliceSelector.py \
+    --input_dir /home/mraffael/martone_project/Organoids_Dataset/test_set/Cystiques \
+    --n_samples 5 \
+    --n_slices 32 \
+    --method feature_variance \
+    --save_path results_32slices.png
+
+
