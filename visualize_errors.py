@@ -8,7 +8,7 @@ import tifffile
 
 
 # Path to your predictions file
-predictions_folder = "outputs/OrganoidsINRIA/resnet18/01_H/01_part02/testing/errors_logs/"
+predictions_folder = "outputs/OrganoidsINRIA/resnet50/01_H/testing/errors_logs/"
 predictions_file = predictions_folder + "testing_errors.txt"  # Change this to your file path
 
 CLASSES = {
