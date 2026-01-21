@@ -88,6 +88,10 @@ _C.DATASET.roi_y = 128
 
 _C.DATASET.roi_z = 128
 
+_C.DATASET.slice_selection = False
+
+_C.DATASET.n_slices = 64
+
 # Augmentation settings
 
 _C.AUGMENTATION = CN()
@@ -280,6 +284,8 @@ def config_to_args(cfg):
     args.roi_x = cfg.DATASET.roi_x
     args.roi_y = cfg.DATASET.roi_y
     args.roi_z = cfg.DATASET.roi_z
+    args.slice_selection = cfg.DATASET.slice_selection
+    args.n_slices = cfg.DATASET.n_slices
     
     # Augmentation
     args.augmentation = cfg.AUGMENTATION.augmentation

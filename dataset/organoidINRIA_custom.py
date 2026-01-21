@@ -14,6 +14,7 @@ import tifffile as tiff
 # Dentro training/train.py
 import os
 import sys
+from .sliceSelector import SliceSelector
 
 # Calcola il path assoluto di project_root/tools
 TOOLS_PATH = os.path.abspath(os.path.join(__file__, '..', '..', 'tools'))
@@ -124,7 +125,7 @@ class OrganoidsINRIA3D(Dataset):
     Dataset PyTorch che indicizza solo i file .tif/.tiff appartenenti alle 3 classi CLASSES,
     senza alcuna classe di default. I file non riconosciuti vengono esclusi a monte.
     """
-    def __init__(self, root: str, exact_class_dir: bool = False):
+    def __init__(self, root: str, exact_class_dir: bool = False,slice_selection: bool = False,n_slices: int = 64):
         self.root = Path(root)
 
         # Raccoglie i file .tif/.tiff
@@ -158,6 +159,10 @@ class OrganoidsINRIA3D(Dataset):
         # array int64 per compatibilità con torch long
         self.labels = np.asarray(labels, dtype=np.int64)
         self.exact_class_dir = exact_class_dir
+        if slice_selection:
+            self.slice_selection = slice_selection
+            self.n_slices = n_slices
+            self.selector = SliceSelector(method='feature_variance')
 
     def __len__(self) -> int:
         return len(self.paths)
@@ -167,7 +172,6 @@ class OrganoidsINRIA3D(Dataset):
 
         # Caricamento lazy dell'immagine/volume
         vol_np = tiff.imread(p)
-
 
         y = int(self.labels[idx])
         label = torch.tensor(y, dtype=torch.long)
@@ -185,30 +189,56 @@ class OrganoidsINRIA3D(Dataset):
             vol_np = vol_np.astype(np.float32) / 255.0
         else:
             vol_np = vol_np.astype(np.float32)
-
-        # Aggiunge dimensione canale in testa → [1, D, H, W] o [1, 1, H, W] se 2D
-        vol_np = np.expand_dims(vol_np, axis=0)
-        vol = torch.from_numpy(vol_np)
-        try:
-            _, D, _, _ = vol.shape
+        
+        # SLICE SELECTION LOGIC
+        if self.slice_selection:
+            D = vol_np.shape[0]
+            target_slices = self.n_slices
+            
+            if D > target_slices:
+                # Selezione adattiva
+                selected_indices = self.selector.select_by_method(vol_np, target_slices)
+                vol_np = vol_np[selected_indices, ...]
+            elif D < target_slices:
+                # Padding se troppo poche slice
+                pad_z = target_slices - D
+                pad_z_front = pad_z // 2
+                pad_z_back = pad_z - pad_z_front
+                vol_np = np.pad(vol_np, ((pad_z_front, pad_z_back), (0, 0), (0, 0)), 
+                            mode='constant', constant_values=0)
+            # Se D == target_slices, usa tutte le slice
+            
+            # A questo punto vol_np ha esattamente target_slices slice
+            assert vol_np.shape[0] == target_slices, \
+                f"Shape mismatch: {vol_np.shape[0]} != {target_slices}"
+        
+        else:
+            # OLD LOGIC: resize to 128 slices
+            D = vol_np.shape[0]
             max_D = 128
+            
             if D > max_D:
-                # Selezione equispaziata di esattamente max_D indici
-                idx_d = torch.linspace(10, D - 1, steps=max_D, device=vol.device).round().to(torch.long)
-                idx_d = torch.clamp(idx_d, 10, D - 1)
-                vol = vol.index_select(1, idx_d)  # [B,C,max_D,H,W]
+                # Downsampling equispaziato
+                indices = np.linspace(10, D - 1, num=max_D, dtype=np.int64)
+                indices = np.clip(indices, 10, D - 1)
+                vol_np = vol_np[indices, ...]
             else:
-                # Padding a 128 z
+                # Padding a 128
                 pad_z = max_D - D
                 pad_z_front = pad_z // 2
                 pad_z_back = pad_z - pad_z_front
-                vol = torch.nn.functional.pad(vol, (0, 0, 0, 0, pad_z_front, pad_z_back), mode='constant', value=0)
-        except ValueError:
-            print(f"Errore nella forma del volume: {name}")
-            print(f"Forma volume originale: {vol.shape}")
+                vol_np = np.pad(vol_np, ((pad_z_front, pad_z_back), (0, 0), (0, 0)), 
+                            mode='constant', constant_values=0)
+            
+            assert vol_np.shape[0] == max_D, \
+                f"Shape mismatch after old logic: {vol_np.shape[0]} != {max_D}"
 
+        # Aggiunge dimensione canale in testa → [1, D, H, W]
+        vol_np = np.expand_dims(vol_np, axis=0)
+        vol = torch.from_numpy(vol_np)
 
         return {"vol": vol, "label": label, "name": name, "size": size, "path": p}
+
 
 import torch
 

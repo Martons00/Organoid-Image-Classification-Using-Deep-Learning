@@ -227,37 +227,38 @@ def main_worker(gpu, args, configs):
     mc_weighted = test_mc_metrics.get("weighted_avg", {})
     mc_micro = test_mc_metrics.get("micro_avg", {})
 
-    log(f"MC Accuracy: {mc_acc:.4f}")
-    log("Per-class metrics (MC):")
-    log("class | precision | recall | specificity | f1 | support")
-    for c in sorted(mc_per_class.keys()):
-        m = mc_per_class[c]
-        log(
-            f"{c:5d} | "
-            f"{m['precision']:.4f} | "
-            f"{m['recall']:.4f} | "
-            f"{m['specificity']:.4f} | "
-            f"{m['f1']:.4f} | "
-            f"{m['support']:7d}"
-        )
+    if args.dropout_rate > 0.0:
+        log(f"MC Accuracy: {mc_acc:.4f}")
+        log("Per-class metrics (MC):")
+        log("class | precision | recall | specificity | f1 | support")
+        for c in sorted(mc_per_class.keys()):
+            m = mc_per_class[c]
+            log(
+                f"{c:5d} | "
+                f"{m['precision']:.4f} | "
+                f"{m['recall']:.4f} | "
+                f"{m['specificity']:.4f} | "
+                f"{m['f1']:.4f} | "
+                f"{m['support']:7d}"
+            )
 
-    log("Macro avg (MC): "
-        f"precision={mc_macro.get('precision', 0.0):.4f}, "
-        f"recall={mc_macro.get('recall', 0.0):.4f}, "
-        f"specificity={mc_macro.get('specificity', 0.0):.4f}, "
-        f"f1={mc_macro.get('f1', 0.0):.4f}")
+        log("Macro avg (MC): "
+            f"precision={mc_macro.get('precision', 0.0):.4f}, "
+            f"recall={mc_macro.get('recall', 0.0):.4f}, "
+            f"specificity={mc_macro.get('specificity', 0.0):.4f}, "
+            f"f1={mc_macro.get('f1', 0.0):.4f}")
 
-    log("Weighted avg (MC): "
-        f"precision={mc_weighted.get('precision', 0.0):.4f}, "
-        f"recall={mc_weighted.get('recall', 0.0):.4f}, "
-        f"specificity={mc_weighted.get('specificity', 0.0):.4f}, "
-        f"f1={mc_weighted.get('f1', 0.0):.4f}")
+        log("Weighted avg (MC): "
+            f"precision={mc_weighted.get('precision', 0.0):.4f}, "
+            f"recall={mc_weighted.get('recall', 0.0):.4f}, "
+            f"specificity={mc_weighted.get('specificity', 0.0):.4f}, "
+            f"f1={mc_weighted.get('f1', 0.0):.4f}")
 
-    log("Micro avg (MC): "
-        f"precision={mc_micro.get('precision', 0.0):.4f}, "
-        f"recall={mc_micro.get('recall', 0.0):.4f}, "
-        f"specificity={mc_micro.get('specificity', 0.0):.4f}, "
-        f"f1={mc_micro.get('f1', 0.0):.4f}")
+        log("Micro avg (MC): "
+            f"precision={mc_micro.get('precision', 0.0):.4f}, "
+            f"recall={mc_micro.get('recall', 0.0):.4f}, "
+            f"specificity={mc_micro.get('specificity', 0.0):.4f}, "
+            f"f1={mc_micro.get('f1', 0.0):.4f}")
 
 
 
@@ -779,7 +780,7 @@ def _setup_data_test(args, logger, log):
     log("Test Dataset INFO:")
     
     # Carica dataset di test
-    test_dataset = OrganoidsINRIA3D(args.data_dir + "/test_set", exact_class_dir=args.exact_class)
+    test_dataset = OrganoidsINRIA3D(args.data_dir + "/test_set", exact_class_dir=args.exact_class, slice_selection=args.slice_selection, n_slices=args.n_slices)
     test_labels = test_dataset.labels
     num_classes = 3
     
@@ -828,7 +829,7 @@ def _setup_data(args, logger, log):
     log("Dataset INFO:")
     
     # Carica dataset
-    dataset = OrganoidsINRIA3D(args.data_dir + "/train_set", exact_class_dir=args.exact_class)
+    dataset = OrganoidsINRIA3D(args.data_dir + "/train_set", exact_class_dir=args.exact_class, slice_selection=args.slice_selection, n_slices=args.n_slices)
     labels = dataset.labels
     num_classes = 3
     

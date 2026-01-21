@@ -7,3 +7,4 @@ from __future__ import division
 from __future__ import print_function
 
 from .organoidINRIA_custom import OrganoidsINRIA3D,get_train_transforms,selective_augmentation
+from .sliceSelector import SliceSelector

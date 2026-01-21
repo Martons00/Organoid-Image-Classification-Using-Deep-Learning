@@ -277,6 +277,7 @@ def test_on_samples(input_dir, n_samples=5, n_slices=32, method='feature_varianc
             print(f"  Warning: Volume has only {D} slices, using all")
         else:
             selected_indices = selector.select_by_method(volume, n_slices)
+            vol = volume[selected_indices, ...]
             print(f"  Selected {len(selected_indices)} slices: {selected_indices[:5]}...{selected_indices[-5:]}")
         
         samples_data.append({
