@@ -142,23 +142,22 @@ class                  precision    recall   specificity      f1   support
 2026-01-13 11:53:37,124 INFO ================================================================================
 2026-01-13 11:53:37,124 INFO MC-DROPOUT UNCERTAINTY ANALYSIS - PREDICTIVE ENTROPY
 2026-01-13 11:53:37,124 INFO ================================================================================
-2026-01-13 11:53:37,124 INFO 
-Correct predictions:   0.3503 ± 0.2114
+2026-01-13 11:53:37,124 INFO Correct predictions:   0.3503 ± 0.2114
 2026-01-13 11:53:37,124 INFO Incorrect predictions: 0.5871 ± 0.1720
 2026-01-13 11:53:37,124 INFO Uncertainty gap:       0.2368
-2026-01-13 11:53:37,124 INFO 
-Per-class uncertainty:
+
+2026-01-13 11:53:37,124 INFO Per-class uncertainty:
 2026-01-13 11:53:37,124 INFO   Class 0: 0.3858 ± 0.1984 (n=40)
 2026-01-13 11:53:37,124 INFO   Class 1: 0.0883 ± 0.1024 (n=5)
 2026-01-13 11:53:37,124 INFO   Class 2: 0.3858 ± 0.2232 (n=37)
-2026-01-13 11:53:37,124 INFO 
-Selective prediction (rejection thresholds):
+
+2026-01-13 11:53:37,124 INFO Selective prediction (rejection thresholds):
 2026-01-13 11:53:37,125 INFO   Reject top 50% (>0.3243): keep 41/82, acc=0.9756
 2026-01-13 11:53:37,125 INFO   Reject top 25% (>0.5519): keep 61/82, acc=0.9672
 2026-01-13 11:53:37,125 INFO   Reject top 10% (>0.6589): keep 73/82, acc=0.9315
 2026-01-13 11:53:37,125 INFO   Reject top 5% (>0.6932): keep 77/82, acc=0.9351
-2026-01-13 11:53:37,125 INFO 
-Calibration (accuracy by uncertainty bin):
+
+2026-01-13 11:53:37,125 INFO Calibration (accuracy by uncertainty bin):
 2026-01-13 11:53:37,125 INFO   Low (0-25%)          [0.0007, 0.1867): acc=1.0000, n=21
 2026-01-13 11:53:37,125 INFO   Medium (25-50%)      [0.1867, 0.3243): acc=0.9500, n=20
 2026-01-13 11:53:37,125 INFO   High (50-75%)        [0.3243, 0.5519): acc=0.9500, n=20
@@ -181,23 +180,22 @@ Top 10 most uncertain samples:
 2026-01-13 11:53:37,847 INFO ================================================================================
 2026-01-13 11:53:37,847 INFO MC-DROPOUT UNCERTAINTY ANALYSIS - BALD
 2026-01-13 11:53:37,847 INFO ================================================================================
-2026-01-13 11:53:37,847 INFO 
-Correct predictions:   0.0062 ± 0.0044
+2026-01-13 11:53:37,847 INFO Correct predictions:   0.0062 ± 0.0044
 2026-01-13 11:53:37,847 INFO Incorrect predictions: 0.0085 ± 0.0054
 2026-01-13 11:53:37,847 INFO Uncertainty gap:       0.0023
-2026-01-13 11:53:37,847 INFO 
-Per-class uncertainty:
+
+2026-01-13 11:53:37,847 INFO Per-class uncertainty:
 2026-01-13 11:53:37,847 INFO   Class 0: 0.0055 ± 0.0027 (n=40)
 2026-01-13 11:53:37,847 INFO   Class 1: 0.0086 ± 0.0095 (n=5)
 2026-01-13 11:53:37,847 INFO   Class 2: 0.0070 ± 0.0048 (n=37)
-2026-01-13 11:53:37,847 INFO 
-Selective prediction (rejection thresholds):
+
+2026-01-13 11:53:37,847 INFO Selective prediction (rejection thresholds):
 2026-01-13 11:53:37,848 INFO   Reject top 50% (>0.0050): keep 41/82, acc=0.9512
 2026-01-13 11:53:37,848 INFO   Reject top 25% (>0.0062): keep 61/82, acc=0.9344
 2026-01-13 11:53:37,848 INFO   Reject top 10% (>0.0119): keep 73/82, acc=0.9315
 2026-01-13 11:53:37,848 INFO   Reject top 5% (>0.0162): keep 77/82, acc=0.9351
-2026-01-13 11:53:37,848 INFO 
-Calibration (accuracy by uncertainty bin):
+
+2026-01-13 11:53:37,848 INFO Calibration (accuracy by uncertainty bin):
 2026-01-13 11:53:37,848 INFO   Low (0-25%)          [0.0001, 0.0040): acc=0.9524, n=21
 2026-01-13 11:53:37,848 INFO   Medium (25-50%)      [0.0040, 0.0050): acc=0.9500, n=20
 2026-01-13 11:53:37,848 INFO   High (50-75%)        [0.0050, 0.0062): acc=0.9000, n=20
@@ -220,23 +218,22 @@ Top 10 most uncertain samples:
 2026-01-13 11:53:38,570 INFO ================================================================================
 2026-01-13 11:53:38,570 INFO MC-DROPOUT UNCERTAINTY ANALYSIS - MEAN VARIANCE
 2026-01-13 11:53:38,570 INFO ================================================================================
-2026-01-13 11:53:38,570 INFO 
-Correct predictions:   0.0007 ± 0.0008
+2026-01-13 11:53:38,570 INFO Correct predictions:   0.0007 ± 0.0008
 2026-01-13 11:53:38,570 INFO Incorrect predictions: 0.0016 ± 0.0010
 2026-01-13 11:53:38,570 INFO Uncertainty gap:       0.0009
-2026-01-13 11:53:38,570 INFO 
-Per-class uncertainty:
+
+2026-01-13 11:53:38,570 INFO Per-class uncertainty:
 2026-01-13 11:53:38,570 INFO   Class 0: 0.0007 ± 0.0005 (n=40)
 2026-01-13 11:53:38,570 INFO   Class 1: 0.0005 ± 0.0007 (n=5)
 2026-01-13 11:53:38,570 INFO   Class 2: 0.0010 ± 0.0011 (n=37)
-2026-01-13 11:53:38,570 INFO 
-Selective prediction (rejection thresholds):
+
+2026-01-13 11:53:38,570 INFO Selective prediction (rejection thresholds):
 2026-01-13 11:53:38,571 INFO   Reject top 50% (>0.0006): keep 41/82, acc=1.0000
 2026-01-13 11:53:38,571 INFO   Reject top 25% (>0.0011): keep 61/82, acc=0.9672
 2026-01-13 11:53:38,571 INFO   Reject top 10% (>0.0016): keep 73/82, acc=0.9315
 2026-01-13 11:53:38,571 INFO   Reject top 5% (>0.0019): keep 77/82, acc=0.9351
-2026-01-13 11:53:38,571 INFO 
-Calibration (accuracy by uncertainty bin):
+
+2026-01-13 11:53:38,571 INFO Calibration (accuracy by uncertainty bin):
 2026-01-13 11:53:38,572 INFO   Low (0-25%)          [0.0000, 0.0002): acc=1.0000, n=21
 2026-01-13 11:53:38,572 INFO   Medium (25-50%)      [0.0002, 0.0006): acc=1.0000, n=20
 2026-01-13 11:53:38,572 INFO   High (50-75%)        [0.0006, 0.0011): acc=0.9000, n=20
