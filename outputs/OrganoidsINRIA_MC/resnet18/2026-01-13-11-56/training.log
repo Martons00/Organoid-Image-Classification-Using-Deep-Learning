@@ -143,29 +143,28 @@ class                  precision    recall   specificity      f1   support
 2026-01-13 11:56:12,714 INFO ================================================================================
 2026-01-13 11:56:12,714 INFO MC-DROPOUT UNCERTAINTY ANALYSIS - PREDICTIVE ENTROPY
 2026-01-13 11:56:12,715 INFO ================================================================================
-2026-01-13 11:56:12,715 INFO 
-Correct predictions:   0.1872 ± 0.2323
+2026-01-13 11:56:12,715 INFO Correct predictions:   0.1872 ± 0.2323
 2026-01-13 11:56:12,715 INFO Incorrect predictions: 0.5506 ± 0.2046
 2026-01-13 11:56:12,715 INFO Uncertainty gap:       0.3634
-2026-01-13 11:56:12,715 INFO 
-Per-class uncertainty:
+
+2026-01-13 11:56:12,715 INFO Per-class uncertainty:
 2026-01-13 11:56:12,715 INFO   Class 0: 0.1346 ± 0.1973 (n=40)
 2026-01-13 11:56:12,715 INFO   Class 1: 0.6680 ± 0.2644 (n=5)
 2026-01-13 11:56:12,715 INFO   Class 2: 0.2577 ± 0.2341 (n=37)
-2026-01-13 11:56:12,715 INFO 
-Selective prediction (rejection thresholds):
+
+2026-01-13 11:56:12,715 INFO Selective prediction (rejection thresholds):
 2026-01-13 11:56:12,716 INFO   Reject top 50% (>0.1312): keep 41/82, acc=1.0000
 2026-01-13 11:56:12,716 INFO   Reject top 25% (>0.3342): keep 61/82, acc=0.9836
 2026-01-13 11:56:12,716 INFO   Reject top 10% (>0.6685): keep 73/82, acc=0.9178
 2026-01-13 11:56:12,716 INFO   Reject top 5% (>0.7322): keep 77/82, acc=0.9091
-2026-01-13 11:56:12,716 INFO 
-Calibration (accuracy by uncertainty bin):
+
+2026-01-13 11:56:12,716 INFO Calibration (accuracy by uncertainty bin):
 2026-01-13 11:56:12,716 INFO   Low (0-25%)          [0.0001, 0.0325): acc=1.0000, n=21
 2026-01-13 11:56:12,716 INFO   Medium (25-50%)      [0.0325, 0.1312): acc=1.0000, n=20
 2026-01-13 11:56:12,717 INFO   High (50-75%)        [0.1312, 0.3342): acc=0.9500, n=20
 2026-01-13 11:56:12,717 INFO   Very High (75-100%)  [0.3342, 1.0776): acc=0.6500, n=20
-2026-01-13 11:56:12,717 INFO 
-Top 10 most uncertain samples:
+
+2026-01-13 11:56:12,717 INFO Top 10 most uncertain samples:
 2026-01-13 11:56:12,717 INFO   1. Sample 44: unc=1.0776, pred=1, true=1, ✓ CORRECT
 2026-01-13 11:56:12,717 INFO   2. Sample 59: unc=0.9225, pred=0, true=2, ✗ WRONG
 2026-01-13 11:56:12,717 INFO   3. Sample 42: unc=0.7487, pred=1, true=1, ✓ CORRECT

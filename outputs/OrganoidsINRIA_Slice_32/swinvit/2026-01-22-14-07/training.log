@@ -1,0 +1,409 @@
+2026-01-22 14:07:08,444 INFO Log directory: outputs/OrganoidsINRIA_Slice_32/swinvit/2026-01-22-14-07
+2026-01-22 14:07:08,446 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 6,
+ 'cache_dataset': False,
+ 'checkpoint_path': None,
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'dataset_name': 'OrganoidsINRIA_Slice_32',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 300,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'swinvit',
+ 'momentum': 0.99,
+ 'n_slices': 32,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2214410,
+ 'optim_lr': 0.001,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/',
+ 'pretrained_model_name': 'model_swinvit.pt',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 128,
+ 'roi_y': 128,
+ 'roi_z': 32,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'slice_selection': True,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 8,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+2026-01-22 14:07:08,446 INFO 
+2026-01-22 14:07:08,451 INFO Saved configuration to: outputs/OrganoidsINRIA_Slice_32/swinvit/2026-01-22-14-07/config.txt
+2026-01-22 14:07:08,934 INFO Using GPU: 0
+2026-01-22 14:07:08,934 INFO 
+2026-01-22 14:07:08,934 INFO Model INFO:
+2026-01-22 14:07:08,934 INFO Model architecture: swinvit
+2026-01-22 14:07:09,257 INFO Using pretrained weights
+2026-01-22 14:07:09,257 INFO => loading pretrained model './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/model_swinvit.pt'
+2026-01-22 14:07:09,412 INFO Missing keys when loading pretrained: 33
+2026-01-22 14:07:09,412 INFO Unexpected keys when loading pretrained: 8
+2026-01-22 14:07:09,414 INFO Using SwinViT with Single Linear Classification Head
+2026-01-22 14:07:09,416 INFO Total trainable parameters: 8,064,309
+2026-01-22 14:07:09,425 INFO 
+2026-01-22 14:07:09,425 INFO Optimizer INFO:
+2026-01-22 14:07:09,426 INFO Using optimizer: adamw with lr=0.001, weight_decay=5e-05
+2026-01-22 14:07:09,426 INFO 
+2026-01-22 14:07:09,426 INFO Dataset INFO:
+2026-01-22 14:07:09,434 INFO Dataset length: 721
+2026-01-22 14:07:09,434 INFO Class distribution in entire dataset:
+2026-01-22 14:07:09,434 INFO   Class 0: 351
+2026-01-22 14:07:09,434 INFO   Class 1: 38
+2026-01-22 14:07:09,434 INFO   Class 2: 332
+2026-01-22 14:07:09,434 INFO 
+Using split method: stratified
+2026-01-22 14:07:09,435 INFO 
+Train set balance:
+2026-01-22 14:07:09,436 INFO 
+Val set balance:
+2026-01-22 14:07:09,436 INFO Training set length: 577
+2026-01-22 14:07:09,436 INFO Validation set length: 144
+2026-01-22 14:07:09,436 INFO 
+Using standard shuffle for training
+2026-01-22 14:07:09,436 INFO Training loader: 96 batches
+2026-01-22 14:07:09,436 INFO Validation loader: 24 batches
+2026-01-22 14:07:09,436 INFO 
+Class distribution in training set:
+2026-01-22 14:07:09,436 INFO   Class 0: 281 (48.7%)
+2026-01-22 14:07:09,436 INFO   Class 1: 30 (5.2%)
+2026-01-22 14:07:09,436 INFO   Class 2: 266 (46.1%)
+2026-01-22 14:07:09,436 INFO Class distribution in validation set:
+2026-01-22 14:07:09,436 INFO   Class 0: 70 (48.6%)
+2026-01-22 14:07:09,436 INFO   Class 1: 8 (5.6%)
+2026-01-22 14:07:09,436 INFO   Class 2: 66 (45.8%)
+2026-01-22 14:07:09,436 INFO **************************************************
+2026-01-22 14:07:09,446 INFO Class weights: [ 6.845  64.111  7.231]
+2026-01-22 14:07:09,446 INFO 
+2026-01-22 14:07:09,446 INFO Test Dataset INFO:
+2026-01-22 14:07:09,482 INFO Test Dataset length: 82
+2026-01-22 14:07:09,482 INFO Class distribution in test dataset:
+2026-01-22 14:07:09,482 INFO   Class 0: 40
+2026-01-22 14:07:09,482 INFO   Class 1: 5
+2026-01-22 14:07:09,482 INFO   Class 2: 37
+2026-01-22 14:07:09,482 INFO Test loader: 14 batches
+2026-01-22 14:07:09,482 INFO **************************************************
+2026-01-22 14:07:09,482 INFO 
+2026-01-22 14:07:09,482 INFO Using loss function: CE
+2026-01-22 14:07:09,486 INFO **************************************************
+2026-01-22 14:07:09,486 INFO Starting training...
+2026-01-22 14:07:09,488 INFO 0 Thu Jan 22 14:07:09 2026 Epoch: 1
+2026-01-22 14:08:44,447 INFO Final training 1/300, loss: 1.1290, time 94.96s, lr: 0.000000
+Accuracy: 0.059
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.000     0.000         1.000   0.000       281
+1                          0.049     0.900         0.044   0.093        30
+2                          0.259     0.026         0.936   0.048       265
+*----------------------------------------*
+2026-01-22 14:08:44,829 INFO 0 Thu Jan 22 14:08:44 2026 Epoch: 2
+2026-01-22 14:10:21,178 INFO Final training 2/300, loss: 1.2144, time 96.35s, lr: 0.000250
+Accuracy: 0.462
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.527     0.529         0.551   0.528       280
+1                          0.046     0.100         0.886   0.063        30
+2                          0.500     0.432         0.629   0.464       266
+*----------------------------------------*
+2026-01-22 14:11:58,408 INFO Final validation 2/300, Val_acc: 0.4583, time 97.23sAccuracy: 0.486
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.486     1.000         0.000   0.654        70
+1                          0.000     0.000         1.000   0.000         8
+2                          0.000     0.000         1.000   0.000        66
+*========================================*
+2026-01-22 14:11:58,408 INFO New best (0.000000 --> 0.458333)
+2026-01-22 14:12:01,189 INFO Copying best model to best_model.pt
+2026-01-22 14:12:02,006 INFO 0 Thu Jan 22 14:12:02 2026 Epoch: 3
+2026-01-22 14:13:35,393 INFO Final training 3/300, loss: 1.0959, time 93.39s, lr: 0.000500
+Accuracy: 0.477
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.524     0.463         0.600   0.491       281
+1                          0.077     0.133         0.912   0.098        30
+2                          0.511     0.532         0.566   0.521       265
+*----------------------------------------*
+2026-01-22 14:13:35,393 INFO 0 Thu Jan 22 14:13:35 2026 Epoch: 4
+2026-01-22 14:15:11,085 INFO Final training 4/300, loss: 1.0073, time 95.69s, lr: 0.000750
+Accuracy: 0.545
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.577     0.466         0.675   0.516       281
+1                          0.171     0.200         0.947   0.185        30
+2                          0.564     0.668         0.559   0.611       265
+*----------------------------------------*
+2026-01-22 14:16:47,977 INFO Final validation 4/300, Val_acc: 0.6020, time 96.89sAccuracy: 0.632
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.750     0.429         0.865   0.545        70
+1                          0.250     0.125         0.978   0.167         8
+2                          0.600     0.909         0.487   0.723        66
+*========================================*
+2026-01-22 14:16:47,977 INFO New best (0.458333 --> 0.601968)
+2026-01-22 14:16:50,747 INFO Copying best model to best_model.pt
+2026-01-22 14:16:51,592 INFO 0 Thu Jan 22 14:16:51 2026 Epoch: 5
+2026-01-22 14:18:25,936 INFO Final training 5/300, loss: 1.0033, time 94.34s, lr: 0.001000
+Accuracy: 0.533
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.582     0.432         0.706   0.496       280
+1                          0.097     0.200         0.897   0.130        30
+2                          0.588     0.677         0.594   0.629       266
+*----------------------------------------*
+2026-01-22 14:18:25,936 INFO 0 Thu Jan 22 14:18:25 2026 Epoch: 6
+2026-01-22 14:20:02,117 INFO Final training 6/300, loss: 1.0399, time 96.18s, lr: 0.001000
+Accuracy: 0.509
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.523     0.480         0.583   0.501       281
+1                          0.077     0.033         0.978   0.047        30
+2                          0.515     0.592         0.524   0.551       265
+*----------------------------------------*
+2026-01-22 14:21:39,094 INFO Final validation 6/300, Val_acc: 0.4641, time 96.98sAccuracy: 0.486
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.800     0.057         0.986   0.107        70
+1                          0.000     0.000         1.000   0.000         8
+2                          0.475     1.000         0.064   0.644        66
+*========================================*
+2026-01-22 14:21:40,353 INFO 0 Thu Jan 22 14:21:40 2026 Epoch: 7
+2026-01-22 14:23:13,721 INFO Final training 7/300, loss: 1.0400, time 93.37s, lr: 0.001000
+Accuracy: 0.497
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.506     0.484         0.549   0.495       281
+1                          0.220     0.300         0.941   0.254        30
+2                          0.530     0.532         0.598   0.531       265
+*----------------------------------------*
+2026-01-22 14:23:13,721 INFO 0 Thu Jan 22 14:23:13 2026 Epoch: 8
+2026-01-22 14:24:47,432 INFO Final training 8/300, loss: 0.9916, time 93.71s, lr: 0.001000
+Accuracy: 0.536
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.575     0.371         0.740   0.451       280
+1                          0.102     0.200         0.903   0.135        30
+2                          0.592     0.748         0.558   0.661       266
+*----------------------------------------*
+2026-01-22 14:26:24,389 INFO Final validation 8/300, Val_acc: 0.3620, time 96.96sAccuracy: 0.479
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.481     0.186         0.811   0.268        70
+1                          0.057     0.250         0.757   0.093         8
+2                          0.659     0.818         0.641   0.730        66
+*========================================*
+2026-01-22 14:26:25,700 INFO 0 Thu Jan 22 14:26:25 2026 Epoch: 9
+2026-01-22 14:27:59,211 INFO Final training 9/300, loss: 1.0174, time 93.51s, lr: 0.001000
+Accuracy: 0.533
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.585     0.443         0.703   0.504       280
+1                          0.048     0.100         0.892   0.065        30
+2                          0.596     0.677         0.606   0.634       266
+*----------------------------------------*
+2026-01-22 14:27:59,212 INFO 0 Thu Jan 22 14:27:59 2026 Epoch: 10
+2026-01-22 14:29:32,446 INFO Final training 10/300, loss: 0.9886, time 93.23s, lr: 0.001000
+Accuracy: 0.559
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.626     0.407         0.770   0.494       280
+1                          0.065     0.100         0.921   0.079        30
+2                          0.589     0.771         0.539   0.668       266
+*----------------------------------------*
+2026-01-22 14:31:09,721 INFO Final validation 10/300, Val_acc: 0.6352, time 97.27sAccuracy: 0.688
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.737     0.600         0.797   0.661        70
+1                          0.000     0.000         1.000   0.000         8
+2                          0.655     0.864         0.615   0.745        66
+*========================================*
+2026-01-22 14:31:09,721 INFO New best (0.601968 --> 0.635185)
+2026-01-22 14:31:12,344 INFO Copying best model to best_model.pt
+2026-01-22 14:31:13,192 INFO 0 Thu Jan 22 14:31:13 2026 Epoch: 11
+2026-01-22 14:32:44,957 INFO Final training 11/300, loss: 1.0180, time 91.76s, lr: 0.000999
+Accuracy: 0.589
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.570     0.686         0.510   0.622       280
+1                          0.000     0.000         0.995   0.000        30
+2                          0.623     0.553         0.713   0.586       266
+*----------------------------------------*
+2026-01-22 14:32:45,418 INFO 0 Thu Jan 22 14:32:45 2026 Epoch: 12
+2026-01-22 14:34:19,211 INFO Final training 12/300, loss: 1.0220, time 93.79s, lr: 0.000999
+Accuracy: 0.556
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.582     0.605         0.586   0.593       281
+1                          0.067     0.103         0.923   0.081        29
+2                          0.615     0.553         0.703   0.582       266
+*----------------------------------------*
+2026-01-22 14:35:56,161 INFO Final validation 12/300, Val_acc: 0.6212, time 96.95sAccuracy: 0.674
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.727     0.571         0.797   0.640        70
+1                          0.000     0.000         1.000   0.000         8
+2                          0.640     0.864         0.590   0.735        66
+*========================================*
+2026-01-22 14:35:57,481 INFO 0 Thu Jan 22 14:35:57 2026 Epoch: 13
+2026-01-22 14:37:31,112 INFO Final training 13/300, loss: 0.9561, time 93.63s, lr: 0.000999
+Accuracy: 0.609
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.640     0.514         0.726   0.570       280
+1                          0.077     0.033         0.978   0.047        30
+2                          0.609     0.774         0.574   0.682       266
+*----------------------------------------*
+2026-01-22 14:37:31,112 INFO 0 Thu Jan 22 14:37:31 2026 Epoch: 14
+2026-01-22 14:39:05,124 INFO Final training 14/300, loss: 0.9659, time 94.01s, lr: 0.000998
+Accuracy: 0.592
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.605     0.546         0.662   0.574       280
+1                          0.000     0.000         0.956   0.000        30
+2                          0.629     0.707         0.642   0.665       266
+*----------------------------------------*
+2026-01-22 14:40:42,186 INFO Final validation 14/300, Val_acc: 0.6236, time 97.06sAccuracy: 0.667
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.672     0.643         0.703   0.657        70
+1                          0.000     0.000         1.000   0.000         8
+2                          0.662     0.773         0.667   0.713        66
+*========================================*
+2026-01-22 14:40:43,455 INFO 0 Thu Jan 22 14:40:43 2026 Epoch: 15
+2026-01-22 14:42:18,848 INFO Final training 15/300, loss: 0.9537, time 95.39s, lr: 0.000998
+Accuracy: 0.590
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.614     0.537         0.678   0.573       281
+1                          0.107     0.100         0.954   0.103        30
+2                          0.616     0.702         0.627   0.656       265
+*----------------------------------------*
+2026-01-22 14:42:18,848 INFO 0 Thu Jan 22 14:42:18 2026 Epoch: 16
+2026-01-22 14:43:53,900 INFO Final training 16/300, loss: 0.9890, time 95.05s, lr: 0.000997
+Accuracy: 0.590
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.661     0.446         0.784   0.533       280
+1                          0.094     0.100         0.947   0.097        30
+2                          0.597     0.797         0.539   0.683       266
+*----------------------------------------*
+2026-01-22 14:45:31,123 INFO Final validation 16/300, Val_acc: 0.5742, time 97.22sAccuracy: 0.625
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.602     0.757         0.527   0.671        70
+1                          0.000     0.000         1.000   0.000         8
+2                          0.661     0.561         0.756   0.607        66
+*========================================*
+2026-01-22 14:45:32,387 INFO 0 Thu Jan 22 14:45:32 2026 Epoch: 17
+2026-01-22 14:47:06,180 INFO Final training 17/300, loss: 0.9854, time 93.79s, lr: 0.000997
+Accuracy: 0.618
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.635     0.564         0.693   0.597       280
+1                          0.000     0.000         0.996   0.000        30
+2                          0.609     0.744         0.590   0.670       266
+*----------------------------------------*
+2026-01-22 14:47:06,181 INFO 0 Thu Jan 22 14:47:06 2026 Epoch: 18
+2026-01-22 14:48:39,688 INFO Final training 18/300, loss: 1.0023, time 93.51s, lr: 0.000996
+Accuracy: 0.562
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.576     0.568         0.605   0.572       280
+1                          0.000     0.000         0.998   0.000        30
+2                          0.552     0.620         0.568   0.584       266
+*----------------------------------------*
+2026-01-22 14:50:16,833 INFO Final validation 18/300, Val_acc: 0.4583, time 97.14sAccuracy: 0.486
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.486     1.000         0.000   0.654        70
+1                          0.000     0.000         1.000   0.000         8
+2                          0.000     0.000         1.000   0.000        66
+*========================================*
+2026-01-22 14:50:18,115 INFO 0 Thu Jan 22 14:50:18 2026 Epoch: 19
+2026-01-22 14:51:51,442 INFO Final training 19/300, loss: 1.0373, time 93.33s, lr: 0.000995
+Accuracy: 0.521
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.534     0.480         0.600   0.506       281
+1                          0.059     0.033         0.971   0.043        30
+2                          0.536     0.619         0.543   0.574       265
+*----------------------------------------*
+2026-01-22 14:51:51,442 INFO 0 Thu Jan 22 14:51:51 2026 Epoch: 20
+2026-01-22 14:53:25,348 INFO Final training 20/300, loss: 1.0562, time 93.91s, lr: 0.000994
+Accuracy: 0.446
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.514     0.399         0.641   0.449       281
+1                          0.083     0.200         0.879   0.118        30
+2                          0.486     0.525         0.527   0.505       265
+*----------------------------------------*
+2026-01-22 14:55:02,130 INFO Final validation 20/300, Val_acc: 0.4468, time 96.78sAccuracy: 0.472
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.600     0.043         0.973   0.080        70
+1                          0.000     0.000         1.000   0.000         8
+2                          0.468     0.985         0.051   0.634        66
+*========================================*
+2026-01-22 14:55:03,417 INFO 0 Thu Jan 22 14:55:03 2026 Epoch: 21
+2026-01-22 14:56:38,047 INFO Final training 21/300, loss: 1.0023, time 94.63s, lr: 0.000994
+Accuracy: 0.491
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.502     0.432         0.595   0.464       280
+1                          0.226     0.233         0.956   0.230        30
+2                          0.510     0.583         0.519   0.544       266
+*----------------------------------------*
+2026-01-22 14:56:38,473 INFO 0 Thu Jan 22 14:56:38 2026 Epoch: 22
+2026-01-22 14:58:13,615 INFO Final training 22/300, loss: 0.9466, time 95.14s, lr: 0.000993
+Accuracy: 0.483
+class                  precision    recall   specificity      f1   support
+--------------------------------------------------------------------------
+0                          0.482     0.343         0.652   0.401       280
+1                          0.169     0.333         0.910   0.225        30
+2                          0.541     0.647         0.529   0.589       266
+*----------------------------------------*
