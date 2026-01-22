@@ -61,7 +61,7 @@ TRAINING:
   folds: false
   k_folds: 5
   lrschedule: warmup_cosine
-  max_epochs: 150
+  max_epochs: 300
   min_delta_loss: 0.001
   min_delta_val: 0.01
   momentum: 0.99
