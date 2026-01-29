@@ -41,8 +41,10 @@ def extract_magnification(filename):
     """Estrae magnification dal nome del file"""
     if "x20" in filename.lower() or "20x" in filename.lower():
         return "20x"
-    else:
+    elif "x40" in filename.lower() or "40x" in filename.lower():
         return "40x"  # Default
+    else:
+        return "20x"
 
 def create_organoid_database(folder_path, output_file="organoid_db.json"):
     """Crea database JSON con metadati di tutti i .tif nella cartella"""
@@ -108,9 +110,11 @@ def query_database(db_file="organoid_db.json", **filters):
 # ============= USO =============
 if __name__ == "__main__":
     # # 1. CREA DATABASE
-    # url = '/Volumes/Elements/Organoides/Noyaux/Cystiques'
+    urls = ['/Volumes/Elements/Organoides/Noyaux/Chouxfleurs','/Volumes/Elements/Organoides/Noyaux/Compact','/Volumes/Elements/Organoides/Noyaux/Cystiques']
     output_files = ["organoid_chouxfleurs.json","organoid_compact.json","organoid_cystiques.json"]
-    # db = create_organoid_database(url, output_file=output_file)
+    # for url, output_file in zip(urls, output_files):
+    #     db = create_organoid_database(url, output_file=output_file)
+
     labs = ["Metatox (Paris)", "IPMC (Nice)"]
     magnifications = ["20x", "40x"]
     formats = ["uint8", "uint16"]
@@ -120,16 +124,20 @@ if __name__ == "__main__":
     for output_file in output_files:
         print(f"\n=== {output_file} ===")
         for lab in labs:
-            for mag in magnifications:
-                for fmt in formats:
-                    for res in resolutions:
-                        results = query_database(
-                            db_file=output_file,
-                            lab=lab,
-                            magnification=mag,
-                            format=fmt,
-                            resolution=res
-                        )
-                        if results:
-                            print(f"\n--- Risultati per Lab: {lab}, Mag: {mag}, Format: {fmt}, Res: {res} --- total: {len(results)}")
-        
+        #for mag in magnifications:
+            #for fmt in formats:
+                #for res in resolutions:
+                    results = query_database(
+                        db_file=output_file,
+                        lab=lab,
+                        #magnification=mag,
+                        #format=fmt,
+                        #resolution=res
+                    )
+                    if results:
+                        #print(f"\n--- Risultati per Lab: {lab}, Mag: {mag}, Format: {fmt}, Res: {res} --- total: {len(results)}")
+                        #print(f"\n--- Risultati Format: {fmt}, Res: {res} --- total: {len(results)}")
+                        #print(f"\n--- Risultati Mag: {mag}, Res: {res} --- total: {len(results)}")
+                        #print(f"\n--- Risultati Mag: {mag}, Format: {fmt} --- total: {len(results)}")
+                        print(f"\n--- Risultati Lab: {lab} --- total: {len(results)}")
+
