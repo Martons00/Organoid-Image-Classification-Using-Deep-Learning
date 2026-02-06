@@ -128,6 +128,9 @@ class OrganoidsINRIA3D(Dataset):
     def __init__(self, root: str, exact_class_dir: bool = False,slice_selection: bool = False,n_slices: int = 64):
         self.root = Path(root)
 
+        self.slice_selection = slice_selection
+        self.n_slices = n_slices
+
         # Raccoglie i file .tif/.tiff
         all_paths = sorted({*(str(p) for p in self.root.rglob("*.tif")),
                             *(str(p) for p in self.root.rglob("*.tiff"))})
@@ -160,7 +163,6 @@ class OrganoidsINRIA3D(Dataset):
         self.labels = np.asarray(labels, dtype=np.int64)
         self.exact_class_dir = exact_class_dir
         if slice_selection:
-            self.slice_selection = slice_selection
             self.n_slices = n_slices
             self.selector = SliceSelector(method='feature_variance')
 
@@ -264,7 +266,9 @@ if __name__ == "__main__":
     # Matching per sottostringa: include solo i file che contengono una delle 3 classi nel percorso
     ds = OrganoidsINRIA3D(
         root="/home/mraffael/martone_project/Organoids_Dataset_256",
-        exact_class_dir=False
+        exact_class_dir=False,
+        slice_selection=True,
+        n_slices=64
     )
     dl = torch.utils.data.DataLoader(ds, batch_size=1, shuffle=False)
     count = 0

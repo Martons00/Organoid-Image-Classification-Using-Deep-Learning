@@ -296,9 +296,9 @@ def main():
     parser = argparse.ArgumentParser(description='Test adaptive slice selection on samples')
     parser.add_argument('--input_dir', type=str, required=True,
                         help='Directory containing TIFF files')
-    parser.add_argument('--n_samples', type=int, default=5,
+    parser.add_argument('--n_samples', type=int, default=4,
                         help='Number of samples to process (default: 5)')
-    parser.add_argument('--n_slices', type=int, default=32,
+    parser.add_argument('--n_slices', type=int, default=8,
                         help='Number of slices to select (default: 32)')
     parser.add_argument('--method', type=str, default='feature_variance',
                         choices=['feature_variance', 'ssim_dissimilarity', 'entropy', 'gradient'],

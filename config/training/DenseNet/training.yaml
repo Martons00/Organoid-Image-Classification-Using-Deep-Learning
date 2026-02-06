@@ -6,16 +6,14 @@ AUGMENTATION:
   augmentation: true
 DATASET:
   cache_dataset: false
-  data_dir: /home/mraffael/martone_project/Organoids_Dataset_128/
+  data_dir: /home/mraffael/martone_project/Organoids_Dataset/
   exact_class: false
   fold: 0
   ignore_label: 3
-  name: OrganoidsINRIA_Slice
+  name: OrganoidsINRIA
   roi_x: 128
   roi_y: 128
-  roi_z: 64
-  slice_selection: true
-  n_slices: 64
+  roi_z: 128
 INFERENCE:
   infer_overlap: 0.5
 LOGGING:
@@ -25,17 +23,17 @@ LOSS:
   similarity_loss: ''
   similarity_loss_weight: 0.0
 MODEL:
-  checkpoint: ''
+  checkpoint: './outputs/OrganoidsINRIA/resnet18/01_H/01_part02/training/best_model.pt'
   dropout_path_rate: 0.0
   dropout_rate: 0.0
   encoder10_pth: ''
   feature_size: 48
   in_channels: 1
-  name: densenet
+  name: resnet18
   norm_name: instance
   out_channels: 1
-  pretrained_dir: ''
-  pretrained_model_name: ''
+  pretrained_dir: ./pretrained_models/resnet18/
+  pretrained_model_name: resnet_18.pth
   resume_ckpt: false
   spatial_dims: 3
   use_checkpoint: false
@@ -53,7 +51,7 @@ SYSTEM:
   workers: 8
   world_size: 1
 TRAINING:
-  batch_size: 2
+  batch_size: 6
   debug: false
   debug_train_samples: 40
   debug_val_samples: 10
@@ -61,12 +59,12 @@ TRAINING:
   folds: false
   k_folds: 5
   lrschedule: warmup_cosine
-  max_epochs: 300
+  max_epochs: 150
   min_delta_loss: 0.001
   min_delta_val: 0.01
   momentum: 0.99
   noamp: false
-  optim_lr: 0.01
+  optim_lr: 0.05
   optim_name: adamw
   patch_merging: false
   patience_loss: 40

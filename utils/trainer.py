@@ -31,6 +31,7 @@ from .funcs_training import train_epoch_pm, train_epoch
 from .funcs_validation import val_epoch_pm, val_epoch
 from .funcs_testing import test_epoch_pm, test_epoch
 from .funcs_mc_dropout import test_epoch_mc_dropout, plot_uncertainty_analysis
+from .func_inference_time import test_metrics_inference, test_metrics_inference_pm
 
 from .funcs_telegram import (
     send_alert,
@@ -627,6 +628,39 @@ def run_testing(
                     _send_telegram_plots_testing(args, metrics_plots_dir, cm_plots_dir)
     
     return test_acc,last_metrics
+
+def run_inference_time(
+    model,
+    test_loader,
+    acc_func,
+    loss_func,
+    args,
+    writer_dict=None,
+    final_output_dir=None,
+    logger=None,
+) -> tuple[float, dict]:
+    """
+    Loop di training principale con validation, early stopping e logging.
+    
+    Returns:
+        float: Best validation accuracy raggiunta
+    """
+    # Inizializza lo step
+    args.step= (args.roi_z, int(args.roi_y * 2 // 3), int(args.roi_x * 2 // 3))
+    args.final_output_dir = final_output_dir
+    
+    epoch_time = time.time()
+    if args.patch_merging:
+        metrics = test_metrics_inference_pm(
+            model, test_loader,  args=args,
+        )
+    else:
+        metrics = test_metrics_inference(
+            model, test_loader, args=args
+        )
+
+    
+    return metrics
 
 def run_mc_droput_testing(
     model,

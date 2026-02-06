@@ -10,9 +10,9 @@ DATASET:
   exact_class: false
   fold: 0
   ignore_label: 3
-  name: OrganoidsINRIA_Slice_32
-  roi_x: 128
-  roi_y: 128
+  name: OrganoidsINRIA_Slice_32x32x32
+  roi_x: 32
+  roi_y: 32
   roi_z: 32
   slice_selection: true
   n_slices: 32
@@ -66,7 +66,7 @@ TRAINING:
   min_delta_val: 0.01
   momentum: 0.99
   noamp: false
-  optim_lr: 0.01
+  optim_lr: 0.001
   optim_name: adamw
   patch_merging: false
   patience_loss: 40

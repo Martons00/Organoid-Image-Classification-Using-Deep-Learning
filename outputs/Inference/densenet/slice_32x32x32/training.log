@@ -1,0 +1,131 @@
+2026-02-05 14:29:35,941 INFO Log directory: outputs/Inference/densenet/2026-02-05-14-29
+2026-02-05 14:29:35,943 INFO {'RandFlipd_prob': 0.2,
+ 'RandRotate90d_prob': 0.2,
+ 'RandScaleIntensityd_prob': 0.1,
+ 'RandShiftIntensityd_prob': 0.1,
+ 'amp': True,
+ 'augmentation': True,
+ 'batch_size': 2,
+ 'cache_dataset': False,
+ 'checkpoint_path': None,
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_32/',
+ 'dataset_name': 'Inference',
+ 'debug': False,
+ 'debug_train_samples': 40,
+ 'debug_val_samples': 10,
+ 'dist_backend': 'nccl',
+ 'dist_url': 'tcp://127.0.0.1:23456',
+ 'distributed': False,
+ 'dropout_path_rate': 0.0,
+ 'dropout_rate': 0.0,
+ 'early_stopping': True,
+ 'encoder10_pth': '',
+ 'exact_class': False,
+ 'feature_size': 48,
+ 'fold': 0,
+ 'folds': False,
+ 'gpu': 0,
+ 'ignore_label': 3,
+ 'in_channels': 1,
+ 'infer_overlap': 0.5,
+ 'k_folds': 5,
+ 'logdir': 'test',
+ 'logs_dir': 'logs/',
+ 'loss_name': 'CE',
+ 'lrschedule': 'warmup_cosine',
+ 'max_epochs': 300,
+ 'min_delta_loss': 0.001,
+ 'min_delta_val': 0.01,
+ 'model_name': 'densenet',
+ 'momentum': 0.99,
+ 'n_slices': 32,
+ 'noamp': False,
+ 'norm_name': 'instance',
+ 'oar_id': 2240656,
+ 'optim_lr': 0.01,
+ 'optim_name': 'adamw',
+ 'out_channels': 1,
+ 'output_dir': 'outputs/',
+ 'patch_merging': False,
+ 'patience_loss': 40,
+ 'patience_val': 40,
+ 'pretrained_dir': '',
+ 'pretrained_model_name': '',
+ 'rank': 0,
+ 'reg_weight': 5e-05,
+ 'restart_T0': 20,
+ 'resume_ckpt': False,
+ 'roi_x': 32,
+ 'roi_y': 32,
+ 'roi_z': 32,
+ 'save_checkpoint': True,
+ 'seed': 3,
+ 'similarity_loss': '',
+ 'similarity_loss_weight': 0.0,
+ 'slice_selection': True,
+ 'spatial_dims': 3,
+ 'split_method': 'stratified',
+ 'start_epoch': 0,
+ 'sw_batch_size': 8,
+ 'telegram_log': True,
+ 'test_mode': False,
+ 'token': './token/tlg_token.txt',
+ 'use_checkpoint': False,
+ 'val_every': 2,
+ 'warmup_epochs': 5,
+ 'workers': 8,
+ 'world_size': 1}
+2026-02-05 14:29:35,943 INFO 
+2026-02-05 14:29:35,947 INFO Saved configuration to: outputs/Inference/densenet/2026-02-05-14-29/config.txt
+2026-02-05 14:29:36,531 INFO Using GPU: 0
+2026-02-05 14:29:36,531 INFO 
+2026-02-05 14:29:36,531 INFO Model INFO:
+2026-02-05 14:29:36,531 INFO Model architecture: densenet
+2026-02-05 14:29:36,807 INFO Total trainable parameters: 25,336,579
+2026-02-05 14:29:36,845 INFO 
+2026-02-05 14:29:36,846 INFO Optimizer INFO:
+2026-02-05 14:29:36,847 INFO Using optimizer: adamw with lr=0.01, weight_decay=5e-05
+2026-02-05 14:29:36,847 INFO 
+2026-02-05 14:29:36,847 INFO Dataset INFO:
+2026-02-05 14:29:36,939 INFO Dataset length: 721
+2026-02-05 14:29:36,939 INFO Class distribution in entire dataset:
+2026-02-05 14:29:36,939 INFO   Class 0: 351
+2026-02-05 14:29:36,939 INFO   Class 1: 38
+2026-02-05 14:29:36,939 INFO   Class 2: 332
+2026-02-05 14:29:36,939 INFO 
+Using split method: stratified
+2026-02-05 14:29:36,952 INFO 
+Train set balance:
+2026-02-05 14:29:36,952 INFO 
+Val set balance:
+2026-02-05 14:29:36,952 INFO Training set length: 577
+2026-02-05 14:29:36,952 INFO Validation set length: 144
+2026-02-05 14:29:36,952 INFO 
+Using standard shuffle for training
+2026-02-05 14:29:36,953 INFO Training loader: 288 batches
+2026-02-05 14:29:36,953 INFO Validation loader: 72 batches
+2026-02-05 14:29:36,953 INFO 
+Class distribution in training set:
+2026-02-05 14:29:36,953 INFO   Class 0: 281 (48.7%)
+2026-02-05 14:29:36,953 INFO   Class 1: 30 (5.2%)
+2026-02-05 14:29:36,953 INFO   Class 2: 266 (46.1%)
+2026-02-05 14:29:36,953 INFO Class distribution in validation set:
+2026-02-05 14:29:36,953 INFO   Class 0: 70 (48.6%)
+2026-02-05 14:29:36,953 INFO   Class 1: 8 (5.6%)
+2026-02-05 14:29:36,953 INFO   Class 2: 66 (45.8%)
+2026-02-05 14:29:36,953 INFO **************************************************
+2026-02-05 14:29:36,987 INFO Class weights: [ 6.845  64.111  7.231]
+2026-02-05 14:29:36,988 INFO 
+2026-02-05 14:29:36,988 INFO Test Dataset INFO:
+2026-02-05 14:29:37,006 INFO Test Dataset length: 82
+2026-02-05 14:29:37,007 INFO Class distribution in test dataset:
+2026-02-05 14:29:37,007 INFO   Class 0: 40
+2026-02-05 14:29:37,007 INFO   Class 1: 5
+2026-02-05 14:29:37,007 INFO   Class 2: 37
+2026-02-05 14:29:37,007 INFO Test loader: 41 batches
+2026-02-05 14:29:37,007 INFO **************************************************
+2026-02-05 14:29:37,007 INFO 
+2026-02-05 14:29:37,007 INFO Using loss function: CE
+2026-02-05 14:29:37,011 INFO **************************************************
+2026-02-05 14:29:37,011 INFO Starting testing...
+2026-02-05 14:30:01,939 INFO Total time spent: 00 hours 00 minutes 24 seconds
