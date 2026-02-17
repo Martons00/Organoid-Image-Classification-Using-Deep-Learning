@@ -17,6 +17,7 @@ import torch
 import psutil
 import os
 from pathlib import Path
+from models.SpatialAbstracter import SpatialAbstracter
 
 # Local imports - Utilss
 from .utils import (
@@ -54,12 +55,13 @@ def test_metrics_inference_pm(
     # Cache attributi args
     sw_batch_size = getattr(args, 'sw_batch_size', 4)
     is_main_process = getattr(args, "rank", 0) == 0
+    spatial_abstracter = SpatialAbstracter((256, 256))
     
     # ============================================
     # 1. STORAGE REQUIREMENTS
     # ============================================
     model_size_mb = 0
-    if is_main_process:
+    if is_main_process: 
         temp_path = "/tmp/temp_model.pth"
         torch.save(model.state_dict(), temp_path)
         model_size_mb = os.path.getsize(temp_path) / (1024 * 1024)  # MB
@@ -84,6 +86,9 @@ def test_metrics_inference_pm(
             
             data = data.to(device, non_blocking=True)
             data = ensure_single_channel(data, mode="first")
+            print(f"Processing warm-up batch {warmup_count+1} with {data.shape[0]} samples...")
+            data = spatial_abstracter(data)
+            print(f"After spatial abstraction, shape: {data.shape}")
             B = data.shape[0]
             
             # Inferenza di warm-up (stesso pipeline con patch matching)
@@ -180,6 +185,9 @@ def test_metrics_inference_pm(
                 torch.cuda.synchronize(device)
             
             batch_start_time = time.time()
+            print(f"Processing warm-up batch {warmup_count+1} with {data.shape[0]} samples...")
+            data = spatial_abstracter(data)
+            print(f"After spatial abstraction, shape: {data.shape}")
             
             # ============================================
             # INFERENZA con PATCH MATCHING
@@ -391,6 +399,7 @@ def test_metrics_inference(
     # Cache attributi args
     sw_batch_size = getattr(args, 'sw_batch_size', 4)
     is_main_process = getattr(args, "rank", 0) == 0
+    spatial_abstracter = SpatialAbstracter((32, 32))
     
     # ============================================
     # 1. STORAGE REQUIREMENTS
@@ -421,6 +430,10 @@ def test_metrics_inference(
             
             data = data.to(device, non_blocking=True)
             data = ensure_single_channel(data, mode="first")
+            print(f"Processing warm-up batch {warmup_count+1} with {data.shape[0]} samples...")
+            print(f"Original shape: {data.shape}")
+            data = spatial_abstracter(data)
+            print(f"After spatial abstraction, shape: {data.shape}")
             B = data.shape[0]
             
             # Inferenza di warm-up (stesso pipeline)
@@ -511,6 +524,10 @@ def test_metrics_inference(
                 torch.cuda.synchronize(device)
             
             batch_start_time = time.time()
+            print(f"Processing warm-up batch {warmup_count+1} with {data.shape[0]} samples...")
+            print(f"Original shape: {data.shape}")
+            data = spatial_abstracter(data)
+            print(f"After spatial abstraction, shape: {data.shape}")
             
             # ============================================
             # INFERENZA (stesso pipeline)

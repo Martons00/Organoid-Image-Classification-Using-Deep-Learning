@@ -1,0 +1,44 @@
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+/var/lib/oar/.batch_job_bashrc: line 5: /home/mraffael/.bashrc: No such file or directory
+/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/MedicalNet/models/resnet.py:173: FutureWarning: `nn.init.kaiming_normal` is now deprecated in favor of `nn.init.kaiming_normal_`.
+  m.weight = nn.init.kaiming_normal(m.weight, mode='fan_out')
+Traceback (most recent call last):
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train.py", line 1013, in <module>
+    main()
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train.py", line 92, in main
+    raise e  # Re-raise the exception for further handling if needed
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train.py", line 85, in main
+    main_worker(gpu=0, args=args, configs=cfgs)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/train.py", line 154, in main_worker
+    train_loss,train_acc,val_acc_max, best_metrics_training = run_training(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/utils/trainer.py", line 215, in run_training
+    train_loss, train_acc, train_per_class_acc, train_cm, train_errors_paths = train_epoch(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/utils/funcs_training.py", line 468, in train_epoch
+    feats, hidden = model.forward_features(batch_patches)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETREncoder_3D.py", line 30, in forward_features
+    enc_hidden = self.encoder10(hidden_states_out[4])
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/monai/networks/blocks/unetr_block.py", line 258, in forward
+    return self.layer(inp)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/monai/networks/blocks/dynunet_block.py", line 81, in forward
+    out = self.norm1(out)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/modules/instancenorm.py", line 124, in forward
+    return self._apply_instance_norm(input)
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/modules/instancenorm.py", line 47, in _apply_instance_norm
+    return F.instance_norm(
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/functional.py", line 2870, in instance_norm
+    _verify_spatial_size(input.size())
+  File "/home/mraffael/martone_project/Organoid-Image-Classification-Using-Deep-Learning/models/SwinUNETR/BRATS21/swin_unetr_env/lib/python3.9/site-packages/torch/nn/functional.py", line 2836, in _verify_spatial_size
+    raise ValueError(
+ValueError: Expected more than 1 spatial element when training, got input size torch.Size([8, 768, 1, 1, 1])
