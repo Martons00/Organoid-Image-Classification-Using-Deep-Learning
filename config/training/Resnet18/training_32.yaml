@@ -10,12 +10,10 @@ DATASET:
   exact_class: false
   fold: 0
   ignore_label: 3
-  name: OrganoidsINRIA_Slice_32x32x32
-  roi_x: 32
-  roi_y: 32
-  roi_z: 32
-  slice_selection: true
-  n_slices: 32
+  name: OrganoidsINRIA_reduced_128
+  roi_x: 128
+  roi_y: 128
+  roi_z: 128
 INFERENCE:
   infer_overlap: 0.5
 LOGGING:
@@ -76,5 +74,5 @@ TRAINING:
   save_checkpoint: true
   split_method: stratified
   sw_batch_size: 8
-  val_every: 2
+  val_every: 1
   warmup_epochs: 5

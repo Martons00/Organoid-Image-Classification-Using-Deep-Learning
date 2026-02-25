@@ -1,0 +1,16 @@
+Epoch 0:
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Chouxfleurs/2024.09.10_PARIS_Noyau_Org_28_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Chouxfleurs/2024.09.10_PARIS_Noyau_Org_32_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Chouxfleurs/2024.10.03_PARIS_Noyau_Org_17_cauliflower_J7_40X_8bit.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Chouxfleurs_Nice_Reduce/raw_202503_Nice_orga1_32.tif	Pred: 2	Target: 0
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Compact/20230804_Noyau_org1.tif	Pred: 2	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Compact/20230804_Noyau_org3.tif	Pred: 2	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Compact/20231212_Noyau_org21.tif	Pred: 2	Target: 1
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Cystiques/20230731_Noyau_org11.tif	Pred: 1	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Cystiques/2024.07.18_PARIS_Noyau_Org_1_cystic_J7_40X_8bit.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Cystiques/20240402_Noyau_org6.tif	Pred: 1	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Cystiques/202407_Nice_orga2_0.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Cystiques/202407_Nice_orga3_11.tif	Pred: 0	Target: 2
+/home/mraffael/martone_project/Organoids_Dataset_Slice_128/test_set/Cystiques/202407_Nice_orga4_12.tif	Pred: 0	Target: 2
+*----------------------------------------*
+

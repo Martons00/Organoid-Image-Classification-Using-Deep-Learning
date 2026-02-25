@@ -14,11 +14,12 @@ pwd
 source models/SwinUNETR/BRATS21/swin_unetr_env/bin/activate
 
 # Avvia il training
-python inferenceTime.py --cfg config/05.yaml --oar_id $OAR_JOB_ID
-python inferenceTime.py --cfg config/06.yaml --oar_id $OAR_JOB_ID
-python inferenceTime.py --cfg config/07.yaml --oar_id $OAR_JOB_ID
-python inferenceTime.py --cfg config/08.yaml --oar_id $OAR_JOB_ID
-python inferenceTime.py --cfg config/09.yaml --oar_id $OAR_JOB_ID
+python inferenceTime.py --cfg config/01.yaml --oar_id $OAR_JOB_ID
+# python inferenceTime.py --cfg config/02.yaml --oar_id $OAR_JOB_ID
+# python inferenceTime.py --cfg config/03.yaml --oar_id $OAR_JOB_ID
+# python inferenceTime.py --cfg config/04.yaml --oar_id $OAR_JOB_ID
+# python inferenceTime.py --cfg config/05.yaml --oar_id $OAR_JOB_ID
+# python inferenceTime.py --cfg config/06.yaml --oar_id $OAR_JOB_ID
 
 
 exit

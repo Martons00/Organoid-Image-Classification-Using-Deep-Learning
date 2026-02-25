@@ -6,16 +6,14 @@ AUGMENTATION:
   augmentation: true
 DATASET:
   cache_dataset: false
-  data_dir: /home/mraffael/martone_project/Organoids_Dataset_256/
+  data_dir: /home/mraffael/martone_project/Organoids_Dataset_Slice_128/
   exact_class: false
   fold: 0
   ignore_label: 3
-  name: OrganoidsINRIA_Slice
+  name: OrganoidsINRIA_XYZ_thinning_128
   roi_x: 128
   roi_y: 128
-  roi_z: 64
-  slice_selection: true
-  n_slices: 64
+  roi_z: 128
 INFERENCE:
   infer_overlap: 0.5
 LOGGING:

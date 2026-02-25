@@ -1,11 +1,11 @@
-2026-02-05 13:55:04,056 INFO Log directory: outputs/Inference/densenet/2026-02-05-13-55
-2026-02-05 13:55:04,059 INFO {'RandFlipd_prob': 0.2,
+2026-02-20 14:44:04,904 INFO Log directory: outputs/Inference/densenet/2026-02-20-14-44
+2026-02-20 14:44:04,906 INFO {'RandFlipd_prob': 0.2,
  'RandRotate90d_prob': 0.2,
  'RandScaleIntensityd_prob': 0.1,
  'RandShiftIntensityd_prob': 0.1,
  'amp': True,
- 'augmentation': True,
- 'batch_size': 2,
+ 'augmentation': False,
+ 'batch_size': 1,
  'cache_dataset': False,
  'checkpoint_path': None,
  'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_128/',
@@ -41,8 +41,8 @@
  'n_slices': 64,
  'noamp': False,
  'norm_name': 'instance',
- 'oar_id': 2240523,
- 'optim_lr': 0.01,
+ 'oar_id': 2269165,
+ 'optim_lr': 0.05,
  'optim_name': 'adamw',
  'out_channels': 1,
  'output_dir': 'outputs/',
@@ -75,57 +75,57 @@
  'warmup_epochs': 5,
  'workers': 8,
  'world_size': 1}
-2026-02-05 13:55:04,059 INFO 
-2026-02-05 13:55:04,063 INFO Saved configuration to: outputs/Inference/densenet/2026-02-05-13-55/config.txt
-2026-02-05 13:55:04,621 INFO Using GPU: 0
-2026-02-05 13:55:04,621 INFO 
-2026-02-05 13:55:04,621 INFO Model INFO:
-2026-02-05 13:55:04,621 INFO Model architecture: densenet
-2026-02-05 13:55:04,900 INFO Total trainable parameters: 25,336,579
-2026-02-05 13:55:04,938 INFO 
-2026-02-05 13:55:04,939 INFO Optimizer INFO:
-2026-02-05 13:55:04,940 INFO Using optimizer: adamw with lr=0.01, weight_decay=5e-05
-2026-02-05 13:55:04,940 INFO 
-2026-02-05 13:55:04,940 INFO Dataset INFO:
-2026-02-05 13:55:05,011 INFO Dataset length: 721
-2026-02-05 13:55:05,012 INFO Class distribution in entire dataset:
-2026-02-05 13:55:05,012 INFO   Class 0: 351
-2026-02-05 13:55:05,012 INFO   Class 1: 38
-2026-02-05 13:55:05,012 INFO   Class 2: 332
-2026-02-05 13:55:05,012 INFO 
+2026-02-20 14:44:04,906 INFO 
+2026-02-20 14:44:04,911 INFO Saved configuration to: outputs/Inference/densenet/2026-02-20-14-44/config.txt
+2026-02-20 14:44:05,395 INFO Using GPU: 0
+2026-02-20 14:44:05,395 INFO 
+2026-02-20 14:44:05,396 INFO Model INFO:
+2026-02-20 14:44:05,396 INFO Model architecture: densenet
+2026-02-20 14:44:05,671 INFO Total trainable parameters: 25,336,579
+2026-02-20 14:44:05,707 INFO 
+2026-02-20 14:44:05,708 INFO Optimizer INFO:
+2026-02-20 14:44:05,709 INFO Using optimizer: adamw with lr=0.05, weight_decay=5e-05
+2026-02-20 14:44:05,709 INFO 
+2026-02-20 14:44:05,709 INFO Dataset INFO:
+2026-02-20 14:44:05,815 INFO Dataset length: 721
+2026-02-20 14:44:05,816 INFO Class distribution in entire dataset:
+2026-02-20 14:44:05,816 INFO   Class 0: 351
+2026-02-20 14:44:05,816 INFO   Class 1: 38
+2026-02-20 14:44:05,816 INFO   Class 2: 332
+2026-02-20 14:44:05,816 INFO 
 Using split method: stratified
-2026-02-05 13:55:05,025 INFO 
+2026-02-20 14:44:05,818 INFO 
 Train set balance:
-2026-02-05 13:55:05,025 INFO 
+2026-02-20 14:44:05,818 INFO 
 Val set balance:
-2026-02-05 13:55:05,025 INFO Training set length: 577
-2026-02-05 13:55:05,025 INFO Validation set length: 144
-2026-02-05 13:55:05,025 INFO 
+2026-02-20 14:44:05,818 INFO Training set length: 577
+2026-02-20 14:44:05,818 INFO Validation set length: 144
+2026-02-20 14:44:05,818 INFO 
 Using standard shuffle for training
-2026-02-05 13:55:05,025 INFO Training loader: 288 batches
-2026-02-05 13:55:05,025 INFO Validation loader: 72 batches
-2026-02-05 13:55:05,025 INFO 
+2026-02-20 14:44:05,818 INFO Training loader: 577 batches
+2026-02-20 14:44:05,818 INFO Validation loader: 144 batches
+2026-02-20 14:44:05,818 INFO 
 Class distribution in training set:
-2026-02-05 13:55:05,025 INFO   Class 0: 281 (48.7%)
-2026-02-05 13:55:05,025 INFO   Class 1: 30 (5.2%)
-2026-02-05 13:55:05,025 INFO   Class 2: 266 (46.1%)
-2026-02-05 13:55:05,025 INFO Class distribution in validation set:
-2026-02-05 13:55:05,025 INFO   Class 0: 70 (48.6%)
-2026-02-05 13:55:05,025 INFO   Class 1: 8 (5.6%)
-2026-02-05 13:55:05,025 INFO   Class 2: 66 (45.8%)
-2026-02-05 13:55:05,025 INFO **************************************************
-2026-02-05 13:55:05,057 INFO Class weights: [ 6.845  64.111  7.231]
-2026-02-05 13:55:05,057 INFO 
-2026-02-05 13:55:05,057 INFO Test Dataset INFO:
-2026-02-05 13:55:05,077 INFO Test Dataset length: 82
-2026-02-05 13:55:05,077 INFO Class distribution in test dataset:
-2026-02-05 13:55:05,078 INFO   Class 0: 40
-2026-02-05 13:55:05,078 INFO   Class 1: 5
-2026-02-05 13:55:05,078 INFO   Class 2: 37
-2026-02-05 13:55:05,078 INFO Test loader: 41 batches
-2026-02-05 13:55:05,078 INFO **************************************************
-2026-02-05 13:55:05,078 INFO 
-2026-02-05 13:55:05,078 INFO Using loss function: CE
-2026-02-05 13:55:05,081 INFO **************************************************
-2026-02-05 13:55:05,081 INFO Starting testing...
-2026-02-05 13:55:17,192 INFO Total time spent: 00 hours 00 minutes 12 seconds
+2026-02-20 14:44:05,818 INFO   Class 0: 281 (48.7%)
+2026-02-20 14:44:05,818 INFO   Class 1: 30 (5.2%)
+2026-02-20 14:44:05,818 INFO   Class 2: 266 (46.1%)
+2026-02-20 14:44:05,818 INFO Class distribution in validation set:
+2026-02-20 14:44:05,818 INFO   Class 0: 70 (48.6%)
+2026-02-20 14:44:05,818 INFO   Class 1: 8 (5.6%)
+2026-02-20 14:44:05,818 INFO   Class 2: 66 (45.8%)
+2026-02-20 14:44:05,818 INFO **************************************************
+2026-02-20 14:44:05,827 INFO Class weights: [ 6.845  64.111  7.231]
+2026-02-20 14:44:05,827 INFO 
+2026-02-20 14:44:05,827 INFO Test Dataset INFO:
+2026-02-20 14:44:05,845 INFO Test Dataset length: 82
+2026-02-20 14:44:05,845 INFO Class distribution in test dataset:
+2026-02-20 14:44:05,845 INFO   Class 0: 40
+2026-02-20 14:44:05,845 INFO   Class 1: 5
+2026-02-20 14:44:05,845 INFO   Class 2: 37
+2026-02-20 14:44:05,845 INFO Test loader: 82 batches
+2026-02-20 14:44:05,845 INFO **************************************************
+2026-02-20 14:44:05,845 INFO 
+2026-02-20 14:44:05,845 INFO Using loss function: CE
+2026-02-20 14:44:05,849 INFO **************************************************
+2026-02-20 14:44:05,849 INFO Starting testing...
+2026-02-20 14:44:15,988 INFO Total time spent: 00 hours 00 minutes 10 seconds

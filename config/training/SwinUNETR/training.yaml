@@ -6,11 +6,11 @@ AUGMENTATION:
   augmentation: true
 DATASET:
   cache_dataset: false
-  data_dir: /home/mraffael/martone_project/Organoids_Dataset/
+  data_dir: /home/mraffael/martone_project/Organoids_Dataset_Slice_128/
   exact_class: false
   fold: 0
   ignore_label: 3
-  name: OrganoidsINRIA
+  name: OrganoidsINRIA_XYZ_thinning_128
   roi_x: 128
   roi_y: 128
   roi_z: 128
@@ -23,7 +23,7 @@ LOSS:
   similarity_loss: ''
   similarity_loss_weight: 0.0
 MODEL:
-  checkpoint: './outputs/OrganoidsINRIA/swinunetr/01_H/training/best_model.pt'
+  checkpoint: ''
   dropout_path_rate: 0.0
   dropout_rate: 0.0
   encoder10_pth: ''
@@ -64,7 +64,7 @@ TRAINING:
   min_delta_val: 0.01
   momentum: 0.99
   noamp: false
-  optim_lr: 0.0006
+  optim_lr: 0.001
   optim_name: adamw
   patch_merging: false
   patience_loss: 40
@@ -73,6 +73,6 @@ TRAINING:
   restart_T0: 20
   save_checkpoint: true
   split_method: stratified
-  sw_batch_size: 6
+  sw_batch_size: 8
   val_every: 2
   warmup_epochs: 5

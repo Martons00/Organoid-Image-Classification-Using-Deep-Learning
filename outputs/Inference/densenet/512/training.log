@@ -1,11 +1,11 @@
-2026-02-05 13:31:54,907 INFO Log directory: outputs/Inference/densenet/2026-02-05-13-31
-2026-02-05 13:31:54,909 INFO {'RandFlipd_prob': 0.2,
+2026-02-20 14:17:14,504 INFO Log directory: outputs/Inference/densenet/2026-02-20-14-17
+2026-02-20 14:17:14,507 INFO {'RandFlipd_prob': 0.2,
  'RandRotate90d_prob': 0.2,
  'RandScaleIntensityd_prob': 0.1,
  'RandShiftIntensityd_prob': 0.1,
  'amp': True,
  'augmentation': True,
- 'batch_size': 2,
+ 'batch_size': 1,
  'cache_dataset': False,
  'checkpoint_path': None,
  'data_dir': '/home/mraffael/martone_project/Organoids_Dataset/',
@@ -41,7 +41,7 @@
  'n_slices': 64,
  'noamp': False,
  'norm_name': 'instance',
- 'oar_id': 2240494,
+ 'oar_id': 2269139,
  'optim_lr': 0.05,
  'optim_name': 'adamw',
  'out_channels': 1,
@@ -75,57 +75,57 @@
  'warmup_epochs': 5,
  'workers': 8,
  'world_size': 1}
-2026-02-05 13:31:54,909 INFO 
-2026-02-05 13:31:54,914 INFO Saved configuration to: outputs/Inference/densenet/2026-02-05-13-31/config.txt
-2026-02-05 13:31:55,443 INFO Using GPU: 0
-2026-02-05 13:31:55,443 INFO 
-2026-02-05 13:31:55,443 INFO Model INFO:
-2026-02-05 13:31:55,443 INFO Model architecture: densenet
-2026-02-05 13:31:55,721 INFO Total trainable parameters: 25,336,579
-2026-02-05 13:31:55,760 INFO 
-2026-02-05 13:31:55,760 INFO Optimizer INFO:
-2026-02-05 13:31:55,762 INFO Using optimizer: adamw with lr=0.05, weight_decay=5e-05
-2026-02-05 13:31:55,762 INFO 
-2026-02-05 13:31:55,762 INFO Dataset INFO:
-2026-02-05 13:31:55,781 INFO Dataset length: 721
-2026-02-05 13:31:55,781 INFO Class distribution in entire dataset:
-2026-02-05 13:31:55,781 INFO   Class 0: 351
-2026-02-05 13:31:55,781 INFO   Class 1: 38
-2026-02-05 13:31:55,781 INFO   Class 2: 332
-2026-02-05 13:31:55,781 INFO 
+2026-02-20 14:17:14,507 INFO 
+2026-02-20 14:17:14,511 INFO Saved configuration to: outputs/Inference/densenet/2026-02-20-14-17/config.txt
+2026-02-20 14:17:15,010 INFO Using GPU: 0
+2026-02-20 14:17:15,010 INFO 
+2026-02-20 14:17:15,010 INFO Model INFO:
+2026-02-20 14:17:15,010 INFO Model architecture: densenet
+2026-02-20 14:17:15,283 INFO Total trainable parameters: 25,336,579
+2026-02-20 14:17:15,322 INFO 
+2026-02-20 14:17:15,322 INFO Optimizer INFO:
+2026-02-20 14:17:15,324 INFO Using optimizer: adamw with lr=0.05, weight_decay=5e-05
+2026-02-20 14:17:15,324 INFO 
+2026-02-20 14:17:15,324 INFO Dataset INFO:
+2026-02-20 14:17:15,333 INFO Dataset length: 721
+2026-02-20 14:17:15,333 INFO Class distribution in entire dataset:
+2026-02-20 14:17:15,333 INFO   Class 0: 351
+2026-02-20 14:17:15,333 INFO   Class 1: 38
+2026-02-20 14:17:15,333 INFO   Class 2: 332
+2026-02-20 14:17:15,333 INFO 
 Using split method: stratified
-2026-02-05 13:31:55,794 INFO 
+2026-02-20 14:17:15,335 INFO 
 Train set balance:
-2026-02-05 13:31:55,794 INFO 
+2026-02-20 14:17:15,335 INFO 
 Val set balance:
-2026-02-05 13:31:55,794 INFO Training set length: 577
-2026-02-05 13:31:55,794 INFO Validation set length: 144
-2026-02-05 13:31:55,794 INFO 
+2026-02-20 14:17:15,335 INFO Training set length: 577
+2026-02-20 14:17:15,335 INFO Validation set length: 144
+2026-02-20 14:17:15,335 INFO 
 Using standard shuffle for training
-2026-02-05 13:31:55,795 INFO Training loader: 288 batches
-2026-02-05 13:31:55,795 INFO Validation loader: 72 batches
-2026-02-05 13:31:55,795 INFO 
+2026-02-20 14:17:15,336 INFO Training loader: 577 batches
+2026-02-20 14:17:15,336 INFO Validation loader: 144 batches
+2026-02-20 14:17:15,336 INFO 
 Class distribution in training set:
-2026-02-05 13:31:55,795 INFO   Class 0: 281 (48.7%)
-2026-02-05 13:31:55,795 INFO   Class 1: 30 (5.2%)
-2026-02-05 13:31:55,795 INFO   Class 2: 266 (46.1%)
-2026-02-05 13:31:55,795 INFO Class distribution in validation set:
-2026-02-05 13:31:55,795 INFO   Class 0: 70 (48.6%)
-2026-02-05 13:31:55,795 INFO   Class 1: 8 (5.6%)
-2026-02-05 13:31:55,795 INFO   Class 2: 66 (45.8%)
-2026-02-05 13:31:55,795 INFO **************************************************
-2026-02-05 13:31:55,824 INFO Class weights: [ 6.845  64.111  7.231]
-2026-02-05 13:31:55,824 INFO 
-2026-02-05 13:31:55,824 INFO Test Dataset INFO:
-2026-02-05 13:31:55,831 INFO Test Dataset length: 82
-2026-02-05 13:31:55,831 INFO Class distribution in test dataset:
-2026-02-05 13:31:55,831 INFO   Class 0: 40
-2026-02-05 13:31:55,831 INFO   Class 1: 5
-2026-02-05 13:31:55,831 INFO   Class 2: 37
-2026-02-05 13:31:55,831 INFO Test loader: 41 batches
-2026-02-05 13:31:55,831 INFO **************************************************
-2026-02-05 13:31:55,831 INFO 
-2026-02-05 13:31:55,831 INFO Using loss function: CE
-2026-02-05 13:31:55,834 INFO **************************************************
-2026-02-05 13:31:55,834 INFO Starting testing...
-2026-02-05 13:32:39,877 INFO Total time spent: 00 hours 00 minutes 44 seconds
+2026-02-20 14:17:15,336 INFO   Class 0: 281 (48.7%)
+2026-02-20 14:17:15,336 INFO   Class 1: 30 (5.2%)
+2026-02-20 14:17:15,336 INFO   Class 2: 266 (46.1%)
+2026-02-20 14:17:15,336 INFO Class distribution in validation set:
+2026-02-20 14:17:15,336 INFO   Class 0: 70 (48.6%)
+2026-02-20 14:17:15,336 INFO   Class 1: 8 (5.6%)
+2026-02-20 14:17:15,336 INFO   Class 2: 66 (45.8%)
+2026-02-20 14:17:15,336 INFO **************************************************
+2026-02-20 14:17:15,343 INFO Class weights: [ 6.845  64.111  7.231]
+2026-02-20 14:17:15,343 INFO 
+2026-02-20 14:17:15,343 INFO Test Dataset INFO:
+2026-02-20 14:17:15,391 INFO Test Dataset length: 82
+2026-02-20 14:17:15,391 INFO Class distribution in test dataset:
+2026-02-20 14:17:15,391 INFO   Class 0: 40
+2026-02-20 14:17:15,391 INFO   Class 1: 5
+2026-02-20 14:17:15,391 INFO   Class 2: 37
+2026-02-20 14:17:15,391 INFO Test loader: 82 batches
+2026-02-20 14:17:15,391 INFO **************************************************
+2026-02-20 14:17:15,391 INFO 
+2026-02-20 14:17:15,391 INFO Using loss function: CE
+2026-02-20 14:17:15,395 INFO **************************************************
+2026-02-20 14:17:15,395 INFO Starting testing...
+2026-02-20 14:17:36,735 INFO Total time spent: 00 hours 00 minutes 21 seconds

@@ -1,14 +1,14 @@
-2026-02-05 14:08:33,028 INFO Log directory: outputs/Inference/densenet/2026-02-05-14-08
-2026-02-05 14:08:33,031 INFO {'RandFlipd_prob': 0.2,
+2026-02-23 11:56:51,923 INFO Log directory: outputs/Inference/densenet/2026-02-23-11-56
+2026-02-23 11:56:51,926 INFO {'RandFlipd_prob': 0.2,
  'RandRotate90d_prob': 0.2,
  'RandScaleIntensityd_prob': 0.1,
  'RandShiftIntensityd_prob': 0.1,
  'amp': True,
- 'augmentation': True,
- 'batch_size': 2,
+ 'augmentation': False,
+ 'batch_size': 1,
  'cache_dataset': False,
  'checkpoint_path': None,
- 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
+ 'data_dir': '/home/mraffael/martone_project/Organoids_Dataset/',
  'dataset_name': 'Inference',
  'debug': False,
  'debug_train_samples': 40,
@@ -41,8 +41,8 @@
  'n_slices': 64,
  'noamp': False,
  'norm_name': 'instance',
- 'oar_id': 2240581,
- 'optim_lr': 0.01,
+ 'oar_id': 2273807,
+ 'optim_lr': 0.05,
  'optim_name': 'adamw',
  'out_channels': 1,
  'output_dir': 'outputs/',
@@ -75,57 +75,57 @@
  'warmup_epochs': 5,
  'workers': 8,
  'world_size': 1}
-2026-02-05 14:08:33,031 INFO 
-2026-02-05 14:08:33,036 INFO Saved configuration to: outputs/Inference/densenet/2026-02-05-14-08/config.txt
-2026-02-05 14:08:33,544 INFO Using GPU: 0
-2026-02-05 14:08:33,544 INFO 
-2026-02-05 14:08:33,544 INFO Model INFO:
-2026-02-05 14:08:33,544 INFO Model architecture: densenet
-2026-02-05 14:08:33,850 INFO Total trainable parameters: 25,336,579
-2026-02-05 14:08:33,887 INFO 
-2026-02-05 14:08:33,887 INFO Optimizer INFO:
-2026-02-05 14:08:33,889 INFO Using optimizer: adamw with lr=0.01, weight_decay=5e-05
-2026-02-05 14:08:33,889 INFO 
-2026-02-05 14:08:33,889 INFO Dataset INFO:
-2026-02-05 14:08:33,898 INFO Dataset length: 721
-2026-02-05 14:08:33,898 INFO Class distribution in entire dataset:
-2026-02-05 14:08:33,899 INFO   Class 0: 351
-2026-02-05 14:08:33,899 INFO   Class 1: 38
-2026-02-05 14:08:33,899 INFO   Class 2: 332
-2026-02-05 14:08:33,899 INFO 
+2026-02-23 11:56:51,926 INFO 
+2026-02-23 11:56:51,930 INFO Saved configuration to: outputs/Inference/densenet/2026-02-23-11-56/config.txt
+2026-02-23 11:56:52,505 INFO Using GPU: 0
+2026-02-23 11:56:52,505 INFO 
+2026-02-23 11:56:52,505 INFO Model INFO:
+2026-02-23 11:56:52,505 INFO Model architecture: densenet
+2026-02-23 11:56:52,791 INFO Total trainable parameters: 25,336,579
+2026-02-23 11:56:52,869 INFO 
+2026-02-23 11:56:52,869 INFO Optimizer INFO:
+2026-02-23 11:56:52,870 INFO Using optimizer: adamw with lr=0.05, weight_decay=5e-05
+2026-02-23 11:56:52,870 INFO 
+2026-02-23 11:56:52,870 INFO Dataset INFO:
+2026-02-23 11:56:52,891 INFO Dataset length: 721
+2026-02-23 11:56:52,891 INFO Class distribution in entire dataset:
+2026-02-23 11:56:52,891 INFO   Class 0: 351
+2026-02-23 11:56:52,891 INFO   Class 1: 38
+2026-02-23 11:56:52,891 INFO   Class 2: 332
+2026-02-23 11:56:52,891 INFO 
 Using split method: stratified
-2026-02-05 14:08:33,901 INFO 
+2026-02-23 11:56:52,904 INFO 
 Train set balance:
-2026-02-05 14:08:33,901 INFO 
+2026-02-23 11:56:52,904 INFO 
 Val set balance:
-2026-02-05 14:08:33,901 INFO Training set length: 577
-2026-02-05 14:08:33,901 INFO Validation set length: 144
-2026-02-05 14:08:33,901 INFO 
+2026-02-23 11:56:52,904 INFO Training set length: 577
+2026-02-23 11:56:52,904 INFO Validation set length: 144
+2026-02-23 11:56:52,904 INFO 
 Using standard shuffle for training
-2026-02-05 14:08:33,901 INFO Training loader: 288 batches
-2026-02-05 14:08:33,901 INFO Validation loader: 72 batches
-2026-02-05 14:08:33,901 INFO 
+2026-02-23 11:56:52,904 INFO Training loader: 577 batches
+2026-02-23 11:56:52,904 INFO Validation loader: 144 batches
+2026-02-23 11:56:52,904 INFO 
 Class distribution in training set:
-2026-02-05 14:08:33,901 INFO   Class 0: 281 (48.7%)
-2026-02-05 14:08:33,901 INFO   Class 1: 30 (5.2%)
-2026-02-05 14:08:33,901 INFO   Class 2: 266 (46.1%)
-2026-02-05 14:08:33,901 INFO Class distribution in validation set:
-2026-02-05 14:08:33,901 INFO   Class 0: 70 (48.6%)
-2026-02-05 14:08:33,901 INFO   Class 1: 8 (5.6%)
-2026-02-05 14:08:33,901 INFO   Class 2: 66 (45.8%)
-2026-02-05 14:08:33,901 INFO **************************************************
-2026-02-05 14:08:33,910 INFO Class weights: [ 6.845  64.111  7.231]
-2026-02-05 14:08:33,911 INFO 
-2026-02-05 14:08:33,911 INFO Test Dataset INFO:
-2026-02-05 14:08:33,916 INFO Test Dataset length: 82
-2026-02-05 14:08:33,916 INFO Class distribution in test dataset:
-2026-02-05 14:08:33,916 INFO   Class 0: 40
-2026-02-05 14:08:33,916 INFO   Class 1: 5
-2026-02-05 14:08:33,916 INFO   Class 2: 37
-2026-02-05 14:08:33,916 INFO Test loader: 41 batches
-2026-02-05 14:08:33,916 INFO **************************************************
-2026-02-05 14:08:33,916 INFO 
-2026-02-05 14:08:33,916 INFO Using loss function: CE
-2026-02-05 14:08:33,920 INFO **************************************************
-2026-02-05 14:08:33,920 INFO Starting testing...
-2026-02-05 14:08:43,091 INFO Total time spent: 00 hours 00 minutes 09 seconds
+2026-02-23 11:56:52,904 INFO   Class 0: 281 (48.7%)
+2026-02-23 11:56:52,904 INFO   Class 1: 30 (5.2%)
+2026-02-23 11:56:52,905 INFO   Class 2: 266 (46.1%)
+2026-02-23 11:56:52,905 INFO Class distribution in validation set:
+2026-02-23 11:56:52,905 INFO   Class 0: 70 (48.6%)
+2026-02-23 11:56:52,905 INFO   Class 1: 8 (5.6%)
+2026-02-23 11:56:52,905 INFO   Class 2: 66 (45.8%)
+2026-02-23 11:56:52,905 INFO **************************************************
+2026-02-23 11:56:52,937 INFO Class weights: [ 6.845  64.111  7.231]
+2026-02-23 11:56:52,937 INFO 
+2026-02-23 11:56:52,937 INFO Test Dataset INFO:
+2026-02-23 11:56:52,944 INFO Test Dataset length: 82
+2026-02-23 11:56:52,944 INFO Class distribution in test dataset:
+2026-02-23 11:56:52,944 INFO   Class 0: 40
+2026-02-23 11:56:52,944 INFO   Class 1: 5
+2026-02-23 11:56:52,944 INFO   Class 2: 37
+2026-02-23 11:56:52,944 INFO Test loader: 82 batches
+2026-02-23 11:56:52,944 INFO **************************************************
+2026-02-23 11:56:52,944 INFO 
+2026-02-23 11:56:52,944 INFO Using loss function: CE
+2026-02-23 11:56:52,947 INFO **************************************************
+2026-02-23 11:56:52,947 INFO Starting testing...
+2026-02-23 11:57:29,395 INFO Total time spent: 00 hours 00 minutes 36 seconds

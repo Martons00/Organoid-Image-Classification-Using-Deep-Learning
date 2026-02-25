@@ -86,6 +86,7 @@ def val_epoch_pm(model,loader: DataLoader,epoch: int,acc_func,loss_func,args,) -
             
             for b in range(B):
                 vol = data[b:b+1]  # [1,1,D,H,W]
+                print("Volume shape:", vol.shape)
                 
                 # Estrai patch con overlap per smooth blending
                 patches, coords = extract_patches_5d_torch(
@@ -233,6 +234,10 @@ def val_epoch_pm(model,loader: DataLoader,epoch: int,acc_func,loss_func,args,) -
                 run_acc.update(acc, n=not_nans)
                 run_loss.update(loss.item(), n=not_nans)
             
+            if time.time() - start_time > 2.0:  # Logga se ci sono batch particolarmente lenti
+                print(f"Warning: Batch {idx+1} took {time.time() - start_time:.2f}s, which is longer than expected.")
+                for i in range(0,args.batch_size):
+                    print(f"  Sample patch {i+1} shape: {batch_patches[i].shape}")
             # Logging
             if is_main_process:
                 print(
@@ -463,6 +468,10 @@ def val_epoch(model,loader: DataLoader,epoch: int,acc_func,loss_func,args,) -> t
                 run_acc.update(acc, n=not_nans)
                 run_loss.update(loss.item(), n=not_nans)
             
+            if time.time() - start_time > 5.0:  # Logga se ci sono batch particolarmente lenti
+                print(f"Warning: Batch {idx+1} took {time.time() - start_time:.2f}s, which is longer than expected.")
+                for i in range(0,args.batch_size):
+                    print(f"  Sample patch {i+1} shape: {batch_patches[i].shape} name: {paths[i] if paths is not None else 'N/A'}")
             # Logging
             if is_main_process:
                 print(

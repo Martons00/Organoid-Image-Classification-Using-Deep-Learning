@@ -646,6 +646,11 @@ def train_epoch(model, loader, optimizer, epoch, loss_func, acc_func, args):
                     f"loss: {run_loss.avg:.4f} acc: {run_acc.avg:.4f} "
                     f"time {time.time() - start_time:.2f}s"
                 )
+                
+            if time.time() - start_time > 5.0:  # Logga se ci sono batch particolarmente lenti
+                print(f"Warning: Batch {idx+1} took {time.time() - start_time:.2f}s, which is longer than expected.")
+                for i in range(0,args.batch_size):
+                    print(f"  Sample patch {i+1} shape: {batch_patches[i].shape}")
         start_time = time.time()
     
     # Calcola accuracy per classe

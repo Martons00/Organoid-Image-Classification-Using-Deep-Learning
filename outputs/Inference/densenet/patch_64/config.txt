@@ -3,10 +3,10 @@ AUGMENTATION:
   RandRotate90d_prob: 0.2
   RandScaleIntensityd_prob: 0.1
   RandShiftIntensityd_prob: 0.1
-  augmentation: true
+  augmentation: false
 DATASET:
   cache_dataset: false
-  data_dir: /home/mraffael/martone_project/Organoids_Dataset_256/
+  data_dir: /home/mraffael/martone_project/Organoids_Dataset/
   exact_class: false
   fold: 0
   ignore_label: 3
@@ -53,7 +53,7 @@ SYSTEM:
   workers: 8
   world_size: 1
 TRAINING:
-  batch_size: 2
+  batch_size: 1
   debug: false
   debug_train_samples: 40
   debug_val_samples: 10
@@ -66,7 +66,7 @@ TRAINING:
   min_delta_val: 0.01
   momentum: 0.99
   noamp: false
-  optim_lr: 0.01
+  optim_lr: 0.05
   optim_name: adamw
   patch_merging: false
   patience_loss: 40

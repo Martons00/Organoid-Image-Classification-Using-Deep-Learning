@@ -1,11 +1,11 @@
-2026-02-16 16:12:40,763 INFO Log directory: outputs/Inference/resnet18/2026-02-16-16-12
-2026-02-16 16:12:40,766 INFO {'RandFlipd_prob': 0.2,
+2026-02-23 13:30:21,425 INFO Log directory: outputs/Inference/resnet18/2026-02-23-13-30
+2026-02-23 13:30:21,427 INFO {'RandFlipd_prob': 0.2,
  'RandRotate90d_prob': 0.2,
  'RandScaleIntensityd_prob': 0.1,
  'RandShiftIntensityd_prob': 0.1,
  'amp': True,
  'augmentation': True,
- 'batch_size': 6,
+ 'batch_size': 1,
  'cache_dataset': False,
  'checkpoint_path': None,
  'data_dir': '/home/mraffael/martone_project/Organoids_Dataset/',
@@ -41,7 +41,7 @@
  'n_slices': 64,
  'noamp': False,
  'norm_name': 'instance',
- 'oar_id': 2261677,
+ 'oar_id': 2273955,
  'optim_lr': 0.05,
  'optim_name': 'adamw',
  'out_channels': 1,
@@ -75,61 +75,61 @@
  'warmup_epochs': 5,
  'workers': 8,
  'world_size': 1}
-2026-02-16 16:12:40,766 INFO 
-2026-02-16 16:12:40,770 INFO Saved configuration to: outputs/Inference/resnet18/2026-02-16-16-12/config.txt
-2026-02-16 16:12:41,467 INFO Using GPU: 0
-2026-02-16 16:12:41,468 INFO 
-2026-02-16 16:12:41,468 INFO Model INFO:
-2026-02-16 16:12:41,468 INFO Model architecture: resnet18
-2026-02-16 16:12:41,755 INFO Using pretrained weights
-2026-02-16 16:12:41,755 INFO => loading pretrained model './pretrained_models/resnet18/resnet_18.pth'
-2026-02-16 16:12:43,066 INFO Missing keys: 27
-2026-02-16 16:12:43,067 INFO Using ResNet with Single Linear Classification Head
-2026-02-16 16:12:43,067 INFO Total trainable parameters: 33,320,451
-2026-02-16 16:12:43,110 INFO 
-2026-02-16 16:12:43,110 INFO Optimizer INFO:
-2026-02-16 16:12:43,110 INFO Using optimizer: adamw with lr=0.05, weight_decay=5e-05
-2026-02-16 16:12:43,110 INFO 
-2026-02-16 16:12:43,110 INFO Dataset INFO:
-2026-02-16 16:12:43,132 INFO Dataset length: 721
-2026-02-16 16:12:43,132 INFO Class distribution in entire dataset:
-2026-02-16 16:12:43,132 INFO   Class 0: 351
-2026-02-16 16:12:43,132 INFO   Class 1: 38
-2026-02-16 16:12:43,132 INFO   Class 2: 332
-2026-02-16 16:12:43,132 INFO 
+2026-02-23 13:30:21,427 INFO 
+2026-02-23 13:30:21,431 INFO Saved configuration to: outputs/Inference/resnet18/2026-02-23-13-30/config.txt
+2026-02-23 13:30:21,997 INFO Using GPU: 0
+2026-02-23 13:30:21,997 INFO 
+2026-02-23 13:30:21,997 INFO Model INFO:
+2026-02-23 13:30:21,997 INFO Model architecture: resnet18
+2026-02-23 13:30:22,253 INFO Using pretrained weights
+2026-02-23 13:30:22,253 INFO => loading pretrained model './pretrained_models/resnet18/resnet_18.pth'
+2026-02-23 13:30:23,422 INFO Missing keys: 27
+2026-02-23 13:30:23,423 INFO Using ResNet with Single Linear Classification Head
+2026-02-23 13:30:23,423 INFO Total trainable parameters: 33,320,451
+2026-02-23 13:30:23,441 INFO 
+2026-02-23 13:30:23,441 INFO Optimizer INFO:
+2026-02-23 13:30:23,442 INFO Using optimizer: adamw with lr=0.05, weight_decay=5e-05
+2026-02-23 13:30:23,442 INFO 
+2026-02-23 13:30:23,442 INFO Dataset INFO:
+2026-02-23 13:30:23,451 INFO Dataset length: 721
+2026-02-23 13:30:23,451 INFO Class distribution in entire dataset:
+2026-02-23 13:30:23,451 INFO   Class 0: 351
+2026-02-23 13:30:23,451 INFO   Class 1: 38
+2026-02-23 13:30:23,451 INFO   Class 2: 332
+2026-02-23 13:30:23,451 INFO 
 Using split method: stratified
-2026-02-16 16:12:43,174 INFO 
+2026-02-23 13:30:23,453 INFO 
 Train set balance:
-2026-02-16 16:12:43,174 INFO 
+2026-02-23 13:30:23,453 INFO 
 Val set balance:
-2026-02-16 16:12:43,174 INFO Training set length: 577
-2026-02-16 16:12:43,174 INFO Validation set length: 144
-2026-02-16 16:12:43,174 INFO 
+2026-02-23 13:30:23,453 INFO Training set length: 577
+2026-02-23 13:30:23,453 INFO Validation set length: 144
+2026-02-23 13:30:23,453 INFO 
 Using standard shuffle for training
-2026-02-16 16:12:43,174 INFO Training loader: 96 batches
-2026-02-16 16:12:43,174 INFO Validation loader: 24 batches
-2026-02-16 16:12:43,174 INFO 
+2026-02-23 13:30:23,453 INFO Training loader: 577 batches
+2026-02-23 13:30:23,453 INFO Validation loader: 144 batches
+2026-02-23 13:30:23,453 INFO 
 Class distribution in training set:
-2026-02-16 16:12:43,174 INFO   Class 0: 281 (48.7%)
-2026-02-16 16:12:43,175 INFO   Class 1: 30 (5.2%)
-2026-02-16 16:12:43,175 INFO   Class 2: 266 (46.1%)
-2026-02-16 16:12:43,175 INFO Class distribution in validation set:
-2026-02-16 16:12:43,175 INFO   Class 0: 70 (48.6%)
-2026-02-16 16:12:43,175 INFO   Class 1: 8 (5.6%)
-2026-02-16 16:12:43,175 INFO   Class 2: 66 (45.8%)
-2026-02-16 16:12:43,175 INFO **************************************************
-2026-02-16 16:12:43,286 INFO Class weights: [ 6.845  64.111  7.231]
-2026-02-16 16:12:43,286 INFO 
-2026-02-16 16:12:43,286 INFO Test Dataset INFO:
-2026-02-16 16:12:43,293 INFO Test Dataset length: 82
-2026-02-16 16:12:43,293 INFO Class distribution in test dataset:
-2026-02-16 16:12:43,293 INFO   Class 0: 40
-2026-02-16 16:12:43,293 INFO   Class 1: 5
-2026-02-16 16:12:43,293 INFO   Class 2: 37
-2026-02-16 16:12:43,293 INFO Test loader: 14 batches
-2026-02-16 16:12:43,293 INFO **************************************************
-2026-02-16 16:12:43,294 INFO 
-2026-02-16 16:12:43,294 INFO Using loss function: CE
-2026-02-16 16:12:43,297 INFO **************************************************
-2026-02-16 16:12:43,297 INFO Starting testing...
-2026-02-16 16:13:58,634 INFO Total time spent: 00 hours 01 minutes 15 seconds
+2026-02-23 13:30:23,453 INFO   Class 0: 281 (48.7%)
+2026-02-23 13:30:23,453 INFO   Class 1: 30 (5.2%)
+2026-02-23 13:30:23,453 INFO   Class 2: 266 (46.1%)
+2026-02-23 13:30:23,453 INFO Class distribution in validation set:
+2026-02-23 13:30:23,454 INFO   Class 0: 70 (48.6%)
+2026-02-23 13:30:23,454 INFO   Class 1: 8 (5.6%)
+2026-02-23 13:30:23,454 INFO   Class 2: 66 (45.8%)
+2026-02-23 13:30:23,454 INFO **************************************************
+2026-02-23 13:30:23,465 INFO Class weights: [ 6.845  64.111  7.231]
+2026-02-23 13:30:23,465 INFO 
+2026-02-23 13:30:23,465 INFO Test Dataset INFO:
+2026-02-23 13:30:23,475 INFO Test Dataset length: 82
+2026-02-23 13:30:23,475 INFO Class distribution in test dataset:
+2026-02-23 13:30:23,475 INFO   Class 0: 40
+2026-02-23 13:30:23,475 INFO   Class 1: 5
+2026-02-23 13:30:23,475 INFO   Class 2: 37
+2026-02-23 13:30:23,475 INFO Test loader: 82 batches
+2026-02-23 13:30:23,475 INFO **************************************************
+2026-02-23 13:30:23,475 INFO 
+2026-02-23 13:30:23,475 INFO Using loss function: CE
+2026-02-23 13:30:23,478 INFO **************************************************
+2026-02-23 13:30:23,478 INFO Starting testing...
+2026-02-23 13:30:38,045 INFO Total time spent: 00 hours 00 minutes 14 seconds

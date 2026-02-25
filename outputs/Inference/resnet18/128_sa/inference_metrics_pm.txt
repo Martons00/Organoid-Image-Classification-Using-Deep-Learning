@@ -2,14 +2,14 @@
 COMPUTATIONAL EFFICIENCY METRICS (Patch Matching)
 ============================================================
 Inference Time (excluding warm-up):
-  - Mean: 567.22 ± 3.64 ms/sample
-  - Median: 565.78 ms/sample
-  - Range: [563.98, 573.34] ms
-  - Throughput: 1.76 samples/sec
+  - Mean: 571.83 ± 18.02 ms/sample
+  - Median: 567.32 ms/sample
+  - Range: [564.49, 649.88] ms
+  - Throughput: 1.75 samples/sec
 
 Memory Footprint:
-  - Mean: 1178.88 ± 0.00 MB
-  - Peak: 1178.88 MB
+  - Mean: 318.96 ± 0.24 MB
+  - Peak: 319.69 MB
 
 Storage Requirements:
   - Model size: 127.19 MB

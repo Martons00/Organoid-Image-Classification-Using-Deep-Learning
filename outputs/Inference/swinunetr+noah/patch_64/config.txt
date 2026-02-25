@@ -1,0 +1,80 @@
+AUGMENTATION:
+  RandFlipd_prob: 0.2
+  RandRotate90d_prob: 0.2
+  RandScaleIntensityd_prob: 0.1
+  RandShiftIntensityd_prob: 0.1
+  augmentation: true
+DATASET:
+  cache_dataset: false
+  data_dir: /home/mraffael/martone_project/Organoids_Dataset/
+  exact_class: false
+  fold: 0
+  ignore_label: 3
+  n_slices: 64
+  name: Inference
+  roi_x: 64
+  roi_y: 64
+  roi_z: 64
+  slice_selection: false
+INFERENCE:
+  infer_overlap: 0.5
+LOGGING:
+  logdir: test
+LOSS:
+  loss_name: CE
+  similarity_loss: ''
+  similarity_loss_weight: 0.0
+MODEL:
+  checkpoint: ''
+  dropout_path_rate: 0.0
+  dropout_rate: 0.0
+  encoder10_pth: ''
+  feature_size: 48
+  in_channels: 1
+  name: swinunetr+noah
+  norm_name: instance
+  out_channels: 1
+  pretrained_dir: ./pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/
+  pretrained_model_name: model_swinvit.pt
+  resume_ckpt: false
+  spatial_dims: 3
+  use_checkpoint: false
+SYSTEM:
+  dist_backend: nccl
+  dist_url: tcp://127.0.0.1:23456
+  distributed: false
+  logs_dir: logs/
+  oar_id: 0
+  output_dir: outputs/
+  rank: 0
+  seed: 3
+  telegram_log: true
+  telegram_token: ./token/tlg_token.txt
+  workers: 8
+  world_size: 1
+TRAINING:
+  batch_size: 1
+  debug: false
+  debug_train_samples: 40
+  debug_val_samples: 10
+  early_stopping: true
+  folds: false
+  k_folds: 5
+  lrschedule: warmup_cosine
+  max_epochs: 150
+  min_delta_loss: 0.001
+  min_delta_val: 0.01
+  momentum: 0.99
+  noamp: false
+  optim_lr: 0.0006
+  optim_name: adamw
+  patch_merging: false
+  patience_loss: 40
+  patience_val: 40
+  reg_weight: 5.0e-05
+  restart_T0: 20
+  save_checkpoint: true
+  split_method: stratified
+  sw_batch_size: 8
+  val_every: 2
+  warmup_epochs: 5

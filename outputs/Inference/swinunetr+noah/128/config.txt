@@ -53,7 +53,7 @@ SYSTEM:
   workers: 8
   world_size: 1
 TRAINING:
-  batch_size: 6
+  batch_size: 1
   debug: false
   debug_train_samples: 40
   debug_val_samples: 10
@@ -75,6 +75,6 @@ TRAINING:
   restart_T0: 20
   save_checkpoint: true
   split_method: stratified
-  sw_batch_size: 6
+  sw_batch_size: 8
   val_every: 2
   warmup_epochs: 5

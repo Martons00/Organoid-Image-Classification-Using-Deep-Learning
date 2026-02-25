@@ -165,6 +165,7 @@ def test_metrics_inference_pm(
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
             # Salta i batch già usati per warm-up
+            batch_start_time = time.time()
             if idx < warmup_batches:
                 continue
             
@@ -184,7 +185,6 @@ def test_metrics_inference_pm(
             if torch.cuda.is_available():
                 torch.cuda.synchronize(device)
             
-            batch_start_time = time.time()
             print(f"Processing warm-up batch {warmup_count+1} with {data.shape[0]} samples...")
             data = spatial_abstracter(data)
             print(f"After spatial abstraction, shape: {data.shape}")
@@ -399,7 +399,7 @@ def test_metrics_inference(
     # Cache attributi args
     sw_batch_size = getattr(args, 'sw_batch_size', 4)
     is_main_process = getattr(args, "rank", 0) == 0
-    spatial_abstracter = SpatialAbstracter((32, 32))
+    spatial_abstracter = SpatialAbstracter((128,128))
     
     # ============================================
     # 1. STORAGE REQUIREMENTS
@@ -504,6 +504,7 @@ def test_metrics_inference(
     with torch.no_grad():
         for idx, batch_data in enumerate(loader):
             # Salta i batch già usati per warm-up
+            batch_start_time = time.time()
             if idx < warmup_batches:
                 continue
             
@@ -523,7 +524,6 @@ def test_metrics_inference(
             if torch.cuda.is_available():
                 torch.cuda.synchronize(device)
             
-            batch_start_time = time.time()
             print(f"Processing warm-up batch {warmup_count+1} with {data.shape[0]} samples...")
             print(f"Original shape: {data.shape}")
             data = spatial_abstracter(data)

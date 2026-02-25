@@ -1,11 +1,11 @@
-2026-02-05 13:48:24,820 INFO Log directory: outputs/Inference/swinvit/2026-02-05-13-48
-2026-02-05 13:48:24,823 INFO {'RandFlipd_prob': 0.2,
+2026-02-20 14:39:19,118 INFO Log directory: outputs/Inference/swinvit/2026-02-20-14-39
+2026-02-20 14:39:19,121 INFO {'RandFlipd_prob': 0.2,
  'RandRotate90d_prob': 0.2,
  'RandScaleIntensityd_prob': 0.1,
  'RandShiftIntensityd_prob': 0.1,
  'amp': True,
  'augmentation': True,
- 'batch_size': 6,
+ 'batch_size': 1,
  'cache_dataset': False,
  'checkpoint_path': None,
  'data_dir': '/home/mraffael/martone_project/Organoids_Dataset_256/',
@@ -41,7 +41,7 @@
  'n_slices': 64,
  'noamp': False,
  'norm_name': 'instance',
- 'oar_id': 2240509,
+ 'oar_id': 2269156,
  'optim_lr': 0.006,
  'optim_name': 'adamw',
  'out_channels': 1,
@@ -75,62 +75,62 @@
  'warmup_epochs': 5,
  'workers': 8,
  'world_size': 1}
-2026-02-05 13:48:24,823 INFO 
-2026-02-05 13:48:24,827 INFO Saved configuration to: outputs/Inference/swinvit/2026-02-05-13-48/config.txt
-2026-02-05 13:48:25,291 INFO Using GPU: 0
-2026-02-05 13:48:25,291 INFO 
-2026-02-05 13:48:25,291 INFO Model INFO:
-2026-02-05 13:48:25,291 INFO Model architecture: swinvit
-2026-02-05 13:48:25,626 INFO Using pretrained weights
-2026-02-05 13:48:25,626 INFO => loading pretrained model './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/model_swinvit.pt'
-2026-02-05 13:48:25,760 INFO Missing keys when loading pretrained: 33
-2026-02-05 13:48:25,761 INFO Unexpected keys when loading pretrained: 8
-2026-02-05 13:48:25,768 INFO Using SwinViT with Single Linear Classification Head
-2026-02-05 13:48:25,770 INFO Total trainable parameters: 8,064,309
-2026-02-05 13:48:25,778 INFO 
-2026-02-05 13:48:25,778 INFO Optimizer INFO:
-2026-02-05 13:48:25,778 INFO Using optimizer: adamw with lr=0.006, weight_decay=5e-05
-2026-02-05 13:48:25,779 INFO 
-2026-02-05 13:48:25,779 INFO Dataset INFO:
-2026-02-05 13:48:25,788 INFO Dataset length: 721
-2026-02-05 13:48:25,788 INFO Class distribution in entire dataset:
-2026-02-05 13:48:25,788 INFO   Class 0: 351
-2026-02-05 13:48:25,788 INFO   Class 1: 38
-2026-02-05 13:48:25,788 INFO   Class 2: 332
-2026-02-05 13:48:25,788 INFO 
+2026-02-20 14:39:19,121 INFO 
+2026-02-20 14:39:19,125 INFO Saved configuration to: outputs/Inference/swinvit/2026-02-20-14-39/config.txt
+2026-02-20 14:39:19,636 INFO Using GPU: 0
+2026-02-20 14:39:19,636 INFO 
+2026-02-20 14:39:19,636 INFO Model INFO:
+2026-02-20 14:39:19,636 INFO Model architecture: swinvit
+2026-02-20 14:39:19,930 INFO Using pretrained weights
+2026-02-20 14:39:19,930 INFO => loading pretrained model './pretrained_models/fold1_f48_ep300_4gpu_dice0_9059/model_swinvit.pt'
+2026-02-20 14:39:20,066 INFO Missing keys when loading pretrained: 33
+2026-02-20 14:39:20,066 INFO Unexpected keys when loading pretrained: 8
+2026-02-20 14:39:20,073 INFO Using SwinViT with Single Linear Classification Head
+2026-02-20 14:39:20,075 INFO Total trainable parameters: 8,064,309
+2026-02-20 14:39:20,084 INFO 
+2026-02-20 14:39:20,084 INFO Optimizer INFO:
+2026-02-20 14:39:20,085 INFO Using optimizer: adamw with lr=0.006, weight_decay=5e-05
+2026-02-20 14:39:20,085 INFO 
+2026-02-20 14:39:20,085 INFO Dataset INFO:
+2026-02-20 14:39:20,094 INFO Dataset length: 721
+2026-02-20 14:39:20,094 INFO Class distribution in entire dataset:
+2026-02-20 14:39:20,094 INFO   Class 0: 351
+2026-02-20 14:39:20,094 INFO   Class 1: 38
+2026-02-20 14:39:20,094 INFO   Class 2: 332
+2026-02-20 14:39:20,094 INFO 
 Using split method: stratified
-2026-02-05 13:48:25,789 INFO 
+2026-02-20 14:39:20,096 INFO 
 Train set balance:
-2026-02-05 13:48:25,789 INFO 
+2026-02-20 14:39:20,096 INFO 
 Val set balance:
-2026-02-05 13:48:25,790 INFO Training set length: 577
-2026-02-05 13:48:25,790 INFO Validation set length: 144
-2026-02-05 13:48:25,790 INFO 
+2026-02-20 14:39:20,096 INFO Training set length: 577
+2026-02-20 14:39:20,096 INFO Validation set length: 144
+2026-02-20 14:39:20,096 INFO 
 Using standard shuffle for training
-2026-02-05 13:48:25,790 INFO Training loader: 96 batches
-2026-02-05 13:48:25,790 INFO Validation loader: 24 batches
-2026-02-05 13:48:25,790 INFO 
+2026-02-20 14:39:20,096 INFO Training loader: 577 batches
+2026-02-20 14:39:20,096 INFO Validation loader: 144 batches
+2026-02-20 14:39:20,096 INFO 
 Class distribution in training set:
-2026-02-05 13:48:25,790 INFO   Class 0: 281 (48.7%)
-2026-02-05 13:48:25,790 INFO   Class 1: 30 (5.2%)
-2026-02-05 13:48:25,790 INFO   Class 2: 266 (46.1%)
-2026-02-05 13:48:25,790 INFO Class distribution in validation set:
-2026-02-05 13:48:25,790 INFO   Class 0: 70 (48.6%)
-2026-02-05 13:48:25,790 INFO   Class 1: 8 (5.6%)
-2026-02-05 13:48:25,790 INFO   Class 2: 66 (45.8%)
-2026-02-05 13:48:25,790 INFO **************************************************
-2026-02-05 13:48:25,801 INFO Class weights: [ 6.845  64.111  7.231]
-2026-02-05 13:48:25,801 INFO 
-2026-02-05 13:48:25,801 INFO Test Dataset INFO:
-2026-02-05 13:48:25,806 INFO Test Dataset length: 82
-2026-02-05 13:48:25,806 INFO Class distribution in test dataset:
-2026-02-05 13:48:25,806 INFO   Class 0: 40
-2026-02-05 13:48:25,806 INFO   Class 1: 5
-2026-02-05 13:48:25,806 INFO   Class 2: 37
-2026-02-05 13:48:25,806 INFO Test loader: 14 batches
-2026-02-05 13:48:25,806 INFO **************************************************
-2026-02-05 13:48:25,806 INFO 
-2026-02-05 13:48:25,806 INFO Using loss function: CE
-2026-02-05 13:48:25,810 INFO **************************************************
-2026-02-05 13:48:25,810 INFO Starting testing...
-2026-02-05 13:48:41,550 INFO Total time spent: 00 hours 00 minutes 15 seconds
+2026-02-20 14:39:20,096 INFO   Class 0: 281 (48.7%)
+2026-02-20 14:39:20,096 INFO   Class 1: 30 (5.2%)
+2026-02-20 14:39:20,096 INFO   Class 2: 266 (46.1%)
+2026-02-20 14:39:20,096 INFO Class distribution in validation set:
+2026-02-20 14:39:20,097 INFO   Class 0: 70 (48.6%)
+2026-02-20 14:39:20,097 INFO   Class 1: 8 (5.6%)
+2026-02-20 14:39:20,097 INFO   Class 2: 66 (45.8%)
+2026-02-20 14:39:20,097 INFO **************************************************
+2026-02-20 14:39:20,106 INFO Class weights: [ 6.845  64.111  7.231]
+2026-02-20 14:39:20,106 INFO 
+2026-02-20 14:39:20,107 INFO Test Dataset INFO:
+2026-02-20 14:39:20,111 INFO Test Dataset length: 82
+2026-02-20 14:39:20,111 INFO Class distribution in test dataset:
+2026-02-20 14:39:20,111 INFO   Class 0: 40
+2026-02-20 14:39:20,111 INFO   Class 1: 5
+2026-02-20 14:39:20,111 INFO   Class 2: 37
+2026-02-20 14:39:20,111 INFO Test loader: 82 batches
+2026-02-20 14:39:20,111 INFO **************************************************
+2026-02-20 14:39:20,111 INFO 
+2026-02-20 14:39:20,111 INFO Using loss function: CE
+2026-02-20 14:39:20,114 INFO **************************************************
+2026-02-20 14:39:20,114 INFO Starting testing...
+2026-02-20 14:39:30,289 INFO Total time spent: 00 hours 00 minutes 10 seconds

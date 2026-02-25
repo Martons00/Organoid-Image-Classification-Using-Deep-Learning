@@ -125,7 +125,7 @@ class OrganoidsINRIA3D(Dataset):
     Dataset PyTorch che indicizza solo i file .tif/.tiff appartenenti alle 3 classi CLASSES,
     senza alcuna classe di default. I file non riconosciuti vengono esclusi a monte.
     """
-    def __init__(self, root: str, exact_class_dir: bool = False,slice_selection: bool = False,n_slices: int = 64):
+    def __init__(self, root: str, exact_class_dir: bool = False,slice_selection: bool = True,n_slices: int = 32):
         self.root = Path(root)
 
         self.slice_selection = slice_selection
@@ -192,48 +192,47 @@ class OrganoidsINRIA3D(Dataset):
         else:
             vol_np = vol_np.astype(np.float32)
         
+        # OLD LOGIC: resize to 128 slices
+        D = vol_np.shape[0]
+        max_D = 128
+        
+        if D > max_D:
+            # Downsampling equispaziato
+            indices = np.linspace(10, D - 1, num=max_D, dtype=np.int64)
+            indices = np.clip(indices, 10, D - 1)
+            vol_np = vol_np[indices, ...]
+        else:
+            # Padding a 128
+            pad_z = max_D - D
+            pad_z_front = pad_z // 2
+            pad_z_back = pad_z - pad_z_front
+            vol_np = np.pad(vol_np, ((pad_z_front, pad_z_back), (0, 0), (0, 0)), 
+                        mode='constant', constant_values=0)
+        
+        assert vol_np.shape[0] == max_D, \
+            f"Shape mismatch after old logic: {vol_np.shape[0]} != {max_D}"
+
+        
         # SLICE SELECTION LOGIC
         if self.slice_selection:
             D = vol_np.shape[0]
-            target_slices = self.n_slices
+            target_D = self.n_slices
+
+            D, H, W = vol_np.shape
+            if D > target_D:
+                d_idx = self.selector.select_axis(vol_np, axis=0, n_slices=target_D)
+                vol_np = vol_np[d_idx, :, :]
+            elif D < target_D:
+                pad = target_D - D
+                pad_front = pad // 2
+                pad_back = pad - pad_front
+                vol_np = np.pad(vol_np, ((pad_front, pad_back), (0, 0), (0, 0)), 
+                                mode='constant', constant_values=0.0)
             
-            if D > target_slices:
-                # Selezione adattiva
-                selected_indices = self.selector.select_by_method(vol_np, target_slices)
-                vol_np = vol_np[selected_indices, ...]
-            elif D < target_slices:
-                # Padding se troppo poche slice
-                pad_z = target_slices - D
-                pad_z_front = pad_z // 2
-                pad_z_back = pad_z - pad_z_front
-                vol_np = np.pad(vol_np, ((pad_z_front, pad_z_back), (0, 0), (0, 0)), 
-                            mode='constant', constant_values=0)
-            # Se D == target_slices, usa tutte le slice
             
-            # A questo punto vol_np ha esattamente target_slices slice
-            assert vol_np.shape[0] == target_slices, \
-                f"Shape mismatch: {vol_np.shape[0]} != {target_slices}"
-        
-        else:
-            # OLD LOGIC: resize to 128 slices
-            D = vol_np.shape[0]
-            max_D = 128
-            
-            if D > max_D:
-                # Downsampling equispaziato
-                indices = np.linspace(10, D - 1, num=max_D, dtype=np.int64)
-                indices = np.clip(indices, 10, D - 1)
-                vol_np = vol_np[indices, ...]
-            else:
-                # Padding a 128
-                pad_z = max_D - D
-                pad_z_front = pad_z // 2
-                pad_z_back = pad_z - pad_z_front
-                vol_np = np.pad(vol_np, ((pad_z_front, pad_z_back), (0, 0), (0, 0)), 
-                            mode='constant', constant_values=0)
-            
-            assert vol_np.shape[0] == max_D, \
-                f"Shape mismatch after old logic: {vol_np.shape[0]} != {max_D}"
+            # A questo punto vol_np ha esattamente target_D slice
+            assert vol_np.shape[0] == target_D, \
+                f"Shape mismatch: {vol_np.shape[0]} != {target_D}"
 
         # Aggiunge dimensione canale in testa → [1, D, H, W]
         vol_np = np.expand_dims(vol_np, axis=0)

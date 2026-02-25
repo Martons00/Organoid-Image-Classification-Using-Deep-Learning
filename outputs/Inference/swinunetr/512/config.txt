@@ -53,7 +53,7 @@ SYSTEM:
   workers: 8
   world_size: 1
 TRAINING:
-  batch_size: 6
+  batch_size: 1
   debug: false
   debug_train_samples: 40
   debug_val_samples: 10

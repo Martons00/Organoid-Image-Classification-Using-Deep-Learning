@@ -126,7 +126,7 @@ class OrganoidsINRIA3D(Dataset):
     Dataset PyTorch che indicizza solo i file .tif/.tiff appartenenti alle 3 classi CLASSES,
     senza alcuna classe di default. I file non riconosciuti vengono esclusi a monte.
     """
-    def __init__(self, root: str, exact_class_dir: bool = False,slice_selection: bool = False,n_slices: int = 64):
+    def __init__(self, root: str, exact_class_dir: bool = False,slice_selection: bool = True,n_slices: int = 32):
         self.root = Path(root)
 
         # Raccoglie i file .tif/.tiff
@@ -160,8 +160,8 @@ class OrganoidsINRIA3D(Dataset):
         # array int64 per compatibilità con torch long
         self.labels = np.asarray(labels, dtype=np.int64)
         self.exact_class_dir = exact_class_dir
+        self.slice_selection = slice_selection
         if slice_selection:
-            self.slice_selection = slice_selection
             self.n_slices = n_slices
             self.selector = SliceSelector(method='feature_variance')
 
@@ -187,54 +187,69 @@ class OrganoidsINRIA3D(Dataset):
         else:
             vol_np = vol_np.astype(np.float32)
 
-        # ========== SELEZIONE ADATTIVA SU 3 ASSI ==========
-        target_D, target_H, target_W = self.n_slices,self.n_slices,self.n_slices  # es. (32, 32, 32)
 
-        # 1) SELEZIONE SLICE (D)
-        D, H, W = vol_np.shape
-        if D > target_D:
-            slice_idx = self.selector.select_by_method(vol_np, target_D)
-            vol_np = vol_np[slice_idx, ...]
-        elif D < target_D:
-            pad = target_D - D
-            pad_front = pad // 2
-            pad_back = pad - pad_front
-            vol_np = np.pad(vol_np, ((pad_front, pad_back), (0, 0), (0, 0)), 
-                            mode='constant', constant_values=0.0)
+        # OLD LOGIC: resize to 128 slices
+        D = vol_np.shape[0]
+        max_D = 128
+        
+        if D > max_D:
+            # Downsampling equispaziato
+            indices = np.linspace(10, D - 1, num=max_D, dtype=np.int64)
+            indices = np.clip(indices, 10, D - 1)
+            vol_np = vol_np[indices, ...]
+        else:
+            # Padding a 128
+            pad_z = max_D - D
+            pad_z_front = pad_z // 2
+            pad_z_back = pad_z - pad_z_front
+            vol_np = np.pad(vol_np, ((pad_z_front, pad_z_back), (0, 0), (0, 0)), 
+                        mode='constant', constant_values=0)
+        
+        assert vol_np.shape[0] == max_D, \
+            f"Shape mismatch after old logic: {vol_np.shape[0]} != {max_D}"
 
-        # 2) SELEZIONE ROWS (H)
-        D, H, W = vol_np.shape
-        if H > target_H:
-            # Trasponi per simulare "slice" su H
-            vol_t = np.transpose(vol_np, (1, 0, 2))  # [H, D, W]
-            row_idx = self.selector.select_by_method(vol_t, target_H)
-            vol_np = np.transpose(vol_t[row_idx, ...], (1, 0, 2))  # Torna [D, H, W]
+        # Adattamento per SliceSelector3D con axis-based selection
+        if self.slice_selection:
+            # ========== SELEZIONE ADATTIVA SU 3 ASSI ==========
+            target_D, target_H, target_W = self.n_slices,self.n_slices,self.n_slices  # es. (32, 32, 32)
+            # 1) SELEZIONE SLICE (D - axis 0)
+            D, H, W = vol_np.shape
+            if D > target_D:
+                d_idx = self.selector.select_axis(vol_np, axis=0, n_slices=target_D)
+                vol_np = vol_np[d_idx, :, :]
+            elif D < target_D:
+                pad = target_D - D
+                pad_front = pad // 2
+                pad_back = pad - pad_front
+                vol_np = np.pad(vol_np, ((pad_front, pad_back), (0, 0), (0, 0)), 
+                                mode='constant', constant_values=0.0)
 
-        elif H < target_H:
-            pad = target_H - H
-            pad_top = pad // 2
-            pad_bottom = pad - pad_top
-            vol_np = np.pad(vol_np, ((0, 0), (pad_top, pad_bottom), (0, 0)), 
-                            mode='constant', constant_values=0.0)
+            # 2) SELEZIONE ROWS (H - axis 1)
+            if H > target_H:
+                h_idx = self.selector.select_axis(vol_np, axis=1, n_slices=target_H)
+                vol_np = vol_np[:, h_idx, :]
+            elif H < target_H:
+                pad = target_H - H
+                pad_top = pad // 2
+                pad_bottom = pad - pad_top
+                vol_np = np.pad(vol_np, ((0, 0), (pad_top, pad_bottom), (0, 0)), 
+                                mode='constant', constant_values=0.0)
 
-        # 3) SELEZIONE COLS (W)
-        D, H, W = vol_np.shape
-        if W > target_W:
-            # Trasponi per simulare "slice" su W
-            vol_t = np.transpose(vol_np, (2, 0, 1))  # [W, D, H]
-            col_idx = self.selector.select_by_method(vol_t, target_W)
-            vol_np = np.transpose(vol_t[col_idx, ...], (1, 2, 0))  # Torna [D, H, W]
+            # 3) SELEZIONE COLS (W - axis 2)
+            if W > target_W:
+                w_idx = self.selector.select_axis(vol_np, axis=2, n_slices=target_W)
+                vol_np = vol_np[:, :, w_idx]
+            elif W < target_W:
+                pad = target_W - W
+                pad_left = pad // 2
+                pad_right = pad - pad_left
+                vol_np = np.pad(vol_np, ((0, 0), (0, 0), (pad_left, pad_right)), 
+                                mode='constant', constant_values=0.0)
 
-        elif W < target_W:
-            pad = target_W - W
-            pad_left = pad // 2
-            pad_right = pad - pad_left
-            vol_np = np.pad(vol_np, ((0, 0), (0, 0), (pad_left, pad_right)), 
-                            mode='constant', constant_values=0.0)
+            # Verifica finale
+            assert vol_np.shape == (target_D, target_H, target_W), \
+                f"Shape mismatch finale: {vol_np.shape} != {(target_D, target_H, target_W)}"
 
-        # Verifica finale
-        assert vol_np.shape == (target_D, target_H, target_W), \
-            f"Shape mismatch finale: {vol_np.shape} != {(target_D, target_H, target_W)}"
 
         # Canale
         vol_np = np.expand_dims(vol_np, axis=0)  # [1,D,H,W]
@@ -267,19 +282,8 @@ def selective_augmentation(data, transform, augmentation_ratio=0.5):
 if __name__ == "__main__":
     # Matching per sottostringa: include solo i file che contengono una delle 3 classi nel percorso
     ds = OrganoidsINRIA3D(
-        root="/home/mraffael/martone_project/Organoids_Dataset_128",
+        root="/home/mraffael/martone_project/Organoids_Dataset",
         exact_class_dir=False,
         slice_selection=True,
         n_slices=64
     )
-    dl = torch.utils.data.DataLoader(ds, batch_size=1, shuffle=False)
-    count = 0
-    for batch in dl:
-        vols = batch["vol"]  # [B, C, D, H, W] o [B, C, H, W]
-        try:
-            # _,_, D, _, _ = vols.shape
-            # count += 1
-            # print(f"Sample {count}/{len(dl)}")
-            print(f"Volume shape: {vols.shape} from {batch['path']}")
-        except ValueError:
-            print(f"Errore nella forma del volume: {batch['path']}")

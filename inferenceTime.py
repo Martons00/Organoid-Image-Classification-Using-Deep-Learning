@@ -129,6 +129,7 @@ def main_worker(gpu, args, configs):
         _send_telegram_safe(args, message)
     
     log(f"Using GPU: {args.gpu}")
+    args.batch_size = 1  # For inference time, we typically use batch size of 1
 
     # Setup model
     model = _setup_model(args, logger, log)
