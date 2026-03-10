@@ -236,12 +236,12 @@ def visualize_selected_slices(samples_data, n_slices=32, save_path=None):
                 ax.set_title(f'Z={z_idx}', fontsize=8)
         
         # Add sample name on the left
-        axes[sample_idx, 0].text(-0.1, 0.5, sample_name, 
-                                  transform=axes[sample_idx, 0].transAxes,
-                                  fontsize=10, fontweight='bold',
-                                  verticalalignment='center',
-                                  horizontalalignment='right',
-                                  rotation=0)
+        # axes[sample_idx, 0].text(-0.1, 0.5, sample_name, 
+        #                           transform=axes[sample_idx, 0].transAxes,
+        #                           fontsize=10, fontweight='bold',
+        #                           verticalalignment='center',
+        #                           horizontalalignment='right',
+        #                           rotation=0)
     
     plt.tight_layout()
     plt.subplots_adjust(wspace=0.02, hspace=0.05)
@@ -272,8 +272,17 @@ def test_on_samples(input_dir, n_samples=5, n_slices=32, method='feature_varianc
     if len(tif_files) == 0:
         raise ValueError(f"No TIFF files found in {input_dir}")
     
+    
     # Select first n_samples
-    tif_files = tif_files[:n_samples]
+    import random
+    import numpy as np
+
+    # Seleziona n_samples casuali (senza ripetizioni)
+    tif_files = random.sample(tif_files, n_samples)
+
+    # Oppure con numpy (più efficiente per liste grandi)
+    indices = np.random.choice(len(tif_files), size=n_samples, replace=False)
+    tif_files = [tif_files[i] for i in indices]
     
     print(f"Processing {len(tif_files)} samples")
     print(f"Method: {method}")
@@ -301,7 +310,7 @@ def test_on_samples(input_dir, n_samples=5, n_slices=32, method='feature_varianc
             selected_indices = list(range(D))
             print(f"  Warning: Volume has only {D} slices, using all")
         else:
-            selected_indices = selector.select_by_method(volume, n_slices)
+            selected_indices = selector.select_axis(volume, axis=0, n_slices=n_slices)
             print(f"  Selected {len(selected_indices)} slices: {selected_indices[:5]}...{selected_indices[-5:]}")
         
         samples_data.append({
