@@ -273,7 +273,16 @@ def test_on_samples(input_dir, n_samples=5, n_slices=32, method='feature_varianc
         raise ValueError(f"No TIFF files found in {input_dir}")
     
     # Select first n_samples
-    tif_files = tif_files[:n_samples]
+    import random
+    import numpy as np
+
+    # Seleziona n_samples casuali (senza ripetizioni)
+    tif_files = random.sample(tif_files, n_samples)
+
+    # Oppure con numpy (più efficiente per liste grandi)
+    indices = np.random.choice(len(tif_files), size=n_samples, replace=False)
+    tif_files = [tif_files[i] for i in indices]
+
     
     print(f"Processing {len(tif_files)} samples")
     print(f"Method: {method}")
